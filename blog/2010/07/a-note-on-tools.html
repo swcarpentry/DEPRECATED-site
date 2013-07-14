@@ -1,0 +1,16 @@
+---
+layout: blog
+date: 2010-07-20
+time: 09:00:00
+author: wilson.g
+title: A Note on Tools
+category: [opinion, tooling]
+---
+<p>After a bit of experimenting, I've decided to use <a href="http://www.syntevo.com/smartsvn/index.html">SmartSVN</a> as a GUI client for Subversion in the version control lectures, rather than <a href="http://rapidsvn.tigris.org/">RapidSVN</a> or the command line. My reasoning is:</p>
+<ol>
+<li>Requiring people to learn the shell before they can start learning stuff they actually care about raises the drop-out rate noticeably. Requiring them to learn the shell before they can start learning something they don't yet realize they ought to use, like version control, raises it even more. That rules out the Subversion command line tools.</li>
+<li>SmartSVN is dual-op (the stripped-down version is free, the pro version is not, neither is open source). In contrast, RapidSVN is pure open source, so it would be my first choice (in fact, it was)...</li>
+<li>...except RapidSVN doesn't have a built-in diff/merge tool. They recommend SourceGear's <a href="http://www.sourcegear.com/diffmerge/">DiffMerge</a>, which is free (that's good) but users have to configure RapidSVN to use it (that's bad&mdash;very bad). On the Mac, for example, users have to copy a shell script into /usr/bin, then go into RapidSVN's preferences, set the path to the shell script, and get eight (!) command-line arguments exactly right, or things will fail in strange ways (like you can merge files, but when it tries to save your work, it doubles the dirname of the path to the file and then complains about not being able to create /Users/swc/repo/Users/swc/repo/filename).</li>
+</ol>
+<p>If something can break for reasons that its intended users won't be able to understand, diagnose, and fix, then that something is itself fundamentally broken. In my opinion, the possibility of configuration hell with RapidSVN outweighs both its licensing and its support for "file://" URLs (which SmartSVN doesn't allow).</p>
+<p>And don't get me started on build tools&mdash;I am <em>not</em> looking forward to having to choose something for that lecture... :-(</p>

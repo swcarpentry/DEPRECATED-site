@@ -1,0 +1,63 @@
+---
+layout: blog
+date: 2011-12-24
+time: 09:00:00
+author: wilson.g
+title: Organizing Instruction and Study to Improve Student Learning
+category: [education]
+---
+<p>I had breakfast a couple of days ago with Jon Pipitone, a former student who has helped out with Software Carpentry off and on in the past. When we discussed my post summarizing <a href="{{page.root}}/blog/2011/12/what-ive-learned-so-far.html">what I've learned so far</a> about online education, he had several questions and suggestions (thanks, Jon). I'm still digesting everything he said, but there is one point I'd like to act on now.</p>
+<p>Back in 2007, the US Department of Education's <a href="http://ies.ed.gov">Institute of Education Sciences</a> published a 60-page report <a href="http://ies.ed.gov/ncee/wwc/practiceguide.aspx?sid=1">Organizing Instruction and Study to Improve Student Learning</a>. It's a great resource: seven specific recommendations are summarized in clear language, along with the evidence that backs them up. The report even classifies that evidence into three levels:</p>
+<ul>
+<li>Strong: supported by studies with both high <em>internal</em> validity (i.e., ones whose designs can support causal conclusions) and high <em>external</em> validity (i.e., studies that include a wide enough range of participants and settings to support generalization). This includes the gold standard of experimental research: randomized double-blind trials.</li>
+<li>Moderate: supported by studies with high internal validity but moderate external validity or vice versa. A lot of studies necessarily fall into this category because of the difficulty (practical or ethical) of doing randomized trials on human subjects, but quasi-experiments and/or experiments with smaller sample sizes qualify.</li>
+<li>Low: based on expert opinion derived from strong findings or theories in related areas and/or buttressed by direct evidence that does not meet the standards above. For example, applying a well-proven theory from perceptual psychology to classroom settings, but only validating it with experiments involving small numbers of students, constitutes, would be considered a low level of evidence.</li>
+</ul>
+<p>The recommendations themselves are:</p>
+<ol>
+<li><strong>Space learning over time.</strong> Arrange to review key elements of course content after a delay of several weeks to several months after initial presentation. (moderate)</li>
+<li><strong>Interleave worked example solutions with problem-solving exercises.</strong> Have students alternate between reading already worked solutions and trying to solve problems on their own. (moderate)</li>
+<li><strong>Combine graphics with verbal descriptions.</strong> Combine graphical presentations (e.g., graphs, figures) that illustrate key processes and procedures with verbal descriptions. (moderate)</li>
+<li><strong>Connect and integrate abstract and concrete representations of concepts.</strong> Connect and integrate abstract representations of a concept with concrete representations of the same concept. (moderate)</li>
+<li><strong>Use quizzing to promote learning.</strong>
+<ol type="a">
+<li>Use pre-questions to introduce a new topic. (minimal)</li>
+<li>Use quizzes to re-expose students to key content (strong)</li>
+</ol>
+</li>
+<li><strong>Help students allocate study time efficiently.</strong>
+<ol type="a">
+<li>Teach students how to use delayed judgments of learning to identify content that needs further study. (minimal)</li>
+<li>Use tests and quizzes to identify content that needs to be learned (minimal)</li>
+</ol>
+</li>
+<li><strong>Ask deep explanatory questions.</strong> Use instructional prompts that encourage students to pose and answer "deep-level" questions on course material. These questions enable students to respond with explanations and supports deep understanding of taught material. (strong)</li>
+</ol>
+<p>This summary doesn't do the report justice: it devotes several pages to each recommendation, and includes advice both on how to implement them, and how to overcome common roadblocks.</p>
+<p>So how well does <a href="http://software-carpentry.org">Software Carpentry</a> implement these ideas? More specifically:</p>
+<ol>
+<li>What things are we doing already?</li>
+<li>Why aren't we doing the things we're not?</li>
+<li>If the answer is, "Because it's hard," can we make it easier?</li>
+</ol>
+<p><strong>1. Space learning over time.</strong> No. On one hand, students are dipping into the material when and as they want, and are free to return to any part of it at any time. On the other hand, they don't have to return to any of it, and when they do, they're returning to exactly the same material, not a different take on the same content.</p>
+<p><strong>2. Interleave worked example solutions with problem-solving exercises.</strong> We don't do this now. We could provide the worked examples, but the exercises would be much harder to do:</p>
+<ul>
+<li>We have no practical way to assess students' performance. (In fact, we can't even tell if we got their fingers on the keyboard.) Yes, we can check that they produce the right output for simple programming problems, but (a) that doesn't tell us if they got that output the right way (or <em>a</em> right way, since there's usually more than one), and (b) that doesn't work for second-order skills like designing a good set of tests for a particular function.</li>
+<li>In practice, I believe the majority of students wouldn't do the exercises unless the web site forced them to. I know I wouldn't, even when presented with the research behind this recommendation. The only way to make people do them would be to lock them out of some site content until they had successfully completed exercises on prerequisite material, which (a) conflicts with our open license, and (b) makes the site less useful to people who are really just looking for a solution to a specific problem that's right in front of them.</li>
+</ul>
+<p><strong>3. Combine graphics with verbal descriptions.</strong> The word "verbal" is important here. Research by Richard Mayer and others has shown that if you present images, text, and audio simultaneously, learning actually goes <em>down</em>, because the brain's two processing centers (linguistic and visual) are having two handle two streams of data each in order to recognize words in text and synchronize them with the audio and images. That said, we have to provide textual captions and transcripts for people with visual disabilities, people whose English comprehension isn't strong, and people who prefer to learn from the printed page. What we really need is tools that do a better job of disentangling different content streams (video, audio, narration, and diagrams); they are <a href="http://popcornjs.org/">starting to appear</a>, but the 21st Century replacement for PowerPoint that I really want doesn't exist yet, and we don't have the resources to create it.</p>
+<p><strong>4. Connect and integrate abstract and concrete representations of concepts.</strong> We certainly try to. I don't know how to gauge whether we succeed.</p>
+<p><strong>5a. Use pre-questions to introduce a new topic.</strong> The report recommends giving students a few minutes to tackle a problem on their own with what they already know to set the scene for introducing a new concept. We don't do this per se, though some lectures (like the ones on <a href="{{page.root}}/v4/regexp/">regular expressions</a> and <a href="{{page.root}}/v4/make/">Make</a>) do use a problem-led approach. Again, I doubt students working on their own would actually take the time to do the exercise unless we forced them to, but perhaps we could show them someone going up a couple of blind alleys (e.g., trying to parse text with substring calls instead of regular expressions) before introducing the "right" solution to the problem?</p>
+<p><strong>5b. Use quizzes to re-expose students to key content.</strong> I used to hate cumulative midterms and final exams because they forced me to dredge up things I hadn't used in weeks. Weeks! Now, as a teacher, I think they're great, and the evidence showing they reinforce learning is strong. But while we could make some sort of cumulative self-test available, most students wouldn't benefit come back to our site to do it, and so wouldn't benefit. Even if they did come back, we have no way to give them a meaningful assessment of their performance: the richer the question, the more ways to answer it there are, and the less useful automated marking would be.</p>
+<p><strong>6a. Teach students how to use delayed judgments of learning to identify content that needs further study.</strong> We can't do it. All we can do is tell them that they'll learn more if they come back and review things later to see how much they've actually understood, but (a) they've heard that before, and (b) if they're coming to our material for help with a specific problem that's in front of them right now, they're unlikely to make time in a month to review what they learned.</p>
+<p><strong>6b. Use tests and quizzes to identify content that needs to be learned.</strong> This recommendation is meant to be read from the student's point of view: they should use tests to figure out what they don't understand so that they can focus their review time more effectively. Again, we can create self-text exercises, but we have no practical way to give students useful feedback on any but the simplest.</p>
+<p><strong>7. Ask deep explanatory questions.</strong> The recommendation continues, "These questions enable students to respond with explanations..." Once again, we're limited by the fact that we can't assess anything except drill-level skills.</p>
+<p>Our overall score is pretty poor: of the nine specific practices, we only do three or four. The others stumble over two issues:</p>
+<ul>
+<li>Most students won't voluntarily revisit material (they're too busy solving their next problem).</li>
+<li>There's no practical way to assess how well they're doing on anything except simple drill exercises.</li>
+</ul>
+<p>The second worries me more. As I wrote <a href="{{page.root}}/blog/2011/11/the-ladder-of-abstraction-and-the-future-of-online-teaching.html">several weeks ago</a>:</p>
+<blockquote><p>To paraphrase Tolstoy, successful learners are all alike; every unsuccessful learner is unsuccessful in their own way. There's only one correct mental model of how regular expressions work, but there are dozens or hundreds of ways to misunderstand them, and each one requires a different corrective explanation. What's worse, as we shift from knowing that to knowing how&mdash;from memorizing the multiplication table to solving rope-and-pulley dynamics problems or using the Unix shell&mdash;the space of possible misconceptions grows very, very quickly, and with it, the difficulty of diagnosing and correcting misunderstandings.</p></blockquote>
+<p><a href="http://www.teaching.utoronto.ca/teaching/essentialinformation/profiles-innovation/peer-assessment.htm">Some research</a> has found that crowdsourcing assessment among peers can be just as effective as having someone more knowledgeable do the grading. We don't know if that works for programming, though, and even if it does, will enough people voluntarily give feedback on other people's work (promptly enough) to be useful? Locking down content until they have will just drive people away rather than helping them learn. Solving the "meaningful feedback" problem is, in my opinion, one of the biggest challenges open online learning faces; I'd welcome your thoughts on where to start.</p>

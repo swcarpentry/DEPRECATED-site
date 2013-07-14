@@ -1,0 +1,58 @@
+---
+root: ../..
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include generic-header.html %}
+    <title>Software Carpentry: {{page.title}}</title>
+  </head>
+  <body>
+    <div class="container shadow">
+
+      {% include generic-banner.html %}
+      {% include navbar.html %}
+
+      <div class="row-fluid">
+        <div class="span10 offset1">
+        <div class="title">
+          <h1>{{page.venue}}:<br/>{{page.date}}</h1>
+        </div>
+        {{content}}
+        </div>
+      </div>
+
+      {% if page.eventbrite %}
+        {% if page.registration %}
+        <p>
+          <strong>Registration:</strong>
+            {{page.registration}}
+        </p>
+        {% endif %}
+        <div style="width: 100%; text-align: left;">
+        <p><iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&amp;ref=etckt"
+                   frameborder="0"
+                   marginwidth="5"
+                   marginheight="5"
+                   scrolling="auto"
+                   width="100%"
+                   height="192"></iframe></p>
+        <div style="font-family: Helvetica, Arial; font-size: 10px; padding: 5px 0 5px; margin: 2px; width: 100%; text-align: left;">
+          <a style="color: #ddd; text-decoration: none;" href="http://www.eventbrite.com/r/etckt" target="_blank">Event Registration Online</a>
+          <span style="color: #ddd;"> for </span>
+          <a style="color: #ddd; text-decoration: none;" href="http://www.eventbrite.com/event/{{page.eventbrite}}?ref=etckt" target="_blank">
+            Software Carpentry Boot Camp: {{page.venue}}/{{page.humandate}}
+          </a>
+          <span style="color: #ddd;"> powered by </span>
+          <a style="color: #ddd; text-decoration: none;" href="http://www.eventbrite.com?ref=etckt" target="_blank">Eventbrite</a></div>
+        </div>
+      {% endif %}
+
+      {% include disqus.html %}
+      {% include footer.html %}
+    </div>
+
+    {% include generic-javascript.html %}
+    {% include google-analytics.html %}
+  </body>
+</html>

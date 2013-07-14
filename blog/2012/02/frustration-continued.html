@@ -1,0 +1,29 @@
+---
+layout: blog
+date: 2012-02-27
+time: 10:00:00
+author: wilson.g
+title: Frustration (continued)
+category: [content, versions/version-5-0]
+---
+<p>It's been a frustrating couple of days. To recap, I want to convert our material from PowerPoint to HTML5 to make it easier for people to fork and merge, to make things easier to re-style, because it's an open format, and so on. David Seifried has welded an HTML5 audio player to Caleb Troughton's deck.js to create a display tool, which I'm very pleased with, but the content is killing me. Seriously. Here are three slides taken from our first episode on the Unix shell:</p>
+<table border="1">
+<tbody>
+<tr>
+<td><img src="shell-filedir-08.png" /></td>
+</tr>
+<tr>
+<td><img src="shell-filedir-37.png" /></td>
+</tr>
+<tr>
+<td><img src="shell-filedir-59.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>How can I translate those into HTML? The shell session transcripts are straightforward enough&mdash;a <code>&lt;pre&gt;</code> here, a <code>&lt;span&gt;</code> there&mdash;but what about the explanatory comment in blue in the third slide? Or the filesystem diagram in the second? Or the stuff (I can't think of a better term) in the first? As I see it, the options are:</p>
+<ol>
+<li>Give up and do simple bullet-point text with the occasional inset image file, as we did with <a href="{{page.root}}/v3/shell01.html">Version 3</a>. On the upside, it would be easy to write. On the downside, it's second-rate educationally. Good instructors don't cover blackboards with bullet points: they stir diagrams and text together, because that's what's most effective.</li>
+<li>Create one SVG (or HTML5 canvas element) per slide. The upside is free-form positioning; the downside is that both are painful to work with, which discourages creativity and collaboration.</li>
+</ol>
+<p>What I mean by "painful to work with" is that a lot of careful manual editing would be needed to do things like add elements incrementally in sync with a transcript. The result would also be largely unintelligible to search engines, and good luck copying and pasting it.</p>
+<p>Back to the drawing board...</p>

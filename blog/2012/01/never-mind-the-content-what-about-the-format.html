@@ -1,0 +1,184 @@
+---
+layout: blog
+date: 2012-01-26
+time: 09:00:00
+author: wilson.g
+title: Never Mind the Content, What About the Format?
+category: [content, education, versions/version-5-0]
+---
+<p>I'm still gnawing on the problem of how to construct content for 21st Century learning&mdash;or, more prosaically, what I should use to build the next version of Software Carpentry. My starting point is the need to serve several different kinds of users [<a id="a1" href="#f1">1</a>], whose descriptions I have moved to a separate post on <a href="{{page.root}}/blog/2012/01/learners-and-their-needs.html">learners and their needs</a>.</p>
+<ul>
+<li><em>Textbook</em>: big blocks of prose in some narrative order, with pictures, either printed or electronic, read at the learner's pace, alone.
+<ul>
+<li>Zuzel likes this.</li>
+<li>Yeleina doesn't.</li>
+<li>Xanthe uses content out of order via the index or search bar.</li>
+<li>Wafiya remixes content from several textbooks to create lessons (by photocopying, merging PDFs, or whatever). Like Zuzel, she has read content in order, but like Xanthe, she mainly uses the index now.</li>
+<li>Veronique has thought about writing one, but (a) doesn't think she has that much to say about any single topic, and (b) is put off by the effort that would be required.</li>
+<li>Note: the comments below about the difficulty of copying, pasting, and altering also apply to electronic textbooks, as do the proposed remedies.</li>
+</ul>
+</li>
+<li><em>Static slideshow</em>: a page-by-page dump of a PowerPoint deck, possibly accompanied by a transcript of what the lecturer would say when delivering it.
+<ul>
+<li>Zuzel uses this as if it were a badly-written textbook, with the transcript as the prose and the slides as diagrams.</li>
+<li>Yeleina finds it distracting to switch attention back and forth from slides to transcript.</li>
+<li>Xanthe searches the transcript to find what she wants, then curses because her search engine can't "see" the text in the slides. She also hates the fact that she can't copy and paste the code in the slides (since they're PNGs embedded in a web page).</li>
+<li>Wafiya remixes this content like any other. She's too polite to curse, but she finds it tedious to re-type the code that's shown in the slides (but isn't duplicated as text in the accompanying transcript). She's also finds it wearying to have to re-do diagrams: since the slides are PNGs, it's difficult for her to copy part of a slide, move its elements around, and add a few of her own.</li>
+<li>Veronique doesn't create material in this format because she thinks it's old-fashioned and not useful.</li>
+<li>Note: source code can be made available as copy-and-pasteable text directly in the page, or for download; diagrams can similarly be made available as SVGs to facilitate remixing. Doing either currently requires considerable extra work on the part of content creators.</li>
+</ul>
+</li>
+<li><em>Voice-over slideshow screencast</em>: a video recording of the slides (as they would appear on screen in a lecture) with someone speaking over them, and subtitles.
+<ul>
+<li>Zuzel ignores the video and reads the transcript as if it were a static slideshow. If a transcript isn't available, she (reluctantly) watches the video.</li>
+<li>Yeleina prefers this to a static slideshow, but prefers the doodling screencast described below even more.</li>
+<li>Xanthe hits the "back" button as soon as she realizes it's a video (unless there's a transcript, in which case she curses because she can't copy and paste code out of a video).</li>
+<li>Wafiya directs students like Yeleina to these, but finds them harder to remix than other formats.</li>
+<li>Veronique thinks this format is also old-fashioned and not useful.</li>
+<li>Note: I'm assuming the subtitles are duplicated as a transcript, or available in some other searchable form. I'm also assuming that code is available for donwload or duplicated in the page for coying and pasting, though all of this requires extra work.</li>
+</ul>
+</li>
+<li><em>Voice-over doodling screencast</em>: a Khan Academy-style recording of someone doodling on a tablet or coding live.
+<ul>
+<li>Zuzel treats this like a slideshow screencast.</li>
+<li>Yeleina likes this format a lot, particularly if she can add comments at specific points and see her peers' comments.</li>
+<li>Xanthe has mixed feelings: she dislikes explanations delivered this way, but frequently watches "how to" videos, since they're more likely to be accurate and complete than written descriptions.</li>
+<li>Wafiya treats these like slideshow screencasts.</li>
+<li>Veronique creates these fairly regularly: they're easy to do, and easy to re-do when systems change or she discovers a mistake.</li>
+<li>Note: I'm making the same assumptions about transcripts, code, and diagrams as above.</li>
+</ul>
+</li>
+<li><em>Recorded whiteboard lecture</em>: someone with a camera has recorded someone giving a lecture in a lecture hall, and spliced that with whatever was on the lecturer's screen.
+<ul>
+<li>Zuzel treats this like any other screencast.</li>
+<li>Yeleina prefers this to doodling screencasts because she can see the speaker's body language.</li>
+<li>Xanthe treats these like any other screencast, i.e., she'll use it if there's a searchable transcript and things to copy and paste, or if it's a recording of a live "how to" coding session.</li>
+<li>Wafiya treats these like slideshow screencasts.</li>
+<li>Veronique doesn't create these, partly because of the setup required, but also because she doesn't think seeing her adds value&mdash;the lesson's supposed to be about the stuff.</li>
+<li>Note: I'm assuming an electronic whiteboard, since video of someone writing on an actual whiteboard is usually illegible.</li>
+</ul>
+</li>
+<li><em>Radio drama</em>: a voice-only podcast-style presentation.
+<ul>
+<li>Zuzel ignores the audio and reads the text transcript.</li>
+<li>Ditto for Yeleina.</li>
+<li>Ditto for Xanthe.</li>
+<li>Ditto for Wafiya.</li>
+<li>Veronique doesn't create these.</li>
+<li>Note: but for Ursula, who is blind, this is the <em>only</em> format&mdash;all the others fold into it. She doesn't need code samples as text for copying and pasting: she needs them so that her screen reader can tell her what's that code contains.</li>
+</ul>
+</li>
+<li><em>Star Wars</em>: high-quality video with custom animations, cut scenes, and other special effects.
+<ul>
+<li>Zuzel watches these sometimes, but doesn't learn any more from them than she would from a slideshow.</li>
+<li>Yeleina enjoys these, which means she pays more attention to them, which means she learns more (but no more than she'd learn from an engaging lecturer).</li>
+<li>Xanthe doesn't see the point. Unless something blows up.</li>
+<li>Wafiya likes their high production values, and remixes the special effects segments frequently.</li>
+<li>Veronique can't afford to produce this kind of material.</li>
+<li>Note: again, I'm making assumptions about transcripts, copy-and-pasting, etc.</li>
+</ul>
+</li>
+<li><em>Write your own adventure</em>exploration: typically a set of connected ideas or challenges with explicit dependency information (i.e., you should/must learn A and B before tackling C).
+<ul>
+<li>Zuzel finds the lack of narrative difficult.</li>
+<li>Yeleina enjoys these if each node in the graph is in one of her preferred formats. She enjoys them even more if she is exploring with peers.</li>
+<li>Xanthe ignores the ordering and searches for what (she thinks) she needs. If content is locked down&mdash;i.e., if the system won't let her see or search C until she's "completed" A and B&mdash;she writes an angry tweet and moves on.</li>
+<li>Wafiya likes this format for several reasons, but only if everything is always visible. First, it tells her how other teachers think ideas connect (something that is missing or out-of-band for other delivery formats). Second, it's easy to remix: again, providing it's open, she can reorder things as she thinks best for particular learners.</li>
+<li>Veronique would like to do this, but has discovered that creating the metadata about dependencies and recommended paths is as hard as writing a textbook.</li>
+</ul>
+</li>
+<li><em>Wander around</em>exploration: lots of little snippets, but no explicit dependency information.
+<ul>
+<li>Zuzel finds this even more difficult.</li>
+<li>Yeleina likes this less than the "write your own adventure" format: she thinks it's no different than just using Giggle to find things.</li>
+<li>Xanthe likes this <em>because</em> it's just like using Giggle searches. In fact, she uses every other format as if it were this one.</li>
+<li>Wafiya feels the same way as Yeleina: she likes having stuff to remix, but she has to do that remixing before this material is useful to those of her students who aren't as independent as Xanthe.</li>
+<li>Veronique creates content like this almost without realizing it by answering questions at Stuck Underflow.</li>
+</ul>
+</li>
+<li><em>Jam session</em>: a bunch of learners in a room working through material simultaneously.
+<ul>
+<li>Zuzel doesn't like it: it's too noisy for her to concentrate, and she can't go back at her own pace to review.</li>
+<li>Yeleina thinks this is the best... thing... ever.</li>
+<li>Xanthe is Giggling for information as soon as the presenter tells people what the topic is, but will stop and watch carefully when the presenter is typing live on screen.</li>
+<li>Wafiya can only book space to do this occasionally, and even then, she doesn't enjoy improv teaching.</li>
+<li>Veronique enjoys doing this&mdash;she's volunteers with a local free-range learning group&mdash;but can only find time once every couple of months.</li>
+<li>Note: in theory this can be combined with any of the formats above. In practice, it's almost always short, live lectures interspersed with hands-on practical work.</li>
+</ul>
+</li>
+<li><em>Personal tutoring</em>: one-to-one instruction, a.k.a. "pair learning".
+<ul>
+<li>Zuzel doesn't mind this, but she really does prefer books...</li>
+<li>Yeleina actually prefers jam sessions, since they tend to be more lively.</li>
+<li>Xanthe likes having someone available to answer questions on demand, but is happy Giggling on her own for most of what she needs.</li>
+<li>Wafiya wishes she could do this with every one of her learners, but there simply aren't enough hours in the day. The personalized lesson plans she draws up are the closest approximation she can manage.</li>
+<li>Veronique does this a lot, but is frustrated that it doesn't scale&mdash;she really wants to help more than one person at a time.</li>
+</ul>
+</li>
+</ul>
+<p>I'm sure some of the above is inconsistent or just plain wrong, but here are my takeaways:</p>
+<ol>
+<li><em>Different people want content in different formats.</em> Yeah, OK, we knew that already, but:</li>
+<li><em>Everybody needs first-class content,</em> in the programming sense of the term. In practice, it means that every kind of content can be copied and pasted without losing its meaning. A bunch of colored pixels in an image that look like letters aren't actually letters; if you copy a region of an image and paste it into a text editor, you don't get the text [<a id="a2" href="#f2">2</a>]. Similarly, search engines like Giggle can't "see" code evolving line-by-line in a video, so you can't search for that. Together, I think that point #1 and point #2 imply that:</li>
+<li><em>We need model-view separation in learning content.</em> I apologize for the computerese, but I don't know any other way to say it. A model (more fully, data model) is how information is stored, while a view is how people interact with it. Models should be designed to be easy for computers to work with; views should be designed to meet human needs, and the plural there is important: different people want to interact with information in different ways, and even a single person may want to use different ways at different times. Search engines want the information that's in the model, such as the captions on the boxes in a diagram, not some arbitrary view of it (like a bunch of pixels in a PNG). People usually want that as well when they're remixing, since their goals are to combine that information with information from other sources, and/or to present that information in different ways (i.e., views).</li>
+<li><em>We also need first-class metadata.</em> I haven't been able to find a standard format for summarizing and exchanging lesson objectives, learning dependencies, and everything else needed to stitch individual facts together. The closest thing seems to be <a href="http://en.wikipedia.org/wiki/Sharable_Content_Object_Reference_Model">SCORM</a>, but I'd rather stick a fork in my eye [<a id="a3" href="#f3">3</a>]: it's bloated, it mixes data models with meta-models with presentation layers with everything else its authoring committee could think of, and did I mention the fork? I <em>could</em> provide metadata as data, e.g., put a point-form list at the top of a lesson saying, "Here's what you need to know before tackling this," but that mixes model and view: since it's just a convention, computers will have a hard time stitching things together accurately.</li>
+<li>Finally, <em>we need social learning</em>. Even the Zuzels of this world learn best in collaboration with other people: peer learners are often better at understanding and clearing up misconceptions than instructors, and having a "running partner" helps people stay focused and motivated. This isn't really a matter of format, though, but of the tooling used to deliver content, so I'll skip over it below.</li>
+</ol>
+<p>OK, so how well do today's tools and/or formats do by these measures? The fact that "PowerPoint" is both a tool and a format is one indication that the answer is going to be, "Not well."</p>
+<ul>
+<li><em>Plain text</em>is highly searchable and remixable, plays nicely with accessibility aids (i.e., screen readers), and runs everywhere, but:
+<ul>
+<li>it doesn't do diagrams (unless you count ASCII art);</li>
+<li>it doesn't directly support metadata (except by convention); and</li>
+<li>it doesn't separate models from views</li>
+</ul>
+</li>
+<li><em>HTML</em> is also highly searchable and remixable&mdash;until you start doing dynamic updates with Javascript, at which point today's search tools (and accessibility aids) can't keep track of what's going on. Unlike text, it provides standard ways to include other media, so we'll delay discussion of images and video. And while it doesn't offer a standard way of providing metadata out of the box, HTML5's <a href="http://dev.w3.org/html5/spec/Overview.html#embedding-custom-non-visible-data-with-the-data-attributes">custom data attributes</a> were designed with exactly this kind of use in mind. And modern HTML partially separates models from views: I can use CSS to tell the rendering engine (e.g., a web browser) to display things differently for different use cases.</li>
+<li><em>DocBook, LaTeX, and wiki text</em> separate models from views even more than HTML does. What's in the file is a description of content, information about the content, and just enough formatting to make things pretty when viewed in specific ways, e.g., "Break the page here to avoid an orphaned line." Diagrams and metadata can be handled the same way as it is for HTML; in fact, I can't see any advantage these formats have over modern HTML any longer [<a id="a4" href="#f4">4</a>], so I'm going to take them off the table.</li>
+<li><em>PNG</em> and other raster formats: fail the searchability and copy-and-paste tests.</li>
+<li><em>SVG</em> and other vector formats: do better. Since (some of) the content and relationships are explicit, search engines can find things in SVGs, and you can actually select and copy a box or an arrow, rather than a region of pixels. It only goes so far&mdash;Visio-style information about "this arrow connects the box labeled A to the box labeled B" is mostly implicit&mdash;but it's better than raster. I've seen people do entire lessons as a series of SVGs, or as one large SVG with progressive reveal; I'll talk about this more below.</li>
+<li><em>PowerPoint</em>and its kin: model, view, and authoring tool are inextricable from one another. You can copy and paste things, and modern search engines understand the format well enough to index textual content, but metadata is just a convention, and remixing takes a lot of work (even if the version you have is the original, rather than an exported ZIP file containing an HTML page that references PNG representations of the slides). That said, authoring rich presentations is easier than it is with HTML+SVG:
+<ol>
+<li>You use the same tool to create textual and graphical content, rather than having to switch between tools and stitch content together.</li>
+<li>You can <em>connect</em> textual and graphical content, i.e., you can draw a circle around a word in one of your bullet points, then connect it with an arrow to a particular box in a diagram, just as you would when writing freehand on a whiteboard. This is what HTML-based slideshow packages lack: right now, they force authors to segregate text and graphics, which I view as a throwback to the era of hot metal typesetting.</li>
+</ol>
+The fact is, most presenters continue to use PowerPoint (or something similar) because it makes it easy to create a reasonably good presentation in a reasonable amount of time [<a id="a5" href="#f5">5</a>]. HTML slideshow packages fail this test: authors must sacrifice the quality of the presentation (e.g., skip graphics, or embed segregated graphical files), and do a lot of non-content typing (tags, page IDs, and so on).</li>
+<li><em>Video</em>: fails all the "first-class content" tests [<a id="a6" href="#f6">6</a>], and isn't effective [<a id="a7" href="#f7">7</a>] unless:
+<ul>
+<li>authors have the resources to produce Star Wars-quality content [<a id="a8" href="#f8">8</a>], or</li>
+<li>they're showing learners how to do something, like dissecting a frog or using a debugger.</li>
+</ul>
+</li>
+</ul>
+<p>So after all of this, what do I actually want?</p>
+<ol>
+<li id="html5">I want content stored in HTML5 with purely semantic markup, so that it can be searched, copied and pasted, and styled for presentation in a variety of ways [<a id="a9" href="#f9">9</a>].</li>
+<li id="vocabulary">I want an agreed-upon <code>meta</code> and <code>data-*</code> vocabulary for educational metadata, like dependencies, introduction of key terms, questions and answers, and so on. I want a similar vocabulary for commenting and other social interactions that plays nicely with things like the <a href="http://www.salmon-protocol.org/">Salmon protocol</a>.</li>
+<li>I want an authoring tool (note the singular there) that lets me:
+<ol>
+<li id="authoring-wysiwyg">write and draw WYSIWYG instead of typing in tags and IDs;</li>
+<li id="authoring-freehand">freely mix drawings and text; and</li>
+<li id="authoring-channels">manage parallel streams (or channels), so that I can keep slide content, presenter's notes, prose, and translations of all three into other languages together.</li>
+</ol>
+</li>
+<li id="animate">I want to be able to animate my drawings and text, which is emphatically <em>not</em> the same as "embed video" (though I may want to do that too). Instead of recording the pixels drawn on the screen as I type Python into an editor, I want to record and play back the text that's being created, so that learners can pause the animation, copy the text, and paste it somewhere else. Equally, instead of painting pixels to fool your eyes into believing that a box just moved off the screen, I want to move the damn box; once again, if you pause the animation, you should be able to click on the box, attach a comment to it, paste it into your own drawing, etc.</li>
+</ol>
+<p>Freeling mixing drawings and text feels like it ought to be doable today: we could either put the text in blocks inside a <code>canvas</code> element, or layer a transparent <code>canvas</code> over the page and dynamically resize it. Anchoring drawings to the underlying text (e.g., keeping the arrow from a term to the corresponding bit of the diagram in the right place) is "just" Javascript (for some value of "just"). Making it all WYSIWYG is just more Javascript [<a id="a10" href="#f10">10</a>].</p>
+<p>But animation... Ah, that's a big one. It's an intrinsically hard problem, but canned effects can do a lot to put simple things within reach [<a id="a11" href="#f11">11</a>]. The big question is, how far do we push it? If I want to show you how to use a debugger, or how to draw something with a painting program, I can't re-create the whole UI&mdash;I'm going to have to record pixels off a screen.</p>
+<p>Or am I? I know this is never going to happen&mdash;we're not that organized a species&mdash;but just imagine what the world would be like if every interface was built using HTML5 and CSS. Any tool at all could export widget descriptions and a semantic trace of what they did (i.e., "the file menu was pulled down" rather than "the cursor moved to pixel (132,172) and the user clicked"), and any other tool could consume it and play it back. The consuming tool might draw the widgets differently, or display the interactions in its own way, but that would be exactly the same as applying a different skin to the original tool [<a id="a12" href="#f12">12</a>].</p>
+<p>Returning to this universe for a moment, we can <a href="#html5">store things as HTML5</a> right now&mdash;I'm already using it for Version 5 of <a href="http://software-carpentry.org">Software Carpentry</a>. I could create a <a href="#vocabulary">vocabulary</a> for instructional metadata, but I'm not an information architect. <a href="#authoring-wysiwyg">WYSIWYG authoring tools</a> for HTML5 abound, though the HTML5 they produce can be idiosyncratic (and doesn't play nicely with version control, but that's fixable). I haven't seen a WYSIWYG tool that supports <a href="#authoring-freehand">freehand drawing mixed freely with text</a>, or one that supports <a href="#authoring-channels">parallel content streams</a>, but I think half a dozen people working could deliver something substantial in half a dozen months [<a id="a13" href="#f13">13</a>].</p>
+<p>As for <a href="#animate">animation</a>, I think we're stuck with video for now: prototyping an HTML5/SVG/Javascript animation framework for use in a learning tool would be a great research project, but we really do need to build a couple to throw away to find out if it's workable. If you'd lke to tackle it, please <a href="mailto:{{site.contact}}">let us know</a>&mdash;I'd be happy to be your alpha tester.</p>
+<p><strong>Notes</strong></p>
+<p id="f1">[<a href="#a1">1</a>] There was a lot of talk in the 1980s and 1990s about different people having different learning styles, inspired in part on Gardner's theory of multiple intelligences. The idea has mostly been <a href="http://en.wikipedia.org/wiki/Learning_styles#Criticism">discredited</a>, but like many memes, it lives on in popular culture.</p>
+<p id="f2">[<a href="#a2">2</a>] Although I bet someone's working on an Emacs mode to do that...</p>
+<p id="f3">[<a href="#a3">3</a>] I've actually done this, so I know whereof I speak.</p>
+<p id="f4">[<a href="#a4">4</a>] Except that LaTeX and wiki text require slightly less typing than HTML, but if you're using a smart editor, even that advantage goes away.</p>
+<p id="f5">[<a href="#a5">5</a>] Please don't quote Tufte's complaints about PowerPoint at me&mdash;I don't think it encourages bad presentations any more than the tangled rules of English spelling and grammar encourage bad writing.</p>
+<p id="f6">[<a href="#a6">6</a>] In particular, almost all video content makes life harder for the visually impaired: a screencast in which someone talks over themselves typing in an editor or sketching on a tablet is tantalizing but useless to someone who can't see the pixels. I committed this sin when I created Version 4 of Software Carpentry; I'd like to do better in Version 5, and would like to see high-profile online learning sites make some kind of effort as well.</p>
+<p id="f7">[<a href="#a7">7</a>] But wait a second: if video isn't effective, why do MIT Open Courseware and the Khan Academy work so well? The short answer is, they mostly don't: if you take out the 15% of people who can learn almost anything, no matter how it's presented, watching videos and doing drill exercises <a href="http://fnoschese.wordpress.com/2011/12/02/you-khant-ignore-how-students-learn/">works less well than other options</a>. The longer answer is, watching a good teacher (and Khan is a <em>great</em> teacher) work through a problem, instead of just presenting the answer, moves the content into the "how to" category that video is well suited to.</p>
+<p id="f8">[<a href="#a8">8</a>] Research dating back to the early 1990s shows that higher-quality material improves student retention. I don't know whether it improves it <em>enough</em> to justify its higher production costs, though.</p>
+<p id="f9">[<a href="#a9">9</a>] HTML5 will also help with version control, since I expect HTML5-aware diff-and-merge tools to start appearing Real Soon Now. Of course, I've been saying that for almost ten years...</p>
+<p id="f10">[<a href="#a10">10</a>] These days, you can wave away almost any technical objection with "it's just more Javascript".</p>
+<p id="f11">[<a href="#a11">11</a>] In my mind, the animation interface looks more like <a href="http://scratch.mit.edu/">Scratch</a> than it does like PowerPoint's menus and dialogs. It definitely <em>doesn't</em> require people to type in code, unless they want to create and share an entirely new kind of animation effect.</p>
+<p id="f12">[<a href="#a12">12</a>] We could even call that format <a href="http://en.wikipedia.org/wiki/XUL">XUL</a>...</p>
+<p id="f13">[<a href="#a13">13</a>] "6&times;6" is as big a team/timescale as I'm able to contemplate these days.</p>

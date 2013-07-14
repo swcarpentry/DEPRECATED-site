@@ -1,0 +1,24 @@
+---
+layout: blog
+author: wilson.g
+title: The Missing Side of the Triangle
+date: 2013-02-03
+time: 11:00:00
+category: [opinion]
+---
+
+<p>A few weeks ago, John Cook <a href="http://www.johndcook.com/blog/2012/01/01/moores-law-squared/">posted</a> the following:</p>
+
+<blockquote><em>
+<p>In a review of linear programming solvers from 1987 to 2002, Bob Bixby says that solvers benefited as much from algorithm improvements as from Moore's law.</p>
+<blockquote>
+<p>Three orders of magnitude in machine speed and three orders of magnitude in algorithmic speed add up to six orders of magnitude in solving power. A model that might have taken a year to solve 10 years ago can now solve in less than 30 seconds.</p>
+</blockquote>
+</em></blockquote>
+
+<p>A million-fold speedup is pretty impressive, but faster hardware and better algorithms are only two sides to the triangle.  The third is development time, and while I think it has improved since 1987, I also think the speedup is measured in single-digit multiples, not orders of magnitude.</p>
+
+<p>Which brings us, again, to <a href="http://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl's Law</a> and the purpose of Software Carpentry. The time needed to produce a new computational result is <em>D+R</em>, where <em>D</em> is how long it takes to get the code to work and <em>R</em> is how long it takes that code to run.  <em>R</em> depends on hardware and algorithms; as it goes to zero, the time required to get a new result is dominated by the time required to write, test, maintain, install, and configure software [1].  Reducing that is the "effiency" part of our long-term aim to improve <a href="{{page.root}}/blog/2013/01/novelty-efficiency-and-trust.html">novelty, efficiency, and trust</a>.</p>
+
+<p>[1] In practice, <em>R</em> doesn't go to zero for many interesting scientific applications, because scientists scale up their problems to keep running times constant.  (As a colleague of mine once said, every simulation takes roughly one publication cycle to run.)</p>
+

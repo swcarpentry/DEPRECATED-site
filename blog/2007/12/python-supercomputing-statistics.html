@@ -1,0 +1,22 @@
+---
+layout: blog
+date: 2007-12-09
+time: 09:00:00
+author: wilson.g
+title: Python Supercomputing Statistics
+category: [community, content]
+---
+<p>I have a major grant application and (hopefully final) revisions to my next children's book due on Friday, so of course I'm reading white papers about Python-friendly supercomputing from Interactive Supercomputing, a Boston-area firm that's about three years old.  IS offers several kinds of parallelism for MATLAB, Python, R, SAS, and other high-level languages; I don't know if their tools are any easier to use than anyone else's, but they have an impressive team (including Russ Barbour, ex-Apollo, and Steve Reinhardt, ex-Cray).</p>
+<p>What's more immediately interesting to me is two of their papers (free, but registration required).  The first, "Python Technical Computing End-User Study", was prepared by Fletcher Spaght, Inc.; based on 604 responses to a survey, it concludes that:</p>
+<ul>
+<li>significantly increased performance of Python codes would cause large or revolutionary improvements to 35% of technical users (8% would experience revolutionary benefits from 10X performance boost);</li>
+<li>most (52%) organizations using Python for technical applications consider their codes to be important to accomplishing their mission;</li>
+<li>technical Python program run times are long (31% typically over 1 hour);</li>
+<li>Python data sets are large (41% GBs or larger) for technical applications;</li>
+<li>large amounts of time are spent optimizing codes to run them productively on desktop workstations;</li>
+<li>in organizations using Python, tools such as C (91%), MATLAB (49%),and Fortran (32%) are also widely used for developing technical applications;</li>
+<li>Most (63%) organizations surveyed are interested in running Python on HPC resources and at least 65% of Python technical users have access to such systems; and</li>
+<li>half o survey respondents have ported their technicalPython codes [doesn't say to what], but only 17% do so with any frequency.</li>
+</ul>
+<p>Some of the details in the paper are interesting too.  36% use Python for test &amp; measurement, 29% for communications [presumably communications applications, rather than inter-application communication and coordination, but this is not clear], and 24% each for signal/image processing and physical design.  33% describe their use of Python as "glue language", while 42% use the numerical libraries, and 24% use external libraries.  91% of users also use C/C++, 49% use MATLAB, 32% use Fortran, and 22% each use Mathematica and R.</p>
+<p>The other paper was prepared by the Simon Management Group.  Its conclusions are more motherhood-and-apple-pie-ish: for example, "HPC software development environments vary widely by factors such as size and focus."  There are still a few interesting itms, though: the median team size is 4-6 developers, 50% of respondents report that their organization works on 1-5 projects at a time (and 11.5% report working on more than 30 at a time), the expected median data ste within three years ranges from 200 to 600 GB, and 42% indicated that projects typically last 6 months, while 23.1% describe their projects as open-ended.  I'm not sure what it all means just yet, but they're good numbers to know...</p>

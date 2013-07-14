@@ -1,0 +1,139 @@
+---
+layout: blog
+date: 2010-03-30
+time: 09:00:00
+author: wilson.g
+title: Formats
+category: [tooling, versions/version-4]
+---
+<p>As I said in <a href="http://www.software-carpentry.org/blog/2010/03/25/software-carpentry-version-4-is-a-go/">last week's announcement</a>, and mentioned again in a <a href="http://www.software-carpentry.org/blog/2010/03/26/online-delivery/">later post</a>, one of the main goals of this rewrite is to make it possible for students to do the course when and where they want to. That means recording audio and video, but much of the material will probably still be textual: code samples (obviously), lecture notes (for those who prefer skimming to viewing, or who want to teach the material locally), and exercises will still be words on a virtual page. And even the AV material will (probably) be accompanied by scripts or transcripts, depending on what turns out to work best.</p>
+<p>Which brings up a question everyone working with computers eventually faces: what format(s) should material be stored in? For images, audio, and video, the choices are straightforward: SVG for line drawings, PNG for images, MP3 for audio, and MP4, MPEG, or FLV or video (I don't know enough yet to choose). But there's a bewildering variety of options for text, each with its pros and cons.</p>
+<ol>
+<li><strong>A</strong>uthoring tools: do authors need to use a specialized editor? If so, is it freely available for the three major platforms (Windows, Linux, and Mac)?</li>
+<li><strong>C</strong>omposition: can authors "just type", or do they need to spend a lot of keystrokes on markup?</li>
+<li><strong>D</strong>iffing and merging: does the format play nicely with version control systems, i.e., if two or more people edit independently, can their changes easily be merged after the fact?</li>
+<li><strong>F</strong>ormatting: does the format allow fine-grained control over layout? (My personal test here is how easy it is to create tables with irregular arrangements of rows and columns.)</li>
+<li><strong>M</strong>ultiple output formats: can HTML pages, slides, PDFs, and what-not all be produced from a single source?</li>
+<li><strong>R</strong>eferencing: does the format take care of section and figure numbering, cross-references, and bibliographic citations automatically?</li>
+<li><strong>W</strong>YSIWYG: does the raw content have to be compiled or transformed to produce something viewable, or is what you see what you get?</li>
+</ol>
+<p>Here are the options as I see them:</p>
+<table>
+<tbody>
+<tr>
+<td>Format</td>
+<td style="text-align:center;">A</td>
+<td style="text-align:center;">C</td>
+<td style="text-align:center;">D</td>
+<td style="text-align:center;">F</td>
+<td style="text-align:center;">M</td>
+<td style="text-align:center;">R</td>
+<td style="text-align:center;">W</td>
+<td style="text-align:center;">Minimum</td>
+</tr>
+<tr>
+<td><a href="http://office.microsoft.com/en-us/word/default.aspx">Microsoft Word</a></td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td><a href="http://www.openoffice.org/product/writer.html">OpenOffice</a></td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td><a href="http://www.docbook.org/">DocBook</a></td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td>Other XML</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td>Plain Old HTML</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td><a href="http://meyerweb.com/eric/tools/s5/">S5</a> and its kin</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td>Wiki text</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">-1</td>
+<td style="text-align:center;">-1</td>
+</tr>
+<tr>
+<td><a href="http://www.latex-project.org/">LaTeX</a></td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">+1</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>I use the minimum in evaluation, rather than the average or total score, because what you notice most when you're working with something is usually what's most annoying about it. Or maybe that's just me... But what do these numbers actually mean? In no particular order:</p>
+<ul>
+<li>Binary file formats don't work well with version control systems, since the latter use textual differencing to reconcile changes between versions or by concurrent editors. This rules out the default formats used by Microsoft and OpenOffice.</li>
+<li>Machine-generated XML doesn't fare any better, since the differencing tools used in version control systems ignore the semantics ("element inserted") and become confused by the representation ("18 lines changed"). This rules out various XML-based options for Word and OO.</li>
+<li>In contrast, XML or HTML that has been written using a plain old text editor usually has line breaks in useful places (i.e., more of the semantics is reflected in the representation) so diff and merge work much better. On the other hand, if you're using a POTE, 20-40% of your keystrokes go into markup (all those angle brackets and attributes) rather than content. WYSIWYG XML/HTML editors help a bit (I'm using the one built into WordPress right now), but most generate the same tangled diff-hostile output as the options dismissed above. With respect to particular formats:
+<ul>
+<li>"Real" DocBook is a lot of work to produce. <a href="http://www.oreilly.com/">O'Reilly</a>'s  <a href="ftp://ftp.ora.com/pub/dblite/dblite_0.1.tar.gz">DocBook Lite</a> (a subset of the official format) is less effort, but there are still a lot of angle brackets to type in&mdash;I haven't yet found an editor that will let me type Ctrl-B and switch to DocBook-compliant bolding, for example.</li>
+<li>Homebrew XML markups, like the one used by <a href="http://pragprog.com/">Pragmatic</a>, all seem to converge on the features of DocBook Lite. There's also the problem of finding (or building), tweaking, and maintaining tools to produce the end result.  (I created my own format, and built my own tools, for Version 2 of the course; won't make that mistake again.)</li>
+<li>Plain old HTML has all the disadvantages of homebrew XML markup, but <em>does</em> have the advantage of being able to view without a compilation step&mdash;so long as you don't care about numbering, cross-references, etc. For that, you need tools, which need to be created, maintained, and tweaked.</li>
+<li>Various HTML-based slideshow formats, like S5, add some semantic information to plain old HTML that a bit of in-browser Javascript can use to produce PowerPoint-style effects. Numbering and cross-referencing still need tools, though, and S5 and various follow-ons are mostly orphaned these days.</li>
+</ul>
+</li>
+<li>Wiki text: easy to type in (that's the whole point), and plays well with version control, but (a) processing tools (again), and (b) the degree of control over markup is usually fairly limited. That said, <a href="http://www.wikicreole.org/">Wiki Creole</a> and <a href="http://en.wikipedia.org/wiki/ReStructuredText">reStructured Text</a> are appealing: there are lots of compilation/conversion tools for both. The downside is that both actually <em>require</em> compilation: so far as I can tell, there isn't a WYSIWYG editor for either that is still being maintained. (Update: there <a href="http://blog.enthought.com/?p=127">may be one</a> for reST: I'd welcome input from anyone who has used it.)</li>
+<li>LaTeX: ah, LaTeX, my old nemesis&mdash;it has been a while, hasn't it? It plays nicely with version control; it handles cross-referencing, gives users fine control over layout&mdash;very fine control, if you want it&mdash;and there is even <a href="http://www.lyx.org/">a WYSIWYG editor</a>. On the downside, its syntax is complicated, but I've already mastered it, and so have  many other scientists. More importantly, though, my past attempts to produce pretty HTML from LaTeX using <a href="http://www.latex2html.org/">Latex2Html</a> and <a href="http://plastex.sourceforge.net/">Plastex</a> have been frustrating.</li>
+</ul>
+<p>So, does that mean LaTeX is the right answer? My scoring says I should&mdash;what do you think?</p>

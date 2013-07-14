@@ -1,0 +1,25 @@
+---
+layout: blog
+date: 2012-08-14
+time: 10:00:00
+author: wilson.g
+title: Applying Pedagogical Principles in This Course
+category: [education]
+---
+<p>I've talked a bit about <a href="{{page.root}}/blog/2012/06/if-you-want-to-teach-isnt-it-only-fair-to-learn-a-few-things-first.html">instructional design</a> and <a href="{{page.root}}/blog/2012/05/what-to-read-if-youre-teaching-software-carpentry.html">educational principles</a> in this blog in the past; here's a concrete example of how we try to apply those ideas. As well as teaching the basics of the Bash shell and Python, we also (try to) teach people that <em>every programming system must have:</em></p>
+<ul>
+<li><em>Individual things.</em> A typical "thing" in the shell is a file; in Python, it's a number or string.</li>
+<li><em>Groups of things.</em> In the shell, these are the lines in a file, or the files that match a pattern like <code>*.dat</code>. In Python, they're lists and dictionaries.</li>
+<li><em>Commands that operate on things,</em> like addition or the <code>cp</code> command.</li>
+<li><em>Ways to repeat commands</em>, either explicitly (like <code>for</code> loops in the shell and Python) or implicitly (like <code>wc *.dat</code>).</li>
+<li><em>Ways to make choices</em>, like <code>if</code> statements in Python or file-matching patterns in the shell. (We're <em>not</em> going to try to teach people how to do conditionals in the shell.)</li>
+<li><em>Ways to create chunks</em>, like functions and shell scripts.</li>
+<li><em>Ways to combine those chunks</em>, like function composition and pipes.</li>
+</ul>
+<p>These ideas are <em>connected</em>: groups of things and ways to repeat commands tie together naturally, as do creating functions and combining them. Those connections:</p>
+<ul>
+<li>help people learn: loops are easier to digest when you know that they exist to work on groups of values.</li>
+<li>help people solve problems: if they know how to do something in the shell, they might be able to reason their way to a Python solution by analogy.</li>
+</ul>
+<p>In fact, connections matter as much as facts. What distinguishes experts from novices is not just how many facts the former know, but the density of connections between those facts. The more densely connected someone's knowledge is, the eaiser (and faster) it is for them to bring the next set of facts they need to solve a problem into working memory.</p>
+<p>Another example of how we try to tie ideas together (which we haven't used in courses yet, but should) is the essay on <a href="{{page.root}}/v4/essays/counting.html">counting things</a>. It works through successively more complex scenarios, and uses the shell and SQL as well as Python, to give learners context for complexity. Our biggest goal in the next major revision of the course material is to do more of this: switching to the IPython Notebook will be cool, but putting a sound pedagogical basis under the course will make a much bigger difference.</p>

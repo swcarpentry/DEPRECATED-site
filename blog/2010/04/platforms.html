@@ -1,0 +1,93 @@
+---
+layout: blog
+date: 2010-04-08
+time: 09:00:00
+author: wilson.g
+title: Platforms
+category: [tooling, versions/version-4]
+---
+<p>After <a href="{{page.root}}/blog/2010/04/feedback-and-boundaries.html">Thursday's post-mortem on the latest offering of Software Carpentry</a> at the Universitiy of Toronto, I had a chance to talk further with <a href="http://skoolr.blogspot.com/">Jon Pipitone</a>, who was one of the tutors (and who is just wrapping up an M.Sc. looking at code quality in climate models). We got onto the topic of infrastructure for Version 4, which needs to be settled quickly.</p>
+<ol>
+<li>a way to deliver content to students, including text and images, audio/video, exercises (with solutions), sample data sets, and useful software;</li>
+<li>a way for students to feed questions back to the course organizers (asynchronously through email and bulletin boards and/or synchronously through VoIP and desktop sharing);</li>
+<li>a way for instructors (who may or may not be contributors) to respond to students;</li>
+<li>a way for lay contributors (who may also be students) to offer new content, from pointing out typos to providing exercises or whole new lectures; and</li>
+<li>a way for core contributors to manage and edit contributions, create some of their own, et cetera.</li>
+</ol>
+<p>This description implies some social infrastructure, including:</p>
+<ol type="A">
+<li>some core contributors who are creating lots of course content, and probably teaching the course as well;</li>
+<li>a second tier of instructors who are creating less content but also interacting with students; and</li>
+<li>students, who may be registered in a course of some kind or working through the material on their own (and who may eventually move up to answering others' questions and eventually to creating content).</li>
+</ol>
+<p>This sounds like what you'd find in an open source project (regular users, occasional testers or bug reporters, and contributors) at least as much as it sounds like a traditional college course (students, teaching assistants, and professors). The most important difference is that the divisions between the latter three roles are sharper and deeper than the divisions in open source projects: some undergrad students eventually go to grad school and become TAs, and some of those eventually become faculty, but it's almost unheard of for someone to be in two of those categories at once, or to "bubble up" from one to the next based solely on ability and enthusiasm. That <em>must</em> happen if Software Carpentry is to become self-sustaining: while over 140,000 people have looked at <a href="http://software-carpentry.org">the existing material</a> in the past five years, only three dozen have ever sent bug reports, and only four of those have contributed any substantial content. Whatever we use to accomplish tasks 1-5 above must therefore draw people in and make it easy for them to use, ask, answer, and contribute.</p>
+<p>With that out of the way, here are a few options for discussion:</p>
+<ul>
+<li><strong>Project</strong>: use <a href="http://sourceforge.net">SourceForge</a> or <a href="http://code.google.com">Google Code</a> as a host.</li>
+<li><strong>Retro</strong>: a classic turn-of-the-century web site with static HTML for content, bulletin boards and/or mailing lists for discussion, <a href="http://trac.edgewall.org">Trac</a> with <a href="http://subversion.tigris.org">Subversion</a> for project management.</li>
+<li><strong>Social</strong>: a <a href="http://www.wordpress.com">WordPress</a> blog with lectures and other content as posts (updated several times, with threaded comments for feedback).</li>
+<li><strong>Turnkey</strong>: a fully-fledged learning management system such as <a href="http://moodle.org/">Moodle</a>.</li>
+<li><strong>Wiki</strong>: like Retro, but with the content in a wiki.</li>
+</ul>
+<p>So how do they stack up?</p>
+<table>
+<tbody>
+<tr>
+<td></td>
+<td>Project</td>
+<td>Retro</td>
+<td>Social</td>
+<td>Turnkey</td>
+<td>Wiki</td>
+</tr>
+<tr>
+<td>Easy to set up/administer/maintain?</td>
+<td>+1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>Easy for people to contribute?</td>
+<td>-1</td>
+<td>-1</td>
+<td>0</td>
+<td>-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Comes with everything?</td>
+<td>0</td>
+<td>-1</td>
+<td>0</td>
+<td>+1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Flexible content delivery?</td>
+<td>-1</td>
+<td>0</td>
+<td>-1</td>
+<td>+1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td><strong>Overall</strong></td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>A bit of explanation:</p>
+<ul>
+<li>Project hosting services require little or no setup, but would force us to manage this as a software development project, rather than as a writing project: self-tests and "try this at home" examples aren't built in, and neither of the big open source project hosting sites would be happy if we used them as a video server.</li>
+<li>The "retro" option would require us to "roll our own" on a lot of things, which would be fun (I like to program) but wouldn't directly deliver value to scientists.</li>
+<li>WordPress is easy to set up, but doesn't have very many development-oriented or education-oriented plugins, and isn't designed to host video snippets or live examples. I think that building the course as a blog is a neat idea, but the novelty would soon wear off...</li>
+<li>Learning management systems like <a href="http://moodle.org">Moodle</a> have a lot we don't need (recording grades, for example), but a lot that we do (managing course bundles). I gave this category -1 for ease of setup because I'm unfamiliar with it, and 0 for "easy for people to contribute" because the LMSes I've looked at (<a href="http://atutor.ca/">ATutor</a>, <a href="http://olat.org">OLAT</a>, <a href="http://moodle.org">Moodle</a>, and <a href="http://sakaiproject.org/">Sakai</a>)  all seem to have significant learning overheads for creating content&mdash;they're a bigger hammer than I (think I) need. Of course, that could just be unfamiliarity again...</li>
+<li>A wiki would be easy to set up and maintain, but in my experience, editing large volumes of material in a browser is unpleasant, and there's little support for managing updates, particularly by concurrent authors.</li>
+</ul>
+<p>As always, I'd welcome your thoughts...</p>

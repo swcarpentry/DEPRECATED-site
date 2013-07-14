@@ -1,0 +1,370 @@
+---
+layout: blog
+date: 2012-05-21
+time: 09:00:00
+author: hansen.m
+title: An Exercise With Matplotlib and Numpy
+category: [tutorial]
+---
+<p>[<a href="weather_exercise.zip">Code and Data</a>]</p>
+<p>For this tutorial, we'll be plotting some weather data from a site call <a href="http://www.wunderground.com/">Weather Underground</a>. You can download temperature readings and weather events for your local area in a comma-separated file.</p>
+<p>I've put weather data for Bloomington, IN in a file called <tt>weather.csv</tt>. Each row is one day, and there are columns for min/mean/max temperature, dew point, wind speed, etc. We'll be plotting temperature and weather event data (e.g., rain, snow).</p>
+<p><strong>0. Installing matplotlib</strong></p>
+<p>I covered installing matplotlib in <a href="{{page.root}}/blog/2012/05/an-exercise-with-functions-and-plotting.html">a previous tutorial</a>. The matplotlib site also has <a href="http://matplotlib.sourceforge.net/users/installing.html">installation instructions</a>. I'll assume for the rest of the tutorial that you have matplotlib installed and working. If you can type this code at a Python shell:</p>
+<pre>from matplotlib import pyplot</pre>
+<p>and not receive any errors, then you're good to go.</p>
+<p><strong>1. Numpy Crash Course</strong></p>
+<p>The <a href="http://scipy.org/Getting_Started">numpy module</a> is how you do matrix-y stuff in Python. I'll give a quick example of why we'll need it. Imagine you were to type the following code into a Python shell:</p>
+<pre>x = [1, 2, 3, 4]
+print x * 5</pre>
+<p>What does this print? Why, this of course:</p>
+<pre>[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]</pre>
+<p>By default, the <tt>*</tt> operator in Python copies the contents of a list however many times you specify. So <tt>x * 5</tt> copied the contents of <tt>x</tt> five times and stuck them all together.</p>
+<p>When we're doing matrix math in Python, it would be nicer if <tt>x * 5</tt> produced <tt>[5, 10, 15, 20]</tt>. We could do this manually with a loop:</p>
+<pre>for i in range(len(x)):
+    x[i] = x[i] * 5</pre>
+<p>We could even get fancy with Python's <a href="http://docs.python.org/tutorial/datastructures.html#list-comprehensions">list comprehension</a> syntax:</p>
+<pre>x = [x_i * 5 for x_i in x]</pre>
+<p>For a list with only four elements, this won't be so bad. For larger lists, however, it will be quite slow. Using <tt>numpy</tt> avoids the performance hit by doing the heavy lifting in C instead of in Python. Here's how we'd do the previous example with <tt>numpy</tt>:</p>
+<pre>import numpy as np
+x = np.array([1, 2, 3, 4])
+x = x * 5
+print x</pre>
+<p>This prints <tt>array([ 5, 10, 15, 20])</tt> which is what we would expect. The <tt>array(...)</tt> lets you know that <tt>x</tt> is a <tt>numpy</tt> array. Onward!</p>
+<p><strong>2. Reading the Data</strong></p>
+<p>As with many programming problems, our first step is to read the data into memory. I've started a script called <tt>plot_data.py</tt> with a few <tt>import</tt> statements and some utility functions. I'll explain these functions in detail as we go forward.</p>
+<pre>import numpy as np
+import matplotlib.pyplot as pyplot
+from datetime import datetime
+import os
+
+event_types = ['Rain', 'Thunderstorm', 'Snow', 'Fog']
+num_events = len(event_types)
+
+def event2int(event):
+    return event_types.index(event)
+
+def date2int(date_str):
+    date = datetime.strptime(date_str, '%Y-%m-%d')
+    return date.toordinal()
+
+def r_squared(actual, ideal):
+    actual_mean = np.mean(actual)
+    ideal_dev = np.sum([(val - actual_mean)**2 for val in ideal])
+    actual_dev = np.sum([(val - actual_mean)**2 for val in actual])
+
+    return ideal_dev / actual_dev</pre>
+<p>In past tutorials, we've either manually parsed our data file(s) or used Python's <a href="http://docs.python.org/library/csv.html#csv.reader">csv reader</a>. Because of our focus on <tt>numpy</tt> here, we're going to use the <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html">loadtxt function</a>. By passing in the right options, we can get <tt>loadtxt</tt> to parse our <tt>weather.csv</tt> file directly into a <tt>numpy</tt> array.</p>
+<p>For a first pass, I've written the following function to read in the weather data:</p>
+<pre>def read_weather(file_name):
+
+    data = np.loadtxt(file_name, delimiter=',', skiprows=1,
+            converters = { 0 : date2int },
+            usecols=(0,1,2,3,21))
+
+    return data
+
+#--------------------------------------------------
+
+data = read_weather('data/weather.csv')
+print data</pre>
+<p>The first two parameters, <tt>delmiter</tt> and <tt>skiprows</tt> tell <tt>loadtxt</tt> to split fields based on commas and skip the first row of the file (which contains column names). <tt>numpy</tt> doesn't handle dates, so I've used the <tt>converters</tt> parameter to have have <tt>loadtxt</tt> convert column 0 (a date string) into an integer using my <tt>date2int</tt> function. The last parameter, <tt>usecols</tt>, tells <tt>loadtxt</tt> to ignore all columns in the file <em>except</em> the first, second, third, forth, and twenty-second column (the date, temperature, and weather event columns).</p>
+<p>Unfortunately, running this code produces the following error:</p>
+<pre>$ python plot_data.py
+Traceback (most recent call last):
+  File &quot;plot_data-2.py&quot;, line 34, in &lt;module&gt;
+    data = read_weather(&quot;data/weather.csv&quot;)
+  File &quot;plot_data-2.py&quot;, line 28, in read_weather
+    usecols=(0,1,2,3,21))
+  File &quot;/usr/lib/python2.7/dist-packages/numpy/lib/npyio.py&quot;, line 796, in loadtxt
+    items = [conv(val) for (conv, val) in zip(converters, vals)]
+ValueError: could not convert string to float: Rain</pre>
+<p>The final line tells us that <tt>numpy</tt> can't convert the string "Rain" into a floating point number. This is from the weather events column in our data, which contains text like "Rain" or "Snow-Fog". We could try and write a converter for this column too, but I've chosen to simply have <tt>numpy</tt> bring the column in as a string (which we'll manually parse later).</p>
+<p>To do this, we pass in a special object for the <tt>dtype</tt> parameter of <tt>loadtxt</tt>. This object can be constructed by giving a dictionary to the <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.dtype.html">numpy.dtype</a> function. The code below provides names and data types for all of the columns we'll be using:</p>
+<pre>def read_weather(file_name):
+    dtypes = np.dtype({ 'names' : ('timestamp', 'max temp', 'mean temp', 'min temp', 'events'),
+                        'formats' : [np.int, np.float, np.float, np.float, 'S100'] })
+
+    data = np.loadtxt(file_name, delimiter=',', skiprows=1,
+            converters = { 0 : date2int },
+            usecols=(0,1,2,3,21), dtype=dtypes)
+
+    return data</pre>
+<p>The last column format is given as "S100", which means "string up to 100 characters in length." <tt>numpy</tt> needs to know the maximum size of the column for efficiency, so I gave myself plenty of room with 100 characters. Running this new code produces the following output:</p>
+<pre>$ python plot_data.py
+[(734503, 53.0, 43.0, 32.0, 'Rain') (734504, 32.0, 25.0, 18.0, 'Snow')
+ (734505, 27.0, 20.0, 12.0, '') (734506, 42.0, 34.0, 26.0, '')
+ (734509, 52.0, 40.0, 28.0, '') (734510, 47.0, 36.0, 24.0, '')
+ (734511, 51.0, 38.0, 24.0, '') (734512, 57.0, 43.0, 28.0, '')
+ (734513, 45.0, 43.0, 40.0, 'Rain') (734514, 43.0, 29.0, 15.0, 'Fog-Snow')
+ (734515, 19.0, 17.0, 15.0, 'Snow') (734516, 27.0, 18.0, 9.0, 'Snow')
+ ...</pre>
+<p>We're finally in business. Each row in our data set consists of a timestamp (the date converted to an integer), the maximum, mean, and minimum temperature, and the weather events that occurred that day. We're going to start by plotting the mean temperature versus the day of the year. Since we've given names to each of our columns, we can pull them out easily:</p>
+<pre>def read_weather(file_name):
+    dtypes = np.dtype({ 'names' : ('timestamp', 'max temp', 'mean temp', 'min temp', 'events'),
+                        'formats' : [np.int, np.float, np.float, np.float, 'S100'] })
+
+    data = np.loadtxt(file_name, delimiter=',', skiprows=1,
+            converters = { 0 : date2int },
+            usecols=(0,1,2,3,21), dtype=dtypes)
+
+    return data
+
+#--------------------------------------------------
+
+data = read_weather('data/weather.csv')
+min_temps = data['min temp']
+mean_temps = data['mean temp']
+max_temps = data['max temp']
+dates = [datetime.fromordinal(d) for d in data['timestamp']]
+events = data['events']
+
+for date, temp in zip(dates, mean_temps):
+    print '{0:%b %d}: {1}'.format(date, temp)</pre>
+<p>Each column can be extract individually from the <tt>data</tt> array by using <tt>data['column name']</tt>. I've used the <a href="http://docs.python.org/library/datetime.html#datetime.date.fromordinal">datetime.fromordinal</a> function on the <tt>timestamp</tt> column to convert the integers back into <a href="http://docs.python.org/library/datetime.html#datetime-objects">datetime objects</a>.</p>
+<p>Using the handy built-in <a href="http://docs.python.org/library/functions.html#zip">zip</a> function, I've printed out pairs of dates and mean temperatures. I use <a href="http://www.python.org/dev/peps/pep-3101/">advanced string formatting</a> to print the month, day, and temperature (see the <a href="http://docs.python.org/library/datetime.html#strftime-and-strptime-behavior">datetime documentation</a> for date formatting information). The program now gives the following output:</p>
+<pre>Jan 01: 43.0
+Jan 02: 25.0
+Jan 03: 20.0
+Jan 04: 34.0
+...
+May 11: 59.0
+May 12: 62.0
+May 14: 69.0</pre>
+<p>Everything looks good, so let's get started plotting.</p>
+<p><strong>3. Temperature Plot</strong></p>
+<p>We're going to start with a simple line plot that has the day of the year on the x-axis and the mean temperature for that day on the y-axis. Our plotting function, called <tt>temp_plot</tt>, will take in dates and times, and give us back a <tt>matplotlib</tt> figure object. Here's the code:</p>
+<pre>def temp_plot(dates, mean_temps):
+
+    year_start = datetime(2012, 1, 1)
+    days = [(d - year_start).days + 1 for d in dates]
+
+    fig = pyplot.figure()
+    pyplot.title('Temperatures in Bloomington 2012')
+    pyplot.ylabel('Mean Temperature (F)')
+    pyplot.xlabel('Day of Year')
+
+    pyplot.plot(days, mean_temps, marker='o')
+
+    return fig</pre>
+<p>We start by computing the day of the year for each date. The <tt>datetime</tt> module lets us subtract dates from each other, producing a <a href="http://docs.python.org/library/datetime.html#timedelta-objects">timedelta</a> object. We subtract each date from January 1st of 2012, adding 1 so that our count will start from 1 instead of 0. The <tt>days</tt> field on a <tt>timedelta</tt> object gives the total number of days (in this case, from January 1st).</p>
+<p>Next, we create a new <tt>matplotlib</tt> figure. In between calls to <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.figure">pyplot.figure</a>, <tt>matplotlib's</tt> plotting functions will draw new plots on top of old ones. We'll use this fact to add a trend line to our plot shortly.</p>
+<p>After adding a title and some axis labels to our figure, we call <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.plot">pyplot.plot</a> with our <tt>days</tt> (x values) and <tt>mean_temps</tt> arrays (y values). I've also passed in 'o' to the optional <tt>marker</tt> parameter so that small circles will be plotted for each data point.</p>
+<p>In the main body of the program, we use the <tt>os</tt> module to create a "plots" directory (checking if it exists first). Next, we call our <tt>temp_plot</tt> function and then use <a href="http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure.savefig">savefig</a> to save the figure out to a png file:</p>
+<pre>data = read_weather('data/weather.csv')
+min_temps = data['min temp']
+mean_temps = data['mean temp']
+max_temps = data['max temp']
+dates = [datetime.fromordinal(d) for d in data['timestamp']]
+events = data['events']
+
+if not os.path.exists('plots'):
+    os.mkdir('plots')
+
+fig = temp_plot(dates, mean_temps)
+fig.savefig('plots/day_vs_temp.png')</pre>
+<p>Running <tt>$ python plot_data.py</tt> should create a "plots" folder and put a file inside called "day_vs_temp.png" that looks like this:</p>
+<p><img src="day_vs_temp-5.png" title="day_vs_temp" width="600" /></p>
+<p>Not bad! Let's add a trend line to the plot based on a simple linear model of the data.</p>
+<p><strong>3.1 Adding a trend line</strong></p>
+<p>By using <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html">numpy's polyfit function</a>, adding a trend line is a snap. This function takes our x and y values (<tt>days</tt> and <tt>mean_temps</tt>), and gives us back a slope and intercept (the final parameter is the degree of the fitted polynomial &mdash; we pass 1 for a linear fit).</p>
+<pre>slope, intercept = np.polyfit(days, mean_temps, 1)</pre>
+<p>Using the slope and intercept, we can plot a trend line by computing "ideal" temperatures for each day according to the old <tt>y = mx + b</tt> formula. With our variables below, this will be <tt>ideal_temps = (slope * days) + intercept</tt>. Note that I've changed the <tt>days = ...</tt> line to <tt>days = np.array(...)</tt> so that we can do mathematical operations directly on the array.</p>
+<pre>def temp_plot(dates, mean_temps):
+
+    year_start = datetime(2012, 1, 1)
+    days = np.array([(d - year_start).days + 1 for d in dates])
+
+    fig = pyplot.figure()
+    pyplot.title('Temperatures in Bloomington 2012')
+    pyplot.ylabel('Mean Temperature (F)')
+    pyplot.xlabel('Day of Year')
+
+    pyplot.plot(days, mean_temps, marker='o')
+
+    slope, intercept = np.polyfit(days, mean_temps, 1)
+    ideal_temps = intercept + (slope * days)
+    r_sq = r_squared(mean_temps, ideal_temps)
+
+    fit_label = 'Linear fit ({0:.2f})'.format(slope)
+    pyplot.plot(days, ideal_temps, color='red', linestyle='--', label=fit_label)
+    pyplot.annotate('r^2 = {0:.2f}'.format(r_sq), (0.05, 0.9), xycoords='axes fraction')
+    pyplot.legend(loc='lower right')
+
+    return fig</pre>
+<p>To make the plot a little more useful, I've annotated the plot with the R-squared value of the fit. <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.annotate">pyplot.annotate</a> lets you put text on the figure in a variety of ways. Here, I've set the <tt>xycoords</tt> parameter to "axes fraction" so that <tt>annotate</tt> interprets my coordinates (0.05, 0.9) as fractions between 0 and 1 relative to the figure axes. The (0.05, 0.9) means to place the text horizontally 5% from the y-axis (left) and 90% from the x-axis (bottom).</p>
+<p>The final call to <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.legend">pyplot.legend</a> places a legend on the figure. You <em>must</em> include a <tt>label</tt> parameter on at least one plot object for this to work (I've included it on the trend line <tt>plot</tt> call). By default, the legend will show up in the upper-right corner of the figure. This will get in the way on our current plot, so I moved the figure to the lower-right with the <tt>loc</tt> parameter.</p>
+<p>With the changes above, here's the new plot:</p>
+<p><img src="day_vs_temp-6.png" /></p>
+<p>Notice that the string formatting (<tt>{0:.3f}</tt>) has rounded the R-squared value and slope label for us to three decimal places.</p>
+<p><strong>3.2 Adding "error" bars</strong></p>
+<p>Since we also have the min and max temperatures in our data, let's add "error" bars to our plot to show the temperature range on each day. We'll modify <tt>temp_plot</tt> to take in two additional parameters (<tt>min_temps</tt> and <tt>max_temps</tt>), and plot the temperature range if they both have values (i.e., are not <tt>None</tt>).</p>
+<p>Adding error bars requires us to use the <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.errorbar">pyplot.errorbar</a> function instead of <tt>pyplot.plot</tt>. It takes additional parameters (<tt>xerr</tt> and <tt>yerr</tt>) for the x and y errors. We will use <tt>yerr</tt>, and pass in an array with two rows: one for error above each data point, and one for the error below. This array is easily computed by subtracting the max and min temperatures from the mean, and then stacking the two arrays together row-wise with <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html">numpy.vstack</a>.</p>
+<pre>def temp_plot(dates, mean_temps, min_temps = None, max_temps = None):
+
+    year_start = datetime(2012, 1, 1)
+    days = np.array([(d - year_start).days + 1 for d in dates])
+
+    fig = pyplot.figure()
+    pyplot.title('Temperatures in Bloomington 2012')
+    pyplot.ylabel('Mean Temperature (F)')
+    pyplot.xlabel('Day of Year')
+
+    if (max_temps is None or min_temps is None):
+        # Normal plot without error bars
+        pyplot.plot(days, mean_temps, marker='o')
+    else:
+        # Compute min/max temperature difference from the mean
+        temp_err = np.row_stack((mean_temps - min_temps,
+                                 max_temps - mean_temps))
+
+        # Make line plot with error bars to show temperature range
+        pyplot.errorbar(days, mean_temps, marker='o', yerr=temp_err)
+        pyplot.title('Temperatures in Bloomington 2012 (max/min)')
+
+    slope, intercept = np.polyfit(days, mean_temps, 1)
+    ideal_temps = intercept + (slope * days)
+    r_sq = r_squared(mean_temps, ideal_temps)
+
+    fit_label = 'Linear fit ({0:.2f})'.format(slope)
+    pyplot.plot(days, ideal_temps, color='red', linestyle='--', label=fit_label)
+    pyplot.annotate('r^2 = {0:2f}'.format(r_sq), (0.05, 0.9), xycoords='axes fraction')
+    pyplot.legend(loc='lower right')
+
+    return fig
+
+#--------------------------------------------------
+
+data = read_weather('data/weather.csv')
+min_temps = data['min temp']
+mean_temps = data['mean temp']
+max_temps = data['max temp']
+dates = [datetime.fromordinal(d) for d in data['timestamp']]
+events = data['events']
+
+if not os.path.exists('plots'):
+    os.mkdir('plots')
+
+# Plot without error bars
+fig = temp_plot(dates, mean_temps)
+fig.savefig('plots/day_vs_temp.png')
+
+# Plot with error bars
+fig = temp_plot(dates, mean_temps, min_temps, max_temps)
+fig.savefig('plots/day_vs_temp-all.png')</pre>
+<p>The new plot is saved to a file named <tt>day_vs_temp-all.png</tt> and looks like this:</p>
+<p><img src="day_vs_temp-all.png" /></p>
+<p>If you need to compute standard error for your <tt>errorbar</tt> plot, you can use <a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.sem.html#scipy.stats.sem">scipy.stats.sem</a> from the <a href="http://www.scipy.org/">scipy module</a>.</p>
+<p>For our next plot, we'll do a multi-part histogram of the weather events for each month.</p>
+<p><strong>4. Event Histogram</strong></p>
+<p>Histograms in <tt>matplotlib</tt> are generated using the <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.hist">pyplot.hist</a> function. This function takes an array of data, which can itself contain arrays (for a multi-part histogram). We want to count events per month, so we'll need to create an array for each type of event. Inside these arrays will be observations like <tt>[1, 1, 2, 3, 3]</tt> for "January", "January", "February", "March", "March". Here's a diagram to help out:</p>
+<p><img src="events.png" /></p>
+<p>When <tt>pyplot.hist</tt> receives our data, it will attempt to "bin" the month observations automatically. By default, it will break observations into 10 bins. We want a bin for each month instead, and we want the bins aligned properly to the month numbers (1 = January, 2 = February, etc.). The <tt>bins</tt> parameter to <tt>pyplot.hist</tt> takes either a number (representing the desired number of bins) or a sequence (representing the desired bin <em>edges</em>). In the code below, we pass <tt>range(1, 5 + 2)</tt> to ensure that our bins start at 1 (for January) and go <em>through</em> 5 (for May).</p>
+<pre>def hist_events(dates, events):
+    event_months = []
+
+    for i in range(num_events):
+        event_months.append([])
+
+    # Build up lists of months where events occurred
+    for date, event_str in zip(dates, events):
+        if len(event_str) == 0:
+            # Skip blank events
+            continue
+
+        month = date.month
+
+        # Multiple events in a day are separated by '-'
+        for event in event_str.split('-'):
+            event_code = event2int(event)
+            event_months[event_code].append(month)
+
+    # Plot histogram
+    fig = pyplot.figure()
+    pyplot.title('Weather Events in Bloomington 2012')
+    pyplot.xlabel('Month')
+    pyplot.ylabel('Event Count')
+
+    bins = np.arange(1, 5 + 2)
+    pyplot.hist(event_months, bins=bins, label=event_types)
+
+    pyplot.legend()
+
+    return fig</pre>
+<p>The main body of the program is updated to call <tt>hist_events</tt> and save the resulting figure to <tt>plots/event_histogram.png</tt>.</p>
+<pre>data = read_weather('data/weather.csv')
+min_temps = data['min temp']
+mean_temps = data['mean temp']
+max_temps = data['max temp']
+dates = [datetime.fromordinal(d) for d in data['timestamp']]
+events = data['events']
+
+if not os.path.exists('plots'):
+    os.mkdir('plots')
+
+fig = temp_plot(dates, mean_temps)
+fig.savefig('plots/day_vs_temp.png')
+
+fig = temp_plot(dates, mean_temps, min_temps, max_temps)
+fig.savefig('plots/day_vs_temp-all.png')
+
+fig = hist_events(dates, events)
+fig.savefig(os.path.join('plots', 'event_histogram.png'))</pre>
+<p>When we run <tt>$ python plot_data.py</tt>, the new plot looks like this:</p>
+<p><img src="event_histogram-8.png" /></p>
+<p>Each collection of bars represents a month, and the individual bars represent the number of Rain, Thunderstorm, etc. events observed for that month. The figure's legend was populated by passing <tt>event_types</tt> in for the <tt>label</tt> parameter of <tt>pyplot.hist</tt>.</p>
+<p>The plot looks good, but it would be nice to properly label the months. We could do this manually with <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.xticks">pyplot.xticks</a> as follows:</p>
+<pre>pyplot.xticks( (1.5, 2.5, 3.5, 4.5, 5.5), ('January', 'February', 'March', 'April', 'May') )</pre>
+<p>This will label each bin in the center (hence the .5 added to each number) with the proper month name. If our data grows to include more months, however, we'll have to manually extend the number of bins and our labels. Let's change <tt>hist_events</tt> to keep track of the range of months in the data. Additionally, we'll use Python's <a href="http://docs.python.org/library/calendar.html">calendar</a> module to automatically get the month names.</p>
+<p>At the top of the program, we'll import the <tt>calendar</tt> module:</p>
+<pre>import calendar</pre>
+<p>and then redefine <tt>hist_events</tt> as follows:</p>
+<pre>def hist_events(dates, events):
+    event_months = []
+
+    for i in range(num_events):
+        event_months.append([])
+
+    # Build up lists of months where events occurred
+    min_month = 13
+    max_month = 0
+
+    for date, event_str in zip(dates, events):
+        if len(event_str) == 0:
+            # Skip blank events
+            continue
+
+        month = date.month
+        min_month = min(month, min_month)
+        max_month = max(month, max_month)
+
+        # Multiple events in a day are separated by '-'
+        for event in event_str.split('-'):
+            event_code = event2int(event)
+            event_months[event_code].append(month)
+
+    # Plot histogram
+    fig = pyplot.figure()
+    pyplot.title('Weather Events in Bloomington 2012')
+    pyplot.xlabel('Month')
+    pyplot.ylabel('Event Count')
+    pyplot.axes().yaxis.grid()
+
+    num_months = max_month - min_month + 1;
+    bins = np.arange(1, num_months + 2)  # Bin edges
+    pyplot.hist(event_months, bins=bins, label=event_types)
+
+    # Align month labels to bin centers
+    month_names = calendar.month_name[min_month:max_month+1]
+    pyplot.xticks(bins + 0.5, month_names)
+
+    pyplot.legend()
+
+    return fig</pre>
+<p>During the process of building our observation arrays, we now track the minimum and maximum months observed. This allows us to automatically create our bin edges, and let's us grab months names from the <tt>calendar</tt> module by indexing into the <tt>calendar.month_name</tt> list. </p>
+<p>Note that the <tt>bins</tt> variables was created using <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html">numpy.arange</a>, which is a shortcut for <tt>bins = numpy.array(range(1, num_months + 2))</tt>. Making <tt>bins</tt> a <tt>numpy</tt> array lets us call <tt>pyplot.xticks</tt> with <tt>bins + 0.5</tt>, centering <tt>month_names</tt> on each bin.</p>
+<p>As a bonus, I've also added a horizontal grid using the <a href="http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Axis.grid">axis.grid</a> function. You can add both a horizontal and vertical grid at the same time by calling <a href="http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.grid">pyplot.grid</a>.</p>
+<p>Here's the updated plot:</p>
+<p><img src="event_histogram.png" /></p>
+<p>Looks ready for publication!</p>
+<p>[<a href="weather_exercise.zip">Code and Data</a>]</p>

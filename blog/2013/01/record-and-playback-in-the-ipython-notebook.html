@@ -1,0 +1,34 @@
+---
+layout: blog
+author: wilson.g
+title: Record and Playback in the IPython Notebook
+date: 2013-01-22
+time: 09:00:00
+category: [tooling]
+---
+
+<p>We decided last fall to start teaching Python using the <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython Notebook</a> rather than a plain old command-line interpreter.  It will take us a few months to complete the transition, but one of the things that we're hoping to do in the meanwhile is build a record-and-playback plugin for the Notebook.  We think this will be more useful than the screencasts we currently have because:</p>
+
+<ol>
+  <li>People can't pause a video, then copy and paste its text, because there is no text: there are just pixels arranged to look like letters.</li>
+  <li>For the same reason, the code in videos is invisible to search engines.</li>
+  <li>We can't diff and merge videos in version control the way we can diff and merge source code and Notebooks.</li>
+  <li>Video is inherently less adaptable to new platforms (e.g., tablets and smart phones) than first-class content that's rendered by the devices themselves.</li>
+</ol>
+
+<p>As we explain in <a href="https://github.com/ipython/ipython/issues/2832">the issue we've opened for it on GitHub</a>, the workflow we envision is:</p>
+
+<ol>
+  <li>Author spends minutes, hours, or days incrementally building up the notebook.</li>
+  <li>Author puts notebook in "mark time" mode.</li>
+  <li>Author records audio her favorite desktop tool while clicking "next" in the notebook to insert time marks into metadata.</li>
+  <li>Author saves audio and inserts URL into notebook.</li>
+  <li>Time passes.</li>
+  <li>Audience opens notebook in browser (either a local or web copy&mdash;the audio file may be local or web as well).</li>
+  <li>Audience presses "Play".</li>
+  <li>Notebook incrementally reconstructs itself in sync with voiceover.</li>
+  <li>Audience can use "Rewind", "Fast Forward", "Pause", "Go To Cell" (jumps the audio) or "Go To Time" (jumps the notebook) at will.</li>
+</ol>
+
+<p>We'd welcome your input: if you have any thoughts on design, interface, or implementation, please add comments to <a href="https://github.com/ipython/ipython/issues/2832">the issue</a>.</p>
+

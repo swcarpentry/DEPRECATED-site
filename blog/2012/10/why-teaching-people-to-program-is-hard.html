@@ -1,0 +1,380 @@
+---
+layout: blog
+author: wilson.g
+title: Why Teaching People to Program Is Hard
+date: 2012-10-21
+time: 09:00:00
+category: [education]
+---
+<p><em>Update: it's clear from comments that I explained myself 
+poorly in this post. We don't ever teach by starting with a big example 
+like the one below&mdash;we start with basic arithmetic, then assignment, then
+ lists and loops, and so on. (See <a href="{{page.root}}/v4/python/">our Python lectures</a>
+ for details.) What I was trying to show was that by the time we reach a
+ realistic example, students have to interleave those concepts in a very
+ fine-grained way, i.e., if they'd been taking notes in the order in 
+which we taught things, they'd have to flip back and forth through those
+ notes constantly in order to make sense of things. That "cognitive 
+assembly" is an extra burden on novices.</em></p>
+<p><em>Another way to think of it is this: coarse-grained interleaving 
+like 'AAAABBBBCCCCDDDD' is easy to understand, and so is regular 
+fine-grained interleaving like 'ABCDABCDABCDABCD', but we're asking 
+learners to take the ABCD's we've shown them and put them together as 
+'ABADCCDABBDCCABD'.</em></p>
+<p>Let me show you why it's hard to teach 
+people how to program. Our starting point is a Python program that grabs
+ annual average temperatures for a couple of countries from the World 
+Bank's site and calculates displays their ratio of one to the other. 
+(The story we tell is that a climate scientist is trying to figure out 
+whether global warming is happening faster in Canada than in Australia, 
+or vice versa.) Here's the program:</p>
+<pre>01  import sys
+02  import urllib2
+03  import json
+04
+05  def kelvin(celsius):
+06      '''Convert degrees C to degrees K.'''
+07      return celsius + 273.15
+08
+09  def get_temps(country_code):
+10      '''Get annual temperatures for a country.'''
+11      url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'
+12      u = url % country_code
+13      connection = urllib2.urlopen(u)
+14      raw = connection.read()
+15      structured = json.loads(raw)
+16      connection.close()
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+21      return result
+22
+23  def main(first_country, second_country):
+24      '''Show ratio of average temperatures for two countries over time.'''
+25      first = get_temps(first_country)
+26      second = get_temps(second_country)
+27      assert len(first) == len(second), 'Length mis-match in results'
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+33  if __name__ == '__main__':
+34      first_country = 'AUS'
+35      second_country = 'CAN'
+36      if len(sys.argv) &gt; 1:
+37          first_country = sys.argv[1]
+38      if len(sys.argv) &gt; 2:
+39          second_country = sys.argv[2]
+40      main(first_country, second_country)</pre>
+<p>Lesson 1 in any programming class covers basic data types (int, float string), variables, assignment, the <code>print</code> statement, and basic arithmetic. Which lines of this program can we understand if those are the only concepts we have?</p>
+<pre>01  import sys
+02  import urllib2
+03  import json
+04
+05  def kelvin(celsius):
+06      '''Convert degrees C to degrees K.'''
+07      return celsius + 273.15
+08
+09  def get_temps(country_code):
+10      '''Get annual temperatures for a country.'''
+11      url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'
+12      u = url % country_code
+13      connection = urllib2.urlopen(u)
+14      raw = connection.read()
+15      structured = json.loads(raw)
+16      connection.close()
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+21      return result
+22
+23  def main(first_country, second_country):
+24      '''Show ratio of average temperatures for two countries over time.'''
+25      first = get_temps(first_country)
+26      second = get_temps(second_country)
+27      assert len(first) == len(second), 'Length mis-match in results'
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+33  if __name__ == '__main__':
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+36      if len(sys.argv) &gt; 1:
+37          first_country = sys.argv[1]
+38      if len(sys.argv) &gt; 2:
+39          second_country = sys.argv[2]
+40      main(first_country, second_country)</pre>
+<p>That's right: two lines out of 36 non-blank lines. There <em>is</em> 
+one other statement in the program that does a simple assignment (line 
+11), but the string that's being assigned contains '%s', because it's 
+used as a formatting template on the very next line, and we haven't 
+covered string formatting yet.</p>
+<p>OK, let's move on to lesson 2: lists, indexing, and <code>for</code> loops. How much can we understand now?</p>
+<pre>01  import sys
+02  import urllib2
+03  import json
+04
+05  def kelvin(celsius):
+06      '''Convert degrees C to degrees K.'''
+07      return celsius + 273.15
+08
+09  def get_temps(country_code):
+10      '''Get annual temperatures for a country.'''
+11      url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'
+12      u = url % country_code
+13      connection = urllib2.urlopen(u)
+14      raw = connection.read()
+15      structured = json.loads(raw)
+16      connection.close()
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+21      return result
+22
+23  def main(first_country, second_country):
+24      '''Show ratio of average temperatures for two countries over time.'''
+25      first = get_temps(first_country)
+26      second = get_temps(second_country)
+27      assert len(first) == len(second), 'Length mis-match in results'
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+33  if __name__ == '__main__':
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+36      if len(sys.argv) &gt; 1:
+37          first_country = sys.argv[1]
+38      if len(sys.argv) &gt; 2:
+39          second_country = sys.argv[2]
+40      main(first_country, second_country)</pre>
+<p>That didn't help much. There are plenty of places where we subscript,
+ but the thing being subscripted is always either a dictionary or <code>sys.argv</code>, neither of which we've covered. We <em>could</em>
+ change the order in which we teach things in order to get more coverage
+ early on, but that would be cheating: I'm deliberately sticking to our 
+usual order, and using an example that shows what a real scientist might
+ want to use Python for in real life.</p>
+<p>Lesson 3 is typically all about functions, and since we're trying to 
+teach people good programming practice, we'll introduce docstrings and 
+assertions at the same time. And if we're doing that, let's throw string
+ formatting into the mix, which gives us:</p>
+<pre>01  import sys
+02  import urllib2
+03  import json
+04
+<span style="background-color: #d0f0f0;">05 def kelvin(celsius):</span>
+<span style="background-color: #d0f0f0;">06 '''Convert degrees C to degrees K.'''</span>
+<span style="background-color: #d0f0f0;">07 return celsius + 273.15</span>
+08
+<span style="background-color: #d0f0f0;">09 def get_temps(country_code):</span>
+<span style="background-color: #d0f0f0;">10 '''Get annual temperatures for a country.'''</span>
+<span style="background-color: #d0f0f0;">11 url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'</span>
+<span style="background-color: #d0f0f0;">12 u = url % country_code</span>
+13      connection = urllib2.urlopen(u)
+14      raw = connection.read()
+15      structured = json.loads(raw)
+16      connection.close()
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+<span style="background-color: #d0f0f0;">21 return result</span>
+22
+<span style="background-color: #d0f0f0;">23 def main(first_country, second_country):</span>
+<span style="background-color: #d0f0f0;">24 '''Show ratio of average temperatures for two countries over time.'''</span>
+<span style="background-color: #d0f0f0;">25 first = get_temps(first_country)</span>
+<span style="background-color: #d0f0f0;">26 second = get_temps(second_country)</span>
+<span style="background-color: #d0f0f0;">27 assert len(first) == len(second), 'Length mis-match in results'</span>
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+33  if __name__ == '__main__':
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+36      if len(sys.argv) &gt; 1:
+37          first_country = sys.argv[1]
+38      if len(sys.argv) &gt; 2:
+39          second_country = sys.argv[2]
+<span style="background-color: #d0f0f0;">40 main(first_country, second_country)</span></pre>
+<p>16 out of 36 lines after three lessons might feel like progress, but 
+there's still only one lump of the program (the Celsius to Kelvin 
+conversion function) that we understand in its entirety. Let's throw 
+libraries into the mix as lesson 4 and see what happens once learners 
+have <code>this.that</code>, <code>sys.argv</code>, and <code>__name__</code> in their heads:</p>
+<pre><span style="background-color: #f0d0f0;">01 import sys</span>
+<span style="background-color: #f0d0f0;">02 import urllib2</span>
+<span style="background-color: #f0d0f0;">03 import json</span>
+04
+<span style="background-color: #d0f0f0;">05 def kelvin(celsius):</span>
+<span style="background-color: #d0f0f0;">06 '''Convert degrees C to degrees K.'''</span>
+<span style="background-color: #d0f0f0;">07 return celsius + 273.15</span>
+08
+<span style="background-color: #d0f0f0;">09 def get_temps(country_code):</span>
+<span style="background-color: #d0f0f0;">10 '''Get annual temperatures for a country.'''</span>
+<span style="background-color: #d0f0f0;">11 url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'</span>
+<span style="background-color: #d0f0f0;">12 u = url % country_code</span>
+<span style="background-color: #f0d0f0;">13 connection = urllib2.urlopen(u)</span>
+<span style="background-color: #f0d0f0;">14 raw = connection.read()</span>
+<span style="background-color: #f0d0f0;">15 structured = json.loads(raw)</span>
+<span style="background-color: #f0d0f0;">16 connection.close()</span>
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+<span style="background-color: #d0f0f0;">21 return result</span>
+22
+<span style="background-color: #d0f0f0;">23 def main(first_country, second_country):</span>
+<span style="background-color: #d0f0f0;">24 '''Show ratio of average temperatures for two countries over time.'''</span>
+<span style="background-color: #d0f0f0;">25 first = get_temps(first_country)</span>
+<span style="background-color: #d0f0f0;">26 second = get_temps(second_country)</span>
+<span style="background-color: #d0f0f0;">27 assert len(first) == len(second), 'Length mis-match in results'</span>
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+<span style="background-color: #f0d0f0;">33 if __name__ == '__main__':</span>
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+36      if len(sys.argv) &gt; 1:
+<span style="background-color: #f0d0f0;">37 first_country = sys.argv[1]</span>
+38      if len(sys.argv) &gt; 2:
+<span style="background-color: #f0d0f0;">39 second_country = sys.argv[2]</span>
+<span style="background-color: #d0f0f0;">40 main(first_country, second_country)</span></pre>
+<p>And now conditionals as lesson 5:</p>
+<pre><span style="background-color: #f0d0f0;">01 import sys</span>
+<span style="background-color: #f0d0f0;">02 import urllib2</span>
+<span style="background-color: #f0d0f0;">03 import json</span>
+04
+<span style="background-color: #d0f0f0;">05 def kelvin(celsius):</span>
+<span style="background-color: #d0f0f0;">06 '''Convert degrees C to degrees K.'''</span>
+<span style="background-color: #d0f0f0;">07 return celsius + 273.15</span>
+08
+<span style="background-color: #d0f0f0;">09 def get_temps(country_code):</span>
+<span style="background-color: #d0f0f0;">10 '''Get annual temperatures for a country.'''</span>
+<span style="background-color: #d0f0f0;">11 url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'</span>
+<span style="background-color: #d0f0f0;">12 u = url % country_code</span>
+<span style="background-color: #f0d0f0;">13 connection = urllib2.urlopen(u)</span>
+<span style="background-color: #f0d0f0;">14 raw = connection.read()</span>
+<span style="background-color: #f0d0f0;">15 structured = json.loads(raw)</span>
+<span style="background-color: #f0d0f0;">16 connection.close()</span>
+17      result = {}
+18      for entry in structured:
+19          year, celsius = entry['year'], entry['data']
+20          result[year] = kelvin(celsius)
+<span style="background-color: #d0f0f0;">21 return result</span>
+22
+<span style="background-color: #d0f0f0;">23 def main(first_country, second_country):</span>
+<span style="background-color: #d0f0f0;">24 '''Show ratio of average temperatures for two countries over time.'''</span>
+<span style="background-color: #d0f0f0;">25 first = get_temps(first_country)</span>
+<span style="background-color: #d0f0f0;">26 second = get_temps(second_country)</span>
+<span style="background-color: #d0f0f0;">27 assert len(first) == len(second), 'Length mis-match in results'</span>
+28      keys = first.keys()
+29      keys.sort()
+30      for k in keys:
+31          print k, first[k] / second[k]
+32
+<span style="background-color: #f0d0f0;">33 if __name__ == '__main__':</span>
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+<span style="background-color: #d0d0f0;">36 if len(sys.argv) &gt; 1:</span>
+<span style="background-color: #f0d0f0;">37 first_country = sys.argv[1]</span>
+<span style="background-color: #d0d0f0;">38 if len(sys.argv) &gt; 2:</span>
+<span style="background-color: #f0d0f0;">39 second_country = sys.argv[2]</span>
+<span style="background-color: #d0f0f0;">40 main(first_country, second_country)</span></pre>
+<p>and dictionaries as lesson 6:</p>
+<pre><span style="background-color: #f0d0f0;">01 import sys</span>
+<span style="background-color: #f0d0f0;">02 import urllib2</span>
+<span style="background-color: #f0d0f0;">03 import json</span>
+04
+<span style="background-color: #d0f0f0;">05 def kelvin(celsius):</span>
+<span style="background-color: #d0f0f0;">06 '''Convert degrees C to degrees K.'''</span>
+<span style="background-color: #d0f0f0;">07 return celsius + 273.15</span>
+08
+<span style="background-color: #d0f0f0;">09 def get_temps(country_code):</span>
+<span style="background-color: #d0f0f0;">10 '''Get annual temperatures for a country.'''</span>
+<span style="background-color: #d0f0f0;">11 url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s'</span>
+<span style="background-color: #d0f0f0;">12 u = url % country_code</span>
+<span style="background-color: #f0d0f0;">13 connection = urllib2.urlopen(u)</span>
+<span style="background-color: #f0d0f0;">14 raw = connection.read()</span>
+<span style="background-color: #f0d0f0;">15 structured = json.loads(raw)</span>
+<span style="background-color: #f0d0f0;">16 connection.close()</span>
+<span style="background-color: #f0d0d0;">17 result = {}</span>
+<span style="background-color: #f0d0d0;">18 for entry in structured:</span>
+<span style="background-color: #f0d0d0;">19 year, celsius = entry['year'], entry['data']</span>
+<span style="background-color: #f0d0d0;">20 result[year] = kelvin(celsius)</span>
+<span style="background-color: #d0f0f0;">21 return result</span>
+22
+<span style="background-color: #d0f0f0;">23 def main(first_country, second_country):</span>
+<span style="background-color: #d0f0f0;">24 '''Show ratio of average temperatures for two countries over time.'''</span>
+<span style="background-color: #d0f0f0;">25 first = get_temps(first_country)</span>
+<span style="background-color: #d0f0f0;">26 second = get_temps(second_country)</span>
+<span style="background-color: #d0f0f0;">27 assert len(first) == len(second), 'Length mis-match in results'</span>
+<span style="background-color: #f0d0d0;">28 keys = first.keys()</span>
+<span style="background-color: #f0d0d0;">29 keys.sort()</span>
+<span style="background-color: #f0d0d0;">30 for k in keys:</span>
+<span style="background-color: #f0d0d0;">31 print k, first[k] / second[k]</span>
+32
+<span style="background-color: #f0d0f0;">33 if __name__ == '__main__':</span>
+<span style="background-color: #f0f0d0;">34 first_country = 'AUS'</span>
+<span style="background-color: #f0f0d0;">35 second_country = 'CAN'</span>
+<span style="background-color: #d0d0f0;">36 if len(sys.argv) &gt; 1:</span>
+<span style="background-color: #f0d0f0;">37 first_country = sys.argv[1]</span>
+<span style="background-color: #d0d0f0;">38 if len(sys.argv) &gt; 2:</span>
+<span style="background-color: #f0d0f0;">39 second_country = sys.argv[2]</span>
+<span style="background-color: #d0f0f0;">40 main(first_country, second_country)</span></pre>
+<p>Six lessons, with a practical exercise after each, and our learners 
+can finally do something they might find useful. Getting through all 
+that takes four hours, i.e., if we start at 9:00, we're finished by 2:00
+ (assuming we take a break for lunch). That's might not sound bad, 
+considering how mature our learners are. But look at the striping&mdash;look 
+how long it takes to assemble enough pieces for learners to completely 
+understand any of this program's natural chunks. Over and over again, we
+ have to say, "Trust us, this will prove useful later," and that kind of
+ delayed gratification makes it harder for learners to put the pieces 
+together correctly in their heads.</p>
+<p>So let's pick an example that comes together earlier, like averaging a column out of a table of numbers stored in a file:</p>
+<pre>01  import sys
+02
+03  def main(filename, column):
+04      reader = open(filename, 'r')
+05      total = 0.0
+06      count = 0
+07      for line in reader:
+08          fields = line.strip().split(',')
+09          assert column &lt; len(fields), 'Not enough fields' 
+10          count += 1 
+11          total += float(fields[column]) 
+12      assert count &gt; 0, 'No data found'
+13      print total / count
+14
+15  if __name__ == '__main__':
+16      assert len(sys.argv) == 2, 'Filename and column number required'
+17      column = int(sys.argv[2])
+18      assert column &gt;= 0, 'Non-negative column number required'
+19      main(sys.argv[1], column)</pre>
+<p>We can get to payoff one lesson earlier in this case, but (and it's a
+ very big "but") it's a bad example: scientists shouldn't parse CSV 
+files themselves, they should use libraries that already know how to do 
+it:</p>
+<pre>01  import sys
+02  import numpy
+03
+04  assert len(sys.argv) == 2, 'Filename and column number required'
+05  column = int(sys.argv[2])
+06  values = numpy.loadtxt(sys.argv[1])
+07  print numpy.average(values, 0)[column]</pre>
+<p>The problem is, if we only show people these high-level tools, they don't learn how to build new tools of their own. And <em>that</em> is why teaching people to program is hard.</p>
+<p><em>Later: it's clear from comments that I explained this poorly. 
+I've put a clarifying note at the top of this post, and I'll take 
+another run at it if and when I come up with a clearer approach.</em></p>
+

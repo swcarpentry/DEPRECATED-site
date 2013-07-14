@@ -1,0 +1,578 @@
+---
+layout: bootcamp_archived
+venue: AMOS Conference (Melbourne)
+country: Australia
+address: Theatre 2 (room 109), Alan Gilbert Building, University of Melbourne
+humandate: February 14-15, 2013
+humantime: 9:00 am - 4:30 pm
+startdate: 2013-02-14
+enddate: 2013-02-15
+latlng: -37.8253285,144.9516212
+registration: open
+instructor: ["Greg Wilson"]
+---
+
+<p><strong>Food:</strong> Morning and afternoon tea will be provided, but not lunch (there are plenty places on campus to buy lunch).</p>
+
+<p><strong>Program:</strong></p>
+
+<div class="row-fluid">
+  <div class="span10 offset1">
+    <table class="table">
+      <tbody><tr>
+        <td>Thursday morning:</td>
+        <td>Intro to Python (basic control structures, lists, strings, functions, etc)</td>
+      </tr>
+      <tr>
+        <td>Thursday afternoon:</td>
+        <td>Program design and testing</td>
+      </tr>
+      <tr>
+        <td>Friday morning:</td>
+        <td>Version control and regular expressions</td>
+      </tr>
+      <tr>
+        <td>Friday afternoon:</td>
+        <td>Databases and wrap-up</td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>
+
+<p><strong>Online follow-up exercises:</strong> go into the above topics
+ in more detail, in addition to using the shell, matrix programming, 
+using spreadsheets in a disciplined way, data management, and software 
+development lifecycles.</p>
+
+<p>Greg Wilson (Software Carpentry) and Mike Rezny (ARC Centre of 
+Excellence for Climate System Science) will be delivering the content. 
+We've also lined up a number of computing gurus from institutions 
+including the Bureau of Meteorology, CSIRO, Monash University and the 
+University of Melbourne, who will circulate the room and answer any 
+questions that you might have.</p>
+
+<p><strong>Laptops:</strong> Participants are required to bring their 
+own laptop, as the boot camp involves a mixture of lectures and hands on 
+exercises. The lecture theatre has desk facilities where you can plug in
+ and charge. If you don't have a laptop, don't stress, we'll pair you up
+ with someone who does.</p>
+
+<p>See below for software installation instructions.</p>
+
+<p>NOTE THAT REGISTRATION FOR THIS BOOT CAMP HAS CLOSED.</p>
+
+<h2>Software Setup</h2>
+
+<p>There are certain bits of software that need to be installed on your laptop
+prior to attending the AMOS Boot Camp.
+</p>
+
+<p>You should ensure that you have the software installed <em>before</em> you arrive at the boot camp.
+Preferably as soon as possible.
+This is particularly important so that practicals can proceed smoothly on the day and the tutors
+can concentrate on assisting with course content rather then installing
+software.</p>
+
+<p>Here is a list of the software that will be required:</p>
+<ul>
+  <li><a href="#terminal">Terminal Window</a></li>
+  <li><a href="#shell">Bash Shell</a></li>
+  <li><a href="#editor">Text Editor, ie nano, vi, emacs, notepad</a></li>
+  <li><a href="#python">Python version 2.6 or later but not version 3</a></li>
+  <li><a href="#setuptools">Python setuptools for installing packages</a></li>
+  <li><a href="#nose">Python nose for running unit tests</a></li>
+  <li><a href="#git">Git for version control</a></li>
+  <li><a href="#bitbucket">a bitbucket account for remote version control repositories</a></li>
+  <li><a href="#sqlite3">sqlite3 relational database</a></li>
+  <li><a href="#firefox">Firefox</a></li>
+  <li><a href="#manager">Firefox sqlite3 manager</a></li>
+</ul>
+
+<p>Please use the following check-list to see if you have the software or not.
+Further down this page there are
+<a href="#installation">software installation instructions</a>
+for Windows, Mac, and Linux systems, as well as details of how to get
+<a href="#support">support</a>
+for installing the software prior to attending the Boot Camp.</p>
+
+<h4 id="terminal">Getting a terminal window</h4>
+
+<p>Most of the checks assume you're using a terminal window (also commonly called a command-line
+<a href="http://en.wikipedia.org/wiki/Shell_%28computing%29">shell </a>or
+<a href="http://en.wikipedia.org/wiki/Terminal_emulator">terminal emulator</a>).
+If you don't know what this is or how to get one then please go to our page on
+<a href="http://software-carpentry.org/bootcamps/setup-terminal.html">getting a terminal window</a>.</p>
+
+<h4 id="shell">Bash shell, the UNIX shell we like to use</h4>
+
+<p>At the prompt, enter:</p>
+<pre>$ whoami</pre>
+<p>You should be told your user name, e.g.:</p>
+<pre>mjj</pre>
+
+<a href="http://www.gnu.org/software/bash/manual/bashref.html">http://www.gnu.org/software/bash/manual/bashref.html</a>
+
+<h4 id="editor">A text editor for writing your code</h4>
+
+<p>Whatever editor you use is up to you. To see if your favourite is
+installed try one of the following, or just try and create a text file.</p>
+
+<p>nano:</p>
+<ul>
+<li>At the prompt, enter
+<pre>$ nano --version</pre></li>
+<li>You should be given a version number, e.g.:
+<pre>GNU nano version 2.0.9 (compiled 14:28:54, Nov 23 2010)</pre></li>
+<li><a href="http://www.nano-editor.org/">http://www.nano-editor.org/</a></li>
+</ul>
+
+<p>Notepad (for Cygwin users):</p>
+<ul>
+<li>Edit files within your home directory under <code>C:\cygwin\home\user\</code>.</li>
+</ul>
+<p>TextEdit (for Mac OSX users):</p>
+<ul>
+<li>Edit files within your home directory under <code>/Users/user</code>.</li>
+</ul>
+
+<p>VI:</p>
+<ul>
+<li>At the prompt, enter
+<pre>$ vi --version</pre></li>
+<li>You should be given a version number, e.g.
+<pre>VIM - Vi IMproved 7.2 (2008 Aug 9, compiled Feb 25 2011 09:33:03)</pre></li>
+<li><a href="http://www.vim.org/">http://www.vim.org/</a></li>
+</ul>
+
+<p>Emacs:</p>
+<ul>
+<li>At the prompt, enter
+<pre>$ emacs --version</pre></li>
+<li>You should be given a version number, e.g.
+<pre>GNU Emacs 23.1.1</pre></li>
+<li><a href="http://www.gnu.org/software/emacs/">http://www.gnu.org/software/emacs/</a></li>
+</ul>
+
+<p>XEmacs:</p>
+<ul>
+<li>At the prompt, enter
+<pre>$ xemacs --version</pre></li>
+<li>You should be given a version number, e.g.
+<pre>XEmacs 21.5 (beta31) "ginger" [Lucid] (x86_64-redhat-linux, Mule)...</pre></li>
+<li><a href="http://www.gnu.org/software/emacs/">http://www.gnu.org/software/emacs/</a></li>
+</ul>
+
+<h4 id="python">Python for scripting</h4>
+
+<p>Any Python 2 version from 2.6 onwards is recommended. We have <em>not</em>
+yet tried Python 3 so please stick to Python 2.6 or 2.7 versions.</p>
+
+<p>To check that it's installed and what version you have, at the prompt, enter:</p>
+
+<pre>$ python --version</pre>
+
+<p>You should be given a version number, e.g.:</p>
+<pre>Python 2.6.6</pre>
+
+<p>Now, check its behavior:</p>
+<pre>$ python
+&gt;&gt;&gt; print 2+2
+4</pre>
+
+<p>And, check it has the sqlite3 relational database library</p>
+<pre>&gt; import sqlite3</pre>
+
+<p>If all is fine it won't complain.</p>
+<p><a href="http://www.python.org/">http://www.python.org/</a></p>
+
+<h4 id="setuptools">Python setuptools for installing Python packages</h4>
+
+<p>At the prompt, enter:</p>
+<pre>$ easy_install --version</pre>
+
+<p>You should be given a version number, e.g.:</p>
+<pre>distribute 0.6.10</pre>
+
+<p>or a warning:</p>
+<pre>usage: easy_install [options] requirement_or_url ...
+or: easy_install --help
+error: option --version not recognized</pre>
+
+<h4 id="nose">Python nose for running unit tests</h4>
+
+<p>At the prompt, enter:</p>
+<pre>$ nosetests --version</pre>
+
+<p>You should be given a version number, e.g.:</p>
+<pre>nosetests version 0.10.4</pre>
+
+<p>At the prompt, enter:</p>
+<pre>$ nosetests</pre>
+
+<p>You should be given a test report, e.g.:</p>
+<pre>........
+Ran 0 tests in 0.003s
+OK</pre>
+
+<h4 id="git">Git for using version control</h4>
+<p>At the prompt, enter:</p>
+<pre>$ git --version</pre>
+
+<p>You should be given a version number, e.g.:</p>
+<pre>
+git version 1.8.0
+</pre>
+
+<h4 id="bitbucket">BitBucket for using remote version control repositories</h4>
+
+<p>For version control practicals, we use BitBucket to enable
+repositories to be used remotely and to be shared. To get a BitBucket
+account for version control practicals, just sign up for free at
+<a href="https://bitbucket.org/">https://bitbucket.org/</a>.</p>
+
+<h4 id="sqlite3">SQLite for a lightweight relational database</h4>
+
+<p>At the prompt, enter:</p>
+<pre>$ sqlite3 -version</pre>
+
+<p>You should be given a version number, e.g.:</p>
+<pre>3.6.20</pre>
+<a href="http://www.sqlite.org/">http://www.sqlite.org/</a>
+
+<h4 id="manager">Firefox (for the SQLite manager below)</h4>
+<p>Depending upon your operating system either start up Firefox from its menu or icon, or, at the prompt, enter:</p>
+<pre>$ firefox</pre>
+<p><a href="http://www.mozilla.org/en-US/firefox/new/">http://www.mozilla.org/en-US/firefox/new/</a></p>
+
+<h4 id="manager">Firefox SQLite manager for a relational database</h4>
+
+<p>Once Firefox is running:</p>
+<ul>
+<li>Select <strong>Tools</strong> =&gt; <strong>SQLite Manager</strong></li>
+<li>SQLite Manager window appears</li>
+<li>Select <strong>Database</strong> =&gt; <strong>New database</strong></li>
+</ul>
+<p><a href="http://code.google.com/p/sqlite-manager/">http://code.google.com/p/sqlite-manager/</a></p>
+
+<h3 id="installation">What to do if you do not have a piece of required software</h3>
+
+<p>Please see the <a href="#instructions">operating system-specific installation instructions</a> below.</p>
+
+<h3 id="support">Support</h3>
+
+<p>If you run into any problems installing the software please try to resolve them in the following order:</p>
+<ol>
+<li>Try to obtain assistance from the IT support staff at your home institution.</li>
+<li>Send an email, outlining your problem in as much detail as possible, to:</li>
+        <dl>
+        <dt>Mike Rezny (Michael.Rezny@monash.edu)</dt><dd>for Mac specific or general assistance</dd>
+        <dt>Scott Wales (Scott.Wales@unimelb.edu.au)</dt><dd>for Linux specific or general assistance</dd>
+        <dt>Simonn Michnowicz(Simon.Michnowicz@monash.edu)</dt><dd>for Windows specific or general assistance</dd>
+        </dl>
+<li>If you are attending the AMOS conference, bring your laptop to the Boot Camp helpdesk at the Centre of Excellence
+in Climate System Science booth. Details of when the helpdesk will be manned will be emailed before the conference.
+</li>
+</ol>
+
+<p>Please also email any of the support people above if the instructions are incorrect, ambiguous, or
+if you have any other suggestions that will make the installation process easier for other users.</p>
+
+<hr/>
+
+<a name="instructions"></a><h2>Operating system-specific Installation Instructions</h2>
+
+
+<!-- ================================================================================ -->
+<!--                                      Common                                      -->
+<!-- ================================================================================ -->
+<hr/>
+<h3 id="setup-common">Instructions common to all</h3>
+<p>The following software has the same installation instructions for all operating systems.</p>
+<p><strong>Firefox SQLite manager </strong></p>
+<p>The SQLite Manager add-on can be installed through the "Add-ons Manager" in Firefox.</p>
+<ul>
+<li>Start Firefox</li>
+<li>Select <strong>Tools</strong> =&gt;<strong> Add-ons</strong></li>
+<li>In the search field, enter <code>sqlite</code></li>
+<li>Click the search icon</li>
+<li>Double-click to select <strong>SQLite Manager 0.7.7</strong></li>
+<li>Click <strong>Install</strong></li>
+<li>Click <strong>restart now</strong></li>
+<li>When Firefox restarts, Select <strong>Tools</strong> =&gt; <strong>SQLite Manager</strong></li>
+</ul>
+
+<!-- ================================================================================ -->
+<!--                                      Ubuntu                                      -->
+<!-- ================================================================================ -->
+<hr/>
+<h3 id="setup-ubuntu">Ubuntu</h3>
+
+<p>Tested using Ubuntu 10.04, 11.04, 12.04</p>
+<p>Ubuntu already comes with</p>
+<ul>
+<li>Bash shell</li>
+<li>vi and nano text editors</li>
+<li>Python 2.6 or 2.7</li>
+<li>Firefox</li>
+</ul>
+<p>All installation needs to be done as a root user or user with certain
+ administrator privileges. If you have such access you can do:</p>
+<pre>$ sudo su -</pre>
+<p>Then enter your usual password.</p>
+<h4>Install Emacs or XEmacs</h4>
+<p>This is only necessary if you want to use this as your text editor.</p>
+<p>Run:</p>
+<pre>$ apt-get install emacs23
+$ emacs --version</pre>
+<p>Run:</p>
+<pre>$ apt-get install xemacs21
+$ xemacs --version</pre>
+<h4>Install Python setuptools</h4>
+<p>Run:</p>
+<pre>$ apt-get install python-setuptools</pre>
+<h4>Install Python nose</h4>
+<p>Run (note the underscore):</p>
+<pre>$ easy_install nose</pre>
+<p>And check:</p>
+<pre>$ nosetests
+----------------------------------------------------------------------
+Ran 0 tests in 0.003s
+OK</pre>
+<h4>Install git</h4>
+<p>Run:</p>
+<pre>$ apt-get install git
+$ git --version
+git version 1.7.0.4</pre>
+
+<h4>Install SQLite</h4>
+<p>Run:</p>
+<pre>$ apt-get install sqlite3
+$ sqlite3 --version
+3.6.22</pre>
+
+<!-- ================================================================================ -->
+<!--                                      Fedora                                      -->
+<!-- ================================================================================ -->
+<hr/>
+<h3 id="setup-fedora17-SL6">Fedora 17 or Scientific Linux 6.3</h3>
+
+<p>The yum commands were tested using Fedora 17 and Scientific Linux release 6.3.
+These instructions are quite likely to work with other versions of these Linux distributions.
+However, the versions of the installed packages may be different.</p>
+
+<p>The standard distributions already come with...</p>
+<ul>
+<li>Bash shell</li>
+<li>nano text editor</li>
+<li>vi text editor</li>
+<li>python (2.6.6 for Scientific Linux 6.3 or 2.7.3 for Fedora 17)</li>
+<li>easy_install</li>
+<li>sqlite3</li>
+
+</ul>
+<p>All installation needs to be done as a root user or user with certain
+ administrator privileges. If you have such access you can do:</p>
+<pre>$ sudo su -</pre>
+<p>Then enter your usual password.</p>
+<h4>Install Emacs or XEmacs (only if you want to use emacs as your text editor)</h4>
+<p>Run:</p>
+<pre>$ yum install emacs
+$ emacs --version</pre>
+<p>Run:</p>
+<pre>$ yum install xemacs
+$ xemacs --version</pre>
+
+<h4>Install Python nose</h4>
+<p>Run:</p>
+<pre>$ easy_install nose</pre>
+<p>And check:</p>
+<pre>$ nosetests
+----------------------------------------------------------------------
+Ran 0 tests in 0.003s
+OK</pre>
+
+<h4>Install git</h4>
+<p>Run:</p>
+<pre>$ yum install git</pre>
+<p>And check on Scientific Linux 6.3:</p>
+<pre>$ git --version
+git version 1.7.1
+</pre>
+<p>or on Fedora 17:</p>
+<pre>$ git --version
+git version 1.7.11.7</pre>
+
+<h4>Install Firefox</h4>
+<p>Run:</p>
+<pre>$ yum install firefox</pre>
+
+<!-- ================================================================================ -->
+<!--                                      Windows                                     -->
+<!-- ================================================================================ -->
+<hr/>
+<h3 id="setup-windows">Windows</h3>
+
+<p>[Tested using Windows 7 Enterprise, SP1 2009]</p>
+<p>For Windows we use Cygwin which provides for Linux/UNIX interaction
+but fully integrated with the Windows file-system (unlike, for example, a
+ virtual machine).</p>
+<h4>Install Cygwin for bash, make, text editors, SQLite, Mercurial and Python</h4>
+<ul>
+<li>Download setup.exe from <a href="http://www.cygwin.com/">http://www.cygwin.com/</a></li>
+<li>Right-click setup.exe and select <strong>Run as administrator</strong></li>
+<li>Cygwin Setup window appears</li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Choose Installation Type window appears</li>
+<li>Select <strong>Install from Internet</strong></li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Choose Installation Directory window appears</li>
+<li>Click <strong>Browse...</strong> and select a Root Directory, or use the suggested default</li>
+<li>For Install For, select <strong>All Users</strong></li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Select Local Package Directory window appears</li>
+<li>Click <strong>Browse...</strong> and select a Local Package Directory, or use the suggested default</li>
+<li>Click<strong> Next&gt;</strong></li>
+<li>Select Connection Type window appears</li>
+<li>Select<strong> Direct Connection</strong></li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Choose A Download Site window appears</li>
+<li>Select a mirror site or add one closer to you. If you want one on AARNET, use: <code>http://mirror.aarnet.edu.au/</code></li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>If you have not installed Cygwin before a Setup Alert dialog may appear, so just click <strong>OK</strong></li>
+<li>The Select Packages window appears</li>
+</ul>
+<p>Now, finally, you can select the packages to install...</p>
+<em> Hint. If you have trouble finding any of the packages below, you can search for them in the "search" window</em>
+<ul>
+<li>Click <strong>Archive</strong></li>
+<li>Scroll to unzip</li>
+<li>Click <strong>New column</strong> until it toggles to the latest version</li>
+<li>Scroll to zip</li>
+<li>Click <strong>New column</strong> until it toggles to the latest version</li>
+<li>Click <strong>Database</strong></li>
+<li>Scroll to sqlite3</li>
+<li>Click <strong>New column</strong> until it toggles to 3.7.3-1 (or, the latest version)</li>
+<li>Click <strong>Devel</strong></li>
+<li>Scroll to make</li>
+<li>Click <strong>New column</strong> until it toggles to 3.82.90.1 (or, the latest version)</li>
+<li>Scroll to git</li>
+<li>Click <strong>New column</strong> until it toggles to 1.7.9 (or, the latest version)</li>
+<li>As well as  1.7.9-1 git, the packages  <strong>git-completion, git-gui  </strong> and  <strong>  gitk</strong> are needed. </li>
+<li>Click <strong>Editors</strong></li>
+<li>Pick your favourite editor...</li>
+<li>Scroll to nano</li>
+<li>Click <strong>New column</strong> until it toggles to 2.2.5-1 (or, the latest version)</li>
+<li>Scroll to vim</li>
+<li>Click <strong>New column</strong> until it toggles to 7.3.646-1 (or, the latest version)</li>
+<li>Scroll to xemacs</li>
+<li>Click <strong>New column</strong> until it toggles to 21.4.22-1 (or, the latest version)</li>
+<li>Click <strong>Python</strong></li>
+<li>Click <strong>New column</strong> until it toggles to 2.6.8-2. A successful installation seems to require 2.6.8-2. There were problems when you used the later 2.7 version.</li>
+<li>Whilst in Python, also install <strong> idle,  python-doc</strong> and <strong> python-tkinter </strong></li>
+<li>Click <strong>Shells</strong></li>
+<li>Scroll to bash and check that it is installed.</li>
+<li>Install <strong>openssh</strong>.  Scroll to <strong>net</strong> and click on oppensh.</li>
+<li>You need a working X-Windows server to use some git tools. So scroll to <strong> X: </strong> and install <strong>X-start-menu-icons </strong> and <strong> xinit.</strong></li>
+<li>Check <strong>New column </strong>until it toggles to 4.1.10-4 (or, the latest version)</li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Resolving Dependencies window appears</li>
+<li>Click <strong>Next&gt;</strong></li>
+<li>Wait until it's all done!</li>
+</ul>
+<p>Now, set up the path...</p>
+<ul>
+<li>Find <strong>Computer</strong> on the desktop or in Windows Explorer</li>
+<li>Right Click and select <strong>Properties</strong></li>
+<li>System window appears</li>
+<li>Click <strong>Advanced system settings</strong>.</li>
+<li>Enter your local administrator password</li>
+<li>System properties window appears</li>
+<li>Click <strong>Advanced</strong> tab</li>
+<li>Click <strong>Environment Variables...</strong></li>
+<li>In the System variables list, select <strong>Path</strong></li>
+<li>Click <strong>Edit...</strong></li>
+<li>Edit System Variable dialog appears</li>
+<li>Add <code>;C:\cygwin\bin</code> to the end of the Variable value.</li>
+<li>Click <strong>OK</strong> to close Edit System Variable</li>
+<li>Click <strong>OK</strong> to close Environment Variables</li>
+<li>Click <strong>OK</strong> to close System properties</li>
+</ul>
+<h4>Install Python setuptools</h4>
+<ul>
+<li>Visit <a href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a>
+and download the egg file corresponding to your Python version.
+Download a standard egg and not the Windows installer. For example, I
+downloaded <code>setuptools-0.6c11-py2.6.egg</code></li>
+<li>Save your egg into your Cygwin home directory, for example:
+<pre>C:\MikeLocal\cygwin\home\mjj</pre>
+</li>
+<li>Right-click <strong>Cygwin Terminal</strong> icon</li>
+<li>Select <strong>Run as administrator</strong></li>
+<li>Enter your local administrator password.</li>
+<li>Execute the egg:
+<pre>$ cd /home/mjj
+$ sh setuptools-0.6c9-py2.4.egg</pre>
+</li>
+</ul>
+<h4>Install Python nose</h4>
+<ul>
+<li>Right-click <strong>Cygwin Terminal</strong> icon</li>
+<li>Select <strong>Run as administrator</strong></li>
+<li>Enter your local administrator password</li>
+<li>At the prompt, run:
+<pre>$ easy_install nose</pre>
+</li>
+<li>And check:
+<pre>$ nosetests
+----------------------------------------------------------------------
+Ran 0 tests in 0.003s
+OK</pre>
+</li>
+</ul>
+
+<h4>Install Firefox</h4>
+<p>You can download Firefox from the Mozilla web site at <a href="http://www.mozilla.org/en-US/firefox/new/">http://www.mozilla.org/en-US/firefox/new/</a>.</p>
+
+
+<!-- ================================================================================ -->
+<!--                                     OSX                                          -->
+<!-- ================================================================================ -->
+<hr/>
+<h3 id="setup-osx">Mac OSX</h3>
+
+<p>[Tested using Mac OSX 10.6.8 and 10.7.4]</p>
+<p>Mac OSX already comes with</p>
+<ul>
+<li>Bash shell</li>
+<li>vi and nano text editors</li>
+<li>Python 2.6 or 2.7</li>
+<li>Python setuptools</li>
+<li>sqlite3</li>
+</ul>
+<p>All installation needs to be done as a root user or user with certain administrator privileges.</p>
+
+<h4>Install Python nose</h4>
+<p>Run (note the underscore):</p>
+<pre>$ easy_install nose</pre>
+<p>And check:</p>
+<pre>$ nosetests
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.003s
+OK</pre>
+
+<h4>Install git</h4>
+<p>Follow the instructions at <a href= "https://help.github.com/articles/set-up-git">https://help.github.com/articles/set-up-git</a></p>
+<p>Note that the red button, "Download GitHub for Mac", only supports Mac OSX for version 10.7 or later.</p>
+<p>For Mac OSX 10.6, use the "Download and install the latest version of Git"</p>
+<p>And check from a terminal window:</p>
+<pre>$ git --version
+git version 1.8.0</pre>
+
+<h4>Install Firefox</h4>
+<p>You can download Firefox from the Mozilla web site at
+<a href="http://www.mozilla.org/en-US/firefox/new/">http://www.mozilla.org/en-US/firefox/new/</a>.</p>
+
+<p>Note that red button "Download GitHub for Mac" only supports Mac OSX for version 10.7 or later.</p>
+<p>For Mac OSX 10.6, use the "Download and install the latest version of Git"</p>
+

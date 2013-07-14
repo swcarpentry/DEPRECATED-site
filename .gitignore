@@ -1,0 +1,6 @@
+*~
+*.pyc
+.DS_Store
+_site
+_config.yml
+_includes/recent_blog_posts.html

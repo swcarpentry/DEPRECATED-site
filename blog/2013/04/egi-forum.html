@@ -1,0 +1,95 @@
+---
+layout: blog
+author: jackson.m
+title: Feedback from the EGI Forum
+date: 2013-04-16
+time: 09:00:00
+category: [venues/egi-forum, boot-camp]
+---
+<p>
+At last week's <a href="http://cf2013.egi.eu/">EGI Forum</a> in
+Manchester, we ran a day of boot camp &quot;<a
+href="http://software-carpentry.org/bootcamps/2013-04-egi-forum.html">highlights</a>&quot;. These were 1.5 hour taster sessions drawn from boot camp sessions. Our sessions covered,
+</p>
+<ul>
+<li>
+Using version control to record provenance and collaborate more
+easily.
+</li>
+<li>
+Using testing to help ensure your software, and results, are correct.
+</li>
+<li>
+Data management using a NoSQL database to manage your data more
+easily. 
+</li>
+</ul>
+<p>
+We had 15-20 attendees for each session, mostly from a computer
+science or software development background, and in systems
+support or technical roles. The interests of the attendees were
+on the specific technologies covered in each session (Git,
+Python and nosetests, MongoDB) rather than the concepts
+underlying these, as most attendees were already familiar with
+these.  
+</p>
+<p>
+The attendees viewed the sessions as useful. Their comments included,
+</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep up the good work</td>
+<td>Depending on the audience you could merge in more git commands</td>
+</tr>
+<tr>
+<td>The content was useful</td>
+<td>The speed of the hands on part was a bit slow (for someone knowing unix and having used other version control systems)</td>
+</tr>
+<tr>
+<td>[Know] what a NoSQL database is</td>
+<td>
+Would have appreciated more inputs as to: when should I choose MongoDB
+or any other NoSQL db, as compared to a relational db:
+typical use cases; configuration of MongoDB; performances
+expected: should I declare some indexes, how, why? How to
+set up a ""map and reduce"" configuration of MongoDB? 
+</td>
+</tr>
+<tr>
+<td>Hands-on very clear</td>
+<td></td>
+</tr>
+<tr>
+<td>Useful to start up very quickly to use MongoDB in python</td>
+</tr>
+</tbody>
+</table>
+<p>
+The attendees were given SSH logins to a virtual machine with the
+required tools pre-installed. As we were co-located with a
+conference, we wanted to allow attendees to drop-in without any
+advance preparation. Use of a VM avoided any installation woes,
+though, for our third session, we had to pair up the attendees as
+the VM began to deny SSH connections as it interpreted too many
+multiple SSH logins as a possible hack attack (a component called
+'fail2ban' was the culprit).
+</p>
+<p>
+I found that using 'nano', rather than my preferred editor
+'emacs', acted as a good brake so I was less inclined to commit
+the instructor sin of making things happen by "magic". 
+</p>
+<p>
+While the sessions were very tightly-constrained time-wise - in effect
+only about 1h10 for "live coding" - I felt it was a good way to
+convey one or two key concepts and messages and to give attendees the
+flavour of what to expect if they attend a boot camp - sort of
+like a movie trailer!
+</p>

@@ -1,0 +1,27 @@
+---
+layout: blog
+date: 2010-11-16
+time: 09:00:00
+author: wilson.g
+title: Ratios and Rework
+category: [content, education, opinion]
+---
+<p>It's been six months and a bit since we started working on Version 4 of this course, so I'd like to share two things we've learned about creating online tutorial videos:</p>
+<ol>
+<li>It takes a long time.</li>
+<li>A lot of that time feels like it should be unnecessary.</li>
+</ol>
+<p>Let's start with "a long time". It takes me 3-5 hours to prepare a good slide deck for an hour-long lecture that I'm going to deliver in person. A slide deck for a screencast takes 8-10, because I need to prepare more slides: since there isn't a lecturer making eye contact and pointing at things to keep viewers engaged, a slide deck for online use has to have many more small transitions.</p>
+<p>Writing a script to go with those slides is another 3-5 hours, much of which is spent rearranging the slides as I discover things that don't work as well as I thought. I don't know if it's fair to count this as an extra cost, or whether it's just bringing time I would spend on the second run of a course forward to the first run, but it's still time.</p>
+<p>Recording audio takes about 1.5 times as long as the audio (if I stumble, I just pause, take a breath, and restart that sentence), so call it 1.5 hours. Editing takes longer than recording, so let's say 4-5 hours all in (again, including some rework as I notice glitches that escaped me before).  Getting everything off my machine and onto software-carpentry.org is another hour by the time all is said and done, so an hour-long lecture made up of 5-6 episodes comes in between 20 and 25 hours.</p>
+<p>But now we come to #2: the stuff that feels like it should be unnecessary. If I want to make a change <em>after</em> an episode has been posted&mdash;even a small one&mdash;it's substantially more work than changing a few slides in a PowerPoint deck would be. First, I need to record new audio, or get whoever originally created the episode to find a microphone and record some snippets of MP3 for me (having the voice change for a slide or two in the middle of a screencast is very jarring). Second, I need to re-export the PowerPoint slides as PNGs, and if the number of slides has changed, rename some of them: Camtasia refers to imported image files by name, and if I simply re-export and re-import, I have to go back and change the time boundaries for all the images after the ones that have been updated.</p>
+<p>How bad is this? Well, I just fixed a small mistake in <a href="{{page.root}}/v4/python/lists.html">the episode on Python lists</a>. It took almost an hour, start to finish, and the change in audio quality where the fix was made is painful.</p>
+<p>And then there's version control. PowerPoint is effectively a binary format: yes, there's XML in there, but version control treats that XML as lines of text, which means its diffs and merges are senseless. I've used HTML and LaTeX in the past&mdash;at least I can structure them so that line-oriented diff/merge is sensible&mdash;but both formats force a strong separation between text and image, where PowerPoint allows me to mix them freely as I would on a whiteboard. I don't like PowerPoint, but the final result is easier on the eyes than what I can do with today's HTML or LaTeX with equivalent effort.</p>
+<p>What do I want instead? I want something that:</p>
+<ol>
+<li>Plays nicely with version control (i.e., diff and merge just work).</li>
+<li>Allows me to mix text and images freely (PNGs ghettoed in text isn't good enough).</li>
+<li>Has stable open source authoring tools with a long likely life in front of them (so that investing in them won't be insanely risky).</li>
+<li>Includes a decent text-to-speech engine (something better than <a href="http://www.xtranormal.com/">Xtranormal</a>'s, please) so that when I update what I'm displaying and the script of what I'm saying, I can just push a "compile" button and get a seamless video out the end.</li>
+</ol>
+<p>What's that? "And a pony for Christmas?" Yeah, that too. But let me share a secret with you: whoever builds this thing first will be rich, famous, and popular, because <em>this</em>&mdash;content creation and maintenance that the average instructor can afford&mdash;is the real bottleneck in online education.</p>

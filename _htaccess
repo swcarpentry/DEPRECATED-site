@@ -1,0 +1,83 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+AddDefaultCharset UTF-8
+
+# Wordpress URLs that are gone
+RewriteRule .*/trackback/?$ - [gone,NC]
+
+# Wordpress Feed URL 
+# this has to happen before the rewrites for /blog
+RewriteCond %{REQUEST_URI} ^(/feed/?|/blog/feed/?)$
+RewriteRule ^(.*) /feed.xml [R,L]
+
+### Wordpress Blog Redirects ### 
+# redirect URLs to a day to the main blog page 
+RewriteCond %{REQUEST_URI} ^/\d\d\d\d/\d\d/\d\d/$
+RewriteRule ^(.*) /blog/index.html [R,L]
+
+# redirect urls that are only to a month to the main blog page
+# since we don't have these monthly pages any longer
+RewriteCond %{REQUEST_URI} ^/\d\d\d\d/\d\d/$
+RewriteRule ^(.*) /blog/index.html [R,L]
+
+# redirect URLs that have a year and month to the /blog/ folder
+# since these are likely old links to individual blog pages
+RewriteCond %{REQUEST_URI} ^/\d\d\d\d/\d\d/
+RewriteRule ^(.*) /blog/$1 [R,L]
+
+# redirect URL to just /blog/ to /blog/index.html
+RewriteCond %{REQUEST_URI} ^/blog/?$
+RewriteRule .* /blog/index.html [R,L]
+
+# redirect blog URLs that don't end in .html so that they do
+# since this is probably an old blog page link
+RewriteCond %{REQUEST_URI} ^/blog
+RewriteCond %{REQUEST_URI} !.html$
+RewriteRule ^(.*?)/?$ $1.html [R,L]
+
+### Wordpress Page Redirects ###
+
+# Temp rewrite for Technische Universitat Munchen (jan 2013) published URL
+RewriteCond %{REQUEST_URI} ^/boot-camps/boot-camp-standard-software-set-up
+RewriteRule ^(.*) /setup/ [R,L]
+
+# wordpress bootcamps URLs
+RewriteCond %{REQUEST_URI} ^/boot-camps/
+RewriteRule ^(.*) /bootcamps/ [R,L]
+
+# wordpress bootcamps category URLs
+RewriteCond %{REQUEST_URI} ^/category/boot-camp/
+RewriteRule ^(.*) /bootcamps/ [R,L]
+
+# About team page
+RewriteCond %{REQUEST_URI} ^/about/our-team/?$
+RewriteRule ^(.*) /about/team.html [R,L]
+
+# Other about pages 
+RewriteCond %{REQUEST_URI} ^/about/.*$
+RewriteCond %{REQUEST_URI} !.html$
+RewriteRule ^(.*?)/?$ $1.html [R,L]
+
+# reading list 
+RewriteCond %{REQUEST_URI} ^/4_0/reading/?$
+RewriteRule ^(.*) /about/biblio.html [R,L]
+
+# Handle 4_0 episode links that don't end in .html 
+RewriteCond %{REQUEST_URI} ^/4_0/[^/]+/.+
+RewriteCond %{REQUEST_URI} !.html$
+RewriteCond %{SCRIPT_FILENAME} !-f 
+RewriteRule ^(.*?)/?$ $1.html [R,L]
+
+# Links to badge kind pages
+# Keep redirecting this for now, so as to not break old badges
+# but also incase we want to make individual badge criteria pages later on.
+RewriteCond %{REQUEST_URI} ^/badges/(.*).html
+RewriteCond %{REQUEST_URI} !^/badges/index.html
+RewriteRule ^.*/(.*).html /badges/index.html#$1-badge [NE,R,L]
+
+</IfModule>
+
+<Files "feed.xml">
+ForceType application/rss+xml
+</Files>

@@ -1,0 +1,154 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include generic-header.html %}
+    <title>Software Carpentry: {{page.title}}</title>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script type="text/javascript">
+      function MarkerPin(color) {
+        var pin = new google.maps.MarkerImage(
+            "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+        return pin;
+      }
+
+      function set_info_window(map, marker, info_window, content) {
+        google.maps.event.addListener(marker, 'click', function () {
+          info_window.setContent(content);
+          info_window.open(map, marker);
+        })
+      }
+
+      function toggle_marker_visibility(marker) {
+        if (marker.getVisible()) {
+          marker.setVisible(false);
+        } else {
+          marker.setVisible(true);
+        };
+      }
+
+      function initialize_map() {
+        var mapOptions = {
+          zoom: 2,
+          center: new google.maps.LatLng(0,0),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var oldPin = MarkerPin("FE7569");
+        var openPin = MarkerPin("69FE86");
+        var fullPin = MarkerPin("FEFE69");
+        var restrictedPin = MarkerPin("6975FE");
+
+        var pinShadow = new google.maps.MarkerImage(
+            "http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+            new google.maps.Size(40, 37),
+            new google.maps.Point(0, 0),
+            new google.maps.Point(12, 35));
+
+        var info_window = new google.maps.InfoWindow({});
+
+        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+        var past_markers = [];
+
+        {% for bootcamp in site.bootcamps %}
+          {% if bootcamp.latlng %}
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng({{bootcamp.latlng}}),
+                map: map,
+                title: "{{bootcamp.venue}}, {{bootcamp.humandate}}",
+                {% if bootcamp.startdate >= site.today %}
+                  {% case bootcamp.registration %}
+                    {% when 'restricted' %}
+                      icon: restrictedPin,
+                    {% when 'full' %}
+                      icon: fullPin,
+                    {% else %}
+                      icon: openPin,
+                  {% endcase %}
+                  visible: true,
+                {% else %}
+                  icon: oldPin,
+                  visible: false,
+                {% endif %}
+              shadow: pinShadow,
+            });
+
+            {% if bootcamp.startdate < site.today %}
+              past_markers.push(marker);
+            {% endif %}
+
+            var info_string = '<div class="info-window">' +
+              '<h5><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.venue}}</a></h5>' +
+              '<h6><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.humandate}}</a></h6>' +
+              '</div>';
+
+            set_info_window(map, marker, info_window, info_string);
+          {% endif %}
+        {% endfor %}
+
+        // This last bit adds a button to the map that toggles the
+        // visibility of past boot camps.
+        // Create a div to hold the control.
+        var controlDiv = document.createElement('div');
+
+        // Set CSS styles for the DIV containing the control
+        // Setting padding to 5 px will offset the control
+        // from the edge of the map.
+        controlDiv.style.padding = '5px';
+
+        // Set CSS for the control border.
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = 'white';
+        controlUI.style.borderStyle = 'solid';
+        controlUI.style.borderWidth = '1px';
+        controlUI.style.borderColor = 'rgb(113, 123, 135)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.textAlign = 'center';
+        controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.4) 0px 2px 4px'
+        controlUI.title = 'Toggle visibility of past boot camps.';
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior.
+        var controlText = document.createElement('div');
+        controlText.style.fontFamily = 'Arial,sans-serif';
+        controlText.style.fontSize = '12px';
+        controlText.style.padding = '1px 4px';
+        controlText.innerHTML = '<strong>Toggle Past Boot Camps</strong>';
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listener
+        google.maps.event.addDomListener(controlUI, 'click', function() {
+          past_markers.forEach(toggle_marker_visibility)
+        });
+
+        // add control to the map
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+      }
+    </script>
+  </head>
+  <body onload="initialize_map()">
+    <div class="container shadow">
+      {% include generic-banner.html %}
+      {% include navbar.html %}
+
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          {% if page.title %}
+            <h1 class="title">{{page.title}}</h1>
+          {% endif %}
+          {{content}}
+        </div>
+      </div>
+      {% include disqus.html %}
+      {% include footer.html %}
+    </div>
+
+    {% include generic-javascript.html %}
+    {% include google-analytics.html %}
+  </body>
+</html>

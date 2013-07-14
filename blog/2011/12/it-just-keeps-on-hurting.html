@@ -1,0 +1,15 @@
+---
+layout: blog
+date: 2011-12-20
+time: 09:00:00
+author: wilson.g
+title: It Just Keeps On Hurting
+category: [opinion]
+---
+<p>I received email a few days ago from someone who had just found this site (reproduced here with permission):</p>
+<blockquote><p>I am working on getting myself set up to do scientific programming in Python on a MacBook Pro. I plan to use mySql and Pentaho. I am new to open source, Mac, and Python. Where I've run into the most problems is getting a working environment established with all the tools in place. For instance, I ran into a huge problem trying to install mysqldb, the Python/MySQL interface package. Trying to resolve that, I've encountered a bewildering array of alternative ways to do things, each accompanied by strong opinions and each entailing a different group of packages. One example being package managers: easy_install, pip, various brews, macports, etc. I don't really care about some absolute <em>right</em> way&mdash;I just need working, consistent tool set.</p></blockquote>
+<p>I responded:</p>
+<blockquote><p>I wish I could help you&mdash;I <em>really</em> wish I could help you, but installation is Python's weakest point. Every time we run a class it seems as if students spend almost as much time wrestling with packages as they do with everything else put together. "Bewildering" is an accurate description, and while there's some hope of things getting better, we aren't there yet. Virtualenv + pip isn't a complete solution, but it does make it easier to back out failed installations (which I guess is something). I'm sorry I don't have anything better to offer.</p></blockquote>
+<p>And a colleague's response was:</p>
+<blockquote><p>Instead of having a systematic package installation solution, I mostly just plow through a series of failures. That is, if I find I don't already have a module via the EPD [the Enthought Python Distribution], I usually also find it's not available through macports. Next, I usually end up trying to easy_install it. If that doesn't work, I resort to pip. Doing this for each new package that I need is not pretty. I wouldn't recommend it, and I applaud you for trying to bring order to your life instead... Anyway, unfortunately for you, neither pentaho or mysqldb are installed with the EPD, and neither apears to be available through macports, so my only pieces of positive advice here are really quite useless.</p></blockquote>
+<p>This continues to be the <a href="{{page.root}}/blog/2011/06/doing-the-math.html">biggest</a> <a href="{{page.root}}/blog/2011/11/quantifying-installation-costs.html">headache</a> our students face, not least because they have to deal with it on day zero, before they've learned what they need to know in order to diagnose and fix problems. I'm slowly coming around to the notion that we should just give students a virtual machine to use for the first couple of days, and only then try to get things installed natively on their machines. Opinions on this (particularly ones backed up by experience) would be appreciated.</p>

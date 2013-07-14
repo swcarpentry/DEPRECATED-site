@@ -1,0 +1,20 @@
+---
+layout: blog
+date: 2010-12-10
+time: 09:00:00
+author: wilson.g
+title: Performance and Parallelism
+category: [content]
+---
+<p>Some topics for a lecture on parallel programming:</p>
+<ol>
+<li>how to measure/compare performance (raw speed, weak scaling, strong scaling, Amdahl's Law, response time vs. throughput)</li>
+<li>the register/cache/RAM/virtual memory/local disk/remote storage hierarchy and the relative performance of each (order of magnitude)</li>
+<li>in-processor pipelining (or, why branches reduce performance, and why vectorized operations are a good thing)</li>
+<li>how that data-parallel model extends to distributed-memory systems, and what the limits of that model are</li>
+<li>the shared-memory (threads and locks) model, its performance<br />
+limitations, deadlock, and race conditions</li>
+<li>the pure task farm model, its map/reduce cousin, and their limitations</li>
+<li>the actors model (processes with their own state communicating only through messages, as in MPI)</li>
+</ol>
+<p>It's too much (each point should be an hour-long lecture in its own right, rather than 10-12 minutes of a larger lecture); what do we cut, and what's in there that doesn't need to be?</p>

@@ -1,0 +1,29 @@
+---
+layout: blog
+date: 2012-07-21
+time: 09:00:00
+author: wilson.g
+title: How Robust Is Your Programming Language?
+category: [education, opinion, tooling]
+---
+<p>One of the biggest problems in teaching novices how to program is that most programming systems are not robust. A car can go quite a long distance on a slightly-flat tire, and people can live for years with just one kidney or half a liver, but get one character out of place in a program, and boof&mdash;it's game over. And spotting that one character can be very hard, particularly if you're a novice and are learning mostly through copy-paste-and-tweak.</p>
+<p>Here's an example from a recent workshop. Learners had a bunch of data files that looked like this:</p>
+<pre>Date,Species,Count
+2012-07-03,raccoon,3
+2012-07-03,deer,1
+2012-07-04,squirrel,5
+2012-07-04,raccoon,1
+2012-07-05,squirrel,7
+2012-07-05,mouse,1</pre>
+<p>I'd shown them how to build a pipeline using <code>cut</code> and <code>grep -v</code> to extract the names of the animals that had been seen (and discard the title "Species"). Separately, I had also shown them how to use <code>sort</code> and <code>uniq -c</code> to count the number of distinct items in a list, and how to use a <code>for</code> loop to do something for each file in a set. Their capstone task was to put the three ideas together to count the number of distinct species in each data file separately.</p>
+<p>Here's what one student wrote: can you spot the bug?</p>
+<pre>#!/bin/bash/
+for filename in *.dat
+do
+    cut -d , -f 2 $filename | grep -v Species | sort | uniq -c
+done</pre>
+<p>Give up? It's the trailing '/' on the '#!' line at the start: it makes <code>/bin/bash/</code> look like a directory, which of course can't be used to execute a script. But that "of course" took me a minute to spot, and that was after the learner had spent (at a guess) five or ten minutes tweaking things in the body of the script.</p>
+<p>Almost by definition, novices don't have a good mental model of how things work, but that's exactly what they need in order to diagnose and fix problems. Real (physical) tools mostly aren't like this: you don't have to be a perfect driver in order to drive a car, or Picasso in order to paint a wall, because the things you're using are fairly forgiving.</p>
+<p>I'd therefore like to throw out a challenge to programming language designers. Forget about parallelism or the esoteric corner cases of various type systems; instead, focus on robustness. How forgiving is your language? How well do programs written in it work when people make minor mistakes? Or to switch to industrial engineering terminology, what are your language's tolerances?</p>
+<p>And to help people along this path, I'd like to propose a metric. Consider the set of all variants of your program in which a single typing mistake has been made (like the trailing '/' in the example above). The Strong Robustness Measure is the percentage of those programs that correctly reproduce the output of the intended program. The Weak Robustness Measure is the percentage for which the exact location of the error, and the fix required, are reported in terms a novice can understand. (I realize that what a novice understands is ill-defined, but you get the idea.) At a guess, Python's SRM score is close to 0%; its WRM score is around 20-50%, but that's based solely on recall of personal experience. I suspect that supposedly "forgiving" languages like Perl and Ruby don't do any better on either measure, and that "strict" languages like Java and Haskell do markedly worse on the second (without improving the first).</p>
+<p>I also suspect that as long as most languages and tools have an SRM score of 0, programming will continue to be hard to learn...</p>

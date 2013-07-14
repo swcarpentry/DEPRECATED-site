@@ -1,0 +1,65 @@
+---
+layout: blog
+author: waugh.b
+title: Workshop for High-Energy Physics at UCL, Part 2
+date: 2013-02-27
+time: 10:00:00
+category: [boot-camp, venues/university-college-london]
+---
+
+<p>Three months
+  after <a href="{{page.root}}/blog/2012/11/workshop-for-high-energy-physics-at-ucl.html">part
+  1</a>, the second half of the UCL Software Carpentry workshop for
+  High-Energy Physics took place on Friday 15th February 2013.
+</p>
+
+<p>The experimental format with two sessions three months apart might
+  have worked better if, as envisaged, we had managed to get an online
+  discussion going in the gap. Unfortunately this did not work
+  out. Despite several attempts at chasing up the participants, no-one
+  registered or posted anything on the course web site. After talking
+  to some of the students, I think their interest was just not great
+  enough to overcome the bureaucracy involved in registering on the
+  UCL Moodle server and the tendency to focus on their other
+  (assessed) courses and research projects. Attendance was down from
+  65% to 30% (6 of 20 students), although those who did attend were
+  clearly motivated, worked hard and asked thoughtful questions. With
+  two helpers (James Hetherington and HEP postgrad Sam Cook) and
+  myself as instructor, we had a student:staff ratio of 2:1.</p>
+
+<p>Most of the morning session was spent getting back to where we were
+  at the end of part 1, with various technical problems needing to be
+  solved all over again. Surprisingly, everyone came back after lunch
+  and the afternoon session was, I think, rather more
+  successful. Taking advantage of the small student numbers, we
+  divided the class into two teams of three, and set them to work on
+  different parts of the same code base. One team wrote code to
+  retrieve a list of particle four-momenta from a collision event,
+  while the other team worked on generating a list of
+  oppositely-charged pairs from a list of particles.
+</p>
+
+<p>Due in part to the nature of their tasks and the input they had to
+  work with, the first team took a fairly ad-hoc approach to testing
+  their code, while the second wrote a fairly comprehensive set of
+  unit tests. In between iterations (of about 20 minutes each) they
+  talked about what they had done and what problems they had
+  encountered, and after each iteration they pushed their code to the
+  shared repository on GitHub, merging their changes where needed.
+</p>
+
+<p>During the last half hour I pulled the merged code
+  from both teams into my local repository and used a separate Git
+  branch (based on my own version of the code) to plot the results.
+  Then I rushed through a
+  list of topics we had not managed to cover, including testing
+  floating-point numbers.</p>
+
+<p>While there is a lot more material I would have liked to cover, and
+  could perhaps have covered by imposing a more rigid structure on the
+  event, I
+  suspect that the most effective learning experience was the rather
+  chaotic extended exercise in collaborative code development. What I
+  would like to do next year is find a way to scale this up to what I
+  hope will be a larger class.</p>
+

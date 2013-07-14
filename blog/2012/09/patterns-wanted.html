@@ -1,0 +1,53 @@
+---
+layout: blog
+date: 2012-09-12
+time: 09:00:00
+author: wilson.g
+title: Patterns Wanted
+category: [content, education]
+---
+<p>At some point or other, most programmers have encountered the idea of design patterns in software, and many (including myself) have been zealous about them, at least for a while. They haven't actually revolutionized either the practice of software development or the way we teach it, but becoming familiar with them is to programmers what learning the Beatles' greatest hits is to musicians.</p>
+<p>That presents us with a problem. We have deliberately chosen <em>not</em> to include object-oriented programming in the core of Software Carpentry: it's too big to fit into the time we have, and too far beyond what our learners bring with them. However, almost all discussion of design patterns is phrased in terms of classes and objects. It doesn't have to be&mdash;the ideas behind Proxy, Singleton, and Iterator are frequently used in procedural languages like C&mdash;but:</p>
+<ol>
+<li>patterns rose to prominence in the early 1990s partly because they helped procedural programmers make sense of OOP;</li>
+<li>most professional programmers use OOP, so that's the right way to talk to them; and</li>
+<li>some patterns really do only make sense in OO languages.</li>
+</ol>
+<p>The biggest problem, though, is that most discussion of patterns is over our learners' heads, i.e., it addresses problems they haven't reached yet. The scientists we're helping are still trying to figure out what aliasing is, or why it's usually better for a function to take an open stream as an argument rather than a filename. The patterns <em>they</em> need are so simple that most programmers have forgotten that they need to be learned.</p>
+<p>There are a couple of exceptions, though. One is the "<a href="http://www.cs.joensuu.fi/~saja/var_roles/index.html">Roles of Variables</a>" work that Sajaniemi and others did a few years ago. By looking at the kinds of programs people write in introductory courses, they classified variables as follows:</p>
+<blockquote><p><em>Fixed value</em> and <em>organizer</em> contain the same data throughout the program; only the order of data elements may be changed. <em>Most-recent holder</em> and <em>stepper</em> record data flow sources; either coming from outside or generated internally. The net effect of all items in a data flow is represented by a <em>one-way flag</em>, <em>most-wanted holder</em>, or <em>gatherer</em>; while a manipulation of a single element is recorded in a <em>follower</em> or <em>temporary</em>. Data may be stored in a <em>container</em> which can be traversed with a <em>walker</em>. Finally, a data entity not covered by any of the previous roles is considered to have the role <em>other</em>.</p></blockquote>
+<p>Their classification scheme is not unambiguous (i.e., different experts can label a particular variable in different ways) but the same thing happens with design patterns, but that's OK&mdash;defensible differences are informative. The real benefit of this scheme is that it gives novices a way to organize and plan programs: once they've learned to recognize roles, they can start to create variables with roles in mind, which saves them from having to reinvent or rediscover the idioms that distinguish experts from novices.</p>
+<p>Another piece of work aimed at the same level is <a href="http://dl.dropbox.com/u/11561272/index.html">Michael de Raadt</a>'s dissertation on novice-level programming plans. He described 18 of them:</p>
+
+<tbody>
+<tr>
+<td valign="top">
+<ul>
+<li>Average</li>
+<li>Divisibility</li>
+<li>Cycle Position</li>
+<li>Number Decomposition</li>
+<li>Initialisation</li>
+<li>Triangular Swap</li>
+<li>Guarded Exceptions</li>
+<li>Counter Controlled Loop</li>
+<li>Primed Sentinel Controlled Loop</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li>Sum and Count</li>
+<li>Validation</li>
+<li>Min/Max</li>
+<li>Tallying</li>
+<li>Search Algorithm</li>
+<li>Bubble Sort Algorithm</li>
+<li>Command Line Arguments</li>
+<li>File Use</li>
+<li>Recursion (single- and multi-branching)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Both pieces of work are a great start, but we want to teach people the craft of (scientific) programming, we need more. That's where you come in: what patterns have you used in your programs? When do you use them? When <em>don't</em> you (i.e., what are their boundary or limiting cases)? And do you know of any other catalogs or summaries that we could link to?</p>

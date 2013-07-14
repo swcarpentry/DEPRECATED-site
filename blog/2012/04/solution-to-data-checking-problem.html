@@ -1,0 +1,78 @@
+---
+layout: blog
+date: 2012-04-04
+time: 09:00:00
+author: wilson.g
+title: Solution to Data Checking Problem
+category: [venues/stsci, tutorial, versions/version-5-0]
+---
+<p>I finally had a chance this morning to record my solution to the final exercise I set the learners from the Space Telescope Science Institute. It demonstrates how to build a little program in Python that checks the consistency of some experimental data; along the way, it uses file I/O, functions, assert statements, lists of lists, and on-the-fly unpacking. As always, feedback on the content and format would be greatly appreciated. (And if anyone would like to post their own solution, either as plain code or as a video, please let me know so that I can include it here.)</p>
+
+{% assign video_title="Solution to Helmet Data Checking Problem" %}
+{% assign video_slug="vV_SbCaD0O8" %}
+{% assign video_time="00:14:20" %}
+{% include youtube.html %}
+
+<pre>import sys
+
+#--------------------
+
+def get_reader(args):
+    '''Select either standard input or a file to read from.'''
+    if len(args) == 1:
+        reader = sys.stdin
+    elif len(args) == 2:
+        reader = file(sys.argv[1], 'r')
+    else:
+        print &gt;&gt; sys.stderr, "Usage: check.py [filename]"
+    return reader
+
+#--------------------
+
+def get_data(reader):
+    '''Read a helmet test data file.  We expect the date on the first
+    line, a title line second, and then one triple for each
+    experiment.'''
+    reader.readline() # should be the date
+    reader.readline() # should be the title line
+    # Each other line must be (degrees, seconds, brittleness) record
+    data = []
+    for line in reader:
+        fields = line.split()
+        assert len(fields) == 3, "Bad line: %s" % line
+        deg = float(fields[0])
+        sec = float(fields[1])
+        brit = float(fields[2])
+        record = [deg, sec, brit]
+        data.append(record)
+    return data
+
+#--------------------
+
+def report_error(left, right):
+    '''Report inconsistent data.'''
+    print left, 'is inconsistent with', right
+
+#--------------------
+
+def check(data):
+    '''Check that records obey consistency rules.'''
+    for record_1 in data:
+        deg_1, sec_1, brit_1 = record_1
+
+        for record_2 in data:
+            deg_2, sec_2, brit_2 = record_2
+
+            if (deg_1 == deg_2) and \
+               (sec_1 &gt; sec_2) and \
+               (brit_1 &lt; brit_2):                 report_error(record_1, record_2)             if (deg_1 &gt; deg_2) and \
+               (sec_1 == sec_2) and \
+               (brit_1 &lt; brit_2):
+                report_error(record_1, record_2)
+
+#--------------------
+
+reader = get_reader(sys.argv)
+data = get_data(reader)
+check(data)
+reader.close()</pre>

@@ -1,0 +1,17 @@
+---
+layout: blog
+date: 2011-01-21
+time: 09:00:00
+author: wilson.g
+title: "Scientists Aren't Stupid: Software Is"
+category: [opinion]
+---
+<p>Last night, <a href="http://techspot.zzzeek.org/">Mike Bayer</a> (<a href="http://twitter.com/zzzeek">@zzzeek</a>) tweeted:</p>
+<blockquote><p>Why are "scientists", who are so dramatically smarter than me, such dumdums when it comes to basic programming skills: <a rel="nofollow" href="http://bit.ly/fWPtjW" target="_blank">http://bit.ly/fWPtjW</a></p></blockquote>
+<p>Taavi Burns (<a href="http://twitter.com/jaaaarel">@jaaaarel</a>) replied:</p>
+<blockquote><p>Ask @gvwilson of @swcarpentry?</p></blockquote>
+<p>So here I am, and what I want to say is:</p>
+<blockquote><p>Scientists aren't stupid: software is.</p></blockquote>
+<p>Seriously. I spent an hour and a half last night trying <em>and failing</em> to get Thunderbird and Dreamhost's email to play nicely together. Today, I'm wrestling with the fact that Python's <code>multiprocessing</code> library gets lost in infinite recursion if you try to do something crazy like, oh, I don't know, leave out the <code>if __name__ == '__main__'</code> check (but only on Windows). In both cases, the parties involved can explain why it does what it does, and in both cases, I just... don't... care.</p>
+<p>So here's what I want to say to software developers who wonder why scientists are dumdums. When a scientist says "a&gt;b doesn't work for complex numbers", it's not <em>their</em> fault. When a programmer says "a&gt;b doesn't work for email messages", odds are good that it's because two standards committees didn't talk to each other, or it's a deliberate fail for backward compatibility with something written in 1997, or something like that.</p>
+<p>The key concept here is one that Irving Reid introduced me to: <a href="http://en.wikipedia.org/wiki/Learned_helplessness">learned helplessness</a>. If something fails repeatedly, people learn that it's not worth trying to make it work again. That lesson sticks, even when circumstances change in ways that make success possible. Once someone has wasted hours trying <em>and failing</em> to get A, B, and C to play together nicely on their laptop&mdash;once they have spent hours figuring out <em>why</em> that failed, only to find that what they learned is useless when the next problem crops up&mdash;it's quite reasonable for them to stop trying, because the odds are against them succeeding without superhuman effort. As long as software conditions people to believe that, to first order, they're doomed&mdash;as long as "doubling your chance of succeeding" means raising the probability from 1% to 2%&mdash;maybe they're <em>right</em> to put that time into the science they wanted to be doing in the first place.</p>

@@ -1,0 +1,26 @@
+---
+layout: blog
+date: 2010-08-03
+time: 09:00:00
+author: wilson.g
+title: A Question About Nose
+category: [content]
+---
+<p>I'm putting together an episode of the testing lecture to introduce unit testing frameworks. In the past, I've used unittest, but colleagues have had good experiences with Nose, which doesn't require students to understand classes and methods in order to write tests. As an example, they're going to test a function that finds the overlap between fields in aerial photographs of Saskatchewan (where it's safe to assume that everything is a rectangle :-) ).</p>
+<p>My question is, does Nose already have a tool for running through a table of fixtures and expected results?  My hand-rolled version is:</p>
+<pre>Tests = (
+    #  R1                 R2                  Expected
+    ( ((0, 0), (0, 0)),   ((0, 0), (0, 0)),   None ),
+    ( ((0, 0), (0, 0)),   ((0, 0), (1, 1)),   None ),
+    ( ((0, 0), (1, 1)),   ((0, 0), (1, 1)),   ((0, 0), (1, 1)) ),
+    ( ((0, 3), (2, 5)),   ((1, 0), (2, 4)),   ((1, 3), (2, 4)) )
+)
+
+def test_table():
+    for (R1, R2, expected) in Tests:
+        yield run_it, R1, R2, expected
+
+def run_it(R1, R2, expected):
+    assert overlap(R1, R2) == expected
+</pre>
+<p>which is simple enough if students already understand generators and function application, but hell to explain if they don't&mdash;and they won't.  So, is this already in Nose, and I've just missed it?  If not, who wants to help me design it, and what's the likely elapsed time between submission of a patch and its appearance in a release?</p>

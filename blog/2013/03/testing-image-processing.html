@@ -1,0 +1,137 @@
+---
+layout: blog
+author: wilson.g
+title: Testing Image Processing
+date: 2013-03-17
+time: 10:00:00
+category: [lectures]
+---
+<p>
+  <a href="{{page.root}}/v4/test/index.html">Testing</a> has always been part of Software Carpentry,
+  but it's also always been one of our weak spots.
+  We explain that testing can't possibly uncover all the mistakes in a piece of software,
+  but is useful anyway, then talk about unit testing and test-driven development.
+  Separately,
+  in the <a href="{{page.root}}/v4/invperc/index.html">extended program design example</a>,
+  we demonstrate how to <a href="{{page.root}}/v4/invperc/refactoring.html">refactor code</a>
+  to make it <a href="{{page.root}}/v4/invperc/test.html">more testable</a>.
+</p>
+<p>
+  What we <em>don't</em> do is show people how to test the science-y bits of scientific software.
+  More specifically,
+  our current material doesn't contain a single example showing how to check
+  the correctness of something that does floating-point.
+  You won't find much mention of this in books and articles aimed at mainstream programmers either:
+  most just say, "Oh, round-off,"
+  then tell you to use an <code>almostEquals</code> assertion with a tolerance,
+  without telling you how to decide what the tolerance should be,
+  or what to do when your result is a vector or matrix rather than a single scalar value.
+</p>
+<p>
+  I'd like to fix this, but there's a constraint:
+  whatever examples we use must be comprehensible to everyone we're trying to reach.
+  That rules out anything that depends on knowing how gamma functions are supposed to behave,
+  or what approximations can be used to give upper and lower bounds on advection in fluids with high Reynolds numbers.
+  What <em>might</em> work is simple image processing:
+</p>
+<ol>
+  <li>
+    It's easy to see what's going on
+    (though using this for our examples does create even higher barriers for the visually impaired).
+  </li>
+  <li>
+    There are a lot of simple algorithms to test that can go wrong in interesting, plausible ways.
+  </li>
+  <li>
+    We're planning to shift our intro to Python to be media-based anyway
+    (using Matt Davis's <a href="https://pypi.python.org/pypi/ipythonblocks">ipythonblocks</a>
+    and Mike Hansen's <a href="https://github.com/synesthesiam/scikit-image/tree/master/skimage/novice">novice</a> submodule
+    for <a href="https://github.com/scikit-image/scikit-image">scikit-image</a>).
+  </li>
+  <li>
+    People can learn something useful while they're learning about testing.
+  </li>
+</ol>
+<p>
+  How do experts test image processing code?
+  According to Steve Eddins,
+  who writes image processing code at The MathWorks
+  and blogged about a <a href="http://blogs.mathworks.com/steve/2013/03/12/matlab-software-testing-tools-old-and-new-r2013a/">new testing framework for MATLAB</a>
+  a few days ago:
+</p>
+<blockquote>
+  <p>
+    Whenever there is a floating-point computation that is then quantized to produce an output image,
+    comparing actual versus expected can be tricky.
+    I had to learn to deal with this early in my MathWorks software developer days.
+    Two common scenarios in which this occurs:
+  </p>
+  <ul>
+    <li>Rounding a floating-point computation to produce an integer-valued output image</li>
+    <li>Thresholding a floating-point computation to produce a binary image (such as many edge detection methods)</li>
+  </ul>
+  <p>
+    The problem is that floating-point round-off differences  can turn a floating-point value
+    that should be a 0.5 or exactly equal to the threshold into a value that's a tiny bit below.
+    For testing, this means that the actual and expected images are exactly the same...except
+    for a small number of pixels that are off by one.
+  </p>
+  <p>
+    In a situation like this,
+    the actual image can change because you changed the compiler's optimization flags,
+    used a different compiler,
+    used a different processor,
+    used a multithreaded algorithm with dynamic allocation of work to the different threads,
+    etc.
+    So to compare actual against expected,
+    I wrote a test assertion function that passes if the actual is the same as the expected
+    except for a small percentage of pixels that are allowed to be different by 1.
+  </p>
+</blockquote>
+<p>
+  All right,
+  but how do you decide how many is "a small percentage"?
+  Quoting Steve again:
+</p>
+<blockquote>
+  <p>
+    There isn't a general rule.
+    With filtering, for example,
+    some choices of filter coefficients could lead to a lot of "int + 0.5" values;
+    other coefficients might result in few or none.
+  </p>
+  <p>
+    I start with either an exact equality test or a floating-point tolerance test,
+    depending on the computation.
+    If there are some off-by-one values,
+    I spot-check them to verify whether they are caused by a floating-point round-off plus quantization issue.
+    If it all looks good,
+    then I set the tolerance based on what's happening in that particular test case and move on.
+    If you tied me down and forced me to pick a typical number,
+    I'd say 1%.
+  </p>
+  <p>
+    Perhaps not a very satisfying answer...
+  </p>
+</blockquote>
+<p>
+  To which I replied:
+</p>
+<blockquote>
+  <p>
+    This is a great answer,
+    because it mirrors what scientists do with physical lab experiments:
+  </p>
+  <ul>
+    <li>Get a result.</li>
+    <li>Go through the differences between actual and expected to see if they can explain/understand "why".</li>
+    <li>Make a note of their tolerances for future re-use.</li>
+  </ul>
+</blockquote>
+<p>
+  As we say in our classes,
+  programs ought to be treated like any other kind of experimental apparatus.
+  My question now is,
+  what rules of thumb do <em>you</em> have for testing the science-y bits of your code?
+  We'd welcome replies as comments or <a href="mailto:{{site.contact}}">email</a>.
+</p>

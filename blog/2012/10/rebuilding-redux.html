@@ -1,0 +1,34 @@
+---
+layout: blog
+date: 2012-10-12
+time: 09:00:00
+author: wilson.g
+title: Rebuilding Redux
+category: [content, opinion, tooling]
+---
+<p>The time has come to replace our creaking combination of web tools with something that will let us do more for more people while spending less time switching between browser tabs. To recap <a href="{{page.root}}/blog/2012/04/behind-the-scenes-or-the-ethics-of-cultivating-discontent.html">an earlier post</a>, we currently use:</p>
+<ul>
+<li>WordPress for our blog, web site pages, and comments;</li>
+<li>YouTube to host our videos (links to which are embedded in the WordPress pages);</li>
+<li>Subversion (administered via the Dreamhost control panel) to manage our slides, code examples, and other files;</li>
+<li>Mailman (administered the same way) to manage mailing lists;</li>
+<li>a Google Map to show the locations of past and future boot camps;</li>
+<li>a Google Calendar to show their dates;</li>
+<li>Google Analytics to track web site traffic;</li>
+<li>EventBrite to handle event signup; and</li>
+<li>OpenBadges to keep track of who's accomplished what (currently in beta).</li>
+</ul>
+<p>We also use Vidyo for video conferencing (primarily tutorials), and run Etherpad beside it so that people have a text channel for asking questions, posting links and code fragments, taking minutes, and so on. As I pointed out in that <a href="{{page.root}}/blog/2012/04/behind-the-scenes-or-the-ethics-of-cultivating-discontent.html">aforementioned post</a>, this means admins need at least six different logins to get things done, and need to copy a lot of information from place to place. For example, whenever we commit to a new boot camp, someone needs to:</p>
+<ol>
+<li>create a new event on EventBrite;</li>
+<li>create a new page for it on WordPress;</li>
+<li>reorder the WordPress pages so that the new event page is in the right place chronologically;</li>
+<li>make sure that page links to the right EventBrite event;</li>
+<li>update the overall schedule page in WordPress;</li>
+<li>put a new pin on the Google Map; and</li>
+<li>add the event to our calendar.</li>
+</ol>
+<p>And then there are the mailing lists. In theory, they're nested (developers are a subset of potential tutors, tutors are a subset of interested parties, they're a subset of everyone who gets announcements), but since Mailman doesn't do nested lists, people have to be added to as many as five lists separately (the fifth being geographical, e.g., a list for everyone in the UK). I'm pretty sure those lists are inconsistent right now, but tracking down and fixing those inconsistencies would take time we don't have.</p>
+<p>In theory, the solution is to use some sort of content management system (CMS) to manage all the cross-referencing and maintain consistency. In theory, all an admin should have to do is fill in a form with a boot camp's name, location, and date, and blammo&mdash;everything would be updated to reflect the change in the database. In practice, though, we haven't found a CMS that does the things we need: Plone and Drupal and what-not have some of the features we want, but not all of them. Neither do learning management systems (LMSes) like Moodle and Sakai: they implicitly assume multiple courses, with assignments, in one geographic location, so things like the geolocation of a set of events, or signup/registrations for them, aren't there out of the box. (They also add a couple of layers we don't want: as far as I can tell, there's no way for us to avoid having a course menu with exactly one course in it.)</p>
+<p>The other option would be to stop treating this as a content management problem and start treating it as a programming problem. (I have this hammer...) <a href="http://ivory.idyll.org/blog/">Titus Brown's blog</a> uses <a href="http://docs.getpelican.com/en/3.0/index.html">Pelican</a>, which compiles Jinja2 template files to create or update static pages, and Disqus to handle commenting. Since EventBrite and Google Whatever have web APIs, we could write some tools to pull content from a version control repository (for example, on GitHub), update pages that had actually changed, make sure that external services like EventBrite and Google are in sync, and so on.</p>
+<p>I honestly don't know which option to pursue. I really like the idea that content is in a repository rather than in a database, since that will make it easier for people to contribute new material (merging rocks), but it would take me 2-3 weeks to build what's needed (most of which would be spent figuring out how, testing that I got it right, and then creating run-once tools to import existing content). On the other hand, tools like Plone and Drupal have large developer communities, who have written hundreds of extensions, and will write hundreds more in future, so if we opt for one of those, the odds are that the next time we need something like a dead link checker or Gravatar display, we won't have to build it ourselves. As is so often the case, we'll probably make our choice based on who volunteers to help us first.</p>

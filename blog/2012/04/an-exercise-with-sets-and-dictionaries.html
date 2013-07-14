@@ -1,0 +1,75 @@
+---
+layout: blog
+date: 2012-04-20
+time: 09:00:00
+author: wilson.g
+title: An Exercise With Sets and Dictionaries
+category: [tutorial, versions/version-5-0]
+---
+<p>You are working for a nanotechnology company that prides itself on manufacturing some of the finest molecules in the world. Your job is to rewrite parts of their ordering system, which keeps track of what molecules they can actually make. Before trying this exercise, please review:</p>
+<ol>
+<li><a href="{{page.root}}/v4/setdict/intro.html">Introduction</a></li>
+<li><a href="{{page.root}}/v4/setdict/tuples.html">Storage</a> (the short version)</li>
+<li><a href="{{page.root}}/v4/setdict/dict.html">Dictionaries</a></li>
+<li><a href="{{page.root}}/v4/setdict/examples.html">Examples</a></li>
+<li><a href="{{page.root}}/v4/setdict/nanotech.html">Nanotech Example</a></li>
+</ol>
+<p>Submit your work by mailing Greg:</p>
+<ol>
+<li>your final program,</li>
+<li>the input file(s) you used to test it, and</li>
+<li>a shell script that runs all of your tests.</li>
+</ol>
+<p><strong><span id="more-4756"></span>1. Reading</strong></p>
+<p>Your company stores information about molecules in files that contain formulas and names, one per line, like this:</p>
+<pre># Molecular formulas and names
+# $Revision: 4738$
+
+chlorine : Cl*2
+silver nitrate: Ag.N.O*3
+sodium chloride :Na.Cl</pre>
+<p>More specifically:</p>
+<ol>
+<li>Lines may be blank (in which case they are ignored).</li>
+<li>Lines starting with '#' are comments (which are also ignored).</li>
+<li>Each line of actual data has a molecule name, a colon, and a molecular formula. There may or may not be spaces around the colon.</li>
+<li>Each formulas has one or more atom-count values, separated by '.'</li>
+<li>Each atom-count consist of an atomic symbols (which is either a single upper-case letter, or an upper-case letter followed by a lower-case letter) which may be followed by '*' and an integer greater than 1. If there is no count (i.e., if the '*' and integer are missing), the count is 1.</li>
+</ol>
+<p>Write a function called <code>read_molecules</code> which takes a handle to an open file as its only argument, reads everything from that file, and returns a dictionary containing all the formulas in that file. (Here, "a handle to an open file" means either <code>sys.stdin</code>, or the result of using <code>open(filename, 'r')</code> or <code>file(filename, 'r')</code> to open a file.) The result dictionary's keys should be the names of the molecules with leading and trailing whitespace removed. Its values should themselves be dictionaries of atomic symbols and counts. For example, if the data shown above is contained in the file <code>molecules.mol</code>, then this Python:</p>
+<pre>reader = file('molecules.mol', 'r')
+data = read_molecules(reader)
+reader.close()
+print data</pre>
+<p>should produce something like:</p>
+<pre>{
+ 'chlorine'        : {'Cl' : 2},
+ 'silver nitrate'  : {'Ag' : 1, 'N' : 1, 'O' : 3},
+ 'sodium chloride' : {'Na' : 1, 'Cl' : 1}
+}</pre>
+<p><em>Note: if your tutorial group has already covered regular expressions, use them for this part of the exercise. If you have not yet met regular expressions, use string splitting instead.</em></p>
+<p><strong>2. Merging</strong></p>
+<p>Write a function called <code>merge_molecules</code> that takes two dictionaries like the one shown above and produces a third dictionary that contains the contents of both according to the following rules:</p>
+<ol>
+<li>If a molecule appears in one input dictionary or the other, it also appears in the result.</li>
+<li>If a molecule appears in both input dictionaries with the same formula, one copy of it appears in the result.</li>
+<li>If a molecule appears in both input dictionaries with <em>different</em> formulas, it is not copied to the output dictionary at all. (This kind of "silent failure" is actually a really bad practice, but we won't see what we <em>should</em> do until we discuss exceptions.)</li>
+</ol>
+<p>Your function must <em>not</em> modify either of its input arguments: the original dictionaries must be left as they were.</p>
+<p><strong>3. What Can We Make?</strong></p>
+<p>Write a function called <code>can_produce</code> that takes a dictionary of molecular formulas (like the one shown above) and the atomic symbol of one kind of atom, and returns a set containing the names of all the molecules we might be able to make. For example:</p>
+<pre>reader = file('molecules.mol', 'r')
+data = read_molecules(reader)
+reader.close()
+print can_produce(data, 'Cl')</pre>
+<p>should print something like:</p>
+<pre>set(['chlorine', 'sodium chloride'])</pre>
+<p><strong>4. Putting the Pieces Together</strong></p>
+<p>Write a program called <code>produce.py</code> that uses these three functions to tell us the molecules we could make using a particular kind of atom based on the contents of several molecular formula files. For example:</p>
+<pre>$ python produce.py Cl &lt; molecules.mol</pre>
+<p>prints:</p>
+<pre><em>chlorine
+sodium chloride</em></pre>
+<p>while:</p>
+<pre>$ python produce.py Na salts.mol organics.mol alloys.mol</pre>
+<p>reads and merges all the formulas in the three files <code>salts.mol</code>, <code>organics.mol</code>, and <code>alloys.mol</code>, and prints a list of all the molecules from those files that contain sodium.</p>

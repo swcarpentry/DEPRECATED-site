@@ -1,0 +1,51 @@
+---
+layout: blog
+author: wilson.g
+title: Usability Testing and Instructional Design
+date: 2012-10-28
+time: 09:00:00
+category: [content, education, versions/version-5-0]
+---
+
+<p>This is a story in several parts.</p>
+
+<p>1. From Guido van Rossum's <a href="http://python-history.blogspot.ca/2009/02/early-language-design-and-development.html">intermittently-updated blog</a> about the history and design of Python:</p>
+<blockquote>Python's first and foremost influence was <a href="http://homepages.cwi.nl/%7Esteven/abc/">ABC</a>, a language designed in the early 1980s [that] was meant to be a teaching language, a replacement for BASIC, and a language and environment for personal computing. It was designed by first doing a task analysis of...programming...and then doing several iterations that included serious user testing... ABC's authors did invent the use of the colon that separates the lead-in clause from the indented block. After early user testing without the colon, it was discovered that the meaning of the indentation was unclear to beginners being taught the first steps of programming. The addition of the colon clarified it significantly: the colon somehow draws attention to what follows and ties the phrases before and after it together in just the right way.</blockquote>
+<p>This story and others like it were something of a revelation to me when I first encountered Python in the late 1990s. Usability testing of programming languages? Huh&mdash;why isn't <em>everyone</em> doing that?</p>
+
+<p>2. So when an enriched syntax for loops was proposed in 2000, I conducted <a href="http://mail.python.org/pipermail/python-dev/2000-July/006098.html">a little experiment</a>:</p>
+<blockquote>Given the statement:
+<pre>for x in [10, 20, 30]; y in [1, 2]:
+    print x+y</pre>
+<p>would you expect to see:</p>
+<ol>
+        <li>'x' and 'y' move forward at the same rate:
+<pre>11
+22</pre>
+</li>
+        <li>'y' go through the second list once for each value of 'x':
+<pre>11
+12
+21
+22
+31
+32</pre>
+</li>
+        <li>an error message because the two lists are not the same length?</li>
+</ol>
+</blockquote>
+<p>All 11 of the people I tested voted for 'B', which is not what the designer of this syntax had intended it to mean. I did a <a href="http://mail.python.org/pipermail/python-dev/2000-July/006427.html">slightly larger experiment</a> a few days later to compare a few other syntax proposals, and while it was both fun and informative, the practice never caught on.</p>
+
+<p>3. A few years later, I discovered the <a href="http://coweb.cc.gatech.edu/mediaComp-teach">Media Computation work</a> of Barbara Ericson and Mark Guzdial at Georgia Tech. They weren't interested in syntactic details; they were tackling the much larger issue of retention:</p>
+<ol>
+        <li>What and how should we teach to get more people into computing and keep them there (particularly from underrepresented groups like women and non-whites/non-Asians)?</li>
+        <li>What and how should we teach so that the people who <em>do</em> stick around remember more of what we've taught?</li>
+</ol>
+<p>They found that both kinds of retention could be improved by using a media-first approach to computing, i.e., by using examples like resizing images, red-eye removal, and sound editing right from the start. There are many reasons&mdash;it's more immediately useful than finding primes, more fun than sorting strings, and the visual output is often easier to debug&mdash;but what really mattered was that they had evidence to back up their teaching strategy. They turned their findings into a series of <a href="http://www.amazon.com/Introduction-Computing-Programming-Multimedia-Approach/dp/0136060234/">textbooks</a>, and my colleagues at the University of Toronto and I borrowed many of their ideas for <a href="http://www.amazon.com/Practical-Programming-Introduction-Pragmatic-Programmers/dp/1934356271/">our introductory Python book</a>.</p>
+
+<p>4. We also borrowed some code, or at least its API. Ericson and Guzdial realized early on that novices needed a different kind of toolkit than experienced programmers. For novices, a picture was the clay out of which they would shape their understanding of what programming was. They didn't need high-performance edge detection operations; they needed a simple, single-step way to loop over the picture's pixels. The <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a> didn't cater to this kind of thing because it's actually not the "right" way to do image processing, so the Media Computation team built a simpler (but lower-performance) library in Jython to keep simple things simple. We used a C-Python version of this called <a href="http://packages.python.org/PyGraphics/user/index.html">PyGraphics</a>, which included some simple audio manipulation functions as well.</p>
+
+<p>Which brings us to the point of this story. We currently teach Python in a very traditional order: arithmetic, assignment, lists, loops, conditionals, and functions are introduced in more or less that order. We also teach it using very traditional examples: the values we push around are numbers and strings, and the I/O we do is mostly readline-in-a-loop. Given what the folks at Georgia Tech have discovered, and the speed of modern machines, I'd really like to switch that up and try an images-first approach (particularly given how easy the IPython Notebook makes it to display images alongside code). However, I don't want to have to maintain an image manipulation library, no matter how small, or require learners to download and install anything more than they already need to.</p>
+
+<p>But the point is, it's premature to worry about either issue until we know whether this approach actually works any better than what we're doing right now. If we tile images instead of cutting columns out of CSV files, do scientists learn more, faster, about how loops and conditionals and assignment and call stacks work? Do they remember more two weeks or two months later? Do they <em>do</em> more with what they've learned, and if so, does it actually help them do more science? I believe some of these questions can be answered, though the answers may not be easy to build, and as I've said before, if we're going to teach scientists, we damn well ought to act like scientists ourselves.</p>
+

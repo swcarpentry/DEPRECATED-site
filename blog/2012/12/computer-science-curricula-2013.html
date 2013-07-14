@@ -1,0 +1,180 @@
+---
+layout: blog
+author: wilson.g
+title: Computer Science Curricula 2013
+date: 2012-12-23
+time: 09:00:00
+category: [education]
+---
+<p>Following a roughly 10 year cycle, the ACM and IEEE Computer Society jointly sponsor the development of a Computing Curricula volume on Computer Science. These volumes have helped to set international curricular guidelines for undergraduate programs in computing.  Planning for the next volume in the series began in the summer of 2010, and the <a href="http://ai.stanford.edu/users/sahami/CS2013/">Version 0.8 (Ironman)</a> draft was published a couple of months ago.  It divides topics into:</p>
+<ul>
+  <li>Tier 1 Core: every Computer Science curriculum should include all of this material, and every student should have to cover it.</li>
+  <li>Tier 2 Core: curricula should include all or almost all of these topics, and the vast majority of students should cover them.</li>
+  <li>Elective: every cirriculum should also include significant elective material.</li>
+</ul>
+<p>The material is also divided into "knowledge areas".  Most, like "Algorithms and Complexity", are coherent and well-defined, but others, like "Platform-Based Development", are grab bags filled with odds and ends.  So how does our material stack up against these recommendations?  Overall, not badly:</p>
+
+<table border="1">
+
+  <tr>
+    <td>Algorithms and Complexity</td>
+    <td>Basic Analysis</td>
+    <td>4 hours</td>
+    <td>1/2 hour</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Architecture and Organization</td>
+    <td>Machine-Level Representation of Data</td>
+    <td>3 hours</td>
+    <td rowspan="2">1/2 hour for both</td>
+  </tr>
+  <tr>
+    <td>Memory System Organization and Architecture</td>
+    <td>3 hours</td>
+  </tr>
+
+  <tr>
+    <td>Computational Science</td>
+    <td>Data, Information, and Knowledge</td>
+    <td>elective</td>
+    <td>1/2 hour</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Information Assurance and Security</td>
+    <td>Fundamental Concepts</td>
+    <td>3 hours</td>
+    <td>nothing yet, but working on it</td>
+  </tr>
+
+  <tr>
+    <td>Network Security</td>
+    <td>5 hours</td>
+    <td>15 minutes (SSH and keys)</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Information Management</td>
+    <td>Query Languages</td>
+    <td>elective (really??)</td>
+    <td>1.5 hours (SQL)</td>
+  </tr>
+
+  <tr>
+    <td>Information Storage and Retrieval</td>
+    <td>elective</td>
+    <td>10 minutes (character encoding)</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Networking and Communication</td>
+    <td>Introduction</td>
+    <td>1.5 hours</td>
+    <td rowspan="2">10 minutes (TCP and DNS)</td>
+  </tr>
+  <tr>
+    <td>Networked Applications</td>
+    <td>1.5 hours</td>
+  </tr>
+
+  <tr>
+    <td>Operating Systems</td>
+    <td>File Systems</td>
+    <td>elective (really??)</td>
+    <td>15 minutes</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Programming Languages</td>
+    <td>Functional Programming</td>
+    <td>7 hours</td>
+    <td>1/2 hour (first-class functions)</td>
+  </tr>
+
+  <tr>
+    <td>Basic Type Systems</td>
+    <td>5 hours</td>
+    <td>10 minutes</td>
+  </tr>
+
+  <tr>
+    <td rowspan="3">Software Development Fundamentals</td>
+    <td>Algorithms and Design</td>
+    <td>11 hours</td>
+    <td>1/2 hour [<a href="#a">A</a>]</td>
+  </tr>
+
+  <tr>
+    <td>Fundamental Programming Concepts</td>
+    <td>10 hours</td>
+    <td>1 hour [<a href="#b">B</a>]</td>
+  </tr>
+
+  <tr>
+    <td>Fundamental Data Structures</td>
+    <td>12 hours</td>
+    <td>1 hour [<a href="#c">C</a>]</td>
+  </tr>
+
+  <tr>
+    <td rowspan="5">Software Engineering</td>
+    <td>Software Processes</td>
+    <td>3 hours</td>
+    <td>15 minutes (mostly about agile, mostly as asides)</td>
+  </tr>
+
+  <tr>
+    <td>Tools and Environments</td>
+    <td>2 hours</td>
+    <td>1.5 hours (version control and testing tools)</td>
+  </tr>
+
+  <tr>
+    <td>Software Design</td>
+    <td>8 hours</td>
+    <td>15-30 minutes (mostly by example while teaching "Fundamental Programming Concepts")</td>
+  </tr>
+
+  <tr>
+    <td>Software Construction</td>
+    <td>2 hours</td>
+    <td>15-30 minutes (as above)</td>
+  </tr>
+
+  <tr>
+    <td>Software Verification and Validation</td>
+    <td>3 hours</td>
+    <td>1/2 hour (overlapped with "Tools nad Environments")</td>
+  </tr>
+
+  <tr>
+    <td>Social Issues and Professional Practice</td>
+    <td>Intellectual Property</td>
+    <td>2 hours</td>
+    <td>none, but we need to add something</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" id="a">[A] The ACM/IEEE curriculum focuses on problem-solving strategies like divide-and-conquer, which aren't part of what we teach.  It also includes abstraction, program decomposition, encapsulation, and interface/implementation separation, which we definitely do.</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" id="b">[B] This heading includes the basics of imperative programming: loops, conditionals, file I/O, functions, and so on.  It's the only place where there's pretty much a one-to-one alignment between our material and the curriculum's.</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" id="c">[C] Arrays, strings, sets, and maps (dictionaries): check.  Stacks and queues: we don't do that (although we would if there was time).  References and aliasing: definitely, though I always wonder how much our learners actually understand.</td>
+  </tr>
+
+</table>
+
+<p>The biggest discrepancy is actually between our material and what appears under their "Computational Science" heading.  It is an odd beast, including:</p>
+<ul>
+  <li>"Modeling and Simulation" (no problem there);</li>
+  <li>"Processing", which is mostly about the practical implications of computer architecture;</li>
+  <li>"Interactive Visualization", which rehashes the larger "Graphics and Visualization" knowledge area; and</li>
+  <li>"Data, Information, and Knowledge", which does the same for the "Information Management" knowledge area.</li>
+</ul>
+<p>It's very revealing that version control, testing tools, and modular program design <em>aren't</em> included. The standard's authors would probably say that's because they're covered elsewhere, but the same is true of processing, visualization, and data management, all of which get special mention.  It seems we have our work cut out for us...</p>
+

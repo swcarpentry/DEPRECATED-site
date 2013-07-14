@@ -1,0 +1,23 @@
+---
+layout: blog
+date: 2012-06-04
+time: 09:00:00
+author: wilson.g
+title: "Software Carpentry: The E-Book Version?"
+category: [noticed, tooling]
+---
+<p>If I could send email two years into the past, I'd tell myself to spend a lot less time making videos for Software Carpentry, and a lot more time exploring interactive formats. One that I've been following recently is the <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython Notebook</a>, a "live" lab notebook that allows scientists to mix, share, and explore text, code, graphs, and the like. Another, which I've just come across through <a href="http://computinged.wordpress.com/2012/06/04/interactive-ebook-from-runestone-interactive-a-python-ebook-with-ide-and-visualization-built-in/">this post</a> on Mark Guzdial's ever-informative blog, is <a href="http://thinkcspy.appspot.com/build/index.html">an interactive version of "How to Think Like a Computer Scientist"</a>. As Brad Miller says <a href="http://reputablejournal.com/post/14021560622/how-to-think-like-a-computer-scientist-interactive">in his description</a>:</p>
+<blockquote><p>this book is really a triumph of open source.  Here are the open source components we've used and modified for this project:</p>
+<ul>
+<li>The text in the book is based on the original How to Think Like a Computer Scientist by Jeff Elkner, et. al.  You can find the non-interactive version <a href="http://openbookproject.net/thinkcs/">here</a></li>
+<li>The Python Interpreter is by Scott Graham and you can find out information about it at <a href="http://skulpt.org">Skulpt.org</a>.  This was a really key piece and although I've spent a ton of time creating a turtle graphics module for it, the book wouldn't have gotten off the ground without it.  In the book the pieces we refer to as activecode  all make use of Skulpt, along with the really nice Javascript editor <a href="http://codemirror.net">Codemirror</a>.</li>
+<li>What we call codelens in the book is based on work by <a href="http://people.csail.mit.edu/pgbovine/python/">Philip Guo</a>.  I really like this part because students can step through the code a line at a time both forward and backward.</li>
+<li>Finally, the glue that holds the whole thing together is the excellent <a href="http://sphinx.pocoo.org/">Sphinx</a> publishing system.  This really turned out to be the key as Sphinx lets you create new directives to use in writing.   I was able to add directives to Sphinx to make it really easy to include the interactive features without getting in the way of the writing.</li>
+</ul>
+</blockquote>
+<p>To get a feel for what it can do, try working through <a href="http://thinkcspy.appspot.com/build/helloturtle.html">the turtle graphics chapter</a>. It's pretty impressive...</p>
+<p>My questions are:</p>
+<ol>
+<li>Given a choice between a traditional (static) book, either printed or electronic, and something like this, which would you prefer us to build?</li>
+<li>How do we adapt this to teach things like the Unix shell, version control, databases, etc.?  Like the IPython Notebook, this is a single-language system, but real-world computing is almost always multilingual.</li>
+</ol>

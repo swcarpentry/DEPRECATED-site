@@ -1,0 +1,71 @@
+---
+layout: bootcamp_archived
+venue: University of British Columbia
+country: Canada
+humandate: October 18-19, 2012
+humantime: 9:00 am - 4:30 pm
+startdate: 2012-10-18
+enddate: 2012-10-19
+latlng: 49.2617149,-123.2534305
+registration: open
+eventbrite: 3869257052
+instructor: ["Davor Cubranic", "Ted Hart", "Laura Tremblay-Boyer", "Greg Wilson"]
+---
+<p><strong>New!</strong> <a href="#install">Setup instructions</a> have been added to this page. Please make sure you go through them the day before the boot camp starts, and <a href="mailto:{{site.contact}}">mail us</a> if you have problems.</p>
+{% include bootcamps/what.html %}
+<p><strong>Note:</strong> we are running two boot camps simultaneously, one using Python and another using R. Please be sure to register for the one you want.</p>
+{% include bootcamps/who.html %}
+<p><strong>Content:</strong> <strong></strong>The syllabus for this boot camp will include:</p>
+<ul>
+<li>using the shell to do more in less time</li>
+<li>using version control to manage and share information</li>
+<li>basic Python and R programming</li>
+<li>how (and how much) to test programs</li>
+<li>working with relational databases</li>
+</ul>
+{% include bootcamps/contact.html %}
+<hr />
+<h2 id="install">Required software</h2>
+<p>You should ensure the following software is installed on your laptop before you arrive so that we can get started promptly:</p>
+<ul>
+<li>Bash (the particular Unix shell we'll be using)</li>
+<li>Subversion (for version control)</li>
+<li>Either Python 2.7 or R 2.15. (Do <em>not</em> install Python 3; our examples still depend on the earlier, and more widely-used, dialect.)</li>
+<li>Firefox with the SQLite add-on (for databases)</li>
+<li>A text editor</li>
+</ul>
+<p>If you run into any trouble, please mail <a href="mailto:{{site.contact}}">{{site.contact}}</a> for assistance.</p>
+<h2>Python</h2>
+<p>The easiest way to get Python and all the scientific packages you'll need is the Enthought Python Distribution. Download <a href="http://www.enthought.com/products/epd_free.php">EPD Free</a>, install, and you're done. If you want to be more complicated:</p>
+<ul>
+<li>Linux: Python is available using the appropriate package management tool in all major Linux distributions. Please check that the Python version is 2.7 (or 2.7.something). If not, you may need to install a newer version by hand or upgrade your Linux installation.</li>
+<li>Windows: you will get Python with Cygwin (described below), but will need to install the scientific packages yourself. This way lies madness. Get EPD instead.</li>
+<li>Mac: Python comes with recent version of Mac OS X, but again, you'll need to install (and sometimes compiles) scientific packages yourself. EPD is your friend.</li>
+</ul>
+<h2>R</h2>
+<p>R can be downloaded <a href="http://cran.r-project.org/">here</a>. We will use a few packages in the boot camp, including lattice, plyr and data.table. Once R is installed, you can get these packages by typing the command "install.packages(<em>package.name</em>)" at the prompt, and following the instructions. Please be sure to install the knitr package this way; you will also need <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> for the lesson on reproducible research.</p>
+<p>A popular text editor for R is <a href="http://rstudio.org/">R-Studio</a>. Alternatively, if you want an editor that can handle multiple languages, you might want to consider ESS (Emacs Speaks Statistics), available as a bundle <a href="http://vgoulet.act.ulaval.ca/en/emacs/">here</a>.</p>
+<h2>Bash</h2>
+<p>If you are on Linux or Mac, you already have Bash (it's what runs in a terminal window).</p>
+<p>On Windows, you should install <a href="http://www.cygwin.com/">Cygwin</a>, which provides the Bash shell and many other Linux command-line tools. You will have to ask for the <code>svn</code> package to be installed (either at install time or by rerunning the Setup program later on), as Subversion is no longer part of the default installation.</p>
+<h2>Firefox with SQLite Manager</h2>
+<p>You can install Firefox from the <a href="http://www.mozilla.org/">Mozilla web site</a>. The SQLite Manager add-on can be installed through the "Add-ons Manager" in Firefox.</p>
+<h2>A Text Editor</h2>
+<p>If you use Linux, you probably already have a favourite text editor. Emacs, Vim, and Nano are popular choices, but there are many others. On Windows, you can use the Nano editor that comes with Cygwin, or Wordpad (which comes with Windows). On a Mac, you can use TextEdit (which comes pre-installed).</p>
+<h2>Subversion</h2>
+<ul>
+<li>Linux: Subversion comes with all sane Linux distributions.</li>
+<li>Windows: as mentioned above, you must ask for the <code>svn</code> package when installing Cygwin.</li>
+<li>For reasons beyond mere human comprehension, Apple decided to stop including Subversion with Mac OS X as of version 10.8 (Mountain Lion). If you are using an earlier version of Mac OS X, you should be able to type <code>svn</code> at a terminal prompt. If you are on Mountain Lion, you can try to download this binary and run it on your machine (try typing <code>svn</code> at a command prompt). If that doesn't work, you will need to install <a href="https://developer.apple.com/xcode/">XCode</a> (which is 1.2 GByte, so please don't leave it until the morning of the boot camp).</li>
+</ul>
+<h2>Testing the installed software</h2>
+<p>We recommend that you try the following simple tests to ensure that everything is installed and working correctly before the course starts.</p>
+<ul>
+<li>Bash: At the prompt, type "whoami". You should be told what your user name is on the computer you are using.</li>
+<li>Python: Run Python, then type "print 2+2" at the prompt. Then type "import sqlite3" and verify that you don't see an error message.</li>
+<li>SQLite Manager: Open SQLite Manager from Firefox. In Firefox 10 on Linux this is under the "Tools" menu, but this may vary depending on the version and operating system you are using.</li>
+<li>R: Open R, then type "2+2" at the prompt. When you have installed the packages, type "require(<em>package.name</em>)". The packages should load without errors.</li>
+<li>Text editor: Create and save a file with some plain text in it.</li>
+</ul>
+<hr />
+{% include bootcamps/eventbrite.html %}

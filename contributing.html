@@ -1,0 +1,249 @@
+---
+layout: base
+root: .
+title: How to Contribute
+---
+<p>Software Carpentry is an open project. Like all such projects, it needs your
+help to grow, and you can contribute in many ways, large and small.</p>
+
+<div>
+  <h3 id="discuss">Discuss</h3>
+
+  <p>To stay up to date with us, you can follow <a
+  href="{{page.root}}/blog">our blog</a> or sign up for our low-traffic
+  announcement mailing list (approximately 2-3 emails a month):</p>
+  <form class="form-inline" method="post" style="text-align:center"
+    action="http://scripts.dreamhost.com/add_list.cgi">
+    <fieldset>
+      <input type="hidden" name="list" value="software-carpentry" />
+      <input type="hidden" name="domain" value="software-carpentry.org" />
+      <input type="hidden" name="emailit" value="1" />
+      <input type="text" name="name" placeholder="Full name" />
+      <input type="text" name="email" placeholder="Email"/>
+      <button type="submit" class="btn" name="submit" value="Join">
+        Join</button>
+      <button type="submit" class="btn" name="unsub" value="Unsubscribe">
+        Unsubscribe</button>
+    </fieldset>
+  </form>
+  <p>We also run these higher-traffic mailing lists:</p>
+  <table class="table table-striped">
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/discuss-software-carpentry.org">discuss</a>
+      </td>
+      <td>
+        The main channel for discussion of direction and technology.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/tutors-software-carpentry.org">tutors</a>
+      </td>
+      <td>
+        A by-invitation list used to match instructors to boot camps.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/assessment-software-carpentry.org">assessment</a>
+      </td>
+      <td>
+        Where we talk about how to assess what learners already know,
+        what they've learned from us,
+        and what impact we've had.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/data-software-carpentry.org">data</a>
+      </td>
+      <td>
+        For discussion of a new "data carpentry" module.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/funding-software-carpentry.org">funding</a>
+      </td>
+      <td>
+        A by-invitation list for discussion of funding models.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/gits-software-carpentry.org">gits</a>
+      </td>
+      <td>
+        For discussion of our GitHub repositories, website, and workflow.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://lists.software-carpentry.org/listinfo.cgi/r-discuss-software-carpentry.org">r-discuss</a>
+      </td>
+      <td>
+        For people interested in teaching R.
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <h3 id="learn">Learn</h3>
+  <p>
+    We run an online training course to help people become
+    instructors.  The course requires 2-4 hours/week for 8-10 weeks,
+    and covers the basics of educational psychology, instructional
+    design, and how to apply both to teaching programming to
+    scientists.  To find out more,
+    visit <a href="http://teaching.software-carpentry.org">the
+    course website</a>.
+  </p>
+</div>
+
+<div>
+  <h3 id="teach">Teach</h3>
+
+  <p>All of our slides, notes, and example programs are in our Git
+  repository
+  at <a href="https://github.com/swcarpentry/website">https://github.com/swcarpentry/website</a>,
+  and you are free to use them however you want (so long as
+  you <a href="{{page.root}}/license.html">give us attribution</a>).
+  Everything is designed so that individuals can work through what they need
+  on their own, but universities, research labs, companies, and self-study
+  groups have also used it in week-long crash courses and as part of longer
+  classroom courses.</p>
+
+  <p>If you would like to deliver the course (as a Software Carpentry
+  instructor or on your own) in one of these formats, or in one we haven't
+  seen yet, please <a href="#discuss">let us know</a>&mdash;we'd be glad to
+  provide you with training or advice.</p>
+</div>
+
+<div>
+  <h3 id="fix">Fix</h3>
+
+  <p>If you see a mistake in on our website, please add a comment to the
+  appropriate page, or <a href="mailto:{{site.contact}}">mail us</a>, and
+  we'll fix it as quickly as we can.  And of course, we always welcome
+  pull requests (see below).</p>
+</div>
+
+<div>
+  <h3 id="create">Create</h3>
+
+  <p>If you are interested in developing the Software Carpentry
+  content, we have organized our materials into a few different repositories
+  on <a href="https://github.com/swcarpentry">github</a>.</p> 
+  <table class="table table-striped">
+    <tr><th>Repository</th><th>Description</th><th>Contributing Docs</th></tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/website">website</a></td>
+      <td>Holds the code to build most of our website content.</td>
+      <td> <a
+          href="https://github.com/swcarpentry/website/blob/master/README.md">README</a>,
+        <a
+          href="https://github.com/swcarpentry/website/blob/master/CONTRIBUTING.md">CONTRIBUTING</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/4_0">4_0</a></td>
+      <td>Companion repository to <a
+          href="https://github.com/swcarpentry/website">website</a> holding
+        the 4.0 teaching materials: online video lectures and slides.</td>
+      <td> No longer under development</td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/3_0">3_0</a></td> 
+      <td>Companion repository to <a
+          href="https://github.com/swcarpentry/website">website</a> 
+        holding the 3.0 teaching materials: basic HTML pages
+        and slides. </td> 
+      <td>No longer under development</td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/boot-camps">boot-camps</a></td>
+      <td>Notes, teaching materials and webpages used to help run one of our
+        <a href="{{page.root}}/bootcamps/">Bootcamps</a>.  There is an
+        idiosyncratic development workflow for contributing to this repository
+        explained in the contributing docs.</td>
+      <td><a
+          href="https://github.com/swcarpentry/boot-camps/blob/master/CONTRIBUTING.md">CONTRIBUTING</a></td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/assets">assets</a></td>
+      <td>Supporting files for the Software Carpentry organisation (e.g.
+        papers, logos, etc.)</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/notebooks">notebooks</a></td>
+      <td>A new repository to hold <a
+          href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">iPython
+          Notebook</a> versions of our teaching materials. </td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><a href="https://github.com/swcarpentry/guide">guide</a></td>
+      <td>This book aims to support Software Carpentry instructors as they
+        develop teaching material and course plans.</td>
+      <td>Send us <a href="email:admin@software-carpentry.org">email</a></td>
+    </tr>
+
+  </table>
+    
+  <p>Pull requests are always welcome, or <a
+    href="mailto:{{site.contact}}">mail us</a> to talk about what you'd like
+  to do and how we can help.</p>
+
+</div>
+
+<div>
+  <h3>Partner</h3>
+
+  <p>
+    Software Carpentry is actively seeking ways to partner with other groups and initiatives
+    to help change what scientists do and how they do it.
+  </p>
+
+  <h4>EPSRC-Approved Software Training for Centres of Doctoral Training</h4>
+
+  <p>
+    The <a href="http://www.software.ac.uk">Software Sustainability Institute</a>
+    was <a href="http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/H043160/1">founded by the EPSRC</a>
+    as a national facility for cultivating world-class research through software.
+    Based at the universities of Edinburgh, Manchester, Oxford and Southampton,
+    it is an EPSRC-approved supplier of training for the Centres for Doctoral Training (CDT) call.
+    Its training packages are based on Software Carpentry,
+    and its training packages include instructors who will travel to your organisation and present the course,
+    a curriculum tailored to your requirements,
+    and administration of the training event,
+    from booking rooms to organising refreshments.
+  </p>
+
+  <p>
+    The EPSRC has recognised the fundamental importance of software in research,
+    and the necessity of good software development practices in producing accurate, reusable, and reproducible research.
+    The <a href="http://www.software.ac.uk">SSI</a>'s training courses
+    make it easy to meet the EPSRC's software-development requirements
+    without investing resources into creating new training,
+    and without duplicating existing training materials and courses.
+  </p>
+
+  <p>
+    For more information about how you can include the <a href="http://www.software.ac.uk">SSI</a>'s training
+    in your CDT bid,
+    please see <a href="http://www.software.ac.uk/Training-For-CDTs">the full description</a>
+    of what they offer,
+    or contact the <a href="http://www.software.ac.uk">SSI</a>'s director,
+    <a href="mailto:n.chuehong@software.ac.uk">Dr. Neil Chue Hong</a>.
+  </p>
+</div>

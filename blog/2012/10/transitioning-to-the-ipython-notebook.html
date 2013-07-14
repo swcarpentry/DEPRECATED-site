@@ -1,0 +1,35 @@
+---
+layout: blog
+date: 2012-10-04
+time: 09:00:00
+author: davis.m
+title: Transitioning to the IPython Notebook
+category: [content, lectures]
+---
+<p>Here at Software Carpentry we've been teaching Python for a little while. We teach Python in our bootcamps and we have a library of instructional videos on Python topics including <a href="{{page.root}}/v4/python/">basics</a>, <a href="{{page.root}}/v4/setdict/">dictionaries</a>, <a href="{{page.root}}/v4/regexp/">regular expressions</a>, and <a href="{{page.root}}/v4/oop/">object oriented programming</a>.</p>
+<p>As usual, though, we're not satisfied with the status quo. For both our bootcamps and our online material we're in the process of switching to the <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython Notebook</a>. The Notebook lets the user write and execute Python code and see the results, all inside their favorite web browser.</p>
+<h5>Bootcamps</h5>
+<p>Software Carpentry bootcamp attendees are typically novice programmers who have yet to master many basic computational concepts. A priority when teaching Python to this audience is minimizing their mental load as they try to understand core concepts like loops, control flow, and functions. The Notebook offers several advantages for this audience while teaching Python in live, classroom settings:</p>
+<ul>
+<li>Code is written and run within the Notebook, eliminating any need to switch between an editor and the command line, or learn an IDE.</li>
+<li>As in the standard interactive Python prompt, code and output appear next to each other and it is easy to see the effect of changes to the code.</li>
+<li>Unlike the standard interactive prompt, the Notebook allows for easy editing and repeat running of multi-line code blocks. It also has some of the convenient features of code editors such as syntax highlighting, auto-completion, and automatic indenting.</li>
+<li>Notebooks have multiple ways of showing documentation while typing code.</li>
+<li>Notebooks have a consistent appearance across browsers and platforms so that students see instructors demonstrating concepts in the same environment they are using.</li>
+<li>Changing the magnification of notebooks for different projectors and rooms is as easy as changing the zoom for a browser page.</li>
+</ul>
+<p>These features allow students to spend nearly all of a learning session in the Notebook writing Python with a minimum of other distractions. The notebooks in which students work can be easily saved and reopened for later review.</p>
+<h5>Online Material</h5>
+<p>Software Carpentry's online material serves a broad audience from those interested in learning basic Python to those looking to learn more advanced topics like regular expressions or object oriented programming. Our current video based lessons can be effective for some, but videos make it difficult to browse or scan the material and code cannot be easily copied for later exploration or use. The IPython Notebook offers a wonderful format for these archived lessons for a number of reasons:<strong><strong><br />
+</strong></strong></p>
+<ul>
+<li>Notebooks can have rich annotations including rendered Markdown and equations, allowing us to explain code more expressively than is possible in plain code comments.</li>
+<li>Notebooks are easily viewable online as rendered HTML thanks to the <a href="http://nbviewer.ipython.org">nbviewer</a> service.</li>
+<li>Notebooks can be downloaded and rerun by our students should they wish to experiment.</li>
+<li>Notebooks can include embedded video, so we can still use video to provide broad introductions to concepts or as an alternative method for learning the material.</li>
+</ul>
+<p>We are just beginning the process of converting our Python material to the IPython Notebook, but we currently have examples based on our <a href="http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/notebooks/master/while-loops.ipynb">while loop lecture</a> and for <a href="http://nbviewer.ipython.org/urls/raw.github.com/swcarpentry/notebooks/master/matplotlib.ipynb">graphing in Python</a>. In the future we hope to have all of our current material available as Notebooks on our <a href="https://github.com/swcarpentry/notebooks">GitHub repository</a>.</p>
+<h5>University Classrooms</h5>
+<p>The same benefits for presenting online material for the Software Carpentry site also extend to the providing lecture notes for university courses. When demonstrating programming concepts in class it is often beneficial for the students to be able to focus fully on what is being done, rather than attempting to take detailed notes on the specific examples being demonstrated. Notebooks can be posted to the web to allow students to go back and review the details of the implementation later. These can either be the actual Notebooks used in the classroom, giving the student an exact record of everything that was shown, or a pre-prepared notebook with similar material. One of us (EPW) has had reasonable good responses from students to using Notebooks in this fashion in two <a href="http://www.programmingforbiologists.org/lectures-and-notes">university courses</a>.</p>
+<p>As with workshops, one of the other major challenges for teaching beginning programmers in university courses is choosing a development environment that introduces as little additional cognitive load as possible. Based on Ethan's experiences this year he is planning on transitioning his introductory course from having students work in an Integrated Development Environment to having them work exclusively in Notebooks. Even in a simple IDE there is always substantial confusion about the differences between how the interactive prompt works and how it differs from code run from the editor. By switching to Notebooks the students will experience the benefits of both (as described above) without the additional load of trying to understand two different environments for running Python code.</p>
+<p>(This post co-written by <a href="http://penandpants.com">Matt Davis</a> and <a href="http://whitelab.weecology.org/">Ethan White</a>.)</p>

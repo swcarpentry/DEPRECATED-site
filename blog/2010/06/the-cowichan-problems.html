@@ -1,0 +1,423 @@
+---
+layout: blog
+date: 2010-06-12
+time: 09:00:00
+author: wilson.g
+title: The Cowichan Problems
+category: [opinion, research]
+---
+<p>Back in the 1990s, as the first wave of euphoria about parallel computing was topping out, I had a crazy idea: why don't we actually try to measure, or at least compare, the <em>usability</em> of different parallel programming systems? I left the field before taking the idea very far, but with talk about clouds and GPUs growing louder by the day, I think the idea is worth revisiting. My proposal is below the cut; I'd be interested in feedback.</p>
+<p><em>Most programmers believe that parallel programming is harder than sequential programming.  We are developing a suite of simple problems that can be used to assess the usability of different scientific programming languages (parallel or otherwise) that captures modularization and integration concerns usually ignored by performance-oriented benchmark suites.  This paper motivates and describes the suite.</em></p>
+<h2><a name="intro"></a>Introduction</h2>
+<p>In the late 1980s and early 1990s, many people (including the first author of this paper) were convinced that programming was about to "go parallel" in a big way.  Those same predictions are being made again today: fans of GPUs, multicore CPUs, and cloud computing all claim that programmers can no longer afford to <em>not</em> think about parallelism, and that we will have to rethink programming from the ground up to take advantage of all that shiny new hardware.</p>
+<p>But how? And how will we know if we're on the right track? Twenty years ago, a survey by Bal <em>et al.</em> listed more than 300 parallel programming systems [<a href="#bib-par-lang-survey">Bal 1989</a>]. Only a handful have survived, all of them very conservative extensions to, or libraries for, mainstream languages. If Erlang, Haskell, ML, F#, or other exotic languages are to gain ground, their advocates must convince a sceptical audience that they actually can solve real problems more easily than existing alternatives.</p>
+<p>We propose using a suite of simple problems to compare the usability of parallel programming systems. Competent programmers, fluent in a specific system, will implement solutions to these problems and report their experiences in terms of development time, code clarity, and runtime performance. These problems are individually very simple, but together cover a broad range of scientific domains.</p>
+<p>One significant innovation in this work is that we also require implementors to chain applications together, so that the output of one is an input to another. This will allow us to assess how well each language or library supports modularization and re-use. It is also more realistic than having each application run in isolation, since large scientific codes are usually composed of modules that have different "best" data layouts and parallelization strategies.</p>
+<h3>History and Acknowledgments</h3>
+<p>The first author originally developed this suite in the mid-1990s, inspired by discussions with R. Bruce Irvin (then at the University of Wisconsin) and Henri Bal (Vrije Universiteit, Amsterdam), and by the work of Feo and others on the Salishan Problems [<a href="#bib-salishan">Feo 1992</a>]. In recognition of the latter, this suite is called the Cowichan Problems (pronounced COW-i-chun); like Salishan, the word is a Northwest Coast native place name. Early experiences were described in [<a href="#bib-ifip">Wilson 1994</a>] and [<a href="#bib-orca">Bal 1996</a>].  in 2009, Andrew Borzenko and Cameron Gorrie (then in the <a href="http://www.cs.utoronto.ca">Department of Computer Science</a> at the <a href="http://www.utoronto.ca">University of Toronto</a>) re-wrote the earlier C implementation in C++ using several modern parallel programming systems.</p>
+<h2><a name="quant"></a>Quantifying the Importance of Usability</h2>
+<p>Amdahl's Law states that if <em>t<sub>p</sub></em> is an algorithm's running time on <em>p</em> processors and <em>&sigma;</em> is the algorithm's serial fraction (i.e., the fraction of the algorithm that cannot be parallelized), then:</p>
+<table>
+<tbody>
+<tr>
+<td>t<sub>p</sub></td>
+<td>=</td>
+<td>&sigma;t<sub>1</sub> + (1 &mdash; &sigma;)t<sub>1</sub>/p</td>
+</tr>
+</tbody>
+</table>
+<p>The speedup on <em>p</em> processors is therefore:</p>
+<table>
+<tbody>
+<tr>
+<td>s(p)</td>
+<td>=</td>
+<td>t<sub>1</sub>/t<sub>p</sub></td>
+</tr>
+<tr>
+<td></td>
+<td>=</td>
+<td>t<sub>1</sub>/(&sigma;t<sub>1</sub> + (1 &mdash; &sigma;)t<sub>1</sub>/p)</td>
+</tr>
+<tr>
+<td></td>
+<td>=</td>
+<td>1/(&sigma; + (1 &mdash; &sigma;)/p)</td>
+</tr>
+</tbody>
+</table>
+<p>As <em>p&rarr;&infin;</em>, the speedup is bounded by <em>1/&sigma;</em>. This makes intuitive sense: if 10% of an algorithm can't be parallelized, then even with infinite hardware, the program can only be made to run 10 times faster.</p>
+<p>But software doesn't just happen: it has to be written and debugged, and these activities usually aren't made faster by parallel hardware.  (In fact, most programmers believe that doing parallel programming is harder and slower than doing it sequentially.) If we let <em>T</em> and <em>S</em> be the equivalents of <em>t</em> and <em>s</em> over the program's whole lifetime, and <em>D</em> be its total development time, then:</p>
+<table>
+<tbody>
+<tr>
+<td>T<sub>p</sub></td>
+<td>=</td>
+<td>&sigma;T<sub>1</sub> + (1 &mdash; &sigma;)T<sub>1</sub>/p + D</td>
+</tr>
+</tbody>
+</table>
+<p>The achievable <em>lifetime</em> speedup is then:</p>
+<table>
+<tbody>
+<tr>
+<td>S<sub>&infin;</sub></td>
+<td>=</td>
+<td>1/(&sigma; + D/t<sub>1</sub>)</td>
+</tr>
+</tbody>
+</table>
+<p>The ratio of development time to run time therefore effectively increases the program's serial fraction. Unless parallelization time can be substantially reduced, parallel programming will only be cost-effective when:</p>
+<ul>
+<li>the application is trivially parallel (e.g., task-farming a rendering calculation);</li>
+<li>the expected total program runtime is very large (i.e., the program is a package used extensively in a field such as computational chemistry or vehicle crash simulation); or</li>
+<li>cost is not an obstacle (i.e., the customer is Disney or the NSA).</li>
+</ul>
+<p>The aim of this problem suite is to capture enough information about <em>D</em> to allow competing parallel programming systems to be ranked and compared.</p>
+<h3>Previous Work</h3>
+<p>Two comparative efforts in parallel programming are [<a href="#bib-babb">Babb 1988</a>] and [<a href="#bib-salishan">Feo 1992</a>]. The first presented implementations of a simple numerical quadrature program in more than a dozen different parallel languages used on mid-1980s hardware. The second presented implementations of the Salishan Problems&mdash;Hamming number generation, isomer enumeration, skyline matrix reduction, and a simple discrete event simulator&mdash;in C*, Occam, Ada, and several dataflow and functional languages. Both books conveyed the flavor of the languages they describe, but neither compared languages or problem implementations directly.</p>
+<p>More recently, Lutz has explored quantitative comparison of the relative productivity of different programming languages [<a href="#bib-prechelt-languages">Prechelt 2000</a>, <a href="#bib-prechelt-web">Prechelt 2009</a>]. Our aim is to support replication of his work for parallel programming.</p>
+<h2><a name="method"></a>Methodology</h2>
+<p>Our aim is to assess and compare the usability of parallel programming systems. Here, we discuss issues related to choosing the problems that make up our benchmark suite, how to assess particular implementations, and other purposes which implementations of these might serve. Recognizing that our problems are extremely simple, we refer to them as "toys".</p>
+<h3>Criteria for Selection</h3>
+<p>Our criteria for including toys are:</p>
+<ul>
+<li>Each toy should require no more than an hour to write and test in a well-supported sequential language. We feel that making individual problems more complicated will only discourage uptake.</li>
+<li>Correctness must be easy to verify. Toys whose output is easily visualized are therefore preferred, as are toys whose results are insensitive to floating-point effects.</li>
+<li>Speedup must similarly be easy to measure&mdash;while machine performance is not our focus, we are generally uninterested in parallel implementations that are slower than the sequential originals.</li>
+<li>At least some toys should not be "infinitely scalable". Many real-world applications are not, and this suite should reflect such limitations.</li>
+<li>At least some toys should require I/O, since this important aspect of real-world programming is often neglected by PPS designers.</li>
+<li>There should be some overlap in the toys' implementations, so that implementors can demonstrate how well their chosen systems take advantage of opportunities for code re-use.</li>
+<li>Together, the toys in the suite must exercise the parallel clich&eacute;s discussed in the appendices. In particular,</li>
+<li>Toys should be specified by inputs and outputs rather than algorithmically, i.e., "sort N integers" rather than "parallelize quicksort", so that implementors can choose algorithms that are "natural" for their systems. Implementations that parallelize a grossly inefficient sequential algorithm should be criticized for doing so.</li>
+</ul>
+<h3>Software Engineering Issues</h3>
+<p>The "single algorithm per program" model of many benchmarks is not representative of real programs, which often contain several qualitatively different phases or modules. A full implementation of this suite will therefore have two parts. In the first, each toy will be implemented as a stand-alone program. In the second, toys will be chained together as shown below. This will test the ease with which heterogeneous parallelism can be mixed within a single program. It will also show how well the system supports code re-use and information hiding, which are crucial to the development of large programs.</p>
+<p><img title="dataflow" src="dataflow.png" /></p>
+<p>Where possible, chaining should execute toys concurrently. Some parallel programming systems impose extraneous constraints on programs, e.g., require all processes to participate in every barrier synchronization, or require the same executable to be loaded onto each processor. These constraints can limit the exploitation of potential concurrency. Permitting, but not requiring, concurrent execution of several toys should uncover such limitations.</p>
+<h3>Sizing</h3>
+<p>One crucial aspect of the specification of toys is the way in which the sizes of problems are determined. In a <em>frozen</em> model, the actual size of each problem and/or the number of processors available is compiled into each toy. A fully <em>fluid</em> implementation, by contrast, allows these sizes to be specified at run-time. If a system does not support fully-fluid implementations, it must at least use an intermediate model (which might be called <em>slushy</em>), in which the maximum size of individual problems is specified during compilation, but the actual size of a problem is only determined when the toy begins to execute.</p>
+<h3>Assessing Usability</h3>
+<p>One way to compare the usability of parallel programming systems would be to measure the performance achieved by an "average" programmer as a function of time on each toy. By analogy with Hockney's <em>n<sub>1/2</sub></em> measure [<a href="#bib-hockney">Hockney 1991</a>], we could in principle find the value of <em>p<sub>1/2</sub></em>&mdash;the programming time required to achieve half of a machine's peak performance for a particular combination of programming system and problem type.  (Note that if performance was measured as a fraction of the figures quoted by manufacturers for their machines, it is unlikely that the halfway mark would ever be reached.) However, the number of implementors required is much greater than the number we can reasonably expect.</p>
+<p>Alternatively, we could use code metrics to compare implementations of various toys. This is also dubious, both because [<a href="#bib-el-emam">El Emam 2001</a>] has shown that most metrics do little more than measure lines of code, and because of the difficulty of comparing metric values between languages.</p>
+<p>The best we can hope for now is therefore qualitative consensus, e.g., to interview implementors about their experiences and ask other programmers who are familiar with the base languages used to read and comment on the parallel versions of the toys. We will also compare the length of code in parallel and sequential implementations, though we realize that this can exaggerate the impact of parallelization.</p>
+<h3>Other Uses for Implementations</h3>
+<p>This suite is intended for assessing the usability of parallel programming systems, but we envisage other uses. First, this suite will indicate what a mature parallel programming system should be able to support. In particular, we will ask implementors to describe how they debugged correctness and performance problems, and in particular what tools they used. (The lack of useful debugging tools is a chronic complaint among parallel programmers.)</p>
+<p>This suite should also be useful for education, since toys will be small enough to be understood quickly, and parallelizing them should be a suitable classroom exercise in a senior undergraduate course on parallel computing.</p>
+<h2><a name="toys">The Problems</a></h2>
+<p>The chained implementation of these toys executes in the order shown below. Because of choices in steps 1 and 3, there are four possible chained sequences.</p>
+<ol>
+<li>An integer matrix <code>I</code> with <code>r</code> rows and <code>c</code> columns is created either by using the Mandelbrot Set algorithm (<code>mandel</code>) or by filling locations with random values (<code>randmat</code>).</li>
+<li>The integer matrix <code>I</code> is shuffled in both dimensions (<code>shuffle</code>).</li>
+<li>Either invasion percolation (<code>invperc</code>) or histogram thresholding (<code>thresh</code>) is used to generate a Boolean mask <code>B</code> from <code>I</code> in which the (minimum) percentage of <code>True</code> locations is <code>P</code>. Like <code>I</code>, <code>B</code> has <code>r</code> rows and <code>c</code> columns.</li>
+<li>The Game of Life (<code>life</code>) is simulated for <code>G</code> generations, using <code>B</code> as an initial configuration. This step overwrites the Boolean matrix <code>B</code>.</li>
+<li>A vector of <code>L</code> <code>(m,x,y)</code> points is created using the integer matrix <code>I</code> and the Boolean matrix <code>B</code>.</li>
+<li>A series of convex hulls (<code>hull</code>) are obtained from the points produced above.</li>
+<li>The coordinates of the points from the previous step are normalized (<code>norm</code>).</li>
+<li>An <code>L&times;L</code> matrix <code>A</code> and an <code>L</code>-vector <code>V</code> are created using the normalized point locations from the previous step (<code>outer<code>).</code></code></li>
+<li>The matrix equation <code>AX=V</code> is solved using Gaussian elimination (<code>gauss</code>) and successive over-relaxation (<code>sor</code>) to generate two solution vectors <code>X<sub>gauss</sub></code> and <code>X<sub>sor</sub></code>. These two toys should execute concurrently if possible.</li>
+<li>The checking vectors <code>V<sub>gauss</sub>=AX<sub>gauss</sub></code> and <code>V<sub>sor</sub>=AX<sub>sor</sub></code> are calculated (<code>product</code>). These two toys should execute concurrently if possible.</li>
+<li>The norm-1 distance between <code>V<sub>gauss</sub></code> and <code>V<sub>sor</sub></code> is calculated (<code>vecdiff</code>). This measures the agreement between the solutions found by the two methods.</li>
+</ol>
+<p>The toys comprising the Cowichan Problems are sketched below.</p>
+<h3><code>gauss</code>: Gaussian Elimination</h3>
+<p>This module solves a matrix equation <em>AX=V</em> for a dense, symmetric, diagonally dominant matrix <em>A</em> and an arbitrary vector non-zero <em>V</em> using explicit reduction. Input matrices are required to be symmetric and diagonally dominant in order to guarantee that there is a well-formed solution to the equation.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: the real matrix <em>A</em>.</li>
+<li><code>target</code>: the real vector <em>V</em>.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>solution</code>: a real vector containing the solution <em>X</em>.</li>
+</ul>
+<h3><code>hull</code>: Convex Hull</h3>
+<p>Given a set of <em>(x,y)</em> points, this toy finds those that lie on the convex hull, removes them, then finds the convex hull of the remainder. This process continues until no points are left. The output is a list of points in the order in which they were removed, i.e., the first section of the list is the points from the outermost convex hull, the second section is the points that lay on the next hull, and so on.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>original</code>: the vector of input points.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>ordered</code>: the vector of output points (a permutation of the input).</li>
+</ul>
+<h3><code>invperc</code>: Invasion Percolation</h3>
+<p>Invasion percolation models the displacement of one fluid (such as oil) by another (such as water) in fractured rock. In two dimensions, this can be simulated by generating an <em>N&times;N</em> grid of random numbers in the range <em>[1..R]</em>, and then marking the center cell of the grid as filled. In each iteration, one examines the four orthogonal neighbors of all filled cells, chooses the one with the lowest value (i.e., the one with the least resistance to filling), and fills it in.</p>
+<p>Filling begins at the central cell of the matrix (rounding down for even-sized axes). The simulation continues until some fixed percentage of cells have been filled, or until some other condition (such as the presence of trapped regions) is achieved. The fractal structure of the filled and unfilled regions is then examined to determine how much oil could be recovered.</p>
+<p>The na&iuml;ve way to implement this is to repeatedly scan the array. A much faster technique is to maintain a priority queue of unfilled cells which are neighbors of filled cells. This latter technique is similar to the list-based methods used in some cellular automaton programs, and is very difficult to parallelize effectively.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix.</li>
+<li><code>nfill</code>: the number of points to fill.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>mask</code>: a Boolean matrix filled with <code>True</code> (showing a filled cell) or <code>False</code> (showing an unfilled cell).</li>
+</ul>
+<h3><code>life</code>: Game of Life</h3>
+<p>This module simulates the evolution of Conway's Game of Life, a two-dimensional cellular automaton. At each time step, this module must count the number of live (<code>True</code>) cells in the 8-neighborhood of each cell using circular boundary conditions. If a cell has 3 live neighbors, or has 2 live neighbors and is already alive, it is alive in the next generation. In any other situation, the cell becomes, or stays, dead.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: a Boolean matrix representing the Life world.</li>
+<li><code>numgen</code>: the number of generations to simulate.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>matrix</code>: a Boolean matrix representing the world after simulation.</li>
+</ul>
+<h3><code>mandel</code>: Mandelbrot Set Generation</h3>
+<p>This module generates the Mandelbrot Set for a specified region of the complex plane. Given initial coordinates <em>(x<sub>0</sub>, y<sub>0</sub>)</em>, the Mandelbrot Set is generated by iterating the equation:</p>
+<table>
+<tbody>
+<tr>
+<td>x'</td>
+<td>=</td>
+<td>x<sup>2</sup> &mdash; y<sup>2</sup> + y<sub>0</sub></td>
+</tr>
+<tr>
+<td>y'</td>
+<td>=</td>
+<td>2xy + x<sub>0</sub></td>
+</tr>
+</tbody>
+</table>
+<p>until either an iteration limit is reached, or the values diverge. The iteration limit used in this module is 150 steps; divergence occurs when <em>x<sup>2</sup> + y<sup>2</sup></em> becomes 2.0 or greater. The integer value of each element of the matrix is the number of iterations done. The values produced should depend only on the size of the matrix and the seed, <em>not</em> on the number of processors or threads used.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>nrows, ncols</code>: the number of rows and columns in the output matrix.</li>
+<li><code>x0, y0</code>: the real coordinates of the lower-left corner of the region to be generated.</li>
+<li><code>dx, dy</code>: the extent of the region to be generated.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix containing the iteration count at each point in the region.</li>
+</ul>
+<h3><code>norm</code>: Point Location Normalization</h3>
+<p>This module normalizes point coordinates so that all points lie within the unit square [0..1]&times;[0..1]. If <em>x<sub>min</sub></em> and <em>x<sub>max</sub></em> are the minimum and maximum <em>x</em> coordinate values in the input vector, then the normalization equation is</p>
+<table>
+<tbody>
+<tr>
+<td>x<sub>i</sub>'</td>
+<td>=</td>
+<td>(x<sub>i</sub> &mdash; x<sub>min</sub>)/(x<sub>max</sub> &mdash; x<sub>min</sub>)</td>
+</tr>
+</tbody>
+</table>
+<p><em>y</em> coordinates are normalized in the same fashion.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>points</code>: a vector of point locations.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>points</code>: a vector of normalized point locations.</li>
+</ul>
+<h3><code>outer</code>: Outer Product</h3>
+<p>This module turns a vector containing point positions into a dense, symmetric, diagonally dominant <em>N&times;N</em> matrix by calculating the distances between each pair of points. It also constructs a real vector whose values are the distance of each point from the origin.  Each matrix element <em>M<sub>i,j</sub></em> such that <em>i &ne; j</em> is given the value <em>d<sub>i,j</sub></em>, the Euclidean distance between point <em>i</em> and point <em>j</em>. The diagonal values <em>M<sub>i,i</sub></em> are then set to <em>N</em> times the maximum off-diagonal value to ensure that the matrix is diagonally dominant. The value of the vector element <em>v<sub>i</sub></em> is set to the distance of point <em>i</em> from the origin, which is given by <em>&radic;(x<sub>i</sub><sup>2</sup> + y<sub>i</sub><sup>2</sup>)</em>.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>points</code>: a vector of <em>(x,y)</em> points, where <em>x</em> and <em>y</em> are the point's position.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>matrix</code>: a real matrix, whose values are filled with inter-point distances.</li>
+<li><code>vector</code>: a real vector, whose values are filled with origin-to-point distances.</li>
+</ul>
+<h3><code>product</code>: Matrix-Vector Product</h3>
+<p>Given a matrix <em>A</em>, a vector <em>V</em>, and an assumed solution <em>X</em> to the equation <em>AX=V</em>, this module calculates the actual product <em>AX=V'</em>, and then finds the magnitude of the error.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: the real matrix <em>A</em>.</li>
+<li><code>actual</code>: the real vector <em>V</em>.</li>
+<li><code>candidate</code>: the real vector <em>X</em>.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>e</code>: the largest absolute value in the element-wise difference of <em>V</em> and <em>V'</em>.</li>
+</ul>
+<h3><code>randmat</code>: Random Number Generation</h3>
+<p>This module fills a matrix with pseudo-random integers. The values produced must depend only on the size of the matrix and the seed, <em>not</em> on the number of processors or threads used.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>nrows, ncols</code>: the number of rows and columns in the output matrix.</li>
+<li><code>s</code>: the random number generation seed.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix filled with random values.</li>
+</ul>
+<h3><code>shuffle</code>: Two-Dimensional Shuffle</h3>
+<p>This module divides the values in a rectangular two-dimensional integer matrix into two halves along one axis, shuffles them, and then repeats this operation along the other axis. Values in odd-numbered locations are collected at the low end of each row or column, while values in even-numbered locations are moved to the high end. An example transformation is:</p>
+<table>
+<tbody>
+<tr>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td></td>
+<td>a</td>
+<td>c</td>
+<td>b</td>
+<td>d</td>
+</tr>
+<tr>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>&rarr;</td>
+<td>i</td>
+<td>k</td>
+<td>j</td>
+<td>l</td>
+</tr>
+<tr>
+<td>i</td>
+<td>j</td>
+<td>k</td>
+<td>l</td>
+<td></td>
+<td>e</td>
+<td>g</td>
+<td>f</td>
+<td>h</td>
+</tr>
+</tbody>
+</table>
+<p>Note that how an array element is moved depends only on whether its location index is odd or even, not on whether its value is odd or even.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix containing shuffled values.</li>
+</ul>
+<h3><code>sor</code>: Successive Over-Relaxation</h3>
+<p>This module solves a matrix equation <em>AX=V</em> for a dense, symmetric, diagonally dominant matrix <em>A</em> and an arbitrary vector non-zero <em>V</em> using successive over-relaxation.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: the square real matrix <em>A</em>.</li>
+<li><code>target</code>: the real vector <em>V</em>.</li>
+<li><code>tolerance</code>: the solution tolerance, e.g., <em>10<sup>-6</sup></em>.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>solution</code>: a real vector containing the solution <em>X</em>.</li>
+</ul>
+<h3><code>thresh</code>: Histogram Thresholding</h3>
+<p>This module performs histogram thresholding on an image. Given an integer image <em>I</em> and a target percentage <em>p</em>, it constructs a binary image <em>B</em> such that <em>B<sub>i,j</sub></em> is set if no more than <em>p</em> percent of the pixels in <em>I</em> are brighter than <em>I<sub>i,j</sub></em>. The general idea is that an image's histogram should have two peaks, one centered around the average foreground intensity, and one centered around the average background intensity. This program attempts to set a threshold between the two peaks in the histogram and select the pixels above the threshold.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: the integer matrix to be thresholded.</li>
+<li><code>percent</code>: the minimum percentage of cells to retain.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>mask</code>: a Boolean matrix whose values are <code>True</code> where the value of a cell in the input image is above the threshold, and <code>False</code> otherwise.</li>
+</ul>
+<h3><code>vecdiff</code>: Vector Difference</h3>
+<p>This module finds the maximum absolute elementwise difference between two vectors of real numbers.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>left</code>: the first vector.</li>
+<li><code>right</code>: the second vector.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>maxdiff</code>: the largest absolute difference between any two corresponding vector elements.</li>
+</ul>
+<h3><code>winnow</code>: Weighted Point Selection</h3>
+<p>This module converts a matrix of integers to a vector of points represented as <em>x</em> and <em>y</em> coordinates. Each location where <code>mask</code> is <code>True</code> becomes a candidate point, with a weight equal to the integer value in <code>matrix</code> at that location and <em>x</em> and <em>y</em> coordinates equal to its row and column indices. These candidate points are then sorted into increasing order by weight, and N evenly-spaced points selected to create the result vector.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>matrix</code>: an integer matrix whose values are used as weights.</li>
+<li><code>mask</code>: a Boolean matrix of the same size showing which points are eligible for consideration.</li>
+<li><code>nelts</code>: the number of points to select.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>points</code>: an N-vector of <em>(x,y)</em> points.</li>
+</ul>
+<h2>Other Issues</h2>
+<h3>Input and Output</h3>
+<p>I/O is an important part of programming, but is often treated as being of secondary importance by language designers. This suite requires all stand-alone toys to read input values from files, and write results back; the chained version must be able to checkpoint intermediate results between toys. Finally, implementors are strongly encouraged to include some means of visualizing the output or evolution of individual toys.</p>
+<p>The file formats used in the Cowichan Problems are specified in an <a href="#formats">appendix</a>. Files are required to be human-readable (i.e., to use ASCII text). Implementations may also include I/O using binary (non-ASCII) files in whatever file formats are convenient. This will allow programmers to demonstrate the "natural" I/O capabilities of particular systems which most probably be used for checkpointing intermediate results in real programs.</p>
+<h3>Reproducibility</h3>
+<p>Reproducibility is an important issue for parallel programming systems. While constraining the order of operations in a parallel system to guarantee reproducibility makes programs in that system easier to debug, it can also reduce the expressiveness or performance of the system.</p>
+<p>In this problem set, irreproducibility can appear in two forms: numerical and algorithmic. The first arises in toys such as <code>gauss</code> and <code>sor</code>, which use floating-point numbers. Precisely how round-off errors occur in these calculations can depend on the distribution of work among processors, or the order in which those processors carry out particular operations.</p>
+<p>Irreproducibility also arises in toys which only use exact numbers, such as <code>invperc</code> and <code>randmat</code>. In the former, the percolation region is grown by repeatedly filling the lowest-valued cell on its perimeter. If several cells have this value, implementations may choose one arbitrarily. Thus, different implementations may produce very different fractal shapes. In the case of random number generation, the simplest thing to do is to run the same generator independently on each processor, although the values in the resulting matrix then depend on the number of processors used.</p>
+<h2><a name="bib"></a>Bibliography</h2>
+<p>[<a name="bib-babb">Babb 1988</a>] Robert G. Babb: <cite>Programming Parallel Processors</cite>.  Addison-Wesley, 1988.</p>
+<p>[<a name="bib-par-lang-survey">Bal 1989</a>]: Henri E. Bal, J. G. Steiner, and A. S. Tanenbaum: "Programming Languages for Distributed Computing Systems".  <cite>ACM Computing Surveys</cite>, 21(3), 1989.</p>
+<p>[<a name="bib-orca">Bal 1996</a>] Henri E. Bal and Gregory V. Wilson: "Using the Cowichan Problems to Assess the Usability of Orca". <cite>IEEE Parallel &amp; Distributed Technology</cite>, 4(3), 1996.</p>
+<p>[<a name="bib-munin">Bennett 1990</a>] John K. Bennett, John B. Carter, and Willy Zwaenepoel: "Munin: Distributed Shared Memory Based on Type-Specific Memory Coherence". <cite>Proc. 1990 Conference on Principles and Practice of Parallel Programming</cite>, 1990.</p>
+<p>[<a name="bib-el-emam">El Emam 2001</a>] Khaled El Emam, Saida Benlarbi, Nishith Goel, and Shesh N. Rai: "The Confounding Effect of Class Size on the Validity of Object-Oriented Metrics". <cite>IEEE Transasctions on Software Engineering</cite>, 27(7), 2001.</p>
+<p>[<a name="bib-salishan">Feo 1992</a>] John T. Feo: <cite>A Comparative Study of Parallel Programming Languages: The Salishan Problems</cite>.  North-Holland, 1992.</p>
+<p>[<a name="bib-hockney">Hockney 1991</a>] Roger Hockney: "Performance Parameters and Benchmarking of Supercomputers".  <cite>Parallel Computing</cite>, 17, 1991.</p>
+<p>[<a name="bib-prechelt-languages">Prechelt 2000</a>] Lutz Prechelt: "An Empirical Comparison of Seven Programming Languages".  <cite>IEEE Computer</cite>, 33(10), 2000.</p>
+<p>[<a name="bib-prechelt-web">Prechelt 2000</a>] Lutz Prechelt: "Plat_Forms: A Web Development Platform Comparison by an Exploratory Experiment Searching for Emergent Platform Properties". <cite>IEEE Trans. Software Engineering</cite>, 2009.</p>
+<p>[<a name="bib-ifip">Wilson 1994</a>] Gregory V. Wilson: "Assessing the Usability of Parallel Programming Systems: The Cowichan Problems". <cite>Proc. IFIP Working Conference on Programming Environments for Massively Parallel Distributed Systems</cite>, Birkh&auml;user, 1994.</p>
+<h2><a name="formats"></a>File Formats</h2>
+<h3>Vector</h3>
+<p>A vector file begins with a single positive integer, which specifies the number of elements in the vector. This is then followed by N rows, each containing a single value.</p>
+<h3>Matrix</h3>
+<p>A file containing a matrix begins with a pair of positive integers, which specify the number of rows and columns in the matrix respectively. (Note that this means the first number is the Y extent, and the second number is the X extent.) Elements of the vector or matrix then appear one per line in order of increasing index, i.e., the element at (1,1) appears first, then the element at (1,2), and so on up to (1,N), which is followed by the element at index (2,1).</p>
+<h3>Basic Types</h3>
+<p>Vectors and matrices may contain Booleans, integers, or reals; vectors may also contain (x,y) points. The two Boolean values are represented by upper-case 'T' and 'F'. Integers and reals are represented in the usual way; points are represented as two numbers separated by a single space character.</p>
+<h2><a name="ops"></a>Parallel Operations</h2>
+<p>This list details some operations which are supported by many parallel programming systems. The toys described above provide opportunities for exercising many of these, and implementors are encouraged to phrase discussion of their work in terms of these operations where appropriate.</p>
+<ul>
+<li>elementwise operations on arrays (unary, binary, and scalar promotion)</li>
+<li>cumulative operations on arrays (reduction and parallel prefix)</li>
+<li>array re-shaping and re-sizing (e.g., sub-array extraction)</li>
+<li>partial (conditionally masked) versions of all of the above</li>
+<li>regular data motion (e.g., circular and planar shifting)</li>
+<li>irregular data motion (e.g., 1-to-1, 1-to-many, and many-to-1 permutation)</li>
+<li>scalar and non-scalar value location (e.g., finding a scalar or record value in an array)</li>
+<li>differential local addressing (i.e., subscripting an array with an array)</li>
+<li>full or partial replication of shared read-only values</li>
+<li>full or partial replication of shared read-mostly values with automatic consistency management</li>
+<li>structures with rotating ownership, suitable for migration</li>
+<li>producer-consumer structures</li>
+<li>partitionable structures</li>
+<li>pre-determined run-time re-partitioning (i.e., re-distributing an array)</li>
+<li>dynamic re-partitioning (e.g., for load balancing)</li>
+<li>committed mutual exclusion (e.g., waiting on a semaphore)</li>
+<li>uncommitted mutual exclusion (e.g., lock or fail)</li>
+<li>barrier synchronization</li>
+<li>multiple concurrent barriers used by non-overlapping groups of processes</li>
+<li>fetch-and-add, and other fetch-and-operate functions</li>
+<li>pre-scheduled receipt of messages of known composition</li>
+<li>variable-length message receipt</li>
+<li>message selection by type</li>
+<li>message selection by source</li>
+<li>message selection by contents</li>
+<li>guarded message selection (e.g., CSP's <code>alt</code> construct)</li>
+<li>broadcast and partial broadcast</li>
+<li>split-phase (non-blocking) operations</li>
+<li>data marshalling and unmarshalling of "flat" structures (e.g., arrays of scalars)</li>
+<li>data marshalling and unmarshalling of nested or linked structures</li>
+<li>heterogeneous parallelism (i.e., running different applications concurrently in one machine)</li>
+<li>pipelining</li>
+<li>distributed linked structures in systems without physically-shared memory</li>
+<li>indexing of distributed shared arrays</li>
+<li>collective I/O</li>
+<li>uniform-size interleaved I/O</li>
+<li>heterogeneous-size interleaved I/O</li>
+<li>independent I/O operations on a single shared file</li>
+</ul>
+<h2><a name="memory"></a>Memory Reference Patterns</h2>
+<p>These are inspired by the categorization originally used in the Munin system [<a href="#bib-munin">Bennett 1990</a>]. Again, implementors are encouraged to phrase discussion of their work in these terms where appropriate.</p>
+<ul>
+<li><em>Write-once</em>: variables which are assigned a value once, and only read thereafter. These can be supported through replication.</li>
+<li><em>Write-many</em>: variables which are written and read many times. If several processes write to the variable concurrently, they typically write to different portions of it.</li>
+<li><em>Producer-consumer</em>: variables which are written to by one or more objects, and read by one or more other objects. Entries in a shared queue, or a mailbox used for communication between two processes, are examples.</li>
+<li><em>Private</em>: variables which are potentially shared, but actually private. The interior points of a mesh in a program which uses geometric decomposition fall into this category, while boundary points belong to the previous class.</li>
+<li><em>Migratory</em>: variables which are read and written many times in succession by a single process before ownership passes to another process. The structures representing particles in an N-body simulation are the clearest example of this category.</li>
+<li><em>Result</em>: Accumulators which are updated many times by different processes, but thereafter read.</li>
+<li><em>Read-mostly</em>: Any variable which is read much more often than it is written to. The best score so far in a search problem is a typical instance of this class: while any process might update it, in practice processes read its value much more often than they change it.</li>
+<li><em>Synchronization</em>: Variables used to force explicit synchronization in a program, such as semaphores and locks. These are typically ignored for long periods, and then the subject of intense bursts of access activity.</li>
+<li><em>General read-write</em>: Any variable which cannot be put in one of the above categories.</li>
+</ul>

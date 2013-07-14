@@ -1,0 +1,26 @@
+---
+layout: blog
+date: 2010-12-26
+time: 09:00:00
+author: wilson.g
+title: Local Subversion Repositories
+category: [content, versions/version-4]
+---
+<p>A colleague in the UK who is going to teach Software Carpentry asked about setting up repositories. In particular, he doesn't have a server where he can create accounts and repos, so he was thinking of using Git or Mercurial, and having students host their repos on their own machines. That's not actually necessary: if you're going the locally-hosted route, and giving each student a separate repository, you can still use Subversion: just use the "file:" protocol for connecting instead of "http:" or "svn+ssh:".  For example:</p>
+<pre>$ pwd
+<em>/users/gvw</em>
+$ mkdir demo
+$ cd demo
+$ svnadmin create jon
+$ svn checkout file:///users/gvw/demo/jon mycopy
+$ ls
+<em>jon   mycopy</em>
+$ cd mycopy
+$ touch example.txt
+$ svn add example.txt
+A     example.txt
+$ svn commit -m "Checking in an example file"
+<em>Adding         example.txt
+Transmitting file data .
+Committed revision 1.</em></pre>
+<p>The repository can be anywhere on the local file system&mdash;I just put it and the working copy in the same directory so that they'd be easy to delete afterward.  And a repository that you're accessing via the "file:" protocol can also be accessed through other protocols&mdash;SVN does a good job of separating protocol from storage.  The only thing I trip over when I'm doing this is the triple slash: the protocol spec is "file://" (two slashes) and then there's the absolute path to the repo (which starts with another slash) making for three in all.</p>

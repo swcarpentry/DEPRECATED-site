@@ -1,0 +1,71 @@
+---
+layout: blog
+author: wilson.g
+title: Counting to Five (or, A Plan for Online Tutorials and What's Wrong With It)
+date: 2012-10-26
+time: 09:00:00
+category: [education, tooling, tutorial]
+---
+
+<p>My daughter is five and a half years old, and some time in the last couple of weeks, she made a small cognitive breakthrough. It used to be that if I asked her, "What's five plus three?", she would carefully count five fingers, then count three, then go back and count them all together to get eight. She doesn't do that any more; instead, she holds up five fingers, then counts, "Six... seven... eight!" to get the answer. It may sound like a small thing, but it's not: the idea that five is always five, even if you didn't count it this time around, is such a big one that we forget it ever had to be learned.</p>
+
+<p>A lot of my time these days goes into trying to count from five in online learning. While an ignorance of prior art might be considered an asset in Silicon Valley, I have enough failures and harder-than-it-should-have-beens behind me to make me want to build on what people have done before rather than reinvent things, even if <a href="{{page.root}}/blog/2012/09/the-real-hard-work.html">the latter is more fun</a>. What kinds of distance learning have worked in the past? How many of those ideas still work online? What new ideas work? What <em>doesn't</em> work, and why not? And how do we know? I don't believe for a moment that all the answers I want are already out there, but I'd have to be pretty arrogant to believe that <em>none</em> of them are, or that it'd be faster for me to rediscover things than read about them.</p>
+
+<p>For example: between March and July we ran two dozen <a href="{{page.root}}/blog/2012/06/this-weeks-tutorials.html">online tutorials</a> for people who'd been through Software Carpentry workshops. We used BlueJeans (and later Vidyo) to share the presenter's desktop with the learners, and two-way audio (later supplemented with IRC-style text chat) both for questions directed at the presenter, and sideways Q&amp;A between learners. The net effect was exciting and frustrating in equal measure: exciting because we could actually do it, and frustrating because the technology didn't work for some people, and the experience was never really satisfying for anyone. Even when learners were sitting together in small groups so that they could have high-bandwidth interactions with each other during the tutorial, the result was a pale imitation of being there in person.</p>
+
+<p>At the same time, though, I was helping people one-to-one, and that seemed to work a lot better. These sessions typically started with a "can you please help me?" email, then turned into a Skype call and some desktop sharing. I found was that diagnosing a novice's problem was a lot easier when I could see what they were doing (or when they could see what I was doing&mdash;we did it both ways). The reason was that almost by definition, novices don't know how to explain their actual problem: if they knew enough to say, "I think my EDITOR variable must be set incorrectly," they'd almost certainly be able to fix the problem themselves. Email back and forth with someone who's still trying to get from A to B is a lot like a game of Twenty Questions: can you run this command and send me its output, have you edited that file, and so on. A few seconds of interaction short-circuited a lot of that, which made it much more satisfying on both sides.</p>
+
+<p>That experience suggests a different kind of online teaching than the MESS (Massively Enhanced Sage on the Stage) being used by Coursera, Udacity, the Khan Academy, and so on. Grossly misrepresented for rhetorical purposes, their model is:</p>
+<ol>
+        <li>Watch a recording of a sage explaining something in a single fixed way.</li>
+        <li>Try to do something that the sage decided would be good for you.</li>
+        <li>If it doesn't work, hope that the static hints embedded in the robograder trigger a moment of <a href="http://en.wikipedia.org/wiki/Satori">satori</a>.</li>
+        <li>If not, try to translate your incomplete and imperfect understanding of what you're actually doing and why it isn't working into a coherent explanation.</li>
+        <li>Hope that someone reads it, that you happened to include enough of the right information for them to diagnose your actual problem, and that they are able to write an explanation that you can understand given your current state of knowledge.</li>
+        <li>Repeat.</li>
+</ol>
+<p>Minus steps 1 and 2, this is the model that Stack Overflow and similar sites use as well. I know from conversation with workshop participants than only a handful (certainly less than 10%) ever post a question on SO or similar sites. I used to think the reason was that people don't want to look stupid, but I now believe that the cost of translating "this doesn't work" into a complete enough description for someone else to work with, and the number of long-latency round trips required to converge on the actual problem and its diagnosis, are contributing factors as well.</p>
+
+<p>But what if we used 21st Century technology for Q&amp;A instead of souped-up 1970s-vintage bulletin boards? What if there was a "help me now" button on Stack Overflow that was enabled whenever the person who'd asked the question was online? When clicked, it would connect the clicker and the person needing help via VoIP and desktop sharing (with some kind of "are you sure?" handshake at the outset) so that people could get real-time interactive help when they needed it. Based on what I've seen in the last five months, this would be a <em>lot</em> more effective than anything with the translation bottleneck and latency of a bulletin board.</p>
+
+<p>This is where "counting from five" comes in. Somebody must have done this before, or done something similar enough to tell me what potholes there are on this road. Enter <a href="http://www.oreillynet.com/pub/au/2544">Scott Gray</a>, who's been building, using, and running online educational systems for two decades, and is now the head of the O'Reilly School of Technology. We chatted today, and here's what he said:</p>
+<ul>
+        <li style="background-color: #ffe0ff;">GW: did you see the <a href="http://vimeo.com/36754286">Mozilla Towtruck demo</a>?</li>
+        <li style="background-color: #ffe0ff;">GW: just a prototype, but the idea is to share your browser session with a tutor/helper/more knowledgeable friend when/as you need a few minutes of help</li>
+        <li style="background-color: #ffe0ff;">GW: we're already finding with scientists that "hey, can we share a desktop for a couple of minutes to figure this out?" is <em>very</em> effective, both on the learning side, and on the engagement side.</li>
+        <li>SG: Isn't Stackoverflow a low feature version of that?</li>
+        <li style="background-color: #ffe0ff;">GW: The "low feature" adjective is the killer: novices don't understand what's going wrong well enough to summarize enough relevant detail to permit diagnosis&mdash;Catch-22</li>
+        <li style="background-color: #ffe0ff;">GW: There are obviously exceptions (novices <em>do</em> post answerable questions on SO) but I think it's a much more stringent filter than people who've passed through it realize</li>
+        <li>SG: Yeah... seems like adding the hookup would be a lot of help: it's what we do at work but with skype. First we use the low feature texting like we are now.</li>
+        <li style="background-color: #ffe0ff;">GW: Do people screenshare with skype? Has anyone done an analysis of what they actually show each other, and how much accidental/sideways knowledge transfer is taking place (i.e., how often person X notices something that person Y didn't explicitly communicate, but which turns out to be relevant?)</li>
+        <li>SG: My employees are spread out all over the place; we use either Skype or Google hangout constantly.</li>
+        <li>SG: For actually teaching courses I have seen it used and abused: as far back as the mid-nineties we used CU See ME.</li>
+        <li>SG: They use Illuminate now. I watched them use it this past weekend, and I think that it can be massively improved.</li>
+        <li>SG: I think complete share with voice should be the last of an escalating use of communication tools all available in whatever learning or tutorial tool is being used.</li>
+        <li>SG: It's like right now: we're nearing what we can do with just text. We're communicating but we are reaching a time where we'd be more efficient actually talking, but we didn't know that 20 minutes ago.</li>
+        <li style="background-color: #ffe0ff;">GW: Do you think the initial async/text exchange between helper and tutor will be productive often enough to make it worth doing, or will they be better off jumping to real-time/full info early?</li>
+        <li style="background-color: #ffe0ff;">GW: I.e., should we flip the order in which we do things when one or both of us knows a lot less about what we're talking about? :-)</li>
+        <li>SG: To your first question, absolutely.</li>
+        <li style="background-color: #ffe0ff;">GW: Absolutely the text exchange will be productive, or absolutely they should leapfrog early?</li>
+        <li>SG: The first.</li>
+        <li style="background-color: #ffe0ff;">GW: Do you have any data to back that up? Looking at Stack Overflow, and talking to scientists who <em>don't</em> post questions, I think there's huge survivor bias in the sample, but I don't have anything more substantial than post-workshop conversations to back that up.</li>
+        <li>SG: What goes on at GITHUB? If everyone had to do sync, no one would. No one has that kind of time. So screen sharing is a last resort not first.</li>
+        <li style="background-color: #ffe0ff;">GW: Right&mdash;I don't think sync scales to the whole planet, but is it optimal for things like an online intro-to-programming class? A few thousand people, all with some declared stake in the game?</li>
+        <li>SG: No. I have 6000 students, all novices; we don't use any sync, ever.</li>
+        <li style="background-color: #ffe0ff;">GW: Would they if it was available? Would they use it with each other (the only scalable approach)?</li>
+        <li style="background-color: #ffe0ff;">GW: It works for the online gaming community, big time&mdash;lots of people helping lots of other people learn to be better dwarf axe throwers and whatever in WoW :-)</li>
+        <li>SG: Gaming and programming are completely different.</li>
+        <li style="background-color: #ffe0ff;">GW: OK&mdash;a flawed analogy is a bad point to start design from :-)</li>
+        <li>SG: Programming is a text based endevor: it's async by its very nature. So are literature and mathematics.</li>
+        <li style="background-color: #ffe0ff;">GW: Ah, OK, then that's where we disagree</li>
+        <li style="background-color: #ffe0ff;">GW: If I'm trying to figure out what's wrong with a novice's program, I want to run it on various inputs, or tweak a line or two and see what happens</li>
+        <li style="background-color: #ffe0ff;">GW: If I'm trying to figure out why they can't install X, I want to run commands to check settings, env variables, etc., and that's a very interactive process.</li>
+        <li style="background-color: #ffe0ff;">GW: The <em>program</em> is text, but <em>programming</em> is a verb.</li>
+        <li>SG: Yep.</li>
+        <li style="background-color: #ffe0ff;">GW: So maybe it's a difference between helping them with their program, and helping them with their programming.</li>
+        <li>SG: But when we talk sync and async we're talking human to human. Both can be done async.</li>
+        <li>SG: The problem is the ability to easily share asnychonus activities: think Google Docs but for programming.</li>
+        <li style="background-color: #ffe0ff;">GW: hm...</li>
+</ul>
+<p>All right: if someone with (literally) ten times as much experience as me tell me I'm off track, I ought to listen carefully and think a little more, even if it means discarding what seemed to me to be a very promising idea. Another alternative is to try to find a really cheap way to cobble together some low-fidelity experiments to get a better feeling for how this would work in practice&mdash;the equivalent of a napkin sketch in UI design. If you have insights to share, please share 'em.</p>
+

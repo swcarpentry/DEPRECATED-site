@@ -1,0 +1,28 @@
+---
+layout: blog
+date: 2010-06-10
+time: 09:00:00
+author: wilson.g
+title: "Interview: Jim Graham of Scimatic"
+category: [interviews, sponsors/scimatic]
+---
+<p>Over the next few weeks, I'll be interviewing the people whose sponsorship has made this course possible.  First up is Scimatic's Jim Graham.</p>
+<p><em>Tell us a bit about your organization and its goals.</em></p>
+<p>Scimatic (<a href="http://www.scimatic.com">www.scimatic.com</a>) is a company that writes software for scientists. Historically, we've written software on contract for manufacturers of scientific equipment. We have also written our own software product, <a href="http://www.scimatic.com/samples">Samples</a>, to help scientists keep their experiments organized.</p>
+<p>We're available to help scientists by writing software.</p>
+<p><em>Tell us a bit about the software your group uses.</em></p>
+<p>We develop software mostly using Microsoft's development tools. Almost all of the projects that we are working on currently are written in C# using Microsoft's Visual Studio development environment. C# is a pretty-rapidly evolving language that is assimilating nice features from dynamic languages.</p>
+<p>We've also done projects in C++, Java and Python.</p>
+<p>For tooling, we use:</p>
+<ul>
+<li>Version Control: hosted Subversion. We have some interest in DVCS systems, but until there are first-class integrations to visual studio and Windows, we'll stick with SVN.</li>
+<li>Project Management: Trac. It has per-project management, tickets, issues, project wiki, email notification and a tight integration to SVN. Pretty much if it's not in Trac, it doesn't exist.</li>
+<li>Unit Testing: NUnit, the .NET port of JUnit. We have tried MSTest (the unit testing framework from Microsoft), but it was too verbose.</li>
+<li>Continuous Integration: CruiseControl.NET: It's good enough to run builds on every checkin. We run compilation, unit tests, generate documentation, and build the installers with one run of the build.</li>
+<li>Scripting: I use Perl because I'm old school. We'll probably convert any "mission-critical" scripts to Python so everyone can own them.</li>
+</ul>
+<p><em>Tell us a bit about what software your group develops.</em></p>
+<p>We build products for scientists. Traditionally we've worked on contract, and our client decides how they want to distribute the software. In addition, we are developing our own product that we will sell directly to scientific customers.</p>
+<p><em>How do you hope the course will help them&mdash;that is, what big ideas and what specific skills do you what students to learn from it?</em></p>
+<p>I hope that scientists realise that almost every project they work on will require some type of software, and that they will need to know how it works. After that, I hope they learn to write reusable, compartmentalized software stored in version control system that they can access six months after their paper is published :) My experience has been that every piece of software that I thought was a "one-off" gets reused&mdash;best to write it as well as possible.</p>
+<p>I hope they also get a sense of how large and complicated software projects can be, and who to call for help if they need it.</p>

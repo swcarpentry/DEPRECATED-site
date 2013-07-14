@@ -1,0 +1,144 @@
+---
+layout: blog
+author: wilson.g
+title: Using the IPython Notebook as a Teaching Tool
+date: 2013-03-24
+time: 09:00:00
+category: [education, tooling]
+---
+<p>I had a fruitful discussion with Jon Pipitone today about using the IPython Notebook for teaching. Long story short, there are several possible approaches, but we can see problems with each. To set the stage, here are the two "pure" models most widely used for teaching programming today:</p>
+<dl>
+  <dt><em>Frozen</em>: the instructor embeds snippets of code in slides (which can be in LaTeX, PowerPoint, HTML, or some other format).</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Easy to interleave code and commentary.</li>
+      <li>Easy to draw on top of code to highlight, make connections with commentary, etc.</li>
+      <li>Easy for other people to re-use.</li>
+      <li>Easy to add presenters' notes.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>The code isn't immediately executable, so some combination of manual checking and tooling has to be used to ensure that the output shown is up-to-date with the code, that the code shown is up-to-date with any hand-out files, etc.</li>
+      <li>It's really easy for instructors to race through slides too fast for learners can follow.</li>
+      <li>"Watch and listen" is a passive learning model, and the more passive learners are, the less they learn.</li>
+    </ul>
+  </dd>
+  <dt><em>Live Coding</em>: the instructor types into an interpreter as she's teaching; the only thing on the screen is her code and its output, and everything else is delivered verbally.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Allows responsive improvisation: the instructor can answer "what if?" questions much more easily.</li>
+      <li>Constrains the speed of presentation (somewhat).</li>
+      <li>Facilitates "sideways knowledge transfer", e.g., learners can pick up keyboard shortcuts and other "hows" of coding, etc.</li>
+      <li>Learners learn more if they are typing in code as they follow along.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>Learners now have to type and watch at the same time; the former often distracts from the latter (particularly if they make typing mistakes that they can't spot themselves, so that they wind up with a triple burden of watching, typing, and debugging simultaneously).</li>
+      <li>Learners walk away with just the code, not what was said about it, and code alone can be hard to re-understand.</li>
+      <li>It discourages the use of diagrams (instructors can't doodle directly in the Notebook the way they would on a whiteboard, and "let me import this now" is clumsy).</li>
+      <li>There's no obvious place to store the presenters' guide.</li>
+    </ul>
+  </dd>
+</dl>
+<p>With practice, preparation, and the right A/V setup, instructors can use a hybrid model:</p>
+<dl>
+  <dt><em>Studio Show</em>: the instructor displays point-form notes on one screen and live coding on another. Pre-planned code examples are stored in a file; the instructor usually copies and pastes from there into the interpreter, but improvises interactively in response to questions. Students are either given the same file of planned code examples for copying and pasting on their machines, or something like Etherpad is used to give the same functionality.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Gives instructors scaffolding ("here's what to teach next").</li>
+      <li>Supports improvisation while allowing easy re-synchronization (instructor and learners can get back on track when/as needed).</li>
+      <li>Easy to show diagrams along with sample code.</li>
+      <li>An obvious place to store presenters' notes.</li>
+      <li>Facilitates sideways knowledge transfer.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>Requires a double screen. (There isn't enough real estate to show code and slides side-by-side on a regular screen; toggling back and forth between slides and code is very distracting.)</li>
+      <li>Allows the instructor to race ahead (but if learners can easily copy/paste code, this isn't as much of a problem as it is with the Frozen model).</li>
+    </ul>
+  </dd>
+</dl>
+<p>Unfortunately, the requirement for two independent screens makes Studio Show impossible in most situations: in the last two years, I've only been able to do this twice.</p>
+<p>Could the IPython Notebook give us something like the Studio model on a single screen?  Here are some options:</p>
+<dl>
+  <dt><em>Frozen with Replay</em>: the instructor has a notebook in which point-form notes are interleaved with code cells. As she lectures, she re-executes the code cells to show that they produce the output shown.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Easy for other people to re-use.</li>
+      <li>Easy to check that the code samples are in sync with the commentary and the output shown (just "run all").</li>
+      <li>Easy to keep diagrams beside code and commentary.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>No obvious place to add presenters' notes, since everything in the notebook is visible to everyone.  (However, the next release of the Notebook should allow authors to add CSS classes to cells. Once that lands, we'll be able to do show/hide buttons as an add-on, which will address this.)</li>
+      <li>Easy for instructors to race through things faster than learners can follow (since they're not typing, just re-executing).  This is a minor issue compared to the next two problems.</li>
+      <li>Makes "what if?" risky, because every execution of every cell modifies the server process's state, and a single divergence from the planned path can invalidate every subsequent cell's output.  This can be addressed by putting chunks of "reset" code into the notebook to get the interpreter's state back to where it needs to be before each example, but:
+        <ol>
+          <li>that's an extra burden on learners, who have a hard time distinguishing "core example" code from "getting us back in order" code (particularly when the latter is usually not actually necessary); and</li>
+          <li>there's the risk that learners will come away thinking that "reset" code is actually necessary, and will include it in their programs (because after all, that's what they've seen).</li>
+        </ol>
+      </li>
+      <li>It makes learning a passive experience once again: learners are hitting "shift-enter" once in a while, instead of just watching, but that's not much of a difference from just watching.</li>
+    </ul>
+  </dd>
+  <dt><em>Live Coding II</em>: start with an empty notebook and start typing in code as learners follow along.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Works better than a conventional "ASCII in, ASCII out" interpreter: pretty-printed input interleaved with blocks of output, inline rendering of graphs and images, and extras like Matt Davis's blocks are a big step forward.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>as with command-line live coding, learners have to type and watch, wind up with just the code (not the commentary), and there's no obvious place to put the presenter's guide.</li>
+      <li>It also discourages the use of diagrams.</li>
+    </ul>
+  </dd>
+</dl>
+<p>Live coding is hands-down the better of these two approaches: it does put more of a burden on the instructor (who has to remember the "chord changes" that are coming up) and on the learners (who have to keep up with the typing), but the interactivity makes it a clear win.  The question is, how can we improve it?</p>
+<dl>
+  <dt><em>Sync With Instructor</em>: at the press of a button, the learners' notebooks are replaced by clones of the current state of the instructor's notebook.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Lets learners (rather than instructors) choose between "follow on autopilot" or "type along" (or mix the two).</li>
+      <li>Easy for a learner to catch up if she has fallen behind.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>Requires significant engineering effort (as in, unlikely to arrive this year).</li>
+      <li>Doesn't address the diagrams/presenters' notes problem.</li>
+    </ul>
+  </dd>
+  <dt><em>Gradual Reveal</em>: pre-load both instructors' and learners' notebooks with notes, code, and diagrams, but have a "show next" button to reveal the next cell.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Learners get everything: notes, diagrams, code, etc.  (And so do instructors.)</li>
+      <li>Learners are able to type along, do exercises inline, etc. (with the caveat below).</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>Once again, any "what if?" can invalidates all subsequent cells.  However, there's at least the possibility of deleting the offending cell(s) and doing "run all" to resynchronize.  This might work particularly well if "run all" only re-ran cells that have been revealed: learners could try an exercise in the last cell of their notebook, and if they stray too far from the intended path, delete that cell and "run all" to re-sync before the instructor moves on.</li>
+    </ul>
+  </dd>
+  <dt><em>Lots of Little Notebooks</em>: have one idea per notebook, with no more than half a dozen snippets of code.</dt>
+  <dd>
+    Advantages:
+    <ul>
+      <li>Shorter dependency chains, so less need to reset/resync.</li>
+      <li>Makes it easier for instructors to improvise: they can skip over mini-notebooks if their audience already knows the material or they're running short of time.</li>
+      <li>We can do it now without any changes to the Notebook.</li>
+    </ul>
+    Disadvantages:
+    <ul>
+      <li>Doesn't address the other issues I've raised: how much is pre-loaded, where do instructors' notes go, etc.</li>
+    </ul>
+  </dd>
+</dl>
+<p>The fundamental tension here is between using the notebook as a laboratory tool, and using it as a replacement for either or both of live coding and PowerPoint and its imitators.  There's no doubt in my mind that it's better than text-only interpreters for the former, but it still has a ways to go before it's credible as competition for the latter, or as a single-tool replacement for the combination of the two. I'd welcome your thoughts on where to go from here.</p>
+
+<p><em>Note: PowerPoint has lots of detractors, but I think most of their criticism is misguided.  <a href="http://www.edwardtufte.com/tufte/powerpoint">Edward Tufte</a> and others say that by encouraging point-form presentations, PowerPoint also encourages bland idiocy, but in my mind, that's like blaming fountain pens for bad poetry: any tool can be abused, and it isn't PowerPoint's fault if people don't use its whiteboarding capabilities.  Many other people dislike it because it's closed-source, not web-native, and doesn't play nicely with version control.  These criticisms are true, but the alternatives that most proponents of this point of view offer&mdash;some based on LaTeX, most based on HTML, CSS, and Javascript&mdash;are much more strongly biased toward the point-form idiocy Tufte et al criticize than PowerPoint ever was.  Yes, you can use an external tool to draw a diagram, export it as an SVG or PNG, and link to that from your slideshow, but most non-fanatics can see that PowerPoint is proof that going the long way around the houses like that isn't actually necessary.  If we want people to take the Notebook (or anything else) as a credible alternative to today's specialized slideshow tools, that's the ease of use we have to match or beat.</em></p>

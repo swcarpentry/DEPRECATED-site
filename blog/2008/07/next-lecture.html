@@ -1,0 +1,53 @@
+---
+layout: blog
+date: 2008-07-28
+time: 09:00:00
+author: wilson.g
+title: Next Lecture?
+category: [content, lectures, versions/version-3]
+---
+<p>The <a href="http://swc.scipy.org">Software Carpentry</a> course currently contains the following lectures:</p>
+<ol>
+<li>Introduction</li>
+<li>The Unix Shell (2 lectures)</li>
+<li>Version Control</li>
+<li>Automated Builds</li>
+<li>Basic Scripting (bool/int/float, for/while/if)</li>
+<li>Strings, Lists, and Files</li>
+<li>Functions and Libraries</li>
+<li>Programming Style</li>
+<li>Quality Assurance (basic testing)</li>
+<li>Sets, Dictionaries, and Complexity</li>
+<li>Debugging</li>
+<li>Object-Oriented Programming (2 lectures)</li>
+<li>Unit Testing (unittest &mdash; should switch this to nose)</li>
+<li>Regular Expressions</li>
+<li>Binary Data</li>
+<li>XML</li>
+<li>Relational Databases</li>
+<li>Spreadsheets</li>
+<li>Numerical Programming (the basics of NumPy)</li>
+<li>Integration (subprocess+pipes and wrapping C functions)</li>
+<li>Web Client Programming (HTTP request/response, URL encoding)</li>
+<li>Web Server Programming (basic CGI processing)</li>
+<li>Security (the weakest lecture of the bunch)</li>
+<li>The Development Process (a mish-mash of sturdy and agile)</li>
+<li>Teamware (introduces portals like <a href="http://www.drproject.org">DrProject</a>)</li>
+<li>Conclusion (various "where to look next" suggestions)</li>
+</ol>
+<p>Between now and Christmas, I want to tidy them up, duplicate the examples in MATLAB, and add some of the content I wrote for "CSC301: Introduction to Software Engineering".  Since I won't have time to do everything, I'd like your help prioritizing.  Which of the following topics do you think is most important to add?  And what have I forgotten entirely?</p>
+<ul>
+<li>Lifecycle: should I split the existing "Development Process" lecture into two, and cover agile methods (focusing on Scrum) and sturdy methods (i.e., longer release cycles, more up-front planning, legacy code). Neither exactly fits scientists' "exploratory programming" paradigm, but they're all we've got...</li>
+<li>Quality: this would expand the "Programming Style" lecture with material from Spinellis's <a href="http://www.amazon.com/Code-Reading-Perspective-Effective-Development/dp/0201799405"><cite>Code Reading</cite></a> and <a href="http://www.amazon.com/Code-Quality-Perspective-Effective-Development/dp/0321166078"><cite>Code Quality</cite></a> to describe what makes good software good.</li>
+<li>Deployment
+<ul>
+<li>Currently based on the patterns in Nygard's <a href="http://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213"><cite>Release It!</cite></a>, which focus on designing scalable fault-tolerant applications.</li>
+<li>Should I instead cover the creation and distribution of packages (e.g., RPMs, <a href="http://docs.python.org/dist/dist.html">Distutils</a>, Ruby Gems, etc.)?</li>
+</ul>
+</li>
+<li>Refactoring: a combination of Fowler's original <a href="http://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Technology/dp/0201485672"><cite>Refactoring</cite></a> and Feathers' <a href="http://www.amazon.com/Working-Effectively-Legacy-Robert-Martin/dp/0131177052"><cite>Working Effectively with Legacy Code</cite></a>.</li>
+<li>UML: I devote three lectures to this in CSC301; I don't see any reason to inflict it on scientists.</li>
+<li><a href="http://www.reproducibleresearch.org">Reproducible Research</a>: it's already important, and likely to become more so; it also ties in with "open science", though I'm not sure what I could say about either that wouldn't just be rah-rah and handwaving&mdash;tools like <a href="http://www.statistik.lmu.de/~leisch/Sweave/">Sweave</a> are interesting, but I don't people would be willing to learn <a href="http://www.r-project.org/">R</a> just to use it, and there don't seem to be equivalents (yet) in other languages. The same goes for data lineage: it's an important idea, and there are plenty of research prototypes, but nothing has reached the "used by default" level of (for example) Subversion.</li>
+<li>GUI Construction: people still use desktop GUIs, and it's worth learning how to build them (if only because it forces you to come to grips with MVC and event-driven programming), but what everyone <em>really</em> wants these days is a rich browser-based interface, and I don't think it'd be possible to fit that into this course.</li>
+<li>High Performance Blah Blah Blah: this one keeps coming up, but (a) one of the motivations for Software Carpentry is the belief that there's too much emphasis on this in scientific computing anyway, and (b) what would it include?  GPU programming?  MPI?  Grid computing? Some other flavor-of-the-week distraction from the hard grind of creating trustable code and reproducible results without heroic effort?  Oh, wait, are my biases showing?</li>
+</ul>

@@ -1,0 +1,25 @@
+---
+layout: blog
+date: 2010-10-30
+time: 09:00:00
+author: wilson.g
+title: Dubois on Maintaining Correctness
+category: [content]
+---
+<p>Something else I didn't get to at the Met Office last week:</p>
+<blockquote><p>Paul F. Dubois: "Maintaining Correctness in Scientific Programs". <em>Computing in Science &amp; Engineering</em>, May-June 2005, <a href="http://doi.ieeecomputersociety.org/10.1109/MCSE.2005.54">http://doi.ieeecomputersociety.org/10.1109/MCSE.2005.54</a>.</p></blockquote>
+<p>Please, please, please, if you're building scientific software of any kind, find a copy and read it, because it's the best explanation I've ever found of why the right way to do it is, well, the right way to do it. Paul ties together a banker's dozen good ideas under the banner <em>defense in depth</em>: no matter how scrupulous we are, any of these might fail, so we have others in place to catch the mistakes that creep through. To quote the list that opens the paper, they are:</p>
+<ul>
+<li><em>Protocol for source control.</em> Policies and procedures for managing the source can isolate errors when they occur.</li>
+<li><em>Language-specific safety tools.</em> Each computer language has some facilities for ensuring correctness, but they're often underutilized.</li>
+<li><em>Design by contract.</em> Bertrand Meyer's design by contract (DBC) methodology is a good fit with scientific programming, and its optional runtime checking of the contracts catches many errors.</li>
+<li><em>Verification.</em> Defending against bad user input or data is separate from checking contracts.</li>
+<li><em>Reusing reliable components.</em> We use third-party libraries for many things; the biggest benefit of reusing code isn't that you don't have to write it, but that the software is more likely to be correct already.</li>
+<li><em>Automating testing.</em> A simple automation of testing procedures makes it easier to do as much testing as you ought to.</li>
+<li><em>Unit testing.</em> Hand-in-hand with DBC, unit testing ensures component integrity.</li>
+<li><em>To-main testing policy.</em> We insist on a certain level of testing before committing developments to our "main line."</li>
+<li><em>Regression testing.</em> Additional nightly or weekly testing on all target platforms catches problems caused by our own errors as well as those caused by changes in environment.</li>
+<li><em>Release management.</em> A disciplined approach to release management gives most users a stable experience.</li>
+<li><em>Bug tracking.</em> Simple open-source tools can help make sure issues don't get lost.</li>
+</ul>
+<p>It's only six pages long, including a couple of ads that you can skip: please, like I said, give it a read. (And note to self: I really need to turn this into a lecture...)</p>

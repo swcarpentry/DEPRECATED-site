@@ -1,0 +1,165 @@
+---
+layout: blog
+date: 2012-01-23
+time: 09:00:00
+author: wilson.g
+title: Revising the Curriculum
+category: [content, versions/version-5-0]
+---
+<p>I've been thinking some more about what the foundation and core of Software Carpentry actually are (and not just because Jon Pipitone keeps pestering me to do so). My <a href="{{page.root}}/v4/softeng/principles.html">last attempt</a> had a foundation of seven principles and dozen topics in the core. I think I can slim that down even further; in fact, I think three big principles form the foundation of computational thinking:</p>
+<ol>
+<li><em>It's all just data,</em> whose meaning depends on interpretation. This subsumes the notions that programs are a kind of data (which is the basis of things as diverse as functional programming and version control), and that we should separate models from views (because the most efficient ways for people and computers to interpret data are different). It doesn't really include the distinction of copy vs. reference, but I'm going to lump it in here because that idea doesn't seem big enough to deserve a heading of its own.</li>
+<li><em>Programming is a human activity.</em> The only way to build large programs (or even small ones) is to create, compose, and re-use abstractions, because our brains can only understand a few things at a time. Similarly, good technique (specifically version control, testing, task automation, and some rules for collaborating, be they agile or sturdy) is necessary because everyone is tired, bored, or out of their depth at least once in a while.</li>
+<li><em>Better algorithms are better than better hardware.</em> Computational complexity determines what's doable and what isn't, and no aspect of program performance makes sense without some understanding of it.</li>
+</ol>
+<p>I also think we can reduce the core topics to just nine, though I can already hear protests from the back of the room about some of the omissions. I got this list by asking, "What's the minimum I think a graduate student needs to know to contribute to the computational work in a typical lab?" My answer is:</p>
+<ol>
+<li>The Unix shell
+<ul>
+<li>Includes: basic commands (from <code>ls</code> and <code>cd</code> to <code>sort</code> and <code>grep</code>); files and directories; the pipe-and-filter model.</li>
+<li>Because: it's still the workhorse of scientific computing (and is experiencing a resurgence as cloud computing becomes more popular).</li>
+<li>Illustrates: "lots of little pieces loosely joined" is a good way to introduce modularity and tool-based computing; it lets us talk the human time vs. machine time tradeoff.</li>
+<li>Omissions: <code>find</code>; shell scripts (particularly <code>for</code> loops); SSH.</li>
+</ul>
+</li>
+<li>Version control
+<ul>
+<li>Includes: update/edit/commit; merge (with rollback as a special case).</li>
+<li>Because: it's a key technique.</li>
+<li>Illustrates: the idea of metadata; programming as a human activity (the hour-long red-green-refactor-commit cycle).</li>
+<li>Omissions: branching; distributed version control.</li>
+</ul>
+</li>
+<li>The common core of programming
+<ul>
+<li>Includes: variables; loops; conditionals; lists; functions; libraries; memory model (aliasing).</li>
+<li>Because: we can't teaching validation, associative data structures, or program design without this common core.</li>
+<li>Illustrates: programming as a human activity (programs must be readable, testable, etc.).</li>
+<li>Omissions: object-oriented programming; matrix programming.</li>
+</ul>
+</li>
+<li>Validation
+<ul>
+<li>Includes: structured unit tests; test-driven development; defensive programming; error handling; data validation.</li>
+<li>Because: defense in depth is key to building large programs, and trustworthy programs of any scale.</li>
+<li>Illustrates: trustworthy programs come from good technique.</li>
+<li>Omissions: testing floating-point code (since we don't really know how to).</li>
+</ul>
+</li>
+<li>Program construction
+<ul>
+<li>Includes: piecewise refinement; refactoring; design for test; first-class functions; using a debugger.</li>
+<li>Because: knowing the syntax of a programming language doesn't tell you how to create a program.</li>
+<li>Illustrates: creating and composing abstractions; interface vs. implementation.</li>
+<li>Omissions: structured documentation.</li>
+</ul>
+</li>
+<li>Associative data structures
+<ul>
+<li>Includes: sets (as a prelude); dictionaries; why keys must be immutable.</li>
+<li>Because: useful in so many places.</li>
+<li>Illustrates: how the right algorithms and data structures make programs more efficient.</li>
+<li>Omissions: implementation details.</li>
+</ul>
+</li>
+<li>Databases
+<ul>
+<li>Includes: select; sort; filter; aggregate; null; join; accessing a database from a program.</li>
+<li>Because: useful in many contexts.</li>
+<li>Illustrates: separation of models and views; a different model of computation</li>
+<li>Omissions: sub-queries; object-relational mapping; database design.</li>
+<li>Note: we could illustrate many of the same ideas with spreadsheets, but they're not as easy to connect to programs.</li>
+</ul>
+</li>
+<li>Development methodologies
+<ul>
+<li>Includes: agile practices (the usual Scrum+XP mix); sturdy (plan-driven) lifecycles.</li>
+<li>Because: ties many other lessons together.</li>
+<li>Illustrates: good technique makes good programs.</li>
+<li>Omissions: code review.</li>
+</ul>
+</li>
+</ol>
+<p>If we use a two-day <a href="{{page.root}}/bootcamps/">boot camp</a> to start, and follow up over six weeks with one lesson per week, I think we can cover:</p>
+<table>
+<tbody>
+<tr>
+<td></td>
+<td valign="top"><strong>Topic</strong></td>
+<td valign="top"><strong>Boot Camp</strong></td>
+<td valign="top"><strong>Online</strong></td>
+</tr>
+<tr>
+<td valign="top">1.</td>
+<td valign="top">Unix shell</td>
+<td valign="top"><code>ls</code> and <code>cd</code>;<br />
+files and directories</td>
+<td valign="top"><code>sort</code> and <code>grep</code>; pipes</td>
+</tr>
+<tr>
+<td valign="top">2.</td>
+<td valign="top">Version control</td>
+<td valign="top">update/edit/commit; merge</td>
+<td valign="top">rollback</td>
+</tr>
+<tr>
+<td valign="top">3.</td>
+<td valign="top">Core programming</td>
+<td valign="top">all of it (but see below)</td>
+<td valign="top">not needed (but see below)</td>
+</tr>
+<tr>
+<td valign="top">4.</td>
+<td valign="top">Validation</td>
+<td valign="top">unit tests; TDD</td>
+<td valign="top">defensive programming; error handling;<br />
+data validation</td>
+</tr>
+<tr>
+<td valign="top">5.</td>
+<td valign="top">Program construction</td>
+<td valign="top">One extended example;<br />
+one demo of a debugger</td>
+<td valign="top">More examples; design for test;<br />
+first-class functions</td>
+</tr>
+<tr>
+<td valign="top">6.</td>
+<td valign="top">Associative data structures</td>
+<td valign="top">none</td>
+<td valign="top">everything</td>
+</tr>
+<tr>
+<td valign="top">7.</td>
+<td valign="top">Databases</td>
+<td valign="top">none</td>
+<td valign="top">everything</td>
+</tr>
+<tr>
+<td valign="top">8.</td>
+<td valign="top">Development methodologies</td>
+<td valign="top">overview of agile</td>
+<td valign="top">sturdy (plan-driven) lifecycle;<br />
+evidence-based software engineering</td>
+</tr>
+</tbody>
+</table>
+<p>Topic #3, core programming, is the hardest to manage. If people have programmed in Python before, it can be a quick review (or omitted altogether). If they've programmed in some other interactive language, it can also be covered pretty quickly, but if they've never programmed before, or took one freshman course ten years ago, there's no way to teach them enough to make a difference in half a day. Even if there was, the other learners would undoubtedly be bored. The only solutions I can see are to restrict participation to people who can already do a simple exercise in <em>some</em> language, or to run one day of pre-boot camp training for non- or weak programmers. Neither option excites me...</p>
+<p>Coming back to content, this plans means that we'll leave out a lot of useful things:</p>
+<ol>
+<li>Spreadsheets: lots of scientists use spreadsheets badly, but while we'd like to show them how to do so well, the only one they actually use, Excel, isn't open source or cross platform, and it's much harder to build programs around spreadsheets than around databases.</li>
+<li>Make: is very hard to motivate unless people are working with compiled languages&mdash;we've tried showing people how to build data pipelines using Make, but it's too clumsy to be compelling. Plus, Make's syntax makes a hard problem worse...</li>
+<li>Systems programming: knowing how to walk directory trees and/or run sub-processes is useful, but we think people can pick these up on their own once they've mastered the core.</li>
+<li>Matrix programming: really important to some people, irrelevant to others, and the people it's important to will probably have seen the ideas in something like MATLAB before we get them.</li>
+<li>Multimedia programming (images, audio, and video): people can learn basic image manipulation on their own; audio and video are harder, mostly due to a lack of documentation, but they aren't important enough to enough people to belong in our core.</li>
+<li>Regular expressions: are a <em>great</em> way to illustrate the idea that programs are data, and are very useful, but everything in the core seems more important, and it'll be hard enough to get through all that in the time we have. This is probably the one I most regret taking out...</li>
+<li>HTML/XML: there are lots of excellent tutorials on writing HTML, and while XML processing is a good way to introduce recursion (and, if XPath is included, to talk about programs as data once again), I believe once again that it's not important enough to displace any of the material in the core.</li>
+<li>Object-oriented programming: is probably the omission that raises the most eyebrows. We can introduce it fairly naturally when talking about design for test (more specifically, about interface vs. implementation), but in practice, most people get along fine using lists, dictionaries, and the classes that come with the standard library without creating new classes of their own. Plus, showing people how to do OOP properly takes a lot more time than just showing them how to declare a class and give it methods.</li>
+<li>Desktop GUIs: an excellent way to introduce reactive (event-driven) programming and program frameworks, but is less important than it was ten years ago (most people would rather have a web interface these days).</li>
+<li>Web programming: the only thing we can teach people in the time we have is how to create security vulnerabilities.</li>
+<li>Security: the principles are easy to teach, but translating them into practice requires more knowledge (especially of things like web programming) than we can assume our learners have.</li>
+<li>Visualization: everybody wants it, but nobody can agree what it means. Should we show people how to use a specific library to create 3D vector flows? Or the principles of visual design so that they can make nicer 2D charts? And no matter what we teach, will they actually learn enough to make a difference?</li>
+<li>Performance and parallelism: the most important lesson, which <em>is</em> in the core, is that the right data structures and algorithms can speed programs up more than any amount of code tuning. Everything after that is either inextricably tied to the specifics of a particular langauge implementation (performance tuning), or offers no low-hanging fruit (parallelism). The one exception is job-level parallelism, which <em>could</em> be included in the material on the Unix shell if an appropriate cross-platform tool could be found.</li>
+<li>C/C++, Fortran, C#, or Java: more to introduce fixed typing and compilation, but these are relatively low priority topics.</li>
+</ol>
+<p>We're going to start implementing this plan (or some derivative of it) at the beginning of February, to be ready for workshops starting at the end of that month. We'd welcome feedback; in particular, have we taken something out of the core that you think is more important than something that's in, and that could be taught in the time that's actually available? If you have thoughts, please <a href="mailto:{{site.contact}}">let us know</a>.</p>

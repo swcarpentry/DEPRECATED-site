@@ -1,0 +1,81 @@
+---
+layout: blog
+author: jackson.m
+title: Feedback from Edinburgh
+date: 2012-12-12
+time: 09:00:00
+category: [boot-camp, venues/edinburgh]
+---
+<p>This week saw the first boot camp to be held at <a href="http://www.ed.ac.uk">The University of Edinburgh</a>. The boot camp was organised by the <a href="http://www.software.ac.uk">The Software Sustainability Institute</a> and <a href="http://www.epcc.ed.ac.uk">EPCC</a> as part of the <a href="http://www.prace-project.eu/">PRACE</a> Advanced Training Centre. We had 36 researchers from geosciences, astronomy, biology, statistics, chemistry and mathematics and based at 8 institutions across the UK. Azalee and myself led the workshop and we had 7 helpers including Nancy Giang of the University of Dundee who we recruited after she attended the <a href="http://software-carpentry.org/2012/10/feedback-from-newcastle/">Newcastle boot camp</a> back in October, and David Jones of the <a href="http://climatecode.org/">Climate Code Foundation</a>. We also had as helper/observers Mike Mineter of The University of Edinburgh and Norman Gray of The University of Glasgow also came along to help and to see what a boot camp is like, with a view to running boot camps for the physics and geosciences communities.</p>
+
+<p>Feedback from the attendees was good though some felt we went too fast (on make, for example), or too slow (on bash). For once, it seemed like we weren't bogged down with installation woes. We'd e-mailed attendees many times to tell them to do it before they arrived (and that the weekend before is too late!) and provided a VMWare Ubuntu VM but it helped that a number of researchers came from the same department and their systems team had configured a VM for them to log into (a model to be promoted!).</p>
+
+<p>From Azalee:</p>
+
+<p>We had 6 helpers + 1 instructor free at all times on the first day to assist with installation (along with content) issues. At first I thought that this was way too many people, but it turned out to be the right number to address the issues of the class as they arose and give students the individual help they needed as they needed it rather than during the breaks. The diversity of experience and expertise of the helpers also contributed to the success of this workshop.</p>
+
+<p>One deviation from previous workshops I've attended was a practical at the end. We asked students to write a script which read in a file of student names and grades and calculated the mean. They then wrote tests for the function, put it under version control, and created a make file for it. People worked in groups of 2-5 people from their table for about 1.5 hours. We asked students to get as far as they could in that time. The mean function had already been presented in an earlier exercise. A few groups completed the assignment while others only got as far as version control, but it was great to see the students working together, sorting through their misconceptions, creating working code, and asking questions in a very supportive environment. I think that this demonstrated the intended work flow as well as demonstrating how everything we taught them fit together. The down side of this was that it was that much less teaching time to cover new content.</p>
+
+<p>We created a pre-workshop questionnaire asking students to rate their level as well as their interest in the planned curriculum. We also asked them which operating systems they would be using. This was very helpful in designing the material and supporting installations.</p>
+
+<p>I'm still looking for the best way to get text files to students. We tried the download section of bit bucket (a great place for students to use wget and curl) but with long urls this was cumbersome. I'm leaning towards a pre-workshop repository with just the code you want students to start with and a post-workshop repository with all of the answers. I'd love to hear other people's suggestions/experiences.</p>
+
+<p>I also struggled with balancing making the size of the text big enough to be read by the class with the commands scrolling off the screen before the slower students could type them. Again - suggestions welcome.</p>
+
+<p>Here are the comments from the attendees, helpers and instructors, good and bad:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td valign="top"><strong>Good</strong>
+        <ul>
+          <li>Good to see all the different techniques available even if they will not all be used</li>
+          <li>Learning more about Unix</li>
+          <li>Impressed by version control/Mercurial/BitBucket which will use more of (5)</li>
+          <li>Got to know about Mercurial before choosing SVN</li>
+          <li>Had some quite specific problems that people helped me with</li>
+          <li>Learning about makefiles (2)</li>
+          <li>Nice and experience helpers, relaxed atmosphere</li>
+          <li>Did not know a lot of the software, good to know more</li>
+          <li>Learnt a lot in two days</li>
+          <li>Problems with the computer, helpers helped out</li>
+          <li>Interaction with people on the course and helpers were useful</li>
+          <li>Fun</li>
+          <li>Good intro to Python for a complete beginner</li>
+          <li>Enjoyed being here and helping, and learning from helpers, also good to see how things work</li>
+        </ul>
+      </td>
+      <td valign="top"><strong>Bad</strong>
+        <ul>
+          <li>Could not get the shared Mercurial to work</li>
+          <li>Learned a lot but not sure what I will use</li>
+          <li>Having to tell everyone a bad point</li>
+          <li>Queue for coffee (2)</li>
+          <li>Not enough on make, don't understand make</li>
+          <li>Some sections went a bit too quick because I was not so familiar with it (2)</li>
+          <li>Lot of things to learn</li>
+          <li>Some Python could give more context e.g. hypoteneuse which people may not be able to remember</li>
+          <li>Sometimes people fell behind and could not catch up (2)</li>
+          <li>Mixed dynamics, talk, helpers helping - cleaner structure between presentations and practical would be useful</li>
+          <li>Sometimes too easy, too difficult at other times</li>
+          <li>Went a bit slow for bash and zooming through other stuff later on</li>
+          <li>More on bash would have been good</li>
+          <li>Too much time on Python</li>
+          <li>Going a bit fast sometimes but there were enough helpers to help out</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Other observations from Azalee and myself, and from our helpers (who were great at taking notes as to how things were going) included:</p>
+
+<ul>
+  <li>For bash, the concept of a home directory should be introducted explicitly.</li>
+  <li>"history | grep 'some command'" is a good example of a pipe in action and a very useful command!</li>
+  <li>There should be an explicit introduction to an editor (open file, edit, save, exit) otherwise attendees may just copy the instructor which can cause problems when an instructor is zooming through his use of XEmacs (guilty!). This was especially and issue in the version control section when some people forgot to put a commit message in the command-line.</li>
+  <li>Revision control commit messages should be provided via the editor and not at the command-line to reduce the risk of attendees reusing commit messages from previous commands in their shell history (or using messages like "Commit 1", "Commit 2" etc).</li>
+  <li>.py files should be introduced as soon as there is a need to input code fragments that extend over 1 line e.g. conditional, loop or function. This is a place where the ipython notebook might be a happy medium although it is one more item to install.</li>
+  <li>Any code fragments we present must be "exemplary" - fully commented and idiomatic - ie. exactly how we'd write it ourselves if doing it "for real" because, as has been commented, people learn by reading others' code!</li>
+  <li>David Jones wrote a <a title="David Jones' blog post" href="http://climatecode.org/blog/2012/12/software-carpentry-boot-camp-edinburgh/">blog post</a> on his experience with more useful information and suggestions.</li>
+</ul>

@@ -1,0 +1,146 @@
+---
+layout: blog
+date: 2012-05-31
+time: 09:00:00
+author: mcglinn.d
+title: Dictionaries are a Scientist's Friend
+category: [education, tutorial]
+---
+<p>[<a href="dictionary_blog_post.txt">Code</a>]</p>
+<p>Today I would like to share with other scientists the power of <a href="http://docs.python.org/tutorial/datastructures.html#dictionaries">dictionaries</a>. I recently learned about this data structure during a software carpentry <a href="{{page.root}}/bootcamps/">bootcamp</a> that <a href="http://third-bit.com/">Greg Wilson</a> and <a href="http://whitelab.weecology.org/">Ethan White</a> organized. Greg and Jason Pell (from Michigan State) visited Utah State University for a two day boot camp where <a href="http://mcglinn.web.unc.edu/">I am a postdoc studying</a> patterns of biodiversity. During that time we covered a <a href="{{page.root}}/bootcamps/2012-04-utahstate.html">whole slew of topics,</a> but today I wanted to demonstrate how dictionaries helped to significantly speed up my Python code.</p>
+<p>Before we begin this demonstration let's import two necessary libraries into our Python interpreter. We'll import division from __future__ so that Python carries out <a href="http://www.python.org/dev/peps/pep-0238/">'true' division instead of 'classic' division</a>, and we'll import time from time so that we can time how much time our functions take to run.</p>
+<pre># import division so that we are using 'true' division
+from __future__ import division
+# import time so that we can clock how fast our functions run
+from time import time</pre>
+<p>A dictionary is a data structure that is used to look-up a value given an associated key (i.e. its name). Check out the software carpentry <a href="{{page.root}}/v4/setdict/">lecture</a> on dictionaries for a full and technical introduction. Let's do a quick warm-up with dictionaries in Python:</p>
+<pre># create an empty dictionary
+my_dict = dict()
+
+# add key : value pairs to the dictionary
+my_dict['a'] = 3
+my_dict['b'] = 4
+print my_dict
+# {'a': 3, 'b': 4}
+
+# examine if specific keys are contained in your dictionary
+print 'a' in my_dict
+# True
+print 'c' not in my_dict
+# True
+
+# return a value in the dictionary for a given key
+print my_dict['a']
+# 3
+print my_dict['b']
+# 4</pre>
+<p>The concept of dictionaries is not restricted to the Python programming language, and more generally dictionaries are referred to as <a href="http://en.wikipedia.org/wiki/Hash_table">hash tables</a>. For example in the R programming language there is a package called <a href="http://cran.r-project.org/web/packages/hash/index.html">hash</a> that implements a dictionary type of data structure.</p>
+<p>For my own research purposes I have been struggling with how to efficiently compute very computationally intensive recursion equations. Specifically I have been attempting to code John Harte et al.'s <a href="http://www.esajournals.org/doi/abs/10.1890/04-1388">Hypothesis of Equal Allocation Probabilities</a> (HEAP) model. This is a model for how probable it would be to observe <em>n</em> individuals of a species in a sample of area <em>A</em> located within a larger area <em>A</em><sub>0</sub> that contains a total of <em>n</em><sub>0</sub> individuals. Harte et al.'s solution to this problem is encapsulated in the following equations:</p>
+<p><img src="equ.png" /></p>
+<p>which can be encoded in Python by a very simple function:</p>
+<pre>def heap_prob(n, A, n0, A0):
+    """
+    Calculates the probability that n individuals are observed
+    given A, no, and A0 under the HEAP model
+    Equation 4.15 in Harte 2011
+    Inputs:
+      n: integer, number of individuals in sample
+      A: integer, area of the sample
+      n0: integer, number of individuals total in A0
+      A0: integer, the area of the area within which A is placed
+    Returns:
+      float, probability between 0 and 1
+    """
+    if A0 / A == 2:
+        return 1 / (n0 + 1)
+    else:
+        A = A * 2
+        prob_sum = 0
+        for q in range(n, n0 + 1):
+            prob_sum += heap_prob(q, A, n0, A0) / (q + 1)
+        return prob_sum</pre>
+<p>This function does the job but notice as <em>A</em><sub>0</sub> increases the function will call itself thousands of times. Additionally it will compute some of the same values many times, for example to calculate Pr(3 | 1, 5, 8) the following probabilities are computed:</p>
+<p>Pr(3| 1, 5, 8) =</p>
+<p>Pr(5 | 4, 5, 8) * Pr(5 | 2, 5, 4) * Pr(3 | 1, 5, 2) +</p>
+<p>Pr(5 | 4, 5, 8) * Pr(4 | 2, 5, 4) * Pr(3 | 1, 4, 2) +</p>
+<p>Pr(4 | 4, 5, 8) * Pr(4 | 2, 4, 4) * Pr(3 | 1, 4, 2) +</p>
+<p>Pr(3 | 4, 3, 8) * Pr(3 | 2, 3, 4) * Pr(3 | 1, 3, 2)</p>
+<p>so as you can see identical probability values are computed multiple times. The number of multiple identical values increases primarily as <em>A</em><sub>0</sub> increases relative to <em>A</em> (i.e., as the number of recursions increases). Here is where dictionaries enter the picture. If we could either 1) build a dictionary from scratch as we move through the computation or 2) supply a ready made dictionary we could recoup any speed losses that we experienced by having to compute the same probability value multiple times. In Python we can accomplish this with the following function:</p>
+<pre>def heap_prob_dict(n, A, n0, A0, pdict={}):
+    """
+    Determines the HEAP probability for n given A, n0, and A0
+    Uses equation 4.15 in Harte 2011
+    Returns the probability that n individuals are observed in
+    a quadrat of area A
+    Note: this version uses a dictionary to speed computation
+    """
+    i = A0 / A
+    if (n, n0, i) not in pdict:
+        if i == 2:
+            pdict[(n, n0, i)] = 1 / (n0 + 1)
+        else:
+            A = A * 2
+            prob_sum = 0
+            for q in range(n, n0 + 1):
+                prob_sum += heap_prob_dict(q, A, n0, A0, pdict) / (q + 1)
+            pdict[(n, n0, i)] = prob_sum
+    return pdict[(n, n0, i)]</pre>
+<p>Note that in this function we use a three valued key (n, n0, i). This means that for each specific combination of these three values there is a specific probability that is stored in the dictionary.</p>
+<p>Now that we have our two functions that compute the same probability lets see how much of a speed boast using dictionaries gives us. We'll define a new function to carry out these time tests:</p>
+<pre>def time_trial(n, A, n0, A0):
+    results1 = [0, 0]
+    results2 = [0, 0]
+    start = time()
+    results1[0] = heap_prob(n, A, n0, A0)
+    end = time()
+    results1[1] = end - start
+    start = time()
+    results2[0] = heap_prob_dict(n, A, n0, A0)
+    end = time()
+    results2[1] = end - start
+    return [results1, results2]</pre>
+<p>Let's actually see which function is faster.</p>
+<pre>test_time = time_trial(0, 1, 100, 2 ** 5)
+print test_time
+# [[0.437, 2.964], [0.437, 0.016]]
+print test_time[0][1] / test_time[1][1]
+# 185.252384216
+# Note that both functions returned the same probability: 0.437,
+# but that the dictionary function appears to be about 2.25
+# orders of magnitude faster than the naive approach.</pre>
+<p>To quote Greg this demonstrates that dictionaries are "more gooder". As we increase <em>A</em><sub>0</sub> relative to <em>A</em> the number of recursions increases and the relative speedup offered by the dictionary approach will increase exponentially... even more more gooder?</p>
+<pre># Let's vary the number of recursions and examine how the ratio
+# of the time trials vary
+
+time_ratio = [0] * 6
+for i in range(0,6):
+    time_test = time_trial(0, 1, 105, 2 ** (i+1))
+    if time_test[1][1] == 0:
+        time_ratio[i] = 'Inf'
+    else:
+        time_ratio[i] = time_test[0][1] / time_test[1][1]
+
+print time_ratio
+# ['Inf', 0.0, 0.667, 22.500, 508.431, 15542.385]
+
+# it appears that the first two trials where too fast to
+# meaningfully compare the two approaches, but notice how the
+# ratio increases exponentially as i increases.</pre>
+<p>That's all I have for today on dictionaries. If you have questions or suggestions please post them below. I do have a quick additional technical note on dictionaries that contained a Python surprise for me and could have resulted in a nasty bug if I had not caught this.</p>
+<p>Technical Note:</p>
+<p>Now if you've been following very closely you may ask why is the three valued key "(n, n0, i)" needed in the function "heap_prob_dict" when the equation only varies two values, <em>n</em> and <em>i</em> and not <em>n</em><sub>0</sub>. In other words, for a given set of starting values all the keys in the dictionary will have the same <em>n</em><sub>0</sub> so why include it in the key tuple? The reason we have to include <em>n</em><sub>0</sub> in the key tuple is for two reasons:</p>
+<p>1) we may want to supply "heap_prob_dict" a larger dictionary that we have created ahead of time for many different values of <em>n</em><sub>0</sub>, and</p>
+<p>2) Python will store the dictionary "pdict" in memory even after the function has returned its result.</p>
+<p>Therefore if you call the function again, even though you may not supply "pdict" explicitly, Python will pull it from memory and supply the key &mdash; value pairs that it computed on the last run of the function. If the two subsequent runs of the function are for different value of <em>n</em><sub>0</sub> then the wrong answer will be returned if <em>n</em><sub>0</sub> is not supplied in the key id. To demonstrate this compare two successive time trials with the same staring parameters. The second trial should give you a much larger apparent speed up from using dictionaries because the dictionary is being called from memory.</p>
+<pre># We'll use compute time_trial twice with the same input values
+# and examine the results of the second trial
+
+test_time1 = time_trial(0, 1, 100, 2 ** 5)
+test_time2 = time_trial(0, 1, 100, 2 ** 5)
+print test_time2
+# [[0.437, 2.792], [0.437, 0.0]]
+
+# So the naive approach resulted in approximately the same amount
+# of time but the dictionary based approach was essentially
+# instantaneous because the appropriate dictionary was already
+# in memory from the last call of time_trial.</pre>

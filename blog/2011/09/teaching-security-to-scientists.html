@@ -1,0 +1,276 @@
+---
+layout: blog
+date: 2011-09-02
+time: 09:00:00
+author: wilson.g
+title: Teaching Security to Scientists
+category: [content]
+---
+<p>Thanks to everyone for their suggestions regarding what we should teach about computer security if we only have one hour (the usual constraint for topics in this course). The outline below is based in part on the lecture on security from Version 3 of this course, in part on <a href="http://www.rickwash.com/papers/rwash-homesec-soups10-final.pdf">Rick Wash's excellent study of folks models of computer security</a>, and in part on mistakes I've seen (or made) myself in the past five years. Feedback would be very welcome, but remember: we're teaching scientists and engineers who are programming as a way to do science, not as an end in itself.</p>
+<hr />
+<p><strong>Introduction</strong></p>
+<ul>
+<li>"steal your data" is the Hollywood threat
+<ul>
+<li><em>correlate</em> your data is just as big a threat that we all ignore</li>
+<li><em>injecting</em> data (corrupting your database with evil intent)</li>
+<li>steal your credentials to attack something else</li>
+</ul>
+</li>
+<li>denial of service attacks</li>
+<li>botnet: use your computer for spam, click fraud, DDOS
+<ul>
+<li>not after <em>your</em> data in particular, so infection isn't particularly visible</li>
+<li>more is better, so attackers are not just after big fish</li>
+</ul>
+</li>
+</ul>
+<p><strong>Overview</strong></p>
+<ul>
+<li>a <em>hacker </em>is a human criminal (yes, the word used to have another meaning, get over it)
+<ul>
+<li>not geeky teenage graffiti artists (though some kids run canned warez)</li>
+<li>live real-time attacks by human beings are rare because they're not cost-effective
+<ul>
+<li>social engineering attacks are a much "better" use of human criminals' time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a <em>virus</em>is a piece of software that infects a target computer and tries to propagate itself
+<ul>
+<li>what "infection" means (usually relies on access control failure)</li>
+<li>not the same as "buggier than usual"
+<ul>
+<li>although bugs in software are often the targets of attack</li>
+</ul>
+</li>
+<li>what anti-virus software does</li>
+<li>no, your Mac/Linux machine is <em>not</em> magically immune to all viruses</li>
+</ul>
+</li>
+<li>ways that viruses can spread
+<ul>
+<li>"download and run this program"</li>
+<li>"open this attachment" (you explicitly run the program)</li>
+<li>"put this USB into your computer" (computer may run it automatically)</li>
+<li>"open this text file in your editor" almost certainly <em>can't</em>infect your machine
+<ul>
+<li>unless there's a bug in the text editor &mdash; see below on stack smashing</li>
+<li>so keep patches up to date</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>but those aren't the only ways to spread in a networked world
+<ul>
+<li>"click this link" may run some JavaScript in your browser
+<ul>
+<li>honestly, viruses have nothing to do with pop-ups</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>many more programs (services) running on your computer these days than you realize
+<ul>
+<li>all of which can be attacked, even if you don't click on anything</li>
+<li>send them data to trick them into doing things &mdash; see below on stack smashing (again)</li>
+<li>'ps' command or equivalent shows what they are (there are lots)</li>
+<li>port scanning (what command to use?) shows how many are listening for data</li>
+<li>what a firewall does</li>
+</ul>
+</li>
+</ul>
+<p><strong>Framework and Examples</strong></p>
+<ul>
+<li>need a framework for thinking about this
+<ul>
+<li>authentication (something you know, something you have, something you are)</li>
+<li>authorization (who's allowed to do what)</li>
+<li>access control (enforcement of rules)</li>
+<li>usability (can/will people actually understand and use the above)
+<ul>
+<li>digital signatures have been around for years...</li>
+<li>...and almost nobody uses them ("Why Johnny Can't Encrypt")</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>running example: WebDTR is a password-protected web interface to a database of drug trial results</li>
+<li>example: someone steals your laptop
+<ul>
+<li>you really should have encrypted the answers you downloaded and saved...</li>
+<li>but "password at reboot" isn't really much security (I haven't rebooted my machine in a month)</li>
+</ul>
+</li>
+<li>example: easily-guessed password is an authentication and usability failure
+<ul>
+<li>dictionary attacks on encrypted passwords (<em>never</em> store as plain text)</li>
+<li>XKCD cartoon idea: requiring 8 characters and unmemorable is less secure than longer phrase</li>
+<li>confirming identity for bad passwords is a bad idea: tells the attacker "this is a valid ID"</li>
+</ul>
+</li>
+<li>example: listening to unencrypted network traffic to steal password
+<ul>
+<li>access control failure</li>
+<li>replay attacks</li>
+</ul>
+</li>
+<li>example: getting a file defeated by "../.." attack
+<ul>
+<li>authorization: the web server shouldn't have read permission</li>
+<li>access control: program shouldn't be able to <em>reach</em> that file</li>
+</ul>
+</li>
+<li>example: using user ID in URL to track the user
+<ul>
+<li>authentication failure (is this the actualy user?)</li>
+<li>authorization failure: not checking that this person (logged in as someone else) actually allowed to do things</li>
+</ul>
+</li>
+<li>example: burying the user ID in a hidden form field
+<ul>
+<li>same as above: someone can craft an HTTP POST</li>
+</ul>
+</li>
+<li>example: SQL injection
+<ul>
+<li>authorization: you're not supposed to be able to run code</li>
+</ul>
+</li>
+<li>example: displaying stack trace for exceptions
+<ul>
+<li>useful for debugging</li>
+<li>but now the attacker knows some of the libraries you're using, and can look up exploits that target them</li>
+<li>log the stack trace instead of displaying it</li>
+<li>but remember: security by obscurity <em>doesn't work</em></li>
+</ul>
+</li>
+<li>example: flood the application with login requests
+<ul>
+<li>no information lost, but no service provided</li>
+</ul>
+</li>
+<li>example: phishing
+<ul>
+<li>the text displayed with a link has nothing to do with where the link sends you</li>
+<li>what a page looks like tells you nothing about where that page is actually hosted</li>
+</ul>
+</li>
+<li>example: smashing the stack
+<ul>
+<li>wave hands</li>
+<li>really use this example to show people that code is data</li>
+</ul>
+</li>
+</ul>
+<p><strong>Keep Calm and Carry On</strong></p>
+<ul>
+<li>how does this all apply to scientists?
+<ul>
+<li>have to do everything that regular people do to stay safe</li>
+<li>plus everything programmers do when creating web services, sharing code libraries, etc.
+<ul>
+<li>are you <em>sure</em> that FFT library you downloaded doesn't contain an attack?</li>
+<li>is its author sure that the compiler she used doesn't inject attacks without her knowing about them?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>plus everything IT departments do when managing data
+<ul>
+<li>patient records and other sensitive information are obvious</li>
+<li>ClimateGate: if your science actually matters, someone will want to cast doubt on it, honestly or otherwise</li>
+</ul>
+</li>
+<li>it's easy to be crippled by fear
+<ul>
+<li>or to use fear as an excuse for clutching at power</li>
+<li>which would be a tragedy, since the web has so much potential to accelerate science</li>
+</ul>
+</li>
+<li>the bigger picture (or, please help us engineer a more secure world)
+<ul>
+<li>computer security is a matter of economics: extent of damage vs. cost to prevent or clean up</li>
+<li>keep usability in mind
+<ul>
+<li>facial recognition software to spot terrorists</li>
+<li>1% false positive rate, 300K passengers per day in an airport, equals one false alarm every 30 seconds</li>
+<li>do you think the guards will still be paying attention to the alarms on Tuesday?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<tbody>
+<tr>
+<th>Risk</th>
+<th>Importance</th>
+<th>Discussion</th>
+</tr>
+<tr>
+<td>Denial of service</td>
+<td>Minor</td>
+<td>Researchers can wait until the system comes back up</td>
+</tr>
+<tr>
+<td>Data in database destroyed</td>
+<td>Minor</td>
+<td>Restore from backup</td>
+</tr>
+<tr>
+<td>Unauthorized data access</td>
+<td>Major</td>
+<td>If competitors access data, competitive advantage may be lost</td>
+</tr>
+<tr>
+<td>Backups corrupted, so that data is permanently lost</td>
+<td>Major</td>
+<td>Redoing trials may cost millions of dollars</td>
+</tr>
+<tr>
+<td>Data corrupted, and corruption not immediately detected</td>
+<td>Critical</td>
+<td>Researchers may make recommendations or diagnoses that lead to injury or death</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>what do do?
+<ul>
+<li>top-down mandates of precautions against specific threats hasn't worked, and won't</li>
+<li>criminals are smart people who adapt quickly</li>
+</ul>
+</li>
+<li>best model is how we deal with credit card fraud
+<ul>
+<li>make credit card companies liable for losses, then let the free market figure out the balance</li>
+</ul>
+</li>
+<li>need changes to legislation so that:
+<ul>
+<li>creators of software vulnerabilities are liable for losses</li>
+<li>whoever first collects data is liable for its loss, no matter where it is when it's stolen</li>
+</ul>
+</li>
+<li>on their own, such changes would stifle open science
+<ul>
+<li>scientists are broke</li>
+<li>university bureaucrats don't like risk</li>
+<li>result is no sharing ever</li>
+</ul>
+</li>
+<li>so we need:
+<ul>
+<li>equivalent of copyright's "fair use" provisions</li>
+<li>meaningful academic credit ("points toward tenure") for creating data and software that people use</li>
+</ul>
+</li>
+<li>in the short term, get professional help!
+<ul>
+<li>the only time in this course that we've said that</li>
+<li>so please take it seriously</li>
+</ul>
+</li>
+</ul>

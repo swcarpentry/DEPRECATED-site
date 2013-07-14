@@ -1,0 +1,23 @@
+---
+layout: blog
+author: pipitone.j
+title: "Pelican Guts: on content management for Software Carpentry"
+date: 2012-11-01
+time: 11:00:00
+category: [content, tooling, versions/version-5-0]
+---
+
+<p>This morning I spent some time talking over <a title="Rebuliding Redux" href="{{page.root}}/blog/2012/10/rebuilding-redux.html">the content management problem</a> for the Software Carpentry website with Greg. To recap: we'd like to make it easier for anyone to contribute and manage the website content (lecture pages, new bootcamps, events, etc). For example, there are plenty of bits of site building that could be automated so that contributing a new lecture or topic <em>doesn't</em>have to involve wiring in links to a table of contents, forward and backward links to other lectures/topics, and so on.</p>
+
+<p>Greg has already written <a href="http://svn.software-carpentry.org/swc/5.0/website/">some code</a> that takes HTML pages for the lectures, bootcamps, and other miscellaneous pages, and knits them together to form basically the same sort of website you see here.   Metadata about the ordering of lecture topics, for instance, is placed in HTML META tags, and this gets used to create forward/backward links, and overall topic pages.</p>
+
+<p>It's a system that works but is newly hand-rolled and "surely since the whole idea of generating websites isn't a new idea there <em>must </em>be something already out there to do this for us that is being maintained and already had a bunch of bugs squashed and... right?"</p>
+
+<p>Right?</p>
+
+<p><a href="http://docs.getpelican.com/en/3.0/">Pelican</a> looks like it might something we could work with (he says, having spent about an hour looking through the documentation). It reads in pages written in Markdown or reST, and outputs static HTML knitted together in a blog-like format (complete with an RSS feed, tag cloud, yada yada).  It's built to be extensible so it would be possible for us to add in new functionality to do essentially what Greg has working right now: read in HTML, extract metadata, build custom SWC pages for lectures and bootcamps and anything else we'd want in the future.</p>
+
+<p>The question is, why use Pelican if we're just going to be mostly using it to drive SWC-site specific code?  That is, as it stands, it doesn't seem to do much of what we need it to do for the site, although one could argue that at least we'd be reusing the guts which should count for something (mmm, pelican guts).</p>
+
+<p>So, any opinions? Has anyone used Pelican (or <a href="http://wiki.python.org/moin/Templating">anything like it</a>) and added in lots of their own site-specific functionality?  How'd it go?</p>
+

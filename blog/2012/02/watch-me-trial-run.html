@@ -1,0 +1,26 @@
+---
+layout: blog
+date: 2012-02-22
+time: 10:00:00
+author: wilson.g
+title: "Watch Me: Trial Run"
+category: [content, versions/version-5-0]
+---
+<p>A dozen people have come forward since I asked last week for volunteers to make <a href="{{page.root}}/blog/2012/02/watch-me-volunteers-wanted.html">short screencasts showing how they program</a>. I just sent them a sample problem to work on to test things out (see below the fold); the videos they create won't be made public, but I hope it gives readers an idea of the scale of problems we're going to be looking at. If you have suggestions for interesting problems of a similar size, please add them as comments on this post.</p>
+<p>Hello, and thank you once again for volunteering to help Software Carpentry by recording a screencast to show people how you program. To test out your system, I'd like you to record yourself solving the problem described below using any tool or tools you like, on whatever kind of computer you prefer. Use whatever recording tool you like (a demo version of Camtasia, QuickTime, xvidcap, ...), and save in whatever video format is easiest. Please:</p>
+<ul>
+<li>do use a headset mike if you have one, but if you don't, please don't worry about it for now&mdash;this is just a test</li>
+<li>do use full-screen recording&mdash;the real videos will have to be constrained (probably to 800&times;600 or 1024&times;768), but for now, let's keep it simple</li>
+<li>do talk a lot while you're coding&mdash;stream of consciousness like "OK, so let's open up the editor again and try swapping those values in the other order..." is what we're after</li>
+<li>don't worry about editing your video to cut out "ums" and "errs", typing mistakes, and so on&mdash;we'll do that for you in the real screencasts, and again, this is just a test</li>
+</ul>
+<hr />
+<p>Write a command-line program called 'total' to add up the numbers in a data file. The input file's name is given to the program as its sole command-line argument; its only output is the sum of the numbers in the file (if the file does not contain any numbers, the output is 0.0). The file may contain any number of lines (including none at all); each line may contain at most one floating-point number, and may also contain leading or trailing whitespace. (Lines containing only whitespace, or nothing at all, are allowed, and should be ignored.) For example, if the file 'numbers.txt' contains:</p>
+<pre>22
+   31.3
+ +5.0e1
+
+-1</pre>
+<p>then invoking the program as:</p>
+<pre>$ total numbers.txt</pre>
+<p>should print 102.3 on a line by itself.</p>

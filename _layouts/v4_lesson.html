@@ -1,0 +1,39 @@
+---
+root: ../..
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include generic-header.html %}
+    <title>Software Carpentry: {{page.title}}</title>
+  </head>
+  <body>
+    <div class="container shadow">
+
+      {% include generic-banner.html %}
+      {% include navbar.html %}
+
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h1 class="title">{{page.title}}</h1>
+          {{content}}
+
+          <hr/>
+
+          <ul>
+          {% for topic in page.children %}
+            <li><a href="{{topic.path}}">{{topic.title}}</a></li>
+          {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+
+      {% include disqus.html %}
+      {% include footer.html %}
+    </div>
+
+    {% include generic-javascript.html %}
+    {% include google-analytics.html %}
+  </body>
+</html>

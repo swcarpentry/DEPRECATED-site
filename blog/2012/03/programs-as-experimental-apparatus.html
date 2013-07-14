@@ -1,0 +1,207 @@
+---
+layout: blog
+date: 2012-03-05
+time: 12:00:00
+author: wilson.g
+title: Programs as Experimental Apparatus
+category: [content, versions/version-5-0]
+---
+<p>Suppose you have two photographs of a patch of the night sky:</p>
+<p><img src="ngc1333-noao.jpg" /></p>
+<p>and you want to know how different they are. The simplest way would be to see if any of the pixels' values differ, but that's pretty much guaranteed to return a "yes". A better measure is to see how many pixels differ by more than some threshold, but that raises two questions:</p>
+<ol>
+<li>how to measure the differences between pixels, and</li>
+<li>what threshold to use.</li>
+</ol>
+<p>To answer the first question, most images encode the red, green, and blue values of pixels separately, so we can add up the absolute values of the differences between those color values:</p>
+<p><em>d<sub>1</sub> = abs(R &mdash; r) + abs(G &mdash; g) + abs(B &mdash; b)</em></p>
+<p>We could equally well add the color values for each pixel to get a total, then look at the differences between those:</p>
+<p><em>d<sub>2</sub> = abs((R + G + B) &mdash; (r + g + b))</em></p>
+<p>Does it matter which we choose? And either way, how big a difference should count as different? Since we're scientists, we can answer these questions experimentally. Here's a Python program that reads in an image, scales it down to half its original size, scales it back up, then calculates both difference measures. Its output is a histogram of how many pixels differ by how much according to the two measures, and how different the measures are from each other:</p>
+<pre>import sys
+from PIL import Image
+
+# Load the original image.
+original = Image.open(sys.argv[1])
+width, height = original.size
+original_data = original.load()
+
+# Create a duplicate by enlarging then shrinking the original.
+duplicate = original.resize((width/2, height/2)).resize((width, height))
+duplicate_data = duplicate.load()
+
+# Count how many pixels differ by how much using two measures:
+# | (R+G+B) - (r+g+b) |
+# | R-r | + | G-g | + | B-b |
+overall = [0] * (3 * 255 + 1)
+individual = [0] * (3 * 255 + 1)
+for x in xrange(width):
+    for y in xrange(height):
+        o_r, o_g, o_b = original_data[x, y]
+        d_r, d_g, d_b = duplicate_data[x, y]
+        diff_o = abs((o_r + o_g + o_b) - (d_r + d_g + d_b))
+        overall[diff_o] += 1
+        diff_i = abs(o_r - d_r) + abs(o_g - d_g) + abs(o_b - d_b)
+        individual[diff_i] += 1
+
+# Display histogram.
+num = width * height
+print '%10s %10s %10s %10s %10s %10s' % \
+      ('diff', 'overall', '%age', 'individual', '%age', 'difference')
+for i in range(len(overall)):
+    pct_o = 100.0 * float(overall[i]) / num
+    pct_i = 100.0 * float(individual[i]) / num
+    diff = abs(overall[i] - individual[i])
+    pct_d = 100.0 * float(diff) / num
+    print '%10d %10d %10.1f %10d %10.1f %10.1f' % \
+          (i, overall[i], pct_o, individual[i], pct_i, pct_d)</pre>
+<p>Its output looks like this:</p>
+<table>
+<tbody>
+<tr>
+<td>diff</td>
+<td align="right">overall</td>
+<td align="right">    (%)</td>
+<td align="right">individual</td>
+<td align="right">    (%)</td>
+<td align="right">difference</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">130716</td>
+<td align="right">42.6</td>
+<td align="right">128472</td>
+<td align="right">41.8</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">6574</td>
+<td align="right">2.1</td>
+<td align="right">1746</td>
+<td align="right">0.6</td>
+<td align="right">1.6</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">9432</td>
+<td align="right">3.1</td>
+<td align="right">8430</td>
+<td align="right">2.7</td>
+<td align="right">0.3</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">63792</td>
+<td align="right">20.8</td>
+<td align="right">66992</td>
+<td align="right">21.8</td>
+<td align="right">1.0</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">4887</td>
+<td align="right">1.6</td>
+<td align="right">7037</td>
+<td align="right">2.3</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">4880</td>
+<td align="right">1.6</td>
+<td align="right">5692</td>
+<td align="right">1.9</td>
+<td align="right">0.3</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="right">29115</td>
+<td align="right">9.5</td>
+<td align="right">29622</td>
+<td align="right">9.6</td>
+<td align="right">0.2</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="right">3131</td>
+<td align="right">1.0</td>
+<td align="right">3485</td>
+<td align="right">1.1</td>
+<td align="right">0.1</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="right">2888</td>
+<td align="right">0.9</td>
+<td align="right">3175</td>
+<td align="right">1.0</td>
+<td align="right">0.1</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="right">13714</td>
+<td align="right">4.5</td>
+<td align="right">13907</td>
+<td align="right">4.5</td>
+<td align="right">0.1</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td align="right">1981</td>
+<td align="right">0.6</td>
+<td align="right">2097</td>
+<td align="right">0.7</td>
+<td align="right">0.0</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td align="right">1849</td>
+<td align="right">0.6</td>
+<td align="right">1955</td>
+<td align="right">0.6</td>
+<td align="right">0.0</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td align="right">7597</td>
+<td align="right">2.5</td>
+<td align="right">7665</td>
+<td align="right">2.5</td>
+<td align="right">0.0</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td align="right">1432</td>
+<td align="right">0.5</td>
+<td align="right">1467</td>
+<td align="right">0.5</td>
+<td align="right">0.0</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td align="right">1311</td>
+<td align="right">0.4</td>
+<td align="right">1341</td>
+<td align="right">0.4</td>
+<td align="right">0.0</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td align="right">4608</td>
+<td align="right">1.5</td>
+<td align="right">4641</td>
+<td align="right">1.5</td>
+<td align="right">0.0</td>
+</tr>
+</tbody>
+</table>
+<p>The good news is that there isn't much difference between the counts for the two measures. However, it's hard to get a sense of what else is in this data. Time to visualize&mdash;let's plot the percentage of pixels that difference according to <em>d<sub>1</sub></em>:</p>
+<p><img src="unified.png" /></p>
+<p>The result isn't surprising: if our upsize-downsize algorithm didn't lose any information, we'd expect no differences at all. Since rescaling is lossy, though, we see that a lot of pixels differ by small values, and only a few by large values.</p>
+<p>But there's something else in our data that could easily be missed. Look at the first dozen entries in the table above; do you see a pattern? Let's plot the scores for multiples of three separately from the scores for differences that aren't even multiples of three:</p>
+<p><img src="focus.png" /></p>
+<p>If we do the same thing for the whole data set, we get:</p>
+<p><img src="hilo.png" /></p>
+<p>A moment's thought produces a hypothesis: since we have three color channels (red, green, and blue), it's possible that the rescaling algorithm is introducing a systematic bias by perturbing each channel by one as it sizes up or down. Looking at the curves for differences up to 15, that bias seems to be responsible for most of the overall difference. If we really want to measure the differences between images, we're going to have to find a way to eliminate this.</p>
+<p>I'm not going to go into how we might do that now. What I want to point out is that <em>this is not a new problem</em>. Think about the telescope that took the picture we started with. Glass lenses are subject to <a href="http://en.wikipedia.org/wiki/Chromatic_aberration">chromatic aberration</a>; telescope designers must either reshape lenses to minimize it, combine layers of different kinds of glass to correct for it, or tell the astronomer to compensate mathematically somehow. Equally, we can implement a different resizing algorithm to remove this systematic bias, or correct for it. The important thing is to think of a program as a piece of experimental apparatus, and treat it accordingly. <em>That</em> is part of what we want to teach in this course.</p>

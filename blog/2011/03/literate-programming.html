@@ -1,0 +1,97 @@
+---
+layout: blog
+date: 2011-03-07
+time: 09:00:00
+author: wilson.g
+title: Literate Programming
+category: [opinion]
+---
+<p>Last week's post about the <a href="{{page.root}}/blog/2011/03/tuple-spaces-or-good-ideas-dont-always-win.html">tuple space programming model</a> was so popular that I thought readers might enjoy a discussion of another beautiful idea that failed: <a href="http://en.wikipedia.org/wiki/Literate_programming">literate programming</a>.  Like Lisp and other toenail-based languages, it inspires a kind of passion in its fans that is normally reserved for gods, sports teams, and angsty rock bands.  And, like them, it leaves everyone else wondering what the big deal is.</p>
+<p>Literate programming was invented by Donald Knuth (one of the few real geniuses ever to grace computer science) as a way of making programs easier to understand.  His idea was that the code and the documentation should be a single document, written in a free-flowing mixture of Pascal and TeX, C and LaTeX, or more generally, a text markup language and a programming language.  Functions, classes, modules, and other things could be introduced <em>and explained</em> in whatever order made sense for human readers.  One tool would extract and format the text-y bits to create documentation, while another would extract and compile the code-y bits to produce the runnable program.</p>
+<p>It's a great idea, and for about six months in the late 1980s, I was convinced it was the future of programming.  I could use &delta; as a variable! I could call a function for calculating sums &Sigma;(...)!  My explanation of what the code was doing, and the code itself, were interleaved, so that whenever I changed one, I would naturally change the other, so that they never fell out of step!  And with a bit of tweaking, I could produce a catalog of functions (this was before I started doing object-oriented programming), or present exactly the same content in breadth-first order, the way it was executed (which was usually easier for newcomers to understand).  Cool!</p>
+<p>But then I had to maintain a large program (20K lines) written with literate tools, and its shortcomings started to become apparent.  First and foremost, I couldn't run a debugger on my source code: instead, my workflow was:</p>
+<ol>
+<li>"compile" the stuff I typed in&mdash;the stuff that was in my head&mdash;to produce tangled C;</li>
+<li>compile and link that C to produce a runnable program;</li>
+<li>run that program inside a debugger to track down the error;</li>
+<li>untangle the code in my head to figure out where the buggy line(s) had come from;</li>
+<li>edit the literate source to fix the problem; and</li>
+<li>go around the loop again.</li>
+</ol>
+<p>After a while, I was pretty good at guessing which lines of my source were responsible for which lines of C, but the more use I made of LP's capabilities, the more difficult the reverse translation became.  It was also a significant barrier to entry for other people: they had to build a fairly robust mental model of the double compilation process in order to move beyond "guess and hack" debugging, whereas with pure C or Fortran, they could simply fire up the debugger and step through the stuff they had just typed in.</p>
+<p>I also realized after a while that the "beautiful documentation" promise of LP was less important than it first appeared.  In my experience, programmers look at two things: API documentation and the source code itself.  Explanations of the code weren't actually that useful: if the programmer was treating the code as a black box, she didn't <em>want</em> to know how it worked, and when she needed to know, she probably needed to see the actual source to understand exactly what was going on (usually in order to debug it, or debug her calls to it).  The only role in between where LP was useful lay in giving an architectural overview of how things fit together, but:</p>
+<ol>
+<li>that was something people only really needed once (though when they needed it, they <em>really</em> needed it), and</li>
+<li>that level of explanation is really hard to write&mdash;exactly as hard, in fact, as writing a good textbook or tutorial, and we all know how rare those are.</li>
+</ol>
+<p>So I moved on, and so did most other fans of LP.  But then Java happened, and history repeated itself, not as tragedy, but as farce.  The first time I saw Javadoc, I thought it looked like it had been invented by someone who'd heard about literate programming in a pub, but had never actually seen it.  I later realized that was unfair: Javadoc was the closest thing to LP that Java's inventors thought they could get away with, and it actually did lead more programmers to write more documentation than they ever had before.  But saints and small mercies, look at what it <em>doesn't</em> do:</p>
+<ol>
+<li>There's no checking: you can document parameters that don't exist, or mis-document the types and meanings of parameters that do.</li>
+<li>You can only put Javadoc at the start of a class or method, rather than next to the tricky bit of code in the middle of the method that implements the core algorithm.  (Though to be fair, if the method is long enough that this is a problem, it should probably be refactored into several smaller methods.)</li>
+<li>There's no logical place for higher-level (architectural) documentation: Javadoc really is designed for describing the lowest (API) level of code.</li>
+<li>You have to type and view HTML tags.</li>
+</ol>
+<p>That last point might seem a small one, but it's the key to understanding what's actually wrong with this model.  Think about it: everyone who's writing Java has, on their desktop, a WYSIWYG tool such as Microsoft Word that renders italics as italics, links as links, tables as tables, and so on.  When they start writing code, though, they have to type <code>&lt;strong&gt;IMPORTANT&lt;/strong&gt;</code> to emphasize a word, or something as barbaric as:</p>
+<pre>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2" rowspan="2" align="center"&gt;Result&lt;/td&gt;
+    &lt;td colspan="2" align="center"&gt;left input &amp;alpha;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&amp;gt;=0&lt;/td&gt;
+    &lt;td&gt;&amp;lt;0&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2" align="center"&gt;right&lt;br/&gt;input&lt;br/&gt;&amp;beta;&lt;/td&gt;
+    &lt;td&gt;&amp;gt;=0&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;0&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&amp;lt;0&lt;/td&gt;
+    &lt;td&gt;0&lt;/td&gt;
+    &lt;td&gt;-1&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<p>to get something that anyone else in the 1990s (never mind the 21st Century) would create with one menu selection:</p>
+<table border="1">
+<tbody>
+<tr>
+<td colspan="2" rowspan="2" align="center">Result</td>
+<td colspan="2" align="center">left input &alpha;</td>
+</tr>
+<tr>
+<td>&gt;=0</td>
+<td>&lt;0</td>
+</tr>
+<tr>
+<td rowspan="2" align="center">right<br />
+input<br />
+&beta;</td>
+<td>&gt;=0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;0</td>
+<td>0</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>And don't get me started on diagrams: every decent programming textbook has block-and-arrow pictures of linked lists, dataflow diagrams, and what-not, because these aid understanding.  Not source code, though; the closest you can come is to create a diagram using some other tool, save it as a JPEG or PNG, put it somewhere that you hope it won't be misplaced, and include a link to it in your source code.  The picture itself won't be visible to people looking at your code, of course&mdash;they'll have to decode the link and open the picture manually, assuming of course that it hasn't been misplaced&mdash;but hey, if their intellects are so weak that they need pictures, well, what are they doing looking at code anyway?</p>
+<p>The tragedy (or irony) is that we know how to solve this problem, because we've been solving it for other people for almost forty years.  Electrical engineers and architects don't use Microsoft Paint to draw circuit diagrams and blueprints; instead, they use CAD tools that:</p>
+<ol>
+<li>store a logical model of the circuit or building in a form that's easy for programs to manipulate;</li>
+<li>display views of that model that are easy for human beings to understand and manipulate; and</li>
+<li>constrain what people can do to the model via those views.</li>
+</ol>
+<p>What's the difference?</p>
+<ul>
+<li>In an architectural CAD package, I can't put a door in the middle of nowhere: it has to be in a wall of some kind.  In Emacs or Eclipse, on the other hand, I can type any gibberish I want into a Java file, or write Javadoc about an integer parameter called <code>threshold</code> when in fact I have two floating point parameters called <code>min</code> and <code>max</code>.</li>
+<li>That CAD package will let me show, hide, or style bits of the model: I can see plumbing and electrical, but not air vents, or windows and doors but not floors, and so on, and I can see those things in several different ways.  When I'm looking at source code, I can't even see my Javadoc rendered in place.</li>
+</ul>
+<p>The root of the problem is that programmers&mdash;including the ones who design programming languages&mdash;still insist that programs have to be stored as sequences of characters, and that that's <em>all</em> that will be stored.  Even new languages created by really smart people stay stuck in this sandpit.  Why?  Because that's all that compilers and debuggers and other tools understand?  Well, you're writing new ones anyway, aren't you?</p>
+<p>No, I'm convinced that the real reason is that plain old text is the only common denominator that programmers' editors understand.  Most programmers will change language, operating system, nationality, even gender before they'll change editors.  (Hell, I'm typing this in Emacs, rather than using a WYSIWYG HTML editor&mdash;how sad is that?)  Most therefore assume, probably correctly, that if a language requires people to give up the years they have spent learning what Ctrl-Alt-Shift-Leftfoot-J does, they will ignore it.  They'll continue to build level editors for computer games, but use a souped-up typewriter to do it.</p>
+<p>Sooner or later, though, one of the many multi-modal CAD tools for programmers that people have built over the years will take off, just as object-oriented programming and hypertext eventually did after gestating in obscurity for years.  I've argued before that the most likely candidate is a proprietary programming environment like Visual Basic or MATLAB, where a a single vendor with a more or less captive audience can roll out a whole toolchain at once without worrying arguing it through standards committees.  I'm not holding my breath, though; while the recent surge of interest in "innovative" programming languages is welcome, it feels to me like everyone is trying to design better balloons rather than saying, "Hey, birds are heavier than air&mdash;why don't <em>we</em> give that a try?"</p>

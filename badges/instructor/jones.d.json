@@ -1,0 +1,17 @@
+{
+  "recipient" : "sha256$55eaad0439887530b93bc856aa3e5e4853571f5a9b52c6550bae5806b40a23d5",
+  "salt": "software-carpentry",
+  "issued_on" : "2013-04-24",
+  "badge" : {
+    "version" : "0.5.0",
+    "name" : "Instructor",
+    "image" : "/img/badges/instructor.png",
+    "description" : "Teaching at workshops or online",
+    "criteria" : "/badges/instructor.html",
+    "issuer" : {
+      "origin" : "http://software-carpentry.org",
+      "name" : "Software Carpentry",
+      "contact" : "admin@software-carpentry.org"
+    }
+  }
+}

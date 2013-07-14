@@ -1,0 +1,90 @@
+---
+layout: blog
+date: 2012-06-25
+time: 09:00:00
+author: wilson.g
+title: If You Want to Teach, Isn't It Only Fair to Learn a Few Things First?
+category: [education, opinion]
+---
+<p>Carla, a high school student, is doing a class project comparing climate change in the Northern and Southern hemispheres. She wants to see whether the gap between the average annual temperatures in Canada and Australia increased during the Twentieth Century. The raw data she needs is available online; all she needs to do (for some value of "all") is get it, load it into her program, do her calculations, and create an HTML to display her results for other students to see.</p>
+<p>Here's a program that does what she wants:</p>
+<pre>01  import xml.etree.ElementTree as ET
+02  import urllib2
+03
+04  def main(first_country, second_country):
+05      '''Show ratio of average temperatures for two countries over time.'''
+06      first = get_temps(first_country)
+07      second = get_temps(second_country)
+08      assert len(first) == len(second), 'Length mis-match in results'
+09      keys = first.keys()
+10      keys.sort()
+11      for k in keys:
+12          print k, first[k] / second[k]
+13
+14  def get_temps(country_code):
+15      '''Get annual temperatures for a country.'''
+16      doc = get_xml(country_code)
+17      result = {}
+18      for element in doc.findall('domain.web.V1WebCru'):
+19          year = int(find_one(element, 'year'))
+20          temp = float(find_one(element, 'data'))
+21          result[year] = kelvin(temp)
+22      return result
+23
+24  def get_xml(country_code):
+25      '''Get XML temperature data for a country.'''
+26      url = 'http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/%s.XML'
+27      u = url % country_code
+28      connection = urllib2.urlopen(u)
+29      raw = connection.read()
+30      connection.close()
+31      doc = ET.fromstring(raw)
+32      return doc
+33
+34  def find_one(node, pattern):
+35      '''Get text of exactly one child that matches an XPath pattern.'''
+36      all_results = node.findall(pattern)
+37      assert len(all_results) == 1, 'Got %d children instead of 1' % len(all_results)
+38      return all_results[0].text
+39
+40  def kelvin(celsius):
+41      '''Convert degrees C to degrees K.'''
+42      return celsius + 273.15
+43
+44  if __name__ == '__main__':
+45      main('AUS', 'CAN')</pre>
+<p>And here's an incomplete list of what she needs to understand in order to write the first two lines of this program:</p>
+<ul>
+<li>Many of the things you want in a program are in a language's libraries, not in the language itself.</li>
+<li>You have to import a library in order to use those things.</li>
+<li>You can (and sometimes should) rename a library while you're importing it.</li>
+<li>A library is a namespace.
+<ul>
+<li>To keep this article readable, I won't bother to list everything that the concept "namespace" depends on.</li>
+</ul>
+</li>
+<li>There's a library called <code>ElementTree</code>that you can use to handle XML data.
+<ul>
+<li>Oh boy: now we have to explain what XML is.</li>
+<li>And what a "data format" is.</li>
+<li>And the difference between data and metadata.</li>
+</ul>
+</li>
+<li>There's another library called <code>urllib2</code>that you can use to read data from the web.
+<ul>
+<li>Here, I'm going to cut myself a break, and assume that everybody knows what a URL is (which is cheating, because most people <em>don't</em> understand the structure of URLs, which they need to know in order to understand what this program is doing on line 26).</li>
+<li>But we'll still have to explain that "data" and "pages" are really the same things, and that the browser is "just" interpreting a particular kind of data (for some value of "just").</li>
+</ul>
+</li>
+</ul>
+<p>All that, and we're only at line 2. We still need to explain variables, functions, call stacks, types, type conversions (strings aren't numbers, even when they look like numbers), loops, lists, dictionaries, indexing, assertions, defensive programming, member variables (those pesky namespaces again), a bit of XPath, and voila! Carla will be ready to tackle what most people would consider to be an entry-level exercise in open data. (She still won't have done any visualization, though, but you get my point.)</p>
+<p>Of course, we could cut some corners here. She could download the data as a CSV file, load it into Excel, define a couple of new columns to hold the Kelvin equivalents of the Celsius temperatures, and then plot a graph. It would take five minutes to show her how to do this, and 3-4 minutes for her to do it on her own the second time (half of which would be spent trying to figure out how to get rid of the default key in her Excel chart). If our aim is to teach quantitative thinking, and to show her that she can do the sorts of things that David Mackay did so well in <cite><a href="http://www.withouthotair.com/">Sustainable Energy Without the Hot Air</a></cite>, that's the easiest route by far. But our aim is to teach her programming so that she can start hacking the web; we're just using this problem to motivate her. And we're going to have to motivate her a <em>lot</em> to get her through all this&mdash;remember, Carla's bright, but she's no more excited about programming than she is about chemistry.</p>
+<p>This is what <a href="http://en.wikipedia.org/wiki/Instructional_design">instructional design</a> is all about. What do we want people to learn? How do those things depend on each other? How do we introduce them in ways that will keep learners interested and motivated rather than bored and discouraged? It's a highly skilled craft, just like software design, and just like software design, it's hard to explain where the time you spent on it went to someone who hasn't done it themselves: "thinking things through" isn't something you can easily put six hours against on a timesheet.</p>
+<p>There are two more similarities between instructional design and software design that are relevant to me right now. The first is that you don't actually have to do either: you can always just dive right in and start coding or teaching. The second is that when you do, the result is almost always a mess. There are spaghetti lessons, just like there's <a href="http://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a>, and there's curriculum out ther that's as hard to understand and maintain as any piece of legacy software.</p>
+<p>But wait a sec. Isn't the very notion of "design" old-fashioned? Aren't we supposed to be agile here? Aren't we supposed to iterate rapidly, correcting course constantly based on near-realtime feedback? Well, yes, we are, but:</p>
+<ol>
+<li>that's not at all the same thing as ignoring everything people have learned about a particular problem before, and</li>
+<li>it only works if there's actually a reliable feedback function that we're actually paying attention to.</li>
+</ol>
+<p>Unfortunately, a lot of the "teach everyone programming" projects that have sprung up in the past year or two fail both of these tests. Most of them don't know what we've learned as a community over the past thirty-odd years about teaching programming, and most of them aren't doing any kind of systematic follow-up assessment to determine whether the techniques they're using are effective or not. It's as if a bunch of bright, passionate, idealistic people decided hey, none of us have ever written a large program before, but if we hack ten hours a day, we can create a world-beating browser. And to complete the analogy, imagine that when those people were told, "You know, this has been done before&mdash;maybe you should take a look at some of the prior art," their answer was, "Pfah! That stuff's the problem we're trying to fix!"</p>
+<p>So here's my challenge to you. If you want to teach programming&mdash;to scientists or anyone else&mdash;go and read a couple of reports on peer instruction (like <a href="http://mazur.harvard.edu/publications.php?function=display&amp;rowid=113">this summary</a> of ten years' use with physics, or <a href="http://dl.acm.org/citation.cfm?id=2016923">its application to programming instruction</a>). Find out what a <a href="http://www.neverworkintheory.org/?p=230">concept inventory</a> is, whether <a href="http://www.neverworkintheory.org/?p=233">online code reviews help learners as much as their face-to-face equivalents</a>, and whether <a href="http://www.neverworkintheory.org/?p=239">program animation can help people learn more quickly</a> (hint: using animations is much less effective than <em>building</em> animations). Read Mark Guzdial's discussion of <a href="software-guzdial-2010.pdf">what makes programming hard to teach</a> (and subscribe to <a href="http://computinged.wordpress.com/">his blog</a>), and learn at least a little about <a href="software-whitecraft-williams-2010.pdf">why there aren't more women in computing</a>, because after all, if you're going to ask Carla to learn about XML and URLs and lists and loops, isn't it only fair that you learn a few things yourself first?</p>

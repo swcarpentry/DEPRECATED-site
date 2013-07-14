@@ -1,0 +1,21 @@
+---
+layout: blog
+date: 2011-01-10
+time: 09:00:00
+author: wilson.g
+title: Slower Than Expected
+category: [content, versions/version-4]
+---
+<p>We've started work on the high-performance computing lecture, and as part of that, we'd like to set a puzzle for our more advanced readers. We've written several versions of invasion percolation; the two of interest here use a list-based representation for the underlying grid, and a NumPy array. Run either program as:</p>
+<pre>python filename.py -g -n 31 -v 100</pre>
+<p><code>-g</code> turns off the end-of-run graphical display; <code>-n 31</code> tells the program to use a 31&times;31 grid; and <code>-v 100</code> tells it to initialize cells to random values between 0 and 100. Try varying the size, compare the speeds of the two programs, see if you can figure out why one is faster than the other, and then tell us:</p>
+<ol>
+<li>what you found, and</li>
+<li>how you found it.</li>
+</ol>
+<p>#2 is actually more important to us than #1, since we'd like to figure out how programmers actually go about diagnosing performance problems. Please post your findings as comment on this blog <em>after</em> Wednesday, Jan 12 (to give everyone else a chance to try it out too).</p>
+<p><em>Update: WordPress seems to "fix" indentation (leading white space) more or less randomly when I paste code into a &lt;pre&gt; area, so I'll link to the two files.</em></p>
+<p><del><em>Using Lists</em></del></p>
+<p><em><del>Using NumPy</del><br />
+</em></p>
+<p>[Later version of lecture on <a href="{{page.root}}/v4/invperc/">invasion percolation</a>]</p>

@@ -1,0 +1,32 @@
+---
+layout: blog
+date: 2012-09-20
+time: 10:00:00
+author: wilson.g
+title: Why This Stuff Is Hard To Teach
+category: [content, education]
+---
+<p>If we get funding to continue our work (we hope to find out in a month), one of the first things we want to do is put together an introduction to web programming for scientists. As I've remarked many times before, we won't try to teach people how to build web applications: all we can do in the time we have, starting from what they know, is teach them how to create security holes. What we <em>would</em> like to show them is how to pull data off the web and post data of their own for others to consume, but even that turns out to be a lot harder than it should be.</p>
+<p>Here's one example. I want to parse a well-formed HTML page, change a few things in it, and save the result to disk. That ought to be simple, but if the document contains special characters like non-breaking spaces, Greek letters, and so on, it turns out to be rather tricky. In fact, it's taken a couple of hours (admittedly, spread out over several weeks) to come up with a solution that (a) works and (b) doesn't make me feel unclean. Here's what it looks like (using a string IO object instead of a file so that you can see what we're parsing):</p>
+<pre>import cStringIO
+import xml.etree.ElementTree as ET
+
+ENTITIES = {
+    'hellip' : u'\u2026',        # horizontal ellipsis
+    'pi'     : u'\u03C0',        # lower-case Greek letter pi
+    'sigma'  : u'\u03C3'         # lower-case Greek letter sigma
+}
+
+parser = ET.XMLParser()
+parser.parser.UseForeignDTD(True)
+parser.entity.update(ENTITIES)
+
+text = '&lt;html&gt;&pi;...&sigma;&lt;/html&gt;'
+original = cStringIO.StringIO(text)
+tree = ET.parse(original, parser=parser)
+print ET.tostring(tree.getroot())</pre>
+<p>The output from this program is:</p>
+<pre>&lt;html&gt;&amp;#960;&amp;#8230;&amp;#963;&lt;/html&gt;</pre>
+<p>which, when loaded into a browser, is displayed as:</p>
+<pre>&pi;...&sigma;</pre>
+<p>The problem is the breadth of knowledge someone has to have to put this together. My code is based on a response to <a href="http://stackoverflow.com/questions/7237466/python-elementtree-support-for-parsing-unknown-xml-entities">this question</a> on Stack Overflow, but along the way, I looked at, played with, and discarded four other non-solutions. It doesn't help that ElementTree's <code>UseForeignDTD</code> is undocumented, but that's not my real complaint: every XML library I've ever worked with in Java, C++, or Python had brick walls of its own just waiting for people to bang their heads against.  I suspect it's going to take us several painful iterations to design an instructional sequence that works, and I'm not looking forward to the pain.</p>

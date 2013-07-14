@@ -1,0 +1,48 @@
+---
+layout: blog
+date: 2005-12-23
+time: 09:00:00
+author: wilson.g
+title: "Procrastination: One of the Few Things in Life Nicer Than Toast"
+category: [tooling, versions/version-3]
+---
+<p>I finished rewriting the build system for the <a href="http://www.software-carpentry.org">Software Carpentry</a> course notes yesterday.  Doing so was an extended form of procrastination: the system I built over the summer and used through the fall was adequate, but I wanted to clean a few things up, and then, well, I might as well make it easier for other instructors to add site-specific content, and make tables inclusions instead of inlining them, and mumble mumble mumble type type type...</p>
+<p>Of course, none of this has actually advanced the <em>content</em> of the course one whit.  I have over seventy tickets to close, ranging in size from making sure that a particular Make example does what I claim to rewriting the lecture on security.  And diagrams: no one was happy with the isometric ones created this term (not least because they're kind of fuzzy), so I have over a hundred diagrams to re-do. In a perfect world, they'd be ready before I teach at the IASSE in mid-January.  In this universe, I'll be happy if they're in place for the <a href="http://www.aaas.org/meetings/Annual_Meeting/02_PE/PE_06_Career_Workshops.shtml#EssentialSoftware">Essential Software Skills for Research Scientists</a> workshop at the <a href="http://www.aaas.org/meetings/Annual_Meeting/">AAAS Annual Meeting</a> on February 17.</p>
+<p>We all do this.  We all fold laundry instead of paying bills, or invent an antigravity drive when we're supposed to be studying for an Economics final.  (OK, maybe that was just me.)  But it seems particularly common among software developers, many of whom would rather spend two hours creating a new (not better, just new) serialization class hierarchy than take five minutes to center-align the titles at the top of the product's help page.  One of the characters in Mark Costello's Big If (reviewed here) is a prime example: his company desperately needs him to add some new monsters to a video game, so he spends a week adding shadows to clouds.</p>
+<p>But back to the build system... What I have is a set of XML files marked up with a homegrown tag set, and what I want is some HTML pages.  The files are organized into several directories: the main page is in the root, while all of the lectures are in <code>lec/</code>, and site-specific content is in sub-directories underneath <code>sites/</code>.  Each directory that contains source XML files may also contain <code>img/</code>, <code>inc/</code>, and <code>tbl/</code> sub-directories; in turn, each of those has one sub-directory for each of the source files, which holds images, sample code inclusions, and tables.</p>
+<p>The build system consists of the following tools:</p>
+<ol>
+<li>A 500-line Makefile in the root directory that drives everything else.  Roughly half of those lines are comments (which can be extracted and formatted as a wiki page to create on-line documentation).  This Makefile includes another file called <code>config.mk</code>, in which users must specify the lectures they want to include in the course.</li>
+<li>A Python script called <code>linkages.py</code> that scans the source files and builds a data structure that records such things as the order of lectures, where glossary terms are defined, the two-part numerical IDs of figures and tables, and so on. <code>linkages.py</code> writes this data structure directly to a file called <code>tmp/linkages.tmp.py</code>, which other tools then import.  Persisting the data structure directly saved me from having to mess around with parsers or serializers.  The clever bit (ahem) is that I only write it out if (a) the file doesn't already exist, or (b) the contents have changed.  That way, if I change a source file in a way that doesn't affect cross-linkages, Make doesn't do a lot of unnecessary rebuilding.</li>
+<li>Once the linkages file is up to date, <code>preprocess.py</code> kicks in.  This script creates copies of the source files under the <code>tmp/</code> directory (preserving the directory structure), and adds information to those copies to make XSLT's job easier.  Among other things, it:
+<ul>
+<li>adds a unique file ID, and the path to the root of the build, to the lecture's root element;</li>
+<li>copies content from table files into the lectures;</li>
+<li>adds citation information to bibliography references;</li>
+<li>does multi-column layout of length tables;</li>
+<li>inserts figure and table counter values (the "4.2" in "Figure 4.2");</li>
+<li>fills in cross-references between source files;</li>
+<li>replaces the <code>&lt;lecturelist/&gt;</code> element with a point-form list of links to lectures;</li>
+<li>fills in the <code>&lt;figlist&gt;</code> and <code>&lt;tbllist&gt;</code> tags with lists of figures and tables respectively;</li>
+<li>links terms in the glossary back to their first uses;</li>
+<li>inserts included program source files;</li>
+<li>links to external references;</li>
+<li>adds "previous" and "next" linkage information to lectures;</li>
+<li>generates a syllabus; and</li>
+<li>adds tracing information, such as file version numbers and the time the files were processed.</li>
+</ul>
+Each stage ought to be a filter of its own, and in fact I wrote them all that way to begin with.  However, launching fifteen or more copies of the Python interpreter for each source file made the build rather slow; doing the piping internally reduced the time per source file from eight or nine seconds to less than a second.</li>
+<li><code>util/individual.xsl</code> is an XSL script that translates the filled-in XML lecture file into HTML.  This script handles the outer skeleton directly, handing specific tasks like the bibliography and special lists to other XSL files that it includes.</li>
+<li>A Python script called <code>util/unify.py</code> and an XSL script called <code>util/unified.xsl</code> work together to create a single-page version of the whole course.  <code>unify.py</code> stitches the filled-in lecture files together; <code>unified.xsl</code> then applies the same transformations as <code>individual.xsl</code>, but formats hyperlinks differently (since they're all in-file).</li>
+<li>I use another Python script called <code>validate.py</code> to check the internal consistency of the source files.  Do any of them contain tabs or unprintable characters?  Do all the required images, source files, and tables exist?  I run this before checking in changes; it catches something about one time in five.</li>
+<li>And then there are the minor tools:
+<ul>
+<li><code>util/fixentities.py</code> replaces character entities with character codes (to work around a problem with Expat);</li>
+<li><code>util/wiki.py</code> extracts specially-formatted comments from Makefiles and XSL files, and docstrings from Python, to create wiki documentation pages; and</li>
+<li><code>util/revdtd.py</code> reverse engineers the actual DTD of either the source files, their filled-in counterparts, or the generated HTML files.</li>
+</ul>
+</li>
+</ol>
+<p>It's a lot of code; it was a lot of work; I'm pleased with how smoothly it all runs; and most of the time I spent building it should probably have gone into upgrading the actual content of the course. But small(ish) tasks are seductive: you can start work at 8:30, confident that you'll have something to show (even if only to yourself) by noon.  Editing course notes, well, the payoff is usually a long way away, and may not come at all: people who read through the first, flawed, version of the notes probably aren't going to come back and tell you how much better the second version is.</p>
+<p>That last observation is the key ingredient of my cure for procrastination: find some partners.  I am always more productive when I'm working with people than I am on my own.  Not only does a small team wander down fewer blind alleys than someone working alone, team members can keep each other honest, and give each other feedback and encouragement.  They can also appreciate just how big an accomplishment it is to have replaced all the a's and b's in twenty-eight short examples of list manipulation with the names of minerals, beetles, and mathematicians.</p>
+<p>It's now ten to eleven, and I've managed to fend off productivity for almost an hour.  Should I look on eBay for a <a href="http://www.wacom.com/en/Products/Cintiq.aspx">WACOM Cintiq</a> tablet that I can afford?  It'd make drawing diagrams <em>much</em> more fun.  Or maybe I should try <a href="http://somethingaboutorange.com/mrl/projects/nose/">Nose</a>: Miles Thibault says it's much friendlier than the unit testing framework in the Python standard library.  Hm... A cup of tea will probably help me decide.  A cup of tea, and a slice of toast with strawberry jam...</p>

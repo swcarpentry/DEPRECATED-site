@@ -1,0 +1,244 @@
+---
+layout: bootcamp_archived
+venue: University of British Columbia
+country: Canada
+address: Room DMP 201, 6245 Agronomy Road
+humandate: May 22-23, 2012
+startdate: 2012-05-22
+enddate: 2012-05-23
+latlng: 49.2617149,-123.2534305
+registration: open
+instructor: ["Adina Chuang Howe", "Greg Wilson"]
+---
+<p><strong>Some Basic Commands</strong></p>
+<table>
+<tbody>
+<tr>
+<td><code>man</code></td>
+<td>Documentation for commands.</td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>Concatenate and display text files.</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change working directory.</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Clear the screen.</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>Copy files and directories.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Display the current date and time.</td>
+</tr>
+<tr>
+<td><code>diff</code></td>
+<td>Show differences between two text files.</td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td>Print arguments.</td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>Display the first few lines of a file.</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List files and directories.</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Make directories.</td>
+</tr>
+<tr>
+<td><code>more</code></td>
+<td>Page through a text file.</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>Move (rename) files and directories.</td>
+</tr>
+<tr>
+<td><code>od</code></td>
+<td>Display the bytes in a file.</td>
+</tr>
+<tr>
+<td><code>passwd</code></td>
+<td>Change your password.</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>Print current working directory.</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Remove files.</td>
+</tr>
+<tr>
+<td><code>rmdir</code></td>
+<td>Remove directories.</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort lines.</td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>Display the last few lines of a file.</td>
+</tr>
+<tr>
+<td><code>uniq</code></td>
+<td>Remove adjacent duplicate lines.</td>
+</tr>
+<tr>
+<td><code>wc</code></td>
+<td>Count lines, words, and characters in a file.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>select-species.sh</strong> (final version)</p>
+<pre># Select all species names from .txt files.
+for datafile in $*
+do
+    echo $datafile ':'
+    cut -d , -f 2 $datafile | grep -v Species | sort | uniq | wc -l
+done</pre>
+<p><strong>harbor/2012-april.txt</strong></p>
+<pre>Date,Species,Count
+2012-05-20,salmon,2
+2012-05-20,seal,7
+2012-05-21,seagull,35</pre>
+<p><strong>Some History</strong></p>
+<pre>  501  mkdir ubc
+  502  cd ubc
+  507  ls
+  513  cat data.txt
+  514  cut -d ' ' -f 1 data.txt
+  515  ls
+  517  ls data?.txt
+  518  mv data.txt data1.txt
+  519  mv data1.txt data-ubc-may-2012.txt
+  520  mv data2.txt data-harbor-may-2012.txt
+  521  ls
+  522  ls *harbor*.txt
+  523  ls *-may-*.txt
+  524  ls
+  525  cat *ubc*
+  526  ls
+  527  cat select-species.sh
+  528  ls
+  529  nano tuesday.sh
+  530  cat tuesday.sh
+  531  bash tuesday.sh justin bernard alex
+  532  ls
+  533  nano select-species.sh
+  534  cat select-species.sh
+  535  bash select-species.sh data-*.txt
+  536  bash select-species.sh data-harbor-may-2012.txt
+  537  bash select-species.sh data-ubc-may-2012.txt
+  538  ls
+  539  history | fgrep mv
+  540  ls
+  541  cat tuesday.sh
+  542  nano milo.sh
+  543  cat milo.sh
+  544  bash milo.sh
+  545  nano milo.sh
+  546  cat milo.sh
+  547  bash milo.sh wes ted laura rowan
+  548  ls
+  549  bash milo.sh data-*.txt
+  550  nano select-species.sh
+  551  cat select-species.sh
+  552  bash select-species.sh data-*.txt
+  553  nano select-species.sh
+  554  bash select-species.sh data-*.txt
+  555  cat select-species.sh
+  556  ls /bin
+  557  ls /usr/bin
+  558  ls /usr/bin | wc
+  559  man zipcloak
+  560  cat select-species.sh
+  561  ls
+  562  nano rex.sh
+  563  bash rex.sh
+  564  cat rex.sh
+  565  cat select-species.sh
+  566  man bash
+  567  ls
+  568  cat select-species.sh
+  571  cat select-species.sh
+  572  nano select-species.sh
+  573  cat select-species.sh
+  574  cut -d , -f 2 data-harbor-may-2012.txt | grep -v Species | sort | uniq
+  575  cut -d , -f 2 data-harbor-may-2012.txt | grep -v Species | sort | uniq | wc -l
+  576  nano select-species.sh
+  577  bash select-species.sh data-harbor-may-2012.txt
+  578  wc -l data-harbor-may-2012.txt
+  579  cat data-harbor-may-2012.txt
+  580  bash select-species.sh data-*.txt
+  581  cat data-ubc-may-2012.txt
+  582  nano data-for-test.txt
+  583  cat data-for-test.txt
+  584  bash select-species.sh data-for-test.txt
+  585  wc -l data-for-test.txt
+  586  bash select-species.sh data-for-test.txt
+  587  ls
+  588  ls
+  589  ssh gvwilson@apps2.cs.utoronto.ca
+  590  ssh gvwilson@apps2.cs.utoronto.ca "ls"
+  591  ssh gvwilson@apps2.cs.utoronto.ca "ls" | wc
+  592  ls
+  593  rm milo.sh rex.sh tuesday.sh
+  594  ls
+  595  mkdir harbor
+  596  mkdir ubc
+  597  mkdir osoyoos
+  598  mv data-harbor-may-2012.txt harbor/2012-may.txt
+  599  mv data-ubc-may-2012.txt ubc/2012-may.txt
+  600  cp ubc/2012-may.txt osoyoos/2012-april.txt
+  601  cp harbor/2012-may.txt harbor/2012-april.txt
+  603  ls
+  604  rm data-for-test.txt
+  606  ls
+  607  ls */*.txt
+  608  ls */*.txt | wc -l
+  609  mkdir harbor/archive
+  610  cp harbor/2012-april.txt harbor/archive/2011-november.txt
+  611  ls */*.txt
+  612  ls */*/*.txt
+  613  ls */*.txt */*/*.txt
+  614  find . -name '*.txt' -print
+  615  find . -name '*may*' -print
+  616  find . -name '*april*' -print
+  617  find . -name '*2012*' -print
+  618  find . -name '*november*' -print
+  619  find . -type f -print
+  620  find . -type d -print
+  621  man find
+  622  ls
+  623*
+  624  find . -type d -print &gt; todo.txt
+  625  find . -type d -print | while read filename; do wc -l $filename; done
+  626  find . -name '*-*.txt' -print | while read filename; do wc -l $filename; done
+  627  find . -name '*-*.txt' -print | while read gauss; do wc -l $gauss; done
+  628  grep salmon */*.txt
+  629  grep -h salmon */*.txt
+  630  grep -l salmon */*.txt
+  631  grep -l salmon */*.txt | while read gauss; do wc -l $gauss; done
+  632  grep -l salmon */*.txt | while read mary; do bash select-species.sh $mary; done
+  633  cat select-species.sh
+  634  man cut
+  635  ls
+  636  cat select-species.sh
+  637  cat */*.txt
+  638  ls
+  639  john='some name or other'
+  640  echo $john</pre>

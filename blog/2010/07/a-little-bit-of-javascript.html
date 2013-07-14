@@ -1,0 +1,58 @@
+---
+layout: blog
+date: 2010-07-30
+time: 09:00:00
+author: wilson.g
+title: A Little Bit of Javascript
+category: [tooling]
+---
+<p>As I've mentioned before, one actionable finding in educational research is that <em>faded</em> examples&mdash;ones in which progressively less of the solution is shown to students as they progress&mdash;are a very effective teaching tool. I've been thinking about how to add them to this course, and have an idea I'd like to try out. It requires more Javascript than I know, though, so I'm hoping someone who reads this blog will be willing to write it for us. (And in general, if anyone wants to help produce material for this course, please get in touch: we're looking for scripts, slides, voiceovers, examples, artwork, and everything else that an open education project needs.)</p>
+<p>My idea is to create something like a simple folding editor to progressively expand solutions in place in a controlled order. I want to put specially-formatted comments in code to mark folds:</p>
+<pre>import sys, re
+'''Find all duplicated words in an input file.'''
+# &lt;4&gt; Finally, define a pattern that will match duplicated words.
+pattern = r'(\b\w+\b)\s+\1'
+# &lt;/4&gt;
+
+# &lt;2&gt; Process lines of text with a regular expression using the looping pattern we've seen before.
+def process(lines):
+  result = set()
+  for the_line in lines:
+    for match in re.findall(pattern, the_line):
+      # &lt;3&gt; Extract data from matches. This is specific to *this* problem, and has to sync with the pattern.
+      word = match.split()[0]
+      result.add(word)
+      # &lt;/3&gt;
+  return result
+# &lt;/2&gt;
+
+if __name__ == '__main__':
+  # &lt;1&gt; Write the main body of the program first using the read/process/write pattern we've seen before.
+  lines = open(sys.argv[1], 'r').readlines()
+  results = process(lines)
+  for r in results:
+    print r
+# &lt;/1&gt;
+</pre>
+<p>It will initially appear as:</p>
+<pre>import sys, re
+'''Find all duplicated words in an input file.'''
+...4...
+...2...
+if __name__ == '__main__':
+  ...1: Write the main body of the program first using the read/process/write pattern we've seen before...
+</pre>
+<p>Clicking on the fold marked '1' expands it, <em>and</em> draws attention to fold #2 by putting its comment text inline:</p>
+<pre>import sys, re
+'''Find all duplicated words in an input file.'''
+# ...4...
+# ...2: Process lines of text with a regular expression using the looping pattern we've seen before...
+if __name__ == '__main__':
+  # Write the main body of the program first using the read/process/write pattern we've seen before.
+  lines = open(sys.argv[1], 'r').readlines()
+  results = process(lines)
+  for r in results:
+    print r
+</pre>
+<p>Clicking '2' expands it to show (and draw attention to) #3, et cetera. And there would be markers of some kind to re-fold an item, which would automatically re-fold all higher-numbered items at the same time. This would let us show readers <em>how</em> we created a solution, not just the solution itself; the marked-up code would be a bit ugly, but pretty easy to create (at least for small examples).</p>
+<p>So, any volunteers?</p>

@@ -1,0 +1,67 @@
+---
+layout: blog
+date: 2011-03-11
+time: 09:00:00
+author: wilson.g
+title: Musing About Reorganization
+category: [content, education]
+---
+<p>I'm increasingly unhappy with the organization of this course.  On the off chance that funding materializes and we're able to undertake a major redesign, I'd like to explain why and ask for your input.</p>
+<p>Right now, our lectures are broken into topics along lines a computer scientist would instantly recognize: basic programming, regular expressions, databases, and so on.  That is <em>not</em> how members of our intended audience see things when they first come to us&mdash;if it was, they probably wouldn't need this course.  They start with problems like:</p>
+<ol id="list">
+<li>How do I read this data file?</li>
+<li>How can I share my program with other people?</li>
+<li>How should I keep track of thousands of input and output files?</li>
+<li>How do I save the state of my program so I can restart it?</li>
+<li>How can I use the program my supervisor wrote ten years ago to solve my current problem?</li>
+</ol>
+<p>Their answers cut across traditional CS divisions: re-using a legacy program, for example, may require basic programming, the shell, systems programming (such as subprocesses and I/O redirection), and some parsing.</p>
+<p>The traditional solution is to view this as a matrix, and order topics to get to problems as quickly as possible.  If the matrix is:</p>
+<table border="1">
+<tbody>
+<tr>
+<td colspan="2" rowspan="2"></td>
+<td colspan="4" align="center">Topic</td>
+</tr>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+</tr>
+<tr>
+<td rowspan="3">Problem</td>
+<td>X</td>
+<td>+</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>+</td>
+<td>.</td>
+<td>+</td>
+<td>.</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>.</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>then the "best" order for teaching is [A, C, {B, D}].  Of course, this assumes that we know the problems, and how they depend on topics.  We had some <a href="{{page.root}}/blog/2010/06/the-big-picture-version-3.html">vague ideas</a> a year ago, and know a lot more now, but there's something else we ought to take into account: the big ideas of <a href="{{page.root}}/v4/softeng/principles.html">computational thinking</a>.  For example, the idea that "programs are data" crops up in many different places in this course: a version control system treats the source code of a program as data, while passing a function as a parameter or storing it in a list only makes sense if you understand that runnable code is just bits in memory.</p>
+<p>So should we  build a matrix of problems vs. principles?  Or a cube of questions, CS topics, and principles?  I think the answer is "no", because I believe these principles cannot be taught or applied directly.  In my experience, the only way to get them across is to come back <em>after</em> learners have been doing things that depend on them and point out the unifying principle.</p>
+<p>I therefore think that the next big step for this course is to:</p>
+<ol>
+<li>draw up a list of representative computational problems in science and engineering;</li>
+<li>figure out what researchers need to know in order to solve them;</li>
+<li>build the matrix;</li>
+<li>derive a topic order; and</li>
+<li>figure out when each principle can be pointed out.</li>
+</ol>
+<p>The tricky bit is that when we say "representative problems", most people think in terms of traditional disciplinary boundaries and offer us one fluid flow problem, one gene sequencing problem, and so on.  Our notion of representative is different: we're thinking of things like reformatting data files, improving performance, sharing or testing code, and so on.</p>
+<p>That's why we need your help.  Have another look at the <a href="#list">list</a> at the top of this post.  What should we add?  What problems are <em>you</em> wrestling with, and what have you needed to know to solve them?  "How do I use the shell?" is the wrong kind of answer&mdash;we want to know what problem you think the shell is the solution to, and why.</p>

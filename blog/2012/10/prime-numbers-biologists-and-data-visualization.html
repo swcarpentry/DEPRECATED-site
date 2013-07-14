@@ -1,0 +1,19 @@
+---
+layout: blog
+author: wilson.g
+title: Prime Numbers, Biologists, and Data Visualization
+date: 2012-10-25
+time: 09:00:00
+category: [content, education, versions/version-5-0]
+---
+
+<p>A couple of days ago, Titus Brown posted <a href="http://ivory.idyll.org/blog/prime-numbers-for-biologists.html">a question from Randy Olson</a>: are there relevant, non-abstract problems (for biologists) that you can solve with minimal programming skills? I.e.,  what's the biology equivalent to traditional intro CS problems like "calculate the primes".</p>
+
+<p>The answer has three parts:</p>
+<ol>
+        <li>Calculating primes, finding the longest line in a file, etc., are lousy introductory problems because they're completely valueless to most of the intended audience. You have to already believe you really, really want to learn how to program, <em>and</em> be good at delayed gratification, to get through them to the good stuff. (This isn't just true in computing: see the discussion in <em><a href="http://www.amazon.com/How-Learning-Works-Research-Based-Jossey-Bass/dp/0470484101">How Learning Works</a></em> of the impact of motivation on learning.)</li>
+        <li>Guzdial, Ericson, et al's work at Georgia Tech showed pretty conclusively that a media-first approach to computing has better outcomes, i.e., if people are manipulating images (and audio and video) right from day 1, they'll retain more of what they learn, and more students will stay in the program. (But note: you probably can't use an industrial-strength image manipulation library like PIL for intro teaching, at least not directly: you need something that assumes less background knowledge both in domain and skills.)</li>
+        <li>Robbins, Senseman, and Pate have been piloting a "visualization first" programming course for biologists (see <a href="http://dl.acm.org/citation.cfm?id=1953265">this paper</a> if you can&mdash;apologies for the paywall). While it's early days, it seems that this should have the benefits of "media first" for scientists. For example, a programming exercise could be "draw the curves in red if the end point is less than the starting point, and in blue otherwise".</li>
+</ol>
+<p>We haven't reorganized our intro material around this idea yet, partly because of inertia, but partly because of the installation headaches of getting visualization working on N platforms in a two-day workshop. I'm very keen to try it out, though, particularly if the IPython Notebook really does make simple visualization simple to do on all major platforms.</p>
+

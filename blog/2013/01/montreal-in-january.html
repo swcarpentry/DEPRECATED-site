@@ -1,0 +1,102 @@
+---
+layout: blog
+author: dickson.r
+title: Montreal in January
+date: 2013-01-14
+time: 09:00:00
+category: [boot-camp, venues/mcgill]
+---
+
+<p>This weekend was the first time I had instructed at a SWC Boot Camp, and I'd only observed one other (Greg Wilson in Halifax in July 2012).  By the new standards for instructors Greg's trying to put in place I would probably not even qualify, but hey, we're in a growth phase right now; we take a few chances, eh?  I felt my inexperience acutely, but despite that I think I can say that the Boot Camp went well, thanks to a great group of attendees and helpers and my co-instructor, Jessica McKellar.  The site organizers were Alex Demarsh and Rolina van Gaalen, and the other helpers were Greg Ward, Julia Evans and Jonathan Villemaire-Krajden.</p>
+
+<p><strong>Nominal sign-up fee</strong></p>
+
+<p>For this event we charged a nominal $20.00 sign-up fee (which Eventbrite transmogrified into $22.19), with the question in mind "What does this do to the no-show rate?"  We exactly sold out:  Forty tickets were bought, the last one going less than a day before the event.  We didn't get a precise head count early on Day 1, but we estimated later that we had 35 to 37 out of 40 there.  One person explicitly wrote in sick on Day 1, but made it out on Day 2.</p>
+
+<p>We also had some drop-off.  By the time we wrapped up on Sunday afternoon we had 26 attendees in the room.  We missed an opportunity there:  Had I thought of it in time, we could've gotten the die-hards to give us their names in Etherpad, then we could've diffed that against the original sign-up list and sent mail to the no-shows and the leavers asking what we could've done to retain them.</p>
+
+<p>By way of compensation for the entry fee, we arranged pizza and pop _gratis_ for lunch both days.  Alex and his colleagues produced coffee on demand, and also clementine oranges and cookies on Day 2.  All very good!</p>
+
+<p><strong>Setup issues</strong></p>
+
+<p>One reason we didn't get a better head count up front was that the instructors were still wrestling with network and video setup issues as the clock struck 9:00 on Day 1.  We should've scheduled more than 30 minutes of set-up time before the students were to arrive.  And unfortunately Jessica, who came with a Mac, was unable to get the Windows-centric university-owned video system to play nice, and she was condemned to delivering all her content from Ross's Windows laptop.  With a maddeningly small keyboard.</p>
+
+<p><strong>Syllabus and students</strong></p>
+
+<p>From the standard syllabus we did the shell, Python, revision control with Git, SQL and testing units.  Once again we had a lot of people in the room who already knew some R --- epidemiologists and linguists, in this instance.   My opinion was reinforced that, had we the right materials and experience, we could get them a more-solid intro to good coding practices and testing if we were able to skip the "teach a language" step and give it to 'em straight in R.  You can say "this is language-independent" all you like, but there's nothing like seeing it done with the tools you already use.</p>
+
+<p>Bioinformaticians comprised the second-largest bloc of attendees, and there was a smattering of singletons from other disciplines too, I think.  That's another thing we didn't capture explicitly.  I'm looking forward to having an entry survey worked out to alleviate this in the future.</p>
+
+<p>Here's the Good &amp; Bad list that we asked them for in the afternoon of Day 2:</p>
+
+<table>
+  <tr>
+    <td><strong>Negative</strong></td>
+    <td><strong>Positive</strong></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li>How do I apply database stuff?</li>
+        <li>How do I import database data from Excel files?</li>
+        <li>Would like more about the shell</li>
+        <li>Need more basic shell commands, refresher, exercises?</li>
+        <li>Want more about testing, please, </li>
+        <li>More about data extraction/conversion</li>
+        <li>Could go deeper on Python</li>
+        <li>No entry into scientific /mathematical computing<br/>(Numpy was not on syllabus for this course)</li>
+        <li>Hard to see how to transfer the knowledge to my tools</li>
+        <li>Would be nice to combine the tools to produce one "big" project</li>
+        <li>Cheat sheets not comprehensive enough</li>
+        <li>Could use more on troubleshooting</li>
+        <li>Want more examples from my field</li>
+        <li>Attendees from one field might improve many things</li>
+        <li>Maybe split the class on day 2 into basic (more Python) and advanced (testing)?</li>
+        <li>More sharing of tool knowledge? Crowdsource?</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li>Good breadth, lots of topics</li>
+        <li>Liked the intro to general programming</li>
+        <li>Version control detail welcome!</li>
+        <li>Not too scary for newbies</li>
+        <li>Hands-on component</li>
+        <li>Helpful helpers </li>
+        <li>Good coding style appreciated</li>
+        <li>Liked the cheat sheets  (We had paper cheat sheets for shell, Python, SQL)</li>
+        <li>Different levels of Python exercises for different levels of student.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>Regarding that last comment, at one point Jessica recommended to students:</p>
+<ul>
+  <li><a href="http://bit.ly/sc-codingbat">http://bit.ly/sc-codingbat</a>,</li>
+  <li><a href="http://bit.ly/sc-codingbat2">http://bit.ly/sc-codingbat2</a>, and</li>
+  <li><a href="http://rosalind.info">http://rosalind.info</a></li>
+</ul>
+<p>depending on whether the student was feeling too-challenged or bored.</p>
+
+<p>Despite the negative list being longer than the positive, almost all the (remaining) attendees seemed to me to be genuinely pleased with what they'd learned.</p>
+
+<p><strong>Tools</strong></p>
+
+<p>The tools we had them install were Python 2.7 (no iPython); GitBash if on Windows, Git otherwise; the Firefox SQLite Manager; and we recommended Notepad++ for Windows and Smultron for Mac by way of text editors.</p>
+
+<p>We used Etherpad for out-of-channel communications and "group memory", which was voted a big win at the end of the event.  I also handed out red and green stickies as status flags.  They were used haphazardly.  I think these semaphores might be Just One More Bleepin' Thing To Remember for the student, or else I didn't reinforce their use enough in the first hour.  I'll probably try them again.</p>
+
+<p>The biggest tool problems we had were with GitBash.  I decided about two weeks before the event to call for GitBash instead of Cygwin for the Windows users, to teach the shell, since Jessica was planning to use it for teaching Git.  This was a mixed success.  The installation is simpler than Cygwin and it uses the native Windows directory structure, but there are surprises in GitBash that we banged our shins on:  'more' is missing, but 'less' is there.  'man' is missing, but 'cmd --help' usually works.  (One helper thought that the absence of 'man' was actually a win.  He has a point.)  'seq' is missing.  'file' is missing.  The cut-n-paste facilities are inconvenient.  And you don't need to set an executable bit on a script in order to execute it:</p>
+
+<pre>
+$ cat junk
+echo "Hello bash"
+$ ls -l junk
+-rw-r--r--    1 ross     Administ       19 Jan 14 11:53 junk
+$ junk
+Hello bash
+</pre>
+
+<p>This last no doubt has something to do with the underlying Windows, but I feel like bash is now popular enough that it's spawning incompatible variants.  *Sigh*.  My advice to future Boot Camp instructors is, try GitBash in the safety of your own home for a good long time before calling for it as an instructional tool.  I'm still of two minds about it, myself.</p>
+

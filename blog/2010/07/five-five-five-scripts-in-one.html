@@ -1,0 +1,196 @@
+---
+layout: blog
+date: 2010-07-20
+time: 10:00:00
+author: wilson.g
+title: Five... Five... Five Scripts in One!
+category: [content]
+---
+<p>I've updated the script for the introductory episode on version control that I <a href="{{page.root}}/blog/2010/07/script-for-introduction-to-version-control.html">posted yesterday</a>, and added four more covering basic operations, handling conflicts, rolling back changes (with a very brief mention of branching and merging), and setting up repositories for personal use (creating a shared repo requires more skills than students are likely to have, and should be left in the hands of sys admins). The five scripts are down below the break; comments before I start making up slides and recording would be very welcome.<br />
+<span id="more-3488"></span></p>
+<h2>Introduction</h2>
+<ol>
+<li>Hello, and welcome to the first episode of the Software Carpentry lecture on version control.  In this episode, we will explain what version control is, how it works, and why you should use it.</li>
+<li>Suppose you and a friend are working together on a paper.</li>
+<li>You both want to edit the file at the same time&mdash;what should you do?</li>
+<li>You <em>could</em> take turns, but then each of you would spend have the time waiting for the other.</li>
+<li>Another option would be to go ahead and work simultaneously, then patch things up afterward.</li>
+<li>But somehow, stuff always winds up getting lost, overwitten, or duplicated.</li>
+<li>The right solution is to use a <em>version control system</em>.</li>
+<li>This keeps the master copy of the file in a central <em>repository</em>, usually located on a <em>server</em>&mdash;a computer that is never used directly by people, but only by the applications serving them.</li>
+<li>No-one ever edits the master copy directly.</li>
+<li>Instead, you and your friend each have a <em>working copy</em> on your own computers.</li>
+<li>You work independently, making whatever changes you want to your local copies.</li>
+<li>As soon you are ready to share your changes, you <em>commit</em> your changes to the repository.</li>
+<li>Your friend can then <em>update</em> her working copy to get those changes.</li>
+<li>And of course, if your friend finishes her part first, she can commit, and then you can update.</li>
+<li>But what if you and your friend want to make changes to the same part of the paper?</li>
+<li>Old-fashioned version control systems prevented this from happening by <em>locking</em> the master copy.  Everyone's working copy would normally be read-only.  When someone wanted to start work on a file, the version control system would make her copy of that file writeable.  When she was finished work, the version control system would copy her changes to the repository, then mark her copy as read-only once again.</li>
+<li>Only one person at a time could have a writeable copy.  This guaranteed that two or more people could never accidentally make changes to the same file at the same time...</li>
+<li>...but it also meant that only person at a time could work on any given file.</li>
+<li>This is essentially the "one at a time" strategy from the start of this episode, but with the version control system acting as the referee to prevent accidents.</li>
+<li>In practice, locking like this isn't as restrictive as it sounds.  If you and your friend repeatedly find that you're trying to edit the same file, the solution is to break your paper (or your program) into several smaller files, so that you can work simultaneously.</li>
+<li>However, most of today's version control systems use a different strategy, one based on the old saying that it's easier to get forgiveness than permission.  In these systems, nothing is ever locked&mdash;everyone is always allowed to edit the files in their working copy.</li>
+<li>Sometimes, of course, you and your friend will make changes to the same part of the paper.</li>
+<li>If your friend updates first first, her changes go into the repository as usual.</li>
+<li>If you try to commit something that would overwrite her changes, the version control system will stop you...</li>
+<li>...and highlight the <em>conflict</em> by marking the overlapping regions in your working copy.</li>
+<li>It's up to you to edit the file to <em>resolve</em> the conflict.  You can keep your changes, accept your friend's, or write something new that combines the two&mdash;it's up to you.</li>
+<li>Once you have fixed things, you can go ahead and commit.</li>
+<li>Experience shows that version control is better than mailing files back and forth for at least three reasons.  First, it's hard (but not impossible) to accidentally overlook or overwrite someone's changes&mdash;the version control system highlights them for you automatically.</li>
+<li>Second, there are no arguments about whose copy is the most up to date&mdash;the master copy is.</li>
+<li>These features mean that version control is worth using even when you're the only person working on a particular set of files.</li>
+<li>Because it's a more reliable way to move files around between the computers you use than copying things onto a USB or sending email to yourself.</li>
+<li>More importantly, whether you're working on your own or in a group, version control allows you to look at or undo changes what you did weeks, months, or years ago.</li>
+<li>This works because the version control system never actually overwrites the master copy in the repository.</li>
+<li>Instead, everyone time someone commits a new version, the system saves it on top of the previous master copy, along with some information about when the change was made and who made it.</li>
+<li>This means that you can always see what the file looked like last week before someone rewrote the analysis section while you were on holiday.</li>
+<li>It also means that you can always fetch old versions of things, like the exact version of the program you used to produce the graph on page 5 of that paper that someone is now challenging.</li>
+<li>Version control systems do have one important shortcoming.  If you are working with plain text files, it's easy for the version control system to find and display differences, and to help you merge them.</li>
+<li>Unfortunately, today's version control systems won't do this for images, MP3s, PDFs, and Microsoft Word or Excel files.  These aren't stored as text&mdash;they use specialized binary data formats, and there usually aren't tools for finding, displaying, or merging the differences between them.  In most cases, all the version system can do is say, "These files are different."  That's better than nothing, but not by much.</li>
+<li>Even with this limitation, version control is probably the most important concept in this entire course.  It's not just because it facilitates sharing; version control also allows you to look at or undo changes what you did weeks, months, or years ago.</li>
+<li>We'll talk more about using version control to make your research <em>reproducible</em> in a later lecture.  In the next episode of this one, we'll look at the most popular open source version control system in use today, called Subversion.</li>
+</ol>
+<h2>Basic Use</h2>
+<ol>
+<li>Hello, and welcome to the second episode of the Software Carpentry lecture on version control.  This episode introduces the basic workflow you'll use when working with version control.  To keep things simple, we'll assume that someone has already been set up a repository for you.  A later episode will show you how to do this yourself.</li>
+<li>So, Dracula and Frankenstein have just joined the Universal Monsters project, and need to put some data together about where in the Solar System they should hide their secret lair.  Their project's repository is on the <code>software-carpentry.org</code> server, and its full URL is <code>http://www.software-carpentry.org/monsters</code>.  Every repository has an address like this that uniquely identifies the location of the master copy.</li>
+<li>It's Monday night.  Dracula sits down at his computer and runs <a href="http://www.syntevo.com/smartsvn/index.html">SmartSVN</a>.  This is a Subversion <em>client</em>, i.e., a program that runs on your machine, and knows how to move files back and forth to a Subversion version control repository on a server computer.  There are lots of other graphical clients out there, and many power users run Subversion commands from the shell, but we'll use SmartSVN in this lecture.</li>
+<li>In order to create a working copy on his computer, Dracula has to <em>check out</em> the repository.  He only has to do this once per project; once he has a working copy, he can <em>update</em> it when he wants to get files from the repository.  Using SmartSVN, Dracula goes to the <code>Repository</code> menu and selects <code>Checkout...</code>.</li>
+<li>The dialog that appears on his screen has two required fields.  The first is the URL of the repository, which tells Subversion where to look for the master copy.  The second specifies where Dracula wants the working copy put on his computer.  After filling them both in, he clicks <code>OK</code>.  SmartSVN opens a connection to the server, checks that Dracula is allowed to view the repository, then creates a new directory on his computer and copies files into it.</li>
+<li>Once the checkout is complete, SmartSVN adds an entry for the project in its bookmarks pane.  As in a standard file browser, clicking on directories opens them and displays their contents.</li>
+<li>Dracula can find out more about the state of the project by using Subversion's <code>log</code> command.  If he selects the root of the project in the bookmarks pane and clicks the <code>Log</code> button, SmartSVN displays a list of all the changes made to the project so far.  This list includes the revision number, the name of the person who made the change, the date the change was made, and whatever comment the user provided when the change was made.  As you can see, the <code>monsters</code> project is currently at revision 12.</li>
+<li>While we have this dialog open, notice how detailed the comments on the updates are.  Good comments are as important in version control as they are in coding, because without them, it can be very difficult to figure out who did what, when, and why.  You can use "Made changes" and "fixed it" if you want to, or even nothing at all, but you'll only be storing up work for yourself in the future.</li>
+<li>A couple of cubicles away, Frankenstein also runs SmartSVN to check out a working copy of the repository.  He also gets Version 12, so the files on his machine are the same as the files on Dracula's.  Unfortunately, the first time he leans back in his chair, it breaks, so he has to go and find a new one.</li>
+<li>While Frankenstein is looking for a new chair, Dracula decides to add some information to the repository about Jupiter's moons.  Using his favorite editor, he creates a file in the <code>jupiter</code> directory called <code>moons.txt</code>, and fills it with information about Io, Europa, Ganymede, and Callisto.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Calisto         1882.7          16.689018       1075.9          2410.3 --></p>
+<li>After double-checking his data, he wants to commit the file to the repository so that everyone else on the project can see it.</li>
+<li>The first step is to use SmartSVN to add the file to his working copy.  This isn't the same as creating the file&mdash;Dracula has already done that.  Instead, this step tells Subversion to start keeping track of changes to the file.  It's quite common, particularly in programming projects, to have files in a directory that aren't worth storing in the repository.  We'll see examples of these in later episodes.</li>
+<li>Once he has told Subversion to add the file, Dracula can commit his changes to the repository.  <strong>instructions</strong></li>
+<li>Notice that the version number has changed from 12 to 13.  This version number applies to the <em>whole</em> repository, not just to files that have changed.  SmartSVN and other clients display it on a file-by-file basis because it's possible to have a mix of old and new versions of files in a working copy.  You could, for example, decide to update your copy of a paper's bibliography, but <em>not</em> fetch the latest version of the conclusions section, because you're in the middle of making changes to it yourself.</li>
+<li>The next morning, after he has finally found a chair big enough for him, Frankenstein starts work once again.  When he fires up SmartSVN, it shows him that there's a file in the repository that's not in his working copy, so he does an update to get it.</li>
+<li>Frankenstein's working copy is now up to date with Version 13 of the repository, which is the current <em>head</em> revision.</li>
+<li>Looking in <code>jupiter/moons.txt</code>, Frankenstein notices that Dracula has misspelled "Callisto"&mdash;it's supposed to have two L's.  Frankenstein edits that line of the file.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 --></p>
+<li>He then adds a line about Amalthea, which he thinks might be a good site for a secret lair despite its small size.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius Amalthea        181.4           0.498179        0.075           125.0 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 --></p>
+<li>Frankenstein then commits his changes to create Version 14 of the repository.</li>
+<li>Later that night, when Dracula wakes up and starts work again, the first thing he does is check to see what changes are in the repository that he doesn't have yet.  This is a very common workflow: before updating his working copy, Dracula <em>always</em> takes a look to see what might be affected, in case he'd rather carry on working with his current version than deal with someone else's updates.</li>
+<li>He decides that he wants the changes, so he does an update.  His copy of <code>jupiter/moons.txt</code> is now in sync with the master, and with Dracula's (unless Dracula has made some changes since committing).</li>
+<li>One thing that's worth noticing in this story is how important Frankenstein's comments about his changes were.  It's hard to see the difference between 'Calisto' with one L and 'Callisto' with two L's, even if the line containing the difference has been highlighted.  Without Frankenstein's comment, Dracula might have wasted time wondering if there actually was a difference or not.</li>
+<li>In fact, Frankenstein should probably have made two separate commits, since there's no logical connection between fixing a typo in Callisto's name and adding information about Amalthea to the same file.  Just as a function or program should do one job, and one job only, a single commit to version control should have a single logical purpose so that it's easier to find, understand, and if necessary undo later on.</li>
+</ol>
+<h2>Managing Conflicts</h2>
+<ol>
+<li>Hello, and welcome to the third episode of the Software Carpentry lecture on version control.  In this episode, we will look at what happens when there's a conflict during a commit, and how you can merge changes to fix it.</li>
+<li>At the end of our previous episode, Dracula and Frankenstein had both synchronized their working copies of the <code>monsters</code> repository with the master, where the head is Version 14.</li>
+<li>They're both working overnight, and both want to make changes to <code>jupiter/moons.txt</code>.</li>
+<li>Dracula edits his copy to change Amalthea's radius from a single number to a triple to reflect its irregular shape.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius Amalthea        181.4           0.498179        0.075           131 x 73 x 67 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 --></p>
+<li>As he's doing this, Frankenstein is editing <em>his</em> copy of the file</li>
+<p>to add information about two other minor moons, Himalia and Elara.</p>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius Amalthea        181.4           0.498179        0.075           131 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 Himalia         11460           250.5662        0.095           85.0 Elara           11740           259.6528        0.008           40.0 --></p>
+<li>Dracula commits first, creating Version 15 of <code>moons.txt</code> in the repository.</li>
+<li>A few minutes later, Frankenstein updates his working copy&mdash;unlike Dracula, he's careful to update before trying to commit.</li>
+<li>Subversion tells him that <code>moons.txt</code> has changed behind his back.  We can draw a timeline of these changes [diagram], and some clients for Subversion and other version control systems actually display diagrams like this automatically.</li>
+<li>None of the changes conflict with each other&mdash;Dracula edited a line that Frankenstein didn't change, while Frankenstein added two lines further down the file&mdash;so Subversion just goes ahead and changes Frankenstein's working copy.</li>
+<li>This does <em>not</em> mean that Frankenstein's changes have been committed to the repository&mdash;Subversion only does that when it's ordered to.  Frankenstein's changes are still in his working copy, and <em>only</em> in his working copy.  He has to do a commit to share them with anyone else.</li>
+<li>Doing that brings the two independent streams of editing back together to create Version 16. [diagram]</li>
+<li>Once Dracula does an update, both working copies and the master are in sync with each other.</li>
+<li>At this point, Frankenstein and Dracula both decide to add units to the column headers in the file.  For once, Frankenstein is quicker off the mark; he adds these two lines to the file and commits to create Version 17.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Radius                 (10**3 km)      (days)          (10**20 kg)     (km) Amalthea        181.4           0.498179        0.075           131 x 73 x 67 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 Himalia         11460           250.5662        0.095           85.0 Elara           11740           259.6528        0.008           40.0 --></p>
+<li>While he was making those changes, though, Dracula also added a header to create a different version of the file.  He also changed the fifth column title from "Radius" to "Object Radius".</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Object Radius                 * 10^3 km       * days          * 10^20 kg      * km Amalthea        181.4           0.498179        0.075           131 x 73 x 67 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 Himalia         11460           250.5662        0.095           85.0 Elara           11740           259.6528        0.008           40.0 --></p>
+<li>If Dracula tries to do a commit without first doing an update, Subversion will tell him that he can't.  It detects the conflict between his changes and Frankenstein's and refuses to allow Dracula to overwrite Frankenstein's work.</li>
+<li>Instead, Dracula must do an update to copy Frankenstein's changes into his own working copy.  When he does this, Subversion modifies your copy of the conflicted file, and creates three temporary files beside it.</li>
+<li>The first of the temporary files is called <code>moons.txt.r16</code>.  It is the file as it was in your local copy before you started making changes, i.e., the starting point for your work.</li>
+<li>The second file is <code>moons.txt.r17</code>.  This is the most up-to-date version from the repository that includes Frankenstein's changes.</li>
+<li>The third temporary file is called <code>moons.txt.mine</code>.  This is the file as it was in your working copy before you did the Subversion update.</li>
+<li>Finally, Subversion modifies the file in question, <code>moons.txt</code>, to show your changes and the changes from the repository side by side.  Wherever there is a conflict, Subversion inserts the line <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; .mine</code> followed by the lines from your copy of the file.  It then inserts the separator <code>=======</code>, followed by the lines from the repository's file that are in conflict with yours, and puts <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; .r17</code> at the end.</li>
+<li>Some power users prefer to work with these interpolated changes directly, but for the rest of us, there are several tools for displaying <em>diffs</em> and helping to merge them.  If Dracula launches the one that's built in to SmartSVN, it displays his file, the common base that he and Frankenstein were working from, and Frankenstein's file in a three-pane view.  He can use the buttons to pull changes from either of the edited versions into the common ancestor to merge changes, or edit the merge file directly.</li>
+<li>In this case, the conflict is easy to resolve.  After a moment's reflection, Dracula decides that Frankenstein's version is better than his, except that he prefers to use circumflex '^' instead of double-star '**' for exponents.  He edits the conflicted line accordingly.</li>
+<p><!-- Name            Orbital Radius  Orbital Period  Mass            Object Radius                 (10^3 km)       (days)          (10^20 kg)      (km) Amalthea        181.4           0.498179        0.075           131 x 73 x 67 Io              421.6           1.769138        893.2           1821.6 Europa          670.9           3.551181        480.0           1560.8 Ganymede        1070.4          7.154553        1481.9          2631.2 Callisto        1882.7          16.689018       1075.9          2410.3 Himalia         11460           250.5662        0.095           85.0 Elara           11740           259.6528        0.008           40.0 --></p>
+<li>Once he is done, he saves his changes and exits the diff/merge tool.  Subversion will now let him go ahead and commit the resolved file to create Version 18.  The final timeline looks like this. [diagram]</li>
+<li>In this case, the conflict was small and easy to fix.  However, if two or more people on a team are repeatedly creating conflicts for one another, it's usually a signal of deeper communication problems: either they aren't talking as often as they should, or their responsibilities overlap.  If used properly, the version control system can help the team find and fix these issues so that it will be more productive in future.</li>
+</ol>
+<h2>Rolling Back Changes</h2>
+<ol>
+<li>Hello, and welcome to the fourth episode of the Software Carpentry lecture on version control.  In this episode, we will show you how to undo changes so that you can get back earlier versions of your files.</li>
+<li>We'll start with the simplest case.  Suppose that Wolfman made some changes to a program during a full moon.</li>
+<li>The next day, when he's back in human form, he looks at what he did and realizes that it's never going to work.  How can he restore those files to the state they were in before he started editing?</li>
+<li>Without version control, his choices would be grim.  He could ask his colleagues to send him their copies of the files...</li>
+<li>...or try to edit them back into their original state by hand (which for some reason hardly ever seems to work).</li>
+<li>But he's using Subversion, and hasn't committed his work to the repository, so all he has to do is <em>revert</em> his local changes.</li>
+<li>The Subversion <code>revert</code> command simply throws away local changes to files and puts things back the way they were before those changes were made.  If you've edited a file, your edits are discarded, and the file's contents are restored.</li>
+<li>If you use the <code>remove</code> command to get rid of files or directories, they are resurrected.</li>
+<li>And if you used <code>add</code> to add new files, reverting tells Subversion not to worry about them any more.  It <em>doesn't</em> delete them, since "add" really just means "start paying attention to".</li>
+<li>But what if Wolfman actually had committed his changes to the repository?  Things are a bit more complicated in this case, but only a bit.</li>
+<li>The trick is to realize that once a change is in the repository, it's there forever.  There's no way to erase a commit&mdash;instead, what you have to do is copy the old version on top of the latest one, and then commit that change.</li>
+<li>The command that does this is <code>merge</code>.  It can do a lot more than just recover old versions of files, but we'll start with that case.</li>
+<li>Our working copy is currently in sync with Version 25.</li>
+<li>We want to restore Version 24 of the file <code>important.py</code>.</li>
+<li>What we really mean when we say that is that we want Version 26 of the file to contain what Version 24 contained, because we can't just erase Version 25 from history.</li>
+<li>After all, we might decide later on that we were mistaken, and that parts of Version 25 really were worth keeping.</li>
+<li>When we run Subversion's <code>merge</code> command, we have to specify the two things we're merging.</li>
+<li>The first is the current version of <code>important.py</code></li>
+<li>The second is Version 24 of the same file, so we specify that revision.</li>
+<li>When the command runs, it creates the same three temporary files as an update with conflicts, and puts the same conflict markers in our working copy.</li>
+<li>Wolfman is old school, so instead of using the three-pane diff/merge tool, he decides to edit the merged file with a conventional editor.</li>
+<li>After he is done, he uses Subversion's <code>resolved</code> command to tell it that the conflict has been fixed...</li>
+<li>...then commits the new file, which is really the old file in disguise.</li>
+<li>This same technique can be used to recover older revisions of files, not just the most recent.</li>
+<li>It can also be used to recover many files or directories at a time.</li>
+<li>But the most frequent use is to manage parallel streams of development in large projects.  This is outside the scope of this lecture, but the basic idea is simple.</li>
+<li>Suppose that Universal Monsters has just released a new program for designing secret lairs.</li>
+<li>Wolfman and the Mummy are doing technical support: their job is to fix any bugs that users find.</li>
+<li>At the same time, Dracula and Frankenstein are supposed to start adding a few features that had to be left out of the first release because time ran short.</li>
+<li>All sorts of things could go wrong if both teams tried to work on the same code at the same time.  For example, if Wolfman fixed a bug and sent a new copy of the program to a user in Greenland, it would be all too easy for him to accidentally include the half-completed shark tank control feature that Frankenstein was working on.</li>
+<li>The usual way to handle this situation is to create a <em>branch</em> in the repository for each major sub-project.</li>
+<li>Branches in version control repositories are often described as "parallel universes".  Each branch starts off as a clone of the software at some moment in time&mdash;typically each time the software is released, or whenever work starts on a major new feature.</li>
+<li>Changes made to a branch only affect that branch, just as changes made to the files in one directory don't affect changes made to files in other directories.</li>
+<li>However, if someone decides that a bug fix in the "maintenance" branch should also be made in the "development" branch, all they have to do is merge the files in question.</li>
+<li>This is exactly like merging an old version of a file with the current one, but instead of going backward or forward in time, the change is brought sideways from one branch to another.</li>
+<li>Once any conflicts created by the merge have been resolved, the merged file or files can be committed as usual.</li>
+<li>Branching helps projects scale up by letting sub-teams work independently, but too many branches can cause as many problems as they solve.</li>
+<li>If you'd like to know more about branching and merging, see Karl Fogel's excellent book <cite>Producing Open Source Software</cite>, or Laura Wingerd and Christopher Seiwald's "<a href="http://www.perforce.com/perforce/papers/bestpractices.html">High-level Best Practices in Software Configuration Management</a>".  Keep in mind, though, that branching and merging <em>is</em> a fairly advanced topic, and not something you should need until you have many developers or several active versions of your program.</li>
+</ol>
+<h2>Creating a Repository</h2>
+<ol>
+<li>Hello, and welcome to the fifth episode of the Software Carpentry lecture on version control.  In this episode, we will show you how to set up a repository of your own.  A word of warning: you will need to know a little bit about using a Unix shell to do this.  If you've never used the shell, you should probably ask someone else to create your repository.</li>
+<li>Here's the simplified picture from our first episode of what we're trying to achieve.  We want to keep the master copy of our work in a repository on a server that we can access from other machines on the internet.</li>
+<li>That master copy is a bunch of files and directories.  Nobody ever edits them directly.</li>
+<li>Instead, a copy of Subversion runs on that machine, managing updates for us and watching for conflicts.</li>
+<li>Our working copy is a mirror image of the master sitting on our computer.  When our Subversion client needs to communicate with the master, it connects to the copy of Subversion running on the server to move data back and forth.</li>
+<li>In order for all of this to work, we need four things.  First, we need the repository itself.  It's not enough to create an empty directory and start filling it with files: Subversion needs to create a lot of other structure in order to keep track of old revisions, who made what changes, and so on.</li>
+<li>Second, we need to know the web address&mdash;the URL&mdash;of the server.  In fact, we need even more than that: we need the full URL of the repository on that server, since a single server could host any number of Subversion repositories.</li>
+<li>The third thing we need is permission to read or write the master copy.  Many open source projects give the whole world permission to read from their repository, but very few allow strangers to write to it: there are just too many possibilities for abuse.  Somehow, we have to set up a password or something like it so that users can prove who they are.</li>
+<li>The fourth and final thing we need is a working copy of the repository on our computer.  We saw how to create that in the second episode of this lecture by checking out a copy of the repository; please review that episode if you need a refresher.</li>
+<li>To keep things simple, we'll start by creating the repository on the machine that we're working on.  This won't let us share the repository with other people, but it <em>will</em> allow us to save the history of our work as we go along.</li>
+<li>The command to create a repository is <code>svnadmin create</code>, followed by the path to the repository.  If we want to create a repository called <code>lair_repo</code> directly under our home directory, we can just <code>cd</code> to that directory and run <code>svnadmin create lair_repo</code>.</li>
+<li>This command creates a directory called <code>lair_repo</code> to hold our repository.  We should <em>never</em> edit anything in this repository directly: doing so probably won't tear our sanity to shreds and leave us gibbering mindlessly in horror, but it will almost certainly make the repository unusable.</li>
+<li>To get a working copy of this repository, we use Subversion's <code>checkout</code> command.  If the path to our home directory is <code>/Users/mummy</code>, then the full path to the repository we just created is <code>/Users/mummy/lair_repo</code>, so we use <code>svn checkout file:///Users/mummy/lair_repo lair_working</code>.</li>
+<li>The first argument is the URL of our repository.  <code>file://</code> says that it's part of the local machine's filesystem, and <code>/Users/mummy/lair_repo</code> is the path to repository directory.</li>
+<li>Notice that the protocol ends in two slashes, while the absolute path to the repository starts with a slash, making three in total.  A very common mistake is to type only two, since that's what web URLs normally have.</li>
+<li>When we're doing a checkout, it is <em>very</em> important that we provide the second argument, which specifies the name of the directory we want the working copy to be put in.  Without it, Subversion will try to use the name of the repository, <code>lair_repo</code>, as the name of the working copy.  This means that Subversion will try to overwrite the repository with the working copy, since they have the same name.  Again, there isn't much risk of our sanity being torn to shreds, but this would ruin our repository.</li>
+<li>To avoid these problems, most people create a sub-directory in their account called something like <code>repositories</code> or <code>repos</code>, and then create their repositories in that.  For example, we could create our repository in <code>/Users/mummy/repos/lair</code>, then check out a working copy as <code>/Users/mummy/lair</code>.</li>
+<li>Now let's see how to create a repository on a server.  Let's assume we have a Unix shell account on a server called <code>monstrous.monsters.org</code>, and that our home directory is <code>/u/mummy</code>.</li>
+<li>To create a repository called <code>lair</code>, we log into that computer, then run the command <code>svnadmin create lair</code>.</li>
+<li>(Once again, we would probably actually create a sub-directory called something like <code>repos</code> and put our repository in there, but we'll skip that step here to keep our URLs short.)</li>
+<li>The URL for the repository we just created is <code>monstrous.monsters.org/u/mummy/lair</code>&mdash;except that's not a complete URL, because it doesn't specify the <em>protocol</em> we are going to use to connect to the repository.</li>
+<li>A protocol like HTTP or FTP defines how communication takes place between two computers: who talks first, how each party identifies itself, what data should be sent when, and so on.</li>
+<li>It's very common to use the HTTP protocol to communicate with Subversion, but setting that up requires some knowledge of how web servers work.</li>
+<li>We're going to use a combination of two protocols to access our repository.  The first is called SSH, which stands for "Secure Shell".  You probably used it to log in to the server to create the repository, though it might have been hidden inside a GUI client like Putty.  SSH specifies rules for connecting to remote computers, providing passwords to prove your identity, and so on.</li>
+<li>The second protocol is SVN, which is a specialized protocol defined by Subversion for moving data back and forth, comparing different versions of files, and so on.</li>
+<li>Putting these together, the full URL for our repository is <code>svn+ssh://mummy@monstrous.monsters.org/u/mummy/lair</code>.  Breaking this back into pieces:</li>
+<li><code>svn+ssh</code> is the protocol.  (It has to be spelled exactly this way: "ssh+svn" should work, but doesn't.)</li>
+<li><code>mummy@monstrous.monsters.org</code> specifies who we are and what machine we're connecting to.</li>
+<li><code>/u/mummy/lair</code> is where our repository is located.</li>
+<li>Every Subversion repository URL has these parts: a protocol, something to identify the server (which may optionally include a user ID if the repository isn't publicly readable), and a path.</li>
+<li>Let's switch back to our local machine and check out a copy of the repository.</li>
+<li>When we run Subversion's <code>checkout</code> command, our client makes a connection to the server <code>monstrous.monsters.org</code> and then prompts us for the password associated with the <code>mummy</code> account.  By entering this password, we are proving to the server that we are the user <code>mummy</code>, or at least that we have the right to read and write the files that belong to <code>mummy</code>.</li>
+<li>Notice that our client gives us the option of saving our password locally, so that we don't have to re-enter it each time we update from or commit to this repository.  A lot of people think this is a bad idea, since anyone who stole that password from our local machine would then be able to log into the server as us and do horrible things.  We'll look more closely at the pros and cons of this in a future lecture.</li>
+<li>A bigger question is how to give other people access to the repository we have just created so that they can start working with us.  Unfortunately, this really does require things that we are not going to cover in this course.  If you need to do this, you can:</li>
+<li>ask your system administrator to set it up for you,</li>
+<li>use an open source hosting service like <a href="http://www.sf.net">SourceForge</a> or <a href="http://code.google.com">Google Code</a>, or</li>
+<li>spend a few dollars a month on a commercial hosting service like <a href="http://dreamhost.com">DreamHost</a> that provides web-based GUIs for creating and managing repositories.</li>
+</ol>

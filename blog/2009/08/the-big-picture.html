@@ -1,0 +1,115 @@
+---
+layout: blog
+date: 2009-08-21
+time: 09:00:00
+author: wilson.g
+title: The Big Picture
+category: [content, versions/version-4]
+---
+<p>One of the lessons we learned at <a href="http://www.lanl.gov">Los Alamos National Laboratory</a> in the 1990s and early 2000s is that most scientists don't actually want to learn how to program&mdash;they want solve scientific problems.To many,programming is a tax they have to pay in order to do their research.To the rest,it's something they really would find interesting,but they have a grant deadline coming up and a paper to finish.</p>
+<p>Getting scientists to make time to learn fundamental ideas that aren't directly relevant to the problems in front of them is an even harder sell. Partly it's those pesky deadlines again, but it's also often the case that the big picture doesn't make sense until you have first-hand experience with the details. Take abstraction, for instance, or the difference between interface and implementation: if you haven't written or modified software where those ideas saved you time and heartache, no amount of handwaving is going to get the idea across. The problem, of course, is that it's impossible to program well without understanding those bigger concepts.</p>
+<p>Software Carpentry therefore has to:</p>
+<ol>
+<li>Give scientists programming skills that have a high likelihood of paying large dividends in the short term.</li>
+<li>Convey the fundamental ideas needed to make sensible decisions about software without explicitly appearing to do so.</li>
+</ol>
+<p>Based on our experiences in the last 12 years, the skills that students need are fairly settled:</p>
+<ul>
+<li>Clean coding (both micro-level readability and macro-level modularity)</li>
+<li>Version control</li>
+<li>Process automation for building, testing, and deploying software</li>
+<li>How to package software for distribution and deployment</li>
+<li>Managing information and workflow (from bug trackers to blogs)</li>
+<li>Consuming data:
+<ul>
+<li>Text (line-oriented parsing with regular expressions)</li>
+<li>Hierarchical (XML)</li>
+<li>Binary</li>
+<li>Relational</li>
+</ul>
+</li>
+<li>Building desktop GUIs and visualizing data</li>
+<li>Basic security: public/private keys, digital signatures, identity management</li>
+<li>Publishing data and providing services on the web</li>
+</ul>
+<p>As <a href="http://www.cs.utoronto.ca/~reid">Karen Reid</a> and others have pointed out, doing all of that properly would earn you at least a minor in Computer Science at most universities. Cramming it into two weeks is simply not possible.</p>
+<p>The bigger picture stuff isn't as clear yet, but is starting to come into focus. The buzzword du jour, <a href="http://www.cs.cmu.edu/~CompThink/">computational thinking</a>, means different things to different people, but <a href="http://www.slideshare.net/judell/computational-thinking">Jon Udell</a>'s definition is a good starting point. For him, computational thinking includes:</p>
+<ul>
+<li>Abstraction: ignoring details in order to take advantage of similarities
+<ul>
+<li>A key concept is the difference between interface and implementation</li>
+</ul>
+</li>
+<li>Querying: understanding how fuzzy matching, Boolean operations, and aggregate/filter dataflow works
+<ul>
+<li>This depends somewhat on understanding how to think in sets</li>
+</ul>
+</li>
+<li>Structured data: including hierarchical structure, the notion of meta-data (such as tagging and schemas), and so on
+<ul>
+<li>Equally important is understanding that programs work best with structured data, so structure improves findability and automation</li>
+</ul>
+</li>
+<li>Automation: having the computer do routine tasks so that people don't have to</li>
+<li>Indirection: giving someone a reference to data, rather than a copy of the data, so their view of it is always fresh</li>
+<li>Syndication: publishing data for general use, rather than sending it directly to a restricted set of people
+<ul>
+<li>The inverse is provenance: where did this data come from, and what was done to it?</li>
+</ul>
+</li>
+</ul>
+<p>I would like to add all of the following, though I realize that doing so gets us back into "B.Sc. in a week" problems:</p>
+<ul>
+<li>Name spaces, call stacks, and recursion</li>
+<li>Computational complexity: why some algorithms are intrinsically faster than others</li>
+<li>How data is organized:
+<ul>
+<li>Values vs. references and the notion of aliasing</li>
+<li>By-location structures (lists, vectors, and arrays)</li>
+<li>By-name structures (dictionaries and records)</li>
+<li>By-containment structures (trees)</li>
+<li>By-traversal structures (graphs)</li>
+</ul>
+</li>
+<li>Programming models:
+<ul>
+<li>Procedural</li>
+<li>Aggregate (whole-array, whole-list, etc.)</li>
+<li>Object-oriented</li>
+<li>Declarative</li>
+<li>Event-driven (which brings in the difference between frameworks and libraries</li>
+</ul>
+</li>
+<li>Programs as data
+<ul>
+<li>Functions as objects (another form of abstraction)</li>
+<li>Programs that operate on programs (Make, drivers for legacy programs)</li>
+</ul>
+</li>
+<li>Quality, including:
+<ul>
+<li>What makes good code better than bad code (psychological underpinnings)</li>
+<li>Testing (including the economics of testing)</li>
+<li>Debugging (the scientific method applied to software)</li>
+<li>The difference between verification ("have we done the thing right?") and validation ("have we done the right thing?")</li>
+<li>Continuous improvement via reflection on root causes of errors</li>
+</ul>
+</li>
+<li>Basic concurrency:
+<ul>
+<li>Transactions vs. race conditions</li>
+<li>Deadlock (much less important in practice)</li>
+</ul>
+</li>
+<li>Handling failures</li>
+<li>Bricolage: how to find/adapt/combine odds and ends (these days, on the web) to solve a problem</li>
+</ul>
+<p>I call on all of this knowledge routinely even when solving trivial problems. This morning, for example, I:</p>
+<ul>
+<li>did a search to find a wiki markup processor I could run from the command line,</li>
+<li>downloaded and installed it,</li>
+<li>changed five lines in the main routine to insert some extra text in its output,</li>
+<li>added a ten-line filter function to overwrite the inserted text with some command-line parameter values, and</li>
+<li>added fourteen lines to a Makefile to turn the wiki text into HTML whenever it's stale.</li>
+</ul>
+<p>It took roughly 15 minutes, and will save me hours in the weeks to come. However, it only took 15 minutes because I've spent 29 years mastering the skills and ideas listed earlier. The challenge in creating Version 4.0 of this course will be to figure out how to convey as many of those skills and ideas can be squeezed into two weeks.</p>

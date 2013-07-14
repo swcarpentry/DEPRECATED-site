@@ -1,0 +1,64 @@
+---
+layout: blog
+date: 2012-07-30
+time: 09:00:00
+author: wilson.g
+title: Record and Playback
+category: [content, tooling, versions/version-5-0]
+---
+<p>The biggest bottleneck Software Carpentry faces right now is a shortage of experienced instructors. To help fix that, we are going to record a complete presentation of our core two-day material so that people who want to teach it themselves can see <em>how</em> we say things, as well as <em>what</em> we say [<a href="#1">1</a>, <a href="#2">2</a>].</p>
+<p>As soon as we say "record", though, we have to ask, what exactly are we recording? Audio and video of a presenter in front of a whiteboard? Sure&mdash;that helps humanize the presentation. But what about the presenter's desktop? Viewers definitely need to see it, but should they see an MP4 in which the text on the presenter's screen appears as colored pixels arranged in the shapes of characters, or should we record the characters directly? I think the latter is by far the best option, since:</p>
+<ol>
+<li>it's much more compact (compare the size of an MP4 of an hour's typing with the size of the text typed);</li>
+<li>it can be copied and pasted (when you freeze a movie and copy what's on your screen, what you get is an image rather than a chunk of program text you can run yourself);</li>
+<li>it's searchable (same reason as above);</li>
+<li>it's more accessible to people with visual disabilities; and</li>
+<li>it's more likely to be future-proof and device-proof. If I record a video, I'm specifying a display mode as well as content; if I record what I've typed, and present that to you, you (or someone mediating between us) can decide how to style it, whether to use a one- or two-column display, and so on.</li>
+</ol>
+<p>Enter the Unix <code>script</code> command. As <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?script">its <code>man</code> page</a> says, it records everything printed to a terminal in a file for later inspection. Suppose, for example, that I run the following commands at a shell prompt (with italics showing output):</p>
+<pre>$ script ~/log.txt
+<em>Script started, file is /home/gvw/log.txt</em>
+$ pwd
+<em>/home/gvw/swc</em>
+$ ls
+<em>3.0 4.0 5.0 LICENSE.txt book data links.html papers research scraps</em>
+$ cd papers
+$ svn st
+$ exit
+<em>Script done, file is /home/gvw/log.txt</em>
+$</pre>
+<p>When I'm done, the file <code>~/log.txt</code> contains:</p>
+<pre>Script started on Mon Jul 30 11:21:24 2012
+$ pwd^M
+/home/Owner/swc^M
+$ ls^M
+3.0  4.0  5.0  LICENSE.txt  book  data  links.html  papers  research  scraps^M
+$ cd pp^H^[[Kapet^H^[[Krs^M
+$ svn st^M
+$ exit^M
+
+Script done on Mon Jul 30 11:21:42 2012</pre>
+<p>The <code>^M</code> and <code>^H^[[K</code> text is a literal transcript of what happens when the Enter and Backspace keys are pressed. In theory, this can be replayed to show people later exactly how something was done, keystroke by keystroke. All we need is timing, and <code>script</code> can deliver that:</p>
+<pre>Options:
+    ...     ...
+    -t      Output timing data to standard error. This data contains two
+            fields, separated by a space. The first field indicates how much
+            time elapsed since the previous output. The second field indicates
+            how many characters were output this time. This information can be
+            used to replay typescripts with realistic typing and output delays.</pre>
+<p>So in theory, if we redirect <code>script</code>'s standard error to a file, we can use it to replay text at the correct speed. But if we actually do that, any error messages produced by the commands we're typing wind up in that file as well, instead of in our log file. That's a problem...</p>
+<p>There's another problem too. <code>script</code> is designed to capture line printer sessions, not interactive cursor-based work. Its <code>man</code> page even warns about this:</p>
+<pre>Certain interactive commands, such as vi(1), create garbage in the typescript
+file.  Script works best with commands that do not manipulate the screen, the
+results are meant to emulate a hardcopy terminal.</pre>
+<p>This means that a recording of an interactive editing session, even one using something as simple as <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?nano">nano</a>, is much harder to replay. And we <em>do</em> want to replay this kind of work, because (a) our chances of typing in a 20-line function interactively without mistakes are low, and (b) we want people to see that we don't actually enter code in print order, but instead create placeholder lines that are later filled in, indent things under <code>if</code> or <code>else</code> statements when we realize there are extra cases to handle, and so on. (Remember, we're trying to teach the "how" as well as the "what".)</p>
+<p>This leaves us with a few options:</p>
+<ol>
+<li>Abandon the idea of recording the text itself, and only record pixels. I'm going to cross this one off the list unilaterally.</li>
+<li>Figure out how to do what we want with the existing <code>script</code> command. <a href="{{page.root}}/blog/2012/07/software-carpentry-needs-you.html">Your help</a> would be appreciated.</li>
+<li>Hack <code>script</code> (which is, after all, open source) to do what we want. If we go down this path, we'd appreciate help with it as well.</li>
+<li>Find another way to do what we want. By this point, you probably aren't surprised by me inviting pointers and proposals.</li>
+</ol>
+<p>No matter which of these options we pick, we're going to want to synchronize replay of interactive typing sessions with audio voiceovers in the browser. Luckily, <a href="http://popcornjs.org/">Popcorn.js</a> has been designed to do (almost) exactly that: it can tweak the content of a web page in sync with (for example) time marks in an audio file, so rewind/pause/fast forward would all do what we want. Before we can do that, though, we need to capture raw data; if you'd like to assist, please <a href="mailto:{{site.contact}}">get in touch</a>.</p>
+<p id="1">[1] We have such a recording from a March 2012 workshop in Indiana, but our delivery has evolved a fair bit since then.</p>
+<p id="2">[2] People who want to learn the material might find these recordings useful too, but both our past experience and a whole lot of educational research tells us that canned presentations aren't actually very effective for most novices.</p>

@@ -1,0 +1,29 @@
+---
+layout: blog
+author: wilson.g
+title: The Tool (I Think) We Need To Do Peer Instruction Online
+date: 2012-11-19
+time: 09:00:00
+category: [education, tooling]
+---
+<p>Clay Shirky's recent essays "<a href="http://www.shirky.com/weblog/2012/11/napster-udacity-and-the-academy/">Napster, Udacity, and the Academy</a>" has attracted a fair bit of attention. I've written about some of the things it <em>doesn't</em> discuss on my <a href="http://third-bit.com/blog/archives/4548.html">personal blog</a>, but here, I'd like to use it as a jumping off point for a description of a tool I'd like someone to write for us. Given that my <a href="{{page.root}}/blog/2012/11/who-wants-to-write-a-little-code.html">last request</a> produced working code in just a few hours, I'm hoping one of you will wow me again :-)</p>
+
+<p>Our starting point is <a href="http://en.wikipedia.org/wiki/Peer_instruction">peer instruction</a>, a scalable, evidence-based teaching model that replaces "sage on the stage" with the following interactive cycle:</p>
+<ol>
+        <li>Instructor poses multiple-choice question.</li>
+        <li>Learners commit to an individual answer (typically by voting with a clicker).</li>
+        <li>Learners discuss their answers in small peer groups (typically 3-4 people) and re-vote.</li>
+        <li>Instructor presents correct answer.</li>
+        <li>Learners discuss again (so that those who understood can clear up the misconceptions of those who didn't).</li>
+</ol>
+<p>Chris Lee, at UCLA, has built a tool called <a href="http://people.mbi.ucla.edu/leec/docs/socraticqs/tutorial.html">Socraticqs</a> to implement this model using a little web app running on the instructor's laptop (which they connect to over WiFi). I'd like to go one step further and try to do this over the web&mdash;after all, it <em>is</em> supposed to be a medium for collaboration. Here's what I'm imagining:</p>
+<ol>
+        <li>Instructor broadcasts to learners via screen sharing, synchronized slides, or some kind of in-browser co-piloting like <a href="http://vimeo.com/36754286">Towtruck</a>.</li>
+        <li>Learners vote on multiple-choice question over the web.</li>
+        <li>Learners put into small groups, possibly based on their answers, for discussion. When this happens, the system automatically switches from 1-to-N broadcast to k-way all-see-all sharing. The instructor can drop into any of these discussions at any point.</li>
+        <li>After several minutes, the system pulls everyone back into whole-class mode so that learners can re-vote and the instructor can present the correct solution.</li>
+        <li>The system them switches people back to the same groups for wrap-up discussion.</li>
+</ol>
+<p>The pieces of this all exist, more or less: we can do one-to-many broadcast and four-way split-panel talking-heads chats. What's lacking is the integration: in particular, leaving one Skype call or Google Hangout and joining another several times an hour will introduce a lot of friction and frustration.</p>
+
+<p>Based on our experiments earlier this year with online tutorials, I think this would be a much better online learning experience for most people. Does it already exist? If so, where? And if not, how hard would it be to build?</p>

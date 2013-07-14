@@ -1,0 +1,155 @@
+---
+layout: bootcamp_archived
+venue: Indiana University
+country: United-States
+humandate: March 7-8, 2012
+humantime: 9:00 am - 5:00 pm
+startdate: 2012-03-07
+enddate: 2012-03-08
+latlng: 39.1663815,-86.526621
+registration: open
+instructor: ["Greg Wilson"]
+---
+<p><strong><em>matrix.py</em></strong></p>
+<pre># Read files containing matrices of integer and store each in
+# a list of lists.  For example, the file:
+#   1 2 3
+#   4 5 6
+# produces the list [[1, 2, 3], [4, 5, 6]]
+
+import sys
+
+all_files = sys.argv[1:]
+for filename in all_files:
+    reader = open(filename, 'r')
+    matrix = []
+    for line in reader:
+        line = line.strip()
+        temp = line.split(' ')
+        numbers = []
+        for t in temp:
+            numbers.append(int(t))
+        matrix.append(numbers)
+    reader.close()
+    print filename, matrix</pre>
+<hr />
+<p><strong><em>check.py</em></strong></p>
+<pre># Read a file that is supposed to contain a
+# rectangular matrix of numbers, and check that
+# each row has the same number of columns.
+
+import sys
+
+if len(sys.argv) == 1:
+    reader = sys.stdin
+elif len(sys.argv) == 2:
+    reader = open(sys.argv[1], 'r')
+
+expected = -1
+for line in reader:
+    fields = line.strip().split()
+    if expected == -1:
+        expected = len(fields)
+    elif len(fields) != expected:
+        print line.rstrip()
+        sys.exit()
+
+reader.close()</pre>
+<hr />
+<p><strong><em>stats.py</em></strong></p>
+<pre># Read a file containing one number per line and report min, max, and average.
+
+import sys
+
+if len(sys.argv) == 1:
+    reader = sys.stdin
+elif len(sys.argv) == 2:
+    reader = open(sys.argv[1], 'r')
+
+first = True
+total = 0
+count = 0
+for line in reader:
+    count = count + 1
+    value = float(line)
+    total = total + value
+    if first:
+        minimum = value
+        maximum = value
+        first = False
+    else:
+      if value &lt; minimum:
+          minimum = value
+      if value &gt; maximum:
+          maximum = value
+
+reader.close()
+if count == 0:
+    print 0, 0, 0
+else:
+    average = total / count
+    print minimum, average, maximum</pre>
+<hr />
+<p><strong><em>glue.py</em></strong></p>
+<pre># Read two files, each containing columns of numbers, and write
+# a third file that joins them together.  For example, if the
+# two input files contain:
+#   1
+#   2
+#   3
+# and
+#   4 5
+#   6 7
+#   8 9
+# the output file will contain:
+#  1 4 5
+#  2 6 7
+#  3 8 9
+
+import sys
+
+if len(sys.argv) != 4:
+    print 'You really are a fool, I need three filenames'
+    sys.exit()
+
+left = open(sys.argv[1], 'r')
+left_lines = left.readlines()
+left.close()
+
+right = open(sys.argv[2], 'r')
+right_lines = right.readlines()
+right.close()
+
+if len(left_lines) != len(right_lines):
+    print 'Oh, you fool'
+    sys.exit()
+
+writer = open(sys.argv[3], 'w')
+for i in range(len(left_lines)):
+    temp = left_lines[i].strip() + ' ' + right_lines[i].strip()
+    print &gt;&gt; writer, temp
+writer.close()</pre>
+<hr />
+<p><strong><em>malcolm.sql</em></strong></p>
+<pre>select   Experiment.NumInvolved, Project.ProjectName
+from     Project join Experiment
+where    Project.ProjectId = Experiment.ProjectId
+order by Experiment.NumInvolved;</pre>
+<hr />
+<p><strong><em>bethany.sql</em></strong></p>
+<pre>select distinct Project.ProjectName,
+                Person.FirstName,
+                Person.LastName
+from  Project join Involved join Person
+where (Project.ProjectId = Involved.ProjectId)
+and   (Involved.Login = Person.Login);</pre>
+<hr />
+<p><strong><em>quincy.sql</em></strong></p>
+<pre>select *
+from Involved join
+     (select NumInvolved, ProjectID as PID
+      from Experiment
+      where NumInvolved =
+         (select max(NumInvolved) from Experiment)
+     )
+where Involved.ProjectID = PID;</pre>

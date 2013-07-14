@@ -1,0 +1,110 @@
+---
+layout: blog
+author: waugh.b
+title: Workshop for High-Energy Physics at UCL
+date: 2012-11-14
+time: 11:00:00
+category: [boot-camp, venues/university-college-london]
+---
+
+<p>Following the success of the open bootcamp at UCL in April/May this year, we decided to have a go at introducing some Software Carpentry to the first-year postgraduate students in my own research group, High-Energy Physics (HEP). There is already a longstanding University of London intercollegiate lecture programme for these students, including some programming in C++ and Python. The new workshops aim to help participants consolidate and extend their existing Python knowledge, as well as learning about more general best practice in software development, by following an extended worked example using version control and test-driven development.</p>
+
+<p>In a variation on the "normal" two-day Software Carpentry format, we are running two one-day workshops about a term apart, with the first taking place last Thursday. Attendance was 65% (13 of 20 students) with a single instructor (me) and two other helpers: Sean Brisbane of the Oxford HEP group, where he intends to run something similar, and James Hetherington of UCL's new Research Software Development Team.</p>
+
+<p>Students were able to use their own laptops, or use the provided UCL standard Windows desktop machines to SSH to Linux machines at CERN, UCL or their own institution. It took a while to get the Exceed X server configured appropriately on the Windows machines, and get everyone connected to a suitable Linux machine, which also meant creating accounts on the UCL HEP cluster for students with no other Linux system available.</p>
+
+<p>We used PyROOT so that we could use the ROOT toolkit, which is ubiquitous in HEP, while still programming in Python rather than C++. Predictably there were various problems with incompatible versions of Python and ROOT, but these were all overcome. For version control we used Git, with an emphasis on its use as a personal extended undo facility: we didn't get as far as branching or setting up a shared repository. Nor did we get as far as I had hoped into unit testing, but we did some informal testing in the Python interpreter, and introduced the Python debugger.</p>
+
+<p>Next we will arrange some online tutorials and discussion forums, and use the feedback from these to guide the plan for the second workshop in February.</p>
+
+<h2>Pre-workshop survey results</h2>
+<table>
+<tbody>
+<tr>
+<th></th>
+<th>never heard of it</th>
+<th>heard of it but never used it</th>
+<th>have used it but don't understand it</th>
+<th>use occasionally</th>
+<th>use regularly</th>
+<th>expert</th>
+</tr>
+<tr>
+<td>Bash (or other Unix/Linux shell)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>11</td>
+<td></td>
+</tr>
+<tr>
+<td>Python</td>
+<td></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>version control</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+<td>4</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>unit testing</td>
+<td>11</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Good and bad</h2>
+<table>
+<tbody>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+<tr>
+<td>applying Python knowledge</td>
+<td>diversity of environments (OS, ROOT, Python versions) causes problems</td>
+</tr>
+<tr>
+<td>introduction to version control: wouldn't have discovered how to use it alone</td>
+<td>better to have worksheet so can continue while others debug their system if yours is working</td>
+</tr>
+<tr>
+<td>learned about XEyes</td>
+<td>needed another break in the afternoon</td>
+</tr>
+<tr>
+<td>everything covered was new to me</td>
+<td>took too long to get everyone set up</td>
+</tr>
+<tr>
+<td>enjoyed subject-specific examples</td>
+<td>need worksheet so can catch up if behind</td>
+</tr>
+<tr>
+<td>good to have an introduction to PyROOT</td>
+<td>didn't get far enough into unit testing</td>
+</tr>
+<tr>
+<td>helpers were constructive and didn't make us feel like idiots</td>
+<td>moved too fast at times</td>
+</tr>
+<tr>
+<td>liked tips on readable code</td>
+<td></td>
+</tr>
+</tbody>
+</table>

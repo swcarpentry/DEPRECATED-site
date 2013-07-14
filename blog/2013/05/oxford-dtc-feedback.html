@@ -1,0 +1,157 @@
+---
+layout: blog
+author: cooper.j
+title: Feedback from the Oxford DTCs
+date: 2013-05-24
+time: 10:00:00
+category: [boot-camp, venues/oxford]
+---
+<!-- start excerpt -->
+<p>
+Having helped at two previous boot camps (<a href="http://software-carpentry.org/bootcamps/2012-10-oxford.html">Oxford last year</a> and <a href="http://software-carpentry.org/bootcamps/2013-04-ucl.html">UCL last month</a>), a couple of weeks ago I had my first attempt at organising one at the <a href="http://software-carpentry.org/bootcamps/2013-05-oxford-dtc.html">University of Oxford</a>, primarily aimed at students from the <a href="http://www.dtc.ox.ac.uk/">Doctoral Training Centres</a>.
+Mario Antonioletti and Shoaib Sufi from the <a href="http://www.software.ac.uk/">Software Sustainability Institute</a> kindly did most of the instructing (I only ran two sessions), and Mario has already written <a href="http://www.software.ac.uk/blog/2013-05-15-oxford-doctoral-training-centre-gets-software-carpentry">a blog post with his perspective</a>.
+Here I want to report the feedback we received from attendees and give some of my thoughts on the experience.
+</p>
+<!-- end excerpt -->
+<p>
+It took a while for registrations to get going - the vast majority signed up in the last week - but we had very few drop-outs before the event, with 30 attending the first day, and 24 still present at the end of the second.
+We did the traditional good point-bad point round-the-room feedback at that point, and got quite a few useful comments, shown below.
+I also sent round a more detailed questionnaire after the event which received 10 responses.
+All enjoyed the boot camp, and rated it overall good or very good.
+They also all felt they learned something useful, would recommend such events to others, and think universities should run them as standard.
+</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lectures good - not too fast</td>
+<td>Issues getting pace correct for everyone</td>
+</tr>
+<tr>
+<td>Covered basics well and included advanced topics</td>
+<td>Some topics too easy</td>
+</tr>
+<tr>
+<td>Selection of topics covered</td>
+<td>Slightly too long on simple things in databases - more complex topics</td>
+</tr>
+<tr>
+<td>Python good solid foundation</td>
+<td>Intro Python too slow - too much basic programming</td>
+</tr>
+<tr>
+<td>Documentation for the topics good, so could read the material to catch up</td>
+<td>Version control too fast</td>
+</tr>
+<tr>
+<td>Lots of topics, didn't get bored</td>
+<td>Starting with version control - in at deep end - start simpler?</td>
+</tr>
+<tr>
+<td>Sticky notes good idea</td>
+<td>Version control not deep enough - need to explain concepts - what program actually does</td>
+</tr>
+<tr>
+<td>Tech support from helpers great</td>
+<td>Time management - wanted more Matlab</td>
+</tr>
+<tr>
+<td>Examples very practical - could think how to apply them to my work</td>
+<td>Include some theory behind Python - what important compared to other languages</td>
+</tr>
+<tr>
+<td>Access to all the materials from the start and afterwards</td>
+<td>Example used BitBucket but course materials on GitHub</td>
+</tr>
+<tr>
+<td>Having sample code, e.g. seeing how other people implement tests</td>
+<td>Databases needed more intro and context</td>
+</tr>
+<tr>
+<td>Exercises good to learn from</td>
+<td>Examples of big projects to explain the idea behind version control</td>
+</tr>
+<tr>
+<td>Good balance of trying it yourself and lecturing</td>
+<td>Using wrong programs on desktops - no cygwin</td>
+</tr>
+<tr>
+<td>Everyone could see the screens</td>
+<td>NumPy & SciPy not covered deeply enough</td>
+</tr>
+<tr>
+<td>Number of demonstrators good - didn't have to wait for help</td>
+<td>More comparison between Python and Matlab</td>
+</tr>
+<tr>
+<td>Generally very helpful</td>
+<td></td>
+</tr>
+<tr>
+<td>Awesome that this is free</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+I think we did pitch things generally at slightly too easy a level for our audience.
+This was particularly the case for the introductory Python session, which started quite slowly.
+Several responses to the questionnaire requested fewer topics but in more depth, with less time spent on the very basics.
+It was interesting to me that the students wanted more background to the topics taught, for instance comparing Python with other programming languages and discussing the kinds of problems for which it is particularly suited, or explaining the mental model and behind-the-scenes behaviour of Git.
+</p>
+
+<p>
+There were also some differences in what attendees wanted out of the boot camp.
+Some were particularly keen to learn Python, and they seemed to really appreciate what we covered.
+Others wanted more to improve their Matlab skills, and so were disappointed that the 'Software Carpentry in Matlab' session was squeezed by earlier sessions overrunning.
+I think they would probably have wanted a workshop devoted to covering the general principles entirely in Matlab without any Python, too.
+</p>
+
+<p>
+The location in the Zoology Department worked very well for a boot camp.
+It was a newly equipped suite designed for teaching computer based courses.
+There were thus desks with plenty of space for helpers to move behind attendees, and desktop thin clients for those who couldn't bring their own laptops (or had issues with their setup).
+Best of all, the instructor's screen could be projected on three walls of the room, so everyone could see a screen in front and to the side.
+</p>
+
+<p>
+Most setup issues were caused by Enthought releasing Canopy between the installation instructions being written and the boot camp occurring, so those attendees who didn't already have Python were faced with an installation that didn't match the instructions.
+The additional setup script for Windows users was also broken by paths changing.
+More annoying were some issues experienced with IPython on some machines, which we didn't get to the bottom of unfortunately.
+Pasting with <tt>%paste</tt> didn't work for some (<tt>%cpaste</tt> seemed to be an effective work-around), and tab completion was entirely absent on some systems.
+</p>
+
+<p>
+We came across a few issues (and some good ideas) that might be helpful for future boot camps to consider.
+</p>
+<ul>
+<li>Mario wrote 'recap slides' for the Git session, summarising where we had got to at different stages through the morning, and students found these helpful.</li>
+<li>Accessing BitBucket with Git led to SSL certificate issues on some machines. It's worth knowing the incantation to fix this if it happens to you (<tt>git config --global http.sslVerify 0</tt>).</li>
+<li>Students really found having all the material available at the start helpful.</li>
+<li>On that note, we should mention ipython's <tt>var.&lt;tab&gt;</tt> help system in the notes.</li>
+<li>In the testing session, we tried to get people to run Python scripts as commands by including a shebang line and setting the executable bit.  Lots of people had issues following along here, and it would probably be better to run with e.g. <tt>python dna.py</tt>.</li>
+<li>We tried to do a longer practical exercise after the NumPy session.  Much more time was needed for this!  But I still think such an exercise, that includes dealing with basic Python datatypes and functions, is very valuable.</li>
+<li>Importing CSV files into the database is quite hard to follow along with.  This is a general issue for any section that involves following button clicks and interactive dialogs.  We benefitted from having a pre-canned database in the repository for anyone who gets too lost.</li>
+<li>Another aspect that some found difficult to follow was long bits of typing that weren't essential to understanding, for instance typing HTML sample files for the version control session.</li>
+</ul>
+
+<p>
+There were a couple of other comments worth mentioning.
+One person wanted a topic on understanding pre-written code.
+Possibly going through a model solution to a longer exercise would be beneficial for this.
+Another person suggested splitting the workshop into half days on different topics, and letting attendees pick which they attend.
+I don't think this would work for normal boot camps, but with particular audiences, especially those with more background in some topics, this might be a helpful approach.
+</p>
+
+<p>
+But my favourite comment of all, in one questionnaire response, was:
+&quot;In my opinion the best aspect of the course was the explanations given about new concepts by the very competent computer scientists who ran the bootcamp. This was especially true for Jonathan and Aron.&quot;
+I think that's a good note on which to end!
+</p>
+

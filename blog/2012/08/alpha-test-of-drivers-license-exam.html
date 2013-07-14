@@ -1,0 +1,225 @@
+---
+layout: blog
+date: 2012-08-16
+time: 09:00:00
+author: wilson.g
+title: Alpha Test of Driver's License Exam
+category: [community, education]
+---
+<p>As <a href="{{page.root}}/blog/2012/06/a-supercomputing-drivers-license.html">we announced back in June</a>, we're working with the <a href="http://www.software.ac.uk/">Software Sustainability Institute</a> to create a "driver's license" exam for the <a href="http://www.stfc.ac.uk/Our+Research/24711.aspx">DiRAC</a> supercomputing facility. Mike Jackson at the SSI alpha tested our exam on four people last week; the exam itself, and his comments, are below. We would be <em>very</em> grateful for feedback from the community on the scope and level of the questions.</p>
+<h2>Exam</h2>
+<p>You have been given the URL of a version control repository, along with a username and a password for it. You have one hour to complete the following tasks. If at any point you would like clarification, please do not hesitate to ask. If at any point you are unable to complete a task, you may also ask for help so that you can proceed to the next task, but doing so will be considered equivalent to not completing that task.</p>
+<h3>Version Control</h3>
+<p>Check out a working copy of the version control repository. You will do all of your work in this working copy, and use version control to commit your solutions as you go.</p>
+<p><em>Solution:</em></p>
+<pre>svn checkout $URL</pre>
+<h3>Shell</h3>
+<p>Once you have a working copy, use the cd command to go into it. Use a single shell command to create a list of all files with names ending in .dat in or below this directory in a file called all-dat-files.txt.</p>
+<p><em>Solution:</em></p>
+<pre>find . -name '*.dat' -print &gt; all-dat-files.txt</pre>
+<h3>Make</h3>
+<p>The analyze.py program takes exactly two arguments: the name of its input file and the name of its output file, in that order. For example, if inputs/a.dat changes, running make will execute the command:</p>
+<pre>./analyze.py inputs/a.dat outputs/a.out</pre>
+<p>Edit the file Makefile in the root directory of the working copy so that if any .dat file in the inputs directory changes, the program analyze.py is run to create a file named .out in the outputs directory.</p>
+<p><em>Solution:</em></p>
+<pre>outputs/%.out : inputs/%.dat
+        ./analyze.py $&lt; $@</pre>
+<h3>Version Control</h3>
+<p>Commit your changes to Makefile to the version control repository.</p>
+<p><em>Solution:</em></p>
+<pre>svn commit -m "Building .out files for .dat files" Makefile</pre>
+<p>Note: examinees may use an editor instead of -m to provide a log comment.</p>
+<h3>Testing</h3>
+<p>The analyze.py program contains a function called running_total, which is supposed to calculate the total of each increasing sequence of numbers in a list:</p>
+<pre>running_total([1, 2, 1, 8, 9, 2])       == [3, 18, 2]
+running_total([1, 3, 4, 2, 5, 4, 6, 9]) == [8, 7, 19]</pre>
+<p>In the file test_analyze.py, write the four (4) unit tests that you think are most important to run to test this function. Do not test for cases of invalid input (i.e., inputs that are strings, lists of lists, or anything else that isn't a flat list of numbers).</p>
+<p><em>Solution:</em></p>
+<pre>def test_empty():
+    assert running_total([]) == []
+
+def test_equal():
+    assert running_total([1, 1]) == [1, 1]
+
+def test_negative():
+    assert running_total([1, 5, -5, -3]) == [6, -8]
+
+def test_float():
+    assert running_total([1.0, 5.0, 2.0]) == [6.0, 2.0]</pre>
+<p>Submit your work by committing your changes to version control.</p>
+<p><em>Solution:</em></p>
+<ul>
+<li>The test for [] must be in the set the examinee writes. The behavior is not explicitly stated in the spec, but is reasonable, and can be inferred from reading the source.</li>
+<li>The spec says 'increasing sequence', but neither of the examples has consecutive equal values, so the second test must be in the set the examinee writes as well.</li>
+<li>Examinees may write other tests than test_negative and test_float, so long as they are interesting and useful in the eyes of the assessor.</li>
+</ul>
+<h3>Numerical Programming (and Version Control)</h3>
+<p>Edit a file called answer.txt in the root directory of your working copy and write a brief explanation of one situation in which running_total would produce an incorrect answer. Submit your answer by committing the file answer.txt to version control.</p>
+<p><em>Solution:</em> running_total will produce the wrong answer if a sequence includes consecutive floating-point values with very small and very large magnitudes.</p>
+<p><em>and:</em></p>
+<pre>svn commit -m "Answer to numerical programming question" answer.txt</pre>
+<p>Note: While the examinee is working on previous questions, the examiner will edit answer.txt, and will check in changes so that the examinee must resolve a conflict before being able to commit.</p>
+<h3>Code Review</h3>
+<p>The program power2.py takes a single non-negative integer as a command line argument and produces the powers of two that total to that number. For example:</p>
+<pre>./power2.py 27</pre>
+<p>produces:</p>
+<pre>16
+8
+2
+1</pre>
+<p>Edit this program to improve its structure and readability <em>without</em> changing its behavior.</p>
+<p>The file test_power2.py has tests for power2.py. You can check that your changes have not changed power2.py's behaviour by running:</p>
+<pre>nosetests test_power2.py</pre>
+<p><em>Solution:</em> This one requires subjective judgment by the examiner, but the starting code is awful enough to leave lots of room for improvement.</p>
+<h3>Shell</h3>
+<p>Write a shell script called do-many.sh that runs power2.py for many different numbers. For example:</p>
+<pre>./do-many.sh 27 9 35</pre>
+<p>must produce:</p>
+<pre>16
+8
+2
+1
+8
+1
+32
+2
+1</pre>
+<p>as its output. You do not need to do error-checking on the command-line parameters, i.e., you may assume that they are all non-negative integers.</p>
+<p><em>Solution:</em></p>
+<pre>for number in $*
+do
+    ./power2.py $number
+done</pre>
+<hr />
+<h2>Feedback</h2>
+<h3>Introduction</h3>
+<p>A dry-run a test for a "driver's licence" for researchers wishing to use the DiRAC integrated supercomputing facility was done on Thursday 9th and Friday 10th August 2012. 4 participants (P1..4) took part. P1 and P2 are members of EPCC and have backgrounds in software development, HPC and project management. P1 is a DiRAC project leader. P3 and P4 are members of the SSI with backgrounds in software development. P3 could be viewed as equivalent to a "professor", P4 as a software development and sustainability consultant. It was expected that all 4 would be able to complete the test in an hour.</p>
+<p>Each participant was given 1 hour followed by up to 30 minutes for discussions on how they did, the nature of the test and suggestions as to how it could be improved.</p>
+<h3>Starting the Test</h3>
+<p>The participants logged into an account with all the tools available. The exam text and Subversion URL/username/password were in text files. Each participant had their own Subversion URL.</p>
+<p>After P2 and P3 did their check-out I committed an update to power2.py. I forgot to do this for P1.</p>
+<p>P4 didn't use Subversion due to account access issues so was given a ZIP file with the exam and source code.</p>
+<p>P1 and P2 asked if they could use the web/whether it was an "open book" test. I said it was since the test assesses working practices, not recall. P1-4 all used the web.</p>
+<h3>Version Control</h3>
+<p>P2,3 used Subversion without problems.</p>
+<p>P1 ran commit commands but forgot the add commands. They put this down to unfamiliarity with Subversion. P2 commented that they hadn't used Subversion for a long time but it was sufficiently straightforward.</p>
+<p>P1 asked if alternatives to Subversion would be offered to examinees e.g. Mercurial. I said Git would be offered. They also suggested CVS and warned that some won't know what version control or any of these tools are. P2 also said it would be better if there was a choice of tools.</p>
+<h3>Shell</h3>
+<p>Everyone completed this with no problem or comment.</p>
+<h3>Make</h3>
+<p>No-one managed the expected solution.</p>
+<p>P1-4 all did solutions for hard coded file paths. The wild-card was the problem. P3 had looked up the syntax, since they only ever use others' directory-based patterns, but it wasn't clear what to do.</p>
+<p>P1 and P4 assumed that once they'd implemented their target, a "make" with no file would call it to apply it to all the matching files. When shown that it had to be invoked as "make outputs/run1.out" P1 commented that they'd never seen make used that way before.</p>
+<p>P1 commented that Make is so complex that everyone knows it in a different way, and that it is a very hard tool to set questions on. P4 said they'd moved on from Make, it was a tool they'd come back and learn if/when needed but was too arcane to retain. P3 questioned whether it was reasonable to expect an HPC user to know this. They'd be more likely to modify Make files/targets than create from scratch.</p>
+<h3>Version Control</h3>
+<p>P1,2,3 all committed their updates to the repository with a commit message.</p>
+<h3>Testing</h3>
+<p>P1 asked whether examinees would know Python. I explained that C/C++, FORTRAN and MATLAB would also be offered. P2 said examinees should be able to choose their tools. P3 also said that examinees need to know the libraries and tools used.</p>
+<p>P1 commented that some examinees won't know what a "unit test" is.</p>
+<p>P1 had never written Python unit tests and asked if there was something like JUnit. I described how to run "nosetests". They admitted to searching the web a lot and also copying the test format from test_power2.py.</p>
+<p>P1 missed a test for [1,1] but argued that their test for [0] was a test for a non-increasing sequence.</p>
+<p>P2 asked whether "increasing" meant "strictly increasing". Related to this, P3 defined a test where [0,0,0,0,0] == [0]. This test fails, but P3 said if they had time they would then have investigated the failure.</p>
+<p>P2 wrote 7 tests including the 2 expected tests but as stand-alone asserts and not in functions, due to unfamiliarity with writing Python unit tests. They committed a version that had 4 of their tests, including the expected ones.</p>
+<p>P4 omitted the test for [].</p>
+<p>P3 commented that the nosetests doc wasn't useful but the code on Software Carpentry was.</p>
+<p>P3 ran into problems due to a typo ("sssert" not "assert") which took me a while to spot too though the tests included those expected.</p>
+<h3>Numerical Programming (and Version Control)</h3>
+<p>P1 answered "The case where you use real numbers rather than integer values." and elaborated that it would give a read error for any floating point number.</p>
+<p>P2 commented that this question has a different context from the others and that the heading "numerical programming" is a bit cryptic. They commented that the examples plus description of the previous question implies a focus on integers only. Examinees may be more likely to answer if it's explicitly stated that the function can handle floating point numbers. Similarly, P4 said it was "kind of a trick question".</p>
+<p>When informed of the answer, P3 did say they'd expect such accumulation errors.</p>
+<h3>Code Review</h3>
+<p>P1 made few changes e.g. added a header comment, added other meaningful comments, removed bit shifts, started to remove prints and reverse the range. When discussing the test, P1 listed numerous other refactorings e.g. changing variables (but they said that FORTRANers like/expect/traditionally use short variable names), removing the prints (but they argued that printing as you go is more optimal). P1 also said they wouldn't touch the loops as that's the compilers job.</p>
+<p>P1 felt the example was too "computer science-y" and most examinees won't be. They suggested an example based on linear algebra or a matrix vector multiply.</p>
+<p>P2 only added a redundant comment and removed the shift but not the associated comment, which was now incorrect. They felt it was not immediately obvious what to do and suggested quantifying the number of possible improvements to give examinees a goal to aim for. They get their "aha" moment only when seeing an example solution or having possible refactorings suggested. They commented that they most likely would have rewritten the function from scratch if the question proposed that as an option.</p>
+<p>P2 did not commit their updates to-date so did not encounter the conflict in the repository.</p>
+<p>P3 did not get to this question in time.</p>
+<p>P4 made changes such as renaming variables. Intended changes included separating logically-grouped code fragments; using function names as comments; adding more comments including a header comment on what it does, how it runs and what's expected (with the intent to add more on valid inputs); a code analysis to see if some code is irrelevant; adding a Subversion pragma; adding a debug mode.</p>
+<p>P4 commented that some examinees might optimise the code first and others clarify it, it would depend on the individual.</p>
+<h3>Shell</h3>
+<p>P2 wrote a shell script that worked but this had not been added to the repository.</p>
+<p>P1, 3 and 4 didn't do this as they were aiming to complete the test in an hour.</p>
+<p>P3 and P4 said they'd've done a loop, shift, while, $* or a web search.</p>
+<h3>Results</h3>
+<p>The marking criteria is:</p>
+<ul>
+<li>Pass: the researcher passes all the exercises, and comments (e.g. alternative ways of doing things, other issues to consider) are given.</li>
+<li>Pass with condition: the researcher fails an exercise but is given a pass subject to undertaking some training activity (e.g. working through an online Software Carpentry tutorial) or working with a DIRAC developer.</li>
+<li>Fail: the researcher fails more than one of the test exercises. They will be given pointers to online resources that would help them to pass the exercises they failed, names of individuals at their home institution who may be able to help or mentor them (or, generally, recommended to seek someone out) or advised to attend a Software Carpentry boot-camp.</li>
+</ul>
+<p>Under a strict interpretation all the participants Failed since they each failed more than one exercise:</p>
+<ul>
+<li>P1-4 failed Make since they did not derive the wild-card solution.</li>
+<li>P1 and P3 failed Testing since they did not provide a test for a strictly increasing sequence and [] respectively.</li>
+<li>P2-4 all failed to answer the Numerical Programming question.</li>
+<li>P1, 2, 4 all failed to write the final shell script.</li>
+</ul>
+<p>Being more lenient and taking into account that non-optimal solutions for Make were given, possible code refactorings were enumerated and that all participants understood solutions when given, this would be a Pass with condition for each.</p>
+<h3>General Comments</h3>
+<h4>On the Current Exam</h4>
+<p>P1 felt the test was too difficult because there were too many assumptions e.g. language, test framework and version control.</p>
+<p>P3 felt the test was difficult in the time available. P3 felt that if an examinee knows these things then they're fairly competent, but cautioned that if the examinees must get all the answers exactly right (e.g. for Make) then it would be very hard. P4 added that if the test was "closed book" then the number of passes would be very small.</p>
+<p>P3 and 4 felt the basic mix of shell, maintainable code, version control, build and test was good. P2 felt the test was quite well balanced.</p>
+<p>P2 and P4 felt that more detail in the questions would avoid blind alleys.</p>
+<h4>On the Concept of an Exam</h4>
+<p>P1 thought it would be useful as a self-assessment for (particularly early-stage) researchers to identify their training needs. P2-4 also thought it was a good idea in principle.</p>
+<h4>On Making the Exam a Pre-Requisite for DiRAC Access</h4>
+<p>P1's view was it would not be reasonable to expect someone to sit this before getting access due to the diversity of researchers in both their background and intended use. They commented that a lot of users would be package users and more concerned with how to submit jobs.</p>
+<p>P1 commented that the criteria should be are they doing good science, not how good/bad their code is and they would be very wary about making it a condition of access since there are already a number of hoops researchers must go through to get access (e.g. a detailed Technical Assessment).</p>
+<p>P1 also raised the question of what happens if a researcher has their Technical Assessment accepted but refuses to sit the test, or fails it and is denied access?</p>
+<p>P2-4 felt that it was reasonable to expect the test to be sat. P2 said it could annoy some people but if one decides that only skilled users can access a facility then there needs to be some way to ensure that. P3 and P4 agreed.</p>
+<p>P3 commented that if the users objective is research then they may not want to bother and that if what they do and how they do it works for them then they're only wasting their own time if they're inefficient.</p>
+<p>P3 and P4 felt the pass/conditional pass/fail marking scheme was harsh. P3 commented that attending a boot camp might not be enough e.g. P3 had attended a boot camp but the shell content was skipped and Make wasn't covered at all.</p>
+<p>P4 said that if DiRAC has capacity for everyone who ever may be given access then the barrier could be reduced. The barrier could be increased as more use DiRAC.</p>
+<p>P3 questioned whether those applying for access (e.g. a PI) would be the same as those who actually use it (e.g. an RA). They made the distinction between someone buying a car and someone actually driving it.</p>
+<h3>Suggestions for Revision</h3>
+<ul>
+<li>General
+<ul>
+<li>Explicitly state that the examinee can use the web, man pages etc.</li>
+</ul>
+</li>
+<li>Version Control
+<ul>
+<li>Allow use of CVS and Mercurial in addition to Subversion and Git.</li>
+</ul>
+</li>
+<li>Shell
+<ul>
+<li>Tell examinees to add their all-dat-files.txt file to the repository.</li>
+</ul>
+</li>
+<li>Make
+<ul>
+<li>Drop or provide an easier example.</li>
+<li>Provide an ANT alternative.</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>State that the sequence is "strictly increasing".</li>
+<li>Move to after Code review so examinees are familiar with the xUnit format and how to run tests in their chosen language.</li>
+<li>Provide them with a test function and the command-line invocation to compile/run tests.</li>
+</ul>
+</li>
+<li>Numerical Programming (and Version Control)
+<ul>
+<li>Drop.</li>
+</ul>
+</li>
+<li>Code Review
+<ul>
+<li>Quantify the number of possible refactorings e.g. "Improve this code in at least 3 ways".</li>
+<li>Provide a more "scientific" example.</li>
+</ul>
+</li>
+<li>Shell
+<ul>
+<li>Move this exercise before code review so it doesn't get dropped through lack of time.</li>
+</ul>
+</li>
+<li>Marking Criteria
+<ul>
+<li>Should consider responses given by examinee when discussing results with them as this could take a Fail to a Pass with condition to a Pass.</li>
+</ul>
+</li>
+</ul>

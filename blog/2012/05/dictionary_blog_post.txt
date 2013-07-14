@@ -1,0 +1,135 @@
+# import division so that we are using 'true' division
+from __future__ import division
+# import time so that we can clock how fast our functions run
+from time import time
+
+#------------------------------------------------------------
+
+# create an empty dictionary
+my_dict = dict()
+
+# add key : value pairs to the dictionary
+my_dict['a'] = 3
+my_dict['b'] = 4
+print my_dict
+# {'a': 3, 'b': 4}
+
+# examine if specific keys are contained in your dictionary
+print 'a' in my_dict
+# True
+print 'c' not in my_dict
+# True
+
+# return a value in the dictionary for a given key
+print my_dict['a']
+# 3
+print my_dict['b']
+# 4
+
+#------------------------------------------------------------
+
+def heap_prob(n, A, n0, A0):
+    """
+    Calculates the probability that n individuals are observed
+    given A, no, and A0 under the HEAP model
+    Equation 4.15 in Harte 2011
+    Inputs:
+      n: integer, number of individuals in sample
+      A: integer, area of the sample
+      n0: integer, number of individuals total in A0
+      A0: integer, the area of the area within which A is placed
+    Returns:
+      float, probability between 0 and 1
+    """
+    if A0 / A == 2:
+        return 1 / (n0 + 1)
+    else:
+        A = A * 2
+        prob_sum = 0 
+        for q in range(n, n0 + 1): 
+            prob_sum += heap_prob(q, A, n0, A0) / (q + 1)
+        return prob_sum
+
+#------------------------------------------------------------
+
+def heap_prob_dict(n, A, n0, A0, pdict={}):
+    """
+    Determines the HEAP probability for n given A, n0, and A0
+    Uses equation 4.15 in Harte 2011
+    Returns the probability that n individuals are observed in
+    a quadrat of area A
+    Note: this version uses a dictionary to speed computation
+    """
+    i = A0 / A
+    if (n, n0, i) not in pdict:
+        if i == 2:
+            pdict[(n, n0, i)] = 1 / (n0 + 1)
+        else:
+            A = A * 2
+            prob_sum = 0
+            for q in range(n, n0 + 1):
+                prob_sum += heap_prob_dict(q, A, n0, A0, pdict) / (q + 1)
+            pdict[(n, n0, i)] = prob_sum
+    return pdict[(n, n0, i)]
+
+#------------------------------------------------------------
+
+def time_trial(n, A, n0, A0):
+    results1 = [0, 0]
+    results2 = [0, 0]
+    start = time()
+    results1[0] = heap_prob(n, A, n0, A0)
+    end = time()
+    results1[1] = end - start
+    start = time()
+    results2[0] = heap_prob_dict(n, A, n0, A0)
+    end = time()
+    results2[1] = end - start
+    return [results1, results2]
+
+#------------------------------------------------------------
+
+test_time = time_trial(0, 1, 100, 2 ** 5)
+print test_time
+# [[0.437, 2.964], [0.437, 0.016]]
+print test_time[0][1] / test_time[1][1]
+# 185.252384216
+
+# Note that both functions returned the same probability: 0.437,
+# but that the dictionary function appears to be about 2.25
+# orders of magnitude faster than the naive approach.
+
+#------------------------------------------------------------
+
+# Let's vary the number of recursions and examine how the ratio
+# of the time trials vary
+
+time_ratio = [0] * 6
+for i in range(0,6):
+    time_test = time_trial(0, 1, 105, 2 ** (i+1))
+    if time_test[1][1] == 0:     
+        time_ratio[i] = 'Inf'
+    else:
+        time_ratio[i] = time_test[0][1] / time_test[1][1]
+
+print time_ratio    
+# ['Inf', 0.0, 0.667, 22.500, 508.431, 15542.385]
+
+# it appears that the first two trials where too fast to
+# meaningfully compare the two approaches, but notice how the
+# ratio increases exponentially as i increases.
+
+#------------------------------------------------------------
+
+# We'll use compute time_trial twice with the same input values
+# and examine the results of the second trial
+
+test_time1 = time_trial(0, 1, 100, 2 ** 5)
+test_time2 = time_trial(0, 1, 100, 2 ** 5)
+print test_time2
+# [[0.437, 2.792], [0.437, 0.0]]
+
+# So the naive approach resulted in approximately the same amount
+# of time but the dictionary based approach was essentially
+# instantaneous because the appropriate dictionary was already
+# in memory from the last call of time_trial.

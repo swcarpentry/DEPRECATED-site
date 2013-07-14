@@ -1,0 +1,372 @@
+---
+layout: blog
+date: 2012-08-14
+time: 09:00:00
+author: wilson.g
+title: A Question and Answer Matrix for Software Carpentry
+category: [content, education, versions/version-5-0]
+---
+<p>Following up on yesterday's post about <a href="{{page.root}}/blog/2012/08/applying-pedagogical-principles-in-this-course.html">applying educational principles</a> to this course, here's a not-yet-completed Q&amp;A matrix for this course. The section headings are questions people ask (or equivalently, tasks they want to perform). The headings underneath are the major topics Software Carpentry covers, and below each of those is my attempt to relate those topics to the questions. "TBD" means "I haven't written it yet", while "N/A" means "I can't think of any relationship." This matrix is going to be the basis of our next big reorganization of material (which should start this fall), so we would be <em>very</em> grateful for your input:</p>
+<ul>
+<li>What have we missed?</li>
+<li>What's in the wrong place?</li>
+<li>Most importantly, can we reframe our key questions to divide things up more usefully or more logically, and if so, how?</li>
+</ul>
+<p>Thanks for your help!</p>
+<ol>
+<li><a href="#Q01">Q01: How can I manage this data?</a></li>
+<li><a href="#Q02">Q02: How can I process it?</a></li>
+<li><a href="#Q03">Q03: How can I tell if I've processed it correctly?</a></li>
+<li><a href="#Q04">Q04: How can I find and fix bugs when I haven't?</a></li>
+<li><a href="#Q05">Q05: How can I keep track of what I've done?</a></li>
+<li><a href="#Q06">Q06: How can I find and use other people's work?</a></li>
+<li><a href="#Q07">Q07: How can other people find and use mine?</a></li>
+<li><a href="#Q08">Q08: How can I do all these things faster?</a></li>
+</ol>
+<p id="Q01"><strong>Q01: How can I manage this data?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>
+<ol>
+<li>Use directories and sub-directories with meaningful names.</li>
+<li>Use filenames that can easily be matched with wildcards.</li>
+<li>Use filename extensions that indicate the type of data in the file.</li>
+<li>Use text unless there's a powerful reason to use something else.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>
+<ol>
+<li>If it's megabytes or less, put it under version control.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>
+<ol>
+<li>Create and use data formats that are easy for programs to parse.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>
+<ol>
+<li>Store it in a relational database.</li>
+<li>Store each atom of information in its own field.</li>
+<li>Make sure each record has a unique key.</li>
+<li>Make sure that information is never duplicated.</li>
+<li>Use foreign keys and joins to combine information from different tables.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>
+<ol>
+<li>Represent it as a matrix, because that's easy to process.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>
+<ol>
+<li>Format it as HTML (or XML, or some other widely-used format).</li>
+<li>Separate content from presentation (e.g., use CSS for styling).</li>
+</ol>
+</dd>
+</dl>
+<p id="Q02"><strong>Q02: How can I process it?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+</dl>
+<ol>
+<li>Use Unix commands that manipulate lines of text.</li>
+<li>Combine those commands using pipes and redirection.</li>
+<li>Use loops to perform the same operations on many files.</li>
+</ol>
+<dl>
+<dd></dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>
+<ol>
+<li>Write programs that use loops, file I/O, and string splitting to read data.</li>
+<li>Use floating-point numbers unless you are sure all values (including calculated values) will always be integers.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>
+<ol>
+<li>Write SQL queries to select, filter, aggregate, and sort data.</li>
+<li>Use a general-purpose programming language for everything else.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>
+<ol>
+<li>Use a linear algebra package like NumPy.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>
+<ol>
+<li>Use the right data structures.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>
+<ol>
+<li>Use an HTTP library to fetch it.</li>
+<li>Use an XML or JSON library to parse it.</li>
+</ol>
+</dd>
+</dl>
+<p id="Q03"><strong>Q03: How can I tell if I've processed it correctly?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>
+<ol>
+<li>Test your programs with small data sets whose results can be checked by hand.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>
+<ol>
+<li>Build queries in small steps.</li>
+<li>Run queries against small data sets whose output can be checked manually.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>
+<ol>
+<li>Compare a program's output to analytic results, experimental results, simplified test cases, and previous programs.</li>
+<li>Use tolerances when comparing results.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>
+<ol>
+<li>Create simple data sets for which the right answer can be calculated by hand.</li>
+<li>Compare the results produced by the new program to results produced by older programs.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>
+<ol>
+<li>Make code testable by dividing it into functions, and then replacing some functions with others for testing purposes.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>N/A</dd>
+</dl>
+<p id="Q04"><strong>Q04: How can I find and fix bugs when I haven't?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>
+<ol>
+<li>Write test cases that fail when the bug is present, but pass when the bug is fixed.</li>
+<li>Add assertions to programs to check its internal consistency.</li>
+<li>Use a debugger.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>
+<ol>
+<li>Write tests.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>N/A</dd>
+</dl>
+<p id="Q05"><strong>Q05: How can I keep track of what I've done?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>
+<ol>
+<li>Keep your work under version control.</li>
+<li>Check in whenever you've completed a significant change.</li>
+<li>Write meaningful check-in comments.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>
+<ol>
+<li>Put version control IDs in programs (and data files), and copy them forward to results.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>
+<ol>
+<li>Store queries in files (just like programs).</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>
+<ol>
+<li>Turn bug fixes into assertions and test cases.</li>
+<li>Use a coverage analyzer to see what code is and isn't being tested.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>
+<ol>
+<li>Use <code>meta</code> headers in your HTML/XML data files.</li>
+</ol>
+</dd>
+</dl>
+<p id="Q06"><strong>Q06: How can I find and use other people's work?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>
+<ol>
+<li>Get it from their version control repositories.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>
+<ol>
+<li>Ask them to use well-formed URLs.</li>
+<li>And to format it according to well-defined machine-readable standards (e.g., XML or JSON).</li>
+</ol>
+</dd>
+</dl>
+<p id="Q07"><strong>Q07: How can other people find and use mine?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>
+<ol>
+<li>Put your work in a publicly-accessible version control repository.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>
+<ol>
+<li>Raise exceptions to signal errors so that other people can handle them as they think best.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>
+<ol>
+<li>Put it on the web at a stable URL.</li>
+<li>Format it according to well-defined machine-readable standards (e.g., XML or JSON).</li>
+<li>Include meta-data.</li>
+</ol>
+</dd>
+</dl>
+<p id="Q08"><strong>Q08: How can I do all these things faster?</strong></p>
+<dl>
+<dt><a href="{{page.root}}/book/shell.html#summary">The Shell</a></dt>
+<dd>
+<ol>
+<li>Put commands in shell scripts so that they can be re-used.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/svn.html#summary">Version Control</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/python.html#summary">Basic Programming</a></dt>
+<dd>
+<ol>
+<li>Use appropriate variable names so that people will waste less time trying to read programs.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/funclib.html#summary">Functions and Libraries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/db.html#summary">Databases</a></dt>
+<dd>N/A</dd>
+<dt><a href="{{page.root}}/book/numpy.html#summary">Number Crunching</a></dt>
+<dd>
+<ol>
+<li>Use a linear algebra package like NumPy.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/quality.html#summary">Quality</a></dt>
+<dd>
+<ol>
+<li>Design code for testing.</li>
+<li>Write test cases <em>before</em> writing new code.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/setdict.html#summary">Sets and Dictionaries</a></dt>
+<dd>TBD</dd>
+<dt><a href="{{page.root}}/book/dev.html#summary">Development</a></dt>
+<dd>
+<ol>
+<li>Use a profiler to figure out why code is slow before trying to optimize it.</li>
+<li>Build code so that parts can be replaced easily.</li>
+</ol>
+</dd>
+<dt><a href="{{page.root}}/book/web.html#summary">Web Programming</a></dt>
+<dd>N/A</dd>
+</dl>

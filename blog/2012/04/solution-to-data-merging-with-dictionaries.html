@@ -1,0 +1,60 @@
+---
+layout: blog
+date: 2012-04-12
+time: 09:00:00
+author: wilson.g
+title: Solution to Data Merging with Dictionaries
+category: [tutorial, versions/version-5-0]
+---
+<p>This week's tutorial problem was to merge the data from a set of input files to show how often different species were observed on different dates. The shell pipeline, Python code, and two sample input files follow the video.</p>
+
+{% assign video_title="Data Merging with Dictionaries" %}
+{% assign video_slug="S-dqlYWs4S0" %}
+{% assign video_time="00:09:18" %}
+{% include youtube.html %}
+
+<p><strong>shell command</strong></p>
+<pre>grep -h -v '#' *.txt | sort | uniq -c</pre>
+<p><strong>merge.py</strong></p>
+<pre>import sys
+
+# Read and merge data.
+results = {}
+filenames = sys.argv[1:]
+for f in filenames:
+    reader = file(f, 'r')
+    for line in reader:
+        if line.startswith('#'):
+            pass
+        else:
+            date, species = line.split()
+            key = (date, species)
+            if key not in results:
+                results[key] = 1
+            else:
+                results[key] += 1
+    reader.close()
+
+# Format output.
+all_combos = results.keys()
+all_combos.sort()
+for key in all_combos:
+    count = results[key]
+    print count, key[0], key[1]</pre>
+<p><strong>cousteau.txt</strong></p>
+<pre># Jacques Cousteau
+2012-03-27 marlin
+2012-03-29 tuna
+2012-03-29 tuna
+2012-03-29 turtle</pre>
+<p><strong>haddock.txt</strong></p>
+<pre># Steve Haddock
+2012-03-28 squid
+2012-03-28 marlin
+2012-03-28 marlin
+2012-03-29 eel
+2012-03-29 squid
+2012-03-29 turtle
+2012-03-29 turtle
+2012-03-30 squid
+2012-03-31 turtle</pre>

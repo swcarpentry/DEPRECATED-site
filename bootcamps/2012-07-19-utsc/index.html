@@ -1,0 +1,28 @@
+---
+layout: bootcamp_archived
+venue: University of Toronto (Scarborough)
+country: Canada
+humandate: July 19-20, 2012
+humantime: 9:00 am - 4:30 pm
+startdate: 2012-07-19
+enddate: 2012-07-20
+latlng: 43.7835514,-79.1863972
+registration: open
+instructor: ["Dhavide Aruliah", "Jonathan Dursi", "Greg Wilson"]
+---
+<p>Starting point for July 31 tutorial</p>
+<pre>import sys
+import urllib2
+
+url = "http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/CAN.CSV"
+source = urllib2.urlopen(url)
+data = source.read()
+source.close()
+print data</pre>
+<p><a href="https://etherpad.mozilla.org/swc-tutorial">Etherpad for this tutorial</a></p>
+<p><a href="https://wiki.scinethpc.ca/wiki/images/7/72/IntroToShell.pdf">Jonathan's slides on the shell</a></p>
+{% include bootcamps/what.html %}
+{% include bootcamps/who.html %}
+{% include bootcamps/requirements.html %}
+{% include bootcamps/python.html %}
+{% include bootcamps/contact.html %}

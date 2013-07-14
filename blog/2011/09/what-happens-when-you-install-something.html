@@ -1,0 +1,22 @@
+---
+layout: blog
+date: 2011-09-08
+time: 09:00:00
+author: wilson.g
+title: What Happens When You Install Something?
+category: [content]
+---
+<p>The most frustrating part of this course is always getting things set up on students' machines. (Yes, we could give them all a Linux VM with everything installed properly, but if they're going back to Windows or Mac OS when the course is over, that's what they want to learn on.) Setting up a development environment is often just as frustrating for professionals (it took many of us half a day to get <a href="https://github.com/p2pu/lernanta">Lernanta</a> running on our machines a few weeks ago), so I think we'd be doing Software Carpentry students a favor if we taught them what actually happens when you install software. Knowing that would help them debug things when they go wrong (and they <em>always</em> go wrong), and also help them understand why packaging their own work to share with others is as complicated as it is. My first cut at a syllabus for such a lecture is:</p>
+<ul>
+<li>how $PATH and variants work</li>
+<li>how file type associations work</li>
+<li>how .dll and .so files work</li>
+<li>what /etc, .rc, and the registry are</li>
+<li>and with that background in place, what needs to happen when something is installed</li>
+<li>but then there's the problem of versions and dependencies</li>
+<li>so talk about apt-get, easy_install, and other lookup-on-the-web installation tools</li>
+<li>and compare them to .exe-based installers on Windows and DMG-based installers on the Mac</li>
+<li>and to "build from source" on Linux and elsewhere</li>
+</ul>
+<p>I know that's a lot&mdash;probably three or four episodes of ten minutes each&mdash;but by the end, people should understand the kinds of things that can go wrong during an install, what version hell really is, and what they can do to make their own stuff more shareable.  I don't think we can get them as far as creating RPMs or Python eggs, but I'd be willing to be pleasantly surprised...<br />
+Thoughts?</p>

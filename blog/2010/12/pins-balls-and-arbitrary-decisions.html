@@ -1,0 +1,23 @@
+---
+layout: blog
+date: 2010-12-06
+time: 09:00:00
+author: wilson.g
+title: Pins, Balls, and Arbitrary Decisions
+category: [content]
+---
+<p>We'd like to include more extended examples like <a href="{{page.root}}/v4/invperc/">invasion percolation</a> in this course, but they're surprisingly hard to write.  One that seems simple at first is a <a href="http://en.wikipedia.org/wiki/Bean_machine">Galton box</a> simulator.  As the diagram below shows, this is simply a a vertical board with interleaved rows of pins.  Small balls are dropped in at the top, and bounce left and right as they hit pins until they land in the boxes at the bottom.  Since each bounce randomly goes left or right, the distribution of balls is binomial, which, in the limit, approximates a normal distribution.</p>
+<p><img src="galton-box.png" /></p>
+<p>At first glance, this should be pretty simple to code up.  Our objects are:</p>
+<ul>
+<li>a <em>world</em>, which is W wide and H high;</li>
+<li>two <em>walls</em> at X=0 and X=W;</li>
+<li>P <em>pins</em>, each of which has an XY location;</li>
+<li>B non-overlapping <em>bins</em>, each W/B wide; and</li>
+<li>N <em>balls</em>, each of which starts life at X=W/2 and Y=H (i.e., the middle of the top of the board.</li>
+</ul>
+<p>The physics is pretty simple too: balls fall under the force of gravity until they hit a wall, a pin, or a bin.  If they hit a wall or a pin, we calculate their new velocity using conservation of energy and a bit of trig.  If they hit a bin, we increment its counter so that we can see how closely our final result approximates a bell curve.</p>
+<p>In order to calculate a new trajectory for a ball, though, we need to know exactly where it struck the pin, which means we need to know its radius and the pin's radius as well as the locations of their centers.  We can simplify by making one or the other a point instead of a circle, but we obviously can't do that for both of them&mdash;the chances of any collisions at all would be pretty close to zero.</p>
+<p>The choice isn't symmetrical: if the ball has a radius, then it can rotate as a result of collision.  That will affect its trajectory because its rotation will dissipate energy, so it won't bounce as vigorously.  Point masses <em>should</em> give the same distribution as real balls, but there's another trap waiting for us.  Think about what happens when we drop a ball vertically on the top center pin.  Its velocity when it hits is (0, v<sub>y</sub>), so if the coefficient of elasticity is <em>E</em>, its post-bounce velocity is (0, Ev<sub>y</sub>), so it goes uuuuuuup, and comes back dooooown, and bounces with velocity (0, E<sup>2</sup>v<sub>y</sub>) and goes up, and comes down, and on and on.  Barring numerical catastrophe, it never hits any other pins at all: after a few iterations, it's just vibrating infinitesimally in the Y axis on the top edge of the first pin.</p>
+<p>We can "fix" this by introducing balls with some initial X velocity, but how much should they have?  Alternatively, we could randomize bounces a little bit, but how?  Do we calculate a post-bounce angle and perturb it by a small random amount?  Or jitter the X and Y post-bounce energies?  Or something else equally artificial?  And no matter what we choose, how can we turn around after throwing together half a dozen arbitrary decisions and say that this is "simulating" anything?</p>
+<p>There are days when I really miss the Game of Life...</p>

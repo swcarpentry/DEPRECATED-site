@@ -1,0 +1,20 @@
+---
+layout: blog
+date: 2009-08-23
+time: 09:00:00
+author: wilson.g
+title: The Delight Is In The Details, Too
+category: [content, versions/version-4]
+---
+<p>They say the devil is in the details, but so's the delight, because it's the details that determine whether something works or doesn't. So let's take a look at how to translate the last post's "<a href="{{page.root}}/blog/2009/08/the-big-picture.html">big picture</a>" into actual course content.</p>
+<p>Every competent developer uses some kind of tool to automate tasks that involve dependencies. The best known is still <a href="http://www.gnu.org/software/make/">Make</a>, which compares the last-modified-times on files to see which ones are stale, and runs shell commands to bring them up to date. <a href="http://ant.apache.org/">Ant</a>, <a href="http://rake.rubyforge.org/">Rake</a>, and whatever's built into your IDE all work basically the same way, and can all be used (with greater or less ease) to recompile software, re-run tests, prepare distributions, update web sites, and what have you.</p>
+<p>Dependency managers are an example of the kind of tool scientists are willing to spend an hour learning (more if they're working with C++ or Java, less if they're working with a scripting language). Understanding how they work, though, requires at least some familiarity with:</p>
+<ul>
+<li>automation (obviously)</li>
+<li>declarative programming (the user declares the "what", the computer figures out the "how")</li>
+<li>graphs (which is how these tools figure out what order to do things in)</li>
+<li>queries (since rules are often best expressed using pattern matching)</li>
+<li>programs as data (since dependency managers are programs that run other programs)</li>
+</ul>
+<p>So, can we use Make to teach these concepts? Or teach these concepts using Make as an example? I thought so back in 2003 when I put together the first version of "CSC207: Software Design" for the University of Toronto. In their first two programming exercises, students worked with graphs and wrote simple text parsers using regular expressions. They then had to put the two together to create a very (very) simple version of Make.</p>
+<p>I thought it worked well, but over the years the exercises were cut back until eventually this one disappeared entirely. There was just too much material in the course, and the various bits weren't connected strongly enough. While it might work in theory, it didn't in practice, and would probably fare even less well if crammed into two days of an intensive two-week course. It's still a good example of how I'd like to tie the practical and conceptual parts of the course together, though; the trick is finding a way to make it work.</p>

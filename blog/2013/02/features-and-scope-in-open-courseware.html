@@ -1,0 +1,42 @@
+---
+layout: blog
+author: wilson.g
+title: Features and Scope in Open Courseware
+date: 2013-02-03
+time: 10:00:00
+category: [opinion]
+---
+
+<p>A couple of weeks ago, Brian Granger (one of the core developers of IPython) posted some thoughts on <a href="http://brianegranger.com/?p=249">features and scope in open source software</a>.  In it, he enumerates some of the risks associated with constantly adding new features to a piece of software (open source or otherwise):</p>
+
+<ol>
+  <li>Additional complexity in the code base (which makes future work more difficult).</li>
+  <li>Increased "surface area" for bugs (the more features there are, the more places a bug might be lurking).</li>
+  <li>Increased documentation and support time.</li>
+  <li>It forces developers to specialize, which makes "big picture" thinking harder.</li>
+  <li>Increased testing effort.</li>
+  <li>A more complex user experience.  (Microsoft Word, anyone?)</li>
+  <li>Opportunity costs: time spent working on X is time <em>not</em> spent working on Y.</li>
+</ol>
+
+<p>He then enumerates some things projects can do to throttle growth down to manageable levels:</p>
+
+<ol>
+  <li>Explicitly list things that are <em>not</em> going to be implemented, i.e., define a limited scope for the project.</li>
+  <li>Make features fight hard to be accepted and implemented by telling the community that the default answer is "no".</li>
+  <li>Separate feature requests from other issues.</li>
+  <li>Discuss costs and liabilities as well as benefits whenever a new feature is proposed.</li>
+  <li>Be willing to remove things.</li>
+</ol>
+
+<p>He also lists some questions projects can ask:</p>
+
+<ol>
+  <li>What fraction of your user base will use the feature, and how often?</li>
+  <li>Can it be added as a plugin?</li>
+  <li>How difficult will it be to test, debug, document, and maintain the feature, and what fraction of your development team is capable or interested in doing this work?</li>
+  <li>Can you implement the functionality in a more limited, but much simpler manner?</li>
+</ol>
+
+<p>Everything Brian says applies directly to open courseware like Software Carpentry.  People constantly suggest new topics that could be added to <a href="{{page.root}}/v4/index.html">our material</a>, but few of them say, "...and I'll write it," and more often than not, the topics are things that would interest only a fraction of scientists.  We have therefore been cutting back on material rather than expanding it: as useful as Make, object-oriented programming, image manipulation, and disciplined use of spreadsheets are, they just aren't useful <em>enough</em> to justify expenditure of our scarcest resource&mdash;time.</p>
+

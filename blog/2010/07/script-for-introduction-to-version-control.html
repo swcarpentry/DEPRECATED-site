@@ -1,0 +1,59 @@
+---
+layout: blog
+date: 2010-07-19
+time: 09:00:00
+author: wilson.g
+title: Script for Introduction to Version Control
+category: [lectures, versions/version-4]
+---
+<p>While I'm waiting for artwork, I'd be grateful for feedback on the script for the introductory episode on version control.</p>
+<ol>
+<li>Hello, and welcome to the first episode of the Software Carpentry lecture on version control.  In this episode, we will explain what version control is, how it works, and why you should use it.</li>
+<li>Suppose you and a friend are working together on a paper.</li>
+<li>You both want to edit the file at the same time&mdash;what should you do?</li>
+<li>You <em>could</em> take turns, but then each of you would spend have the time waiting for the other.</li>
+<li>Another option would be to go ahead and work simultaneously, then patch things up afterward.</li>
+<li>But somehow, stuff always winds up getting lost, overwitten, or duplicated.</li>
+<li>The right solution is to use a <em>version control system</em>.</li>
+<li>This keeps the master copy of the file in a central <em>repository</em>, usually located on a <em>server</em>&mdash;a computer that is never used directly by people, but only by the applications serving them.</li>
+<li>No-one ever edits the master copy directly.</li>
+<li>Instead, you and your friend each have a <em>working copy</em> on your own computers.</li>
+<li>You work independently, making whatever changes you want to your local copies.</li>
+<li>As soon you are ready to share your changes, you <em>commit</em> your changes to the repository.</li>
+<li>Your friend can then <em>update</em> her working copy to get those changes.</li>
+<li>And of course, if your friend finishes her part first, she can commit, and then you can update.</li>
+<li>But what if you and your friend want to make changes to the same part of the paper?</li>
+<li>Old-fashioned version control systems prevented this from happening by <em>locking</em> the master copy.  Everyone's working copy would normally be read-only.  When someone wanted to start work on a file, the version control system would make her copy of that file writeable.  When she was finished work, the version control system would copy her changes to the repository, then mark her copy as read-only once again.</li>
+<li>Only one person at a time could have a writeable copy.  This guaranteed that two or more people could never accidentally make changes to the same file at the same time...</li>
+<li>...but it also meant that only person at a time could work on any given file.</li>
+<li>This is essentially the "one at a time" strategy from the start of this episode, but with the version control system acting as the referee to prevent accidents.</li>
+<li>In practice, locking like this isn't as restrictive as it sounds.  If you and your friend repeatedly find that you're trying to edit the same file, the solution is to break your paper (or your program) into several smaller files, so that you can work simultaneously.</li>
+<li>However, most of today's version control systems use a different strategy, one based on the old saying that it's easier to get forgiveness than permission.  In these systems, nothing is ever locked&mdash;everyone is always allowed to edit the files in their working copy.</li>
+<li>Sometimes, of course, you and your friend will make changes to the same part of the paper.</li>
+<li>If your friend updates first first, her changes go into the repository as usual.</li>
+<li>If you try to commit something that would overwrite her changes, the version control system will stop you...</li>
+<li>...and highlight the <em>conflict</em> by marking the overlapping regions in your working copy.</li>
+<li>It's up to you to edit the file to <em>resolve</em> the conflict.  You can keep your changes, accept your friend's, or write something new that combines the two&mdash;it's up to you.</li>
+<li>Once you have fixed things, you can go ahead and commit.</li>
+<li>Experience shows that version control is better than mailing files back and forth for at least three reasons.  First, it's hard (but not impossible) to accidentally overlook or overwrite someone's changes&mdash;the version control system highlights them for you automatically.</li>
+<li>Second, there are no arguments about whose copy is the most up to date&mdash;the master copy is.</li>
+<li>These features mean that version control is worth using even when you're the only person working on a particular set of files.</li>
+<li>Because it's a more reliable way to move files around between the computers you use than copying things onto a USB or sending email to yourself.</li>
+<li>More importantly, whether you're working on your own or in a group, version control allows you to look at or undo changes what you did weeks, months, or years ago.</li>
+<li>This works because the version control system never actually overwrites the master copy in the repository.</li>
+<li>Instead, everyone time someone commits a new version, the system saves it on top of the previous master copy, along with some information about when the change was made and who made it.</li>
+<li>This means that you can always see what the file looked like last week before someone rewrote the analysis section while you were on holiday.</li>
+<li>It also means that you can always fetch old versions of things, like the exact version of the program you used to produce the graph on page 5 of that paper that someone is now challenging.</li>
+<li>Version control systems do have one important shortcoming, though.  If you are working with plain text files, it's easy for the version control system to find and display differences, and to help you merge them.</li>
+<li>Unfortunately, today's version control systems won't do this for images, MP3s, PDFs, and Microsoft Word or Excel files.  These aren't stored as text&mdash;they use specialized binary data formats, and there usually aren't tools for finding, displaying, or merging the differences between them.  In most cases, all the version system can do is say, "These files are different."  That's better than nothing, but not by much.</li>
+<li>Even with this limitation, version control is probably the most important concept in this entire course.  It's not just because it facilitates sharing; version control also allows you to look at or undo changes what you did weeks, months, or years ago.</li>
+<li>We'll talk more about using version control to make your research <em>reproducible</em> in a later lecture.  In the next episode of this one, we'll look at the most popular open source version control system in use today, called Subversion.</li>
+</ol>
+<p>The four episodes after this introduction will cover:</p>
+<ol>
+<li>the basic update/edit/commit cycle,</li>
+<li>merging conflicts,</li>
+<li>setting up a repository, and</li>
+<li>reverting to old versions of files.</li>
+</ol>
+<p>Of these, #3 is the hardest, since we are <em>not</em> assuming people know how to use a shell or set up public/private keys. Not sure how to handle that yet; advice would be welcome.</p>

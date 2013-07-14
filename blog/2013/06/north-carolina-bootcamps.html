@@ -1,0 +1,134 @@
+---
+layout: blog
+author: morris.b
+title: North Carolina Bootcamps
+date: 2013-06-09
+time: 09:00:00
+category: [boot-camp, venues/duke-university, venues/nescent]
+---
+<!-- start excerpt -->
+<p>
+Last month, we held two Software Carpentry workshops back-to-back in Durham, 
+North Carolina, one at the National Evolutionary Synthesis Center and a second 
+organized by Cliburn Chan for the biostats group at Duke just three days later. 
+These workshops were taught by Jenny Bryan, Elliott Hauser, and myself with 
+Karen Cranston teaching as well at NESCent. The workshops were both somewhat 
+atypical: NESCent was a smaller workshop (only 11 participants) who work 
+together and share an interest in evolutionary biology, and at both NESCent and 
+Duke we presented in R rather than Python. Overall, both workshops were very 
+successful, and I learned a lot, both about R and teaching a Software Carpentry 
+workshop.
+</p>
+<!-- end excerpt -->
+<p>
+In addition to substituting R for Python, we altered the schedule from what I've 
+seen in previous workshops, teaching R for the entire first day and everything 
+else (shell, git, and Make) on day two. While this meant that Jenny had to 
+present the entire day on day one, her material and instruction style easily 
+held everyone's interest for the whole day. Jenny went at a good pace, moving 
+from basic language essentials and how to interact with RStudio to more complex 
+topics such as data aggregation using the plyr package and producing literate 
+documents using knitr. The R sections, particularly the use of plyr, were 
+consistent crowd favorites. I think the way we rearranged the schedule worked 
+out very well&mdash;we avoided confusion by not switching between environments, and 
+using only RStudio on day one allowed us to avoid installation issues. Anyone 
+who had had trouble installing the prerequisites either stayed after on day one 
+or came early on day two for help. We ended up with no setup issues at NESCent 
+and a fair number at Duke (possibly due to inadequate instructions on our boot 
+camp page) but they were easily handled.
+</p>
+<p>
+We were able, perhaps serendipitously, to present our material in a logically 
+cohesive way that kept students engaged. Instead of every instructor bringing 
+their own material, we used the same files for all sections. The code we wrote 
+during day one was placed under version control on day two, and we wrote a 
+Makefile together to automate our data analysis pipeline and produce an HTML 
+document with code and figures. At NESCent, this wasn't planned ahead of time; I 
+noticed that Jenny had designed her scripts in such a way that they were great 
+candidates to incorporate into my Make tutorial, and so together we wrote one. 
+There was clear interest in Make, so we built on this idea and replicated it at 
+Duke with more preparation.
+</p>
+<p>
+The number of people attending the NESCent workshop was low, which was in some
+ways both a pro and a con. On the plus side, we were able to pay more individual
+attention and Karen led a discussion on data management that was highly relevant 
+to those attending. However, we seemed to run out of steam during the afternoon 
+on day two, where we had planned to address whatever topics participants felt 
+would be helpful but found a lack of enthusiastic suggestions. We corrected this 
+at Duke by being prepared for a more structured presentation. We also found for 
+both the shell and version control sections that our presentation needed to cater 
+to specific tasks that a researcher just learning these skills would use and 
+avoid more complicated topics such as forking and pull requests.
+</p>
+<p>
+Teaching two workshops back-to-back gave us a chance to refine our approach and
+materials, and Jenny is looking into how best to incorporate the materials we
+designed into Software Carpentry for future R workshops to utilize.
+</p>
+<p><strong>NESCent feedback</strong></p>
+<table>
+  <tr>
+    <td width="50%"><strong>Favorite things</strong></td>
+    <td width="50%"><strong>Suggested improvements</strong></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li>R stuff (+1)</li>
+        <li>learned to appreciate the power of version control</li>
+        <li>plyr (+1)</li>
+        <li>bash (+1)</li>
+        <li>git and github (+1)</li>
+        <li>RStudio</li>
+        <li>Make</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li>more structure during the second day</li>
+        <li>more visuals, especially for git</li>
+        <li>more about Make</li>
+        <li>more applied statistics during R portion</li>
+        <li>wanted to learn text manipulation</li>
+        <li>small exercises, esp. during R portion</li>
+        <li>more focus on the tools and their capabilities, e.g. RStudio</li>
+        <li>hard to follow git in such a short period of time</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<p><strong>Duke feedback</strong></p>
+<table>
+  <tr>
+    <td width="50%"><strong>Favorite things</strong></td>
+    <td width="50%"><strong>Suggested improvements</strong></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li>R stuff (+3)</li>
+        <li>Git (+3)</li>
+        <li>shell</li>
+        <li>RStudio (+1)</li>
+        <li>instructors and instruction style (+4)</li>
+        <li>plyr</li>
+        <li>make (+2)</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li>shell section was too basic</li>
+        <li>would've liked us to "clean up" a real life, dirty dataset</li>
+        <li>2 days is too short</li>
+        <li>more lattice, less R base</li>
+        <li>more on knitr</li>
+        <li>would've liked to see computing on amazon ec2</li>
+        <li>provide your slides before you present them</li>
+        <li>goal of shell section was unclear</li>
+        <li>slow down on day 1, more time to play with RStudio</li>
+        <li>would've appreciated cheat sheet for shell commands</li>
+      </ul>
+    </td>
+  </tr>
+</table>

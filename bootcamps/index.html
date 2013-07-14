@@ -1,0 +1,95 @@
+---
+layout: bootcamp_index
+root: ..
+title: Boot Camps
+---
+<section id="about">
+  <p>
+    A boot camp is an in-person, example-driven workshop,
+    typically two or three days long.
+    A boot camp covers the core skills needed to be productive in a small research team:
+    basic programming skills, version control, testing, using the shell, and relational databases.
+  </p>
+
+  <p>
+    Short tutorials alternate with hands-on practical exercises,
+    and participants are encouraged both to help one another
+    and to try applying what they have learned to their own research problems during and between sessions.
+    Participants usually work on their own computers (typically laptops)
+    using either native software or a standard set of packages running in a virtual machine.
+    This ensures that they have a working environment when the boot camp is done.
+  </p>
+
+  <ul>
+    <li>Want to know more? See our <a href="{{page.root}}/faq.html">FAQ</a>.</li>
+    <li>Want to run one?  See our <a href="{{page.root}}/operations.html">operations guide</a>.</li>
+    <li>Want us to teach one where you are?  Please <a href="mailto:{{site.contact}}">email us</a>.</li>
+  </ul>
+
+  <p>
+    <em>
+      All boot camp participants are expected to abide by our <a href="conduct.html">code of conduct</a>
+      to ensure that all attendees to have an enjoyable and fulfilling experience.
+  </em>
+  </p>
+</section>
+
+<div class="bootcamps">
+  <h2 id="future">Future Boot Camps</h2>
+  <table class="table table-striped bootcamps">
+    {% for bootcamp in site.bootcamps %}
+      {% if bootcamp.startdate >= site.today %}
+        <tr>
+          <td><img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
+          <td class="link"><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.venue}}</a></td>
+          <td class="registration">
+            {% if bootcamp.registration %}{{bootcamp.registration}}{% endif %}
+          </td>
+          <td class="date">{{bootcamp.humandate}}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+
+  <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto;"></div>
+  <div style="margin-bottom: 20px;">
+    <p>
+      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|69FE86" />
+      open
+      |
+      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|FEFE69" />
+      full
+      |
+      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|6975FE" />
+      restricted
+      |
+      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|FE7569" />
+      past
+    </p>
+  </div>
+
+  <div id="calendar">
+    <iframe src="https://www.google.com/calendar/embed?title=Boot%20Camps&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=efjc2eea4qegtctcrg6kc0nrba9i0rbg%40import.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York"
+            style=" border-width:0 "
+            width="98%"
+            height="500"
+            frameborder="0"
+            scrolling="no"></iframe>
+    <p style="text-align: right; margin-top: -12px;margin-bottom: -12px;">
+      <a class="label swc-blue-bg" style="margin-right: 10px;" href="http://software-carpentry.org/bootcamps.ics">Calendar Feed</a>
+    </p>
+  </div>
+
+  <h2 id="past">Past Boot Camps</h2>
+  <table class="table table-striped bootcamps">
+    {% for bootcamp in site.bootcamps reversed %}
+      {% if bootcamp.startdate < site.today %}
+        <tr>
+          <td><img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
+          <td class="link"><a href="{{page.root}}{{bootcamp.path}}">{{bootcamp.venue}}</a></td>
+          <td class="date">{{bootcamp.humandate}}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>

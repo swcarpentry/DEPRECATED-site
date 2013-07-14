@@ -1,0 +1,623 @@
+---
+layout: blog
+author: wilson.g
+title: Key Points
+date: 2012-10-23
+time: 10:00:00
+category: [content, versions/version-5-0]
+---
+
+<p>On the flight back from Vancouver yesterday, I finally did what I should have done eight months ago and compiled the key points from our core lesson content. The results are presented below, broken down by lesson and topic; going forward, we're going to use something like this as a basis for defining what Software Carpentry is, and what workshop attendees can expect to learn.</p>
+
+<h2>The Shell</h2>
+<h3>What and Why</h3>
+<ul>
+        <li>The shell is a program whose primary purpose is to read commands, run programs, and display results.</li>
+</ul>
+<h3>Files and Directories</h3>
+<ul>
+        <li>The file system is responsible for managing information on disk.</li>
+        <li>Information is stored in files, which are stored in directories (folders).</li>
+        <li>Directories can also store other directories, which forms a directory tree.</li>
+        <li><code>/</code> on its own is the root directory of the whole filesystem.</li>
+        <li>A relative path specifies a location starting from the current location.</li>
+        <li>An absolute path specifies a location from the root of the filesystem.</li>
+        <li>Directory names in a path are separated with '/' on Unix, but '\' on Windows.</li>
+        <li>'..' means "the directory above the current one"; '.' on its own means "the current directory".</li>
+        <li>Most files' names are <code>something.extension</code>; the extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file.</li>
+        <li><code>cd <em>path</em></code> changes the current working directory.</li>
+        <li><code>ls <em>path</em></code> prints a listing of a specific file or directory; <code>ls</code> on its own lists the current working directory.</li>
+        <li><code>pwd</code> prints the user's current working directory (current default location in the filesystem).</li>
+        <li><code>whoami</code> shows the user's current identity.</li>
+        <li>Most commands take options (flags) which begin with a '-'.</li>
+</ul>
+<h3>Creating Things</h3>
+<ul>
+        <li>Unix documentation uses '^A' to mean "control-A".</li>
+        <li>The shell does <em>not</em> have a trash bin: once something is deleted, it's really gone.</li>
+        <li><code>mkdir <em>path</em></code> creates a new directory.</li>
+        <li><code>cp <em>old</em> <em>new</em></code> copies a file.</li>
+        <li><code>mv <em>old</em> <em>new</em></code> moves (renames) a file or directory.</li>
+        <li><code>nano</code> is a very simple text editor&mdash;please use something else for real work.</li>
+        <li><code>rm <em>path</em></code> removes (deletes) a file.</li>
+        <li><code>rmdir <em>path</em></code> removes (deletes) an empty directory.</li>
+</ul>
+<h3>Pipes and Filters</h3>
+<ul>
+        <li>'*' is a wildcard pattern that matches zero or more characters in a pathname.</li>
+        <li>'?' is a wildcard pattern that matches any single character.</li>
+        <li>The shell matches wildcards before running commands.</li>
+        <li><code><em>command</em> &gt; <em>file</em></code> redirects a command's output to a file.</li>
+        <li><code><em>first</em> | <em>second</em></code> is a pipeline: the output of the first command is used as the input to the second.</li>
+        <li>The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).</li>
+        <li><code>cat</code> displays the contents of its inputs.</li>
+        <li><code>head</code> displays the first few lines of its input.</li>
+        <li><code>sort</code> sorts its inputs.</li>
+        <li><code>tail</code> displays the last few lines of its input.</li>
+        <li><code>wc</code> counts lines, words, and characters in its inputs.</li>
+</ul>
+<h3>Loops</h3>
+<ul>
+        <li>Use a <code>for</code> loop to repeat commands once for every thing in a list.</li>
+        <li>Every <code>for</code> loop needs a variable to refer to the current "thing".</li>
+        <li>Use <code>$<em>name</em></code> to expand a variable (i.e., get its value).</li>
+        <li>Do not use spaces, quotes, or wildcard characters such as '*' or '?' in filenames, as it complicates variable expansion.</li>
+        <li>Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.</li>
+        <li>Use the up-arrow key to scroll up through previous commands to edit and repeat them.</li>
+        <li>Use <code>history</code> to display recent commands, and <code>!<em>number</em></code> to repeat a command by number.</li>
+        <li>Use ^C (control-C) to terminate a running command.</li>
+</ul>
+<h3>Shell Scripts</h3>
+<ul>
+        <li>Save commands in files (usually called shell scripts) for re-use.</li>
+        <li>Use <code>bash <em>filename</em></code> to run saved commands.</li>
+        <li><code>$*</code> refers to all of a shell script's command-line arguments.</li>
+        <li><code>$1</code>, <code>$2</code>, etc., refer to specified command-line arguments.</li>
+        <li>Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.</li>
+</ul>
+<h3>Finding Things</h3>
+<ul>
+        <li>Everything is stored as bytes, but the bytes in binary files do not represent characters.</li>
+        <li>Use nested loops to run commands for every combination of two lists of things.</li>
+        <li>Use '\' to break one logical line into several physical lines.</li>
+        <li>Use parentheses '()' to keep things combined.</li>
+        <li>Use <code>$(<em>command</em>)</code> to insert a command's output in place.</li>
+        <li><code>find</code> finds files with specific properties that match patterns.</li>
+        <li><code>grep</code> selects lines in files that match patterns.</li>
+        <li><code>man <em>command</em></code> displays the manual page for a given command.</li>
+</ul>
+<h2>Version Control with Subversion</h2>
+<ul>
+        <li>Version control is a better way to manage shared files than email or shared folders.</li>
+        <li>The master copy is stored in a repository.</li>
+        <li>Nobody ever edits the master directory: instead, each person edits a local working copy.</li>
+        <li>People share changes by committing them to the master or updating their local copy from the master.</li>
+        <li>The version control system prevents people from overwriting each other's work by forcing them to merge concurrent changes before committing.</li>
+        <li>It also keeps a complete history of changes made to the master so that old versions can be recovered reliably.</li>
+        <li>Version control systems work best with text files, but can also handle binary files such as images and Word documents.</li>
+</ul>
+<h3>Basic Use</h3>
+<ul>
+        <li>Every repository is identified by a URL.</li>
+        <li>Working copies of different repositories may not overlap.</li>
+        <li>Each changed to the master copy is identified by a unique revision number.</li>
+        <li>Revisions identify snapshots of the entire repository, not changes to individual files.</li>
+        <li>Each change should be commented to make the history more readable.</li>
+        <li>Commits are transactions: either all changes are successfully committed, or none are.</li>
+        <li>The basic workflow for version control is update-change-commit.</li>
+        <li><code>svn add <em>things</em></code> tells Subversion to start managing particular files or directories.</li>
+        <li><code>svn checkout <em>url</em></code> checks out a working copy of a repository.</li>
+        <li><code>svn commit -m "<em>message</em>" <em>things</em></code> sends changes to the repository.</li>
+        <li><code>svn diff</code> compares the current state of a working copy to the state after the most recent update.</li>
+        <li><code>svn diff -r HEAD</code> compares the current state of a working copy to the state of the master copy.</li>
+        <li><code>svn history</code> shows the history of a working copy.</li>
+        <li><code>svn status</code> shows the status of a working copy.</li>
+        <li><code>svn update</code> updates a working copy from the repository.</li>
+</ul>
+<h3>Merging Conflicts</h3>
+<ul>
+        <li>Conflicts must be resolved before a commit can be completed.</li>
+        <li>Subversion puts markers in text files to show regions of conflict.</li>
+        <li>For each conflicted file, Subversion creates auxiliary files containing the common parent, the master version, and the local version.</li>
+        <li><code>svn resolve <em>files</em></code> tells Subversion that conflicts have been resolved.</li>
+</ul>
+<h3>Recovering Old Versions</h3>
+<ul>
+        <li>Old versions of files can be recovered by merging their old state with their current state.</li>
+        <li>Recovering an old version of a file does not erase the intervening changes.</li>
+        <li>Use branches to support parallel independent development.</li>
+        <li><code>svn merge</code> merges two revisions of a file.</li>
+        <li><code>svn revert</code> undoes local changes to files.</li>
+</ul>
+<h3>Setting up a Repository</h3>
+<ul>
+        <li>Repositories can be hosted locally, on local (departmental) servers, on hosting services, or on their owners' own domains.</li>
+        <li><code>svnadmin create <em>name</em></code> creates a new repository.</li>
+</ul>
+<h3>Provenance</h3>
+<ul>
+        <li><code>$Keyword:$</code> in a file can be filled in with a property value each time the file is committed.</li>
+        <li>Put version numbers in programs' output to establish provenance for data.</li>
+        <li><code>svn propset svn:keywords <em>property</em> <em>files</em></code> tells Subversion to start filling in property values.</li>
+</ul>
+<h2>Basic Programming</h2>
+<h3>Basic Operations</h3>
+<ul>
+        <li>Use '=' to assign a value to a variable.</li>
+        <li>Assigning to one variable does not change the values associated with other variables.</li>
+        <li>Use <code>print</code> to display values.</li>
+        <li>Variables are created when values are assigned to them.</li>
+        <li>Variables cannot be used until they have been created.</li>
+        <li>Addition ('+'), subtraction ('-'), and multiplication ('*') work as usual in Python.</li>
+        <li>Use meaningful, descriptive names for variables.</li>
+</ul>
+<h3>Creating Programs</h3>
+<ul>
+        <li>Store programs in files whose names end in <code>.py</code> and run them with <code>python <em>name.py</em></code>.</li>
+</ul>
+<h3>Types</h3>
+<ul>
+        <li>The most commonly used data types in Python are integers (<code>int</code>), floating-point numbers (<code>float</code>), and strings (<code>str</code>).</li>
+        <li>Strings can start and end with either single quote (') or double quote (").</li>
+        <li>Division ('/') produces an <code>int</code> result when given <code>int</code> values: one or both arguments must be <code>float</code> to get a <code>float</code> result.</li>
+        <li>"Adding" strings concatenates them, multiplying strings by numbers repeats them.</li>
+        <li>Strings and numbers cannot be added because the behavior is ambiguous: convert one to the other type first.</li>
+        <li>Variables do not have types, but values do.</li>
+</ul>
+<h3>Reading Files</h3>
+<ul>
+        <li>Data is either in memory, on disk, or far away.</li>
+        <li>Most things in Python are objects, and have attached functions called methods.</li>
+        <li>When lines are read from files, Python keeps their end-of-line characters.</li>
+        <li>Use <code>str.strip</code> to remove leading and trailing whitespace (including end-of-line characters).</li>
+        <li>Use <code>file(<em>name</em>, <em>mode</em>)</code> to open a file for reading ('r'), writing ('w'), or appending ('a').</li>
+        <li>Opening a file for writing erases any existing content.</li>
+        <li>Use <code>file.readline</code> to read a line from a file.</li>
+        <li>Use <code>file.close</code> to close an open file.</li>
+        <li>Use <code>print &gt;&gt; file</code> to print to a file.</li>
+</ul>
+<h3>Standard Input and Output</h3>
+<ul>
+        <li>The operating system automatically gives every program three open "files" called standard input, standard output, and standard error.</li>
+        <li>Standard input gets data from the keyboard, from a file when redirected with '&lt;', or from the previous stage in a pipeline with '|'.</li>
+        <li>Standard output writes data to the screen, to a file when redirected with '&gt;', or to the next stage in a pipeline with '|'.</li>
+        <li>Standard error also writes data to the screen, and is not redirected by '&gt;' or '|'.</li>
+        <li>Use <code>import <em>library</em></code> to import a library.</li>
+        <li>Use <code>library.thing</code> to refer to something imported from a library.</li>
+        <li>The <code>sys</code> library provides open "files" called <code>sys.stdin</code> and <code>sys.stdout</code> for standard input and output.</li>
+</ul>
+<h3>Repeating Things</h3>
+<ul>
+        <li>Use <code>for <em>variable</em> in <em>something</em>:</code> to loop over the parts of something.</li>
+        <li>The body of a loop must be indented consistently.</li>
+        <li>The parts of a string are its characters; the parts of a file are its lines.</li>
+</ul>
+<h3>Making Choices</h3>
+<ul>
+        <li>Use <code>if <em>test</em></code> to do something only when a condition is true.</li>
+        <li>Use <code>else</code> to do something when a preceding <code>if</code> test is not true.</li>
+        <li>The body of an <code>if</code> or <code>else</code> must be indented consistently.</li>
+        <li>Combine tests using <code>and</code> and <code>or</code>.</li>
+        <li>Use '&lt;', '&lt;=', '&gt;=', and '&gt;' to compare numbers or strings.</li>
+        <li>Use '==' to test for equality and '!=' to test for inequality.</li>
+        <li>Use <code><em>variable</em> += <em>expression</em></code> as a shorthand for <code><em>variable</em> = <em>variable</em> + <em>expression</em></code> (and similarly for other arithmetic operations).</li>
+</ul>
+<h3>Flags</h3>
+<ul>
+        <li>The two Boolean values <code>True</code> and <code>False</code> can be assigned to variables like any other values.</li>
+        <li>Programs often use Boolean values as flags to indicate whether something has happened yet or not.</li>
+</ul>
+<h3>Reading Data Files</h3>
+<ul>
+        <li>Use <code>str.split()</code> to split a string into pieces on whitespace.</li>
+        <li>Values can be assigned to any number of variables at once.</li>
+</ul>
+<h3>Provenance Revisited</h3>
+<ul>
+        <li>Put version numbers in programs' output to establish provenance for data.</li>
+</ul>
+<h3>Lists</h3>
+<ul>
+        <li>Use <code>[<em>value</em>, <em>value</em>, ...]</code> to create a list of values.</li>
+        <li><code>for</code> loops process the elements of a list, in order.</li>
+        <li><code>len(<em>list</em>)</code> returns the length of a list.</li>
+        <li><code>[]</code> is an empty list with no values.</li>
+</ul>
+<h3>More About Lists</h3>
+<ul>
+        <li>Lists are mutable: they can be changed in place.</li>
+        <li>Use <code><em>list</em>.append(<em>value</em>)</code> to append something to the end of a list.</li>
+        <li>Use <code><em>list</em>[<em>index</em>]</code> to access a list element by location.</li>
+        <li>The index of the first element of a list is 0; the index of the last element is <code>len(<em>list</em>)-1</code>.</li>
+        <li>Negative indices count backward from the end of the list, so <code><em>list</em>[-1]</code> is the last element.</li>
+        <li>Trying to access an element with an out-of-bounds index is an error.</li>
+        <li><code>range(<em>number</em>)</code> produces the list of numbers <code>[0, 1, ..., <em>number</em>-1]</code>.</li>
+        <li><code>range(len(<em>list</em>))</code> produces the list of legal indices for <code><em>list</em></code>.</li>
+</ul>
+<h3>Checking and Smoothing Data</h3>
+<ul>
+        <li><code>range(<em>start</em>, <em>end</em>)</code> creates the list of numbers from <code><em>start</em></code> up to, but not including, <code><em>end</em></code>.</li>
+        <li><code>range(<em>start</em>, <em>end</em>, <em>stride</em>)</code> creates the list of numbers from <code><em>start</em></code> up to <code><em>end</em></code> in steps of <code><em>stride</em></code>.</li>
+</ul>
+<h3>Nesting Loops</h3>
+<ul>
+        <li>Use nested loops to do things for combinations of things.</li>
+        <li>Make the range of the inner loop depend on the state of the outer loop to automatically adjust how much data is processed.</li>
+        <li>Use <code>min(...)</code> and <code>max(...)</code> to find the minimum and maximum of any number of values.</li>
+</ul>
+<h3>Nesting Lists</h3>
+<ul>
+        <li>Use nested lists to store multi-dimensional data or values that have regular internal structure (such as XYZ coordinates).</li>
+        <li>Use <code><em>list_of_lists</em>[<em>first</em>]</code> to access an entire sub-list.</li>
+        <li>Use <code><em>list_of_lists</em>[<em>first</em>][<em>second</em>]</code> to access a particular element of a sub-list.</li>
+        <li>Use nested loops to process nested lists.</li>
+</ul>
+<h3>Aliasing</h3>
+<ul>
+        <li>Several variables can alias the same data.</li>
+        <li>If that data is mutable (e.g., a list), a change made through one variable is visible through all other aliases.</li>
+</ul>
+<h2>Functions and Libraries</h2>
+<h3>How Functions Work</h3>
+<ul>
+        <li>Define a function using <code>def <em>name</em>(...)</code></li>
+        <li>The body of a function must be indented.</li>
+        <li>Use <code><em>name</em>(...)</code> to call a function.</li>
+        <li>Use <code>return</code> to return a value from a function.</li>
+        <li>The values passed into a function are assigned to its parameters in left-to-right order.</li>
+        <li>Function calls are recorded on a call stack.</li>
+        <li>Every function call creates a new stack frame.</li>
+        <li>The variables in a stack frame are discarded when the function call completes.</li>
+        <li>Grouping operations in functions makes code easier to understand and re-use.</li>
+</ul>
+<h3>Global Variables</h3>
+<ul>
+        <li>Every function always has access to variables defined in the global scope.</li>
+        <li>Programmers often write constants' names in upper case to make their intention easier to recognize.</li>
+        <li>Functions should <em>not</em> communicate by modifying global variables.</li>
+</ul>
+<h3>Multiple Arguments</h3>
+<ul>
+        <li>A function may take any number of arguments.</li>
+        <li>Define default values for parameters to make functions more convenient to use.</li>
+        <li>Defining default values only makes sense when there are sensible defaults.</li>
+</ul>
+<h3>Returning Values</h3>
+<ul>
+        <li>A function may return values at any point.</li>
+        <li>A function should have zero or more <code>return</code> statements at its start to handle special cases, and then one at the end to handle the general case.</li>
+        <li>"Accidentally" correct behavior is hard to understand.</li>
+        <li>If a function ends without an explicit <code>return</code>, it returns <code>None</code>.</li>
+</ul>
+<h3>Aliasing</h3>
+<ul>
+        <li>Values are actually passed into functions by reference, which means that they are aliased.</li>
+        <li>Aliasing means that changes made to a mutable object like a list inside a function are visible after the function call completes.</li>
+</ul>
+<h3>Libraries</h3>
+<ul>
+        <li>Any Python file can be imported as a library.</li>
+        <li>The code in a file is executed when it is imported.</li>
+        <li>Every Python file is a scope, just like every function.</li>
+</ul>
+<h3>Standard Libraries</h3>
+<ul>
+        <li>Use <code>from <em>library</em> import <em>something</em></code> to import something under its own name.</li>
+        <li>Use <code>from <em>library</em> import <em>something</em> as <em>alias</em></code> to import something under the name <code><em>alias</em></code>.</li>
+        <li><code>from <em>library</em> import *</code> imports everything in <code><em>library</em></code> under its own name, which is usually a bad idea.</li>
+        <li>The <code>math</code> library defines common mathematical constants and functions.</li>
+        <li>The system library <code>sys</code> defines constants and functions used in the interpreter itself.</li>
+        <li><code>sys.argv</code> is a list of all the command-line arguments used to run the program.</li>
+        <li><code>sys.argv[0]</code> is the program's name.</li>
+        <li><code>sys.argv[1:]</code> is everything except the program's name.</li>
+</ul>
+<h3>Building Filters</h3>
+<ul>
+        <li>If a program isn't told what files to process, it should process standard input.</li>
+        <li>Programs that explicitly test values' types are more brittle than ones that rely on those values' common properties.</li>
+        <li>The variable <code>__name__</code> is assigned the string <code>'__main__'</code> in a module when that module is the main program, and the module's name when it is imported by something else.</li>
+        <li>If the first thing in a module or function is a string that isn't assigned to a variable, that string is used as the module or function's documentation.</li>
+        <li>Use <code>help(<em>name</em>)</code> to display the documentation for something.</li>
+</ul>
+<h3>Functions as Objects</h3>
+<ul>
+        <li>A function is just another kind of data.</li>
+        <li>Defining a function creates a function object and assigns it to a variable.</li>
+        <li>Functions can be assigned to other variables, put in lists, and passed as parameters.</li>
+        <li>Writing higher-order functions helps eliminate redundancy in programs.</li>
+        <li>Use <code>filter</code> to select values from a list.</li>
+        <li>Use <code>map</code> to apply a function to each element of a list.</li>
+        <li>Use <code>reduce</code> to combine the elements of a list.</li>
+</ul>
+<h2>Databases</h2>
+<ul>
+        <li>A relational database stores information in tables with fields and records.</li>
+        <li>A database manager is a program that manipulates a database.</li>
+        <li>The commands or queries given to a database manager are usually written in a specialized language called SQL.</li>
+</ul>
+<h3>Selecting</h3>
+<ul>
+        <li>SQL is case insensitive.</li>
+        <li>The rows and columns of a database table aren't stored in any particular order.</li>
+        <li>Use <code>SELECT <em>fields</em> FROM <em>table</em></code> to get all the values for specific fields from a single table.</li>
+        <li>Use <code>SELECT * FROM <em>table</em></code> to select everything from a table.</li>
+</ul>
+<h3>Removing Duplicates</h3>
+<ul>
+        <li>Use <code>SELECT DISTINCT</code> to eliminate duplicates from a query's output.</li>
+</ul>
+<h3>Calculating New Values</h3>
+<ul>
+        <li>Use expressions in place of field names to calculate per-record values.</li>
+</ul>
+<h3>Filtering</h3>
+<ul>
+        <li>Use <code>WHERE <em>test</em></code> in a query to filter records based on logical tests.</li>
+        <li>Use <code>AND</code> and <code>OR</code> to combine tests in filters.</li>
+        <li>Use <code>IN</code> to test whether a value is in a set.</li>
+        <li>Build up queries a bit at a time, and test them against small data sets.</li>
+</ul>
+<h3>Sorting</h3>
+<ul>
+        <li>Use <code>ORDER BY <em>field</em> ASC</code> (or <code>DESC</code>) to order a query's results in ascending (or descending) order.</li>
+</ul>
+<h3>Aggregation</h3>
+<ul>
+        <li>Use aggregation functions like <code>SUM</code> <code>MAX</code> to combine many query results into a single value.</li>
+        <li>Use the <code>COUNT</code> function to count the number of results.</li>
+        <li>If some fields are aggregated, and others are not, the database manager displays an arbitrary result for the unaggregated field.</li>
+        <li>Use <code>GROUP BY</code> to group values before aggregation.</li>
+</ul>
+<h3>Database Design</h3>
+<ul>
+        <li>Each field in a database table should store a single atomic value.</li>
+        <li>No fact in a database should ever be duplicated.</li>
+</ul>
+<h3>Combining Data</h3>
+<ul>
+        <li>Use <code>JOIN</code> to create all possible combinations of records from two or more tables.</li>
+        <li>Use <code>JOIN <em>tables</em> ON <em>test</em></code> to keep only those combinations that pass some test.</li>
+        <li>Use <code><em>table</em>.<em>field</em></code> to specify a particular field of a particular table.</li>
+        <li>Use aliases to make queries more readable.</li>
+        <li>Every record in a table should be uniquely identified by the value of its primary key.</li>
+</ul>
+<h3>Self Join</h3>
+<ul>
+        <li>Use a self join to combine a table with itself.</li>
+</ul>
+<h3>Missing Data</h3>
+<ul>
+        <li>Use <code>NULL</code> in place of missing information.</li>
+        <li>Almost every operation involving <code>NULL</code> produces <code>NULL</code> as a result.</li>
+        <li>Test for nulls using <code>IS NULL</code> and <code>IS NOT NULL</code>.</li>
+        <li>Most aggregation functions skip nulls when combining values.</li>
+</ul>
+<h3>Nested Queries</h3>
+<ul>
+        <li>Use nested queries to create temporary sets of results for further querying.</li>
+        <li>Use nested queries to subtract unwanted results from all results to leave desired results.</li>
+</ul>
+<h3>Creating and Modifying Tables</h3>
+<ul>
+        <li>Use <code>CREATE TABlE <em>name</em>(...)</code> to create a table.</li>
+        <li>Use <code>DROP TABLE <em>name</em></code> to erase a table.</li>
+        <li>Specify field names and types when creating tables.</li>
+        <li>Specify <code>PRIMARY KEY</code>, <code>NOT NULL</code>, and other constraints when creating tables.</li>
+        <li>Use <code>INSERT INTO <em>table</em> VALUES(...)</code> to add records to a table.</li>
+        <li>Use <code>DELETE FROM <em>table</em> WHERE <em>test</em></code> to erase records from a table.</li>
+        <li>Maintain referential integrity when creating or deleting information.</li>
+</ul>
+<h3>Transactions</h3>
+<ul>
+        <li>Place operations in a transaction to ensure that they appear to be atomic, consistent, isolated, and durable.</li>
+</ul>
+<h3>Programming With Databases</h3>
+<ul>
+        <li>Most applications that use databases embed SQL in a general-purpose programming language.</li>
+        <li>Database libraries use connections and cursors to manage interactions.</li>
+        <li>Programs can fetch all results at once, or a few results at a time.</li>
+        <li>If queries are constructed dynamically using input from users, malicious users may be able to inject their own commands into the queries.</li>
+        <li>Dynamically-constructed queries can use SQL's native formatting to safeguard against such attacks.</li>
+</ul>
+<h2>Number Crunching with NumPy</h2>
+<ul>
+        <li>High-level libraries are usually more efficient for numerical programming than hand-coded loops.</li>
+        <li>Most such libraries use a data-parallel programming model.</li>
+        <li>Arrays can be used as matrices, as physical grids, or to store general multi-dimensional data.</li>
+</ul>
+<h3>Basics</h3>
+<ul>
+        <li>NumPy is a high-level array library for Python.</li>
+        <li><code>import numpy</code> to import NumPy into a program.</li>
+        <li>Use <code>numpy.array(<em>values</em>)</code> to create an array.</li>
+        <li>Initial values must be provided in a list (or a list of lists).</li>
+        <li>NumPy arrays store homogeneous values whose type is identified by <code><em>array</em>.dtype</code>.</li>
+        <li>Use <code><em>old</em>.astype(<em>newtype</em>)</code> to create a new array with a different type rather than assigning to <code>dtype</code>.</li>
+        <li><code>numpy.zeros</code> creates a new array filled with 0.</li>
+        <li><code>numpy.ones</code> creates a new array filled with 1.</li>
+        <li><code>numpy.identity</code> creates a new identity matrix.</li>
+        <li><code>numpy.empty</code> creates an array but does not initialize its values (which means they are unpredictable).</li>
+        <li>Assigning an array to a variable creates an alias rather than copying the array.</li>
+        <li>Use <code><em>array</em>.copy</code> to create a copy of an array.</li>
+        <li>Put all array indices in a single set of square brackets, like <code>array[<em>i0</em>, <em>i1</em>].</code></li>
+        <li><code><em>array</em>.shape</code> is a tuple of the array's size in each dimension.</li>
+        <li><code><em>array</em>.size</code> is the total number of elements in the array.</li>
+</ul>
+<h3>Storage</h3>
+<ul>
+        <li>Arrays are stored using descriptors and data blocks.</li>
+        <li>Many operations create a new descriptor, but alias the original data block.</li>
+        <li>Array elements are stored in row-major order.</li>
+        <li><code><em>array</em>.transpose</code> creates a transposed alias for an array's data.</li>
+        <li><code><em>array</em>.ravel</code> creates a one-dimensional alias for an array's data.</li>
+        <li><code><em>array</em>.reshape</code> creates an arbitrarily-shaped alias for an array's data.</li>
+        <li><code><em>array</em>.resize</code> resizes an array's data in place, filling with zero as necessary.</li>
+</ul>
+<h3>Indexing</h3>
+<ul>
+        <li>Arrays can be sliced using <code><em>start</em>:<em>end</em>:<em>stride</em></code> along each axis.</li>
+        <li>Values can be assigned to slices as well as read from them.</li>
+        <li>Arrays can be used as subscripts to select items in arbitrary ways.</li>
+        <li>Masks containing <code>True</code> and <code>False</code> can be used to select subsets of elements from arrays.</li>
+        <li>Use '&amp;' and '|' (or <code>logical_and</code> and <code>logical_or</code>) to combine tests when subscripting arrays.</li>
+        <li>Use <code>where</code>, <code>choose</code>, or <code>select</code> to select elements or alternatives in a single step.</li>
+</ul>
+<h3>Linear Algebra</h3>
+<ul>
+        <li>Addition, multiplication, and other arithmetic operations work on arrays element-by-element.</li>
+        <li>Operations involving arrays and scalars combine the scalar with each element of the array.</li>
+        <li><code><em>array</em>.dot</code> performs "real" matrix multiplication.</li>
+        <li><code><em>array</em>.sum</code> calculates sums or partial sums of array elements.</li>
+        <li><code><em>array</em>.mean</code> calculates array averages.</li>
+</ul>
+<h3>Making Recommendations</h3>
+<ul>
+        <li>Getting data in the right format for processing often requires more code than actually processing it.</li>
+        <li>Data with many gaps should be stored in sparse arrays.</li>
+        <li><code><em>numpy</em>.cov</code> calculates variancess and covariances.</li>
+</ul>
+<h3>The Game of Life</h3>
+<ul>
+        <li>Padding arrays with fixed elements is an easy way to implement boundary conditions.</li>
+        <li><code>scipy.signal.convolve</code> applies a weighted mask to each element of an array.</li>
+</ul>
+<h2>Quality</h2>
+<h3>Defensive Programming</h3>
+<ul>
+        <li>Design programs to catch both internal errors and usage errors.</li>
+        <li>Use assertions to check whether things that ought to be true in a program actually are.</li>
+        <li>Assertions help people understand how programs work.</li>
+        <li>Fail early, fail often.</li>
+        <li>When bugs are fixed, add assertions to the program to prevent their reappearance.</li>
+</ul>
+<h3>Handling Errors</h3>
+<ul>
+        <li>Use <code>raise</code> to raise exceptions.</li>
+        <li>Raise exceptions to report errors rather than trying to handle them inline.</li>
+        <li>Use <code>try</code> and <code>except</code> to handle exceptions.</li>
+        <li>Catch exceptions where something useful can be done about the underlying problem.</li>
+        <li>An exception raised in a function may be caught anywhere in the active call stack.</li>
+</ul>
+<h3>Unit Testing</h3>
+<ul>
+        <li>Testing cannot prove that a program is correct, but is still worth doing.</li>
+        <li>Use a unit testing library like Nose to test short pieces of code.</li>
+        <li>Write each test as a function that creates a fixture, executes an operation, and checks the result using assertions.</li>
+        <li>Every test should be able to run independently: tests should <em>not</em> depend on one another.</li>
+        <li>Focus testing on boundary cases.</li>
+        <li>Writing tests helps us design better code by clarifying our intentions.</li>
+</ul>
+<h3>Numbers</h3>
+<ul>
+        <li>Floating point numbers are approximations to actual values.</li>
+        <li>Use tolerances rather than exact equality when comparing floating point values.</li>
+        <li>Use integers to count and floating point numbers to measure.</li>
+        <li>Most tests should be written in terms of relative error rather than absolute error.</li>
+        <li>When testing scientific software, compare results to exact analytic solutions, experimental data, or results from simpler or previously-tested programs.</li>
+</ul>
+<h3>Coverage</h3>
+<ul>
+        <li>Use a coverage analyzer to see which parts of a program have been tested and which have not.</li>
+</ul>
+<h3>Debugging</h3>
+<ul>
+        <li>Use an interactive symbolic debugger instead of <code>print</code> statements to diagnose problems.</li>
+        <li>Set breakpoints to halt the program at interesting points instead of stepping through execution.</li>
+        <li>Try to get things right the first time.</li>
+        <li>Make sure you know what the program is supposed to do before trying to debug it.</li>
+        <li>Make sure the program is actually running the test case you think it is.</li>
+        <li>Make the program fail reliably.</li>
+        <li>Simplify the test case or the program in order to localize the problem.</li>
+        <li>Change one thing at a time.</li>
+        <li>Be humble.</li>
+</ul>
+<h3>Designing Testable Code</h3>
+<ul>
+        <li>Separating interface from implementation makes code easier to test and re-use.</li>
+        <li>Replace some components with simplified versions of themselves in order to simplify testing of other components.</li>
+        <li>Do not create arbitrary, variable, or random results, as they are extremely hard to test.</li>
+        <li>Isolate interactions with the outside world when writing tests.</li>
+</ul>
+<h2>Sets and Dictionaries</h2>
+<h3>Sets</h3>
+<ul>
+        <li>Use sets to store distinct unique values.</li>
+        <li>Create sets using <code>set()</code> or <code>{<em>v1</em>, <em>v2</em>, ...}</code>.</li>
+        <li>Sets are mutable, i.e., they can be updated in place like lists.</li>
+        <li>A loop over a set produces each element once, in arbitrary order.</li>
+        <li>Use sets to find unique things.</li>
+</ul>
+<h3>Storage</h3>
+<ul>
+        <li>Sets are stored in hash tables, which guarantee fast access for arbitrary keys.</li>
+        <li>The values in sets must be immutable to prevent hash tables misplacing them.</li>
+        <li>Use tuples to store multi-part elements in sets.</li>
+</ul>
+<h3>Dictionaries</h3>
+<ul>
+        <li>Use dictionaries to store key-value pairs with distinct keys.</li>
+        <li>Create dictionaries using <code>{<em>k1</em>:<em>v1</em>, <em>k2</em>:<em>v2</em>, ...}</code></li>
+        <li>Dictionaries are mutable, i.e., they can be updated in place.</li>
+        <li>Dictionary keys must be immutable, but values can be anything.</li>
+        <li>Use tuples to store multi-part keys in dictionaries.</li>
+        <li><code><em>dict</em>[<em>key</em>]</code> refers to the dictionary entry with a particular key.</li>
+        <li><code><em>key</em> in <em>dict</em></code> tests whether a key is in a dictionary.</li>
+        <li><code>len(<em>dict</em>)</code> returns the number of entries in a dictionary.</li>
+        <li>A loop over a dictionary produces each key once, in arbitrary order.</li>
+        <li><code><em>dict</em>.keys()</code> creates a list of the keys in a dictionary.</li>
+        <li><code><em>dict</em>.values()</code> creates a list of the keys in a dictionary.</li>
+</ul>
+<h3>Simple Examples</h3>
+<ul>
+        <li>Use dictionaries to count things.</li>
+        <li>Initialize values from actual data instead of trying to guess what values could "never" occur.</li>
+</ul>
+<h3>Phylogenetic Trees</h3>
+<ul>
+        <li>Problems that are described using matrices can often be solved more efficiently using dictionaries.</li>
+        <li>When using tuples as multi-part dictionary keys, order the tuple entries to avoid accidental duplication.</li>
+</ul>
+<h2>Development</h2>
+<h3>The Grid</h3>
+<ul>
+        <li>Get something simple working, then start to add features, rather than putting everything in the program at the start.</li>
+        <li>Leave FIXME markers in programs as you are developing them to remind yourself what still needs to be done.</li>
+</ul>
+<h3>Aliasing</h3>
+<ul>
+        <li>Draw pictures of data structures to aid debugging.</li>
+</ul>
+<h3>Randomness</h3>
+<ul>
+        <li>Use a well-tested random number generation library to generate pseudorandom values.</li>
+        <li>If a random number generation library is given the same seed, it will produce the same sequence of values.</li>
+</ul>
+<h3>Neighbors</h3>
+<ul>
+        <li><code>and</code> and <code>or</code> stop evaluating arguments as soon as they have an answer.</li>
+</ul>
+<h3>Bugs</h3>
+<ul>
+        <li>Test programs with successively more complex cases.</li>
+</ul>
+<h3>Refactoring</h3>
+<ul>
+        <li>Refactor programs as necessary to make testing easier.</li>
+        <li>Replace randomness with predictability to make testing easier.</li>
+</ul>
+<h3>Performance</h3>
+<ul>
+        <li>Scientists want faster programs both to handle bigger problems and to handle more problems with available resources.</li>
+        <li>Before speeding a program up, ask, "Does it need to be faster?" and, "Is it correct?"</li>
+        <li>Recording start and end times is a simple way to measure performance.</li>
+        <li>Analyze algorithms to predict how a program's performance will change with problem size.</li>
+</ul>
+<h3>Profiling</h3>
+<ul>
+        <li>Use a profiler to determine which parts of a program are responsible for most of its running time.</li>
+</ul>
+<h3>A New Beginning</h3>
+<ul>
+        <li>Better algorithms are better than better hardware.</li>
+</ul>
+

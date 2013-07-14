@@ -1,0 +1,34 @@
+As an exercise between now and then, I'd like you to try the following:
+
+A team of high school volunteers have been collecting wildlife samples for your research project.  They've just submitted their data files, each of which looks like this:
+
+# Steve Haddock
+2012-03-28 squid
+2012-03-28 marlin
+2012-03-28 marlin
+2012-03-29 eel
+2012-03-29 squid
+2012-03-29 turtle
+2012-03-29 turtle
+2012-03-30 squid
+2012-03-31 turtle
+
+# Jacques Cousteau
+2012-03-27 marlin
+2012-03-29 tuna
+2012-03-29 tuna
+2012-03-29 turtle
+
+i.e., each file has two columns (date and creature observed), and comments start with '#'.  You want to merge all the files and produce a table showing how many creatures of each kind were seen on each date, sorted by date and creature.  If Steve's and Jacques' observations are the only ones you have, for example, your output will be:
+
+1 2012-03-27 marlin
+2 2012-03-28 marlin
+1 2012-03-28 squid
+1 2012-03-29 eel
+1 2012-03-29 squid
+2 2012-03-29 tuna
+3 2012-03-29 turtle
+1 2012-03-30 squid
+1 2012-03-31 turtle
+
+Try to do it two ways: using standard shell commands in a pipeline, and by writing a small Python program that reads in the files and stores information in a dictionary.  You will want to watch the first three episodes of http://software-carpentry.org/4_0/setdict/ before tackling the Python --- in particular, you may want to use tuples to create the keys for the dictionary (since these keys will want to be (date, species) pairs).

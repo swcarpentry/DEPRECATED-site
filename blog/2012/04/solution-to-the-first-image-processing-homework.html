@@ -1,0 +1,80 @@
+---
+layout: blog
+date: 2012-04-03
+time: 10:00:00
+author: wilson.g
+title: Solution to the First Image Processing Homework
+category: [venues/indiana-university, tutorial, versions/version-5-0]
+---
+<p>We had technical issues during yesterday's online tutorial (again), so I have recorded the solution to the image processing exercise we gave the students in Indiana and Toronto. I'd be very grateful for feedback (not just from students): is this a useful way to present ideas? Or should we put our effort into debugging [name of web conferencing software goes here]?</p>
+
+{% assign video_title="Solution to First Image Processing Homework" %}
+{% assign video_slug="zwl1W4PjaMI" %}
+{% assign video_time="00:16:25" %}
+{% include youtube.html %}
+
+<p>My final code is:</p>
+<pre>import sys
+from PIL import Image
+
+#--------------------
+
+def on_boundary(temp, xsize, ysize, func):
+
+    for x in range(xsize):
+        for y in (0, ysize-1):
+            r, g, b = data[x, y]
+            data[x, y] = func(r, g, b)
+
+    for y in range(ysize):
+        for x in (0, xsize-1):
+            r, g, b = data[x, y]
+            data[x, y] = func(r, g, b)
+
+#--------------------
+
+def for_each_pixel(temp, xsize, ysize, func):
+    for x in range(xsize):
+        for y in range(ysize):
+            r, g, b = data[x, y]
+            data[x, y] = func(r, g, b)
+
+#--------------------
+
+def halve_red(r, g, b):
+    return r/2, g, b
+
+#--------------------
+
+def double_green_blue(r, g, b):
+    return r, 2*g, 2*b
+
+#--------------------
+
+def set_black(r, g, b):
+    return 0, 0, 0
+
+#--------------------
+
+assert len(sys.argv) == 4, \
+       "Usage: program operation infile outfile"
+operation_name = sys.argv[1]
+input_filename = sys.argv[2]
+output_filename = sys.argv[3]
+
+picture = Image.open(input_filename)
+xsize, ysize = picture.size
+data = picture.load()
+
+if operation_name == 'halve_red':
+    for_each_pixel(data, xsize, ysize, halve_red)
+elif operation_name == 'double_green_blue':
+    for_each_pixel(data, xsize, ysize, double_green_blue)
+elif operation_name == 'erase':
+    for_each_pixel(data, xsize, ysize, set_black)
+else:
+    assert False, \
+           "Unknown operation: " + operation_name
+
+picture.save(output_filename)</pre>
+<p><em>Later: Indiana U's Michael Hansen has <a href="http://synesthesiam.com/?p=28">posted an alternative solution</a> that goes into more detail. Thanks!</em></p>

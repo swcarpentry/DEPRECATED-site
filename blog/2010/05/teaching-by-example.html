@@ -1,0 +1,28 @@
+---
+layout: blog
+date: 2010-05-28
+time: 09:00:00
+author: pipitone.j
+title: Teaching databases by example
+category: [content, versions/version-4]
+---
+<div>
+<p>Over the last two weeks I've been spending most of my Software Carpentry time working on the database unit.  They began as a fairly straight-forward translation of the <a href="{{page.root}}/v3/">Software Carpentry 3.0 lecture notes</a> with only a few changes to the sequencing of the topics. The plan for the unit is fairly simple: each screencast introducing only one or two new topics, and builds on the previous screencasts with as few as possible forward references to later topics.  The topics themselves are really just the different language features (SELECT, WHERE, JOIN, etc..) presented as tasks you might want to perform, and illustrated by working with toy data.</p>
+<p>It might be clearer if I present the topic plan we had in mind:</p>
+<ol>
+<li>An Introduction to Databases (What is a database and why/when would you use one?)</li>
+<li>Getting data from a table, filtering, and sorting it. (SELECT, WHERE, and ORDER BY)</li>
+<li>Aggregating and grouping results (GROUP BY, and aggregation functions: SUM, MAX, etc..)</li>
+<li>Dealing with empty or missing data (NULL)</li>
+<li>Combining data from multiple tables (inner JOINs)</li>
+<li>Advanced queries (subqueries)</li>
+<li>An overview other features (e.g. HAVING, expressions in SELECT, LIMIT, ...)</li>
+</ol>
+<p>And then this week Greg suggested I take a look at this gem of a book (sadly, out of print):</p>
+<p><a title="A link to the openlibrary's page about this book." href="http://openlibrary.org/books/OL8528065M/The_Essence_of_SQL">The Essence of SQL: A Guide to Learning Most of SQL in the Least Amount of Time by David Rozenshtein</a></p>
+<p>It takes a completely different and, I think, much more useful approach.  It begins with a list of typical questions you might ask about a database of students/courses/profs. For example, "What are the student numbers and names of students who take CS112? ", "Who are the youngest students?", "Who does not take CS112?", or "Who takes a course which is not CS112?". These questions are meant as prototypes of the sorts of questions you would use <em>any</em> database to answer.  The book proceeds through each question and explains how you'd use SQL to answer it, why it makes sense to do it that way, and why it even works in the first place.</p>
+<p>My intuition about this approach is that it makes for a great way to learn about databases.  Structuring the book around the prototypical questions will serve as a really useful way to refer back to the course later when you have a real problem to solve, as well as being much more motivating to have the unit be problem-based.  My concern is that by organising the database unit around these questions we'll be stuck mixing the language features throughout the units with all sorts of cross-referencing needed in case people just want to learn about using a WHERE clause.</p>
+<p>What do you think?  Greg suggests that maybe the Rozenshtein approach is something we use in combination with our original approach: we first cover the language features in separate screencasts, we then use the Rozenshtein questions to pull it all together.</p>
+<p>There's another question I have that's separate from the question of which approach we choose.  In my opinion, having real data to teach around is more exciting and educational than creating toy data that's tuned just to the specific topic.  The Nobel Prize data, and the Experiments and Researchers data sets we've used in the first few lectures are okay, but wouldn't it just be so much more interesting if we started with, say data about <a href="http://www.hc-sc.gc.ca/hc-ps/tobac-tabac/research-recherche/stat/index-eng.php">tabacco use </a>and <a href="http://www40.statcan.ca/l01/cst01/health78a-eng.htm">physical activity</a>, and each screencast taught about a language feature by posing and answering questions about this dataset.  This is something the book <a href="http://openlibrary.org/works/OL12301587W/Data_analysis_using_SQL_and_Excel">Data Analysis Using SQL and Excel by Gordon S. Linoff</a> does really well.</p>
+<p>So, another question for us (and now for you!) is, what real-world data should we use to teach?  We need dataset we can tell a good story around.  The data also needs to be varied enough so that the queries results in our small screencast size don't need to be scrolled, and span several tables so that we can illustrate different join types and such.</p>
+</div>

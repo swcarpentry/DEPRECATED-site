@@ -1,0 +1,85 @@
+---
+layout: blog
+date: 2012-10-03
+time: 09:00:00
+author: wilson.g
+title: Best Practices for Scientific Computing
+category: [content, research]
+---
+<p>The following pre-print is now <a href="http://arxiv.org/abs/1210.0530">available on arXiv</a>:</p>
+<blockquote>
+<div align="center">
+<h2><a href="http://arxiv.org/abs/1210.0530">Best Practices for Scientific Computing</a></h2>
+</div>
+<p><a href="http://faculty.uoit.ca/aruliah/">D.A. Aruliah</a><sup>a</sup>, <a href="http://ivory.idyll.org/blog/">C. Titus Brown</a><sup>b</sup>, <a href="http://www.epcc.ed.ac.uk/about-us/staff/chue-hong-neil/">Neil P. Chue Hong</a><sup>c</sup>, <a href="http://penandpants.com/">Matt Davis</a><sup>d</sup>, <a href="http://www.cs.toronto.edu/~guy/">Richard T. Guy</a><sup>e</sup>, <a href="http://www.mbari.org/staff/haddock/">Steven H.D. Haddock</a><sup>f</sup>, <a href="http://ged.msu.edu">Katy Huff</a><sup>g</sup>, <a href="http://www.cs.ubc.ca/~mitchell/">Ian Mitchell</a><sup>h</sup>, <a href="http://www.elec.qmul.ac.uk/people/markp/">Mark Plumbley</a><sup>i</sup>, <a href="http://www.hep.ucl.ac.uk/~waugh/">Ben Waugh</a><sup>j</sup>, <a href="http://whitelab.weecology.org/">Ethan P. White</a><sup>k</sup>, <a href="http://software-carpentry.org">Greg Wilson</a><sup>l</sup>, and <a href="https://cnerg.engr.wisc.edu/?page_id=8">Paul Wilson</a><sup>g</sup>.</p>
+<p><sup>a</sup>University of Ontario Institute of Technology, <sup>b</sup>Michigan State University, <sup>c</sup>Software Sustainability Institute, <sup>d</sup>Space Telescope Science Institute, <sup>e</sup>University of Toronto, <sup>f</sup>Monterey Bay Aquarium Research Institute, <sup>g</sup>University of Wisconsin, <sup>h</sup>University of British Columbia, <sup>i</sup>Queen Mary University London, <sup>j</sup>University College London, <sup>k</sup>Utah State University, and <sup>l</sup>Software Carpentry.</p>
+<div align="center"><strong>Abstract</strong></div>
+<blockquote><p><em>Scientists spend an increasing amount of time building and using software. However, most scientists are never taught how to do this efficiently. As a result, many are unaware of tools and practices that would allow them to write more reliable and maintainable code with less effort. We describe a set of best practices for scientific software development that have solid foundations in research and experience, and that improve scientists' productivity and the reliability of their software.</em></p></blockquote>
+</blockquote>
+<ol>
+<li>Write programs for people, not computers.
+<ol>
+<li>A program should not require its readers to hold more than a handful of facts in memory at once.</li>
+<li>Names should be consistent, distinctive, and meaningful.</li>
+<li>Code style and formatting should be consistent.</li>
+<li>All aspects of software development should be broken down into tasks roughly an hour long.</li>
+</ol>
+</li>
+<li>Automate repetitive tasks.
+<ol>
+<li>Rely on the computer to repeat tasks.</li>
+<li>Save recent commands in a file for re-use.</li>
+<li>Use a build tool to automate their scientific workflows.</li>
+</ol>
+</li>
+<li>Use the computer to record history.
+<ol>
+<li>Software tools should be used to track computational work automatically.</li>
+</ol>
+</li>
+<li>Make incremental changes.
+<ol>
+<li>Work in small steps with frequent feedback and course correction.</li>
+</ol>
+</li>
+<li>Use version control.
+<ol>
+<li>Use a version control system.</li>
+<li>Everything that has been created manually should be put in version control.</li>
+</ol>
+</li>
+<li>Don't repeat yourself (or others).
+<ol>
+<li>Every piece of data must have a single authoritative representation in the system.</li>
+<li>Code should be modularized rather than copied and pasted.</li>
+<li>Re-use code instead of rewriting it.</li>
+</ol>
+</li>
+<li>Plan for mistakes.
+<ol>
+<li>Add assertions to programs to check their operation.</li>
+<li>Use an off-the-shelf unit testing library.</li>
+<li>Turn bugs into test cases.</li>
+<li>Use a symbolic debugger.</li>
+</ol>
+</li>
+<li>Optimize software only after it works correctly.
+<ol>
+<li>Use a profiler to identify bottlenecks}.</li>
+<li>Write code in the highest-level language possible.</li>
+</ol>
+</li>
+<li>Document the design and purpose of code rather than its mechanics.
+<ol>
+<li>Document interfaces and reasons, not implementations.</li>
+<li>Refactor code instead of explaining how it works.</li>
+<li>Embed the documentation for a piece of software in that software.</li>
+</ol>
+</li>
+<li>Conduct code reviews.
+<ol>
+<li>Use code review and pair programming when bringing someone new up to speed and when tackling particularly tricky design, coding, and debugging problems.</li>
+<li>Use an issue tracking tool.</li>
+</ol>
+</li>
+</ol>

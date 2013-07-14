@@ -1,0 +1,61 @@
+---
+layout: blog
+date: 2010-08-05
+time: 09:00:00
+author: wilson.g
+title: An Answer That Most Students Won't Understand
+category: [community, opinion]
+---
+<p>Two days ago, I <a href="{{page.root}}/blog/2010/08/a-question-about-nose.html">asked</a> how to generates tests from tables of fixtures using Nose:</p>
+<blockquote><p>...does Nose already have a tool for running through a table of fixtures and expected results?  My hand-rolled version is:</p>
+<pre>Tests = (
+    #  R1                 R2                  Expected
+    ( ((0, 0), (0, 0)),   ((0, 0), (0, 0)),   None ),
+    ( ((0, 0), (0, 0)),   ((0, 0), (1, 1)),   None ),
+    ( ((0, 0), (1, 1)),   ((0, 0), (1, 1)),   ((0, 0), (1, 1)) ),
+    ( ((0, 3), (2, 5)),   ((1, 0), (2, 4)),   ((1, 3), (2, 4)) )
+)
+
+def test_table():
+    for (R1, R2, expected) in Tests:
+        yield run_it, R1, R2, expected
+
+def run_it(R1, R2, expected):
+    assert overlap(R1, R2) == expected
+</pre>
+<p>which is simple enough if students already understand generators and function application, but hell to explain if they don't&mdash;and they won't.</p></blockquote>
+<p>After some back and forth, <a href="http://jacobian.org/">Jacob Kaplan-Moss</a> (of <a href="https://www.djangoproject.com/">Django</a> fame) came up with this:</p>
+<pre>def tabletest(table):
+    def decorator(func):
+        def _inner():
+            for args in table:
+                yield tuple([func] + list(args))
+        _inner.__name__ = 'test_'+func.__name__
+        return _inner
+    return decorator
+
+table = [(1, 2), (3, 4)]
+
+@tabletest(table)
+def check_pair(left, right):
+    assert left &gt; right
+</pre>
+<p>The outer function <code>tabletest</code> takes the table of fixtures as an argument, and produces a function of one argument. That argument is supposed to be the function that is being wrapped up by the decorator, so:</p>
+<pre>@tabletest(table)
+def check_pair(...):
+    ...
+</pre>
+<p>means:</p>
+<pre>decorator = tabletest(table)
+check_pair = ...what the 'def' creates...
+check_pair = decorator(check_pair)
+</pre>
+<p>With me so far?  Now, what <code>decorator</code> does is take a function F as an argument, and create a new function F' that produces each combination of the original F with the entries in the table: in jargon, it creates a <em>generator</em> that <em>yields</em> F and the arguments that F should be applied to.</p>
+<p>But what's that <code>inner_.__name__</code> stuff? That's to make sure that the wrapped function's name starts with the letters "test_", because that's how Nose knows to run it.</p>
+<p>This does exactly what I wanted, but sparks three comments:</p>
+<ol>
+<li>Thanks, Jacob: I can understand the solution once it's in front of me, but it would have taken me a <em>long</em> time to figure this out myself.</li>
+<li>Treating programs as data, i.e., manipulating code just as you'd manipulate arrays or strings, is incredibly powerful.</li>
+<li>Only a tiny fraction of the students who complete this course will understand how this works. I'm sure they all <em>could</em>, if they wanted to invest the time, but given their usual starting point, they'd have to invest a <em>lot</em> of time.</li>
+</ol>
+<p>#3 is what many advocates of new technology (functional languages! GPUs! functional languages <em>on</em> GPUs!) consistently overlook. What Jacob did here is really quite elegant, but in the same way that the classic proof of <a href="http://en.wikipedia.org/wiki/Euler%27s_theorem">Euler's theorem</a> is elegant: you have to know quite a lot to understand it, and even more to understand its grace. People who have that understanding often forget what the world looks like to people who don't; we're trying hard not to, and would be grateful if readers and viewers could tell us when we slip up.</p>

@@ -1,0 +1,154 @@
+---
+layout: blog
+date: 2012-04-26
+time: 09:00:00
+author: wilson.g
+title: Solution to Sets and Dictionaries Exercise
+category: [tutorial, versions/version-5-0]
+---
+<p>Last week, I posted an exercise on <a href="{{page.root}}/blog/2012/04/an-exercise-with-sets-and-dictionaries.html">working with sets and dictionaries</a> that also included a fair bit of file I/O and string manipulation. My solution is below, in four parts, along with the code produced in each. If someone would like to re-do the file parsing using regular expressions, I'd be happy to post that as well.</p>
+
+<pre>import sys
+
+#--------------------
+
+def parse_pair(pair):
+    '''
+    Parse an atom-count pair.  If the count is missing, assume
+    that the count value is 1.
+    '''
+    if '*' not in pair:
+        return pair, 1
+    atom, count = pair.split('*')
+    count = int(count)
+    return atom, count
+
+#--------------------
+
+def parse_molecule(text):
+    '''
+    Get a single molecule description from a text string.
+    '''
+    name, formula_text = text.split(':')
+    name = name.strip()
+    pairs = formula_text.strip().split('.')
+    formula = {}
+    for p in pairs:
+        atom, count = parse_pair(p)
+        assert atom not in formula, \
+               'Already seen atom %s in text %s' % (atom, text)
+        formula[atom] = count
+    return name, formula
+
+#--------------------
+
+def read_molecules(reader):
+    '''
+    Read molecules from a molecule file, returning a dictionary
+    of {name : formula} pairs.
+    '''
+    result = {}
+    for line in reader:
+        line = line.strip()
+        if (not line) or line.startswith('#'):
+            continue
+        name, formula = parse_molecule(line)
+        assert name not in result, \
+               'Already seen %s!' % name
+        result[name] = formula
+    return result
+
+#--------------------
+
+print read_molecules(sys.stdin)</pre>
+<p><strong>Part 2</strong></p>
+
+{% assign video_title="Software Carpentry Sets" %}
+{% assign video_slug="44QqEyCylxc" %}
+{% assign video_time="" %}
+{% include youtube.html %}
+
+<pre>def merge(left, right):
+    result = {}
+
+    for key in left:
+        # Only in left
+        if key not in right:
+            result[key] = left[key]
+        # In both, so check that values are the same.
+        else:
+            if left[key] == right[key]:
+                result[key] = left[key]
+
+    for key in right:
+        # Only in right.
+        if key not in left:
+            result[key] = right[key]
+
+    return result</pre>
+<p><strong>Part 3</strong></p>
+
+{% assign video_title="Software Carpentry Sets" %}
+{% assign video_slug="QPs7Jm2hgk4" %}
+{% assign video_time="" %}
+{% include youtube.html %}
+
+<pre>import sys
+from nano import read_molecules
+
+#--------------------
+
+def can_produce(formulas, atom):
+    '''
+    Return the set of molecules that contain the given atom.
+    '''
+    result = set()
+    for molecule in formulas:
+        if atom in formulas[molecule]:
+            result.add(molecule)
+    return result
+
+#--------------------
+
+if __name__ == '__main__':
+    data = read_molecules(sys.stdin)
+    atom = sys.argv[1]
+    print can_produce(data, atom)</pre>
+<p><strong>Part 4</strong></p>
+
+{% assign video_title="Software Carpentry Sets" %}
+{% assign video_slug="EkYNjWljErc" %}
+{% assign video_time="" %}
+{% include youtube.html %}
+
+<pre>import sys
+from nano import read_molecules
+from merge import merge
+from produce import can_produce
+
+#--------------------
+
+def get_data(filename):
+    if len(filenames) == 0:
+        data = read_molecules(sys.stdin)
+    else:
+        data = {}
+        for f in filenames:
+            reader = open(f, 'r')
+            more_data = read_molecules(reader)
+            reader.close()
+            data = merge(data, more_data)
+    return data
+
+#--------------------
+
+if __name__ == '__main__':
+    assert len(sys.argv) &gt;= 2, 'Usage: final.py atom [files...]'
+    atom_name = sys.argv[1]
+    filenames = sys.argv[2:]
+    data = get_data(filenames)
+    makeable = can_produce(data, atom_name)
+    makeable = list(makeable)
+    makeable.sort()
+    for m in makeable:
+        print m</pre>

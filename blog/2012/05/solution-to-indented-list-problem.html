@@ -1,0 +1,83 @@
+---
+layout: blog
+date: 2012-05-14
+time: 09:00:00
+author: wilson.g
+title: Solution to Indented List Problem
+category: [tutorial, versions/version-5-0]
+---
+<p>Last week's homework was to convert a two-level bullet-point list like this:</p>
+<pre>* A
+* B
+  * 1
+  * 2
+* C
+  * 3</pre>
+<p>into an HTML list like this:</p>
+<pre>&lt;ul&gt;
+  &lt;li&gt;A&lt;/li&gt;
+  &lt;li&gt;B
+    &lt;ul&gt;
+      &lt;li&gt;1&lt;/li&gt;
+      &lt;li&gt;2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;C
+    &lt;ul&gt;
+      &lt;li&gt;3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+<pre>so it would display like this:</pre>
+<ul>
+<li>A</li>
+<li>B
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</li>
+<li>C
+<ul>
+<li>3</li>
+</ul>
+</li>
+</ul>
+<p>My solution is shown in the video below; the code follows.</p>
+
+{% assign video_title="Converting an Indented List to HTML" %}
+{% assign video_slug="upJJjF91TbE" %}
+{% assign video_time="00:16:13" %}
+{% include youtube.html %}
+
+<pre>import sys
+
+def do_inner(lines, current):
+    need_to_start = True
+    need_to_close = False
+    while (current &lt; len(lines)) and \
+          lines[current].startswith('  * '):
+        if need_to_start:
+            print '  &lt;ul&gt;'
+            need_to_start = False
+        text = lines[current].lstrip('  * ').rstrip()
+        print '  &lt;li&gt;' + text + '&lt;/li&gt;'
+        need_to_close = True
+        current += 1
+    if need_to_close:
+        print '  &lt;/ul&gt;'
+    return current
+
+def do_outer(lines):
+    print '&lt;ul&gt;'
+    current = 0
+    while current &lt; len(lines):
+        assert lines[current].startswith('* ')
+        text = lines[current].lstrip('* ').rstrip()
+        print '&lt;li&gt;' + text
+        current = do_inner(lines, current+1)
+        print '&lt;/li&gt;'
+    print '&lt;/ul&gt;'
+
+lines = sys.stdin.readlines()
+do_outer(lines)</pre>

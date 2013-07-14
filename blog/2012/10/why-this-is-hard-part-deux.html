@@ -1,0 +1,59 @@
+---
+layout: blog
+author: wilson.g
+title: Why This Is Hard (Part Deux)
+date: 2012-10-27
+time: 09:00:00
+category: [education]
+---
+
+<p>I pointed a grad student at the <a href="http://ipython.org/ipython-doc/stable/interactive/tutorial.html">IPython tutorial</a> and made some notes as she started to work through it. (She has used the vanilla Python interpreter before, but is still a novice.) Here's what happened.</p>
+
+<p>The first thing the tutorial mentions is tab completion, which she's used in other tools, so she tried that:</p>
+<pre>&gt;&gt;&gt; x = 'hello'
+&gt;&gt;&gt; x.&lt;TAB&gt; # shows methods of the string --- cool!</pre>
+<p>Does it work directly with strings?</p>
+<pre>&gt;&gt;&gt; 'abc'.&lt;TAB&gt; # shows --- what?</pre>
+<p>It took me a moment to figure out it was showing us all the files in the current working directory whose names begin with a '.' character. Since these files are normally hidden, I don't think the grad student had ever seen them; I also don't think she'd have figured out what they were on her own.</p>
+<pre>&gt;&gt;&gt; x? # gets help for the string referred to by x --- cool!</pre>
+<p>The information itself isn't very helpful for novices, but she was pleased it was there. Now what about this?</p>
+<pre>&gt;&gt;&gt; 'abc'?</pre>
+<p>Uh oh&mdash;it tells her "Object `` not found." Given that we've been using:</p>
+<pre>&gt;&gt;&gt; name = 'Perry'
+&gt;&gt;&gt; len(name)</pre>
+<p>and:</p>
+<pre>&gt;&gt;&gt; len('Perry')</pre>
+<p>interchangeably, this confused her. She moved on, but I think it got filed as "weird arbitrary computer stuff", which is exactly what we're trying to clear up.</p>
+
+<p>Now, coming from RStudio, one of the things she wants is to be able to edit while in the interpreter. And woo hoo, there's an '%edit' magic in IPython. But '%edit' brought up Vim, which may be the hardest editor in the world to get out of if you've never seen it before. There's nothing in the <a href="http://ipython.org/ipython-doc/stable/interactive/tutorial.html">tutorial</a> to tell her how to change the editor, and the word '%edit' doesn't link to any docs either. If I hadn't been there, she would have been toast. I'm not sure what to recommend, but unless you think ':wq' is intuitive or discoverable, this is a problem.</p>
+
+<p>And here's something even harder: "%%edit x = 5" opened Vim with the line:</p>
+<pre>get_ipython().magic(u'%edit x = 5')</pre>
+<p>When she quit with 'q!', Vim was immediately reopened with the same line. And again, and again, until she killed the window. I opened a fresh window and restart IPython for her. We then typed:</p>
+<pre>&gt;&gt;&gt; %%edit x = 5</pre>
+<p>and got a traceback starting with the error message:</p>
+<pre>WARNING: Argument given (x = 5) can't be found as a variable or as a filename.</pre>
+<p>Er, what? We then assigned 5 to x and tried the '%%edit x = 5' line again&mdash;same traceback. Hm. What if we try:</p>
+<pre>&gt;&gt;&gt; %edit</pre>
+<p>all by itself, quit from Vim, and then try:</p>
+<pre>&gt;&gt;&gt; %edit x = 5</pre>
+<p>Yup, that reproduces the "Vim forever!" problem.</p>
+
+<p>At this point, we're five minutes in, and has spent almost all of those five minutes wrestling with things that seem arbitrary to her, and that she wouldn't have been able to fix on her own. She has also asked what "cell magic" is, and I've punted by saying, "Oh, it's just multi-line stuff." I don't think that clarified anything for her, but luckily she was immediately distracted by Vim rising from its grave and forgot the question.</p>
+
+<p>She then tried playing around with shell commands from inside Python at my request (since we'd like to stop teaching the shell), and again there was some confusion:</p>
+<pre>&gt;&gt;&gt; %cd tmp</pre>
+<p>works fine, but:</p>
+
+&gt;&gt;&gt; %ls
+
+<p>tells us that the magic function `ls` is not found. She can use the shell escape '!ls' instead, but she'll have to keep a cheat sheet to remember which are '%' and which are '!', and it'll be a while before she understands why some require one prefix and some require the other, but at least when it doesn't work, it doesn't work.</p>
+
+<p>But then she tried this:</p>
+<pre>&gt;&gt;&gt; !cd ..</pre>
+<p>to get back to her home directory from the 'tmp' directory she changed into earlier. It looks like it worked, but '!ls' shows that it hasn't. I understand what's going on&mdash;the 'cd' happened in a sub-shell that's immediately discarded, rather than in the interpreter&mdash;but she's completely confused at this point.</p>
+
+<p>None of this is intended as a criticism of IPython: in the hands of someone who has mastered the underlying concepts, it's a great power tool, and I'm not going to switch back to the generic Python interpreter any time soon. But as a novice, this grad student doesn't have a clear mental model of how the operating system, the shell, and the Python interpreter relate to each other, so anything that moves back and forth between levels leaves her bewildered. Explaining things categorically therefore doesn't work (yet), because she doesn't have the categories. Equally, more documentation isn't a solution, because looking something up (i.e., adding information to existing concepts) and forming or internalizing concepts are different cognitive processes.</p>
+
+<p>What about putting safeties on the tool itself, i.e., taking features out of IPython to reduce the number of "mistakes" novices could make, or the number of times they'd say "huh?" The problem with that approach is that every one of those features is there for a reason: people really do want to run arbitrary shell commands from inside IPython, <em>and</em> change its own notion of the current working directory, and so on. As <a href="http://scientopia.org/blogs/goodmath/2012/10/05/everyone-should-program-or-programming-is-hard-both/">Mark Chu-Carroll pointed out</a>, some of this stuff really <em>is</em> irreducibly hard, because some of the things we're trying to do really <em>are</em> complex. Finding ways to "cook" it to make it more digestible is the heart of instructional design, and perhaps the greatest challenge we now face.</p>
+

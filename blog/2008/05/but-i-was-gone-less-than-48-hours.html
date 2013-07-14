@@ -1,0 +1,29 @@
+---
+layout: blog
+date: 2008-05-16
+time: 09:00:00
+author: wilson.g
+title: But I Was Gone Less than 48 Hours!
+category: [community, sponsors/enthought, opinion]
+---
+<p>I left Toronto for Austin mid-day Wednesday, and got back at midnight last night.  Lots happened in the interim, so here's a linkandthoughtdump (which I bet actually <em>is</em> one word in German):</p>
+<ul>
+<li>Gave a talk about <a href="http://www.amazon.com/Beautiful-Code-Leading-Programmers-Practice/dp/0596510047"><em>Beautiful Code</em></a> to the Austin Python Users' Group Wednesday at <a href="http://www.enthought.com">Enthought</a>'s swanky offices. (They're the kind folks who provide web hosting for the <a href="http://swc.scipy.org">Software Carpentry</a> course.) About 27 people in attendance, and good discussion afterward; was grateful to Travis Vaught and Sergey Fomel for rides from the airport and to the hotel respectively.</li>
+<li>Gave another talk titled "<a href="http://svn.software-carpentry.org/swc/papers/hpc-considered-harmful-2008.pdf">HPC Considered Harmful</a>" at the <a href="http://www.tacc.utexas.edu/">Texas Advanced Computing Center</a>'s Second Annual Scientific Software Days. I was a bit nervous about telling people at a supercomputing center that focusing on massive parallelism and peak performance is wrongheaded, but there were a lot of nodding heads.</li>
+<li>I made lots of notes from two other talks that I want to follow up on at some point:
+<ul>
+<li>Robert van de Geijn's <a href="http://www.cs.utexas.edu/users/flame/">FLAME</a> system lets you draw matrix operations, then automatically generates the corresponding high-performance code. It's a great example of a real high-level programming tool for scientists (and yet another special case of what a real <a href="http://www.third-bit.com/articles/extprog-acmqueue-2004.pdf">extensible programming system</a> would support).</li>
+<li>Eric Jones (also from <a href="http://www.enthought.com">Enthought</a>) talked about a tool they're building that watches changes to variables in Python programs, and automatically generates interactive plots of their values. It sounds simpler and less impressive than it actually is; I've asked him to put together a screencast, and I think you'll be wowed&mdash;I was. <em>(Later: Steve Eddings from The Mathworks sent me a link about <a href="http://blogs.mathworks.com/desktop/2008/04/14/a-link-to-the-data/">data linking in MATLAB</a>, complete with a <a href="http://www.mathworks.com/support/2008a/matlab/7.6/demos/LinkedPlotsAndDataBrushing.html">video tutorial</a>.)</em></li>
+</ul>
+</li>
+<li>At roughly the same time, half a world away, Diomidis Spinellis presented <a href="http://www.spinellis.gr/blog/20080516/">a study</a> comparing the code quality of Linux, Windows, OpenSolaris, and FreeBSD. Very cool work; wish I'd been at <a href="http://icse08.upb.de/">ICSE'08</a> to ask questions.</li>
+<li>Meanwhile, Dmitri Vassiliev, who is continuing his work on <a href="http://www.slashid.com">SlashID</a> this summer, has discovered that <a href="http://slashid.wordpress.com/2008/05/16/grrr-setbacks-as-always/">generated code is next-to-impossible to debug</a>. Not to be a one-note symphony or anything, but I said in that same <a href="http://www.third-bit.com/articles/extprog-acmqueue-2004.pdf">article</a> about extensible programming systems that the real challenge is not extending notation, but creating extensible debugging tools so that those notations and high-level representations can be fixed when they break.  Robert van de Geijn doesn't think <a href="http://www.cs.utexas.edu/users/flame/">FLAME</a> needs a debugger; respectfully, I disagree.</li>
+<li><a href="http://blog.openwetware.org/scienceintheopen/2008/05/16/avoid-the-pain-and-embarassment-make-all-the-raw-data-available/">Science in the Open</a> has a plea to scientists to make their raw data available, motivated by yet another irreproducible result.</li>
+<li>Kosta Zabashta has posted early thoughts about <a href="http://drprojectirc.wordpress.com/2008/05/16/the-early-plan/">integrating IRC into DrProject</a>. (Gray on black?  Kosta...your design skills rival mine...) I need to tell him that DrProject's RPC module doesn't handle tickets because Jeff Balogh is going to replace the entire ticketing system with an extensible one this summer, using his <a href="http://dojotoolkit.org">Dojo Form Editor</a> as a front end...</li>
+<li>Elisabeth Hendrickson has thoughts on <a href="http://testobsessed.com/2008/05/15/so-youre-trying-to-automate-tests-for-a-legacy-web-application/">automating tests for legacy web applications</a>. Students, take note.</li>
+<li>Thanks to Nick Jamil and others, we have instructions for <a href="https://stanley.cdf.toronto.edu/drproject/drproject/All/wiki/TitleIndex">installing DrProject on Windows</a>. Yay!</li>
+<li>Everything old is new again, including <a href="http://www.ddj.com/hpc-high-performance-computing/207800151">Ada and the Bletchley Park Colossus</a>.</li>
+</ul>
+<p>And then there's this:</p>
+<p><img src="http://imgs.xkcd.com/comics/security_holes.png" alt="" /></p>
+<p>Thanks again to <a href="http://www.beg.utexas.edu/personnel_ext.php?id=30">Sergey Fomel</a> for inviting me down, and for introducing me to the <a href="http://lcavwww.epfl.ch/reproducible_research/">reproducible</a> <a href="http://www.bioconductor.org/about/">research</a> <a href="http://www.stat.washington.edu/jaw/jaw.research.reproducible.html">community</a>&mdash;I'm looking forward to many more discussions.</p>

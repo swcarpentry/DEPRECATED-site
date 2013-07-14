@@ -1,0 +1,13 @@
+---
+layout: blog
+date: 2011-01-26
+time: 09:00:00
+author: pipitone.j
+title: Fighting Spam
+category: [tooling]
+---
+<p>We recently experienced a spate of spam and fake user accounts on the course discussion forums.  In this post I'll briefly explain what we're doing to stop that from happening again, and how the technology works.</p>
+<p>The course forums are powered by <a href="http://bbpress.org">bbPress</a>, the forum software written by the WordPress folks.  When I first installed it I left it with the default configuration settings and without doing anything in particular to lock it down from spammers.  <a href="http://bbpress.org/forums/tags/spam">Bad idea</a>.  When I checked this morning we had over fifty fake user accounts, and two spam postings.</p>
+<p>I had to manually remove the fake user accounts &mdash; luckily this is easy to do since either the names (e.g. "google directions plus") or the user's website is obviously spammy.  I then activated two plugins: <a href="http://akismet.com/">Akismet</a> to filter out any future spam posts and <a href="http://www.google.com/recaptcha">reCAPTCHA</a> to stop automated computer programs (i.e. <a href="http://en.wikipedia.org/wiki/Internet_bot">bots</a>) from registering fake user accounts.</p>
+<p>Akismet works by inspecting posts or comments for known spam-like features and flags them as spam if they match.  It is offered as a <a href="http://en.wikipedia.org/wiki/Web_service">web service</a>, so all we needed to install was a simple plugin for bbPress that sends each post and comment to the Akismet server and receives back an answer as to whether it is suspected to be spam or not.</p>
+<p>The <a href="http://bbpress.org/plugins/topic/recaptcha-bbpress/">reCAPTCHA</a> plugin adds a visual or audio test to the registration form on the course forums.  The test involves writing down scrambled words presented in an image or an audio clip and the test is designed to be possible for humans to answer correctly but not for computer programs.  The reCAPTCHA system is unique in that by correctly solving the tests you are also helping to digitize books, newspapers and radio audio.  That's because words for the reCAPTCHA tests come from one of those sources when they have been flagged as unreadable during an automated digitization process. Thus the words are known to be currently unreadable by computer programs  and this guarantees that bots will be unable to pass the test.  When a human passes the test they will have had to correctly read the word and the correct spelling is sent back to the folks digitizing the material.  Nifty.  You can learn more about exactly how the reCAPTCHA system works <a href="http://www.google.com/recaptcha/learnmore">here</a>.</p>

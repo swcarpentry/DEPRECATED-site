@@ -1,0 +1,17 @@
+---
+layout: blog
+date: 2007-06-27
+time: 09:00:00
+author: wilson.g
+title: Two Studies of ASCI (and no, that's not a typo)
+category: [content, research]
+---
+<p>After spending ten years helping scientists write programs for massively-parallel computers, I realized that what scientists really needed was to learn how to program, full stop.  It took me another eight years to (a) get up to speed with the theory and practice of modern software engineering, (b) realize how big the gap between the two was, and (c) accept that the only people who are entitled to have an opinion about how we ought to be building software are the ones who are studying how well their favorite tools and practices actually work in the field.  I no longer care what you're pushing&mdash;formal methods and cleanroom development or agile adhocracy and pair programming&mdash;unless you've gone the extra mile and collected data to show what effect it's actually having.</p>
+<p>That's why I was so pleased to come across these two papers:</p>
+<ol>
+<li>Post and Kendall: "Software Project Management and Quality Engineering Practices for Complex, Coupled Multiphysics, Massively Parallel Computational Simulations: Lessons Learned from ASCI". <cite>Intl. Journal of High Performance Computing Applications</cite>, 18(4), Winter 2004, pp. 399-416.</li>
+<li>Carver, Kendall, Squires, and Post: "Software Development Environments for Scientific and Engineering Software: A Series of Case Studies".  <cite>Proc. ICSE 2007</cite>, May 2007, pp. 550-59, 0-7695-2828-7.</li>
+</ol>
+<p>"ASCI" is the Accelerated Strategic Computing Initiative.  Launched in the mid-1990s, its mission was to produce a new generation of software for the US nuclear weapons program.  These are big pieces of code: millions of lines, with lifespans measured in decades, doing some of the most complicated math ever devised by human beings. Hundreds of millions of dollars have been spent, and thousands of programmer-years, so it's worth asking, "How's it going?  And what could be done better?"</p>
+<p>According to the authors of these papers, who have spent a lot of time studying the major projects within ASCI, the answers are "So-so" and "Lots" respectively.  Some parts of ASCI are considered outright failures: the Blanca project, for example, was so much in love with funky technology like template metaprogramming that it never delivered the science it was supposed to.  Other parts, though, have come through, though many have taken longer to do so than originally envisioned.  As the authors point out, though, management was "aggressive" in setting ASCI's specs, schedule, and resourcing levels, so it's not surprising that mere mortals couldn't live up to them.</p>
+<p>A lot of what these papers say is standard project management dogma.  For me, the most important point was, "Emphasize 'best practices' instead of 'processes'."  Every successful development team I've ever seen worried more about "doing the right thing" than about following the steps in a flowchart.  Knowing what the "right thing" is, now, that's the tricky part, but it's what I'd like most to impart to my students.  If you come back in ten years and ask me how I'm doing, I ought to have some data for you.</p>

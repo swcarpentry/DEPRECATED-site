@@ -1,0 +1,37 @@
+---
+layout: blog
+date: 2008-04-10
+time: 09:00:00
+author: wilson.g
+title: Three Studies (Maybe Four)
+category: [community, opinion, research]
+---
+<p>We're in the thick of picking students and projects for Google Summer of Code, which has inspired some less-random-than-usual thoughts.  Here are two studies I'd like to do (or see done):</p>
+<ol>
+<li>What has happened to previous students?  How many are still involved in open source?  How many have gone on to {start a company, grad school, prison}?  What do they think they learned from the program?  How much of the software they wrote is still in use?  Etc.</li>
+<li>Every one of the 175 organizations blessed by Google this year is using the same web application for collecting and voting on projects.  From what I can tell, they're all using it in different ways: +4 means something very different to the Python Software Foundation than it does to Eclipse or SWIG.  They're also using a bewildering variety of other channels for communication: wikis, IRC, Skype chat sessions, mailing lists (the most popular), and so on.  Why?  Is this another reflection of Jorge Aranda's finding that every small development group evolves a different process, but all those processes "work" in some sense, or is it&mdash;actually, I don't have any competing hypotheses right now, but I'm sure there are some.</li>
+</ol>
+<p>And while we're on the subject of studies, I just read Hochstein et al's paper <a href="http://www.ctwatch.org/quarterly/pdf/ctwatchquarterly-8.pdf">"Experiments to Understand HPC Time to Development"</a> (CT Watch Quarterly, 2(4A), November 2006).  They watched a bunch of grad students at different universities develop some simple parallel applications using a variety of tools, and measured productivity as (relative speedup)/(relative effort), where relative speedup is (reference execution time)/(parallel execution time), and relative effort is (parallel effort)/(reference effort).  The speedup measure is unproblematic, but as far as I can tell, they don't explain where their "reference effort" measure comes from.  I suspect it's the effort required to build a serial solution to the problem, and that "parallel effort" is then the <em>additional</em> time required to parallelize; I've mailed the authors to ask, but haven't heard back yet.</p>
+<p>I wasn't surprised when I realized that the authors hadn't done the other half of the study, i.e., they hadn't benchmarked the productivity of a QDE (quantative development environment) like <a href="http://www.mathworks.com">MATLAB</a>&mdash;many people talk and think as if scientific computing and high-performance computing were the same thing.  At first glance, it doesn't seem like it would be hard to do&mdash;you could use the performance of the MATLAB or NumPy code over the performance of a functionally equivalent C or Fortran program for the numerator.  You have to be careful about the denominator, though: if my guess is right, then if things were done in real-world order, you'd be comparing:</p>
+<table>
+<tr>
+<td align="center">time to write parallel code after writing serial code</td>
+<td valign="center"></td>
+<td align="center">time to write serial code from scratch</td>
+</tr>
+<tr>
+<td>
+<hr /></td>
+<td valign="center">vs</td>
+<td>
+<hr /></td>
+</tr>
+<tr>
+<td align="center">time to write MATLAB from scratch</td>
+<td valign="center"></td>
+<td align="center">time to write serial code having written MATLAB</td>
+</tr>
+</table>
+<p>Even with that, I strongly suspect that MATLAB (or any other full-featured QDE) would come out well ahead of any parallel programming environment currently in existence on problems of this size.  Yes, you need big iron to simulate global climate change over the course of centuries, but that's <em>not</em> what most scientists do, and the needs of that minority shouldn't dominate the needs of the desktop majority.</p>
+<p>I'd also be interested in re-doing this study using MATLAB parallelized with Interactive Supercomputing's tools.  I have no idea what the performance would be, but the parallelization effort would be so low that I suspect it would once again leave today's mainstream HPC tools in the dust.</p>
+<p>And now let's double back for a moment.  I used the phrase "desktop majority" a couple of paragraphs ago, but is that really the case?  What <em>do</em> most computational scientists use?  What if we include scientists who don't think of themselves as computationalists, but find themselves doing a lot of programming anyway, just because they have to?  If you plotted rank vs. frequency, would you get a power law distribution, i.e., does <a href="http://en.wikipedia.org/wiki/Zipf's_law">Zipf's Law</a> hold in scientific computing?  Last term, I <a href="http://pyre.third-bit.com/blog/archives/1173.html">calculated</a> a <a href="http://en.wikipedia.org/wiki/Gini_coefficient">Gini coefficient</a> for each team in my undergraduate software engineering class using lines of code instead of income as a raw metric; what's the Gini coefficient for the distribution of computing cycles used by scientists (i.e., how evenly or unevenly is computing power distributed)?  And how should the answers to these questions shape research directions, the development of new tools, and what we teach in courses like <a href="http://swc.scipy.org">Software Carpentry</a>?</p>

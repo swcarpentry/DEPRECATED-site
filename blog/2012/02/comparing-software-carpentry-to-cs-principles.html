@@ -1,0 +1,69 @@
+---
+layout: blog
+date: 2012-02-09
+time: 09:00:00
+author: wilson.g
+title: Comparing Software Carpentry to CS Principles
+category: [content, education, versions/version-5-0]
+---
+<p>A lot of new educational initiatives in computing have sprung up in the past couple of years, ranging from Mozilla's <a href="http://hackasaurus.org/">Hackasaurus</a> to the UK <a href="http://royalsociety.org/education/policy/computing-in-schools/report/">rethinking its grade-school curriculum</a>. One of the biggest is the "<a href="http://www.csprinciples.org/">Computer Science: Principles</a>" project in the United States, which, with backing from the National Science Foundation, is trying to re-define the high school Advanced Placement course. They have some well-grounded ideas about what should be taught and why; how does Software Carpentry compare?</p>
+<p>To make the long story below short, Software Carpentry is tackling a subset of the ideas and issues of CS Principles. I originally wrote, "the purely technical subset", but that's not quite right: we do look at communication and collaboration in software teams, at producing information for human consumption, at the aesthetic aspects of programming, but only insofar as these affect correctness and productivity. One reason is that our learners have much less time to devote to this than high school students have for a year-long course. Another is that we're not tasked with shaping young citizens in the way that public schools are, so communication skills and considerations of societal impact aren't our concern. I don't think we cover any big ideas that CS Principles <em>doesn't</em>, which is actually encouraging: if we can hang on five or ten years, we might be able to assume that most of our learners are already familiar with the big ideas, so that we can concentrate entirely on "how".</p>
+<p><strong>Computational Thinking Practices</strong></p>
+<ol>
+<li><strong>Connecting Computing</strong> to society, innovation, and everyday life: not a focus for SC, although we try very hard to connect things to scientific research and researchers' everyday needs.</li>
+<li><strong>Developing computational artifacts</strong> (which includes writing programs), and applying computing techniques to creatively solving problems: yes.</li>
+<li><strong>Analyzing problems and artifacts</strong> by applying aesthetic, mathematical, pragmatic, and other criteria: I'd like to see more in Software Carpentry on things like code review, but I don't think we need anything more on algorithm analysis or the like.</li>
+<li><strong>Communicating</strong>: not really our focus, but we hope that teaching people how to generate web pages, produce and consume RSS feeds, and so on will make communicating easier and more effective..</li>
+<li><strong>Working in Teams</strong>: also not directly our focus, but again, we hope that teaching people things like version control will help them collaborate.</li>
+</ol>
+<p><strong>Big Ideas</strong></p>
+<p>Ours are described in two <a href="{{page.root}}/blog/2012/01/revising-the-curriculum.html">recent</a> <a href="{{page.root}}/blog/2012/01/the-big-picture-2.html">posts</a>. CS Principles lists these:</p>
+<ol>
+<li><strong>Computing is a creative activity</strong>: we says "computing is a <em>human</em> activity", which isn't quite the same.</li>
+<li><strong>Abstraction reduces information and detail to facilitate focus on relevant concepts</strong>: we say "programming is about creating and composing abstractions", which isn't quite the same.</li>
+<li><strong>Data and information facilitate the creation of knowledge</strong>: we don't have an explicit equivalent.</li>
+<li><strong>Algorithms are used to develop and express solutions to computational problems</strong>: well, yeah.</li>
+<li><strong>Programming enables problem solving, human expression, and creation of knowledge</strong>: I'm not sure this is a "big idea" in the same sense as the others; we don't belabor it, since we think that most scientists already get this.</li>
+<li><strong>The Internet pervades modern computing</strong>: ditto.</li>
+<li><strong>Computing has global impacts</strong>: ditto.</li>
+</ol>
+<p><strong>Learning Objectives</strong></p>
+<ol>
+<li><strong>The student can use computing tools and techniques to create artifacts</strong>: agreed.</li>
+<li><strong>The student can analyze computational artifacts</strong>: we don't do this, but should.</li>
+<li><strong>The student can use computing tools and techniques for creative expression</strong>: I think this is just a stronger restatement of objective #1.</li>
+<li><strong>The student can use programming as a creative tool</strong>: ditto.</li>
+<li><strong>The student can describe the combination of abstractions used to represent data</strong>: this is the realization of our "it's all just data" big idea, so yes.</li>
+<li><strong>The student can explain how binary sequences are used to represent digital data</strong>: I think this is just a particular instance of #5 above.</li>
+<li><strong>The student can develop an abstraction</strong>: we fold this into #1&mdash;in order to develop artifacts (programs), Software Carpentry learners are going to have to develop and understand abstractions.</li>
+<li><strong>The student can use multiple levels of abstraction in computation</strong>: as above.</li>
+<li><strong>The student can use models and simulations to raise and answer questions</strong>: this is a big goal of our course.</li>
+<li><strong>The student can use computers to process information to gain insight and knowledge</strong>: again, this is a big goal of our course.</li>
+<li><strong>The student can communicate how computer programs are used to process information to gain insight and knowledge</strong>: we'd like our learners to be able to explain what they've learned to others, not least so that they can run workshops of their own, but it's not a priority.</li>
+<li><strong>The student can use computing to facilitate exploration and the discovery of connections in information</strong>: as with #9 and #10.</li>
+<li><strong>The student can use large datasets to explore and discover information and knowledge</strong>: as above.</li>
+<li><strong>The student can analyze the considerations involved in the computational manipulation of information</strong>: the discussion makes it clear that "considerations" means "tradeoffs", so yes, this is something we'd like our learners to be able to do.</li>
+<li><strong>The student can develop an algorithm</strong>: if you think that every program is the embodiment of an algorithm, then yes, of course, but if you mean "can derive quicksort on their own", then no.</li>
+<li><strong>The student can express an algorithm in a language</strong>: yes, of course.</li>
+<li><strong>The student can appropriately connect problems and potential algorithmic solutions</strong>: specifically, this means that learners can
+<ul>
+<li>identify problems that can be solved in a reasonable time;</li>
+<li>explain why heuristic approaches are necessary to solve some problems in a reasonable time; and</li>
+<li>explain how some problems cannot be solved using any algorithm.</li>
+</ul>
+We have explicitly <em>not</em> included this in Software Carpentry, as our experience has been that there's nothing substantive we can teach in the hour or two we'd be able to devote to it that would actually make a difference. Given more time, though...</li>
+<li><strong>The student can evaluate algorithms analytically and empirically</strong>: I agree it's important, but it's not really our focus&mdash;we are definitely <em>not</em> trying to cram an entire CS degree into a short course.</li>
+<li><strong>The student can explain how programs implement algorithms</strong>, e.g., explain how instructions are processed: this should be in Software Carpentry, but isn't right now.</li>
+<li><strong>The student can use abstraction to manage complexity in programs</strong>: again, I think learners have to do this to build the artifacts we ask them to build.</li>
+<li><strong>The student can evaluate a program for correctness</strong>: we should do more of this.</li>
+<li><strong>The student can develop a correct program</strong>: I hope so.</li>
+<li><strong>The student can employ appropriate mathematical and logical concepts in programming</strong>: not really&mdash;we don't touch on things like pre- and post-conditions, invariants, and the like because we're teaching the craft of programming rather than the science of computing.</li>
+<li><strong>The student can explain the abstractions in the Internet and how the Internet functions</strong>: not currently part of our core, because we don't think we can teach people enough about web programming in a short course to let them do anything except create security holes. I'd be very happy to be persuaded otherwise...</li>
+<li><strong>The student can explain characteristics of the Internet and the systems built on it</strong>: as above.</li>
+<li><strong>The student can analyze how characteristics of the Internet and systems built on it influence their use</strong>: as above.</li>
+<li><strong>The student can connect the concern of cybersecurity with the Internet and systems built on it</strong>: as above.</li>
+<li><strong>The student can analyze how computing affects communication, interaction, and cognition</strong>: out of scope&mdash;though I hope we're preparing learners to hear what people like <a href="http://cameronneylon.net/">Cameron Neylon</a>, <a href="http://michaelnielsen.org/blog/michael-a-nielsen/">Michael Nielsen</a>, and <a href="http://blog.jonudell.net/">Jon Udell</a> are saying about this.</li>
+<li><strong>The student can connect computing with innovations in other fields</strong>: not us.</li>
+<li><strong>The student can analyze the beneficial and harmful effects of computing</strong>: as above.</li>
+<li><strong>The student can connect computing within economic, social, and cultural contexts</strong>: as above.</li>
+</ol>

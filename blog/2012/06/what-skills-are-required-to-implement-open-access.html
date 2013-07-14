@@ -1,0 +1,21 @@
+---
+layout: blog
+date: 2012-06-04
+time: 10:00:00
+author: wilson.g
+title: What Skills Are Required to Implement Open Access?
+category: [community, content]
+---
+<p>Late last night, local time, the <a href="https://wwws.whitehouse.gov/petitions/!/petition/require-free-access-over-internet-scientific-journal-articles-arising-taxpayer-funded-research/wDX82FLQ">Access2Research petition at whitehouse.gov</a> got 25,000 signatures, which means that the White House is committed to responding. As someone who no longer reviews for journals that aren't OA, I obviously think that's great news, but it once again raises the question: what concepts and skills do researchers need in order to <em>implement</em> open access?  Jon Udell has written at length about some things (most recently <a href="http://www.wired.com/cloudline/2012/06/calendars-in-the-cloud/">here</a>), but to sharpen up the discussion:</p>
+<blockquote><p><em>If we added a third day to <a href="{{page.root}}/blog/2012/03/what-we-teach-in-two-days.html">our standard two-day workshop</a>, what could we put in it to help scientists use the web in their work?</em></p></blockquote>
+<p>I've <a href="{{page.root}}/blog/2012/04/what-to-teach-researchers-about-the-web.html">asked this question before</a>, and even <a href="{{page.root}}/blog/2012/04/straw-man-for-web-programming.html">answered it</a>, but now that I'm part-way through writing up curriculum for that answer, I'm no longer satisfied with it. Yes, I can explain the HTTP request/response cycle, the structure of HTML, and how to use a web service, but that's like explaining the syntax of Python rather than how to structure a program, and over the past few years, we've moved from the former to the latter because the latter is what really matters.</p>
+<p>So let me reframe the question. I <em>think </em>that half a day (i.e., the morning of day 3) is enough to teach:</p>
+<ol>
+<li>the structure of HTML/XML,</li>
+<li>how to create/parse documents programmatically, and</li>
+<li>the HTTP request/response cycle, the structure of URLs, etc.</li>
+</ol>
+<p>There is absolutely, positively <em>not</em> time to teach them enough about security for them to start writing their own server-side applications: frameworks like Django do make some things simpler, but even experts can still create vulnerabilities for villains to exploit.</p>
+<blockquote><p><em>If we add a third day to our standard two-day workshop, can we teach people enough about the web for them to use <strong>and hack</strong> the IPython Notebook?</em></p></blockquote>
+<p><em></em>"And hack" is the important part: tools like these are still in their infancy, and every researcher's needs are slightly different, so I think our goal should be to accelerate evolution in this arena by teaching people how to extend the Notebook, connect it to other systems, etc. As always, the acid test must be whether they can debug the things they build using the skills they have&mdash;we know from both our own experience and the work of others that cookbook/template approaches fail in this regard.</p>
+<p>Is the intersection of these constraints non-empty?  Is there something we actually can teach in the time we have, to the audience we have, that's useful and debuggable? And if so, would you like to help us build it?</p>

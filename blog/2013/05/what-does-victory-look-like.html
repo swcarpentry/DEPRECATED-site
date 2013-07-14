@@ -1,0 +1,130 @@
+---
+layout: blog
+author: wilson.g
+title: What Does Victory Look Like?
+date: 2013-05-26
+time: 10:00:00
+category: [community]
+---
+<!-- start excerpt -->
+<p>
+  A lot of changes are happening to science as I write this.
+  Crowdsourcing,
+  open reviews,
+  citeable data,
+  new ways to measure contributions,
+  automatically tracking the provenance of every calculation&mdash;each
+  has emerged from its chrysalis and is just waiting for its wings to dry
+  so that it can take flight.
+</p>
+<p>
+  Our job is to give scientists the skills they need to nurture these ideas.
+  For the last post in this series,
+  I'd therefore like to talk about what victory will look like&mdash;i.e.,
+  how scientists' lives will be different
+  if and when the things we teach become as routine as doing statistics.
+  My vision is simple:
+</p>
+<!-- end excerpt -->
+<blockquote><em>
+  Scientists won't submit, publish, and download papers.
+  They will fork and merge projects.
+</em></blockquote>
+<p>
+  The single most important thing we teach scientists is <strong>version control</strong>.
+  We tell them it's for record-keeping,
+  but it's also the underpinning for a style of work that open source developers think of as normal,
+  and the rest of the world finds extraordinary.
+  Do you like my code?
+  Do you think you can improve on it?
+  Great!
+  Fork my repository,
+  build your stuff on top of mine,
+  and then give me your improvements to merge into the master copy
+  so that the next person has an even better starting point.
+  Firefox and Wikipedia are two proofs among many
+  that this can scale to thousands upon thousands of contributors.
+  There's no reason it couldn't be the "new normal" for science
+  once version control and a few other things are routine parts of scientific life.
+</p>
+<p>
+  What exactly are those "other things"?
+  The first is <strong>task automation</strong>:
+  everything someone might have to re-do
+  must be captured in a re-runnable way.
+  This can be a shell script,
+  a Makefile,
+  a snippet of Python or R,
+  or something as yet undevised.
+  What matters is that without this,
+  people have to invest hours or weeks of forensic investigation before they can use someone else's work,
+  which in practice means they won't.
+</p>
+<p>
+  The second thing is <strong>comprehensive testing</strong>.
+  This isn't just a special case of task automation,
+  although tests that aren't automated might as well not exist
+  as far as people forking a piece of work are concerned.
+  It isn't primarily about ensuring that software is doing what it's supposed to,
+  either.
+  Instead,
+  as we teach people in our boot camps,
+  the primary purpose of testing is
+  <em>to define what the author thinks "correct" actually means</em>.
+  If you tell me that the eigenvalues of a matrix are close to zero,
+  I don't know what you actually mean,
+  any more than I know what you mean if you say that
+  the heights and weights of a sample population are strongly correlated.
+  If your tests check that all the eigenvalues are less than 0.0001,
+  on the other hand,
+  we now have something concrete to agree or disagree about.
+</p>
+<p>
+  And yes,
+  it's often hard to test scientific code,
+  and it's also often not even appropriate&mdash;just think of
+  the twenty lines of R that turn a bunch of CSV files into a line graph.
+  But that brings us to the third of our "other things",
+  which includes things like structured program design
+  and <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424">data management</a>.
+  For lack of a better name,
+  I'll call it <strong>computational tidiness</strong>;
+  as with task automation,
+  it's what allows other people to pick up a piece of work and build on it
+  without superhuman effort.
+  It's also what allows people to <em>review</em> work:
+  if they can't find things easily,
+  or make sense of them,
+  they won't bother.
+</p>
+<p>
+  We teach the Unix shell,
+  Python (or R),
+  Git,
+  xUnit testing libraries,
+  SQL,
+  regular expressions,
+  and sundry other things
+  because big ideas aren't meaningful in the abstract.
+  Along the way
+  we hope to convey a deeper understanding of
+  <a href="{{page.root}}/v4/softeng/principles.html">seven big ideas</a>
+  that I believe can only come from getting your hands dirty:
+</p>
+<ol>
+  <li>It's all just data.</li>
+  <li>Data doesn't mean anything on its own&mdash;it has to be interpreted.</li>
+  <li>Programming is about creating and composing abstractions.</li>
+  <li>Models for computers, views for people.</li>
+  <li>Paranoia makes us productive.</li>
+  <li>Better algorithms are better than better hardware.</li>
+  <li>The tool shapes the hand.</li>
+</ol>
+<p>
+  If,
+  ten years from now,
+  the average scientist understands these as well as she understands significance,
+  correlation coefficients,
+  and p-values,
+  I for one will think that we've won.
+</p>

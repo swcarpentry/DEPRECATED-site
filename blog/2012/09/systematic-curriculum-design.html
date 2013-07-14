@@ -1,0 +1,700 @@
+---
+layout: blog
+date: 2012-09-16
+time: 09:00:00
+author: wilson.g
+title: Systematic Curriculum Design
+category: [content, education, versions/version-5-0]
+---
+<p><em>Executive summary: we'd appreciate your help organizing and motivating our material better.</em></p>
+<p>One of the good things about traveling is that it gives me time to think. One of the bad things about thinking is that every time I do, I wind up with more work than I had when I started. For example, to organize and motivate our content, I'm using eight questions that scientists frequently ask:</p>
+<ol>
+<li>How can I manage this data?</li>
+<li>How can I process it?</li>
+<li>How can I tell if I've processed it correctly?</li>
+<li>How can I find and fix bugs when I haven't?</li>
+<li>How can I keep track of what I've done?</li>
+<li>How can I find and use other people's work?</li>
+<li>How can other people find and use mine?</li>
+<li>How can I do all these things faster?</li>
+</ol>
+<p>On the other side of the equation I have a syllabus for the core Software Carpentry material, which includes:</p>
+<ul>
+<li>the command-line shell (e.g., Bash)</li>
+<li>version control</li>
+<li>basic programming (variables, lists, loops, conditionals, and simple file I/O)</li>
+<li>functions and libraries</li>
+<li>databases (i.e., basic SQL queries)</li>
+<li>matrix programming (e.g., MATLAB or NumPy)</li>
+<li>quality assurance (defensive programming, testing, etc.)</li>
+<li>dictionaries (or hashes, if you're a Perl programmer)</li>
+<li>the development process (stepwise refinement, red-green-refactor, performance profiling)</li>
+<li>web programming (by which we mean using web APIs, not providing services yourself)</li>
+</ul>
+<p>In order to figure out how well we're helping scientists, we need to map their needs onto our content. Here's what I've come up with:</p>
+<table>
+<tbody>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I manage this data?</td>
+<td valign="top">The Shell</td>
+<td valign="top">Use directories and sub-directories with meaningful names.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use filenames that can easily be matched with wildcards.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use filename extensions that indicate the type of data in the file.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use text unless there's a powerful reason to use something else.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">If it's megabytes or less, put it under version control.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">Create and use data formats that are easy for programs to parse.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">Store it in a relational database.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Store each atom of information in its own field.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Make sure each record has a unique key.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Make sure that information is never duplicated.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use foreign keys and joins to combine information from different tables.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">Represent it as a matrix, because that's easy to process.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">Store it in a set or dictionary so that elements can be looked up by value rather than by position.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">Format it as HTML (or XML, or some other widely-used format).</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Separate content from presentation (e.g., use CSS for styling).</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I process it?</td>
+<td valign="top">The Shell</td>
+<td valign="top">Use Unix commands that manipulate lines of text.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Combine those commands using pipes and redirection.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use loops to perform the same operations on many files.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">Write programs that use loops, file I/O, and string splitting to read data.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use floating-point numbers unless you are sure all values (including calculated values) will always be integers.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">Define functions to do simple operations, then combine those for more complicated effects.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Equivalently, describe what you would do in a language customized to your problem, then fill in the missing bits of code by creating functions.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">Write SQL queries to select, filter, aggregate, and sort data.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use a general-purpose programming language for everything else.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">Use a linear algebra package like NumPy.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">Use algorithms that don't depend on the order of items.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">Use the right data structures.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">Use an HTTP library to fetch it.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use an XML or JSON library to parse it.</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I tell if I've processed it correctly?</td>
+<td valign="top">The Shell</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">Test your programs with small data sets whose results can be checked by hand.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">Build queries in small steps.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Run queries against small data sets whose output can be checked manually.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">Compare a program's output to analytic results, experimental results, simplified test cases, and previous programs.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use tolerances when comparing results.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">Create simple data sets for which the right answer can be calculated by hand.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Compare the results produced by the new program to results produced by older programs.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">Make code testable by dividing it into functions, and then replacing some functions with others for testing purposes.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I find and fix bugs when I haven't?</td>
+<td valign="top">The Shell</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">Write test cases that fail when the bug is present, but pass when the bug is fixed.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Add assertions to programs to check its internal consistency.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use a debugger.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">Write tests.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I keep track of what I've done?</td>
+<td valign="top">The Shell</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">Keep your work under version control.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Check in whenever you've completed a significant change.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Write meaningful check-in comments.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">Put version control IDs in programs (and data files), and copy them forward to results.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">Give functions meaningful names.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Group related functions and related definitions into modules.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Write docstrings to explain what functions and modules do and how to use them.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">Store queries in files (just like programs).</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">Turn bug fixes into assertions and test cases.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Use a coverage analyzer to see what code is and isn't being tested.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">Use <code>meta</code> headers in your HTML/XML data files.</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I find and use other people's work?</td>
+<td valign="top">The Shell</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">Get it from their version control repositories.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">Use the <code>help</code> function to read their documentation.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">Ask them to use well-formed URLs.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">And to format it according to well-defined machine-readable standards (e.g., XML or JSON).</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can other people find and use mine?</td>
+<td valign="top">The Shell</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">Put your work in a publicly-accessible version control repository.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">Write docstrings to explain what functions and modules do and how to use them.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">Raise exceptions to signal errors so that other people can handle them as they think best.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">Put it on the web at a stable URL.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Format it according to well-defined machine-readable standards (e.g., XML or JSON).</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Include meta-data.</td>
+</tr>
+<tr>
+<td valign="top"><strong>Question</strong></td>
+<td valign="top"><strong>Subject</strong></td>
+<td valign="top"><strong>Answer</strong></td>
+</tr>
+<tr>
+<td valign="top">How can I do all these things faster?</td>
+<td valign="top">The Shell</td>
+<td valign="top">Put commands in shell scripts so that they can be re-used.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Version Control</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Basic Programming</td>
+<td valign="top">Use appropriate variable names so that people will waste less time trying to read programs.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Functions and Libraries</td>
+<td valign="top">Learn to recognize and use common design patterns.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Databases</td>
+<td valign="top">&mdash;</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Number Crunching</td>
+<td valign="top">Use a linear algebra package like NumPy.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Quality</td>
+<td valign="top">Design code for testing.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Write test cases <em>before</em> writing new code.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Sets and Dictionaries</td>
+<td valign="top">Use sets and dictionaries for sparse, irregular, or unordered data.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Development</td>
+<td valign="top">Use a profiler to figure out why code is slow before trying to optimize it.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top">Build code so that parts can be replaced easily.</td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top">Web Programming</td>
+<td valign="top">&mdash;</td>
+</tr>
+</tbody>
+</table>
+<p>In parallel with this, a group of us have been working on a paper describing best practices for computational science. The list we've converged on is:</p>
+<ol>
+<li><strong>Write programs for people, not computers.</strong>
+<ul>
+<li>Programs should not require their readers to hold more than a handful of facts in memory at once.</li>
+<li>Names should be consistent, distinctive, and meaningful.</li>
+<li>Code style and formatting should be consistent.</li>
+<li>All aspects of software development should be broken down into tasks roughly an hour long.</li>
+</ul>
+</li>
+<li><strong>Automate repetitive tasks.</strong>
+<ul>
+<li>Rely on the computer to repeat tasks.</li>
+<li>Save recent commands in a file for re-use.</li>
+<li>Use a build tool to automate scientific workflows.</li>
+</ul>
+</li>
+<li><strong>Use the computer to record history.</strong>
+<ul>
+<li>Software tools should be used to track computational work automatically.</li>
+</ul>
+</li>
+<li><strong>Make incremental changes.</strong>
+<ul>
+<li>Work in small steps with frequent feedback and course correction.</li>
+</ul>
+</li>
+<li><strong>Use version control.</strong>
+<ul>
+<li>Use a version control system.</li>
+<li>Everything that has been created manually should be put in version control.</li>
+</ul>
+</li>
+<li><strong>Don't repeat yourself (or others).</strong>
+<ul>
+<li>Every piece of data must have a single authoritative representation in the system.</li>
+<li>Code should be modularized rather than copied and pasted.</li>
+<li>Re-use code instead of rewriting it.</li>
+</ul>
+</li>
+<li><strong>Plan for mistakes.</strong>
+<ul>
+<li>Add assertions to programs to check their operation.</li>
+<li>Use an off-the-shelf unit testing library.</li>
+<li>Turn bugs into test cases.</li>
+<li>Use a symbolic debugger.</li>
+</ul>
+</li>
+<li><strong>Optimize software only after it works correctly.</strong>
+<ul>
+<li>Use a profiler to identify bottlenecks.</li>
+<li>Write code in the highest-level language possible.</li>
+</ul>
+</li>
+<li><strong>Document the design and purpose of code rather than its mechanics.</strong>
+<ul>
+<li>Document interfaces and reasons, not implementations.</li>
+<li>Refactor code instead of explaining how it works.</li>
+<li>Embed the documentation for a piece of software in that software.</li>
+</ul>
+</li>
+<li><strong>Conduct code reviews.</strong>
+<ul>
+<li>Use code review and pair programming when bringing someone new up to speed and when tackling particularly tricky design, coding, and debugging problems.</li>
+<li>Use an issue tracking tool.</li>
+</ul>
+</li>
+</ol>
+<p>As you can see, this list only partially overlaps the "Answers" column in the table above. That makes me nervous: when two independent attacks on a problem yield two different answers, the odds are good that neither of them is right. I trust the "best practices" list more than I do the breakdown of our existing material, which leaves me with some awkward choices. Changing the motivating questions would feel like moving the goalposts so that I can declare victory with the content I have, but on the other hand, maybe there <em>is</em> a better way to carve up the space of things scientists want to do that will give a better mapping. Or are there connections between our content and those motivating questions that I'm just missing? Or do we really have the wrong content, i.e., are we teaching what we know, rather than what would actually be most useful to scientists?</p>
+<p>Stepping back for a moment, the real point of this exercise is to ensure that:</p>
+<ol>
+<li>we're teaching what's most useful to our learners;</li>
+<li>everything we teach makes sense, and is seen as useful, when it first appears; and</li>
+<li>learners see the connections between ideas and between ideas and their application.</li>
+</ol>
+<p>What we should <em>really</em> do is go one step further and figure out how to tell whether our learners can actually do the things embodied in our eight questions. We should then work backward from that assessment to figure out what demonstrable skills they need to acquire, then what understanding they need in order to become proficient with those skills, and then see how <em>that</em> maps onto our best practices. We've made a start toward this with the <a href="{{page.root}}/blog/2012/08/alpha-test-of-drivers-license-exam.html">"driver's license" exam</a> described in an earlier post; if you'd like to help us follow through, please <a href="mailto:{{site.contact}}">get in touch</a>.</p>
+
