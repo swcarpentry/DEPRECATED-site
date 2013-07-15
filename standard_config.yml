@@ -9,6 +9,7 @@ twitter_url     : "https://twitter.com/swcarpentry"
 recent_length   : 10
 blog_title      : "Software Carpentry"
 blog_subtitle   : "Helping scientists make better software since 1998"
+training_url    : "http://teaching.software-carpentry.org"
 flag_size       : 16
 badges : {
     "creator" : [
