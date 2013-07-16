@@ -118,7 +118,7 @@ def harvest_blog(config):
             m['category'] = [config['category'][c] for c in m['category']]
             all_meta.append(m)
 
-    all_meta.sort(lambda x, y: cmp(x['date'], y['date']) and cmp(x['time'], y['time']))
+    all_meta.sort(lambda x, y: cmp(x['date'], y['date']) or cmp(x['time'], y['time']))
     return all_meta
 
 #----------------------------------------
