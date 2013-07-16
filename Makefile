@@ -1,11 +1,12 @@
-# URL of web site is also directory on server content is served from.
-URL = dev.software-carpentry.org
+# Base URL and installation directory for development version on server.
+DEV_URL = dev.software-carpentry.org
+DEV_DIR = $(HOME)/dev.software-carpentry.org
 
-# URL of website.
-WEBSITE = http://$(URL)
+# Base URL and installation directory for installed version on server.
+INSTALL_URL = software-carpentry.org
+INSTALL_DIR = $(HOME)/software-carpentry.org
 
-# Directory content is installed in for serving.
-INSTALL_DIR = $(HOME)/$(URL)
+#-------------------------------------------------------------------------------
 
 # Source files in root directory.
 SRC_ROOT = $(wildcard ./*.html)
@@ -49,7 +50,7 @@ GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 
-#----------------------------------------
+#-------------------------------------------------------------------------------
 
 # By default, show the commands in the file.
 all : commands
@@ -62,15 +63,19 @@ commands :
 check :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
 
+## dev      : build into development directory for sharing
+dev :
+	make SITE=$(DEV_URL) OUT=$(DEV_DIR) build
+
 ## install  : build into installation directory for sharing
 install :
-	make SITE=$(WEBSITE) OUT=$(INSTALL_DIR) build
+	make SITE=$(INSTALL_URL) OUT=$(INSTALL_DIR) build
 
 ## clean    : clean up
 clean :
 	rm -rf $(GENERATED) _site $$(find . -name '*~' -print)
 
-#----------------------------------------
+#-------------------------------------------------------------------------------
 
 # build : compile site into $(OUT) with $(SITE) as Software Carpentry base URL
 build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(DST_DIRS)
