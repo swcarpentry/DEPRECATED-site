@@ -14,7 +14,6 @@ root: ../..
   </head>
   <body>
     <div class="container shadow">
-
       {% include generic-banner.html %}
       {% include navbar.html %}
 
@@ -46,12 +45,11 @@ root: ../..
             {% endif %}
           </div>
 
-        {{content}}
+          {{content}}
+          {% include disqus.html %}
+          {% include footer.html %}
         </div>
       </div>
-
-      {% include disqus.html %}
-      {% include footer.html %}
     </div>
 
     {% include generic-javascript.html %}

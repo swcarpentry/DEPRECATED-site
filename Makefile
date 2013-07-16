@@ -92,7 +92,7 @@ $(OUT)/feed.xml : ./bin/feed.py $(OUT)/index.html
 
 # Make the site pages (including blog posts).
 $(OUT)/index.html : _config.yml $(SRC_PAGES)
-	jekyll $(OUT)
+	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
 _config.yml : ./bin/preprocess.py standard_config.yml $(SRC_BLOG) $(SRC_BOOTCAMP)
