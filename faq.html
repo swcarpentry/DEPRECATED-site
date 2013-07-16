@@ -7,13 +7,52 @@ title: Frequently Asked Questions
   <img src="{{page.root}}/img/bootcamps/2013-01-mcgill.png" alt="Boot Camp at McGill University, January 2012" />
 </div>
 
-<dl>
+<div class="row-fluid">
+  <div class="span6">
+    <ul>
+      <li><a href="#what-is-swc">What is Software Carpentry?</a></li>
+      <li><a href="#why-does-swc-exist">Why does Software Carpentry exist?</a></li>
+      <li><a href="#team">Who created all this?</a></li>
+      <li><a href="#sponsors">Who pays for all this?</a></li>
+      <li><a href="#what-is-boot-camp">What is a boot camp?</a></li>
+      <li><a href="#boot-camp-costs">Are boot camps free?</a></li>
+      <li><a href="#how-much-will-i-learn">Will I really learn all this in just two days?</a></li>
+      <li><a href="#bootcamp-curriculum">Is the boot-camp curriculum set in stone?</a></li>
+      <li><a href="#why-not-teach-x">Why don't you teach X?</a></li>
+      <li><a href="#bootcamp-prerequisites">Are any pre-requisite skills necessary to attend a boot-camp?</a></li>
+      <li><a href="#bring-what-to-bootcamp">Do I need to bring anything to the boot-camp?</a></li>
+      <li><a href="#why-boot-camp">Why two-day boot camps?</a></li>
+      <li><a href="#boot-camp-audience">Who are boot camps for?</a></li>
+      <li><a href="#testimonials">Do boot camps really work?</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <ul>
+      <li><a href="#why-else-attend">Why else should I attend a boot camp?</a></li>
+      <li><a href="#what-if-cant-attend">What if I can't make it to a boot camp?</a></li>
+      <li><a href="#boot-camp-format">What does a typical boot camp look like?</a></li>
+      <li><a href="#how-attend-boot-camp">How can I attend a boot camp?</a></li>
+      <li><a href="#attend-in-groups">Should I bring friends?</a></li>
+      <li><a href="#how-host-boot-camp">How can I host a boot camp?</a></li>
+      <li><a href="#how-run-boot-camp">How can I run a boot camp?</a></li>
+      <li><a href="#who-can-run-a-bootcamp">Can anyone run a boot camp?</a></li>
+      <li><a href="#who-are-your-instructors">Who are the instructors?</a></li>
+      <li><a href="#why-become-an-instructor">Why do people become instructors?</a></li>
+      <li><a href="#how-become-instructor">How can I become an instructor myself?</a></li>
+      <li><a href="#how-contribute">How else can I contribute?</a></li>
+      <li><a href="#how-acknowledge">How can I acknowledge Software Carpentry's help in my own work?</a></li>
+      <li><a href="#more-info">Where can I learn more?</a></li>
+    </ul>
+  </div>
+</div>
 
-  <dt id="what-is-swc"><em><strong>What is Software Carpentry?</strong></em></dt>
+<dl class="faq">
+
+  <dt id="what-is-swc">What is Software Carpentry?</dt>
   <dd>
     <p>
       Software Carpentry is a volunteer organization whose goal is
-      to make scientists and engineers more productive,
+      to make scientists more productive,
       and their work more reliable,
       by teaching them basic computing skills.
       Founded in 1998,
@@ -22,30 +61,46 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="team"><em><strong>Who created all this?</strong></em></dt>
+  <dt id="why-does-swc-exist">Why does Software Carpentry exist?</dt>
+  <dd>
+    <p>
+      Because computing is now an integral part of every aspect of science,
+      but most scientists are never taught how to build, use, validate, and share software well.
+      As a result,
+      many spend hours or days doing things badly
+      that could be done well in just a few minutes.
+      Our goal is to change that
+      so that scientists can spend less time wrestling with software
+      and more time doing useful research.
+    </p>
+  </dd>
+
+  <dt id="team">Who created all this?</dt>
   <dd>
     <p>
       <a href="{{page.root}}/team.html">Many people</a>
       have helped Software Carpentry grow
       by creating lessons,
       teaching boot camps,
-      and building its web site.
+      and building its web site&mdash;you can find
+      a fuller description in <a href="{{page.root}}/blog/2013/06/lessons-learned.html">this blog post</a>.
     </p>
   </dd>
 
-  <dt id="who-funds-swc"><em><strong>Who pays for it?</strong></em></dt>
+  <dt id="sponsors">Who pays for all this?</dt>
   <dd>
     <p>
-      Our current work is sponsored primarily by
+      The costs of individual boot camps are covered primarily by their host sites.
+      Curriculum development, training, and administration costs are sponsored primarily by
       the <a href="http://www.sloan.org">Alfred P. Sloan Foundation</a>
-      and the <a href="http://www.mozilla.org/foundation/">Mozilla Foundation</a>.
-      More than <a href="{{page.root}}/sponsors.html">twenty other organizations</a>
+      and the <a href="http://www.mozilla.org/foundation/">Mozilla Foundation</a>,
+      though more than <a href="{{page.root}}/sponsors.html">twenty other organizations</a>
       have supported us since we ran our first class
       at <a href="http://lanl.gov">Los Alamos National Laboratory</a> in 1998.
     </p>
   </dd>
 
-  <dt id="what-is-boot-camp"><em><strong>What is a boot camp?</strong></em></dt>
+  <dt id="what-is-boot-camp">What is a boot camp?</dt>
   <dd>
     <p>
       A boot camp is an intensive example-driven workshop,
@@ -55,31 +110,132 @@ title: Frequently Asked Questions
     </p>
     <ul>
       <li>
-	the basics of structured programming in Python or R;
+        the basics of structured programming in Python or R;
       </li>
       <li>
-	version control using Subversion, Git or Mercurial;
+        version control using Git, Mercurial, or Subversion;
       </li>
       <li>
-	unit testing using an xUnit-style framework;
-	and
+        unit testing using an xUnit-style framework;
+        and
       </li>
       <li>
-	automating tasks using the Unix shell.
+        automating tasks using the Unix shell.
       </li>
     </ul>
     <p>
-      Short tutorials alternate with hands-on practical exercises,
-      and participants are encouraged both to help one another,
-      and to apply what they are learning to their own research problems
-      during, between, and after sessions.
-      Participants usually use their own computers (typically laptops)
-      so that they leave with a working environment set up,
-      though we also provide a standard set of packages running in a virtual machine.
+      Depending on the audience,
+      boot camps may also include an introduction to:
+    </p>
+    <ul>
+      <li>
+        relational databases and SQL;
+      </li>
+      <li>
+        regular expressions;
+      </li>
+      <li>
+        numerical programming with NumPy;
+        or
+      </li>
+      <li>
+        software development lifecycles for research programmers.
+      </li>
+    </ul>
+  </dd>
+
+  <dt id="boot-camp-costs">Are boot camps free?</dt>
+  <dd>
+    <p>
+      The costs associated with particular boot camps are covered by their hosts:
+      our instructors are volunteers,
+      so these costs usually amount to air fare and accommodation
+      (if instructors are coming from out of town)
+      plus a contribution of approximately $1500 toward central overheads.
+      Many boot camps boot camps charge a small fee (typically around $20-40) to offset this,
+      and we have found that doing this reduces the number of people
+      who register but do not attend
+      from 20-25% to approximately 5%.
     </p>
   </dd>
 
-  <dt id="why-boot-camp"><em><strong>Why boot camps?</strong></em></dt>
+  <dt id="how-much-will-i-learn">Will I really learn all this in just two days?</dt>
+  <dd>
+    <p>
+      Not all of it&mdash;not even most of it&mdash;but
+      enough to do your work more efficiently,
+      and to start taking advantage of online resources
+      like <a href="http://stackoverflow.com/">Stack Overflow</a>
+      that assume a certain level of background knowledge.
+    </p>
+  </dd>
+
+  <dt id="bootcamp-curriculum">Is the boot-camp curriculum set in stone?</dt>
+  <dd>
+    <p>
+      No:
+      our audience is as diverse as science itself,
+      so we do our best to tailor our teaching to each group's needs.
+      That said,
+      there are a <a href="#who-can-run-a-bootcamp">few conditions</a>
+      on using the Software Carpentry name and logo.
+    </p>
+  </dd>
+
+  <dt id="why-not-teach-x">Why don't you teach X?</dt>
+  <dd>
+    <p>
+      Data visualization,
+      high-performance computing (HPC),
+      Perl:
+      the list of things we don't teach is much longer than the list of things we do.
+      As with every curriculum,
+      the question is not, "What would we like to add?"
+      but, "What are we willing to take out in order to make room?"
+      We believe our four core topics&mdash;task automation,
+      structured programming,
+      version control,
+      and quality assurance&mdash;are the absolute minimum scientists need to know
+      in order to do computing well.
+      We also believe that topics like HPC are covered well enough by other groups.
+    </p>
+  </dd>
+
+  <dt id="bootcamp-prerequisites">Are any pre-requisite skills necessary to attend a boot-camp?</dt>
+  <dd>
+    <p>
+      The only truly necessary skill is a desire to become more efficient.
+      Each boot camp is unique,
+      and people with different skill levels will bring home different lessons,
+      but everyone will learn something useful.
+      That said,
+      when we have enough space and instructors,
+      we do try to stream people according to prior knowledge
+      so that we can tailor training for them.
+    </p>
+  </dd>
+
+  <dt id="bring-what-to-bootcamp">Do I need to bring anything to the boot-camp?</dt>
+  <dd>
+    <p>
+      In most cases, yes:
+      boot camps are meant to be hands-on,
+      which means your hands should be on a keyboard while you're learning.
+      While some sites have training machines,
+      we encourage people to bring their own laptops
+      so that they leave the boot camp with a working set of tools installed and operational.
+    </p>
+    <p>
+      We also ask people to install the software their boot camp requires <em>before</em> showing up,
+      so that we don't have three dozen people trying to download installers
+      through the same wireless network at once.
+      Each boot camp's instructors will circulate a list of required software
+      (and installation instructions)
+      well in advance of the start.
+    </p>
+  </dd>
+
+  <dt id="why-boot-camp">Why two-day boot camps?</dt>
   <dd>
     <p>
       Between 1998 and 2012,
@@ -98,7 +254,7 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="boot-camp-audience"><em><strong>Who are boot camps for?</strong></em></dt>
+  <dt id="boot-camp-audience">Who are boot camps for?</dt>
   <dd>
     <p>
       Our learners are typically graduate students
@@ -112,23 +268,38 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="testimonials"><em><strong>Do boot camps really work?</strong></em></dt>
+  <dt id="testimonials">Do boot camps really work?</dt>
   <dd>
     <p>
-      Yes: two independent studies in 2012 found that people really were learning useful things,
+      Yes:
+      two independent studies in 2012 found that people really were learning useful things,
       and <a href="{{page.root}}/testimonials.html">these testimonials</a> from past participants
-      show just how much difference a little training can make.
+      show just how much difference a couple of days of training can make.
     </p>
   </dd>
 
-  <dt id="why-else-attend"><em><strong>Why else should I attend a boot camp?</strong></em></dt>
+  <dt id="why-else-attend">Why else should I attend a boot camp?</dt>
   <dd>
     <p>
-      Boot camps are a great opportunity to network with like-minded researchers.
+      Along with their immediate benefits,
+      boot camps are a great opportunity to network with like-minded researchers.
+      These skills are also useful for people transitioning out of research
+      into other careers in science, technology, engineering, and medicine.
     </p>
   </dd>
 
-  <dt id="boot-camp-format"><em><strong>What does a typical boot camp look like?</strong></em></dt>
+  <dt id="what-if-cant-attend">What if I can't make it to a boot camp?</dt>
+  <dd>
+    If there isn't a boot camp near you,
+    please check our <a href="{{page.root}}/bootcamps/index.html#calendar">calendar</a>
+    for one near a conference or other meeting that you're attending.
+    We also have a large number of <a href="{{page.root}}/v4/index.html">online video tutorials</a>
+    that cover most of our core material.
+    Like everything else on our site,
+    these are free to use under a Creative Commons license.
+  </dd>
+
+  <dt id="boot-camp-format">What does a typical boot camp look like?</dt>
   <dd>
     <p>
       Boot camps usually run for two consecutive days,
@@ -140,25 +311,18 @@ title: Frequently Asked Questions
       (These helpers are often alumni of previous boot camps
       who are hoping to become instructors themselves.)
     </p>
-  </dd>
-
-  <dt id="boot-camp-costs"><em><strong>Are boot camps free?</strong></em></dt>
-  <dd>
     <p>
-      The costs associated with particular boot camps are covered by their hosts:
-      our instructors are volunteers,
-      so these costs usually amount to air fare and accommodation
-      (if instructors are coming from out of town)
-      plus a contribution of approximately $1500 toward central overheads,
-      which often comes from charging learners a small fee (typically $40).
-      As a bonus,
-      we have found that this small charge reduces the number of people
-      who register but do not attend
-      from 20-25% to approximately 5%.
+      Short tutorials alternate with hands-on practical exercises,
+      and participants are encouraged both to help one another,
+      and to apply what they are learning to their own research problems
+      during, between, and after sessions.
+      Participants usually use their own computers (typically laptops)
+      so that they leave with a working environment set up,
+      though we also provide a standard set of packages running in a virtual machine.
     </p>
   </dd>
 
-  <dt id="how-attend-boot-camp"><em><strong>How can I attend a boot camp?</strong></em></dt>
+  <dt id="how-attend-boot-camp">How can I attend a boot camp?</dt>
   <dd>
     <p>
       Dates and venues of upcoming boot camps are on our <a href="{{page.root}}/bootcamps/index.html#">calendar</a>.
@@ -168,7 +332,23 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="how-host-boot-camp"><em><strong>How can I host a boot camp?</strong></em></dt>
+  <dt id="attend-in-groups">Should I bring friends?</dt>
+  <dd>
+    <p>
+      Absolutely.
+      We have found in the past that if people attend in groups
+      (e.g., if a whole lab's worth of students show up together),
+      then everyone gets more out of the training.
+      People who sign up together are more likely to have similar interests and backgrounds,
+      and are usually less inhibited about asking questions,
+      and asking one another for help,
+      than total strangers.
+      Plus,
+      it's a great opportunity to wear that departmental t-shirt that's sitting in your drawer...
+    </p>
+  </dd>
+
+  <dt id="how-host-boot-camp">How can I host a boot camp?</dt>
   <dd>
     <p>
       If you'd like us to teach a boot camp for you,
@@ -185,7 +365,7 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="how-run-boot-camp"><em><strong>How can I run a boot camp?</strong></em></dt>
+  <dt id="how-run-boot-camp">How can I run a boot camp?</dt>
   <dd>
     <p>
       Anyone who wants to run a boot camp can do so&mdash;all
@@ -197,6 +377,10 @@ title: Frequently Asked Questions
       If you want to know more about what is involved in running a boot camp,
       please see our <a href="{{page.root}}/operations.html">operations guide</a>.
     </p>
+  </dd>
+
+  <dt id="who-can-run-a-bootcamp">Can anyone run a boot camp?</dt>
+  <dd>
     <p>
       There is one caveat, however.
       The name "Software Carpentry" and our logo are both trademarked,
@@ -213,10 +397,67 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="how-become-instructor"><em><strong>How can I become an instructor myself?</strong></em></dt>
+  <dt id="who-are-your-instructors">Who are the instructors?</dt>
   <dd>
     <p>
-      We offer a free online training course for people who would like to teach Software Carpentry,
+      Our instructors are scientists themselves&mdash;in fact,
+      many are boot camp alumni.
+    </p>
+  </dd>
+
+  <dt id="why-become-an-instructor">Why do people become instructors?</dt>
+  <dd>
+    <p>
+      For many reasons:
+    </p>
+    <ul>
+      <li>
+        <em>To make their own lives better.</em>
+        By teaching their fellow scientists how to build and share better software,
+        our instructors are indirectly helping to create things that they themselves can use.
+      </li>
+      <li>
+        <em>Because it's fun.</em>
+        How could it not be?
+      </li>
+      <li>
+        <em>To build a reputation.</em>
+        Teaching a boot camp is a great way for people to introduce themselves to places they'd eventually like to work,
+        and a great way to make contact with potential collaborators.
+      </li>
+      <li>
+        <em>Get practice teaching.</em>
+        We're doing more every year to train instructors,
+        and giving them chances to teach online as well&mdash;both of which are useful for people with academic careers in mind.
+      </li>
+      <li>
+        <em>Help get people of diverse backgrounds into the pipeline.</em>
+        Computer Science is 12-15% female,
+        and that figure has been <em>dropping</em> since the 1980s.
+        Some of our instructors are involved in part because they want computational science to include a broader range of people.
+      </li>
+      <li>
+        <em>Teaching forces you to learn new things, or learn old things in more detail than you already know.</em>
+        See for example "<a href="http://www.sciencemag.org/content/333/6045/1037.abstract">Graduate Students' Teaching Experiences Improve Their Methodological Research Skills</a>".
+      </li>
+      <li>
+        <em>The more you know, the less you have to write yourself.</em>
+        Putting a grant application together? Have a site review coming up?  We probably have slides for that... :-)
+      </li>
+      <li>
+        <em>To make the world a better place.</em>
+        The two things we need to get through the next hundred years are more science and more courage.
+        Software Carpentry can't do much about the latter,
+        but we can help with the former.
+      </li>
+    </ul>
+  </dd>
+
+  <dt id="how-become-instructor">How can I become an instructor myself?</dt>
+  <dd>
+    <p>
+      We offer a <a href="{{site.training_url}}">free online training course</a>
+      for people who would like to teach Software Carpentry,
       and to learn more about teaching in general along the way.
       The course takes 2-4 hours a week for 12-14 weeks (depending on interruptions);
       most work is done on trainees' own time,
@@ -230,19 +471,36 @@ title: Frequently Asked Questions
     </p>
   </dd>
 
-  <dt id="how-contribute"><em><strong>How else can I contribute?</strong></em></dt>
+  <dt id="how-contribute">How else can I contribute?</dt>
   <dd>
     <p>
       If you don't want to teach,
       there are many other ways you can help,
       such as writing new lessons,
       answering learners' questions online,
-      and maintaining this web site.
-      Please see <a href="{{page.root}}/contributing.html">this page</a> for details.
+      and maintaining this web site:
+      please see <a href="{{page.root}}/contributing.html">this page</a> for details.
+      We are also always looking for more sponsors:
+      please <a href="mailto:{{site.contact}}">mail us</a> if you'd like to help with that.
     </p>
   </dd>
 
-  <dt id="more-info"><em><strong>Where can I learn more?</strong></em></dt>
+  <dt id="how-acknowledge">How can I acknowledge Software Carpentry's help in my own work?</dt>
+  <dd>
+    <p>
+      We appreciate being mentioned in the acknowledgments sections of papers, theses, and proposals,
+      as it helps us show current and potential funders what impact we're having.
+      If you would like to do this,
+      please use something like the following:
+    </p>
+    <blockquote>
+      We were aided in this work by the training and other support offered by the Software Carpentry project [1].
+      <br/>
+      [1] Software Carpentry: http://software-carpentry.org.
+    </blockquote>
+  </dd>
+
+  <dt id="more-info">Where can I learn more?</dt>
   <dd>
     <p>
       For more information,

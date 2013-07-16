@@ -20,11 +20,10 @@ root: ../../..
           {{content}}
           <p>Originally posted {{page.date}} by {{page.author}} in {{page.category|join(', ')}}.</p>
           <!-- end content -->
+          {% include disqus.html %}
+          {% include footer.html %}
         </div>
       </div>
-
-      {% include disqus.html %}
-      {% include footer.html %}
     </div>
 
     {% include generic-javascript.html %}
