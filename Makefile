@@ -37,7 +37,7 @@ SRC_PAGES = \
     $(SRC_ROOT) \
     $(SRC_ABOUT) \
     ./blog/index.html $(SRC_BLOG) \
-    ./bootcamps/index.html $(SRC_BOOTCAMPS) \
+    ./bootcamps/index.html ./bootcamps/operations.html $(SRC_BOOTCAMPS) \
     $(SRC_BADGES) \
     $(SRC_V3) \
     $(SRC_V4) \
