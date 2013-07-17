@@ -1,4 +1,3 @@
-exclude         : [bc]
 contact         : "info@software-carpentry.org"
 facebook_url    : "https://www.facebook.com/SoftwareCarpentry"
 github_url      : "https://github.com/swcarpentry"
