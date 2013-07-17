@@ -1,0 +1,195 @@
+---
+layout: blog
+author: wilson.g
+title: "Computational Competence for Biologists"
+date: 2013-07-16
+time: 09:00:00
+category: [assessment, education]
+---
+<!-- start excerpt -->
+<p>
+  On July 8 and 9,
+  I had the pleasure of taking part in a two-day workshop at <a href="FIXME">SESYNC</a>
+  to discuss what we ought to teach biologists about computing.
+  It was a relatively small meeting,
+  but the participants spanned the range from computer scientists and systems engineers
+  to bioinformaticians,
+  field biologists,
+  and a few odd ducks like me.
+</p>
+<!-- end excerpt -->
+<p>
+  One of our group exercises was to design a proficiency exam
+  to determine whether a biologist was computationally competent.
+  This was inspired by the <a href="../02/dirac-dry-run-two.html">driver's license exam</a>
+  we've helped put together for the DiRAC supercomputing consortium,
+  but we weren't seriously proposing such a test.
+  Instead,
+  we wanted to use it to focus discussion
+  of what we all actually mean by "computational competence"
+  when it comes to biology.
+</p>
+<p>
+  The five groups' submissions are included below.
+  The most interesting thing for me was how discussion was dominated by data
+  rather than computation.
+  I was also struck by how much agreement there was between the groups,
+  though this might have been a result of the way the question was posed.
+  Other common themes included:
+</p>
+<ol>
+  <li>Documenting process for others</li>
+  <li>Reproducibility of results</li>
+  <li>Knowing how to test results</li>
+  <li>Managing errors</li>
+  <li>Posting to places like GitHub, BitBucket, and Figshare&mdash;the concept was more important than brand&mdash;to make work sustainable even when students move on</li>
+  <li>Database management&mdash;not just how to write queries, but also how to create a sensible schema</li>
+</ol>
+<p>
+  If this is what computationally skilled biologists think their peers need to know,
+  then we need to rethink and rewrite some of our material.
+  On the bright side,
+  there's clearly an enthusiastic audience for what we're doing,
+  and they clearly think we're making their lives better.
+</p>
+<hr/>
+<p><strong>Group 1</strong></p>
+<p>Data</p>
+<ul>
+  <li>Does your data have any metadata?</li>
+  <li>If someone looks at your metadata, what can they say about it?</li>
+  <li>Is your metadata machine-readable?</li>
+  <li>Here is a metadata example. Fix it so that it is machine readable.</li>
+  <li>Can you (programmatically) access a remote computer and retrieve a set of data? [provide the details to connect and the dataset which needs to be accessed]</li>
+</ul>
+<p>Programming</p>
+<ul>
+  <li>Here is a set of 400 files with data (text files), they should only contain digits. Check if there are really digits only.</li>
+  <li>Format this messy dataset in a standard data format (of your choice: JSON, xml, csv, SQL)</li>
+  <li>Can you write a script that will not change the original dataset (we have both the original/raw data as well as the processed data)?</li>
+  <li>Here's a messy dataset and a lookup table....</li>
+</ul>
+<p>Testing</p>
+<ul>
+  <li>Can a reviewer of your paper can re-run a set of tests and see the output?</li>
+  <li>Do you have any unit tests in your analysis?</li>
+  <li>Do all of your tests pass?</li>
+  <li>Is your analysis programmatic? If not, we can't accept that [for publishing a paper].</li>
+</ul>
+<p>Reproducibility</p>
+<ul>
+  <li>Can you reproduce your own results?</li>
+  <li>Is your analysis scripted?</li>
+  <li>If April (she's an impatient nerd) looked at your paper supplement can she reproduce the same results by running a script/series of scripts??</li>
+  <li>Some kind of question about version control (Git?). How do you keep track of your work?</li>
+  <li>Is your work under any form of formal version control?</li>
+</ul>
+<hr/>
+<p><strong>Group 2</strong></p>
+<ul>
+  <li>Version control: we have created a Git repo containing a spreadsheet. Clone the repo to get the spreadsheet.</li>
+  <li>Data management: looking at the spreadsheet, draw the relational database schema you'd use to store the equivalent data (or write as SQL).</li>
+  <li>Metadata: create human-readable documentation explaining the schema.</li>
+  <li>Data management: write a query that joins two tables from that database to pull out some data.</li>
+  <li>Programming: find and install a package in [language of choice] to do a specified calculation on the result of the query.</li>
+  <li>Programming: write a (very short) piece of code to create a visualization of the output of #5. Will include looping and randomization; required to write and call a function.</li>
+  <li>QA: find and fix the bug in the routine being used from the package from #5 (revealed by #6).</li>
+  <li>Shell: log in to remote machine and run fixed function on all data sets found there.</li>
+  <li>Version control: commit code to version control repository.</li>
+</ul>
+<hr/>
+<p><strong>Group 3</strong></p>
+<ul>
+  <li>Here's a data sample. What would you need to fix in order to make it so you and others could use it?</li>
+  <li>Name and organize 3 data files (i.e., .csv, .dat, .txt)</li>
+  <li>Run this program on one of these files?</li>
+  <li>How would you capture that process for someone else to use?</li>
+  <li>Suppose you change the program. How do you convey that information?</li>
+  <li>Suppose someone sends you a changed version of the file/program. How do you interact with it?</li>
+  <li>How would you know that your program is doing what you want it to do?</li>
+  <li>How would you make your files available to others?</li>
+  <li>What additional data would you want to include??</li>
+</ul>
+<hr/>
+<p><strong>Group 4</strong></p>
+<ul>
+  <li>Here is a sample table, how can it be improved
+    <ul>
+      <li>Don't have multiple data points in a data field</li>
+      <li>Separate a value from its units</li>
+      <li>Consistent values in an ENUM column</li>
+      <li>No garbage/Weird descriptors for NULL</li>
+      <li>Consistent units in a column</li>
+      <li>Separators in a data field</li>
+      <li>Headers</li>
+      <li>This tests whether they understand how to get their data into a shape where it is ready to analyse</li>
+    </ul>
+  </li>
+  <li>What of these things can be done by a computer? (multiple choice?)
+    <ul>
+      <li>e.g. "give me all the correlations between all the variables"</li>
+      <li>but not "which of these correlations is most interesting, which is causal"</li>
+      <li>This tests their understanding of what computational tools can help them with, and where they can't</li>
+    </ul>
+  </li>
+  <li>Here is some data consisting of repeated measurement of a mouse spinning on its wheel at different time intervals
+    <ul>
+      <li>Can you search and replace a particular error in the dataset in an automated way, for instance splitting multiple activity measurements recorded in same field</li>
+      <li>reshaping going from short and fat to tall and skinny, splitting to</li>
+      <li>What day was the second least active day for each mouse, and what was its activity level</li>
+      <li>This tests that you can structure your data properly in an automated way (so you don't have to do it manually every time)</li>
+    </ul>
+  </li>
+  <li>Here is an initial training dataset, do something to predict a phenomenon that will be seen in the test dataset. We'll now give you another dataset.
+    <ul>
+      <li>Analyse the training dataset, and identify what you think are significant phenomena.</li>
+      <li>Compare data from the two sets (both training and new). With this additional information, which phenomena are statistically supported by the new dataset?
+	<ul>
+	  <li>e.g. which pairwise comparison do you think will reappear, i.e., A can always be distinguished from B, what is the signal to noise ratio, etc.</li>
+	</ul>
+      </li>
+      <li>This tests:
+	<ul>
+	  <li>I understand the concept of overfitting</li>
+	  <li>I understand signal to noise ratio problems</li>
+	  <li>I understand how not to overpredict, significance</li>
+	  <li>that they have actually made progress towards automation, exposes hardwiring etc.</li>
+	</ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<hr/>
+<p><strong>Group 5</strong></p>
+<p>Given:</p>
+<ul>
+  <li>CSV of columns (deer count, county)</li>
+  <li>tab-separated text file of columns (tick count, county, human count)</li>
+</ul>
+<p>do the following:</p>
+<ul>
+  <li>Produce a third file, CSV, of columns (county, deer, tick, human) using blank when missing from one file or other. Any language or tool, but must be significantly faster the second time with two new datasets than the first.</li>
+  <li>Make plots of tick vs deer, human vs deer, tick/deer vs human (and as a bonus, visualize them on a map)</li>
+  <li>Find Lyme disease data (online) and integrate it into plot (and as a bonus, add linear regression)</li>
+  <li>Write very detailed instructions and examples and post them on a blog (or GitHub page, etc) for a very basic reproducing user.</li>
+  <li>Post the code and instructions on GitHub</li>
+  <li>Post data &amp; figures on Figshare (or data repository of choice)</li>
+</ul>
+<p>Given:</p>
+<ul>
+  <li>A Galaxy workflow</li>
+</ul>
+<p>do the following:</p>
+<ul>
+  <li>Copy this workflow and rerun on a different dataset</li>
+  <li>given a dataset with a slight difference, prepare the dataset for the workflow and run it (cleaning)</li>
+  <li>Change the workflow at step 3 of 17 (instead of filtering out counties < 100000 people, do < 1M), or to produce a different output</li>
+</ul>
+<p>Given:</p>
+<ul>
+  <li>A script (R?) to read and plot data (steps 1&amp;2)</li>
+</ul>
+<p>do the following:</p>
+<ul>
+  <li>The script crashes (or produces wrong output) when data is missing from one file. Modify it to work.</li>
+</ul>
