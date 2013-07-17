@@ -21,7 +21,7 @@ MONTHS = {
 
 # Template for recent blog posts.
 RECENT_POST = '''\
-<h3><a href="{{site.site}}/%(path)s">%(title)s</a></h3>
+<h3><a href="{{page.root}}/%(path)s">%(title)s</a></h3>
 <div class="row-fluid">
   <span class="span11">
     %(excerpt)s
@@ -31,7 +31,7 @@ RECENT_POST = '''\
 <div class="row-fluid">
   <span class="span11">Posted %(date)s by %(author)s</span>
   <span class="span1">
-    <a href="{{site.site}}/%(path)s">...more</a>
+    <a href="{{page.root}}/%(path)s">...more</a>
   </span>
 </div>
 '''
