@@ -1,0 +1,92 @@
+creator:
+- {name: Tommy Guy, user: guy.t}
+- {name: Mike Jackson, user: jackson.m}
+- {name: Jason Montojo, user: montojo.j}
+- {name: Jon Pipitone, user: pipitone.j}
+- {name: Ethan White, user: white.e}
+- {name: Greg Wilson, user: wilson.g}
+instructor:
+- {name: Aron Ahmadia, user: ahmadia.a}
+- {name: Carlos Anderson, user: anderson.c}
+- {name: Dhavide Aruliah, user: aruliah.d}
+- {name: Diego Barneche, user: barneche.diego}
+- {name: John Blischak, user: blischak.j}
+- {name: Azalee Bostroem, user: bostroem.a}
+- {name: Erik Bray, user: bray.e}
+- {name: C. Titus Brown, user: brown.ct}
+- {name: Chris Cannam, user: cannam.c}
+- {name: Adina Chuang Howe, user: chuang-howe.a}
+- {name: Neil Chue Hong, user: chue-hong.n}
+- {name: Stephen Crouch, user: crouch.s}
+- {name: Matt Davis, user: davis.m}
+- {name: Ross Dickson, user: dickson.r}
+- {name: Jonathan Dursi, user: dursi.j}
+- {name: Justin Ely, user: ely.j}
+- {name: Daniel Falster, user: falster.daniel}
+- {name: Luis Figueira, user: figueira.l}
+- {name: Rich FitzJohn, user: fitzjohn.rich}
+- {name: Julia Gustavsen, user: gustavsen.j}
+- {name: Tommy Guy, user: guy.t}
+- {name: Steve Haddock, user: haddock.s}
+- {name: Michael Hansen, user: hansen.m}
+- {name: Ted Hart, user: hart.t}
+- {name: Konrad Hinsen, user: hinsen.k}
+- {name: Katy Huff, user: huff.k}
+- {name: Mike Jackson, user: jackson.m}
+- {name: David Jones, user: jones.d}
+- {name: Justin Kitzes, user: kitzes.j}
+- {name: Steven Koenig, user: koenig.steven}
+- {name: Karin Lagesen, user: lagesen.k}
+- {name: Ian Langmore, user: langmore.i}
+- {name: Steve McGough, user: mcgough.s}
+- {name: Jessica McKellar, user: mckellar.j}
+- {name: Emily Jane McTavish, user: mctavish.ej}
+- {name: Ian Mitchell, user: mitchell.i}
+- {name: Ben Morris, user: morris.b}
+- {name: Randy Olson, user: olson.r}
+- {name: Aleksandra Pawlik, user: pawlik.a}
+- {name: Caitlyn Pickens, user: pickens.c}
+- {name: Jason Pell, user: pell.j}
+- {name: Fernando Perez, user: perez.f}
+- {name: Karthik Ram, user: ram.k}
+- {name: Ariel Rokem, user: rokem.a}
+- {name: Jorden Schossau, user: schossau.j}
+- {name: Anthony Scopatz, user: scopatz.a}
+- {name: Jeffrey Shelton, user: shelton.j}
+- {name: Joshua Smith, user: smith.j}
+- {name: Sarah Supp, user: supp.s}
+- {name: Tracy Teal, user: teal.t}
+- {name: Will Trimble, user: trimble.will}
+- {name: Nelle Varoquaux, user: varoquaux.n}
+- {name: Bogdan Vera, user: vera.b}
+- {name: Alex Viana, user: viana.a}
+- {name: Jens von der Linden, user: vonderlinden.jens}
+- {name: Ben Waugh, user: waugh.b}
+- {name: Ethan White, user: white.e}
+- {name: Lynne Williams, user: williams.l}
+- {name: Greg Wilson, user: wilson.g}
+- {name: Christopher Woods, user: woods.c}
+organizer:
+- {name: Bruce Berriman, user: berriman.b}
+- {name: Alex Chartier, user: chartier.a}
+- {name: Shreyas Cholia, user: cholia.s}
+- {name: Stefano Cozzini, user: cozzini.s}
+- {name: Ross Dickson, user: dickson.r}
+- {name: Philip Fowler, user: fowler.p}
+- {name: Chris Gray, user: gray.c}
+- {name: Nic Kooyers, user: kooyers.n}
+- {name: Paul Lu, user: lu.p}
+- {name: Andrew Lumsdaine, user: lumsdaine.a}
+- {name: Damian Marchewka, user: marchewka.damian}
+- {name: Ian Mitchell, user: mitchell.i}
+- {name: Lex Nederbragt, user: nederbragt.l}
+- {name: Chris Paciorek, user: paciorek.c}
+- {name: Jon Pipitone, user: pipitone.j}
+- {name: Mark Plumbley, user: plumbley.m}
+- {name: Rachel Schutt, user: schutt.r}
+- {name: Jeffrey Shelton, user: shelton.j}
+- {name: Andrew Su, user: su.a}
+- {name: Ben Waugh, user: waugh.b}
+- {name: Ethan White, user: white.e}
+- {name: Greg Wilson, user: wilson.g}
+- {name: Robin Wilson, user: wilson.r}
