@@ -30,17 +30,7 @@ RewriteRule ^(.*) /blog/$1 [R,L]
 RewriteCond %{REQUEST_URI} ^/blog/?$
 RewriteRule .* /blog/index.html [R,L]
 
-# redirect blog URLs that don't end in .html so that they do
-# since this is probably an old blog page link
-RewriteCond %{REQUEST_URI} ^/blog
-RewriteCond %{REQUEST_URI} !.html$
-RewriteRule ^(.*?)/?$ $1.html [R,L]
-
 ### Wordpress Page Redirects ###
-
-# Temp rewrite for Technische Universitat Munchen (jan 2013) published URL
-RewriteCond %{REQUEST_URI} ^/boot-camps/boot-camp-standard-software-set-up
-RewriteRule ^(.*) /setup/ [R,L]
 
 # wordpress bootcamps URLs
 RewriteCond %{REQUEST_URI} ^/boot-camps/
@@ -71,7 +61,7 @@ RewriteRule ^(.*?)/?$ $1.html [R,L]
 
 # Links to badge kind pages
 # Keep redirecting this for now, so as to not break old badges
-# but also incase we want to make individual badge criteria pages later on.
+# but also in case we want to make individual badge criteria pages later on.
 RewriteCond %{REQUEST_URI} ^/badges/(.*).html
 RewriteCond %{REQUEST_URI} !^/badges/index.html
 RewriteRule ^.*/(.*).html /badges/index.html#$1-badge [NE,R,L]
