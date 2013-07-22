@@ -51,14 +51,14 @@ GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 
 # Image files (should be copied by Jekyll, but that isn't happening reliably on the server.)
-SRC_IMG = $(filter-out _site/%,\
-    $(wildcard *.png) $(wildcard */*.png) $(wildcard */*/*.png) $(wildcard */*/*/*.png) \
-    $(wildcard *.jpg) $(wildcard */*.jpg) $(wildcard */*/*.jpg) $(wildcard */*/*/*.jpg) \
-    $(wildcard *.gif) $(wildcard */*.gif) $(wildcard */*/*.gif) $(wildcard */*/*/*.gif) \
-    )
+# SRC_IMG = $(filter-out _site/%,\
+#     $(wildcard *.png) $(wildcard */*.png) $(wildcard */*/*.png) $(wildcard */*/*/*.png) \
+#     $(wildcard *.jpg) $(wildcard */*.jpg) $(wildcard */*/*.jpg) $(wildcard */*/*/*.jpg) \
+#     $(wildcard *.gif) $(wildcard */*.gif) $(wildcard */*/*.gif) $(wildcard */*/*/*.gif) \
+#     )
 
 # Destination images.
-DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
+# DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
 
 #-------------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ clean :
 #-------------------------------------------------------------------------------
 
 # build : compile site into $(OUT) with $(SITE) as Software Carpentry base URL
-build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(DST_IMG)
+build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(OUT)/img/main_shadow.png
 
 # Copy the .htaccess file.
 $(OUT)/.htaccess : ./_htaccess
@@ -117,12 +117,11 @@ $(OUT)/index.html : _config.yml $(SRC_PAGES)
 _config.yml : ./bin/preprocess.py standard_config.yml badges_config.yml $(SRC_BLOG) $(SRC_BOOTCAMP)
 	python ./bin/preprocess.py -o $(OUT) -s $(SITE)
 
-# Make sure image files have been copied.
-$(OUT)/%.png : %.png
-	@mkdir -p $$(dirname $@)
-	cp $< $@
+# Copy image files.  Most of these rules shouldn't be exercised,
+# because Jekyll is supposed to copy files, but some versions only
+# appear to pick up images referenced by generated HTML pages, not
+# ones referenced by CSS files.
 
-# Make sure image files have been copied.
 $(OUT)/%.png : %.png
 	@mkdir -p $$(dirname $@)
 	cp $< $@
