@@ -50,6 +50,16 @@ GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 
+# Image files (should be copied by Jekyll, but that isn't happening reliably on the server.)
+SRC_IMG = $(filter-out _site/%,\
+    $(wildcard *.png) $(wildcard */*.png) $(wildcard */*/*.png) $(wildcard */*/*/*.png) \
+    $(wildcard *.jpg) $(wildcard */*.jpg) $(wildcard */*/*.jpg) $(wildcard */*/*/*.jpg) \
+    $(wildcard *.gif) $(wildcard */*.gif) $(wildcard */*/*.gif) $(wildcard */*/*/*.gif) \
+    )
+
+# Destination images.
+DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
+
 #-------------------------------------------------------------------------------
 
 # By default, show the commands in the file.
@@ -82,7 +92,7 @@ clean :
 #-------------------------------------------------------------------------------
 
 # build : compile site into $(OUT) with $(SITE) as Software Carpentry base URL
-build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(DST_DIRS)
+build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(DST_IMG)
 
 # Copy the .htaccess file.
 $(OUT)/.htaccess : ./_htaccess
@@ -106,3 +116,21 @@ $(OUT)/index.html : _config.yml $(SRC_PAGES)
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
 _config.yml : ./bin/preprocess.py standard_config.yml badges_config.yml $(SRC_BLOG) $(SRC_BOOTCAMP)
 	python ./bin/preprocess.py -o $(OUT) -s $(SITE)
+
+# Make sure image files have been copied.
+$(OUT)/%.png : %.png
+	@mkdir -p $$(dirname $@)
+	cp $< $@
+
+# Make sure image files have been copied.
+$(OUT)/%.png : %.png
+	@mkdir -p $$(dirname $@)
+	cp $< $@
+
+$(OUT)/%.jpg : %.jpg
+	@mkdir -p $$(dirname $@)
+	cp $< $@
+
+$(OUT)/%.gif : %.gif
+	@mkdir -p $$(dirname $@)
+	cp $< $@
