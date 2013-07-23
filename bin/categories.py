@@ -2,7 +2,7 @@
 
 """
 Display all the categories used in blog posts.
-Usage: categories.py $(find blog -name '*.html' -print)
+Usage: categories.py $(ls blog/????/??/*.html)
 """
 
 import sys
