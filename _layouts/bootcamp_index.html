@@ -85,7 +85,7 @@
             {% endif %}
 
             var info_string = '<div class="info-window">' +
-              '<h5><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.venue}}</a></h5>' +
+              '<h5><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.venue|replace: '\'','\\\''}}</a></h5>' +
               '<h6><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.humandate}}</a></h6>' +
               '</div>';
 
@@ -97,7 +97,7 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng({{airport.latlng}}),
                 map: map,
-                title: "{{airport.name}} / {{airport.count}}",
+                title: "{{airport.airport}} / {{airport.count}}",
                 icon: instructorPin,
                 visible: false,
                 shadow: pinShadow,
@@ -106,8 +106,8 @@
             instructor_markers.push(marker);
 
             var info_string = '<div class="info-window">' +
-              '<h5>{{airport.name}}</h5>' +
-              '<h6>{{airport.count}}</h6>' +
+              "<h5>{{airport.airport}}</h5>" +
+              "<h6>{{airport.count}}</h6>" +
               '</div>';
 
             set_info_window(map, marker, info_window, info_string);

@@ -4,8 +4,9 @@
 - {airport: Baltimore Washington, count: 3, latlng: '39.175278,-76.668333'}
 - {airport: Charleston, count: 1, latlng: '32.898611,-80.040278'}
 - {airport: Ronald Reagan Washington, count: 2, latlng: '38.851944,-77.0375'}
+- {airport: Detroit, count: 1, latlng: '42.212222,-83.353333'}
 - {airport: Edinburgh, count: 1, latlng: '55.95,-3.3725'}
-- {airport: Indianapolis, count: 1, latlng: '39.717222,-86.294167'}
+- {airport: Indianapolis, count: 2, latlng: '39.717222,-86.294167'}
 - {airport: Long Island MacArthur, count: 1, latlng: '40.795,-73.1'}
 - {airport: Joplin Missouri, count: 1, latlng: '37.050558,-94.233336'}
 - {airport: Lansing, count: 4, latlng: '42.778611,-84.587222'}
@@ -16,10 +17,13 @@
 - {airport: Munich, count: 1, latlng: '48.353611,11.785833'}
 - {airport: Oakland International, count: 1, latlng: '37.721111,-122.220556'}
 - {airport: Chicago O'Hare, count: 2, latlng: '41.979444,-87.904444'}
+- {airport: Paris Orly, count: 1, latlng: '48.725278,2.359444'}
 - {airport: Oslo Gardermoen, count: 1, latlng: '60.193889,11.100278'}
+- {airport: Raleigh Durham, count: 1, latlng: '35.8775,-78.787222'}
 - {airport: Seattle Tacoma, count: 1, latlng: '47.448889,-122.309167'}
 - {airport: San Francisco, count: 5, latlng: '37.618889,-122.374722'}
+- {airport: San Jose, count: 1, latlng: '37.361667,-121.928889'}
 - {airport: Salt Lake City, count: 1, latlng: '40.788333,-111.9775'}
 - {airport: Sydney, count: 3, latlng: '-33.946111,151.177222'}
-- {airport: Vancouver, count: 2, latlng: '49.195,-123.181944'}
+- {airport: Vancouver, count: 3, latlng: '49.195,-123.181944'}
 - {airport: Toronto, count: 2, latlng: '43.677222,-79.630556'}
