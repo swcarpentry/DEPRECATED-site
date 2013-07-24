@@ -1,4 +1,5 @@
 creator:
+- {name: Stephen Crouch, user: crouch.s}
 - {name: Tommy Guy, user: guy.t}
 - {name: Mike Jackson, user: jackson.m}
 - {name: Jason Montojo, user: montojo.j}
@@ -14,14 +15,18 @@ instructor:
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Erik Bray, user: bray.e}
 - {name: C. Titus Brown, user: brown.ct}
+- {name: Jennifer Bryan, user: bryan.j}
+- {name: Rosangela Canino-Koning, user: canino-koning.r}
 - {name: Chris Cannam, user: cannam.c}
 - {name: Adina Chuang Howe, user: chuang-howe.a}
 - {name: Neil Chue Hong, user: chue-hong.n}
+- {name: Stefano Cozzini, user: cozzini.s}
 - {name: Stephen Crouch, user: crouch.s}
 - {name: Matt Davis, user: davis.m}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Jonathan Dursi, user: dursi.j}
 - {name: Justin Ely, user: ely.j}
+- {name: Richard Enbody, user: enbody.r}
 - {name: Daniel Falster, user: falster.daniel}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
@@ -32,22 +37,28 @@ instructor:
 - {name: Ted Hart, user: hart.t}
 - {name: Konrad Hinsen, user: hinsen.k}
 - {name: Katy Huff, user: huff.k}
+- {name: Paul Ivanov, user: ivanov.p}
 - {name: Mike Jackson, user: jackson.m}
 - {name: David Jones, user: jones.d}
+- {name: Jessica Kerr, user: kerr.j}
 - {name: Justin Kitzes, user: kitzes.j}
 - {name: Steven Koenig, user: koenig.steven}
+- {name: Bernhard Konrad, user: konrad.b}
 - {name: Karin Lagesen, user: lagesen.k}
 - {name: Ian Langmore, user: langmore.i}
+- {name: Chris Lasher, user: lasher.c}
+- {name: Doug Latornell, user: latornell.d}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Emily Jane McTavish, user: mctavish.ej}
 - {name: Ian Mitchell, user: mitchell.i}
 - {name: Ben Morris, user: morris.b}
+- {name: Lex Nederbragt, user: nederbragt.l}
 - {name: Randy Olson, user: olson.r}
 - {name: Aleksandra Pawlik, user: pawlik.a}
-- {name: Caitlyn Pickens, user: pickens.c}
 - {name: Jason Pell, user: pell.j}
 - {name: Fernando Perez, user: perez.f}
+- {name: Caitlyn Pickens, user: pickens.c}
 - {name: Karthik Ram, user: ram.k}
 - {name: Ariel Rokem, user: rokem.a}
 - {name: Jorden Schossau, user: schossau.j}
@@ -67,26 +78,42 @@ instructor:
 - {name: Greg Wilson, user: wilson.g}
 - {name: Christopher Woods, user: woods.c}
 organizer:
+- {name: Jorge Aranda, user: aranda.j}
+- {name: Casey Bergman, user: bergman.c}
 - {name: Bruce Berriman, user: berriman.b}
+- {name: Onno Broekmans, user: broekmans.o}
+- {name: Amy Brown, user: brown.amy}
 - {name: Alex Chartier, user: chartier.a}
 - {name: Shreyas Cholia, user: cholia.s}
 - {name: Stefano Cozzini, user: cozzini.s}
 - {name: Ross Dickson, user: dickson.r}
+- {name: Dan Ellis, user: ellis.dan}
 - {name: Philip Fowler, user: fowler.p}
+- {name: Carole Goble, user: goble.c}
 - {name: Chris Gray, user: gray.c}
+- {name: James Hetherington, user: hetherington.james}
+- {name: Bill Howe, user: howe.b}
 - {name: Nic Kooyers, user: kooyers.n}
+- {name: Ian Langmore, user: langmore.i}
 - {name: Paul Lu, user: lu.p}
 - {name: Andrew Lumsdaine, user: lumsdaine.a}
+- {name: Joshua Madin, user: madin.j}
 - {name: Damian Marchewka, user: marchewka.damian}
 - {name: Ian Mitchell, user: mitchell.i}
+- {name: Jason Montojo, user: montojo.j}
 - {name: Lex Nederbragt, user: nederbragt.l}
 - {name: Chris Paciorek, user: paciorek.c}
+- {name: Marian Petre, user: petre.m}
 - {name: Jon Pipitone, user: pipitone.j}
 - {name: Mark Plumbley, user: plumbley.m}
+- {name: Michael Rezny, user: rezny.m}
 - {name: Rachel Schutt, user: schutt.r}
 - {name: Jeffrey Shelton, user: shelton.j}
 - {name: Andrew Su, user: su.a}
+- {name: Todd Vision, user: vision.t}
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
 - {name: Greg Wilson, user: wilson.g}
+- {name: Paul Wilson, user: wilson.p}
 - {name: Robin Wilson, user: wilson.r}
+- {name: David Wolever, user: wolever.d}
