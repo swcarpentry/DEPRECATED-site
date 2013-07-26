@@ -4,7 +4,7 @@
 <html>
   <head>
     {% include generic-header.html %}
-    <title>Software Carpentry: {{page.title}}</title>
+    <title>Software Carpentry{% if page.title %}: {{page.title}}{% endif %}</title>
   </head>
   <body>
     <div class="container shadow">
