@@ -1,0 +1,35 @@
+---
+layout: blog
+author: Greg Wilson
+title: "Report on the Indiana Bootcamp"
+date: 2013-07-26
+time: 09:00:00
+category: ["Indiana University"]
+---
+<!-- start excerpt -->
+<p>
+  <a href="http://synesthesiam.com/">Mike Hansen</a>,
+  <a href="http://engineeringrevision.com/">Jeff Shelton</a>,
+  and <a href="http://www.software.ac.uk/about/people/aleksandra-pawlik">Aleksandra Pawlik</a>
+  posted a summary of their recent
+  <a href="http://www.software.ac.uk/blog/2013-07-24-software-carpentry-bootcamp-indiana-university">bootcamp at Indiana University</a>
+  on the Software Sustainability Institute blog,
+  which we've reposted below.
+  It includes some reflections on what works and what doesn't when using IPython Notebooks for teaching,
+  and similarly with virtual machines.
+</p>
+<!-- end excerpt -->
+<p>
+  <strong>Indiana University hosted a Software Carpentry bootcamp on 11-12 July. The instructors were all three authors of this blog post: Mike Hansen, Jeff Shelton and Aleksandra Pawlik.</strong>
+</p>
+<p>The participants recruited from different disciplines ranging from computer science and electrical engineering to genetics and zoology. Quite a few attendees were faculty members and at least two were tech support university employees.</p>
+<p>Several participants had a very well defined goal related to the bootcamp. They had a good understanding of programming but wanted to learn more about a particular topic such as version control or scientific Python. One of the participants said that he hoped for some more advanced Git teaching (which typical bootcamps don't offer), and he found it useful to learn about the Git structure.</p>
+<p>For teaching the Python-related modules (programming, testing with nose and data analysis with pandas), Jeff Shelton and Mike Hansen used <a href="http://ipython.org/notebook.html">IPython Notebook</a>. The Notebook is a very convenient teaching tool for the instructors since it allows them to seamlessly combine bits of code, text, images and interact with the system. It is easier to teach this way, rather than having to switch between several terminal windows, a text editor - not to mention instructor's notes.</p>
+<p>Some difficulties arise when using IPython Notebook. While <em>magic</em> commands are time-savers for experienced programmers, they confuse new users. Why does <em>!nosetests</em> work perfectly well when the same command, minus the bang, does not? Why does <em>ls </em>work with or without the bang? Why does <em>%edit</em> require a single percent sign, but <em>%%file</em> requires two? Teaching these distinctions takes time.</p>
+<p>When working with external files, IPython Notebook caches variables. This requires updated code to be stored under a new file name so that IPython will import the modified definition. Again, it is confusing to students that subsequent code revisions need be assigned sequential filenames (e.g. <em>mean1.py</em>, <em>mean2.py</em>, etc.), as this is not the case when using the Python shell and a text editor. As always, each teaching tool has particular strengths and weaknesses.</p>
+<p>When showing some more complex examples in Python, an instructor can get sidetracked often while presenting to share a little snippet that wasn't part of the prepared material (e.g. the calendar library in Python for getting the number of days in a month). Due to time pressure, there seems to be a bit of tension between doing a more traditional lecture versus a <em>cookbook</em> style presentation. What should the balance be between the two? Do students learn better with either style?</p>
+<p>We could have probably done a better job keeping up with the EtherPad, but it was tough to always check the chat while trying to help people. It may be an idea to have a dedicated helper to monitor the chat area at larger bootcamps.</p>
+<p>Many attendees decided to use the Software Carpentry-customised Virtual Machine. This removed a lot of the headache related to installation issues on the learner's laptops. But that ease of use at the bootcamp came at a price. Shortly after the bootcamp, one of the participants got in touch saying that he was struggling to apply what he learnt to his research. He didn't know how to get the tools that were available on the VM to work on his very own machine. This issue of transferring skills and tools from the VMs to the learner's laptops and desktops has been a recurring discussion topic at Software Carpentry. There doesn't seem to be a silver bullet solution to it.</p>
+<p>The bootcamp finished with a module on Scientific Python during which Mike Hansen demonstrated use of <a href="http://pandas.pydata.org/">pandas</a> - Python Data Analysis Library. Mike used weather data as an example, and the attendees found this module really useful. On one hand, the example was simple and intuitive enough for everyone to understand it. On the other hand, the data allowed for fairly advanced manipulations which helped to show panda's abilities.</p>
+<p>In the final feedback one of the participants said "Best part was getting stuck, then putting up the sticky note and having someone rush over to help get me unstuck . If only sticky notes worked remotely when I'm stuck in my basement office where no one can hear you scream."</p>
+<p>Certainly Software Carpentry helps many scientists and the above statement proves that more of that help is needed.</p>
