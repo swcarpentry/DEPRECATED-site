@@ -4,12 +4,13 @@
 - {airport: Baltimore Washington, count: 3, latlng: '39.175278,-76.668333'}
 - {airport: Charleston, count: 1, latlng: '32.898611,-80.040278'}
 - {airport: Ronald Reagan Washington, count: 2, latlng: '38.851944,-77.0375'}
+- {airport: Denver, count: 1, latlng: '39.858333,-104.666944'}
 - {airport: Detroit, count: 1, latlng: '42.212222,-83.353333'}
 - {airport: Edinburgh, count: 1, latlng: '55.95,-3.3725'}
 - {airport: Indianapolis, count: 2, latlng: '39.717222,-86.294167'}
 - {airport: Long Island MacArthur, count: 1, latlng: '40.795,-73.1'}
 - {airport: Joplin Missouri, count: 1, latlng: '37.050558,-94.233336'}
-- {airport: Lansing, count: 4, latlng: '42.778611,-84.587222'}
+- {airport: Lansing, count: 5, latlng: '42.778611,-84.587222'}
 - {airport: London Gatwick, count: 1, latlng: '51.148056,-0.190278'}
 - {airport: London Heathrow, count: 2, latlng: '51.4775,-0.461389'}
 - {airport: Kansas City, count: 1, latlng: '39.2975,-94.713889'}
