@@ -10,6 +10,10 @@
     background-color: white;
 }
 
+.navbar .brand {
+  padding-top: 9px;  /* align the logo */
+}
+
 .navbar .container {
     background-color: inherit;
 }
@@ -28,6 +32,10 @@
 
 code {
   color: #333333;
+}
+
+.navbar-inverse .nav > li > a {
+  color: #f0f0f0;
 }
 
 .navbar-inverse .navbar-inner {
@@ -58,4 +66,9 @@ code {
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
+}
+
+.navbar-inverse .navbar-search .search-query {
+  background-color: #ffffff;
+  color: #666666;
 }

@@ -194,10 +194,8 @@
     </script>
   </head>
   <body onload="initialize_map()">
-    <div class="container shadow">
-      {% include generic-banner.html %}
-      {% include navbar.html %}
-
+    {% include navbar.html %}
+    <div class="container">
       <div class="row-fluid">
         <div class="span10 offset1">
           {% if page.title %}
