@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Software Carpentry: What We've Done, What We've Learned, Where We're Going</title>
+    <!-- configuration parameters -->
+    <meta name="defaultView" content="slideshow" />
+    <meta name="controlVis" content="hidden" />
+    <!-- style sheet links -->
+    <link rel="stylesheet" href="s5/default/slides.css" type="text/css" media="projection" id="slideProj" />
+    <link rel="stylesheet" href="s5/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+    <link rel="stylesheet" href="s5/default/print.css" type="text/css" media="print" id="slidePrint" />
+    <link rel="stylesheet" href="s5/default/opera.css" type="text/css" media="projection" id="operaFix" />
+    <!-- S5 JS -->
+    <script src="s5/default/slides.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <div class="layout">
+      <div id="controls"></div>
+      <div id="currentSlide"></div>
+      <div id="header"></div>
+      <div id="footer">
+        <h1></h1>
+        <h2></h2>
+      </div>
+    </div>
+
+    <div class="presentation">
+
+      <div class="section slide level2" id="software-carpentry">
+        <h1>Software Carpentry:</h1>
+        <h2>What We've Done, What We've Learned, Where We're Going</h2>
+        <p>Greg Wilson</p>
+        <p>ICERM Workshop on Reproducibility in Computational and Experimental Mathematics</p>
+        <p>December 2012</p>
+      </div>
+
+      <div class="section slide level2" id="what-would-ya-say-ya-do-here">
+        <h1>What Would Ya Say Ya Do Here?</h1>
+        <div align="center">
+          <img src="img/office-space-the-bobs.png"/>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="tldr">
+        <h1>TL;DR</h1>
+        <ul>
+          <li>I usually describe myself as a teacher</li>
+          <li>My real job is to sell scientists on the idea of better computing practices</li>
+          <li>Most don't care about quality or reproducibility because there's no incentive to do so</li>
+          <li>But they <em>do</em> care&mdash;a lot&mdash;about productivity</li>
+          <li>So my pitch is, "The only way to work faster is to work better."</li>
+          <li>Followed by, "And I can prove it."</li>
+	  <li>Which is mostly untrue...</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="history">
+        <h1>History</h1>
+        <ul>
+          <li>Did HPC in the 1980s and 1990s</li>
+          <li>Eventually realized I was doing more harm than good</li>
+          <li>Started teaching at LANL in 1998: "show up or shut up"</li>
+          <li>Updated and open sourced materials 2004-06</li>
+          <li>April 2010-April 2011: full-time teaching and creating online videos</li>
+          <li>Jan 2012-present: full-time again for Mozilla, funded by Sloan Foundation</li>
+        </ul>
+	<br/>
+	<div align="center">
+	  <table>
+	    <tr>
+	      <td><img src="img/mozilla.png" /></td>
+	      <td>&nbsp;</td>
+	      <td><img src="img/sloan.png" /></td>
+	    </tr>
+	  </table>
+	</div>
+      </div>
+
+      <div class="section slide level2" id="what-we-teach-1">
+        <h1>What We Teach</h1>
+        <ul>
+          <li>Unix shell</li>
+          <li>Subversion</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>xUnit</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-we-teach-2">
+        <h1>What We Teach</h1>
+        <ul>
+          <li>Unix shell</li>
+          <li>Subversion</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>xUnit</li>
+        </ul>
+	<br/>
+        <div align="center">
+          <font size="200%"><em>bait and switch</em></font>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="what-we-actually-teach-1">
+        <h1>What We <em>Actually</em> Teach</h1>
+        <ul>
+	  <li>A program is just another piece of lab equipment</li>
+          <li>Programming is a human activity</li>
+          <li>Little pieces loosely joined</li>
+          <li>Let the computer repeat it</li>
+          <li>Paranoia makes us productive</li>
+          <li>Better algorithms beat better hardware</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-we-actually-teach-2">
+        <h1>What We <em>Actually</em> Teach</h1>
+        <ul>
+	  <li>A program is just another piece of lab equipment</li>
+          <li>Programming is a human activity</li>
+          <li>Little pieces loosely joined</li>
+          <li>Let the computer repeat it</li>
+          <li>Paranoia makes us productive</li>
+          <li>Better algorithms beat better hardware</li>
+        </ul>
+	<br/>
+        <div align="center">
+          <font size="200%"><em>how to think like a programmer</em></font>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="who-we-teach-2">
+        <h1>Who We Teach</h1>
+        <div align="center">
+	  <table>
+	    <tr>
+	      <td><img src="img/swc-demographics/thumb-age.png" /></td>
+	      <td><img src="img/swc-demographics/thumb-role.png" /></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/swc-demographics/thumb-gender.png" /></td>
+	      <td><img src="img/swc-demographics/thumb-platform.png" /></td>
+	    </tr>
+	  </table>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="who-we-teach-1">
+        <h1>Who We Teach</h1>
+        <div align="center">
+          <img src="img/austin.jpg"/>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="who-we-are">
+        <h1>Who We Are</h1>
+        <div align="center">
+	  <table>
+	    <tr>
+	      <td><img src="img/people/ahmadia-aron.jpg" /></td>
+	      <td>&nbsp;&nbsp;</td>
+	      <td><img src="img/people/aruliah-dhavide.jpg" /></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/people/chue-hong-neil.jpg" /></td>
+	      <td>&nbsp;&nbsp;</td>
+	      <td><img src="img/people/mitchell-ian.jpg" /></td>
+	    </tr>
+	    <tr>
+	      <td><img src="img/people/perez-fernando.jpg" /></td>
+	      <td>&nbsp;&nbsp;</td>
+	      <td><img src="img/people/scopatz-anthony.png" /></td>
+	    </tr>
+	  </table>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="where-weve-been">
+        <h1>Where We've Been</h1>
+        <div align="center">
+          <img src="img/icerm-2012-bootcamps.png"/>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="example-version-control-1">
+        <h1>Example: Version Control with Subversion</h1>
+        <ul>
+          <li>Check out, write a short biography, add and commit:<br/>"Look, a better Dropbox"</li>
+          <li>Edit someone else's:<br/>"Look, you can merge conflicts"</li>
+          <li>Put <code>$Revision: 123$</code> in files and print to output:<br/>"Look, provenance"</li>
+          <li><em>A biscuit every 10 minutes</em></li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="example-version-control-2">
+        <h1>Counter-Example: Version Control with Git</h1>
+        <ul>
+          <li>Simple things are more complicated (even with <code>git commit -am</code>)</li>
+          <li>Most tutorials emphasize branching, but that's a step too far for novices</li>
+          <li>No simple out-of-the-box support for provenance (version "numbers" aren't)</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="example-version-control-3">
+        <h1>Counter-Example: Version Control with Git</h1>
+        <ul>
+          <li>The tool is intrinsically more complicated...</li>
+          <li>...because it's doing more (and more complicated) things</li>
+	  <li>So gratification is delayed and short-term reward/pain is lower</li>
+          <li>But all the cool kids are hanging out on GitHub these days...</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-weve-learned-1">
+        <h1>What We've Learned</h1>
+        <ul>
+          <li>Most scientists regard programming as a tax</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-weve-learned-2">
+        <h1>What We've Learned</h1>
+        <ul>
+          <li>Most scientists regard programming as a tax</li>
+          <li>Most don't care about quality or reproducibility</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-weve-learned-3">
+        <h1>What We've Learned</h1>
+        <ul>
+          <li>Most scientists regard programming as a tax</li>
+          <li>Most don't care about quality or reproducibility</li>
+          <li>They <em>do</em> care about productivity</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-weve-learned-4">
+        <h1>What We've Learned</h1>
+        <ul>
+          <li>Most scientists regard programming as a tax</li>
+          <li>Most don't care about quality or reproducibility</li>
+          <li>They <em>do</em> care about productivity</li>
+	  <li>They learn better from and among their peers</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="what-weve-learned-5">
+        <h1>What We've Learned</h1>
+        <ul>
+          <li>Most scientists regard programming as a tax</li>
+          <li>Most don't care about quality or reproducibility</li>
+          <li>They <em>do</em> care about productivity</li>
+	  <li>They learn better from and among their peers</li>
+          <li>And they respond well to peer-reviewed research</li>
+	</ul>
+        <div align="center">
+          <img src="img/making-software.png"/>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="best-practices">
+	<h1>Best Practices</h1>
+	<p>
+	  <a href="http://software-carpentry.org">Greg Wilson</a>,
+	  <a href="http://faculty.uoit.ca/aruliah/">D.A. Aruliah</a>,
+	  <a href="http://ivory.idyll.org/blog/">C. Titus Brown</a>,
+	  <a href="http://www.epcc.ed.ac.uk/about-us/staff/chue-hong-neil/">Neil P. Chue Hong</a>,
+	  <a href="http://penandpants.com/">Matt Davis</a>,
+	  <a href="http://www.cs.toronto.edu/~guy/">Richard T. Guy</a>,
+	  <a href="http://www.mbari.org/staff/haddock/">Steven H.D. Haddock</a>,
+	  <a href="http://ged.msu.edu">Katy Huff</a>,
+	  <a href="http://www.cs.ubc.ca/~mitchell/">Ian M. Mitchell</a>,
+	  <a href="http://www.elec.qmul.ac.uk/people/markp/">Mark Plumbley</a>,
+	  <a href="http://www.hep.ucl.ac.uk/~waugh/">Ben Waugh</a>,
+	  <a href="http://whitelab.weecology.org/">Ethan P. White</a>,
+	  and
+	  <a href="https://cnerg.engr.wisc.edu/?page_id=8">Paul Wilson</a>:
+	  "<a href="http://arxiv.org/abs/1210.0530">Best Practices in Scientific Computing</a>"
+	  <br/>
+	  (http://arxiv.org/abs/1210.0530).
+	</p>
+	<p><em>
+	    Scientists spend an increasing amount of time building and using software.
+	    However, most scientists are never taught how to do this efficiently.
+	    As a result, many are unaware of tools and practices
+	    that would allow them to write more reliable and maintainable code with less effort.
+	    We describe a set of best practices for scientific software development
+	    that have solid foundations in research and experience,
+	    and that improve scientists' productivity and the reliability of their software.
+	</em></p>
+      </div>
+
+      <div class="section slide level2" id="what-winning-looks-like">
+        <h1>Our Goal</h1>
+        <div align="center">
+          <table>
+            <tr>
+              <td align="center">Number of Reviewers</td>
+              <td align="center">Fraction of Papers</td>
+            </tr>
+            <tr>
+              <td align="center">2</td>
+              <td align="center">10%</td>
+            </tr>
+            <tr>
+              <td align="center">3</td>
+              <td align="center">40%</td>
+            </tr>
+            <tr>
+              <td align="center">4</td>
+              <td align="center">40%</td>
+            </tr>
+            <tr>
+              <td align="center">5</td>
+              <td align="center">10%</td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr/></td>
+            </tr>
+            <tr>
+              <td>P(individual reviewer is a believer)</td>
+              <td align="center">20%</td>
+            </tr>
+            <tr>
+              <td>P(at least one reviewer is a believer)</td>
+              <td align="center">53.5%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="obstacles-1">
+        <h1>Obstacles</h1>
+        <ul>
+          <li>The curriculum is full</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="obstacles-2">
+        <h1>Obstacles</h1>
+        <ul>
+          <li>The curriculum is full</li>
+          <li>The blind leading the blind</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="obstacles-3">
+        <h1>Obstacles</h1>
+        <ul>
+          <li>The curriculum is full</li>
+          <li>The blind leading the blind</li>
+          <li>The top 5% don't realize how big the gap is</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="obstacles-4">
+        <h1>Obstacles</h1>
+        <ul>
+          <li>The curriculum is full</li>
+          <li>The blind leading the blind</li>
+          <li>The top 5% don't realize how big the gap is</li>
+          <li>Installation, installation, installation...</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="obstacles-5">
+        <h1>Obstacles</h1>
+        <ul>
+          <li>The curriculum is full</li>
+          <li>The blind leading the blind</li>
+          <li>The top 5% don't realize how big the gap is</li>
+          <li>Installation, installation, installation...</li>
+          <li><em>The payoff is distant and uncertain</em></li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="original-rails-screencast">
+        <h1>So You Wanna Change the World, Eh?</h1>
+        <div align="center">
+          <img src="img/original-rails-screencast.png"/>
+        </div>
+      </div>
+
+      <div class="section slide level2" id="conclusion-1">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+	</ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-2">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-3">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+	  <li>We'd like to teach reproducibility, but we don't know how</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-4">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+	  <li>We'd like to teach reproducibility, but we don't know how</li>
+          <li>Would you like to attend/host/teach?</li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-5">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+	  <li>We'd like to teach reproducibility, but we don't know how</li>
+          <li>Would you like to attend/host/teach?</li>
+          <li><em>What can you give me to sell them?</em></li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-6">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+	  <li>We'd like to teach reproducibility, but we don't know how</li>
+          <li>Would you like to attend/host/teach?</li>
+          <li><em>What can you give me to sell them?</em></li>
+	  <li><em>How the hell do we evaluate this stuff?</em></li>
+        </ul>
+      </div>
+
+      <div class="section slide level2" id="conclusion-7">
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Our sales pitch mostly works for most scientists</li>
+          <li>We'll reach 2000 people in 2013, and double that in 2014</li>
+	  <li>We'd like to teach reproducibility, but we don't know how</li>
+          <li>Would you like to attend/host/teach?</li>
+          <li><em>What can you give me to sell them?</em></li>
+	  <li><em>How the hell do we evaluate this stuff?</em></li>
+        </ul>
+	<br/>
+        <div align="center">
+	  <table>
+	    <tr>
+	      <td rowspan="2"><img src="img/cc-by.png" /></td>
+	      <td>&nbsp;&nbsp;</td>
+              <td><a href="http://software-carpentry.org">http://software-carpentry.org</a></td>
+	    </tr>
+	    <tr>
+	      <td>&nbsp;&nbsp;</td>
+              <td><a href="mailto:info@software-carpentry.org">info@software-carpentry.org</a></td>
+	    </tr>
+	  </table>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
