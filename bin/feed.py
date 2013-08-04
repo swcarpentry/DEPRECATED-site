@@ -8,7 +8,6 @@ import datetime
 from PyRSS2Gen import RSS2, RSSItem
 from optparse import OptionParser
 from util import CONFIG_YML, STANDARD_YML, P_BLOG_CONTENT, P_BLOG_EXCERPT, load_info
-
 #----------------------------------------
 
 def main():
@@ -57,7 +56,8 @@ def build_blog_rss(config, filename, all_posts):
                                    link=os.path.join(site, p['path']),
                                    description=p['excerpt'],
                                    content=p['content'],
-                                   pubDate=str(p['date']))
+                                   pubDate=datetime.datetime.fromordinal(
+                                     p['date'].toordinal()))
              for p in all_posts]
 
     # Create RSS feed.
