@@ -31,109 +31,116 @@ to people who have taken on each role.
 
 <p>
   A bootcamp is an intensive hands-on workshop
-  where scientists learn software skills
+  at which scientists learn software skills
   through short tutorials and practical exercises.
-  A typical bootcamp runs over 2 days with 20-50 attendees,
-  2-3 instructors,
+  A typical bootcamp runs over two days with 20-50 attendees,
+  two or three instructors per room,
   and one helper for every 10 attendees.
-  This page explains how to organize and run a bootcamp;
-  it is divided into sections according to
-  the roles people take on:
+  The members of a bootcamp team are:
 </p>
 
 <ul>
   <li>
-    The <a href="#host">host</a>
-    (usually a faculty member or equivalent)
-    is the principal local contact for the bootcamp.
+    The <a href="checklists/host.html">host</a> is
+    the principal local contact for the bootcamp.
   </li>
   <li>
-    The <a href="#instructor">instructors</a>
+    The <a href="checklists/instructors.html">instructors</a>
     give the lectures and lead the practical exercises.
-    The <a href="#lead">lead instructor</a>,
-    who is chosen by the Software Carpentry admins,
-    is in charge of deciding what will be taught by whom.
   </li>
   <li>
-    <a href="#helper">Helpers</a> provide assistance during practical sessions.
-    Helpers have often attended a bootcamp themselves at some point,
-    and are on the road to becoming instructors.
+    The <a href="checklists/lead_instructor.html">lead instructor</a>,
+    who is chosen by Software Carpentry admin,
+    is in charge of deciding what will be taught by whom 
+    and enrusing the teaching aspects of the bootcamp go smoothly.
+  </li>
+  <li>
+    <a href="checklists/helpers.html">Helpers</a> 
+    provide assistance during practical sessions, 
+    update and answer questions on the bootcamp Etherpad, 
+    and help with various practical matters.
+  </li>
+  <li>
+    <a href="checklists/admin.html">Software Carpentry admin</a>
+    advises and helps the host with bootcamp organization,
+    matches hosts with instructors,
+    sets up registration and assessments,
+    etc.
   </li>
   <li>
     <a href="#learner">Learners</a> come to the bootcamp to learn.
   </li>
-  <li>
-    The <a href="#admin">Software Carpentry administrators</a>
-    match hosts with instructors,
-    set up registration,
-    etc.
-  </li>
 </ul>
 
 <p>
-  We also have some advice on <a href="#mistake">what <em>not</em> to do</a>,
-  some <a href="#checklists">checklists</a>,
-  a <a href="#faq">FAQ</a> that supplements our <a href="{{page.root}}/faq.html">site-wide FAQ</a>,
-  and a <a href="#ad">sample advertisement page</a>.
   Note that:
 </p>
 
 <ul>
   <li>
-    One person may have several roles in a bootcamp:
+    One person may have several roles in a bootcamp;
     for example,
     it's common for the host to also be a learner.
   </li>
   <li>
-    As <a href="{{page.root}}/faq.html#who-can-run-a-bootcamp">explained in our FAQ</a>,
-    anyone can use our materials and run a bootcamp.
-    However,
-    if you want to use our name and logo (which are trademarked),
-    the lead instructors must be certified by Software Carpentry
-    and certain core topics must be covered.
-  </li>
-  <li>
-    Most importantly,
-    we require hosts, instructors, and learners to adhere to our
+    We require hosts, instructors, and learners to adhere to our
     <a href="{{page.root}}/conduct.html">code of conduct</a>.
   </li>
 </ul>
 
-<div id="host">
-  <h2>Hosts</h2>
+<div class="well" id="bootcamp_definition">
+  <h2>What Makes a Software Carpentry Bootcamp?</h2>
+    As <a href="{{page.root}}/faq.html#who-can-run-a-bootcamp">explained in our
+      FAQ</a>,
+    anyone can use our materials and run a bootcamp.
+    However,
+    if you want to use our name and logo (which are trademarked),
+    the lead instructor must be certified by Software Carpentry
+    and the following topics must be covered:
+    <ul>
+      <li>
+      using the shell to automate tasks
+      </li>
+      <li>
+      programming basics
+      </li>
+      <li>
+      unit testing
+      </li>
+      <li>
+      version control
+      </li>
+    </ul>
+</div>
+
+  <h2>Early Planning</h2>
 
   <p>
-    The host's major responsibilities are
-    to make a handful of key decisions about the bootcamp,
-    and to handle local arrangements.
+  Before the bootcamp organization begins, 
+  the host and Software Carpentry admin 
+  must make a series of decisions about the bootcamp.
   </p>
 
-  <div class="well">
-    <h3>Decide what kind of bootcamp you want</h3>
+    <h3>What kind of bootcamp?</h3>
 
     <p>
-      The first thing you need to decide is your intended audience.
-      Can anyone apply or is it restricted to a specific lab, university, or
-      company?
-      Do you want to target people in a particular discipline
+      The host must think about the intended audience for the bootcamp.
+      Is it restricted to a specific lab, university, or company?
+      Will it target people in a particular discipline
       (or range of related disciplines),
-      or will your bootcamp be open to all?
-      You need to decide this early and then stick to it,
-      because the type of bootcamp you host will drive other decisions,
-      from the topics covered and the room used
-      to what follow-up sessions you offer (if any).
+      or will it be open to all?
     </p>
 
-    <div>
-      <h4 id="host_who">Open or closed? Public or private?</h4>
+    <div id="host_who">
+      <h4>Open or closed? Public or private?</h4>
   
       <p>
         A closed bootcamp can be more easily tailored to a specific audience.
         In addition,
-        the attendees are more likely to know one another,
+        attendees are more likely to know one another,
         which in our experience means they're less inhibited about asking
         questions
-        and more likely to help each other during practical sessions.
+        and are more likely to help each other during practical sessions.
         On the other hand,
         it may be harder to find enough people to fill a bootcamp if you
         restrict enrollment,
@@ -141,49 +148,83 @@ to people who have taken on each role.
         it may be politically difficult to turn people away.
       </p>
       <p>
-        Having said that,
-        there are good reasons to <a href="#allow-externals">allow externals to come to your bootcamp</a>.
+      Having said that, there are a number of reasons why you 
+      might want to consider allowing
+      external personnel to come to your bootcamp.
       </p>
+      <ul>
+	<li>
+          Others can see how a bootcamp is run and so decide 
+          whether they want to run one too,
+          which contributes to the growth and sustainability 
+          of Software Carpentry.
+	</li>
+	<li>
+          Attendees are given the opportunity to network and build relationships
+	  with researchers from elsewhere within your institution or community,
+	  or foster cross-disciplinary collaboration.
+	</li>
+	<li>
+          Your profile is raised within your institution 
+          or community as one experienced in hosting bootcamps
+	  which means others may seek your advice when they come to run theirs.
+	</li>
+      </ul>
     </div>
 
-    <div>
-      <h4 id="host_followup">Follow-up</h4>
+    <div id="host_followup">
+      <h4>Follow-up</h4>
   
       <p>
-        Finally,
-        you should decide <em>before</em> the bootcamp
-        what kind of follow-up you're going to offer (if any).
-        Some groups have run weekly lunch-and-learn sessions for a couple of months after a bootcamp
+        The host will decide <em>before</em> the bootcamp
+        what kind of follow-up they're going to offer (if any).
+        Some groups run weekly lunch-and-learn sessions 
+        for a couple of months after a bootcamp
         to help people put what they've learned into action.
-        Other groups have set up mailing lists,
-        and we've tried running online tutorials as well
-        (though with disappointing results).
-        Whatever you decide to do,
-        figure it out in advance so that you can tell learners about it at least a couple of times.
+        Other groups set up mailing lists,
+        and we've tried running online tutorials.
+        Whatever they decide to do,
+        figuring it out in advance means that they can 
+        tell learners about it at least a couple of times.
       </p>
     </div>
 
-  </div>
 
-  <div class="well">
-    <h3 id="host_cost">Cost of Running a Bootcamp</h3>
+  <p>
+  The host also needs to think about the cost of running a bootcamp, 
+  and where the money might come from, and apply for funding if necessary.
+  </p>
+
+  <div class="well" id="host_cost">
+    <h3>Cost of Running a Bootcamp</h3>
   
     <p>
       Our instructors are volunteers,
       and do not need to be paid for their time,
-      but bootcamp hosts are expected to cover their <strong>travel and accommodation
-          costs</strong>.
+      but bootcamp hosts are expected to cover their 
+      travel and accommodation costs.
       (As much as possible,
-      we try to match instructors to nearby sites in order to reduce these,
-      but please see <a href="#pay-instructor-costs">why you should pay instructors' expenses</a>.)
-      We also ask hosts to contribute <strong>{{site.admin_overhead}} per bootcamp</strong> toward central overheads (including curriculum development,
+      we try to match instructors to nearby sites in order to reduce costs.)
+      </p>
+      <p>
+      We also ask hosts to contribute {{site.admin_overhead}} 
+      per bootcamp toward central overheads 
+      (including curriculum development,
       instructor training,
       website maintenance,
-      and administrative costs. You may also have to pay to <strong>book the room</strong>,
-      and for <strong>catering</strong>.
-      This puts the total cost for a bootcamp in the $2500-4000 range,
+      and administrative costs. 
+      The hosting site may also have to pay to book the room
+      and for catering.
+      </p>
+      <p>
+      Altogether, the total cost for a bootcamp is in the $2500-4000 range,
       depending on instructors' travel costs.
     </p>
+  </div>
+
+  <div class="well" id="host_funding">
+
+    <h3>Possible Funding Sources</h3>
 
     <p>
       Some possible sources of funding are:
@@ -209,9 +250,30 @@ to people who have taken on each role.
     </ul>
   
     <p>
-      You may also want to consider these
-      <a href="#ways-to-reduce-costs">ways to reduce the costs of running your bootcamp</a>.
+      The host may also want to consider these
+      ways to reduce the costs of running your bootcamp:</a>.
     </p>
+    <ul>
+      <li>
+        Use your professional network to see if there are others in your
+        institution or community who are willing to help with instructor
+        travel expenses, room bookings or other costs. They may be willing
+        to share costs if their researchers can attend your bootcamp&hellip;
+      </li>
+      <li>
+        &hellip;or just go all-out and agree to run one jointly.
+      </li>
+      <li>
+        Use local instructors and helpers (by local we mean from within your
+        institution, region or country) who will have lower travel costs.
+      </li>
+      <li>
+        Co-locate with conferences or workshops being run by your 
+        institution or within your community.
+      </li>
+    </ul>
+  </div>
+
 
     <h4 id="host_charge">Whether the bootcamp will be free?</h4>
   
@@ -222,6 +284,7 @@ to people who have taken on each role.
         A $40 fee is an effective way of raising the $1500 Software
         Carpentry bootcamp administration fee, and reduces the 
         the number of no-shows from 20-25% to 5% or less. Other options include:
+      </p>
         <ul>
             <li>charging a smaller fee and writing us a check to cover the
             difference;</li>
@@ -230,7 +293,6 @@ to people who have taken on each role.
                 effectively providing a free bootcamp;</li>
             <li>not charging at all and paying the whole $1500 admin fee</li>
         </ul>
-      </p>
       <p>
           If you decide to charge a fee and keep the revenue, we ask you to 
           handle registration yourself.
@@ -241,8 +303,6 @@ to people who have taken on each role.
         as soon as you charge anything at all&mdash;even a refundable deposit&mdash;some
         venues will charge <em>you</em> for use of the space.
       </p>
-
-  </div>
 
   <div class="well">
     <h3 id="host_when">When should I hold my bootcamp?</h3>
@@ -569,7 +629,6 @@ to people who have taken on each role.
 <!-- FIXME put the rest of the pitfalls here -->
 
     </div>  
-</div>
 
   <div class="well">
     <h3 id="instructors_practices">Good instruction practices</h3>
@@ -977,57 +1036,6 @@ to people who have taken on each role.
 
   <dl class="faq">
 
-    <dt id="ways-to-reduce-costs">How can I reduce bootcamp costs?</dt>
-    <dd>
-      <p>
-	There are a number of ways you might want to consider to reduce the 
-	cost of running a bootcamp:
-      </p>
-      <ul>
-	<li>
-          Use your professional network to see if there are others in your
-          institution or community who are willing to help with instructor
-          travel expenses, room bookings or other costs. They may be willing
-          to share costs if their researchers can attend your bootcamp&hellip;
-	</li>
-	<li>
-          &hellip;or just go all-out and agree to run one jointly.
-	</li>
-	<li>
-          Use local instructors and helpers (by local we mean from within your
-          institution, region or country) who will have lower travel costs.
-	</li>
-	<li>
-          Co-locate with conferences or workshops being run by your 
-          institution or within your community.
-	</li>
-      </ul>
-    </dd>
-
-    <dt id="allow-externals">Why should I allow externals to come to a bootcamp I'm paying for?</dt>
-    <dd>
-      <p>
-	There are a number of reasons why you might want to consider allowing
-	externals to come to your bootcamp, whether they be researchers
-	wishing to learn software development skills or potential hosts who
-	want to see how one is run:
-      </p>
-      <ul>
-	<li>
-          Others can see how a bootcamp is run and so decide whether they want to run one too,
-	  which contributes to the growth and sustainability of Software Carpentry.
-	</li>
-	<li>
-          Attendees are given the opportunity to network and build relationships
-	  with researchers from elsewhere within your institution or community,
-	  or foster cross-disciplinary collaboration.
-	</li>
-	<li>
-          Your profile is raised within your institution or community as one experienced in hosting bootcamps
-	  which means others may seek your advice when they come to run theirs.
-	</li>
-      </ul>
-    </dd>
 
     <dt id="commercial-offerings">Can I offer bootcamps for money?</dt>
     <dd>  
