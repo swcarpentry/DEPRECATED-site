@@ -30,8 +30,9 @@
 - {airport: San Jose, count: 1, latlng: '37.361667,-121.928889'}
 - {airport: Salt Lake City, count: 1, latlng: '40.788333,-111.9775'}
 - {airport: Southampton, count: 2, latlng: '50.95,-1.356667'}
+- {airport: St. Louis, count: 1, latlng: '38.7475,-90.359722'}
 - {airport: Sydney, count: 3, latlng: '-33.946111,151.177222'}
 - {airport: Tucson, count: 1, latlng: '32.116111,-110.941389'}
 - {airport: Halifax, count: 1, latlng: '44.880833,-63.508611'}
-- {airport: Vancouver, count: 4, latlng: '49.195,-123.181944'}
-- {airport: Toronto, count: 2, latlng: '43.677222,-79.630556'}
+- {airport: Vancouver, count: 6, latlng: '49.195,-123.181944'}
+- {airport: Toronto, count: 3, latlng: '43.677222,-79.630556'}
