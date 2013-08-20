@@ -14,7 +14,7 @@
 - {airport: Lansing, count: 5, latlng: '42.778611,-84.587222'}
 - {airport: New York La Guardia, count: 2, latlng: '40.777222,-73.8725'}
 - {airport: London Gatwick, count: 1, latlng: '51.148056,-0.190278'}
-- {airport: London Heathrow, count: 2, latlng: '51.4775,-0.461389'}
+- {airport: London Heathrow, count: 3, latlng: '51.4775,-0.461389'}
 - {airport: Kansas City, count: 1, latlng: '39.2975,-94.713889'}
 - {airport: Chicago Midway, count: 1, latlng: '41.785833,-87.752222'}
 - {airport: Madison Dane County, count: 1, latlng: '43.139722,-89.3375'}
