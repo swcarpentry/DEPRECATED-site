@@ -22,6 +22,9 @@ AIRPORTS_YML = 'airports_config.yml'
 # File containing URLs for bootcamp repositories (in config directory).
 BOOTCAMP_URLS_YML = 'bootcamp_urls.yml'
 
+# File containing cached information about bootcamps.
+BOOTCAMP_CACHE = 'bootcamp_cache.yml'
+
 # Patterns used to extract content and excerpts from compiled blog
 # entries.  Using regular expressions is a hack, but is *much* simpler
 # than trying to parse and un-parse the not-quite HTML.

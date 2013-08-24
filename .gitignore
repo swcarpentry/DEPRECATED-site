@@ -1,6 +1,7 @@
 *~
 *.pyc
 .DS_Store
+bootcamp_cache.yml
 _site
 _config.yml
 _includes/recent_blog_posts.html

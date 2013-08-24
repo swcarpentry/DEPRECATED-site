@@ -62,9 +62,12 @@ SRC_PAGES = \
     $(SRC_INCLUDES)
 
 # All source configuration files.
-SRC_CONFIG = $(wildcard config/*.yml)
+CONFIG_DIR = ./config
+SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
-# All files generated during the build process.
+# All files generated during the build process.  This does *not*
+# include the bootcamp_cache.yml file: use 'make sterile' to get rid
+# of that.
 GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 
 # Destination directories for manually-copied files.
@@ -99,6 +102,10 @@ commands :
 authors :
 	@python bin/list_blog_authors.py $(SRC_BLOG) | cut -d : -f 1
 
+## cache      : collect bootcamp information from GitHub and store in local cache.
+cache :
+	@python bin/get_bootcamp_info.py $(CONFIG_DIR)/bootcamp_urls.yml ./bootcamp_cache.yml
+
 ## categories : list all blog category names.
 categories :
 	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
@@ -118,6 +125,10 @@ install :
 ## clean      : clean up
 clean :
 	rm -rf $(GENERATED) _site $$(find . -name '*~' -print)
+
+## sterile    : *really* clean up
+sterile : clean
+	rm -f ./bootcamp_cache.yml
 
 #-------------------------------------------------------------------------------
 
