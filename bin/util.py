@@ -7,11 +7,20 @@ import os
 import re
 import yaml
 
-# Template for metadata.
-STANDARD_YML = 'standard_config.yml'
-
 # Standard name for metadata files.
 CONFIG_YML = '_config.yml'
+
+# Template for metadata (in config directory).
+STANDARD_YML = 'standard_config.yml'
+
+# Configuration file generated from admin database with badging information (in config directory).
+BADGES_YML = 'badges_config.yml'
+
+# File generated from admin database with instructor airport locations (in config directory).
+AIRPORTS_YML = 'airports_config.yml'
+
+# File containing URLs for bootcamp repositories (in config directory).
+BOOTCAMP_URLS_YML = 'bootcamp_urls.yml'
 
 # Patterns used to extract content and excerpts from compiled blog
 # entries.  Using regular expressions is a hack, but is *much* simpler

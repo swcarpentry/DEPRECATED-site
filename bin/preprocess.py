@@ -10,13 +10,14 @@ import datetime
 import time
 import yaml
 from optparse import OptionParser
-from util import CONFIG_YML, STANDARD_YML, P_BLOG_EXCERPT, harvest_metadata, load_info
-
-# File generated from admin database with badging information.
-BADGES_YML = 'badges_config.yml'
-
-# File generated from admin database with airport information (instructor locations).
-AIRPORTS_YML = 'airports_config.yml'
+from util import CONFIG_YML, \
+                 STANDARD_YML, \
+                 AIRPORTS_YML, \
+                 BADGES_YML, \
+                 BOOTCAMP_URLS_YML, \
+                 P_BLOG_EXCERPT, \
+                 harvest_metadata, \
+                 load_info
 
 # Translate two-digit month identifiers into short names.
 MONTHS = {
@@ -52,9 +53,9 @@ def main():
 
     # Get the standard stuff.
     options, args = parse_args()
-    config = load_info(os.curdir, STANDARD_YML)
-    config['badges'] = load_info(os.curdir, BADGES_YML)
-    config['airports'] = load_info(os.curdir, AIRPORTS_YML)
+    config = load_info(options.config_dir, STANDARD_YML)
+    config['badges'] = load_info(options.config_dir, BADGES_YML)
+    config['airports'] = load_info(options.config_dir, AIRPORTS_YML)
     config.update({
         'month_names'     : MONTHS,
         'months'          : sorted(MONTHS.keys()),
@@ -110,6 +111,7 @@ def parse_args():
     '''Parse command-line arguments.'''
 
     parser = OptionParser()
+    parser.add_option('-c', '--config', dest='config_dir', help='configuration directory')
     parser.add_option('-o', '--output', dest='output', help='output directory')
     parser.add_option('-s', '--site', dest='site', help='site')
     parser.add_option('-t', '--today', dest='today', help='build date',
