@@ -6,12 +6,13 @@ def main(args):
     '''Main driver.'''
 
     reader, writer = setup(args)
-    repositories = yaml.load(reader)
+    all_urls = yaml.load(reader)
 
     results = []
-    for repo in repositories:
-        info = fetch(repo)
-        info['slug'] = repo.split('/')[-1]
+    for url in all_urls:
+        info = fetch(url)
+        info['slug'] = url.split('/')[-1]
+        info['url'] = 'http://swcarpentry.github.io/{0}/'.format(info['slug'])
         results.append(info)
 
     yaml.dump(results, writer)
@@ -28,9 +29,9 @@ def setup(args):
         writer = open(args[1], 'w')
     return reader, writer
 
-def fetch(repo):
+def fetch(url):
     '''Fetch information from a single online repository.'''
-    url = repo.replace('github.com', 'raw.github.com') + '/gh-pages/index.html'
+    url = url.replace('github.com', 'raw.github.com') + '/gh-pages/index.html'
     response = requests.get(url)
     header = response.text.split('---')[1]
     info = yaml.load(header)

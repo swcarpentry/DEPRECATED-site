@@ -66,7 +66,7 @@ CONFIG_DIR = ./config
 SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
 # All files generated during the build process.  This does *not*
-# include the bootcamp_cache.yml file: use 'make sterile' to get rid
+# include the _bootcamp_cache.yml file: use 'make sterile' to get rid
 # of that.
 GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 
@@ -104,7 +104,7 @@ authors :
 
 ## cache      : collect bootcamp information from GitHub and store in local cache.
 cache :
-	@python bin/get_bootcamp_info.py $(CONFIG_DIR)/bootcamp_urls.yml ./bootcamp_cache.yml
+	@python bin/get_bootcamp_info.py $(CONFIG_DIR)/bootcamp_urls.yml ./_bootcamp_cache.yml
 
 ## categories : list all blog category names.
 categories :
@@ -128,7 +128,7 @@ clean :
 
 ## sterile    : *really* clean up
 sterile : clean
-	rm -f ./bootcamp_cache.yml
+	rm -f ./_bootcamp_cache.yml
 
 #-------------------------------------------------------------------------------
 
