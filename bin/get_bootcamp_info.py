@@ -1,6 +1,14 @@
+"""
+Download information about bootcamps from GitHub.  The arguments are a
+YAML file lising GitHub repository URLs (see config/bootcamp_urls.yml
+for an example) and the output file (usually _bootcamp_cache.yml).
+"""
+
 import sys
 import yaml
 import requests
+
+GITHUB_IO_TEMPLATE = 'http://swcarpentry.github.io/{0}/'
 
 def main(args):
     '''Main driver.'''
@@ -12,7 +20,7 @@ def main(args):
     for url in all_urls:
         info = fetch(url)
         info['slug'] = url.split('/')[-1]
-        info['url'] = 'http://swcarpentry.github.io/{0}/'.format(info['slug'])
+        info['url'] = GITHUB_IO_TEMPLATE.format(info['slug'])
         results.append(info)
 
     yaml.dump(results, writer)
