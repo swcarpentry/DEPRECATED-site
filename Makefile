@@ -97,11 +97,11 @@ commands :
 
 ## authors    : list all blog post authors.
 authors :
-	@python bin/authors.py $(SRC_BLOG) | cut -d : -f 1
+	@python bin/list_blog_authors.py $(SRC_BLOG) | cut -d : -f 1
 
 ## categories : list all blog category names.
 categories :
-	@python bin/categories.py $(SRC_BLOG) | cut -d : -f 1
+	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
 ## check      : build locally into _site directory for checking
 check :
@@ -130,14 +130,14 @@ $(OUT)/.htaccess : ./_htaccess
 	cp $< $@
 
 # Make the bootcamp calendar file.
-$(OUT)/bootcamps.ics : ./bin/calendar.py $(OUT)/index.html
+$(OUT)/bootcamps.ics : ./bin/make_calendar.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/calendar.py -o $(OUT) -s $(SITE)
+	python ./bin/make_calendar.py -o $(OUT) -s $(SITE)
 
 # Make the blog RSS feed file.
-$(OUT)/feed.xml : ./bin/feed.py $(OUT)/index.html
+$(OUT)/feed.xml : ./bin/make_rss_feed.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/feed.py -o $(OUT) -s $(SITE)
+	python ./bin/make_rss_feed.py -o $(OUT) -s $(SITE)
 
 # Make the site pages (including blog posts).
 $(OUT)/index.html : _config.yml $(SRC_PAGES)
