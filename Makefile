@@ -102,9 +102,12 @@ commands :
 authors :
 	@python bin/authors.py $(SRC_BLOG) | cut -d : -f 1
 
-## bibpdf     : make PDF of bibliography.
-bibpdf :
+## biblio     : make HTML and PDF of bibliography.
+# Have to cd into papers because bib2xhtml expects the .bst file in
+# the same directory as the .bib file.
+biblio :
 	@cd papers && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
+	@cd papers && ../bin/bib2xhtml software-carpentry.bib ../biblio.html && dos2unix ../biblio.html
 
 ## categories : list all blog category names.
 categories :
@@ -124,7 +127,11 @@ install :
 
 ## clean      : clean up
 clean :
-	rm -rf $(GENERATED) _site $$(find . -name '*~' -print)
+	@rm -rf \
+	$(GENERATED) \
+	_site \
+	papers/*.aux papers/*.bbl papers/*.blg papers/*.log \
+	$$(find . -name '*~' -print)
 
 #-------------------------------------------------------------------------------
 
