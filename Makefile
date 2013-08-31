@@ -84,6 +84,9 @@ DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 # Destination images.
 # DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
 
+# Software Carpentry bibliography .tex file (in papers directory).
+SWC_BIB = software-carpentry-bibliography
+
 #-------------------------------------------------------------------------------
 
 # By default, show the commands in the file.
@@ -98,6 +101,10 @@ commands :
 ## authors    : list all blog post authors.
 authors :
 	@python bin/authors.py $(SRC_BLOG) | cut -d : -f 1
+
+## bibpdf     : make PDF of bibliography.
+bibpdf :
+	@cd papers && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
 
 ## categories : list all blog category names.
 categories :
