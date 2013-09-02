@@ -104,7 +104,7 @@ authors :
 
 ## cache      : collect bootcamp information from GitHub and store in local cache.
 cache :
-	@python bin/get_bootcamp_info.py $(CONFIG_DIR)/bootcamp_urls.yml ./_bootcamp_cache.yml
+	@python bin/get_bootcamp_info.py -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
 
 ## categories : list all blog category names.
 categories :
