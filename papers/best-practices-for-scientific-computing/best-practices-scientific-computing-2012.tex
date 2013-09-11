@@ -8,7 +8,7 @@
 \newcounter{PracticeIdentifier}[PracticeSection]
 \newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\emph{{#1}~(\arabic{PracticeSection}.\arabic{PracticeIdentifier})}}
 
-\newcommand{\practicesection}[2]{\refstepcounter{PracticeSection}\section{\arabic{PracticeSection}.~{#1}}\label{#2}}
+\newcommand{\practicesection}[2]{\refstepcounter{PracticeSection}\section{\arabic{PracticeSection}.~{#1}}}
 
 \title{Best Practices for Scientific Computing}
 \date{\today}
@@ -214,25 +214,16 @@ of a program are indented differently, or if programmers mix
 takes longer to read and readers make more mistakes
 \cite{letovsky1986,binkley2009}.
 
-Finally, where possible, \practice{all aspects of software development
-  should be broken down into tasks roughly an hour long}, and
-programmers should pace themselves to maximize long-term
-productivity. Our brains get tired: on short time scales, focus starts
-to fade after an hour to ninety minutes of intense concentration, and
-there is a sharp increase in error rates. In practice,
-this means working in chunks of 50--200 lines of code at a time
-\cite{prechelt2010,cohen2010}. On longer time scales, total
-productivity is maximized when people work roughly 40 hours a week
-because error rates increase markedly past that point
-\cite{robinson2005}.
 
 \practicesection{Automate repetitive tasks.}{automation}
 
-Computers were invented to do these kinds of repetitive tasks but,
-even today, many scientists type the same commands in over and over
-again or click the same buttons repeatedly \cite{aranda2012}. In
-addition to wasting time, sooner or later even the most careful
-researcher will lose focus while doing this and make mistakes.
+Science often involves repetition of computational tasks such as processing
+large numbers of data files in the same way or regenerating figures each time
+new data is added to an existing analysis. Computers were invented to do these
+kinds of repetitive tasks but, even today, many scientists type the same
+commands in over and over again or click the same buttons repeatedly
+\cite{aranda2012}. In addition to wasting time, sooner or later even the most
+careful researcher will lose focus while doing this and make mistakes.
 
 In practice, scientists should \practice{rely on the computer to
   repeat tasks} and \practice{save recent commands in a file for
@@ -392,14 +383,13 @@ inconsistencies.  To avoid this programmers follow the DRY Principle
 \cite{hunt1999}, for ``don't repeat yourself'', which applies to both
 data and code.
 
-For data, this maxim holds that \practice{every piece of data must
-  have a single authoritative representation in the system}. For
-example, physical constants should be defined exactly once to ensure
-that the entire program is using the same value, and raw data files
-should have a single canonical version. Similarly, every location
-where data was collected should be recorded once and given an ID.
-Every observation from that site should then include that ID instead
-of duplicating the site's latitude and longitude.
+For data, this maxim holds that \practice{every piece of data must have a single
+  authoritative representation in the system}. For example, physical constants
+should be defined exactly once to ensure that the entire program is using the
+same value, and raw data files should have a single canonical
+version. Similarly, for geographic data every location should be recorded
+once and given an ID. Every observation from that site should then include that
+ID instead of duplicating the site's latitude and longitude.
 
 The DRY Principle applies to code at two scales. At small scales,
 \practice{code should be modularized rather than copied and pasted}.
@@ -428,9 +418,7 @@ single practice has been shown to catch or prevent all mistakes,
 several are very effective when used in combination
 \cite{mcconnell2004,dubois2005,sanders2008}.
 
-\subsection{Defensive programming}
-
-The first line of defense is \term{defensive programming}: programers
+The first line of defense is \term{defensive programming}: programmers
 should \practice{add assertions to programs to check their operation}.
 An \term{assertion} is simply a statement that something holds true at
 a particular point in a program; as the example below shows,
@@ -457,131 +445,54 @@ def bradford_transfer(grid, point, smoothing):
 
 \noindent
 Assertions can make up a sizeable fraction of the code in well-written
-applications, just as tools for calibrating scientific instruments can
-make up a sizeable fraction of the equipment in a lab.  These
-assertions serve two purposes. First, they ensure that if something
-does go wrong, the program will halt immediately, which simplifies
-debugging. (Few things are as frustrating as slowly working backward
-from a crash or a wrong answer to try to find its root cause.)
+applications, just as tools for calibrating scientific instruments can make up a
+sizeable fraction of the equipment in a lab.  These assertions serve two
+purposes. First, they ensure that if something does go wrong, the program will
+halt immediately, which simplifies debugging. Second, assertions are
+\term{executable documentation}, i.e., they explain the program as well as
+checking its behavior. This makes them more useful in many cases than comments
+since the reader can be sure that they are accurate and up to date.
 
-Second, assertions are \term{executable documentation}, i.e., they
-explain the program as well as checking its behavior. This makes them
-more useful in many cases than comments since the reader can be sure
-that they are accurate and up to date.
+The second layer of defense is \term{automated testing}. Automated tests can
+check to make sure that a single unit of code is returning correct results
+(\term{unit tests}), that pieces of code work correctly when combined
+(\term{integration tests}, and that the behavior of a program doesn't change
+when the details are modified (\term{regression tests}). These tests are conducted
+by the computer, so that they are easy to rerun every time the program is modified.
+Creating and managing tests is easier if programmers \practice{use an
+  off-the-shelf unit testing library} to initialize inputs, run tests, and
+report their results in a uniform way. These libraries are available for all
+major programming languages including those commonly used in scientific computing
+\cite{xunit,meszaros2007,osherove2009}.
 
-\subsection{Write and run tests}\label{unittest}
+Tests check to see whether the code matches the researcher's expectations of its
+behavior, which depends on the researcher's understanding of the problem at hand
+\cite{hook2009,kelly2008,oberkampf2010}. For example, in scientific computing
+tests are often conducted by comparing output to simplified cases, experimental
+data, or the results of earlier programs that are trusted. Another approach for
+generating tests is to \practice{turn bugs into test cases},
+by writing tests that trigger a bug that has been found in the code and (once fixed) will prevent
+the bug from reappearing unnoticed. In combination these kinds of testing can
+improve our confidence that scientific code is operating properly,
+and that the results it produces are valid. An additional benefit of testing is
+that it encourages programmers to design and build code that is testable (i.e.,
+self-contained functions and classes that can run more or less independently of
+one another). Code that is designed this way is also easier to understand
+(Section~\ref{cognition}) and more reusable (Section~\ref{dry}).
 
-The second layer of defense is \term{automated testing}. Automated tests
-can check to make sure that a single unit of code is returning correct
-results, or check to make sure that the behavior of a program doesn't
-change when the details are modified. These tests are conducted by the
-computer, so they can be rerun every time the program is modified, to 
-make sure that the changes have not accidentally introduced bugs.
-
-The core of testing is the \term{unit test}, which checks the
-correctness of a single unit of software, which typically means a
-single function or method. Unit tests are the building blocks of any
-quality assurance effort: after all, if the components in a program
-are unreliable, the program isn't likely to be reliable either. Larger
-scale \term{integration testing} check that pieces of code work
-correctly when combined; in scientific computing, this is often done
-by comparing output to experimental data or the results of earlier
-programs that are trusted.
-
-At either scale, \term{regression testing} is the practice of running
-pre-existing tests after changes to the code in order to make sure
-that it hasn't regressed, i.e., that things which were working haven't
-been broken.  By providing this feedback, regression testing gives
-programmers confidence that the changes they're making are actually
-progress.  Every project should therefore strive to make regression
-testing easy, so that programmers will actually do it.
-
-In order to manage their tests, programmers should \practice{use an
-  off-the-shelf unit testing library} to initialize inputs, run tests,
-and report their results in a uniform way. These libraries are
-available for all major programming languages, including Fortran,
-C/C++, IDL, MATLAB, Python, R, and others commonly used in scientific
-computing \cite{xunit,meszaros2007,osherove2009}.  Exactly \emph{how}
-they check correctness depends on the researcher's understanding of
-the problem at hand \cite{hook2009,kelly2008,oberkampf2010}. What the
-tests accomplish is automatically checking to see whether the code
-matches the researcher's expectations of its behavior. As such, good
-automated testing improves our confidence that the code is operating
-properly, and that the results it produces are valid.
-
-One significant benefit of adopting a testing library is that it
-encourages programmers to design and build code that is testable. In
-practice, this means creating self-contained functions and classes
-with well-defined interfaces that can run more or less independently
-of one another. Code that is designed this way is also easier to
-understand (Section~\ref{cognition}) and more reusable
-(Section~\ref{dry}).
-
-If a group wants to start testing software that \emph{hasn't} been
-built this way, the first step is to refactor legacy code to make it
-testable; i.e., reorganize or rewrite that code in ways that do not
-change its behavior~\cite{fowler1999,kerievsky2004} but which may
-result in less tightly coupled chunks. Since smaller units of code
-usually have simpler behavior, refactoring legacy code is often a
-matter of breaking functions, classes, or modules into smaller, more
-testable pieces. This can done incrementally and systematically
-\cite{feathers2004}, e.g., by introducing testing in ``high
-uncertainty" areas or as old algorithms are replaced with new ones.
-
-\subsection{Use a variety of oracles}
-
-An \term{oracle} is something which tells a developer how a program
-should behave or what its output should be.  In commercial software
-development, the oracle is often a contract or specification written
-by a business specialist.  In scientific research, oracles include
-analytic results (e.g., closed-form solutions to special cases or
-simplified versions of the problem), experimental results, and results
-produced by earlier, trusted, programs.  These can all provide useful
-checks, so programmers should \practice{use all available oracles when
-  testing programs}.
-
-\subsection{Turn bugs into test cases}
-
-No matter how carefully software is tested, some bugs will inevitably
-sneak by and need to be fixed. In order to prevent those bugs from
-reappearing, programmers should \practice{turn bugs into test cases},
-by writing tests that trigger the bug and (once fixed) will prevent
-the bug from reappearing unnoticed.
-Doing this is one way to build up a suite of regression tests,
-particularly for legacy programs.
-
-\subsection{Use a symbolic debugger}\label{debugger}
-
-Having admitted that a few bugs will always make it past our defenses,
-our next recommendation is that programmers should \practice{use a
-symbolic debugger} to track them down. A better name for this kind
-of tool would be ``interactive program inspector'' since a debugger
-allows users to pause a program at any line (or when some condition is
-true), inspect the values of variables, and walk up and down active
-function calls to figure out why things are behaving the way they are.
-
-Debuggers are usually more productive than adding and removing print
-statements or scrolling through hundreds of lines of log output
-\cite{zeller2009}, because they allow the user to see exactly how the
-code is executing rather than just snapshots of state of the program
-at a few moments in time. In other words, the debugger allows the
-scientist to witness what is going wrong directly, rather than having
+Now matter how good ones computational practice is, reasonably complex code will
+always initially contain bugs. Fixing bugs that have been identified is often
+easier if you \practice{use a symbolic debugger} to track them down. A better
+name for this kind of tool would be ``interactive program inspector'' since a
+debugger allows users to pause a program at any line (or when some condition is
+true), inspect the values of variables, and walk up and down active function
+calls to figure out why things are behaving the way they are. Debuggers are
+usually more productive than adding and removing print statements or scrolling
+through hundreds of lines of log output \cite{zeller2009}, because they allow
+the user to see exactly how the code is executing rather than just snapshots of
+state of the program at a few moments in time. In other words, the debugger
+allows the scientist to witness what is going wrong directly, rather than having
 to anticipate the error or infer the problem using indirect evidence.
-
-One practice we \emph{don't} advocate, even though many of us rely on
-it, is \term{test-driven development} (TDD).  When using TDD, the
-programmer writes the test cases for a new piece of code before
-writing the code itself.  This may seem backward, but writing the
-tests helps the programmer clarify the purpose of the code in her own
-mind (i.e., it serves as a design aid), and also helps ensure that
-tests actually get written.
-
-The reason we don't advocate it is that a meta-study of its
-effectiveness done in 2010 did not find any significant impact on
-programmer productivity \cite{turhan2010}.  Some of us interpret this
-to mean that we don't really know how to measure the productivity of
-programmers, but unless and until other results emerge, we are obliged
-as scientists to label TDD as ``interesting if true''.
 
 \practicesection{Optimize software only after it works correctly.}{performance}
 
@@ -653,12 +564,15 @@ software}. Doing this increases the probability that when
 programmers change the code, they will update the documentation at the
 same time.
 
-Embedded documentation usually takes the form of specially-formatted
-and placed comments. Typically, a \term{documentation generator} such
-as Javadoc, Doxygen, or
+Embedded documentation usually takes the form of specially-formatted and placed
+comments. Typically, a \term{documentation generator} such as Javadoc, Doxygen,
+or
 Sphinx\footurl{http://en.wikipedia.org/wiki/Comparison\-\_of\_documentation\_generators}
-extracts these comments and generates well-formatted web pages and
-other human-friendly documents.
+extracts these comments and generates well-formatted web pages and other
+human-friendly documents. Alternatively, code can be embedded in a larger
+document that includes information about what the code is doing (i.e., literate
+programming). Common approaches to this include this use of knitr \cite{xie2013knitr} and
+IPython Notebooks (\cite{perez2007}; http://ipython.org/notebook.html).
 
 \practicesection{Collaborate.}{collaborate}
 
@@ -699,6 +613,38 @@ repository hosting services like GitHub include issue tracking tools,
 and many good standalone tools exist as well, such as
 Trac\footurl{http://trac.edgewall.org}.
 
+\section{What's Next}
+
+1. Refactoring legacy code
+2. TDD
+(original text from section 7 is included below)
+
+If a group
+wants to start testing software that \emph{hasn't} been built this way, the
+first step is to refactor legacy code to make it testable; i.e., reorganize or
+rewrite that code in ways that do not change its
+behavior~\cite{fowler1999,kerievsky2004} but which may result in less tightly
+coupled chunks. Since smaller units of code usually have simpler behavior,
+refactoring legacy code is often a matter of breaking functions, classes, or
+modules into smaller, more testable pieces. This can done incrementally and
+systematically \cite{feathers2004}, e.g., by introducing testing in ``high
+uncertainty" areas or as old algorithms are replaced with new ones.
+
+One practice we \emph{don't} advocate, even though many of us rely on
+it, is \term{test-driven development} (TDD).  When using TDD, the
+programmer writes the test cases for a new piece of code before
+writing the code itself.  This may seem backward, but writing the
+tests helps the programmer clarify the purpose of the code in her own
+mind (i.e., it serves as a design aid), and also helps ensure that
+tests actually get written.
+
+The reason we don't advocate it is that a meta-study of its
+effectiveness done in 2010 did not find any significant impact on
+programmer productivity \cite{turhan2010}.  Some of us interpret this
+to mean that we don't really know how to measure the productivity of
+programmers, but unless and until other results emerge, we are obliged
+as scientists to label TDD as ``interesting if true''.
+
 \section{Conclusion}\label{conclusion}
 
 We have outlined a series of recommended best practices for scientific
@@ -730,14 +676,17 @@ Carpentry\footurl{http://software-carpentry.org}. This type of
 training has proven effective at driving adoption of these tools in
 scientific settings \cite{aranda2012}.
 
-Computing is now central to the practice of science. For this aspect
-of scientific research to obtain the level of rigor that is applied
-throughout the scientific process, it is necessary for scientists to
-begin to adopt the tools and approaches that are known to improve both
-the quality of software and the efficiency with which it is
-produced. Doing so will improve our confidence in the results of
-computational science and will allow us to make rapid progress on
-important scientific questions that would otherwise not be possible.
+Computing is now central to the practice of science. For this aspect of
+scientific research to obtain the level of rigor that is applied throughout the
+scientific process, it is necessary for scientists to begin to adopt the tools
+and approaches that are known to improve both the quality of software and the
+efficiency with which it is produced. To facilitate this adoption, universities
+and funding agencies need to support the training of scientists in the use of
+these tools and the investment of time and money in building better scientific
+software. Investment in these approaches by both individuals and institutions
+will improve our confidence in the results of computational science and will
+allow us to make more rapid progress on important scientific questions than
+would otherwise be possible.
 
 \bibliographystyle{plain}
 \bibliography{best-practices-scientific-computing-2012}
