@@ -6,7 +6,7 @@
 
 \newcommand{\practicesection}[2]{\section{#1}\label{#2}}
 \newcounter{PracticeIdentifier}[section]
-\newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\emph{{#1}~(\arabic{section}.\arabic{PracticeIdentifier})}}
+\newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\textbf{\emph{{#1}~(\arabic{section}.\arabic{PracticeIdentifier})}}}
 
 \title{Best Practices for Scientific Computing}
 \date{\today}
