@@ -4,11 +4,9 @@
 \newcommand{\footurl}[1]{\footnote{\texttt{#1}}}
 \newcommand{\term}[1]{\emph{#1}}
 
-\newcounter{PracticeSection}
-\newcounter{PracticeIdentifier}[PracticeSection]
-\newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\emph{{#1}~(\arabic{PracticeSection}.\arabic{PracticeIdentifier})}}
-
-\newcommand{\practicesection}[2]{\refstepcounter{PracticeSection}\section{\arabic{PracticeSection}.~{#1}}}
+\newcommand{\practicesection}[2]{\section{#1}\label{#2}}
+\newcounter{PracticeIdentifier}[section]
+\newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\emph{{#1}~(\arabic{section}.\arabic{PracticeIdentifier})}}
 
 \title{Best Practices for Scientific Computing}
 \date{\today}
@@ -613,7 +611,7 @@ repository hosting services like GitHub include issue tracking tools,
 and many good standalone tools exist as well, such as
 Trac\footurl{http://trac.edgewall.org}.
 
-\section{What's Next}
+\section*{What's Next}
 
 1. Refactoring legacy code
 2. TDD
