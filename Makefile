@@ -62,9 +62,12 @@ SRC_PAGES = \
     $(SRC_INCLUDES)
 
 # All source configuration files.
-SRC_CONFIG = standard_config.yml airports_config.yml badges_config.yml
+CONFIG_DIR = ./config
+SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
-# All files generated during the build process.
+# All files generated during the build process.  This does *not*
+# include the _bootcamp_cache.yml file: use 'make sterile' to get rid
+# of that.
 GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 
 # Destination directories for manually-copied files.
@@ -84,6 +87,9 @@ DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 # Destination images.
 # DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
 
+# Software Carpentry bibliography .tex file (in papers directory).
+SWC_BIB = software-carpentry-bibliography
+
 #-------------------------------------------------------------------------------
 
 # By default, show the commands in the file.
@@ -97,11 +103,22 @@ commands :
 
 ## authors    : list all blog post authors.
 authors :
-	@python bin/authors.py $(SRC_BLOG) | cut -d : -f 1
+	@python bin/list_blog_authors.py $(SRC_BLOG) | cut -d : -f 1
+
+## cache      : collect bootcamp information from GitHub and store in local cache.
+cache :
+	@python bin/get_bootcamp_info.py -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
+
+## biblio     : make HTML and PDF of bibliography.
+# Have to cd into papers because bib2xhtml expects the .bst file in
+# the same directory as the .bib file.
+biblio :
+	@cd papers && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
+	@cd papers && ../bin/bib2xhtml software-carpentry.bib ../biblio.html && dos2unix ../biblio.html
 
 ## categories : list all blog category names.
 categories :
-	@python bin/categories.py $(SRC_BLOG) | cut -d : -f 1
+	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
 ## check      : build locally into _site directory for checking
 check :
@@ -117,7 +134,15 @@ install :
 
 ## clean      : clean up
 clean :
-	rm -rf $(GENERATED) _site $$(find . -name '*~' -print)
+	@rm -rf \
+	$(GENERATED) \
+	_site \
+	papers/*.aux papers/*.bbl papers/*.blg papers/*.log \
+	$$(find . -name '*~' -print)
+
+## sterile    : *really* clean up
+sterile : clean
+	rm -f ./_bootcamp_cache.yml
 
 #-------------------------------------------------------------------------------
 
@@ -130,14 +155,14 @@ $(OUT)/.htaccess : ./_htaccess
 	cp $< $@
 
 # Make the bootcamp calendar file.
-$(OUT)/bootcamps.ics : ./bin/calendar.py $(OUT)/index.html
+$(OUT)/bootcamps.ics : ./bin/make_calendar.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/calendar.py -o $(OUT) -s $(SITE)
+	python ./bin/make_calendar.py -o $(OUT) -s $(SITE)
 
 # Make the blog RSS feed file.
-$(OUT)/feed.xml : ./bin/feed.py $(OUT)/index.html
+$(OUT)/feed.xml : ./bin/make_rss_feed.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/feed.py -o $(OUT) -s $(SITE)
+	python ./bin/make_rss_feed.py -o $(OUT) -s $(SITE)
 
 # Make the site pages (including blog posts).
 $(OUT)/index.html : _config.yml $(SRC_PAGES)
@@ -145,7 +170,7 @@ $(OUT)/index.html : _config.yml $(SRC_PAGES)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
 _config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_BOOTCAMP_PAGES)
-	python ./bin/preprocess.py -o $(OUT) -s $(SITE)
+	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)
 
 # Copy image files.  Most of these rules shouldn't be exercised,
 # because Jekyll is supposed to copy files, but some versions only

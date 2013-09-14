@@ -61,7 +61,7 @@ nocomments: true
       {% endfor %}
       <tr>
         <td></td>
-        <td><a href="{{page.root}}/blog/index.html">...more</a></td>
+        <td><a href="{{page.root}}/blog/index.html">...see all</a></td>
       </tr>
     </table>
   </div>
@@ -72,13 +72,15 @@ nocomments: true
       <tr>
         <td><img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
         <td>{{bootcamp.humandate|replace: ' ', '&nbsp;'}}:</td>
-        <td><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.venue}}</a></td>
+        <td>
+	  <a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a>
+	</td>
       </tr>
       {% endfor %}
       <tr>
         <td></td>
         <td></td>
-        <td><a href="bootcamps/index.html#future">...more</a></td>
+        <td><a href="bootcamps/index.html#future">...see all {{site.bootcamps_num_upcoming}}</a></td>
       </tr>
     </table>
   </div>

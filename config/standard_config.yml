@@ -7,11 +7,11 @@ rss_url         : "http://software-carpentry.org/feed.xml"
 twitter_name    : "@swcarpentry"
 twitter_url     : "https://twitter.com/swcarpentry"
 irc_url         : "irc://freenode/swcarpentry"
-recent_length   : 10
+recent_length   : 6
 blog_title      : "Software Carpentry"
 blog_subtitle   : "Helping scientists make better software since 1998"
 training_url    : "http://teaching.software-carpentry.org"
 flag_size       : 16
 admin_overhead  : $1500
 colors          : {past : FE7070, open : 70FE80, full : FEFE70, restricted : 7070FE, instructor : 70FEFE}
-exclude         : [standard_config.yml, badges_config.yml, papers, talks]
+exclude         : [standard_config.yml, badges_config.yml, bootcamp_cache.yml, talks]

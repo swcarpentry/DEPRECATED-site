@@ -111,6 +111,18 @@ To create a new blog post:
 9.  Go to GitHub and issue a pull request from your clone to `swcarpentry/website`,
     then assign it to `@gvwilson` or `@amyrbrown` for proof-reading.
 
+Adding Bootcamps
+----------------
+
+Old bootcamps' home pages are stored in `bootcamps/yyyy-mm-dd-site/index.html`.
+Newer bootcamps' home pages are stored in their own repositories on GitHub.
+The make target `make cache` runs the program `bin/get_bootcamp_info.py`
+which reads a list of GitHub repository URLs from the file `config/bootcamp_urls.yml`
+and (re-)creates the file `./_bootcamp_cache.yml`.
+That file is then used to build `./index.html`, `bootcamps/index.html`, and so on.
+To add another GitHub-hosted bootcamp to this web site,
+simply add a line to `config/bootcamp_urls.yml`.
+
 Design Notes
 ------------
 
