@@ -2,7 +2,9 @@ creator:
 - {name: John Blischak, user: blischak.j}
 - {name: Jennifer Bryan, user: bryan.j}
 - {name: Stephen Crouch, user: crouch.s}
+- {name: Matt Davis, user: davis.m}
 - {name: Tommy Guy, user: guy.t}
+- {name: Michael Hansen, user: hansen.m}
 - {name: Katy Huff, user: huff.k}
 - {name: Mike Jackson, user: jackson.m}
 - {name: Jason Montojo, user: montojo.j}
@@ -15,6 +17,8 @@ instructor:
 - {name: Carlos Anderson, user: anderson.c}
 - {name: Dhavide Aruliah, user: aruliah.d}
 - {name: Diego Barneche, user: barneche.diego}
+- {name: Philipp Bayer, user: bayer.p}
+- {name: Nichole Bennett, user: bennett.n}
 - {name: John Blischak, user: blischak.j}
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Erik Bray, user: bray.e}
@@ -27,6 +31,7 @@ instructor:
 - {name: Stefano Cozzini, user: cozzini.s}
 - {name: Stephen Crouch, user: crouch.s}
 - {name: Matt Davis, user: davis.m}
+- {name: Neal Davis, user: davis.neal}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Jonathan Dursi, user: dursi.j}
 - {name: Justin Ely, user: ely.j}
@@ -34,17 +39,20 @@ instructor:
 - {name: Daniel Falster, user: falster.daniel}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
+- {name: Ivan Gonzalez, user: gonzales.ivan}
 - {name: Julia Gustavsen, user: gustavsen.j}
 - {name: Tommy Guy, user: guy.t}
 - {name: Steve Haddock, user: haddock.s}
 - {name: Michael Hansen, user: hansen.m}
 - {name: Ted Hart, user: hart.t}
 - {name: Konrad Hinsen, user: hinsen.k}
+- {name: Chris Holdgraf, user: holdgraf.c}
 - {name: Katy Huff, user: huff.k}
 - {name: Paul Ivanov, user: ivanov.p}
 - {name: Mike Jackson, user: jackson.m}
 - {name: David Jones, user: jones.d}
 - {name: Jessica Kerr, user: kerr.j}
+- {name: Ted Kirkpatrick, user: kirkpatrick.ted}
 - {name: Justin Kitzes, user: kitzes.j}
 - {name: Steven Koenig, user: koenig.steven}
 - {name: Bernhard Konrad, user: konrad.b}
@@ -52,6 +60,7 @@ instructor:
 - {name: Ian Langmore, user: langmore.i}
 - {name: Chris Lasher, user: lasher.c}
 - {name: Doug Latornell, user: latornell.d}
+- {name: Luke Lee, user: lee.luke}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Emily Jane McTavish, user: mctavish.ej}
@@ -65,6 +74,7 @@ instructor:
 - {name: Caitlyn Pickens, user: pickens.c}
 - {name: Karthik Ram, user: ram.k}
 - {name: Ariel Rokem, user: rokem.a}
+- {name: Bill Rowell, user: rowell.bill}
 - {name: Jorden Schossau, user: schossau.j}
 - {name: Anthony Scopatz, user: scopatz.a}
 - {name: Jeffrey Shelton, user: shelton.j}
@@ -85,11 +95,14 @@ organizer:
 - {name: Jorge Aranda, user: aranda.j}
 - {name: Casey Bergman, user: bergman.c}
 - {name: Bruce Berriman, user: berriman.b}
+- {name: Azalee Bostroem, user: bostroem.a}
 - {name: Onno Broekmans, user: broekmans.o}
 - {name: Amy Brown, user: brown.amy}
+- {name: C. Titus Brown, user: brown.ct}
 - {name: Alex Chartier, user: chartier.a}
 - {name: Shreyas Cholia, user: cholia.s}
 - {name: Stefano Cozzini, user: cozzini.s}
+- {name: Matt Davis, user: davis.m}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Dan Ellis, user: ellis.dan}
 - {name: Philip Fowler, user: fowler.p}
@@ -98,6 +111,7 @@ organizer:
 - {name: David Henty, user: henty.d}
 - {name: James Hetherington, user: hetherington.james}
 - {name: Bill Howe, user: howe.b}
+- {name: Katy Huff, user: huff.k}
 - {name: Catherine Inglis, user: inglis.catherine}
 - {name: Mike Jackson, user: jackson.m}
 - {name: Nic Kooyers, user: kooyers.n}
@@ -115,8 +129,10 @@ organizer:
 - {name: Mark Plumbley, user: plumbley.m}
 - {name: Michael Rezny, user: rezny.m}
 - {name: Rachel Schutt, user: schutt.r}
+- {name: Anthony Scopatz, user: scopatz.a}
 - {name: Jeffrey Shelton, user: shelton.j}
 - {name: Andrew Su, user: su.a}
+- {name: Tracy Teal, user: teal.t}
 - {name: Todd Vision, user: vision.t}
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
