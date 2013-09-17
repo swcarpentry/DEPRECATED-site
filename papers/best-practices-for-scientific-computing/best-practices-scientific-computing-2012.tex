@@ -150,7 +150,7 @@ Greg Wilson was supported by a grant from the Sloan Foundation.
 Scientists writing software need to write code that both executes
 correctly and can be easily read and understood by other
 programmers (especially the author's future self).
-If software cannot be easily read and understood it is
+If software cannot be easily read and understood, it is
 much more difficult to know that it is actually doing what it is intended
 to do.
 To be productive,
@@ -357,7 +357,7 @@ version control instead \cite{noble2009}.
 Anything that is repeated in two or more places is more difficult to
 maintain. Every time a change or correction is made, multiple
 locations must be updated, which increases the chance of errors and
-inconsistencies.  To avoid this programmers follow the DRY Principle
+inconsistencies.  To avoid this, programmers follow the DRY Principle
 \cite{hunt1999}, for ``don't repeat yourself'', which applies to both
 data and code.
 
@@ -436,7 +436,7 @@ since the reader can be sure that they are accurate and up to date.
 The second layer of defense is \term{automated testing}. Automated tests can
 check to make sure that a single unit of code is returning correct results
 (\term{unit tests}), that pieces of code work correctly when combined
-(\term{integration tests}, and that the behavior of a program doesn't change
+(\term{integration tests}), and that the behavior of a program doesn't change
 when the details are modified (\term{regression tests}). These tests are conducted
 by the computer, so that they are easy to rerun every time the program is modified.
 Creating and managing tests is easier if programmers \practice{use an
@@ -447,13 +447,13 @@ major programming languages including those commonly used in scientific computin
 
 Tests check to see whether the code matches the researcher's expectations of its
 behavior, which depends on the researcher's understanding of the problem at hand
-\cite{hook2009,kelly2008,oberkampf2010}. For example, in scientific computing
+\cite{hook2009,kelly2008,oberkampf2010}. For example, in scientific computing,
 tests are often conducted by comparing output to simplified cases, experimental
 data, or the results of earlier programs that are trusted. Another approach for
-generating tests is to \practice{turn bugs into test cases},
+generating tests is to \practice{turn bugs into test cases}
 by writing tests that trigger a bug that has been found in the code and (once fixed) will prevent
 the bug from reappearing unnoticed. In combination these kinds of testing can
-improve our confidence that scientific code is operating properly,
+improve our confidence that scientific code is operating properly
 and that the results it produces are valid. An additional benefit of testing is
 that it encourages programmers to design and build code that is testable (i.e.,
 self-contained functions and classes that can run more or less independently of
