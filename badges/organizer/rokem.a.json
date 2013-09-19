@@ -1,0 +1,17 @@
+{
+  "recipient" : "sha256$02327b630c6ee15ff210d7a1840a18a8066d2b3403a523ee0a8238e983ba5b12",
+  "salt": "software-carpentry",
+  "issued_on" : "2013-09-19",
+  "badge" : {
+    "version" : "0.5.0",
+    "name" : "Organizer",
+    "image" : "/img/badges/organizer.png",
+    "description" : "Organizing workshops and learning groups",
+    "criteria" : "/badges/organizer.html",
+    "issuer" : {
+      "origin" : "http://software-carpentry.org",
+      "name" : "Software Carpentry",
+      "contact" : "admin@software-carpentry.org"
+    }
+  }
+}
