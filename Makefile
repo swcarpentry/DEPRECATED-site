@@ -109,6 +109,10 @@ authors :
 cache :
 	@python bin/get_bootcamp_info.py -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
 
+## cache_verb : collect bootcamp information from GitHub and store in local cache (verbose)
+cache_verb :
+	@python bin/get_bootcamp_info.py -v -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
+
 ## biblio     : make HTML and PDF of bibliography.
 # Have to cd into papers because bib2xhtml expects the .bst file in
 # the same directory as the .bib file.

@@ -23,10 +23,10 @@ REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 def main(args):
     '''Main driver.'''
 
-    reader, writer, tolerate = setup(args)
+    reader, writer, tolerate, verbose = setup(args)
     all_urls = yaml.load(reader)
 
-    results, faulty = process(all_urls)
+    results, faulty = process(all_urls, verbose)
     if faulty:
         print >> sys.stderr, 'Errors in these URLs:'
         for f in faulty:
@@ -45,6 +45,8 @@ def setup(args):
     parser.add_option('-o', '--output', dest='output', help='output file', default='-')
     parser.add_option('-t', '--tolerate', dest='tolerate', help='tolerate errors',
                       default=False, action='store_true')
+    parser.add_option('-v', '--verbose', dest='verbose', help='report progress',
+                      default=False, action='store_true')
     options, args = parser.parse_args()
 
     reader, writer = sys.stdin, sys.stdout
@@ -53,9 +55,9 @@ def setup(args):
     if options.output != '-':
         writer = open(options.output, 'w')
 
-    return reader, writer, options.tolerate
+    return reader, writer, options.tolerate, options.verbose
 
-def process(all_urls):
+def process(all_urls, verbose):
     '''
     Process URLs, returning list of valid info structures and list
     of URLs found faulty.
@@ -67,8 +69,12 @@ def process(all_urls):
         info['user'], info['slug'] = extract_info_from_url(url)
         info['url'] = GITHUB_IO_TEMPLATE.format(info['user'], info['slug'])
         if check_info(url, info):
+            if verbose:
+                print '+', url
             results.append(info)
         else:
+            if verbose:
+                print '!', url
             faulty.append(url)
     return results, faulty
 
