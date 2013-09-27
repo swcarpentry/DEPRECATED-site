@@ -1,49 +1,88 @@
-\documentclass{article}
-\usepackage{authblk}
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{color} 
+
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+\bibliographystyle{plos2009}
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+\date{}
+
+\pagestyle{myheadings}
 
 \newcommand{\footurl}[1]{\footnote{\texttt{#1}}}
 \newcommand{\term}[1]{\emph{#1}}
-
 \newcommand{\practicesection}[2]{\section{#1}\label{#2}}
 \newcounter{PracticeIdentifier}[section]
 \newcommand{\practice}[1]{\stepcounter{PracticeIdentifier}\textbf{\emph{{#1}~(\arabic{section}.\arabic{PracticeIdentifier})}}}
 
-\title{Best Practices for Scientific Computing}
-\date{\today}
-
-\author[a]{Greg~Wilson}
-\author[b]{D.A.~Aruliah}
-\author[c]{C.~Titus~Brown}
-\author[d]{Neil~P.~Chue~Hong}
-\author[e]{Matt~Davis}
-\author[f]{Richard~T.~Guy}
-\author[g]{Steven~H.D.~Haddock}
-\author[h]{Kathryn~D.~Huff}
-\author[i]{Ian~M.~Mitchell}
-\author[j]{Mark~D.~Plumbley}
-\author[k]{Ben~Waugh}
-\author[l]{Ethan~P.~White}
-\author[m]{Paul~Wilson}
-
-\affil[a]{\small Software Carpentry / gvwilson@software-carpentry.org}
-\affil[b]{\small University of Ontario Institute of Technology / Dhavide.Aruliah@uoit.ca}
-\affil[c]{\small Michigan State University / ctb@msu.edu}
-\affil[d]{\small Software Sustainability Institute / N.ChueHong@epcc.ed.ac.uk}
-\affil[e]{\small Space Telescope Science Institute / mrdavis@stsci.edu}
-\affil[f]{\small University of  Toronto / guy@cs.utoronto.ca}
-\affil[g]{\small Monterey Bay Aquarium Research Institute / steve@practicalcomputing.org}
-\affil[h]{\small University of  California / huff@berkeley.edu}
-\affil[i]{\small University of British Columbia / mitchell@cs.ubc.ca}
-\affil[j]{\small Queen Mary University of London  / mark.plumbley@eecs.qmul.ac.uk}
-\affil[k]{\small University College London / b.waugh@ucl.ac.uk}
-\affil[l]{\small Utah State University  / ethan@weecology.org}
-\affil[m]{\small University of  Wisconsin / wilsonp@engr.wisc.edu}
-
 \begin{document}
 
-\maketitle
+\begin{flushleft}
+{\Large
+\textbf{Best Practices for Scientific Computing}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+{Greg~Wilson}$^{1,\ast}$,
+{D.A.~Aruliah}$^{2}$,
+{C.~Titus~Brown}$^{3}$,
+{Neil~P.~Chue~Hong}$^{4}$,
+{Matt~Davis}$^{5}$,
+{Richard~T.~Guy}$^{6}$,
+{Steven~H.D.~Haddock}$^{7}$,
+{Kathryn~D.~Huff}$^{8}$,
+{Ian~M.~Mitchell}$^{9}$,
+{Mark~D.~Plumbley}$^{10}$,
+{Ben~Waugh}$^{11}$,
+{Ethan~P.~White}$^{12}$,
+{Paul~Wilson}$^{13}$
+\\
+\bf{1} Mozilla Foundation / gvwilson@software-carpentry.org
+\\
+\bf{2} University of Ontario Institute of Technology / Dhavide.Aruliah@uoit.ca
+\\
+\bf{3} Michigan State University / ctb@msu.edu
+\\
+\bf{4} Software Sustainability Institute / N.ChueHong@epcc.ed.ac.uk
+\\
+\bf{5} Space Telescope Science Institute / mrdavis@stsci.edu
+\\
+\bf{6} University of  Toronto / guy@cs.utoronto.ca
+\\
+\bf{7} Monterey Bay Aquarium Research Institute / steve@practicalcomputing.org
+\\
+\bf{8} University of  California / huff@berkeley.edu
+\\
+\bf{9} University of British Columbia / mitchell@cs.ubc.ca
+\\
+\bf{10} Queen Mary University of London  / mark.plumbley@eecs.qmul.ac.uk
+\\
+\bf{11} University College London / b.waugh@ucl.ac.uk
+\\
+\bf{12} Utah State University  / ethan@weecology.org
+\\
+\bf{13} University of  Wisconsin / wilsonp@engr.wisc.edu
+\\
+$\ast$ E-mail: Corresponding gvwilson@software-carpentry.org
+\end{flushleft}
 
-\begin{abstract}
+\title{Best Practices for Scientific Computing}
+
+\section*{Abstract}
+
 Scientists spend an increasing amount of time building and using
 software. However, most scientists are never taught how to do this
 efficiently. As a result, many are unaware of tools and practices that
@@ -52,7 +91,8 @@ less effort. We describe a set of best practices for scientific
 software development that have solid foundations in research and
 experience, and that improve scientists' productivity and the
 reliability of their software.
-\end{abstract}
+
+\section*{Introduction}
 
 Software is as important to modern scientific research as telescopes and test
 tubes. From groups that work exclusively on computational problems, to
@@ -183,6 +223,8 @@ program easier to understand in the same way that breaking up a scientific
 paper using sections and paragraphs makes it easier to read. For
 example, a function to calculate the area of a rectangle can be
 written to take four separate coordinates:
+
+\pagebreak
 
 \begin{small}
 \begin{verbatim}
@@ -340,6 +382,8 @@ of those files, allowing arbitrary versions to be retrieved and
 compared, together with metadata such as comments on what was changed
 and the author of the changes. All of this information can be
 extracted to provide provenance for both code and data.
+
+\pagebreak
 
 Many good VCSes are open source and freely available, including
 Subversion\footurl{http://subversion.apache.org},
@@ -549,6 +593,7 @@ def scan(op, values, seed=None):
 \end{verbatim}
 \end{small}
 
+\noindent
 In contrast, the comment in the code fragment below does nothing to
 aid comprehension:
 
@@ -672,7 +717,6 @@ results of computational science and will allow us to make more rapid
 progress on important scientific questions than would otherwise be
 possible.
 
-\bibliographystyle{plain}
 \bibliography{best-practices-scientific-computing-2012}
 
 \pagebreak
