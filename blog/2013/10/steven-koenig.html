@@ -1,0 +1,61 @@
+---
+layout: blog
+author: Steven Koenig
+title: "Steven Koenig: What I've Learned"
+date: 2013-10-01
+time: "09:00:00"
+category: ["Community", "Experience Report"]
+---
+<!-- start excerpt -->
+<p>I have been a PhD student at Technische Universit&auml;t M&uuml;nchen, Germany since May 2012. My research interest is biopolymers: how to produce them, and what to do with them. Where computers come into play? Literally everywhere. And what I need Software Carpentry for? Literally everything.</p>
+<!-- end excerpt -->
+<p>Nowadays, many tasks in the lab are carried out using computers: from running chromatography systems to evaluating photometric 96 well assays, from rheometry to next-generation sequencing. The usefulness of the skill set covered by Software Carpentry was obvious to me the minute I read about the course contents.</p>
+<p>Although I am regarded as the computer nerd at work, there is still plenty to learn. And I found some things I always wanted to be introduced to in the course contents:</p>
+<ul>
+  <li>Git (distributed version control software)</li>
+  <li>make (automation)</li>
+  <li>Python (programming language)</li>
+  <li>Unit tests (self-tests for programmes)</li>
+</ul>
+<p>Just this weekend I had to take a look at the old files of my bachelor dissertation and what I found in one directory looked something like that:</p>
+<ul>
+  <li>20091201 - HA_PEF.ods</li>
+  <li>20091201 - HA_PEF.xls</li>
+  <li>20091210 - HA_PEF.xls</li>
+  <li>20100105 - HA_PEF.ods</li>
+  <li>20100105 - HA_PEF.xls</li>
+  <li>20100107 - HA_PEF.xls</li>
+  <li>20100108 - HA_PEF.xls</li>
+  <li>20100111 - HA_PEF.xls</li>
+  <li>20100112 - HA_PEF.xls</li>
+  <li>20100114 - HA_PEF.xls</li>
+  <li>20100115 - HA_PEF.xls</li>
+  <li>20100120 - HA_PEF.xls</li>
+  <li>20100121 - HA_PEF.xls</li>
+  <li>20100122 - HA_PEF.xls</li>
+  <li>20100125 - HA_PEF.xls</li>
+  <li>20100126 - HA_PEF.xls</li>
+  <li>20100127 - HA_PEF.ods</li>
+  <li>20100127 - HA_PEF.xls</li>
+  <li>20100205 - HA_PEF.xls</li>
+  <li>20100212 - HA_PEF.xls</li>
+</ul>
+<p>I was quite astonished to see this, I could not even remember that I did it <em>that way</em> back then. At that time, I never could have imagined that I could just have something like that instead:</p>
+<ul>
+  <li>HA_PEF.xls</li>
+</ul>
+<p>Using version control transformed the way I think about organising data. I was familiar with SVN before the SWC course, but it is way too cumbersome to set up and use locally IMHO Now that I know about Git, I can have one and only one file and I can leave the overhead of having different versions to Git. No more cluttering of my working directories. And there are even more benefits to using version control:</p>
+<ul>
+  <li>When used with text files, the differences between different versions can be viewed.</li>
+  <li>Other scientists can pull in my stuff and continue working on it having access to the complete project history.</li>
+  <li>Comments for differences introduced allow for quickly finding your way through your repository.</li>
+</ul>
+<p>There are more advantages of using version control and I recommend every scientist to get familiar with it as soon as possible.</p>
+<p>While automating routine work in the lab is common, automating the evaluation of the data generated is not as common. At least in our lab, data from high-throughput screenings are evaluated using Excel sheets, which involves lots of copying of data back and forth. Using SWC skills we can tap into the enormous potential of automation:</p>
+<ul>
+<li>Increased reliability: Humans are bad at repetitive tasks, computers are good at that. So, share the work with your computer. By using unit tests, the computer can even run tests to see if its programmes are correct or not.</li>
+<li>Increased reproducibility: Bundling input data with the evaluation instructions (as a programme) allows to reproduce the output data from scratch.</li>
+<li>Time savings: Once the framework is ready, 80+% of time can be saved easily.</li>
+<li>Cost savings: While the computer is doing the evaluation, staff can focus on other problems.</li>
+</ul>
+<p>Software Carpentry taught me that out there are numerous other people who think like me on these issues. Therefore, I hope to slowly creep in these "new" technologies into the everyday life of everybody in the lab.</p>
