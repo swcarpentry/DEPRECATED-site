@@ -74,8 +74,7 @@ def hashEmailAddress(email, salt):
 #-------------------------------------------------------------------------------
 
 def create(image_src_dir, website_dir, badge_dir, kind, username, email):
-    '''Create a new badge.  If 'bake' is True, bake a real badge; if it is False,
-    just copy the badge image file (for testing).'''
+    '''Create a new badge.'''
 
     # Paths
     image_src_path, json_dst_path = \
