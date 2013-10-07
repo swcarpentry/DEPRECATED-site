@@ -5,6 +5,8 @@ import sys
 import os
 import datetime
 import hashlib
+import json
+from PIL import Image, PngImagePlugin
 
 #-------------------------------------------------------------------------------
 
@@ -21,45 +23,30 @@ BADGE_DESCRIPTIONS = {
 
 BADGE_KINDS = BADGE_DESCRIPTIONS.keys()
 
-JSON_TEMPLATE = '''{
-  "recipient" : "%(email)s",
-  "salt": "%(salt)s",
-  "issued_on" : "%(when)s",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "%(name)s",
-    "image" : "/img/badges/%(kind)s.png",
-    "description" : "%(description)s",
-    "criteria" : "/badges/%(kind)s.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
-}'''
-
-USAGE = '''Usage:
-%(name)s username email [%(kinds)s] 
-''' % {'name' : sys.argv[0], 'kinds' : '|'.join(BADGE_KINDS)}
+USAGE = '''Usage: %(name)s username email %(kinds)s [site_dir]''' % \
+{'name' : sys.argv[0], 'kinds' : '|'.join(BADGE_KINDS)}
 
 SALT = 'software-carpentry'
+
 #-------------------------------------------------------------------------------
 
 def main(args):
     '''Main program driver.'''
 
-    if len(sys.argv) < 4: 
+    if (len(sys.argv) < 4) or (len(sys.argv) > 5):
         usage()
 
     username = sys.argv[1]
     email = sys.argv[2] 
-    image_src_dir = 'img/badges'
+    kind = sys.argv[3]
+    website_dir = os.curdir
+    if len(sys.argv) == 5:
+        website_dir = sys.argv[4]
 
-    for kind in sys.argv[3:]:
-        website_dir = '.'
-        badge_dir = 'badges/'
-        create(image_src_dir, website_dir, badge_dir, kind, username, email)
+    image_src_dir = os.path.join(website_dir, 'img', 'badges')
+    badge_dst_dir = os.path.join(website_dir, 'badges')
+
+    create(image_src_dir, badge_dst_dir, kind, username, email)
 
 #-------------------------------------------------------------------------------
 
@@ -68,86 +55,97 @@ def usage():
     sys.exit(-1)
 
 #-------------------------------------------------------------------------------
-def hashEmailAddress(email, salt):
-    return 'sha256$' + hashlib.sha256(email + salt).hexdigest();
 
-#-------------------------------------------------------------------------------
-
-def create(image_src_dir, website_dir, badge_dir, kind, username, email):
-    '''Create a new badge.'''
+def create(image_src_dir, badge_dst_dir, kind, username, email):
+    '''Create JSON and PNG for a new badge.'''
 
     # Paths
-    image_src_path, json_dst_path = \
-        _make_paths(website_dir, badge_dir, kind, username, image_src_dir=image_src_dir)
+    image_src_path, image_dst_path, json_dst_path = \
+        make_paths(image_src_dir, badge_dst_dir, kind, username)
 
     # When is the badge being created?
     when = datetime.date.today().isoformat()
 
-    # hide the email address
-    hashedemail = hashEmailAddress(email, SALT)
+    # Hide the email address
+    hashedemail = hash_email_address(email, SALT)
+
+    # Consistent slug combining kind and username.
+    slug = '%s-%s' % (kind, username)
+
+    # Cache a few values.
+    name = BADGE_DESCRIPTIONS[kind][0]
+    description = BADGE_DESCRIPTIONS[kind][1]
+    criteria = '/badges/index.html#%s.html' % kind
+    assertion_url = '/badges/%s.json' % slug
+    image_url = '/badges/%s.png' % slug
+
+    assertion = {
+        'recipient' : hashedemail,
+        'salt'      : SALT,
+        'issued_on' : when,
+        'badge' : {
+            'version'     : '0.5.0',
+            'name'        : name,
+            'image'       : image_url,
+            'description' : description,
+            'criteria'    : criteria,
+            'issuer' : {
+                'origin'  : 'http://software-carpentry.org',
+                'name'    : 'Software Carpentry',
+                'contact' : 'admin@software-carpentry.org'
+            }
+        }
+    }
 
     # Create and save the JSON assertion.
-    values = {'username'    : username,
-              'email'       : hashedemail,
-              'salt'        : SALT,
-              'kind'        : kind,
-              'when'        : when,
-              'name'        : BADGE_DESCRIPTIONS[kind][0],
-              'description' : BADGE_DESCRIPTIONS[kind][1]}
-    assertion = JSON_TEMPLATE % values
-    print 'Badge assertion...'
-    print assertion
+    with open(json_dst_path, 'w') as writer:
+        json.dump(assertion, writer, indent=4)
 
-    # Save assertion.
-    writer = open(json_dst_path, 'w')
-    writer.write(assertion)
-    writer.close()
-    print 'JSON badge manifest path:', json_dst_path
+    # Create and save the PNG image with embedded metadata.
+    img = Image.open(image_src_path)
+    meta = PngImagePlugin.PngInfo()
+    meta.add_text('openbadges', assertion_url)
+    img.save(image_dst_path, 'PNG', pnginfo=meta)
 
-def _make_paths(website_dir, badge_dir, kind, username,
-                image_src_dir=None, cannot_exist=True):
+#-------------------------------------------------------------------------------
+
+def make_paths(image_src_dir, badge_dst_dir, kind, username):
     '''Create, check, and return the paths used by handlers.'''
 
     # Badge type is recognized.
     assert kind in BADGE_DESCRIPTIONS, \
            'Unknown kind of badge "%s"' % kind
 
-    # Web site directory.
-    assert website_dir is not None, \
-           'Web site directory "%s" not provided' % website_dir
-    assert os.path.isdir(website_dir), \
-           'Web site directory "%s" does not exist' % website_dir
-
-    # Full badge directory.
-    assert badge_dir is not None, \
-           'Badge sub-directory not provided' % badge_dir
-    badge_root_dir = os.path.join(website_dir, badge_dir)
-    assert os.path.isdir(badge_root_dir), \
-           'Badge root directory "%s" does not exist' % badge_root_dir
-    badge_kind_dir = os.path.join(badge_root_dir, kind)
-    assert os.path.isdir(badge_kind_dir), \
-           'Badge kind directory "%s" does not exist' % badge_kind_dir
+    # Output directory.
+    assert badge_dst_dir, \
+           'Badge sub-directory not provided'
+    assert os.path.isdir(badge_dst_dir), \
+           'Badge destination directory "%s" does not exist' % badge_dst_dir
 
     # Badge image source.
-    if image_src_dir is None:
-        image_src_path = None
-    else:
-        assert os.path.isdir(image_src_dir), \
-               'Image source directory "%s" not found' % image_src_dir
-        image_src_path = os.path.join(image_src_dir, '%s.png' % kind)
-        assert os.path.isfile(image_src_path), \
-               'No such image file "%s"' % image_src_path
+    assert os.path.isdir(image_src_dir), \
+           'Image source directory "%s" not found' % image_src_dir
+    image_src_path = os.path.join(image_src_dir, '%s.png' % kind)
+    assert os.path.isfile(image_src_path), \
+           'No such image file "%s"' % image_src_path
 
-    # Name of JSON file.
-    json_name = '%s.json' % username
+    # Badge image destination.
+    image_dst_path = os.path.join(badge_dst_dir, '%s-%s.png' % (kind, username))
+    assert not os.path.isfile(image_dst_path), \
+           'Output image "%s" already exists' % image_dst_path
 
     # JSON file.
-    json_dst_path = os.path.join(badge_kind_dir, json_name)
-    if cannot_exist:
-        assert not os.path.isfile(json_dst_path), \
-               'JSON file "%s" already exists' % json_dst_path
+    json_dst_path = os.path.join(badge_dst_dir, '%s-%s.json' % (kind, username))
+    assert not os.path.isfile(json_dst_path), \
+           'JSON file "%s" already exists' % json_dst_path
 
-    return image_src_path, json_dst_path
+    # Report.
+    return image_src_path, image_dst_path, json_dst_path
+
+#-------------------------------------------------------------------------------
+
+def hash_email_address(email, salt):
+    return 'sha256$' + hashlib.sha256(email + salt).hexdigest();
 
 #-------------------------------------------------------------------------------
 
