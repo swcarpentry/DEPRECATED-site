@@ -1,7 +1,9 @@
 - {airport: Austin, count: 1, latlng: '30.194444,-97.669722'}
-- {airport: Boston Logan, count: 2, latlng: '42.364167,-71.005'}
+- {airport: Brisbane, count: 1, latlng: '-27.384167,153.1175'}
+- {airport: Boston Logan, count: 3, latlng: '42.364167,-71.005'}
 - {airport: Bristol, count: 1, latlng: '51.3825,-2.718889'}
 - {airport: Baltimore Washington, count: 4, latlng: '39.175278,-76.668333'}
+- {airport: Paris Charles de Gaulle, count: 1, latlng: '49.012778,2.55'}
 - {airport: Charleston, count: 1, latlng: '32.898611,-80.040278'}
 - {airport: Urbana-Champaign, count: 1, latlng: '40.039167,-88.278056'}
 - {airport: Ronald Reagan Washington, count: 2, latlng: '38.851944,-77.0375'}
@@ -23,7 +25,8 @@
 - {airport: Madison Dane County, count: 1, latlng: '43.139722,-89.3375'}
 - {airport: Munich, count: 1, latlng: '48.353611,11.785833'}
 - {airport: Newcastle, count: 1, latlng: '55.0375,-1.691667'}
-- {airport: Oakland International, count: 5, latlng: '37.721111,-122.220556'}
+- {airport: Oakland International, count: 6, latlng: '37.721111,-122.220556'}
+- {airport: Okinawa Naha, count: 1, latlng: '26.195556,127.645833'}
 - {airport: Chicago O'Hare, count: 2, latlng: '41.979444,-87.904444'}
 - {airport: Paris Orly, count: 1, latlng: '48.725278,2.359444'}
 - {airport: Oslo Gardermoen, count: 2, latlng: '60.193889,11.100278'}
