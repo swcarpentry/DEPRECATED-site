@@ -6,26 +6,24 @@
     {% include generic-header.html %}
     <title>Software Carpentry: {{page.title}}</title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-
-	<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer.js"></script>
-
-	<script type="text/javascript">
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer.js"></script>
+    <script type="text/javascript">
       function MarkerPin(color) {
         var pin = new google.maps.MarkerImage(
-            "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));
+          "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0,0),
+          new google.maps.Point(10, 34));
         return pin;
       }
 
       function MarkerPinCluster(url,sizeX,sizeY) {
-      	var pin = new google.maps.MarkerImage(
-      	url,
-      	new google.maps.Size(sizeX,sizeY),
-      	new google.maps.Point(0,0),
-      	new google.maps.Point(10,34));
-      	return pin;
+        var pin = new google.maps.MarkerImage(
+        url,
+        new google.maps.Size(sizeX,sizeY),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10,34));
+        return pin;
       }
 
       function set_info_window(map, marker, info_window, content) {
@@ -44,14 +42,14 @@
       }
 
       function toggle_markers_mc_visibility(markers,mc){
-	    markers.forEach(toggle_marker_visibility);
-		if (markers[0].visible){
-		  mc.setMap(markers[0].getMap())
-		}
-		else {
-		  mc.setMap(null)
-		}
-	  }
+        markers.forEach(toggle_marker_visibility);
+        if (markers[0].visible){
+          mc.setMap(markers[0].getMap())
+        }
+        else {
+          mc.setMap(null)
+        }
+      }
 
       function initialize_map() {
         var mapOptions = {
@@ -67,10 +65,10 @@
         var pastPin = MarkerPinCluster("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png",52,53);
 
         var pinShadow = new google.maps.MarkerImage(
-            "http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
-            new google.maps.Size(40, 37),
-            new google.maps.Point(0, 0),
-            new google.maps.Point(12, 35));
+          "http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+          new google.maps.Size(40, 37),
+          new google.maps.Point(0, 0),
+          new google.maps.Point(12, 35));
 
         var info_window = new google.maps.InfoWindow({});
 
@@ -82,23 +80,23 @@
         {% for bootcamp in site.bootcamps %}
           {% if bootcamp.latlng %}
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng({{bootcamp.latlng}}),
-                map: map,
-                title: "{{bootcamp.venue}}, {{bootcamp.humandate}}",
-                {% if bootcamp.startdate >= site.today %}
-                  {% case bootcamp.registration %}
-                    {% when 'restricted' %}
-                      icon: restrictedPin,
-                    {% when 'full' %}
-                      icon: fullPin,
-                    {% else %}
-                      icon: openPin,
-                  {% endcase %}
-                  visible: true,
-                {% else %}
-                  icon: pastPin,
-                  visible: false,
-                {% endif %}
+              position: new google.maps.LatLng({{bootcamp.latlng}}),
+              map: map,
+              title: "{{bootcamp.venue}}, {{bootcamp.humandate}}",
+              {% if bootcamp.startdate >= site.today %}
+                {% case bootcamp.registration %}
+                  {% when 'restricted' %}
+                    icon: restrictedPin,
+                  {% when 'full' %}
+                    icon: fullPin,
+                  {% else %}
+                    icon: openPin,
+                {% endcase %}
+                visible: true,
+              {% else %}
+                icon: pastPin,
+                visible: false,
+              {% endif %}
               shadow: pinShadow,
             });
 
@@ -116,15 +114,14 @@
         {% endfor %}
 
         {% for airport in site.airports %}
-
-        	{% for i in (1..{{airport.count}}) %}
+          {% for i in (1..{{airport.count}}) %}
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng({{airport.latlng}}),
-                map: map,
-                title: "{{airport.airport}} / {{airport.count}}",
-                icon: instructorPin,
-                visible: false,
-                shadow: pinShadow,
+              position: new google.maps.LatLng({{airport.latlng}}),
+              map: map,
+              title: "{{airport.airport}} / {{airport.count}}",
+              icon: instructorPin,
+              visible: false,
+              shadow: pinShadow,
             });
 
             instructor_markers.push(marker);
@@ -138,26 +135,37 @@
             {% endfor %}
         {% endfor %}
 
-		// Groups instructor_markers and past_markers into clusters
-		var instructor_mcOptions = {zoomOnClick: false, gridSize: 15, minimumClusterSize: 1, styles: [{
-		url: 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png',
-        height: 35,
-        width: 35,
-        anchor: [16, 0],
-        textColor: '#ff00ff',
-        textSize: 10,
-      }]}
+        // Groups instructor_markers and past_markers into clusters
+        var instructor_mcOptions = {
+          zoomOnClick: false,
+          gridSize: 15,
+          minimumClusterSize: 1,
+          styles: [{
+            url: 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png',
+            height: 35,
+            width: 35,
+            anchor: [16, 0],
+            textColor: '#ff00ff',
+            textSize: 10,
+          }]
+        }
 
-      	var past_mcOptions = {zoomOnClick: false, maxZoom: 6, gridSize: 15, minimumClusterSize: 1, styles: [{
-      	url: 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png',
-      	height: 52,
-      	width: 53,
-      	textColor: '#ffffff',
-      	textSize: 10,
-      	}]}
+        var past_mcOptions = {
+          zoomOnClick: false,
+          maxZoom: 6,
+          gridSize: 15,
+          minimumClusterSize: 1,
+          styles: [{
+            url: 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png',
+            height: 52,
+            width: 53,
+            textColor: '#ffffff',
+            textSize: 10,
+          }]
+        }
 
-		var instructor_markersCluster = new MarkerClusterer(null, instructor_markers,instructor_mcOptions);
-		var past_markersCluster = new MarkerClusterer(null, past_markers,past_mcOptions);
+        var instructor_markersCluster = new MarkerClusterer(null, instructor_markers,instructor_mcOptions);
+        var past_markersCluster = new MarkerClusterer(null, past_markers,past_mcOptions);
 
         // This bit adds a button to the map that toggles the
         // visibility of past boot camps.
@@ -192,7 +200,7 @@
 
         // Setup the click event listener
         google.maps.event.addDomListener(pastUI, 'click', function() {
-        toggle_markers_mc_visibility(past_markers,past_markersCluster)
+          toggle_markers_mc_visibility(past_markers,past_markersCluster)
         });
 
         // add control to the map
@@ -231,7 +239,7 @@
 
         // Setup the click event listener
         google.maps.event.addDomListener(instructorUI, 'click', function() {
-        toggle_markers_mc_visibility(instructor_markers,instructor_markersCluster)
+          toggle_markers_mc_visibility(instructor_markers,instructor_markersCluster)
         });
 
         // add control to the map
