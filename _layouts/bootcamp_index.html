@@ -34,6 +34,16 @@
         };
       }
 
+      function toggle_markers_mc_visibility(markers,mc){
+	    markers.forEach(toggle_marker_visibility);
+		if (markers[0].visible){
+		  mc.setMap(markers[0].getMap())
+		}
+		else {
+		  mc.setMap(null)
+		}
+	  }
+
       function initialize_map() {
         var mapOptions = {
           zoom: 2,
@@ -166,7 +176,8 @@ url:'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markercluste
         pastUI.appendChild(pastText);
 
         // Setup the click event listener
-        google.maps.event.addDomListener(pastUI, 'click', function() { 		past_markers.forEach(toggle_marker_visibility); if (past_markers[1].visible){ past_markersCluster.setMap(past_markers[1].getMap())} else {past_markersCluster.setMap(null)}
+        google.maps.event.addDomListener(pastUI, 'click', function() {
+        toggle_markers_mc_visibility(past_markers,past_markersCluster)
         });
 
         // add control to the map
@@ -204,7 +215,8 @@ url:'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markercluste
         instructorUI.appendChild(instructorText);
 
         // Setup the click event listener
-        google.maps.event.addDomListener(instructorUI, 'click', function() { 		instructor_markers.forEach(toggle_marker_visibility); if (instructor_markers[1].visible){ instructor_markersCluster.setMap(instructor_markers[1].getMap())} else {instructor_markersCluster.setMap(null)}
+        google.maps.event.addDomListener(instructorUI, 'click', function() {
+        toggle_markers_mc_visibility(instructor_markers,instructor_markersCluster)
         });
 
         // add control to the map
