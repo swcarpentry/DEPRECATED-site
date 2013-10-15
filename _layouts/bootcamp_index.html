@@ -6,7 +6,10 @@
     {% include generic-header.html %}
     <title>Software Carpentry: {{page.title}}</title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-    <script type="text/javascript">
+
+	<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer.js"></script>
+
+	<script type="text/javascript">
       function MarkerPin(color) {
         var pin = new google.maps.MarkerImage(
             "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
@@ -94,6 +97,8 @@
         {% endfor %}
 
         {% for airport in site.airports %}
+
+        	{% for i in (1..{{airport.count}}) %}
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng({{airport.latlng}}),
                 map: map,
@@ -111,7 +116,23 @@
               '</div>';
 
             set_info_window(map, marker, info_window, info_string);
+            {% endfor %}
         {% endfor %}
+
+		// Groups instructor_markers and past_markers into clusters
+		var instructor_mcOptions = {styles: [{
+url:'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png',
+        height: 35,
+        width: 35,
+        anchor: [16, 0],
+        textColor: '#ff00ff',
+        textSize: 10
+      }]}
+
+		var instructor_markersCluster = new MarkerClusterer(null, instructor_markers,instructor_mcOptions);
+		instructor_markersCluster.setMaxZoom(6);
+		var past_markersCluster = new MarkerClusterer(null, past_markers);
+		past_markersCluster.setMaxZoom(6);
 
         // This bit adds a button to the map that toggles the
         // visibility of past boot camps.
@@ -145,8 +166,7 @@
         pastUI.appendChild(pastText);
 
         // Setup the click event listener
-        google.maps.event.addDomListener(pastUI, 'click', function() {
-          past_markers.forEach(toggle_marker_visibility)
+        google.maps.event.addDomListener(pastUI, 'click', function() { 		past_markers.forEach(toggle_marker_visibility); if (past_markers[1].visible){ past_markersCluster.setMap(past_markers[1].getMap())} else {past_markersCluster.setMap(null)}
         });
 
         // add control to the map
@@ -184,8 +204,7 @@
         instructorUI.appendChild(instructorText);
 
         // Setup the click event listener
-        google.maps.event.addDomListener(instructorUI, 'click', function() {
-          instructor_markers.forEach(toggle_marker_visibility)
+        google.maps.event.addDomListener(instructorUI, 'click', function() { 		instructor_markers.forEach(toggle_marker_visibility); if (instructor_markers[1].visible){ instructor_markersCluster.setMap(instructor_markers[1].getMap())} else {instructor_markersCluster.setMap(null)}
         });
 
         // add control to the map
