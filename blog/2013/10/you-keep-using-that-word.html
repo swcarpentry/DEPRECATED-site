@@ -1,0 +1,199 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "You Keep Using That Word"
+date: 2013-10-15
+time: "19:00:00"
+category: ["Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  The first Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE)
+  is going to be held in conjunction with <a href="http://sc13.supercomputing.org/">Supercomputing 2013</a>
+  on Sunday, November 17.
+  I read all of
+  <a href="http://wssspe.researchcomputing.org.uk/contributions/">the papers listed on the workshop site</a>
+  over the weekend,
+  and in a picture,
+  my reaction is this:
+</p>
+<!-- end excerpt -->
+<p><img src="inigo.png" alt="I Do Not Think It Means What You Think It Means" /></p>
+<p>
+  My dictionary defines "sustainable" as
+  "able to be maintained at a certain rate or level."
+  Anyone who has worked in public health or international development can tell you,
+  the most important requirement for sustainability isn't actually funding:
+  it's education.
+  If people know how to do something for themselves,
+  and understand <em>why</em> they should do it,
+  they'll find a way to keep it going.
+  This is why the mass public health campaigns in the middle of the 20th Century
+  invested so much effort in teaching people about germs and nutrition:
+  once people understand that tuberculosis spreads in sputum,
+  or that rickets is caused by a shortage of Vitamin D,
+  they can figure out for themselves how to stop their neighbors from spitting in the streets
+  and how to get their kids more time in the sun.
+  If either the how or the why is missing,
+  though,
+  people will stop doing whatever it is you want them to do
+  as soon as the external incentive (i.e., the funding) dries up.
+</p>
+<p>
+  This is why I was left unmoved by most of the 49 papers I read.
+  About half are single-site experience reports,
+  often devoted to scalable, easy-to-use software packages.
+  (Funnily enough, they're <em>all</em> scalable and easy to use...)
+  When they mention education and training,
+  that's as much mention as they get:
+  the words "education and training".
+  Others discuss a grab bag of topics ranging from software maturity models to the Semantic Web,
+  but those too give no more than a passing bullet point to the fact that
+  scientists need to know how to drive these things in order to adopt and sustain them.
+</p>
+<p>
+  As just one example,
+  <a href="http://arxiv.org/abs/1309.1813">one of the papers from Argonne National Lab</a>
+  presents a diagram of the user engagement cycle
+  that includes a "tech improvement" step,
+  but doesn't have one for "user improvement".
+  Another example is <a href="http://dx.doi.org/10.6084/m9.figshare.790756">the paper from the Kitware team</a>,
+  who have been building world-class software for more than fifteen years.
+  Their visualization library was originally developed to support a textbook,
+  and this has clearly influenced their view of the world:
+</p>
+<blockquote><em>
+  ...the standard of software engineering in science must be improved,
+  and sustainable software ecosystems with meaningful credit must be
+  realized. This is not simply limited to teaching scientists to write
+  code; if sustainable software projects are to be established in
+  science then issues such as testing, licensing, and collaboration
+  must be addressed. Sufficient engineering discipline is required to
+  realize robust foundations that can be extended through the use of
+  code review, regression testing and proper citation and attribution
+  of software used in research.
+  <br/>
+  ...
+  <br/>
+  Scientific projects often have limited resources, with a high
+  turnover of developers/engineers as they move through their academic
+  careers. This means that it is essential to establish procedures to
+  help new community members get up to speed, and to retain group
+  knowledge as people move on to new positions.
+</em></blockquote>
+<p>
+  But when, where, and how do they expect people to learn the skills
+  they so clearly depend on?
+</p>
+<p>
+  Blanton and Lenhardt's
+  "<a href="http://dx.doi.org/10.6084/m9.figshare.789028">A User Perspective on Sustainable Scientific Software</a>",
+  meanwhile,
+  is just wrong-headed.
+  They start by framing discussion of sustainability in terms of risk,
+  which I found useful,
+  but then say:
+</p>
+<blockquote></em>
+  Hedging against this risk has several aspects, all related to the
+  development of the software itself. In some rough order of
+  increasing complexity, these range from adoption and adherence of
+  software development best practices, to peer-review of software, to
+  formal training in software engineering and related fields for
+  scientists.
+</em></blockquote>
+<p>
+  I strongly disagree:
+  without training in software development,
+  best practices cannot be adopted:
+  they can only be repeated by rote,
+  which breaks down sooner rather than later.
+</p>
+<p>
+  Of course,
+  in a collection this size,
+  it would be surprising if nobody tackled the skills issue explicitly.
+  One paper that does so is
+  "<a href="http://arxiv.org/abs/1309.1817">Initial Findings from a Study of Best Practices and Models for Cyberinfrastructure Software Sustainability</a>",
+  by Stewart, Wernet, Barnet, and Welch.
+  They surveyed 5000 NSF-funded PIs (of whom 811 responded),
+  then interviewed the leaders of a dozen projects.
+  One of their conclusions is that:
+</p>
+<blockquote><em>
+  ...the vast number of principal investigators and researchers in the
+  scientific domain lack the training, expertise, awareness, time,
+  and, in some cases, inclination or aptitude to become functionally
+  proficient in these areas crucial to sustainability.
+</em></blockquote>
+<p>
+  They also make some interesting evidence-based proposals:
+</p>
+<blockquote><em>
+  A small-business boot camp designed around the tolerances and
+  motivations of scientists and researchers should be developed to, at
+  a minimum, provide an overview of these areas and proactively create
+  an awareness of the key components required for sustainability.
+</em></blockquote>
+<p>
+  They even advocate the creation of a software sustainability institute,
+  presumably modeled on <a href="http://www.software.ac.uk/">the one that's been so successful in the UK</a>.
+  But nowhere do they say,
+  "We need to train people to <em>create</em> sustainable software."
+</p>
+<p>
+  There is also
+  "<a href="http://dx.doi.org/10.6084/m9.figshare.791560">Software Engineering as Instrumentation for the Long Tail of Scientific Software</a>",
+  by Huang and Lapp.
+  They accurately diagnose the problem:
+</p>
+<blockquote><em>
+  ...long tail tools are by and large developed by
+  researcher-developers whose career priorities, scientific interests,
+  and training are primarily in their domain science. Successfully
+  optimizing software to reduce or eliminate barriers to reuse takes
+  training in the science of software engineering...which even more
+  experienced researcher-developers often do not have. Those that do
+  are not rewarded for it by the academic incentive structure, which
+  by and large provides little recognition for effort devoted to
+  engineering improvements unless it is immediately evident how such
+  effort enables new science. Correspondingly, among many domain
+  scientists, awareness of software engineering benefits and
+  appreciation for its cost are low....In this climate, the human
+  talent in software engineering that academia has is eventually lost
+  to industry...in part because universities offer little in the way
+  of alternative career tracks for such people.
+</em></blockquote>
+<p>
+  Their solutions?
+</p>
+<blockquote><em>
+  One is changing the reward structure to better recognize the
+  immediate and near-term benefits of well-engineered software.
+</em></blockquote>
+<p>
+  While laudable,
+  this isn't going to happen any time soon.
+  However:
+</p>
+<blockquote><em>
+  The other...is reducing the costs to science [by] creating an
+  effective infrastructure for scientists for securing software
+  engineering services [from] a non-profit center-of-excellence
+  model...
+  <br/>
+  The center would pool the small and otherwise disparate fractions of
+  software engineering effort. It would recruit personnel with deep
+  training in software engineering and knowledge across a scientific
+  discipline sufficient to collaborate effectively with scientists
+  across a domain...
+  <br/>
+  Importantly, the center would complement, assist, and train the
+  individual scientist-developer rather than taking away from their
+  intellectual and other ownership in the long tail tools.
+</em></blockquote>
+<p>
+  I don't know if this would work,
+  but at least it's tackling the central problem head-on.
+</p>
