@@ -28,8 +28,16 @@
 
       function set_info_window(map, marker, info_window, content) {
         google.maps.event.addListener(marker, 'click', function () {
-          info_window.setContent(content);
-          info_window.open(map, marker);
+	if (activeInfoWindowMarker == marker && info_window.opened){
+		info_window.close();
+		info_window.opened = false;
+	}
+	else {
+		info_window.setContent(content);
+	        info_window.open(map, marker);
+		info_window.opened = true;
+          }
+	activeInfoWindowMarker = marker
         })
       }
 
@@ -51,6 +59,11 @@
         }
       }
 
+	var overlay;
+	myOverlay.prototype = new google.maps.OverlayView();
+	google.maps.InfoWindow.prototype.opened = false;
+	var activeInfoWindowMarker = null;
+
       function initialize_map() {
         var mapOptions = {
           zoom: 2,
@@ -61,7 +74,7 @@
         var openPin = MarkerPin("{{site.colors.open}}");
         var fullPin = MarkerPin("{{site.colors.full}}");
         var restrictedPin = MarkerPin("{{site.colors.restricted}}");
-        var instructorPin = MarkerPinCluster("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png",34,34);
+        var instructorPin = MarkerPinCluster("http://www.huntsvillelibrary.net/en/eservices/resources/icon-person.png",34,34);
         var pastPin = MarkerPinCluster("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png",52,53);
 
         var pinShadow = new google.maps.MarkerImage(
@@ -74,6 +87,7 @@
 
         var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+	overlay = new myOverlay(map);
         var past_markers = [];
         var instructor_markers = [];
 
@@ -141,9 +155,9 @@
           gridSize: 15,
           minimumClusterSize: 1,
           styles: [{
-            url: 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png',
-            height: 35,
-            width: 35,
+            url: 'http://www.huntsvillelibrary.net/en/eservices/resources/icon-person.png',
+            height: 34,
+            width: 34,
             anchor: [16, 0],
             textColor: '#ff00ff',
             textSize: 10,
@@ -245,6 +259,24 @@
         // add control to the map
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(instructorDiv);
       }
+
+function myOverlay(map){
+	this.setMap(map);
+}
+
+myOverlay.prototype.onAdd = function(){
+// swap zIndex of google maps layers to put makers above clusters
+var tmp = this.getPanes().floatShadow.parentNode.style.zIndex
+this.getPanes().floatShadow.parentNode.style.zIndex = this.getPanes().overlayImage.parentNode.style.zIndex
+this.getPanes().overlayImage.parentNode.style.zIndex = tmp
+}
+
+myOverlay.prototype.draw = function() {
+}
+
+myOverlay.prototype.onRemove = function() {
+}
+
     </script>
   </head>
   <body onload="initialize_map()">
