@@ -74,7 +74,7 @@
         var openPin = MarkerPin("{{site.colors.open}}");
         var fullPin = MarkerPin("{{site.colors.full}}");
         var restrictedPin = MarkerPin("{{site.colors.restricted}}");
-        var instructorPin = MarkerPinCluster("http://www.huntsvillelibrary.net/en/eservices/resources/icon-person.png",34,34);
+        var instructorPin = MarkerPinCluster("https://raw.github.com/gvwilson/site/change-icon-for-instructor-clusters/assets/icons/instructor.png",34,34);
         var pastPin = MarkerPinCluster("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png",52,53);
 
         var pinShadow = new google.maps.MarkerImage(
@@ -155,12 +155,12 @@
           gridSize: 15,
           minimumClusterSize: 1,
           styles: [{
-            url: 'http://www.huntsvillelibrary.net/en/eservices/resources/icon-person.png',
+            url: 'https://raw.github.com/gvwilson/site/change-icon-for-instructor-clusters/assets/icons/instructor.png',
             height: 34,
             width: 34,
-            anchor: [16, 0],
-            textColor: '#ff00ff',
-            textSize: 10,
+            anchor: [8, 0],
+            textColor: '#000000',
+            textSize: 20,
           }]
         }
 
