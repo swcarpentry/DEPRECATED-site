@@ -36,7 +36,7 @@
 % Insert Author names, affiliations and corresponding author email.
 \\
 {Greg~Wilson}$^{1,\ast}$,
-{D.A.~Aruliah}$^{2}$,
+{Dhavide A.~Aruliah}$^{2}$,
 {C.~Titus~Brown}$^{3}$,
 {Neil~P.~Chue~Hong}$^{4}$,
 {Matt~Davis}$^{5}$,
@@ -152,6 +152,7 @@ in scientific software, make it easier to reuse, and save the authors
 of the software time and effort that can used for focusing on the
 underlying scientific questions.
 
+Our practices are summarized in Box~1.
 For reasons of space,
 we do not discuss the equally important (but independent) issues of
 reproducible research,
@@ -161,22 +162,6 @@ We do believe,
 however,
 that all of these will be much easier to implement
 if scientists have the skills we describe.
-
-\subsection*{Acknowledgments}
-
-We are grateful to
-Joel Adamson,
-Aron Ahmadia,
-Roscoe Bartlett,
-Erik Bray,
-Steven Crouch,
-Michael Jackson,
-Justin Kitzes,
-Adam Obeng,
-Karthik Ram,
-Yoav Ram,
-and Tracy Teal
-for feedback on this paper.
 
 \practicesection{Write programs for people, not computers.}{cognition}
 
@@ -437,9 +422,7 @@ Experienced programmers \practice{5a}{add assertions to programs to check
 simply a statement that something holds true at a particular point in
 a program; as the example below shows, assertions can be used to
 ensure that inputs are valid, outputs are consistent, and so
-on\footnote{Assertions do not require language support: it is common
-  in languages such as Fortran for programmers to create their own
-  test-and-fail functions for this purpose.}.
+on.
 
 \begin{small}
 \begin{verbatim}
@@ -522,22 +505,23 @@ programming language. Research has confirmed that most programmers
 write roughly the same number of lines of code per unit time
 regardless of the language they use \cite{prechelt2010}. Since faster,
 lower level, languages require more lines of code to accomplish the
-same task, scientists are most productive when they \practice{6b}{write
-  code in the highest-level language possible}, and shift to low-level
-languages like C and Fortran only when they are sure the performance
-boost is needed\footnote{Using higher-level languages also helps
-  program comprehensibility, since such languages have, in a sense,
-  ``pre-chunked'' the facts that programmers need to have in
-  short-term memory}. Taking this approach allows more code to be
-written (and tested) in the same amount of time.  Even when it is
-known before coding begins that a low-level language will ultimately
-be necessary, rapid prototyping in a high-level language helps
-programmers make and evaluate design decisions quickly. Programmers
-can also use a high-level prototype as a test oracle for a
-high-performance low-level reimplementation, i.e., compare the output
-of the optimized (and usually more complex) program against the output
-from its unoptimized (but usually simpler) predecessor in order to
-check its correctness.
+same task, scientists are most productive when they
+\practice{6b}{write code in the highest-level language possible}, and
+shift to low-level languages like C and Fortran only when they are
+sure the performance boost is needed. (Using higher-level languages
+also helps program comprehensibility, since such languages have, in a
+sense, ``pre-chunked'' the facts that programmers need to have in
+short-term memory.)
+
+Taking this approach allows more code to be written (and tested) in
+the same amount of time.  Even when it is known before coding begins
+that a low-level language will ultimately be necessary, rapid
+prototyping in a high-level language helps programmers make and
+evaluate design decisions quickly. Programmers can also use a
+high-level prototype as a test oracle for a high-performance low-level
+reimplementation, i.e., compare the output of the optimized (and
+usually more complex) program against the output from its unoptimized
+(but usually simpler) predecessor in order to check its correctness.
 
 \practicesection{Document design and purpose, not mechanics.}{embeddoc}
 
@@ -697,6 +681,22 @@ possible.
 
 \bibliography{best-practices-scientific-computing-2012}
 
+\subsection*{Acknowledgments}
+
+We are grateful to
+Joel Adamson,
+Aron Ahmadia,
+Roscoe Bartlett,
+Erik Bray,
+Steven Crouch,
+Michael Jackson,
+Justin Kitzes,
+Adam Obeng,
+Karthik Ram,
+Yoav Ram,
+and Tracy Teal
+for feedback on this paper.
+
 \pagebreak
 
 \section*{Box 1}
@@ -764,17 +764,3 @@ possible.
 }
 
 \end{document}
-
-% Neil Chue Hong was supported by the UK Engineering and Physical
-% Sciences Research Council (EPSRC) Grant EP/H043160/1 for the UK
-% Software Sustainability Institute.
-% 
-% Ian M. Mitchell was supported by NSERC Discovery Grant \#298211.
-% 
-% Mark Plumbley was supported by EPSRC through a Leadership Fellowship
-% (EP/G007144/1) and a grant (EP/H043101/1) for SoundSoftware.ac.uk.
-% 
-% Ethan White was supported by a CAREER grant from the US National
-% Science Foundation (DEB 0953694).
-% 
-% Greg Wilson was supported by a grant from the Sloan Foundation.
