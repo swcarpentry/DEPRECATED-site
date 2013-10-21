@@ -84,7 +84,7 @@ class ICalendarWriter(object):
             'URL:{0}'.format(url),
             'LOCATION:{0}'.format(self.escape(info['venue'])),
         ]
-        if info.get('latlng', None):
+        if info.get('latlng'):
             latlng = re.sub(r'\s+', '', info['latlng']).replace(',', ';')
             lines.append('GEO:{0}'.format(latlng))
         lines.append('END:VEVENT')

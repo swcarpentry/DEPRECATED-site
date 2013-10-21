@@ -54,7 +54,7 @@ def setup(args):
                       default=False, action='store_true')
     parser.add_option('-v', '--verbose', dest='verbose', help='report progress',
                       default=False, action='store_true')
-    options, args = parser.parse_args()
+    options, args = parser.parse_args(args)
 
     reader, writer = sys.stdin, sys.stdout
     if options.input != '-':
@@ -122,7 +122,7 @@ def check_info(url, info):
 def cleanup(entries):
     '''Sanitize entries (e.g., convert 'TBD' to none).'''
     for e in entries:
-        for k in CLEANUP.keys():
+        for k in CLEANUP:
             if k in e:
                 e[k] = CLEANUP[k](e[k])
 
