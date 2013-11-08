@@ -33,9 +33,6 @@ SRC_BADGES = ./badges/index.html
 # Source files for checklists.
 SRC_CHECKLISTS = ./bootcamps/checklists/*.html
 
-# Source files for Version 3 lessons.
-SRC_V3 = $(wildcard ./v3/*.html)
-
 # Source files for Version 4 lessons.  Use wildcard to match the index
 # file instead of just naming it so that SRC_V4 is empty if the 'v4'
 # submodule hasn't been populated.
@@ -56,7 +53,6 @@ SRC_PAGES = \
     $(SRC_CHECKLISTS) \
     $(SRC_BOOTCAMP) \
     $(SRC_BADGES) \
-    $(SRC_V3) \
     $(SRC_V4) \
     $(SRC_LAYOUT) \
     $(SRC_INCLUDES)
