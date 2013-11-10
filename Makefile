@@ -11,6 +11,9 @@ INSTALL_DIR = $(HOME)/sites/software-carpentry.org
 # Source files in root directory.
 SRC_ROOT = $(wildcard ./*.html)
 
+# Source files in 'contrib' directory.
+SRC_CONTRIB = $(wildcard ./contrib/*.html)
+
 # Source files of blog posts.  Does *not* include the index file so
 # that our preprocessor doesn't try to harvest data from it.
 SRC_BLOG = $(wildcard ./blog/????/??/*.html)
@@ -48,7 +51,7 @@ SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 # All source HTML files.
 SRC_PAGES = \
     $(SRC_ROOT) \
-    $(SRC_ABOUT) \
+    $(SRC_CONTRIB) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
     $(SRC_BOOTCAMP) \
