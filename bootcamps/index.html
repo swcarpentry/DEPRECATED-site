@@ -69,7 +69,8 @@ title: Boot Camps
     {% endfor %}
   </table>
 
-  <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto;"></div>
+  <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto; margin-bottom: 15px"></div>
+  <!--
   <div style="margin-bottom: 20px;">
     <p>
       <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|{{site.colors.open}}" />
@@ -87,6 +88,7 @@ title: Boot Camps
       <img src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png" />
       instructors
     </p>
+    -->
   </div>
 
   <div id="calendar">
@@ -96,11 +98,12 @@ title: Boot Camps
             height="500"
             frameborder="0"
             scrolling="no"></iframe>
-    <p style="text-align: right; margin-top: -12px;margin-bottom: -12px;">
-      <a class="label swc-blue-bg" style="margin-right: 10px;" href="http://software-carpentry.org/bootcamps.ics">Calendar Feed</a>
+    <p style="text-align: right; margin-top: 5px;margin-bottom: 5px;">
+      <a class="label swc-blue-bg" style="margin-right: 10px" href="http://software-carpentry.org/bootcamps.ics">Calendar Feed</a>
     </p>
   </div>
 
+  <!-- This will go in another page
   <h2 id="past">Past Boot Camps</h2>
   <table class="table table-striped bootcamps">
     {% for bootcamp in site.bootcamps reversed %}
@@ -113,4 +116,5 @@ title: Boot Camps
       {% endif %}
     {% endfor %}
   </table>
+   -->
 </div>
