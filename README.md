@@ -45,7 +45,7 @@ Building the website requires:
   - Some Python packages that can be installed using
 
 ```
-$ pip -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 We use Jekyll because it's what [GitHub](http://github.com/) uses;
