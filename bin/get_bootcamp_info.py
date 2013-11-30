@@ -20,6 +20,12 @@ GITHUB_URL_RE = re.compile(r'^https?://github\.com/([^/]+)/([^/]+)')
 
 REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 
+LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
+
+CLEANUP = {
+    'latlng' : lambda(s): s if LATLNG_RE.match(s) else None
+}
+
 def main(args):
     '''Main driver.'''
 
@@ -33,6 +39,7 @@ def main(args):
             print >> sys.stderr, '  {0}'.format(f)
 
     if (not faulty) or tolerate:
+        cleanup(results)
         yaml.dump(results, writer)
 
     reader.close()
@@ -47,7 +54,7 @@ def setup(args):
                       default=False, action='store_true')
     parser.add_option('-v', '--verbose', dest='verbose', help='report progress',
                       default=False, action='store_true')
-    options, args = parser.parse_args()
+    options, args = parser.parse_args(args)
 
     reader, writer = sys.stdin, sys.stdout
     if options.input != '-':
@@ -111,6 +118,13 @@ def check_info(url, info):
         print >> sys.stderr, 'Info for {0} missing key(s): {1}'.format(url, missing)
         return False
     return True
+
+def cleanup(entries):
+    '''Sanitize entries (e.g., convert 'TBD' to none).'''
+    for e in entries:
+        for k in CLEANUP:
+            if k in e:
+                e[k] = CLEANUP[k](e[k])
 
 def fail(template, *args):
     '''Format and print error message, then exit.'''

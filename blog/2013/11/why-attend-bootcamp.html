@@ -1,0 +1,143 @@
+---
+layout: blog
+root: ../../..
+author: Damien Irving
+title: "What to Say at a Bootcamp, After It's All Said and Done"
+date: 2013-11-19
+time: 19:00:00
+category: ["Bootcamps"]
+---
+<!-- start excerpt -->
+<p>
+  <em>I'm going to be teaching my first ever bootcamp in the coming days. My biggest fear
+  (and there are many!) is that the participants will walk out of the room on the final
+  afternoon and go straight back to their old habits, never taking the time to incorporate
+  what they've learned into their daily workflow. In an attempt to avoid this eventuality,
+  I've planned a rousing concluding address to explain why the content taught at a
+  Software Carpentry bootcamp is so important. It goes something like this...</em>
+</p>
+<!-- end excerpt -->
+<p>Consider the workflow of Nigel Nobootcamp, which is typical of many researchers today:</p>
+<ul>
+  <li>
+    Nigel collects some data and stores it on a machine that is occasionally 
+    backed up by his department.
+  </li>
+  <li>
+    He then writes or modifies a few small programs (which also reside on his machine) 
+    to analyse that data, with assistance from Google, 
+    <a href="http://stackoverflow.com/">Stack Overflow</a> and a helpful colleague.
+  </li> 
+  <li>
+    Once he has some results that look right (which alleviates his fear that there 
+    might be bugs in his code), he writes them up and submits the paper. He 
+    includes his data&mdash;a growing number of journals require this&mdash;but doesn't include 
+    his code.
+  </li>
+  <li>
+    Time passes.
+  </li>
+  <li>
+    The journal sends him reviews written anonymously by a handful of other people in 
+    his field. He revises the paper to satisfy them, during which time he also 
+    modifies the scripts he wrote earlier, and resubmits.
+  </li>
+  <li>
+    More time passes.
+  </li>
+  <li>
+    The paper is eventually published. It includes a link to an online copy of his 
+    data, but the paper itself is behind a paywall: only people who have personal 
+    or institutional access are able to read it.
+  </li>
+</ul>
+<p>
+  If you read any research related blogs or scan the editorial sections of prominent 
+  journals like <em>Science</em> or <em>Nature</em> [e.g. 
+  <a href="http://www.nature.com/nchem/journal/v3/n10/full/nchem.1149.html">1</a>, 
+  <a href="http://www.nature.com/nature/journal/v482/n7386/full/nature10836.html">2</a>, 
+  <a href="http://www.nature.com/news/open-your-minds-and-share-your-results-1.10895">3</a>], 
+  you'll know that "open" and "web" are 
+  two of the major buzz words right now. This is because there are now a whole 
+  range of web based tools out there that make it possible for this typical workflow to be more 
+  collaborative, transparent, reproducible and reliable. All scientists would agree that 
+  these are desirable improvements, but most lack the requisite computing skills to 
+  fully participate in this open science revolution. It is for precisely this reason 
+  that the <a href="http://mozillascience.org/">Mozilla Science Lab</a>&mdash;whose 
+  mission is to help researchers use the open web to shape science's future&mdash;is 
+  now the organisational home for Software Carpentry. They recognise that in order for 
+  these tools and practices to make it out of buzz word editorials and into the default 
+  workflow of everyday scientists like Nigel, the entire profession needs to upskill. 
+  Graduates of a two-day Software Carpentry bootcamp, whether they immediately realise it 
+  or not, have all the basic skills and knowledge needed to transform the way they do 
+  research. In comparison to Nigel, consider the workflow of Betty Bootcamp:
+</p>
+<ul>
+  <li>
+    The data that Betty collects are stored in an open access repository called 
+    <a href="http://datadryad.org/">Dryad</a> as soon as they're collected, and 
+    given their own DOI.
+  </li>
+  <li>
+    She creates a new version control repository on 
+    <a href="https://github.com/">GitHub</a> to hold her work.
+  </li>
+  <li>
+    As she does her analysis, she tracks changes to her scripts (and some 
+    output files) within that repository. She also uses the repository for her paper; 
+    it's then the hub for collaboration with her colleagues.
+  </li>
+  <li>
+    With respect to data analysis, Betty regularly attends her nearest 
+    <a href="http://conference.scipy.org/index.html">SciPy conference</a> 
+    and is on the mailing lists of her favourite data analysis packages. She is also using 
+    <a href="http://arxiv.org/abs/1210.0530">best practices</a> like 
+    <a href="http://drclimate.wordpress.com/2013/10/10/testing-your-code/">unit testing</a> 
+    and defensive programming, which give her confidence that her results are reliable.
+  </li>
+  <li>
+    When she's happy with the state of her paper, she posts a version to a preprint server
+    called <a href="http://arxiv.org/">arXiv</a> to invite feedback from 
+    peers.
+  </li>
+  <li>
+    Based on that feedback, she posts several revisions before finally submitting 
+    her paper to a journal.
+  </li>
+  <li>
+    The published paper includes links to her preprint and to her code and data 
+    repositories.
+  </li>
+</ul>
+<p>
+  At an individual level, it's obvious that Betty's workflow would probably produce higher 
+  quality research. Her use of unit testing (as opposed to Nigel's "looks right" approach) 
+  has reduced the chance of errors, while the ease with which others could collaborate 
+  (GitHub) and provide commentary (arXiv) on her work means it's likely to have been 
+  exposed to a higher level of scrutiny prior to journal submission. The data analysis 
+  process was probably also far less painful for Betty. Aside from the best practices she 
+  learned to make her code more readable and easy to manage, her bootcamp experience has 
+  given her the confidence to interact with the programming community and further develop 
+  her skills (SciPy, mailing lists). When she runs into trouble&mdash;which still happens 
+  regularly&mdash;her support network goes far beyond random Google searches and friendly 
+  colleagues down the hall.     
+</p>
+<p>
+  While improved research quality is a noble pursuit, in many cases the academic world places 
+  more emphasis on quantity. It's therefore noteworthy that Betty's workflow would probably also 
+  be more efficient. The key to this is the fact that in both her programming (via unit testing
+  and defensive programming) and manuscript preparation (via reviews on GitHub and comments on the 
+  arXiv document) she is identifying errors earlier than Nigel. Anyone who has spent days tracking 
+  down a bug, only to eventually find it in a section of code written weeks/months ago, will 
+  know that catching errors early is the key to enhancing efficiency. Betty's programming skills
+  are also superior to Nigel's (bootcamp, regular interaction with programming community), which 
+  means she performs simple tasks faster and doesn't reinvent as many wheels.     
+</p>
+<p>
+  Finally, at a broader community level it's important to note that Betty's research is more
+  transparent than Nigel's. If other researchers want to reproduce and ultimately build 
+  on her work, they have open access to a description of her methodology (arXiv), her data 
+  (Dryad) and her code (GitHub). This will surely accelerate the discovery process in her 
+  field of research, and is probably pretty good for her citation statistics too! 
+</p>
+

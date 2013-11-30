@@ -11,6 +11,9 @@ INSTALL_DIR = $(HOME)/sites/software-carpentry.org
 # Source files in root directory.
 SRC_ROOT = $(wildcard ./*.html)
 
+# Source files in 'contrib' directory.
+SRC_CONTRIB = $(wildcard ./contrib/*.html)
+
 # Source files of blog posts.  Does *not* include the index file so
 # that our preprocessor doesn't try to harvest data from it.
 SRC_BLOG = $(wildcard ./blog/????/??/*.html)
@@ -33,9 +36,6 @@ SRC_BADGES = ./badges/index.html
 # Source files for checklists.
 SRC_CHECKLISTS = ./bootcamps/checklists/*.html
 
-# Source files for Version 3 lessons.
-SRC_V3 = $(wildcard ./v3/*.html)
-
 # Source files for Version 4 lessons.  Use wildcard to match the index
 # file instead of just naming it so that SRC_V4 is empty if the 'v4'
 # submodule hasn't been populated.
@@ -51,12 +51,11 @@ SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 # All source HTML files.
 SRC_PAGES = \
     $(SRC_ROOT) \
-    $(SRC_ABOUT) \
+    $(SRC_CONTRIB) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
     $(SRC_BOOTCAMP) \
     $(SRC_BADGES) \
-    $(SRC_V3) \
     $(SRC_V4) \
     $(SRC_LAYOUT) \
     $(SRC_INCLUDES)
@@ -135,6 +134,12 @@ dev :
 ## install    : build into installation directory for sharing
 install :
 	make SITE=$(INSTALL_URL) OUT=$(INSTALL_DIR) build
+
+## links      : check links
+#  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
+#  which has been put in bin/linklint.
+links :
+	bin/linklint -doc /tmp/site-links -textonly -root _site /@
 
 ## clean      : clean up
 clean :
