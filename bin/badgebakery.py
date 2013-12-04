@@ -65,10 +65,13 @@ def test(show_output=False):
     from StringIO import StringIO
 
     def eq(a, b, msg):
-        if show_output: print "%-60s" % msg,
+        if show_output:
+            text = "{0}-60s".format(msg)
         if a != b:
-            raise AssertionError('%s (%s != %s)' % (msg, repr(a), repr(b)))
-        if show_output: print "OK"
+            raise AssertionError('%s (%s != %s)'.format(msg, repr(a), repr(b)))
+        if show_output:
+            text = "{0} OK".format(text)
+        print(text)
 
     PNG = '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00' \
           '\x10\x08\x02\x00\x00\x00\x90\x91h6\x00\x00\x00\x19IDAT(\x91c' \

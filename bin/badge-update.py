@@ -9,9 +9,8 @@ import shutil
 import datetime
 import hashlib
 import json
+import badge
 import badgebakery
-
-SwCarpentryURL = "http://software-carpentry.org"
 
 def main(badge_filename, save_result, backing, backups):
     """Main program driver."""
@@ -49,10 +48,10 @@ def update_badge_assertion(old_badge, badge_filename):
             "identity":old_badge["recipient"],
             "type":"email",
             "hashed":True},
-        "badge":set_badge(old_badge["badge"]["name"]),
+        "badge":badge.set_badge_url(old_badge["badge"]["name"].lower()),
         "verify":{
             "type":"hosted",
-            "url":"{0}/{1}".format(SwCarpentryURL, badge_filename)}}
+            "url":"{0}/{1}".format(badge.URL, badge_filename)}}
 
     if "salt" in old_badge.keys():
         new_badge["recipient"]["salt"] = old_badge["salt"]
@@ -63,11 +62,11 @@ def update_badge_assertion(old_badge, badge_filename):
         # Check for relative path
         if old_badge["badge"]["image"][0] == "/":
             new_badge["image"] = "{0}{1}".format(
-                    SwCarpentryURL, old_badge["badge"]["image"])
+                    badge.URL, old_badge["badge"]["image"])
         else:
             new_badge["image"] = old_badge["badge"]["image"]
     else:
-        new_badge["image"] = set_badge_image(old_badge["badge"]["name"])
+        new_badge["image"] = set_image_url(old_badge["badge"]["name"])
 
     if "evidence" in old_badge.keys():
         new_badge["evidence"] = old_badge["evidence"]
@@ -76,16 +75,6 @@ def update_badge_assertion(old_badge, badge_filename):
         new_badge["expires"] = old_badge["expires"]
 
     return new_badge
-
-def set_badge(name):
-    assert name in ['Creator', 'Instructor', 'Organizer'], "Can't match badge.name field."
-    return "{0}/badges/class/{1}.json".format(
-            SwCarpentryURL, name.lower())
-
-def set_badge_image(name):
-    assert name in ['Creator', 'Instructor', 'Organizer'], "Can't match badge.name field."
-    return "{0}/img/badges/{1}.json".format(
-            SwCarpentryURL, name.lower())
 
 if __name__ == "__main__":
     import argparse
