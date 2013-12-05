@@ -10,107 +10,101 @@ nocomments:
   </head>
   <body>
 
-<header class="header">
-      {% include navbar.html %}
-
-<!--   <img src="img/software-carpentry-banner.png" alt="Software Carpentry banner" />
-  <h4><em>Scientific computing doesn't have to hurt.</em></h4>
- -->
-  <h1>TEACHING LAB SKILLS FOR<br /><span style="font-size:1.3em">SCIENTIFIC COMPUTING</span></h1>
-<div id="logo">
-  <img src="img/logo-circle-filled.png" width="150px" height="150px" />
-</div>
+<header class="header home">
+  {% include navbar.html %}
+  <div class="container">
+    <h1>
+      TEACHING LAB SKILLS FOR<br />
+      <span style="font-size:1.3em">SCIENTIFIC COMPUTING</span>
+    </h1>
+    <div id="logo">
+      <img src="img/logo-circle-filled.png" width="180px" />
+    </div>
+  </div>
 </header>
 
-
-    <section id="home-options" class="content">
+<section id="home-options" class="content">
     <div class="container">
 
-<div class="row-fluid pagination-centered">
+        <div class="row-fluid pagination-centered">
+            <div class="span4">
+              <h4><a href="#">About</a></h4>
+              <p>
+                Software Carpentry is a volunteer organization
+                whose members teach basic software skills
+                to researchers in science, engineering, and medicine.
+                Founded in 1998,
+                we are now part of the
+                <a href="https://wiki.mozilla.org/ScienceLab">Mozilla Science Lab</a>.
+              </p>
+            </div>
+            <div class="span4">
+              <h4><a href="#">Learn</a></h4>
+              <p>
+                We run bootcamps all over the world,
+                and provide open access material for self-paced instruction.
+                To learn more,
+                please <a href="mailto:{{site.contact}}">email us</a>,
+                check out <a href="{{page.root}}/blog/index.html">our blog</a>,
+                or <a href="{{site.twitter_url}}">follow us on Twitter</a>.
+              </p>
+            </div>
 
-  <div class="span4">
-    <h4><a href="#">Learn</a></h4>
-    <p>
-      We run bootcamps all over the world,
-      and provide open access material for self-paced instruction.
-      To learn more,
-      please <a href="mailto:{{site.contact}}">email us</a>,
-      check out <a href="{{page.root}}/blog/index.html">our blog</a>,
-      or <a href="{{site.twitter_url}}">follow us on Twitter</a>.
-    </p>
-  </div>
-
-  <div class="span4">
-    <h4><a href="#">Help</a></h4>
-    <p>
-      We run bootcamps all over the world,
-      and provide open access material for self-paced instruction.
-      To learn more,
-      please <a href="mailto:{{site.contact}}">email us</a>,
-      check out <a href="{{page.root}}/blog/index.html">our blog</a>,
-      or <a href="{{site.twitter_url}}">follow us on Twitter</a>.
-    </p>
-  </div>
-
-  <div class="span4">
-    <h4><a href="#">About</a></h4>
-    <p>
-      Software Carpentry is a volunteer organization
-      whose members teach basic software skills
-      to researchers in science, engineering, and medicine.
-      Founded in 1998,
-      we are now part of the
-      <a href="https://wiki.mozilla.org/ScienceLab">Mozilla Science Lab</a>.
-    </p>
-  </div>
-</div>
-</div>
-</section>
-  <section class="content">
-     <div class="container">
-<div class="row-fluid ">
-  <div class="span8">
-    <!-- <h4>News</h4> -->
-    {% assign post = site.blog_recent[0] %}
-        <h4><a href="{{post.root}}/{{post.path}}">{{post.title}}</a></h4>
-        <small>By {{post.author}} / {{post.date | date: "%-d %b %Y"}} </small>
-        <p>{{post.excerpt}}</p>
-  </div>
-  <div class="span4">
-    <h4>Upcoming Bootcamps</h4>
-    <table class="table table-hover">
-      {% for bootcamp in site.bootcamps_upcoming %}
-      <tr>
-        <td>
-          <img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
-        <a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a>
-        <br />
-      {{bootcamp.humandate|replace: ' ', '&nbsp;'}}
-    </td>
-
-      </tr>
-      {% endfor %}
-      <tr>
-        <td><a href="bootcamps/index.html#future">...see more</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-<!-- <div class="row-fluid">
-  <div class="span12" align="center">
-    <p><em>Please <a href="mailto:{{site.contact}}">mail us</a> about running a bootcamp where you are.</em></p>
-  </div>
-</div> -->
+            <div class="span4">
+              <h4><a href="/contrib/training.html">Teach</a></h4>
+              <p>
+                We run bootcamps all over the world,
+                and provide open access material for self-paced instruction.
+                To learn more,
+                please <a href="mailto:{{site.contact}}">email us</a>,
+                check out <a href="{{page.root}}/blog/index.html">our blog</a>,
+                or <a href="{{site.twitter_url}}">follow us on Twitter</a>.
+              </p>
+            </div>
 
 
-         
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-   {% include footer.html %}
-    {% include generic-javascript.html %}
+<section class="content">
+    <div class="container">
+        <div class="row-fluid ">
+            <div class="span8">
+
+              {% for post in site.blog_recent %}
+                  <h4><a href="{{post.root}}/{{post.path}}">{{post.title}}</a></h4>
+                  <small>By {{post.author}} / <a href="{{post.root}}/{{post.path}}">{{post.date | date: "%-d %b %Y"}}</a> </small>
+                  <p>{{post.excerpt}} <a class="pull-right" href="{{post.root}}/{{post.path}}">...read more</a></p>
+                  <br /><br />
+              {% endfor %}
+
+            </div>
+            <div class="span4">
+              <h4>Upcoming Bootcamps</h4>
+              <table class="table table-hover">
+                {% for bootcamp in site.bootcamps_upcoming %}
+                <tr>
+                  <td>
+                    <img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
+                  <a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a>
+                  <br />
+                {{bootcamp.humandate|replace: ' ', '&nbsp;'}}
+              </td>
+
+                </tr>
+                {% endfor %}
+                <tr>
+                  <td><a class="pull-right" href="bootcamps/index.html#future">...see all</a></td>
+                </tr>
+              </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+  {% include footer.html %}
+  {% include generic-javascript.html %}
   </body>
 </html>
