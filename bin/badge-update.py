@@ -9,30 +9,31 @@ import shutil
 import datetime
 import hashlib
 import json
+import badgebakery
 
 SwCarpentryURL = "http://software-carpentry.org"
 
-def main(badge_filename, save_result, backups):
+def main(badge_filename, save_result, backing, backups):
     """Main program driver."""
-    badge = read_old(badge_filename)
+    with open(badge_filename, "r") as f:
+        badge = json.load(f)
 
     # Check if badge is from the older API
     if type(badge["badge"]) is dict:
+        badge_name = badge["badge"]["name"]
         badge = update_badge_assertion(badge, badge_filename)
         output = json.dumps(badge, indent=True, sort_keys=True)
-        if not save_result and not backups:
+        if not save_result and not backing:
             print(output)
         else:
             if backups:
                 shutil.copyfile(badge_filename, "{}.bak".format(badge_filename))
             with open(badge_filename, "w") as f:
                 f.write(output)
-
-def read_old(badge_filename):
-    """Read JSON with old badge."""
-    with open(badge_filename, "r") as f:
-        badge = json.load(f)
-    return badge
+            if backing:
+                badgebakery.bake_badge('img/badges/{0}.png'.format(badge_name.lower()),
+                        badge_filename.replace('.json', '.png'),
+                        badge_filename)
 
 def update_badge_assertion(old_badge, badge_filename):
     """Create a BadgeAssertion based on the old badge structure.
@@ -91,9 +92,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
             description="A python script to update a JSON blob for a badge from v0.5.0 to v1.0.0")
-    parser.add_argument("-w", "--write", action="store_true",
+    action = parser.add_mutually_exclusive_group()
+    action.add_argument("-w", "--write", action="store_true",
             help="Write back modified badge")
-    parser.add_argument("-b", "--backups", action="store_true",
+    action.add_argument("-b", "--backing", action="store_true",
+            help="Write back modified badge and bake it")
+    parser.add_argument("--backups", action="store_true",
             help="Write backups for modified badges")
     parser.add_argument("badge", nargs="+",
             help="The name of the JSON blob to update")
@@ -101,4 +105,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     for b in args.badge:
-        main(b, args.write, args.backups)
+        main(b, args.write, args.backing, args.backups)
