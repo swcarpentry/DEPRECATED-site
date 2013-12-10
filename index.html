@@ -13,10 +13,12 @@ nocomments:
 <header class="header home">
   {% include navbar.html %}
   <div class="container">
-    <h1>
-      TEACHING LAB SKILLS FOR<br />
-      <span style="font-size:1.3em">SCIENTIFIC COMPUTING</span>
-    </h1>
+    <div class="row-fluid">
+        <h1>
+          <span data-typer-targets="TEACHING LAB SKILLS FOR, TEACHING SOFTWARE SKILLS FOR" id="header-text"></span><br />
+          SCIENTIFIC<br />COMPUTING
+        </h1>
+    </div>
     <div id="logo">
       <img src="img/logo-circle-filled.png" width="180px" />
     </div>
@@ -98,6 +100,10 @@ nocomments:
                   <td><a class="pull-right" href="bootcamps/index.html#future">...see all</a></td>
                 </tr>
               </table>
+
+                <a class="twitter-timeline" href="https://twitter.com/swcarpentry" data-widget-id="410241789077909504">Tweets by @swcarpentry</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
             </div>
         </div>
 
@@ -106,5 +112,9 @@ nocomments:
 
   {% include footer.html %}
   {% include generic-javascript.html %}
+  <script src="{{page.root}}/js/jquery.typer.js"></script>
+  <script>
+    $('[data-typer-targets]').typer();
+  </script>
   </body>
 </html>

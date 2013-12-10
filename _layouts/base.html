@@ -12,15 +12,11 @@
     </header>
     <section class="content">
       <div class="container">
-        <div class="row-fluid">
-          <div class="span10 offset1">
-            {% if page.title %}
-              <h1 class="title">{{page.title}}</h1>
-            {% endif %}
-            {{content}}
-            {% include disqus.html %}
-          </div>
-        </div>
+        {% if page.title %}
+          <h1 class="title">{{page.title}}</h1>
+        {% endif %}
+        {{content}}
+        {% include disqus.html %}
       </div>
     </section>
           {% include footer.html %}

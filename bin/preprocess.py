@@ -75,7 +75,6 @@ def main():
 
     # Cache the window size.
     recent_length = config['recent_length']
-    bootcamp_length = config['bootcamp_length']
 
     # Get information from blog entries.
     config['blog'] = harvest_blog(config)
@@ -109,7 +108,7 @@ def main():
 
     # Select those that'll be displayed on the home page.
     upcoming = [bc for bc in config['bootcamps'] if bc['startdate'] >= config['today']]
-    config['bootcamps_upcoming'] = upcoming[:bootcamp_length]
+    config['bootcamps_upcoming'] = upcoming[:recent_length]
     config['bootcamps_num_upcoming'] = len(upcoming)
 
     # Save.
