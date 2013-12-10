@@ -1,6 +1,7 @@
 /* Headings */
 h1, h2, h3, h4, h5, h6  {
     color: rgb(03,03,03);
+    font-family: "Montserrat", "Helvetica", "Arial";
 }
 
 h1, h2 { 
@@ -74,6 +75,7 @@ blockquote.testimonial cite {
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     color: rgb(03, 03, 03);
+    min-width: 400px;
 }
 
 /* Styling for editorial stylesheet */
@@ -138,7 +140,9 @@ div.footer {
 }
 
 .swc-blue-bg {
-   background-color: #20267D;
+   /*background-color: #20267D;*/
+   /* svg colour is slightly different? */
+   background: #2b3990;
 }
 
 /* Main menu at the top of every page. */
@@ -304,11 +308,78 @@ table.bootcamps td.date {
 
 /* list with checkbox as bullet */
 ul.checklist {
-  list-style-image: url('/img/checkbox.png'); 
+  list-style-image: url('../img/checkbox.png'); 
 }
 
 /* FAQ */
 dl.faq dt {
     font-style: italic;
     font-weight: bold;
+}
+
+section.content {
+    width:100%;
+    background: white;
+}
+
+.header.home {
+    min-height:430px;
+    background: url(../img/header.png) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: left;
+    color:#FFF;
+}
+
+.header {
+    background:#2b3990;
+}
+
+.header h1 {
+    color:#FFF;
+    line-height: 1.1;
+    margin: 0;
+    font-size: 45pt;
+}
+
+#header-text {
+    font-size:17pt;
+    white-space: nowrap;
+}
+
+#logo {
+    position: relative;
+    top: 40px;
+        text-align: center;
+}
+
+#nav-logo {
+    width:270px;
+    height:60px;
+    position:fixed;
+    top:0;
+    left:0;
+}
+#home-options {
+    background:#F6F6F6;
+    border-top:1px solid #DDDDDD;
+    border-bottom:1px solid #DDDDDD;
+    padding:50px 0 50px 0;
+    margin-bottom:20px;
+}
+
+#home-options h4{
+    color:#2b3990;
+}
+
+h4 a:link, h4 a:visited, a {
+       color:#2b3990; 
+}
+
+footer {
+    background:#2b3990;
+    padding:20px 0;
 }

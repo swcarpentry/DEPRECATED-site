@@ -10,20 +10,20 @@
     <script type="text/javascript" src="{{page.root}}/js/maps.js"></script>
   </head>
   <body onload="SWC.maps.upcoming()">
-    {% include navbar.html %}
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span10 offset1">
-          {% if page.title %}
-            <h1 class="title">{{page.title}}</h1>
-          {% endif %}
-          {{content}}
-          {% include disqus.html %}
-          {% include footer.html %}
-        </div>
-      </div>
-    </div>
+    <header class="header">
+      {% include navbar.html %}
+    </header>
+    <section class="content">
 
+      <div class="container">
+            {% if page.title %}
+              <h1 class="title">{{page.title}}</h1>
+            {% endif %}
+            {{content}}
+            {% include disqus.html %}
+      </div>
+    </section>
+    {% include footer.html %}
     {% include generic-javascript.html %}
     {% include google-analytics.html %}
   </body>
