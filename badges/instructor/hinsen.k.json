@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$e5c6748aee7fa1f21f634e5048b68e1ae4d48eb152c4dbb7c9a19c28442abb95",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e5c6748aee7fa1f21f634e5048b68e1ae4d48eb152c4dbb7c9a19c28442abb95", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e5c6748aee7fa1f21f634e5048b68e1ae4d48eb152c4dbb7c9a19c28442abb95", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/hinsen.k.json"
+ }
 }
