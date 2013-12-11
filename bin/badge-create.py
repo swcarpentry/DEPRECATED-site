@@ -18,7 +18,6 @@ def main(username, email, kind, website_dir):
     create(image_src_dir, badge_dst_dir, kind, username, email)
 
 def create(image_src_dir, badge_dst_dir, kind, username, email):
-    import badge
     """Create JSON and PNG for a new badge."""
 
     # Paths
@@ -102,8 +101,7 @@ def hash_email_address(email, salt):
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(
-            description="A python script to create a JSON blob for a badge")
+    parser = argparse.ArgumentParser(description="Create JSON blob and baked PNG for a badge")
     parser.add_argument("username")
     parser.add_argument("email")
     parser.add_argument("kind",

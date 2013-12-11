@@ -11,7 +11,19 @@
 
         http://pythonhosted.org/pypng/
 
-    The module can be installed via 'pip install pypng'.
+    If you are using `Anaconda <https://store.continuum.io/cshop/anaconda/>`_ or
+    `Canopy <https://www.enthought.com/products/canopy/>`_ you already have
+    PyPNG installed.
+
+    If the module aren't `installed in Anaconda
+    <http://docs.continuum.io/anaconda/faq.html#install-packages>`_::
+
+        $ conda install libpng
+
+    If this don't work or you aren't using Anaconda you can install
+    the module via::
+
+        $ pip install pypng
 """
 
 import os
