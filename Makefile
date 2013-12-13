@@ -31,7 +31,13 @@ SRC_BOOTCAMP = $(SRC_BOOTCAMP_PAGES) \
 ./bootcamps/post-instructor.html
 
 # Source files for badge pages.
-SRC_BADGES = ./badges/index.html
+SRC_BADGES = \
+./badges/index.html \
+./badges/core.html \
+./badges/creator.html \
+./badges/helper.html \
+./badges/instructor.html \
+./badges/organizer.html
 
 # Source files for checklists.
 SRC_CHECKLISTS = ./bootcamps/checklists/*.html

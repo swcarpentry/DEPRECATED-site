@@ -1,0 +1,7 @@
+{
+  "name" : "Software Carpentry:",
+  "url" : "http://software-carpentry.org",
+  "description": "Volunteer organization whose members teach basic software skills to researchers in science, engineering, and medicine.",
+  "image": "http://software-carpentry.org/img/software-carpentry-banner.png",
+  "email" : "admin@software-carpentry.org"
+}

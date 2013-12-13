@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$8a24742a50d511db1ffa76ef78819f0b67c07f4df3416878fd234692fba1a721",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-09-15",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-09-15", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8a24742a50d511db1ffa76ef78819f0b67c07f4df3416878fd234692fba1a721", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8a24742a50d511db1ffa76ef78819f0b67c07f4df3416878fd234692fba1a721", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/bennett.n.json"
+ }
 }

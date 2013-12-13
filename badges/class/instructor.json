@@ -1,0 +1,7 @@
+{
+    "name" : "Instructor",
+    "description" : "Teaching at workshops or online",
+    "image" : "http://software-carpentry.org/img/badges/instructor.png",
+    "criteria" : "http://software-carpentry.org/badges/instructor.html",
+    "issuer": "http://software-carpentry.org/badges/issuer.json"
+}

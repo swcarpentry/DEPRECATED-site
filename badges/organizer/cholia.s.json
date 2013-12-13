@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$3274cf0cc5b765eea98fa62753fcde4bf6b394df2df5a2bce6b6fa3d31e05021",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Organizer",
-    "image" : "/img/badges/organizer.png",
-    "description" : "Organizing workshops and learning groups",
-    "criteria" : "/badges/organizer.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/organizer.json", 
+ "image": "http://software-carpentry.org/img/badges/organizer.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$3274cf0cc5b765eea98fa62753fcde4bf6b394df2df5a2bce6b6fa3d31e05021", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$3274cf0cc5b765eea98fa62753fcde4bf6b394df2df5a2bce6b6fa3d31e05021", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/organizer/cholia.s.json"
+ }
 }
