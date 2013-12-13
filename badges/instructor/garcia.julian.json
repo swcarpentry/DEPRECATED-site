@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$8f7eb97169118991697fb840c2c3584bc8697ae9a7a8c9f7081e131859a8d1c8",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-11-17",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8f7eb97169118991697fb840c2c3584bc8697ae9a7a8c9f7081e131859a8d1c8", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8f7eb97169118991697fb840c2c3584bc8697ae9a7a8c9f7081e131859a8d1c8", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/garcia.julian.json"
+ }
 }

@@ -1,75 +1,9 @@
 ---
-layout: base
+layout: badges
 root: ..
 title: Badges - Organizers
 ---
-<style type="text/css">
-  .badges-section {
-    margin-bottom:30px;
-  }
-  .badges-section .media {
-    margin-top: 30px;
-  }
-  h1.badge-title{
-    margin-top: 10px;
-  }
-  #modal-badge-img {
-    position:absolute;
-    right: 25px;
-    bottom: 25px;
-    opacity: 0.5;
-  }
-  #assertion-modal.in {
-    color: black;
-  }
-</style>
-
 {% assign badge_slug   = "organizer" %}
 {% assign badge_name   = "Organizer" %}
 {% assign badge_reason = "Awarded for organizing Software Carpentry boot camps" %}
 {% include badge-list.html %}
-
-<!-- attach actions -->
-<script src="http://beta.openbadges.org/issuer.js"></script>
-<script type="text/javascript">
-  window.onload = function () {
-    $('a[badge-kind]').click(function (e) {
-      e.preventDefault();
-      var kind = $(this).attr('badge-kind');
-      var user = $(this).attr('badge-user');
-      var link = $(this).attr('href');
-
-      // configure dialog
-      var assertionURL = "{{site.site}}/badges/"+kind+"/"+user+".json";
-      $('#assertion-modal iframe').attr('src', assertionURL);
-      $('#assertion-modal button[name=add]').click(function(e) {
-        OpenBadges.issue([assertionURL]);});
-      $('#modal-badge-img').attr("src", "{{site.site}}/img/badges/"+kind+".png");
-      $('#assertion-modal div.modal-footer a').attr("href", link);
-      $('#assertion-modal').modal('show');
-      return false;
-    });
-  };
-</script>
-
-<!-- Model dialog for the assertion -->
-<div id="assertion-modal" class="modal hide fade" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Badge Details</h3>
-  </div>
-  <div class="modal-body">
-    The following blob
-    (known as an <a href="https://github.com/mozilla/openbadges/wiki/Assertions">assertion</a>)
-    certifies the work done for this badge.
-    If this is your badge,
-    you may add it to your Mozilla Backpack.
-    <iframe src=""></iframe>
-    <img id="modal-badge-img" src=""/>
-  </div>
-  <div class="modal-footer">
-    <a class="pull-left" href="{{page.root}}/team.html">More about this person</a>
-    <button class="btn" name="add">Add badge to my Backpack</button>
-    <button class="btn" data-dismiss="modal">Close</button>
-  </div>
-</div>

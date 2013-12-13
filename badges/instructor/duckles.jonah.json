@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$8c503471df5aaee781ce04009ac8e5a78b2c8d3f46c2eb4f3761d3131eb1a8e4",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-11-17",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8c503471df5aaee781ce04009ac8e5a78b2c8d3f46c2eb4f3761d3131eb1a8e4", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8c503471df5aaee781ce04009ac8e5a78b2c8d3f46c2eb4f3761d3131eb1a8e4", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/duckles.jonah.json"
+ }
 }

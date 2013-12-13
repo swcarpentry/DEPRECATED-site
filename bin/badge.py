@@ -1,4 +1,4 @@
-"""Core of Software Carpentry badges."""
+"""Utility library for Software Carpentry badges"""
 
 SALT = "software-carpentry"
 URL = "http://software-carpentry.org"
