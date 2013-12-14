@@ -13,12 +13,16 @@
     <header class="header">
       {% include navbar.html %}
     </header>
+    {% if page.title %}
+    <section id="title" class="content">
+        <div class="container">
+          <h1>{{page.title}}</h1>
+        </div>
+    </section>
+    {% endif %}
     <section class="content">
 
       <div class="container">
-            {% if page.title %}
-              <h1 class="title">{{page.title}}</h1>
-            {% endif %}
             {{content}}
             {% include disqus.html %}
       </div>

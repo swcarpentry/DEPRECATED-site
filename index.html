@@ -12,8 +12,15 @@ nocomments:
 
 <header class="header home">
   {% include navbar.html %}
-  <div align="center">
-    <h2><font color="white">Teaching Lab Skills for Scientific Computing Since 1998</font></h2>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset1">
+        <h1>
+          <span id="header-text">TEACHING LAB SKILLS FOR</span><br />
+          SCIENTIFIC COMPUTING
+        </h1>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -104,9 +111,5 @@ nocomments:
 
   {% include footer.html %}
   {% include generic-javascript.html %}
-  <script src="{{page.root}}/js/jquery.typer.js"></script>
-  <script>
-    $('[data-typer-targets]').typer();
-  </script>
   </body>
 </html>
