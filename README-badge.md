@@ -4,6 +4,14 @@ Software Carpentry Badges
 Software Carpentry uses [Open Badges](http://openbadges.org/) to recognize the
 skills you learn.
 
+Requirements
+------------
+
+You will need the [PyPNG](http://pythonhosted.org/pypng/index.html) module.
+Install it using:
+
+    $ pip install pypng
+
 Create Badges
 -------------
 
