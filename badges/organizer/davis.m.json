@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$f9bf0ebfeaf04b7738eaebc3ebaf275f7a86b342dba7d91edc2adf12d2e6eb35",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-09-15",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Organizer",
-    "image" : "/img/badges/organizer.png",
-    "description" : "Organizing workshops and learning groups",
-    "criteria" : "/badges/organizer.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/organizer.json", 
+ "image": "http://software-carpentry.org/img/badges/organizer.png", 
+ "issuedOn": "2013-09-15", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f9bf0ebfeaf04b7738eaebc3ebaf275f7a86b342dba7d91edc2adf12d2e6eb35", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f9bf0ebfeaf04b7738eaebc3ebaf275f7a86b342dba7d91edc2adf12d2e6eb35", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/organizer/davis.m.json"
+ }
 }

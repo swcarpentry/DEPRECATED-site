@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$389615a84157d1c346250a44a44403e9d52a571cc6c59d52bd8a30b7f25fd156",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-11-17",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$389615a84157d1c346250a44a44403e9d52a571cc6c59d52bd8a30b7f25fd156", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$389615a84157d1c346250a44a44403e9d52a571cc6c59d52bd8a30b7f25fd156", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/hetherington.james.json"
+ }
 }

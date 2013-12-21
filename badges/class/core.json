@@ -1,0 +1,7 @@
+{
+    "name": "Core",
+    "description" : "Learn unix shell, version control, programming, and testing in one of ours bootcamp",
+    "image" : "http://software-carpentry.org/img/badges/core.png",
+    "criteria" : "http://software-carpentry.org/badges/core.html",
+    "issuer": "http://software-carpentry.org/badges/issuer.json"
+}
