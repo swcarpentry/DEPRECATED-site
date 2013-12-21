@@ -11,18 +11,19 @@ root: ../../..
     <header class="header">
       {% include navbar.html %}
     </header>
+    <section id="title" class="content">
+        <div class="container">
+              <h1>{{page.title}}</h1>
+        </div>
+    </section>
     <section class="content">
       <div class="container">
-        <div class="row-fluid">
-          <div class="span10 offset1">
-            <h1 class="title">{{page.title}}</h1>
             <!-- start content -->
             {{content}}
             <p><em>Originally posted {{page.date}} by {{page.author}} in {{page.category|join: ', '}}.</em></p>
             <!-- end content -->
             {% include disqus.html %}
-          </div>
-        </div>
+
       </div>
     </section>
     {% include footer.html %}
