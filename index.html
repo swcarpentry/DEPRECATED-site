@@ -87,7 +87,7 @@ nocomments:
                 {% for bootcamp in site.bootcamps_upcoming %}
                 <tr>
                   <td>
-                    <img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
+                    <img src="{{page.root}}/img/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
                   <a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a>
                   <br />
                 {{bootcamp.humandate|replace: ' ', '&nbsp;'}}
