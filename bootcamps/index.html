@@ -34,26 +34,8 @@ title: Boot Camps
   </p>
 </div>
 
-<div id="assessment">
-  <h2>Assessment</h2>
-
-  <p>
-    To help us improve our instruction,
-    we have prepared
-    a <a href="{{page.root}}/bootcamps/pre-learner.html">pre-assessment questionnaire for learners</a>
-    that can be used to ensure instruction is at the right level,
-    a <a href="{{page.root}}/bootcamps/post-learner.html">post-assessment questionnaire for learners</a>
-    to help us determine how well the bootcamp went,
-    and
-    a <a href="{{page.root}}/bootcamps/post-instructor.html">post-assessment questionnaire for instructors</a>
-    for calibration.
-    Please contact us if you are organizing a bootcamp
-    for help delivering and evaluating these questionnaires.
-  </p>
-</div>
-
-<div class="bootcamps">
-  <h2 id="future">Future Boot Camps</h2>
+<div id="future">
+  <h2>Future Boot Camps</h2>
   <table class="table table-striped bootcamps">
     {% for bootcamp in site.bootcamps %}
       {% if bootcamp.startdate >= site.today %}
@@ -70,26 +52,6 @@ title: Boot Camps
   </table>
 
   <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto; margin-bottom: 15px"></div>
-  <!--
-  <div style="margin-bottom: 20px;">
-    <p>
-      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|{{site.colors.open}}" />
-      open
-      |
-      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|{{site.colors.full}}" />
-      full
-      |
-      <img src="http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=%E2%80%A2|{{site.colors.restricted}}" />
-      restricted
-      |
-      <img src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m1.png" />
-      past
-      |
-      <img src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/people35.png" />
-      instructors
-    </p>
-    -->
-  </div>
 
   <div id="calendar">
     <iframe src="https://www.google.com/calendar/embed?title=Boot%20Camps&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=efjc2eea4qegtctcrg6kc0nrba9i0rbg%40import.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York"
@@ -102,19 +64,22 @@ title: Boot Camps
       <a class="label swc-blue-bg" style="margin-right: 10px" href="http://software-carpentry.org/bootcamps.ics">Calendar Feed</a>
     </p>
   </div>
+</div>
 
-  <!-- This will go in another page
-  <h2 id="past">Past Boot Camps</h2>
-  <table class="table table-striped bootcamps">
-    {% for bootcamp in site.bootcamps reversed %}
-      {% if bootcamp.startdate < site.today %}
-        <tr>
-          <td><img src="{{page.root}}/assets/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
-          <td class="link"><a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a></td>
-          <td class="date">{{bootcamp.humandate}}</td>
-        </tr>
-      {% endif %}
-    {% endfor %}
-  </table>
-   -->
+<div id="assessment">
+  <h2>Assessment</h2>
+
+  <p>
+    To help us improve our instruction,
+    we have prepared
+    a <a href="{{page.root}}/bootcamps/pre-learner.html">pre-assessment questionnaire for learners</a>
+    that can be used to ensure instruction is at the right level,
+    a <a href="{{page.root}}/bootcamps/post-learner.html">post-assessment questionnaire for learners</a>
+    to help us determine how well the bootcamp went,
+    and
+    a <a href="{{page.root}}/bootcamps/post-instructor.html">post-assessment questionnaire for instructors</a>
+    for calibration.
+    Please contact us if you are organizing a bootcamp
+    for help delivering and evaluating these questionnaires.
+  </p>
 </div>
