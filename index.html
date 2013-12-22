@@ -28,7 +28,7 @@ nocomments:
   <div class="container">
     <div class="row-fluid pagination-centered">
       <div class="span4">
-        <h4>Who We Are</h4>
+        <h4><a href="{{page.root}}/pages/index.html">Who We Are</a></h4>
         <p>
           We teach basic software skills
           to researchers in science, engineering, and medicine.
@@ -39,7 +39,7 @@ nocomments:
         </p>
       </div>
       <div class="span4">
-        <h4>What We Do</h4>
+        <h4><a href="{{page.root}}/pages/index.html">What We Do</a></h4>
         <p>
           We run <a href="{{page.root}}/bootcamps/index.html">bootcamps</a> all over the world,
           and provide <a href="{{page.root}}/v4/index.html">open access material</a>
@@ -49,7 +49,7 @@ nocomments:
         </p>
       </div>
       <div class="span4">
-        <h4>How To Help</h4>
+        <h4><a href="{{page.root}}/pages/index.html">How To Help</a></h4>
         <p>
           Like all volunteer organizations,
           we depend on you to help us help others.
@@ -67,16 +67,16 @@ nocomments:
   <div class="container">
     <div class="row-fluid ">
       <div class="span8">
-        <a href="{{page.root}}/blog/index.html"><h3>Blog</h3></a>
         {% for post in site.blog_recent %}
           <h4><a href="{{post.root}}/{{post.path}}">{{post.title}}</a></h4>
           <small>By {{post.author}} / <a href="{{post.root}}/{{post.path}}">{{post.date | date: "%-d %b %Y"}}</a> </small>
           <p>{{post.excerpt}} <a class="pull-right" href="{{post.root}}/{{post.path}}">...read more</a></p>
           <br /><br />
         {% endfor %}
+        <h5><a href="{{page.root}}/blog/index.html">Blog Archives &rArr;</a></h5>
       </div>
       <div class="span4">
-        <a href="{{page.root}}/bootcamps/index.html"><h3>Upcoming Bootcamps</h3></a>
+        <h4>Upcoming Bootcamps</h4>
         <table class="table table-hover">
         {% for bootcamp in site.bootcamps_upcoming %}
           <tr>
