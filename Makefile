@@ -1,10 +1,10 @@
-# Base URL and installation directory for development version on server.
-DEV_URL = http://dev.software-carpentry.org
-DEV_DIR = $(HOME)/dev.software-carpentry.org
-
 # Base URL and installation directory for installed version on server.
 INSTALL_URL = http://software-carpentry.org
 INSTALL_DIR = $(HOME)/sites/software-carpentry.org
+
+# Base URL and installation directory for development version on server.
+DEV_URL = http://dev.software-carpentry.org
+DEV_DIR = $(HOME)/sites/dev.software-carpentry.org
 
 #-------------------------------------------------------------------------------
 
