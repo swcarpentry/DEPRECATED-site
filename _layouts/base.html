@@ -3,25 +3,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% include generic-header.html %}
+    {% include header.html %}
     <title>Software Carpentry{% if page.title %}: {{page.title}}{% endif %}</title>
   </head>
   <body>
-    {% include navbar.html %}
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span10 offset1">
-          {% if page.title %}
-            <h1 class="title">{{page.title}}</h1>
-          {% endif %}
-          {{content}}
-          {% include disqus.html %}
-          {% include footer.html %}
+    <header class="header">
+      {% include navbar.html %}
+    </header>
+    {% if page.title %}
+    <section id="title" class="content">
+        <div class="container">
+              <h1>{{page.title}}</h1>
         </div>
+    </section>
+    {% endif %}
+    <section class="content">
+      <div class="container">
+            {{content}}
+            {% include disqus.html %}
       </div>
-    </div>
-
-    {% include generic-javascript.html %}
+    </section>
+    {% include footer.html %}
+    {% include javascript.html %}
     {% include google-analytics.html %}
   </body>
 </html>

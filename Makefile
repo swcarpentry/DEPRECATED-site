@@ -11,8 +11,8 @@ INSTALL_DIR = $(HOME)/sites/software-carpentry.org
 # Source files in root directory.
 SRC_ROOT = $(wildcard ./*.html)
 
-# Source files in 'contrib' directory.
-SRC_CONTRIB = $(wildcard ./contrib/*.html)
+# Source files in 'pages' directory.
+SRC_PAGES = $(wildcard pages/*.html)
 
 # Source files of blog posts.  Does *not* include the index file so
 # that our preprocessor doesn't try to harvest data from it.
@@ -55,9 +55,9 @@ SRC_LAYOUT = $(wildcard ./_layouts/*.html)
 SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 
 # All source HTML files.
-SRC_PAGES = \
+SRC_HTML = \
     $(SRC_ROOT) \
-    $(SRC_CONTRIB) \
+    $(SRC_PAGES) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
     $(SRC_BOOTCAMP) \
@@ -180,7 +180,7 @@ $(OUT)/feed.xml : ./bin/make_rss_feed.py $(OUT)/index.html
 	python ./bin/make_rss_feed.py -o $(OUT) -s $(SITE)
 
 # Make the site pages (including blog posts).
-$(OUT)/index.html : _config.yml $(SRC_PAGES)
+$(OUT)/index.html : _config.yml $(SRC_HTML)
 	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.

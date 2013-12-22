@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% include generic-header.html %}
+    {% include header.html %}
     <link rel="stylesheet" type="text/css" href="css/badges.css">
     <title>Software Carpentry{% if page.title %}: {{page.title}}{% endif %}</title>
   </head>
@@ -61,13 +61,13 @@
         <img id="modal-badge-img" src=""/>
       </div>
       <div class="modal-footer">
-        <a class="pull-left" href="{{page.root}}/team.html">More about this person</a>
+        <a class="pull-left" href="{{page.root}}/pages/team.html">More about this person</a>
         <button class="btn" name="add">Add badge to my Backpack</button>
         <button class="btn" data-dismiss="modal">Close</button>
       </div>
     </div>
 
-    {% include generic-javascript.html %}
+    {% include javascript.html %}
     {% include google-analytics.html %}
   </body>
 </html>
