@@ -238,12 +238,15 @@ def organize_blog_entries(posts):
 #----------------------------------------
 
 def get_blog_excerpt(path):
-    '''Get excerpt from blog post for inclusion in blog index page.'''
+    '''Get excerpt from blog post for inclusion in blog index page.
+    Have to turn newlines into spaces so that older versions of Jekyll
+    (like the one on the server) won't turn them into single backslashes
+    when doing inclusion expansion.'''
     with open(path, 'r') as reader:
         temp = reader.read()
         temp = P_BLOG_EXCERPT.search(temp)
         assert temp, 'Blog post {0} lacks excerpt'.format(path)
-        return temp.group(1)
+        return temp.group(1).replace('\n', ' ')
 
 #----------------------------------------
 
