@@ -14,6 +14,9 @@ SRC_ROOT = $(wildcard ./*.html)
 # Source files in 'pages' directory.
 SRC_PAGES = $(wildcard pages/*.html)
 
+# Source files in 'bib' directory.
+SRC_PAGES = $(wildcard bib/bib.html)
+
 # Source files of blog posts.  Does *not* include the index file so
 # that our preprocessor doesn't try to harvest data from it.
 SRC_BLOG = $(wildcard ./blog/????/??/*.html)
@@ -58,6 +61,7 @@ SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 SRC_HTML = \
     $(SRC_ROOT) \
     $(SRC_PAGES) \
+    $(SRC_BIB) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
     $(SRC_BOOTCAMP) \
