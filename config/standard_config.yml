@@ -7,6 +7,7 @@ rss_url         : "http://software-carpentry.org/feed.xml"
 twitter_name    : "@swcarpentry"
 twitter_url     : "https://twitter.com/swcarpentry"
 irc_url         : "irc://freenode/swcarpentry"
+msl_url         : "http://mozillascience.org"
 recent_length   : 5
 upcoming_length : 10 
 blog_title      : "Software Carpentry"
