@@ -151,6 +151,11 @@ install :
 links :
 	bin/linklint -doc /tmp/site-links -textonly -root _site /@
 
+## valid      : check validity of HTML
+#  Depends on xmllint being installed.  Ignores entity references.
+valid :
+	xmllint --noout $$(find _site -name '*.html' -print) 2>&1 | python bin/unwarn.py
+
 ## clean      : clean up
 clean :
 	@rm -rf \
