@@ -80,7 +80,7 @@ GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
 
-# Software Carpentry bibliography .tex file (in papers directory).
+# Software Carpentry bibliography .tex file (in 'bib' directory).
 SWC_BIB = software-carpentry-bibliography
 
 #-------------------------------------------------------------------------------
@@ -107,11 +107,11 @@ cache_verb :
 	@python bin/get_bootcamp_info.py -v -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
 
 ## biblio     : make HTML and PDF of bibliography.
-# Have to cd into papers because bib2xhtml expects the .bst file in
+# Have to cd into 'bib' because bib2xhtml expects the .bst file in
 # the same directory as the .bib file.
 biblio :
-	@cd papers && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
-	@cd papers && ../bin/bib2xhtml software-carpentry.bib ../biblio.html && dos2unix ../biblio.html
+	@cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
+	@cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
 
 ## categories : list all blog category names.
 categories :
