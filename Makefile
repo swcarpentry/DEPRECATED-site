@@ -45,9 +45,7 @@ SRC_BADGES = \
 # Source files for checklists.
 SRC_CHECKLISTS = ./bootcamps/checklists/*.html
 
-# Source files for Version 4 lessons.  Use wildcard to match the index
-# file instead of just naming it so that SRC_V4 is empty if the 'v4'
-# submodule hasn't been populated.
+# Source files for Version 4 lessons.
 SRC_V4 = $(wildcard ./v4/index.html) $(wildcard ./v4/*/*.html)
 
 # Source files for layouts.
@@ -74,27 +72,13 @@ SRC_HTML = \
 CONFIG_DIR = ./config
 SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
-# All files generated during the build process.  This does *not*
-# include the _bootcamp_cache.yml file: use 'make sterile' to get rid
-# of that.
+# All files generated during the build process that are removed by
+# 'make clean'.  This does *not* include the _bootcamp_cache.yml file:
+# use 'make sterile' to get rid of that.
 GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
 
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
-
-# All image files.  We don't actually expand this normally, because it slows the
-# build down considerably, and because Jekyll takes care of copying image files
-# for us.  However, we *do* explicitly copy image files referenced by our CSS,
-# since Jekyll doesn't appear to pick those up.
-# 
-# SRC_IMG = $(filter-out _site/%,\
-#     $(wildcard *.png) $(wildcard */*.png) $(wildcard */*/*.png) $(wildcard */*/*/*.png) \
-#     $(wildcard *.jpg) $(wildcard */*.jpg) $(wildcard */*/*.jpg) $(wildcard */*/*/*.jpg) \
-#     $(wildcard *.gif) $(wildcard */*.gif) $(wildcard */*/*.gif) $(wildcard */*/*/*.gif) \
-#     )
-#
-# Destination images.
-# DST_IMG = $(patsubst %,$(OUT)/%,$(SRC_IMG))
 
 # Software Carpentry bibliography .tex file (in papers directory).
 SWC_BIB = software-carpentry-bibliography
@@ -118,7 +102,7 @@ authors :
 cache :
 	@python bin/get_bootcamp_info.py -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
 
-## cache_verb : collect bootcamp information from GitHub and store in local cache (verbose)
+## cache_verb : collect bootcamp information from GitHub and store in local cache (verbose).
 cache_verb :
 	@python bin/get_bootcamp_info.py -v -t -i $(CONFIG_DIR)/bootcamp_urls.yml -o ./_bootcamp_cache.yml
 
@@ -133,38 +117,38 @@ biblio :
 categories :
 	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
-## check      : build locally into _site directory for checking
+## check      : build locally into _site directory for checking.
 check :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
 
-## dev        : build into development directory for sharing
+## dev        : build into development directory on server.
 dev :
 	make SITE=$(DEV_URL) OUT=$(DEV_DIR) build
 
-## install    : build into installation directory for sharing
+## install    : build into installation directory on server.
 install :
 	make SITE=$(INSTALL_URL) OUT=$(INSTALL_DIR) build
 
-## links      : check links
+## links      : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
 #  which has been put in bin/linklint.
 links :
 	bin/linklint -doc /tmp/site-links -textonly -root _site /@
 
-## valid      : check validity of HTML
+## valid      : check validity of HTML.
 #  Depends on xmllint being installed.  Ignores entity references.
 valid :
 	xmllint --noout $$(find _site -name '*.html' -print) 2>&1 | python bin/unwarn.py
 
-## clean      : clean up
+## clean      : clean up.
 clean :
 	@rm -rf \
 	$(GENERATED) \
 	_site \
-	papers/*.aux papers/*.bbl papers/*.blg papers/*.log \
+	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
 	$$(find . -name '*~' -print)
 
-## sterile    : *really* clean up
+## sterile    : *really* clean up.
 sterile : clean
 	rm -f ./_bootcamp_cache.yml
 
@@ -195,20 +179,3 @@ $(OUT)/index.html : _config.yml $(SRC_HTML)
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
 _config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_BOOTCAMP_PAGES)
 	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)
-
-# Copy image files.  Most of these rules shouldn't be exercised,
-# because Jekyll is supposed to copy files, but some versions only
-# appear to pick up images referenced by generated HTML pages, not
-# ones referenced by CSS files.
-
-$(OUT)/%.png : %.png
-	@mkdir -p $$(dirname $@)
-	cp $< $@
-
-$(OUT)/%.jpg : %.jpg
-	@mkdir -p $$(dirname $@)
-	cp $< $@
-
-$(OUT)/%.gif : %.gif
-	@mkdir -p $$(dirname $@)
-	cp $< $@
