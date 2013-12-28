@@ -91,6 +91,16 @@ SWC.maps = (function() {
           gridSize: 25,
           minimumClusterSize: 1
         }
+    var oms = new OverlappingMarkerSpiderfier(map,{markersWontMove: true, markersWontHide: true, keepSpiderfied: true});
+	var iw = new google.maps.InfoWindow();
+	oms.addListener('click', function(marker, event) {
+		iw.setContent(marker.desc);
+		iw.open(map, marker);
+	});
+	oms.addListener('spiderfy', function(markers) {
+		iw.close();
+	});
+
     // Go over all the previous camps and create pins in the map
     {% for bootcamp in site.bootcamps %}
       {% if bootcamp.latlng and bootcamp.startdate < site.today %}
@@ -107,6 +117,7 @@ SWC.maps = (function() {
           '</div>';
         set_info_window(map, marker, info_window, info_string);
         markers.push(marker); // For clustering
+        oms.addMarker(marker); // For spiderfying
       {% endif %}
     {% endfor %}
     var mc = new MarkerClusterer(map,markers,mcOptions);
