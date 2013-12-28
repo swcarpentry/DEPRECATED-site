@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$1bc8b3030d74939211b9564b2f7508aaac49dca2a17f849ae4fe2b1db7b70666", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$1bc8b3030d74939211b9564b2f7508aaac49dca2a17f849ae4fe2b1db7b70666", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/perez-suarez.david.json"
+ }
+}

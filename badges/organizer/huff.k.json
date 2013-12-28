@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$1923f6a26882661b977bd7098af91e7ad7aed9aefbefd1347289cc0d6d6f6464",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-09-15",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Organizer",
-    "image" : "/img/badges/organizer.png",
-    "description" : "Organizing workshops and learning groups",
-    "criteria" : "/badges/organizer.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/organizer.json", 
+ "image": "http://software-carpentry.org/img/badges/organizer.png", 
+ "issuedOn": "2013-09-15", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$1923f6a26882661b977bd7098af91e7ad7aed9aefbefd1347289cc0d6d6f6464", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$1923f6a26882661b977bd7098af91e7ad7aed9aefbefd1347289cc0d6d6f6464", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/organizer/huff.k.json"
+ }
 }

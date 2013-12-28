@@ -1,0 +1,199 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Reorganizing"
+date: 2013-11-02
+time: "12:00:00"
+category: ["Announcements", "Content"]
+---
+<!-- start excerpt -->
+<p>TL;DR: We're going to:</p>
+<ul>
+  <li>
+    split our lesson materials for absolute beginners and people with some previous experience;
+  </li>
+  <li>
+    build some tools to manage those materials;
+  </li>
+  <li>
+    update and clarify the guidelines for instructor training,
+    Software Carpentry's scope,
+    making contributions,
+    and use of our name and logo; and
+  </li>
+  <li>
+    use GitHub issues and blog posts to manage discussion of details
+    rather than our mailing list.
+  </li>
+</ul>
+<!-- end excerpt -->
+<hr/>
+<p>
+  It's been a busy couple of months, but also rewarding:
+  we've welcomed two new batches of instructors,
+  and more people have submitted lesson material in the last six weeks
+  than in the preceding 18 months.
+</p>
+<p>
+  But it's clear we need to simplify and consolidate things:
+</p>
+<ol>
+  <li>
+    A lot of our material is too advanced for many scientists, which
+    (a) isn't helpful and
+    (b) doesn't fit Mozilla's focus on helping people take their first steps.
+  </li>
+  <li>
+    My choice to break some lessons into small includable pieces
+    has proven more confusing than helpful.
+  </li>
+  <li>
+    There's a lot of redundancy in our material.
+  </li>
+  <li>
+    We need a clearer guide for people who want to contribute
+    and clearer metadata for the lessons themselves:
+    what's covered, what level, prerequisites, etc.
+  </li>
+  <li>
+    We need to explain where Software Carpentry stops and other things begin.
+  </li>
+</ol>
+<p>
+  One reason for our current tangle is that
+  we're not just teaching computing to scientists:
+  we're also creating teaching materials using open source practices,
+  which few people do.
+  Even programmers who use version control daily don't have many sets of collaborative,
+  code-reviewed lessons&mdash;certainly not using
+  tools as young as the IPython Notebook.
+</p>
+<p>
+  That,
+  rapid growth,
+  the fact that most of us are scientists first and coders second,
+  and the lack of a clear plan have muddled things.
+  Here's how we'll clear it up:
+</p>
+<table class="table table-striped">
+  <tr>
+    <td>A.</td>
+    <td>
+      During the week of Nov. 4-9,
+      I'll merge the snippets in the <code>_includes</code> directory
+      into the <code>lessons</code> directory
+      and move image files into more rational places.
+    </td>
+  </tr>
+  <tr>
+    <td>B.</td>
+    <td>
+      The repo will have a directory for each topic (shell, Git, etc.).
+      Each will contain sub-directories called <code>novice</code> (for absolute beginners)
+      and <code>intermediate</code> (for people with some previous experience).
+      The lessons for each topic will be independent
+      because running intermediates through novice material at triple speed doesn't work well.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      C.
+    </td>
+    <td>
+      I'll manage work on novice material for the next three months,
+      and Ethan White will coordinate work on intermediate.
+      We'll focus on instructor-led rather than self-study material
+      (because it's what we need for bootcamps),
+      and we'll decide whether to recycle existing material or write new stuff
+      on a case-by-case basis.
+    </td>
+  </tr>
+  <tr>
+    <td>D.</td>
+    <td>
+      Matt Davis will coordinate discussion about what needs to be in each lesson:
+      long-form vs. point-form vs. all-in-one,
+      manifests and README's,
+      etc.
+    </td>
+  </tr>
+  <tr>
+    <td>E.</td>
+    <td>
+      Aron Ahmadia will coordinate work on tooling for authors and instructors.
+      A lot of our material is now in formats that version control doesn't handle well;
+      we need to figure out how to manage them,
+      how to slim down the starter repo for bootcamps,
+      how to integrate lesson material into the main website,
+      etc.
+    </td>
+  </tr>
+  <tr>
+    <td>F.</td>
+    <td>
+      We'll use GitHub issues to manage discussion about topics C-E
+      so as not to flood our mailing lists.
+    </td>
+  </tr>
+</table>
+<p>
+  Finally, since I'm making lists, we're also going to:
+</p>
+<table class="table table-striped">
+  <tr>
+    <td>G.</td>
+    <td>
+      Change the guidelines for instructor training so that
+      participants must have taken part in a bootcamp,
+      be planning to host one,
+      or have taught coding previously.
+    </td>
+  </tr>
+  <tr>
+    <td>H.</td>
+    <td>
+      Write an explicit description of
+      <a href="{{page.root}}/blog/2013/11/scope.html">Software Carpentry's scope</a>.
+    </td>
+  </tr>
+  <tr>
+    <td>I.</td>
+    <td>
+      Bring Software Carpentry's contribution guidelines into line with
+      those of other Mozilla projects.
+      (I'll post this and the scope descriptions separately;
+      please discuss them there.)
+    </td>
+  </tr>
+  <tr>
+    <td>J.</td>
+    <td>
+      Clarify the rules on using our name and logo
+      so that people must always get explicit permission before doing so.
+      (Again, I'll blog, and please discuss in comments.)
+    </td>
+  </tr>
+</table>
+<p>
+  Our goal is to be ready for the rest of 2014&mdash;not least PyCon in April&mdash;by mid-January.
+  We really want you to join the discussion, write stuff, review stuff, etc.&mdash;we have
+  great momentum right now,
+  and I hope that having a plan for the next couple of months will fuel that.
+</p>
+<p>
+  I look forward to seeing you in <a href="{{page.root}}/blog/2013/11//nov-2013-lab-meeting-announcement.html">our next lab meeting</a>
+  at 11:00 am and 7:00 pm Eastern on Nov 14.
+</p>
+<p>
+  See also:
+</p>
+<ul>
+  <li><a href="https://github.com/swcarpentry/bc/issues/119">Find and/or build tools to help manage lesson material.</a></li>
+  <li><a href="https://github.com/swcarpentry/bc/issues/120">What structure and metadata should lessons have?</a></li>
+  <li>Unix Shell: <a href="https://github.com/swcarpentry/bc/issues/121">novice</a> and <a href="https://github.com/swcarpentry/bc/issues/126">intermediate</a></li>
+  <li>Git: <a href="https://github.com/swcarpentry/bc/issues/122">novice</a> and <a href="https://github.com/swcarpentry/bc/issues/127">intermediate</a></li>
+  <li>Python: <a href="https://github.com/swcarpentry/bc/issues/123">novice</a> and <a href="https://github.com/swcarpentry/bc/issues/128">intermediate</a></li>
+  <li>R: <a href="https://github.com/swcarpentry/bc/issues/124">novice</a> and <a href="https://github.com/swcarpentry/bc/issues/129">intermediate</a></li>
+  <li>SQL: <a href="https://github.com/swcarpentry/bc/issues/125">novice</a> and <a href="https://github.com/swcarpentry/bc/issues/130">intermediate</a></li>
+</ul>

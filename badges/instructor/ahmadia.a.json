@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$13ce5de1b2c8f2d392ebfdf0ac9381f921e39cbb66e746b04a1ac5229c4725eb",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$13ce5de1b2c8f2d392ebfdf0ac9381f921e39cbb66e746b04a1ac5229c4725eb", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$13ce5de1b2c8f2d392ebfdf0ac9381f921e39cbb66e746b04a1ac5229c4725eb", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/ahmadia.a.json"
+ }
 }

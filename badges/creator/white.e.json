@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$b8b9cbf641f8b43389a78f41ba35279be6d9fa871f31831d273741ab7e75b8cc",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Creator",
-    "image" : "/img/badges/creator.png",
-    "description" : "Creating learning materials and other content",
-    "criteria" : "/badges/creator.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/creator.json", 
+ "image": "http://software-carpentry.org/img/badges/creator.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$b8b9cbf641f8b43389a78f41ba35279be6d9fa871f31831d273741ab7e75b8cc", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$b8b9cbf641f8b43389a78f41ba35279be6d9fa871f31831d273741ab7e75b8cc", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/creator/white.e.json"
+ }
 }
