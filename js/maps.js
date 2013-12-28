@@ -67,12 +67,10 @@ SWC.maps = (function() {
           //icon: openPin,
           visible: true,
         });
-
         var info_string = '<div class="info-window">' +
           '<h5><a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue|replace: '\'','\\\''}}</a></h5>' +
           '<h6><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.humandate}}</a></h6>' +
           '</div>';
-
             set_info_window(map, marker, info_window, info_string);
       {% endif %}
     {% endfor %}
@@ -86,8 +84,24 @@ SWC.maps = (function() {
     },
     info_window   = new google.maps.InfoWindow({}),
     map           = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var markers = [];
+    var mcOptions = {
+          zoomOnClick: false,
+          maxZoom: 5,
+          gridSize: 25,
+          minimumClusterSize: 1
+        }
+    var oms = new OverlappingMarkerSpiderfier(map,{markersWontMove: true, markersWontHide: true, keepSpiderfied: true});
+	var iw = new google.maps.InfoWindow();
+	oms.addListener('click', function(marker, event) {
+		iw.setContent(marker.desc);
+		iw.open(map, marker);
+	});
+	oms.addListener('spiderfy', function(markers) {
+		iw.close();
+	});
 
-    // Go over all the upcoming camps and create pins in the map
+    // Go over all the previous camps and create pins in the map
     {% for bootcamp in site.bootcamps %}
       {% if bootcamp.latlng and bootcamp.startdate < site.today %}
         var marker = new google.maps.Marker({
@@ -97,15 +111,16 @@ SWC.maps = (function() {
           //icon: openPin,
           visible: true,
         });
-
         var info_string = '<div class="info-window">' +
           '<h5><a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue|replace: '\'','\\\''}}</a></h5>' +
           '<h6><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.humandate}}</a></h6>' +
           '</div>';
-
-            set_info_window(map, marker, info_window, info_string);
+        set_info_window(map, marker, info_window, info_string);
+        markers.push(marker); // For clustering
+        oms.addMarker(marker); // For spiderfying
       {% endif %}
     {% endfor %}
+    var mc = new MarkerClusterer(map,markers,mcOptions);
   }
 
   return maps;
