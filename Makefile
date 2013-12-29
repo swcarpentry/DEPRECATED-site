@@ -15,7 +15,7 @@ SRC_ROOT = $(wildcard ./*.html)
 SRC_PAGES = $(wildcard pages/*.html)
 
 # Source files in 'bib' directory.
-SRC_PAGES = $(wildcard bib/bib.html)
+SRC_BIB = $(wildcard bib/bib.html)
 
 # Source files of blog posts.  Does *not* include the index file so
 # that our preprocessor doesn't try to harvest data from it.
