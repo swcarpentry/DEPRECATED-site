@@ -29,6 +29,7 @@ SRC_BOOTCAMP_PAGES = $(wildcard ./bootcamps/????-??-*/index.html)
 SRC_BOOTCAMP = $(SRC_BOOTCAMP_PAGES) \
 ./bootcamps/index.html \
 ./bootcamps/operations.html \
+./bootcamps/previous.html \
 ./bootcamps/pre-learner.html \
 ./bootcamps/post-learner.html \
 ./bootcamps/post-instructor.html
