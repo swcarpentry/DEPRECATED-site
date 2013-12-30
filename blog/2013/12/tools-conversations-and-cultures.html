@@ -101,7 +101,7 @@ category: ["Opinion"]
   High-end computer animation tools like <a href="http://www.sidefx.com/">Houdini</a>
   and <a href="http://www.autodesk.com/products/autodesk-maya/overview">Maya</a>
   let people mix graphical interaction with textual scripting,
-  and while hard-core programmers may sneer at Microsoft's office suite,
+  and while hard-core programmers may sneer at Microsoft's Office suite,
   it's amazing what can be built by combining Excel's direct manipulation of data
   with scripting in Visual Basic.
 </p>
@@ -118,14 +118,15 @@ category: ["Opinion"]
   we insist that everything must be text,
   then wonder why people who <em>know</em> that you can style text and draw pictures in documents
   won't believe us when we say we know better.
-  We're so convinced that we're right,
+  It's cultural imperialsim, pure and simple:
+  we're so convinced that we're right,
   and that <em>they</em> should join <em>us</em>,
   that we can't see how much <em>we</em> could learn from <em>them</em>.
 </p>
 <p>
   Ten years ago,
   I <a href="http://queue.acm.org/detail.cfm?id=1039534">confidently predicted</a>
-  predicted that programmers were finally about to see the light:
+  that programmers were finally about to see the light:
 </p>
 <blockquote>
   <p>
@@ -141,12 +142,13 @@ category: ["Opinion"]
   I was an optimist.
   You still can't embed a diagram directly in the source code of your program&mdash;the
   closest you can get is something like an image in an IPython Notebook,
-  but there's no semantic connection between the two.
-  (Hell,
-  most version control systems still can't diff and merge standard vector formats like SVG.)
-  And most of us are still piping lines of text from tool to tool,
-  even though Microsoft's PowerShell showed us years ago
-  how much more powerful it would be to pipe objects instead.
+  but there's no semantic connection between the two,
+  You certainly can't embed a spreadsheet in a Python source file,
+  even when tabular dataflow would be the most natural way to express a computation,
+  and most of us are still piping lines of text from tool to tool,
+  even though <a href="http://www.johndcook.com/powershell.html">PowerShell</a>
+  showed years ago
+  that piping objects is both practical and more powerful [<a href="#7">7</a>].
 </p>
 <p>
   I still believe we'll fix this eventually.
@@ -154,16 +156,16 @@ category: ["Opinion"]
   someone will build a system
   that separates models from views
   so that people can freely combine an ever-growing mix of notations and formats
-  to inspect and control every aspect of their computer's operation.
+  to inspect and control every aspect of their computer's operation [<a href="#8">8</a>].
   That system will allow users to have conversations with their tools,
   and give programmers the moral license they seem to feel they need
   to join the 21st Century.
-  Until then,
+  Until it arrives,
   though,
   we should do more than gently explain to students
   that our antiquated tools will eventually make them more productive.
   We should apologize for not building something better,
-  and promise that we'll try.
+  and promise to try harder.
 </p>
 <p>
   Footnotes:
@@ -207,5 +209,13 @@ category: ["Opinion"]
     improving the usability of programming systems by creating and assessing richer views
     isn't just the most interesting topic in programming language research these days&mdash;it's
     the only one that matters.
+  </li>
+  <li id="7">
+    Hell,
+    most version control systems <em>still</em> can't diff and merge HTML in a meaningful way...
+  </li>
+  <li id="8">
+    It will probably come first from a vendor that already controls an entire toolchain
+    (think MathWorks and MATLAB).
   </li>
 </ol>
