@@ -1,0 +1,211 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Tools, Conversations, and Cultures"
+date: 2013-12-31
+time: "18:00:00"
+category: ["Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  <a href="http://pgbovine.net/">Philip Guo</a> is best known these days for
+  <a href="http://pgbovine.net/PhD-memoir.htm"><em>The Ph.D. Grind</em></a>,
+  but I first met him through his <a href="http://pythontutor.com/">Online Python Tutor</a>.
+  He helped teach a <a href="http://pgbovine.net/teaching-librarians-programming.htm">bootcamp for librarians</a> last August,
+  and recently wrote a <a href="http://pgbovine.net/two-cultures-of-computing.htm">blog post</a>
+  about the two cultures of computing that he encountered there.
+  On one side he sees users who treat software as a tool for getting things done;
+  on the other,
+  he sees programmers who hold conversations with their software.
+  The former use stand-alone GUIs backed by binary file formats (like Word and Excel),
+  while the latter use command-line interfaces and text (like the shell, LaTeX, and Python).
+  He writes:
+</p>
+<!-- end excerpt -->
+<blockquote>
+  <p>
+    The 35 students all came from user culture,
+    whereas the 6 instructors all came from programmer culture.
+    Not only did the students need to learn new technical skills,
+    but they also had to get accustomed to the ways of programmer culture.
+    And some instructors&mdash;who had been living firmly in that culture for decades&mdash;had a hard time relating to the students,
+    despite their most sincere efforts.
+  </p>
+  <p>
+    As a result,
+    it was sometimes hard to motivate students to learn programming-related skills,
+    since they felt like they could accomplish similar things with the tools that they already knew.
+    And it's not just this one isolated event:
+    when I've witnessed programmers teaching beginners in several other contexts,
+    this same <em>Two Cultures</em> schism keeps cropping up again and again.
+  </p>
+</blockquote>
+<p>
+  Philip then enumerates some examples that will be familiar to most Software Carpentry instructors:
+</p>
+<table class="table table-striped">
+  <tr>
+    <td>Typing "widgets" into Spotlight</td><td>vs.</td><td><code>find . -name '*.py' | xargs grep widgets</code></td>
+  </tr>
+  <tr>
+    <td>Rich text editing in Word</td><td>vs.</td><td>ASCII editors that don't even do <em>italics</em></td>
+  </tr>
+  <tr>
+    <td>"Create chart" in Excel</td><td>vs.</td><td>writing 15 lines of matplotlib after installing the right libraries</td>
+  </tr>
+  <tr>
+    <td>Copy-rename-email</td><td>vs.</td><td>"hours of jargon-filled confusion and typo-laden frustration" to learn Git</td>
+  </tr>
+  <tr>
+    <td>"Track changes" in Word</td><td>vs.</td><td>typing backslash-gibberish in LaTeX so that you can use version control</td>
+  </tr>
+</table>
+<p>
+  Looking at this list,
+  it actually <em>is</em> easier for users to do
+  the things they're currently doing
+  with the tools they're currently using.
+  The conversational approach only pays off at scale,
+  and even then only after investing a lot of time [<a href="#1">1</a>].
+</p>
+<p>
+</p>
+<blockquote>
+  <p>
+    Okay, so as an experienced programmer, what can you do to help beginners learn?
+  </p>
+  <p>
+    I think the most important first step is to acknowledge that students are often coming from
+    a vastly different culture than the one you inhabit,
+    and that programmer culture just seems weird to them.
+  </p>
+  <p>...</p>
+  <p>
+    You need to gently introduce students to why these tools will eventually make them more productive in the long run,
+    even though there is a steep learning curve at the outset.
+    Start slow,
+    be supportive along the way,
+    and don't disparage the GUI-based tools that they are accustomed to using,
+    no matter how limited you think those tools are...
+  </p>
+</blockquote>
+<p>
+  In the short run he's right:
+  given the tools we have,
+  all we can do is keep Glass's Law in mind [<a href="#2">2</a>]
+  and teach what's most rewarding first [<a href="#3">3</a>].
+  But Philip's "two cultures" aren't a reflection of some deep physical law.
+  The split is an artifact of history,
+  and there are lots of systems that deliver the best of both worlds.
+  High-end computer animation tools like <a href="http://www.sidefx.com/">Houdini</a>
+  and <a href="http://www.autodesk.com/products/autodesk-maya/overview">Maya</a>
+  let people mix graphical interaction with textual scripting,
+  and while hard-core programmers may sneer at Microsoft's office suite,
+  it's amazing what can be built by combining Excel's direct manipulation of data
+  with scripting in Visual Basic.
+</p>
+<p>
+  Unfortunately,
+  the key word in the preceding sentence is "sneer".
+  When personal computers started offering human-friendly interfaces in the early 1980s,
+  "real" programmers reacted with self-righteous envy [<a href="#4">4</a>].
+  That attitude became part of programming culture,
+  and is one reason why programming has stagnated over the last 30 years
+  [<a href="#5">5</a>,<a href="#6">6</a>].
+  We create rich interfaces for everyone else,
+  but refuse to use them ourselves;
+  we insist that everything must be text,
+  then wonder why people who <em>know</em> that you can style text and draw pictures in documents
+  won't believe us when we say we know better.
+  We're so convinced that we're right,
+  and that <em>they</em> should join <em>us</em>,
+  that we can't see how much <em>we</em> could learn from <em>them</em>.
+</p>
+<p>
+  Ten years ago,
+  I <a href="http://queue.acm.org/detail.cfm?id=1039534">confidently predicted</a>
+  predicted that programmers were finally about to see the light:
+</p>
+<blockquote>
+  <p>
+    We could still be writing and viewing programs a byte at a time in 2010...
+    But do you really believe that will happen?
+    Do you really believe that ours will be the only documents that aren't marked up,
+    that can't contain heterogeneous content,
+    that aren't processed by extensible frameworks?
+  </p>
+</blockquote>
+<p>
+  For once in my life,
+  I was an optimist.
+  You still can't embed a diagram directly in the source code of your program&mdash;the
+  closest you can get is something like an image in an IPython Notebook,
+  but there's no semantic connection between the two.
+  (Hell,
+  most version control systems still can't diff and merge standard vector formats like SVG.)
+  And most of us are still piping lines of text from tool to tool,
+  even though Microsoft's PowerShell showed us years ago
+  how much more powerful it would be to pipe objects instead.
+</p>
+<p>
+  I still believe we'll fix this eventually.
+  Some day,
+  someone will build a system
+  that separates models from views
+  so that people can freely combine an ever-growing mix of notations and formats
+  to inspect and control every aspect of their computer's operation.
+  That system will allow users to have conversations with their tools,
+  and give programmers the moral license they seem to feel they need
+  to join the 21st Century.
+  Until then,
+  though,
+  we should do more than gently explain to students
+  that our antiquated tools will eventually make them more productive.
+  We should apologize for not building something better,
+  and promise that we'll try.
+</p>
+<p>
+  Footnotes:
+</p>
+<ol>
+  <li id="1">
+    Many programmers forget the years of hard work it's taken them to achieve a state
+    in which <code>find</code> piped to <code>xargs</code> seems natural.
+    The result is what's called "expert blind spot",
+    often signalled by over-use of the passive-dismissive adjective "just"
+    (as in, "you just blar blarg blargle").
+  </li>
+  <li id="2">
+    "Every new tool or practice initially reduces productivity."
+  </li>
+  <li id="3">
+    Software Carpentry's introduction to the Unix shell for complete novices takes half a day to introduce 15 commands.
+    Most of the time is actually spent explaining the shell's productivity features:
+    tab completion,
+    the pipe-and-filter model,
+    saving recent history to a file to create a script,
+    and looping over sets of files whose names match wildcard patterns.
+    The goal is to show them as early as possible
+    that the shell will let them do things they care about
+    that are tedious or impossible with GUIs.
+  </li>
+  <li id="4">
+    I certainly did.
+  </li>
+  <li id="5">
+    The things we build would seem like science fiction to my 21-year-old self.
+    The tools we use to build them would instantly be familiar.
+  </li>
+  <li id="6">
+    Programming languages, too.
+    For all the advances made in type theory and optimization,
+    programs are still expressed primarily as sequences of ASCII-encoded tokens;
+    it's one of the few areas in computing where we insist on using a model as a view,
+    to the detriment of both.
+    As far as I'm concerned,
+    improving the usability of programming systems by creating and assessing richer views
+    isn't just the most interesting topic in programming language research these days&mdash;it's
+    the only one that matters.
+  </li>
+</ol>
