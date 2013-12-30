@@ -123,5 +123,33 @@ SWC.maps = (function() {
     var mc = new MarkerClusterer(map,markers,mcOptions);
   }
 
+  maps.instructors = function() {
+    var mapOptions = {
+      zoom: 2,
+      center: new google.maps.LatLng(25,8),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    },
+    info_window   = new google.maps.InfoWindow({}),
+    map           = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var markers = [];
+    var mcOptions = {
+          maxZoom: null,
+          gridSize: 25,
+          minimumClusterSize: 1
+        }
+    // Go over all airports to read instructor location
+    {% for airport in site.airports %}
+        {% for i in (1..{{airport.count}}) %}
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng({{airport.latlng}}),
+              map: map,
+              visible: false // marker not shown directly, just clustered
+	        });
+    	    markers.push(marker); // For clustering
+		{% endfor %}
+	{% endfor %}
+    var mc = new MarkerClusterer(map,markers,mcOptions);
+  }
+
   return maps;
 })();
