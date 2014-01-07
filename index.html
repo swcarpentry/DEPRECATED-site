@@ -74,12 +74,7 @@ nocomments:
   <div class="container">
     <div class="row-fluid ">
       <div class="span8">
-        {% for post in site.blog_recent %}
-          <h4><a href="{{post.root}}/{{post.path}}">{{post.title}}</a></h4>
-          <small>By {{post.author}} / <a href="{{post.root}}/{{post.path}}">{{post.date | date: "%-d %b %Y"}}</a> </small>
-          <p>{{post.excerpt}} <a class="pull-right" href="{{post.root}}/{{post.path}}">...read more</a></p>
-          <br /><br />
-        {% endfor %}
+        {% include recent_blog_posts.html %}
         <h5><a href="{{page.root}}/blog/index.html">Blog Archives &rArr;</a></h5>
 	<br /> <br />
 	<p><a href="{{site.msl_url}}"><img src="{{page.root}}/img/mozilla-science-lab.png" alt="Mozilla Science Lab logo" width="350px" /></a></p>
