@@ -29,19 +29,12 @@ MONTHS = {
 
 # Template for recent blog posts.
 RECENT_POST = '''\
-<h3><a href="{{page.root}}/%(path)s">%(title)s</a></h3>
-<div class="row-fluid">
-  <span class="span11">
+<h4><a href="{{page.root}}/%(path)s">%(title)s</a></h4>
+<small>By %(author)s / <a href="{{page.root}}/%(path)s">%(date)s</a> </small>
+<p>
     %(excerpt)s
-  </span>
-  <span class="span1"></span>
-</div>
-<div class="row-fluid">
-  <span class="span11">Posted %(date)s by %(author)s</span>
-  <span class="span1">
-    <a href="{{page.root}}/%(path)s">...more</a>
-  </span>
-</div>
+    <a class="pull-right" href="{{page.root}}/%(path)s">...read more</a>
+</p><br /><br />
 '''
 
 #----------------------------------------
