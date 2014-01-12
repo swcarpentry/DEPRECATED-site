@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$b31ed69b832269fa3bfa6783490a01dbb8861394a618732b95913ab62cbbfb63", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$b31ed69b832269fa3bfa6783490a01dbb8861394a618732b95913ab62cbbfb63", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/whitlock.a.json"
+ }
+}

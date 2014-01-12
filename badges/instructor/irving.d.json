@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$fa2e6c62a68dd9ace30668b1f7d56b2afe39175cec534308857bf39ce0c25a1b", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$fa2e6c62a68dd9ace30668b1f7d56b2afe39175cec534308857bf39ce0c25a1b", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/irving.d.json"
+ }
+}

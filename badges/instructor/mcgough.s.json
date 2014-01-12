@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$bebd7ff20b86069290f3abc07ea13c88cd34ef6667dc633f251aa56146696ffc",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$bebd7ff20b86069290f3abc07ea13c88cd34ef6667dc633f251aa56146696ffc", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$bebd7ff20b86069290f3abc07ea13c88cd34ef6667dc633f251aa56146696ffc", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/mcgough.s.json"
+ }
 }

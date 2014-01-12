@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$e1be3d3bdf96a9116b02b1445e07a7ad06987bbb73a2df28f99247feb2927e33",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Creator",
-    "image" : "/img/badges/creator.png",
-    "description" : "Creating learning materials and other content",
-    "criteria" : "/badges/creator.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/creator.json", 
+ "image": "http://software-carpentry.org/img/badges/creator.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e1be3d3bdf96a9116b02b1445e07a7ad06987bbb73a2df28f99247feb2927e33", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e1be3d3bdf96a9116b02b1445e07a7ad06987bbb73a2df28f99247feb2927e33", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/creator/montojo.j.json"
+ }
 }

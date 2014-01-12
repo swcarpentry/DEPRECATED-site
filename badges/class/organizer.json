@@ -1,0 +1,7 @@
+{
+    "name" : "Organizer",
+    "description" : "Organizing workshops and learning groups",
+    "image" : "http://software-carpentry.org/img/badges/organizer.png",
+    "criteria" : "http://software-carpentry.org/badges/organizer.html",
+    "issuer": "http://software-carpentry.org/badges/issuer.json"
+}

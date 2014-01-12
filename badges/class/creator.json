@@ -1,0 +1,7 @@
+{
+    "name": "Creator",
+    "description" : "Creating learning materials and other content",
+    "image" : "http://software-carpentry.org/img/badges/creator.png",
+    "criteria" : "http://software-carpentry.org/badges/creator.html",
+    "issuer": "http://software-carpentry.org/badges/issuer.json"
+}

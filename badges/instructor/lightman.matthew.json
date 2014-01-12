@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-17", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8867400ceb6fa12164857d74dd9501c982e984b5268ab48ebfd4d9d54753bb5c", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8867400ceb6fa12164857d74dd9501c982e984b5268ab48ebfd4d9d54753bb5c", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/lightman.matthew.json"
+ }
+}

@@ -1,17 +1,16 @@
 {
-  "recipient" : "sha256$b23a691f70ec7fcc8c3e64e0e66eb6df8c6ab6d463b9d1a1b83c68c4f14ba2f1",
-  "salt": "software-carpentry",
-  "issued_on" : "2013-03-16",
-  "badge" : {
-    "version" : "0.5.0",
-    "name" : "Instructor",
-    "image" : "/img/badges/instructor.png",
-    "description" : "Teaching at workshops or online",
-    "criteria" : "/badges/instructor.html",
-    "issuer" : {
-      "origin" : "http://software-carpentry.org",
-      "name" : "Software Carpentry",
-      "contact" : "admin@software-carpentry.org"
-    }
-  }
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-03-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$b23a691f70ec7fcc8c3e64e0e66eb6df8c6ab6d463b9d1a1b83c68c4f14ba2f1", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$b23a691f70ec7fcc8c3e64e0e66eb6df8c6ab6d463b9d1a1b83c68c4f14ba2f1", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/lagesen.k.json"
+ }
 }

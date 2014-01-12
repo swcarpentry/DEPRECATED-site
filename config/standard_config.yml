@@ -2,12 +2,15 @@ contact         : "info@software-carpentry.org"
 facebook_url    : "https://www.facebook.com/SoftwareCarpentry"
 github_url      : "https://github.com/swcarpentry"
 github_io_url   : "http://swcarpentry.github.io"
-google_plus_url : "https://plus.google.com/u/0/114244759874490019250/posts"
+google_plus_url : "https://www.google.com/+Software-carpentryOrg"
 rss_url         : "http://software-carpentry.org/feed.xml"
 twitter_name    : "@swcarpentry"
 twitter_url     : "https://twitter.com/swcarpentry"
 irc_url         : "irc://freenode/swcarpentry"
-recent_length   : 6
+msl_url         : "http://mozillascience.org"
+store_url       : "http://www.cafepress.com/swcarpentry"
+recent_length   : 5
+upcoming_length : 10 
 blog_title      : "Software Carpentry"
 blog_subtitle   : "Helping scientists make better software since 1998"
 training_url    : "http://teaching.software-carpentry.org"

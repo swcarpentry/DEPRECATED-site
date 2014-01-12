@@ -4,14 +4,15 @@ root: ../..
 <!DOCTYPE html>
 <html>
   <head>
-    {% include generic-header.html %}
+    {% include header.html %}
     <title>Software Carpentry: {{page.venue}} ({{page.humandate}})</title>
   </head>
   <body>
-    {% include navbar.html %}
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span10 offset1">
+    <header class="header">
+      {% include navbar.html %}
+    </header>
+    <section class="content">
+      <div class="container">
           <div class="title">
             <h1>{{page.venue}}: {{page.humandate}}</h1>
           </div>
@@ -19,12 +20,10 @@ root: ../..
           {{content}}
 
           {% include eventbrite.html %}
-          {% include footer.html %}
-        </div>
       </div>
-    </div>
-
-    {% include generic-javascript.html %}
+    </section>
+    {% include footer.html %}
+    {% include javascript.html %}
     {% include google-analytics.html %}
   </body>
 </html>

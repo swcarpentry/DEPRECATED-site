@@ -29,19 +29,12 @@ MONTHS = {
 
 # Template for recent blog posts.
 RECENT_POST = '''\
-<h3><a href="{{page.root}}/%(path)s">%(title)s</a></h3>
-<div class="row-fluid">
-  <span class="span11">
+<h4><a href="{{page.root}}/%(path)s">%(title)s</a></h4>
+<small>By %(author)s / <a href="{{page.root}}/%(path)s">%(date)s</a> </small>
+<p>
     %(excerpt)s
-  </span>
-  <span class="span1"></span>
-</div>
-<div class="row-fluid">
-  <span class="span11">Posted %(date)s by %(author)s</span>
-  <span class="span1">
-    <a href="{{page.root}}/%(path)s">...more</a>
-  </span>
-</div>
+    <a class="pull-right" href="{{page.root}}/%(path)s">...read more</a>
+</p><br /><br />
 '''
 
 #----------------------------------------
@@ -75,6 +68,7 @@ def main():
 
     # Cache the window size.
     recent_length = config['recent_length']
+    upcoming_length = config['upcoming_length']
 
     # Get information from blog entries.
     config['blog'] = harvest_blog(config)
@@ -108,7 +102,7 @@ def main():
 
     # Select those that'll be displayed on the home page.
     upcoming = [bc for bc in config['bootcamps'] if bc['startdate'] >= config['today']]
-    config['bootcamps_upcoming'] = upcoming[:recent_length]
+    config['bootcamps_upcoming'] = upcoming[:upcoming_length]
     config['bootcamps_num_upcoming'] = len(upcoming)
 
     # Save.
@@ -237,12 +231,15 @@ def organize_blog_entries(posts):
 #----------------------------------------
 
 def get_blog_excerpt(path):
-    '''Get excerpt from blog post for inclusion in blog index page.'''
+    '''Get excerpt from blog post for inclusion in blog index page.
+    Have to turn newlines into spaces so that older versions of Jekyll
+    (like the one on the server) won't turn them into single backslashes
+    when doing inclusion expansion.'''
     with open(path, 'r') as reader:
         temp = reader.read()
         temp = P_BLOG_EXCERPT.search(temp)
         assert temp, 'Blog post {0} lacks excerpt'.format(path)
-        return temp.group(1)
+        return temp.group(1).replace('\n', ' ')
 
 #----------------------------------------
 

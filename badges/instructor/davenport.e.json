@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2013-11-25", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$ff9373162af64db29b85aef48bc10b7f6e9dd64ff7b980e570825a40a08d0185", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$ff9373162af64db29b85aef48bc10b7f6e9dd64ff7b980e570825a40a08d0185", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/davenport.e.json"
+ }
+}
