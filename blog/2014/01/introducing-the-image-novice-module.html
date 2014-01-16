@@ -1,0 +1,125 @@
+---
+layout: blog
+root: ../../..
+author: Michael Hansen
+title: "Introducing the Image Novice Module"
+date: 2014-01-16
+time: "23:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>The image novice module provides a simple image manipulation interface for beginners that allows for easy loading, manipulating, and saving of image files. It has been developed collaboratively with <a href="http://www.third-bit.com/">Greg Wilson</a>, <a href="https://github.com/tonysyu">Tony Yu</a>, and <a href="https://github.com/stefanv">Stephan van der Walt</a>. Below, I show how to use the module for some basic image manipulation.</p>
+<!-- end excerpt -->
+<h3>Getting the Module</h3>
+<p>The novice module comes as a standalone package via pip (image_novice), and <a href="https://github.com/synesthesiam/novice">the source code</a> is available on Github. We are working with the folks over at <a href="http://scikit-image.org/">scikit-image</a> to get novice incorporated into the next release (it's currently in their <a href="https://github.com/scikit-image/scikit-image/tree/master/skimage/novice">Github repo</a>).</p>
+
+<h3>Basic image manipulation</h3>
+<p>Loading a picture is easy with the novice module. After importing, the <code>open</code> method returns a <code>Picture</code> instance that is visible in an IPython notebook.</p>
+<pre>from image_novice import novice
+picture = novice.open("sample.png")
+picture
+</pre>
+<p><img src="novice-sample.png" /></p>
+
+
+<p>A picture knows its image format, where it came from, and its size.</p>
+<pre>print "Format:", picture.format
+print "Path:", picture.path
+print "Size:", picture.size
+print "Width:", picture.width
+
+<em>Format: png
+Path: /home/hansenm/Projects/novice/sample.png
+Size: (665, 500)
+Width: 665</em>
+</pre>
+
+
+<p>We can easily resize the picture so that it's taller than it is wide.</p>
+<pre>picture.size = (200, 250)
+picture
+</pre>
+<p><img src="novice-sample-small.png" /></p>
+
+<p>A <code>Picture</code> is a collection of <code>Pixel</code> instances. We can iterate over the pixels and modify their color components individually. Below, we halve the red value of all pixels that are more than 50% red.</p>
+<pre>for pixel in picture:              
+    if ((pixel.red &gt; 127) and      
+        (pixel.x &lt; picture.width)):
+        pixel.red /= 2
+picture
+</pre>
+<p><img src="novice-sample-small-bluegreen.png" /></p>
+
+<p>A picture knows that it's been modified, which also resets its path to <code>None</code>.</p>
+<pre>print "Modified:", picture.modified
+print "Path:", picture.path
+<em>Modified: True
+Path: None</em>
+</pre>
+
+<p>Modifying a group of pixels is easy using slices. Below, we put a black box in the lower-left corner of the picture. Note that the novice module uses Cartesian coordinates (i.e., pixel 0, 0 is at the lower left).</p>
+<pre>picture[0:20, 0:20] = "black"
+picture
+</pre>
+<p><img src="novice-sample-small-bluegreen-black.png" /></p>
+
+<p>A <code>Picture</code> can be saved with a different format, and its corresponding properties are updated accordingly.</p>
+<pre>picture.save('sample-bluegreen.jpg')
+print "Path:", picture.path
+print "Format:", picture.format
+print "Modified:", picture.modified
+<em>Path: /home/hansenm/Projects/novice/sample-bluegreen.jpg
+Format: jpeg
+Modified: False</em>
+</pre>
+
+<h3>The Block Example</h3>
+<p>Manipulating small images pixel by pixel can be difficult.</p>
+<pre>blocks = novice.open("block.png")
+print "Size:", blocks.size
+blocks
+<em>Size: (10, 10)</em>
+</pre>
+
+<p><img src="novice-blocks.png" /></p>
+
+<p>We can change how an image is <em>displayed</em> by increasing its <code>inflation</code> factor. An inflation factor of 10 means that a 10x10 square will be displayed for every real pixel in the image.</p>
+<pre>blocks.inflation = 10
+blocks
+</pre>
+<p><img src="novice-blocks-big.png" /></p>
+
+<p>Note that this does not modify the underlying image. The block is still the same size underneath (10x10 pixels).</p>
+<pre>blocks.size
+<em>(10, 10)</em>
+</pre>
+
+<p>Using slices, let's recolor the lower left square with yellow.</p>
+<pre>blocks[1:5, 1:5] = "yellow"
+blocks
+</pre>
+<p><img src="novice-blocks-yellow.png" /></p>
+
+<p>We can change the inflation factor at any time:</p>
+<pre>blocks.inflation = 25
+blocks
+</pre>
+<p><img src="novice-blocks-yellow-big.png" /></p>
+
+<p>By using slices and the image's size, we can change the border to violet:</p>
+<pre>blocks[:, 0]                 = "violet"  # Bottom
+blocks[:, blocks.height - 1] = "violet"  # Top
+blocks[0, :]                 = "violet"  # Left
+blocks[blocks.width - 1, :]  = "violet"  # Right
+blocks
+</pre>
+<p><img src="novice-blocks-violet.png" /></p>
+
+<p>Finally, let's swap the left and right halves of the image.  First, we copy the left half. Next, we overwrite the left half with the right half. Without the <code>copy()</code>, this would cause the <code>temp</code> variable to change as well. Finally, we overwrite the right half with the copied left half.</p>
+<pre>w = blocks.width / 2
+temp = blocks[:w, :].copy()  # Have to make a copy here explicitly!
+blocks[:w, :] = blocks[w:, :]
+blocks[w:, :] = temp
+blocks
+</pre>
+<p><img src="novice-blocks-flipped.png" /></p>
