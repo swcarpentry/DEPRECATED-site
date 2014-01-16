@@ -1,0 +1,221 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Publishing on the Web"
+date: 2014-01-15
+time: "10:30:00"
+category: ["Opinion", "Publishing", "Tooling", "Community"]
+---
+<!-- start excerpt -->
+<p>
+  Back in December,
+  I asked a question on the Software Carpentry issue track:
+  <a href="https://github.com/swcarpentry/bc/issues/199">What should we teach about writing/publishing papers in a webby world?</a>
+  It led to a lively discussion about how the web is changing scientific publishing,
+  the tools people can use to take advantage of those changes,
+  and the gap between what's possible and what publishers (and senior academics) will actually accept.
+  Many commenters dove immediately into the details of specific tools,
+  but Justin Kitzes nailed it when <a href="https://github.com/swcarpentry/bc/issues/199#issuecomment-29940210">he said</a>:
+</p>
+<!-- end excerpt -->
+<blockquote>
+  <p>
+    I think the biggest hurdle,
+    and most important teaching point,
+    is simply the idea of writing papers in plain text (regardless of the markup language)...
+    There are lots of advantages to plain text...but in the context of the bootcamp,
+    one of the biggest is that it provides a really good use case for version control..
+  </p>
+  <p>
+    The elephant in the room for students, of course, is
+    (a) why they should change to a practice (leaving Word)
+    that will be viewed as strange and potentially difficult by other collaborators,
+    and (b) more specifically, how they will interact with collaborators who only use Word for track changes and commenting.
+    I don't know that I have good answers to either of these questions.
+  </p>
+</blockquote>
+<p>
+  A few comments later,
+  Cameron Neylon chimed in:
+</p>
+<blockquote>
+  <p>
+    I think it could be worth taking a step back and re-phrasing the question a little.
+    Is the object to teach those building tools about publishing in general
+    (i.e., what tools and hacks might be useful to create)
+    or is the focus here specifically on how to get better incorporation of code into published work?
+    I think the latter is the focus but it might be good to be explicit.
+  </p>
+  <p>
+    On that basis it would be good in my view to touch on some background in literate programming to give people a bit of context
+    and then look at various authoring tools (knitr, IPyNB, Sweave, Dexy...others presumably)
+    alongside various code repositories and data repositories in that light.
+    This would then provide a way of thinking about the available tools as a way of telling the story,
+    which is different to how they are generally used in practice to manage code and records and actually do the work.
+  </p>
+  <p>
+    It's a personal bias,
+    but I'd also be inclined to spend some time on the sausage making of the publishing process
+    and why it doesn't fit with what the tools above.
+    What gaps are there?
+    How could they be filled?
+    What would the optimal system look like?
+    What formats would be used?
+  </p>
+</blockquote>
+<p>
+  Carl Boettiger then added <a href="https://github.com/swcarpentry/bc/issues/199#issuecomment-31671978">his recommendations</a>,
+  which I've condensed as:
+</p>
+<ul>
+  <li>Start with data publishing and code publishing.</li>
+  <li>Endorse plain text for publications.</li>
+  <li>Address the pain points:
+    <ul>
+      <li>Journal submission software</li>
+      <li>Collaboration</li>
+      <li>Citations</li>
+    </ul>
+  </li>
+  <li>Dynamic documents: more important to teach the concept than the specifics.</li>
+</ul>
+<p>
+  He also said later (in a comment on an early draft of this post) that:
+</p>
+<blockquote>
+  <p>
+    ...the opening question asked about "publishing in a webby world",
+    while current publishers and practices are inherently non-webby.
+    This creates a tension I think we never quite resolve.
+    We're stuck tackling the question of how to do "webby publishing in a non-webby world"...
+  </p>
+</blockquote>
+<p>
+  At this point I pushed back a bit based on conversations with bootcamp attendees:
+</p>
+<blockquote>
+  <p>
+    Word is easier to use for normal tasks (like writing a paper with bullet points and italics) than Markdown,
+    much less LaTeX&mdash;it's only Stockholm Syndrome that makes us believe otherwise :-).
+    And as long as both senior faculty and journals require people to submit Word (or PDFs derived from specific Word templates),
+    it's hard for us to say, "No, really, version control is better in the long run,"
+    because the long run ends in you wrestling with Pandoc to try to get it to format things the way some particular conference requires.
+    (True story: I submitted the outline for our upcoming SIGCSE workshop to the ACM using their LaTeX template.
+    During the holiday break,
+    I got mail telling me I had to re-do it using their MICROSOFT WORD template (their capitalization),
+    which of course LibreOffice couldn't load properly.)
+    So: given that the end product must be acceptable to senior profs and journals,
+    and that markup-based tools impose more cognitive load on newcomers than WYSIWYG alternatives
+    (i.e., the payoff for switching is tomorrow, the pain is today),
+    what's our path forward?
+    What can we teach in an hour that the average biologist will find compelling?
+  </p>
+</blockquote>
+<p>
+  The last question is the most important.
+  Everybody's deadline is tomorrow or next week;
+  the hours they spend today learning something that might pay off in the long run
+  increase the risk of them not meeting that near-term deadline
+  (and the risk that their supervisor will ask them to re-do it because what's GitHub?).
+</p>
+<p>
+  But Jon Pipitone (who works in a research hospital) <a href="https://github.com/swcarpentry/bc/issues/199#issuecomment-31745008">disagreed</a>:
+</p>
+<blockquote>
+  <p>
+    Even if folks are writing their papers in Word,
+    I still think version control is a useful tool when paper writing,
+    because there is so much more to writing a paper than just the final document,
+    e.g., results files, figures, images, correspondence, submission documents, as well as any scripts you use to do analysis and generate other assets.
+    You may not be able to use <code>git diff</code> on a Word doc but you can use it on many of these other things.
+    And even then,
+    under version control you can still checkout an older copy of your paper,
+    and use Word's compare feature to do the diff.
+    Plus you get the benefits of having a log of your changes,
+    easy backups (e.g., <code>git push</code>) and rollbacks, etc.
+  </p>
+  <p>
+    The point I'm making is I think the benefits of version control when paper writing are worthwhile despite the fact that Word files don't diff easily.
+    I'd also like to suggest that teaching folks to use knitr or IPython Notebooks or even just to create scripts to generate figures) can be a really useful thing.
+    I've been showing people how to use RStudio to create a draft of their paper in Markdown to leverage the power of knitr.
+    Even those that don't draft their paper in Markdown but just use it like an IPython Notebook
+    get value out of being able to build up a document of figures and tables which they can paste into their word documents.
+  </p>
+</blockquote>
+<p>
+  Cameron Neylon then tried to refocus the discussion on <a href="https://github.com/swcarpentry/bc/issues/199#issuecomment-31751479">this key point</a>:
+</p>
+<blockquote>
+  <p>
+    We need a framework to discuss this in that steps a little away from the framework of the rest of Software Carpentry.
+    The reason I say this is actually well demonstrated by the subtle ways in which all the suggestions are butting up against each other in not so comfortable ways.
+    All of us have an implicit framework into which our thinking about authoring and sharing papers fits.
+    Many of us also have a similar,
+    but perhaps not identical,
+    framework we use to think about code (and data, and... and...)
+  </p>
+  <p>
+    The students don't.
+  </p>
+  <p>
+    They're just at the point of trying to wrap their head around version control and the shell.
+    That means to my mind... that a combination of the practical and the abstract will help them understand
+    both the software side better as well as allow them to come to their own conclusions about how that framework does or does not apply to authoring papers.
+  </p>
+  <p>
+    Or to put it more simply:
+    You've just learned about some ways of thinking about writing and using code and data that might help you work better.
+    Authoring a paper is a different process.
+    Here's why.
+    Maybe it doesn't need to be...or maybe it does.
+    What do you think?
+    What will work for you?
+    And do you now understand why version control is such a fantastic thing?
+  </p>
+</blockquote>
+<p>
+  Ian Mulvany then contributed
+  <a href="https://github.com/swcarpentry/bc/issues/199#issuecomment-31879806">a lengthy comment</a>,
+  which he later turned into
+  <a href="http://partiallyattended.com/2014/01/08/advice-on-publishing-online/">a detailed, insightful blog post</a>.
+  The whole thing merits close reading,
+  but his key recommendations are:
+</p>
+<ol>
+  <li>Use a reference management tool.</li>
+  <li>Find the fastest venue to publish in.</li>
+  <li>Publish in an open access journal.</li>
+  <li>Add your work to the best preprint server for your discipline (and possibly a university archive).</li>
+  <li>
+    Add as much supporting material as you can to the right locations, e.g.,
+    <a href="http://github.com">github</a> for code,
+    <a href="https://vimeo.com/">vimeo</a> or <a href="http://www.youtube.com/">you tube</a> for videos,
+    and <a href="http://figshare.com/">figshare</a> for almost anything.
+  </li>
+  <li>Register for an <a href="http://orcid.org/">ORCID</a> and add your publication to your ORCID profile.</li>
+  <li>Don't be afraid to alter publishers' copyright transfer statements.</li>
+  <li>Use version control.</li>
+  <li>
+    Don't waste time formatting your paper (especially your references),
+    because it will all be thrown away by the publisher.
+  </li>
+  <li>
+    If the collaborative environment of your choice is not working for your group,
+    drop it and get the damn paper finished.
+  </li>
+</ol>
+<p>
+  There's a lot here to digest,
+  but I now believe that
+  Software Carpentry should introduce bootcamp participants
+  to new ideas in scientific publishing.
+  I believe we <em>can</em> as well,
+  i.e.,
+  that the tools and practices people like Justin, Cameron, Carl, Jon, and Ian use
+  are now within reach of our learners (if only just).
+  If you'd like to help us work out the specifics&mdash;in particular,
+  if you'd like to help us create an hour-long teaching module
+  on 21st Century scientific publishing&mdash;please
+  <a href="https://github.com/swcarpentry/bc/issues/199">join the discussion</a>.
+</p>
