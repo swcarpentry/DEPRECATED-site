@@ -10,6 +10,10 @@ import datetime
 import time
 import yaml
 from optparse import OptionParser
+try:  # Python 3
+    from urllib.parse import urlparse, urljoin
+except ImportError:  # Python 2
+    from urlparse import urlparse, urljoin
 from util import CONFIG_YML, \
                  STANDARD_YML, \
                  AIRPORTS_YML, \
@@ -98,7 +102,7 @@ def main():
     config['blog_favorites'].reverse()
 
     # Get information from legacy boot camp pages and merge with cached info.
-    config['bootcamps'] = harvest_bootcamps(cached_bootcamp_info)
+    config['bootcamps'] = harvest_bootcamps(options.site, cached_bootcamp_info)
 
     # Select those that'll be displayed on the home page.
     upcoming = [bc for bc in config['bootcamps'] if bc['startdate'] >= config['today']]
@@ -155,13 +159,15 @@ def harvest_blog(config):
 
 #----------------------------------------
 
-def harvest_bootcamps(bootcamps):
+def harvest_bootcamps(site, bootcamps):
     '''Harvest metadata from all boot camp index.html pages and merge with cached info.'''
     pages = glob.glob('bootcamps/*/index.html')
     metadata = harvest(pages)
     for f in metadata:
         bootcamps.append(metadata[f])
-        bootcamps[-1]['slug'] = f.split('/')[1]
+        slug = f.split('/')[1]
+        bootcamps[-1]['slug'] = slug
+        bootcamps[-1]['url'] = urljoin(site, 'bootcamps/{0}/index.html'.format(slug))
         fill_optional_metadata(bootcamps[-1], 'contact')
     bootcamps.sort(lambda x, y: cmp(x['slug'], y['slug']))
     return bootcamps

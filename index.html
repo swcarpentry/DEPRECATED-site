@@ -88,7 +88,7 @@ nocomments:
           <tr>
             <td>
               <img src="{{page.root}}/img/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
-              <a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue}}</a>
+              <a href="{{bootcamp.url}}">{{bootcamp.venue}}</a>
               <br />
               {{bootcamp.humandate|replace: ' ', '&nbsp;'}}
             </td>

@@ -10,9 +10,9 @@ import datetime
 import re
 from optparse import OptionParser
 try:  # Python 3
-    from urllib.parse import urlparse, urljoin
+    from urllib.parse import urlparse
 except ImportError:  # Python 2
-    from urlparse import urlparse, urljoin
+    from urlparse import urlparse
 from util import CONFIG_YML, STANDARD_YML, load_info
 
 #----------------------------------------
@@ -67,7 +67,6 @@ class ICalendarWriter(object):
     def bootcamp(self, site, timestamp, info):
         uid = '{0}@{1}'.format(info['slug'],
                                urlparse(site).netloc or 'software-carpentry.org')
-        url = urljoin(site, 'bootcamps/{0}/index.html'.format(info['slug']))
         if 'enddate' in info:
             end = info['enddate']
         else:  # one day boot camp?
@@ -80,8 +79,8 @@ class ICalendarWriter(object):
             'DTSTART;VALUE=DATE:{0}'.format(info['startdate'].strftime('%Y%m%d')),
             'DTEND;VALUE=DATE:{0}'.format(end.strftime('%Y%m%d')),
             'SUMMARY:{0}'.format(self.escape(info['venue'])),
-            'DESCRIPTION;ALTREP="{0}":{0}'.format(url),
-            'URL:{0}'.format(url),
+            'DESCRIPTION;ALTREP="{0}":{0}'.format(info['url']),
+            'URL:{0}'.format(info['url']),
             'LOCATION:{0}'.format(self.escape(info['venue'])),
         ]
         if info.get('latlng'):
