@@ -1,0 +1,48 @@
+---
+layout: blog
+root: ../../..
+author: Ivan Gonzalez
+title: "Wrapping Up in Narrangasett"
+date: 2014-01-18
+time: "07:30:00"
+category: ["Bootcamps", "University of Rhode Island"]
+---
+<!-- start excerpt -->
+<p>I've just came back from <a href="http://iglpdc.github.io/2014-01-13-uri/">the Software Carpentry bootcamp at Narrangasett, RI</a>, held at the Coastal Institute of the University of Rhode Island and the US Enviromental Protection Agency. I taught with <a href="http://patrick-fuller.com/">Patrick Fuller</a> and <a href="http://jwhollister.com/">Jeff Hollister</a>, who was also the organizer. The local helpers were Betty Kreakie and Bryan Milstead.</p>
+<p>The bootcamp was R-based and lasted two and a half days. The people at the Coastal Institute are using this bootcamp as the starting point for a class on "Computing for Natural Resources" during the next semester, so the extra half-day was used to talk about this coming class and to add a lesson on data visualization using R. Besides the standard syllabus, we extended a bit the lessons on R, added a short lesson on databases, and made a longer than usual session on testing.</p>
+<!-- end excerpt -->
+<p>We had a really enthusiastic group of students, most of them novices to the shell and version control, but with some experience with R. Their background was in the life sciences, with predominance of ecologists, environmental economists, and oceanographers. The class was packed for the whole workshop, with only a couple of dropouts the second day.</p>
+<div align="center">
+<img src="uri-green-stickies.jpg" alt="Green stickies in a packed class during one of the R lessons." />
+<p>Green stickies in a packed class during one of the R lessons.</p>
+</div>
+<h2>Goods and Bads</h2>
+<p>Overall, the bootcamp went very well. The quick survey with the stickies showed that the students liked the selection of materials and the way is presented, and think the materials are relevant for their work. The most common complaint was that it was too much to absorb in just a couple of days.</p>
+<p>After talking to some students, Jeff points out that they have the common feeling that, although they are still unlikely to be able to create exactly what they want right off the bat, they do have a solid enough of a foundation to feel confident in trying to figure out how to do it. Also, the next day, <em>two of them were already trying to put the projects under version control</em>.</p>
+<h3>Good</h3>
+<ul>
+<li>The engagement of the students: e.g. most of them had all the required software installed, so we could start on time.</li>
+<li>The organization from the Institute: having everything properly figured out takes a lot of pressure from the instructors.</li>
+<li>The extra time for the testing lesson.</li>
+</ul>
+<h3>Bad</h3>
+<ul>
+<li>Many more Windows machines than a sane person can deal with. If the instructors are Mac/Linux users, it's good to borrow a Windows machine before the workshop and do some practice.</li>
+<li>Problems with the editors. In a novice class, everyone should be using the same editor (say, <code>nano</code>); otherwise people will get lost.</li>
+<li>A weird problem with Windowns machines and Github URLs: some people needed to add <code>username@passwd:</code> after the <code>https://</code> when pushing and cloning.</li>
+</ul>
+<h2>Lessons Learned</h2>
+<h3>If you advocate version control for science and not only for code, be ready to have an argument about why not using Word.</h3>
+<p>Personally, I think that a good idea could be introducing Markdown during the git lesson. The students create a repo during this lesson, so why not make them write a mini-paper using Markdown? The repo would contain a file with the text in Markdown, a CSV file with some data, and a script that reads this file and makes a plot, following the structure described in <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424">this paper</a>. With a few lines of Markdown, one can put a couple of headings in the paper, display the figure, and add a link.</p>
+<p>You don't have to go much into why using Markdown, or try to display it. When they move the repo to Github in the second part of the novice class, they will see the Markdown rendered nicely, and hopefully ask for more.</p>
+<h3>Take much time as you can for documentation and testing, even with novices.</h3>
+<p>We did a 90-min lesson on testing, which actually turned into a nice wrap-up for the programming part. After motivating testing, we briefly introduced unit testing in R. We didn't go much into the detail, as felt pretty advanced for the students and they were tired. Then, we gave them the following workflow for writing a function based on a documentation- and test-driven development:</p>
+<ul>
+<li>write the sentence describing your function, the parameters and return value;</li>
+<li>use this to write the opening lines of your documentation, covered in a previous lesson;</li>
+<li>write the interface of the function;</li>
+<li>write the tests;</li>
+<li>make some decisions to finish your docs and tests, and, finally,</li>
+<li>write the body of the function.</li>
+</ul>
+<p>The students had 30 mins to write a function (nothing more complicated than they did in the programming lessons), but following strictly this workflow, i.e. including documentation and a few unit tests covering corner cases. At first, they were overwhelmed, but with a couple of tips most of them did parts of the exercise. We didn't choose a good function (algebra for an ecology group), and we were all tired. Yet, I think they realized that good programmers don't write long and fancy functions, but short, well-documented, and tested ones. In my opinion, it made a good closing class for the bootcamp.</p>
