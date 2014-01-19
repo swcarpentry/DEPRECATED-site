@@ -19,11 +19,11 @@
 .navbar .container {
     background-color: inherit;
     font-size:11pt;
-    padding:27px 10px 10px 10px;
+    padding:27px 10px 0px 10px;
     background:url('../img/software-carpentry-banner.png') no-repeat;
     background-size: 250px;
     background-position: 10px 10px;
-    height:40px;
+    height:50px;
 }
 
 .navbar-inner {
@@ -72,8 +72,22 @@ code {
   border-color:#2b3990;
 }
 
+.navbar-inverse .navbar-search {
+  border: none;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:hover,
+.navbar-inverse .nav-collapse .dropdown-menu a:hover {
+  background-color: transparent;
+}
+
 .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
   color: #2b3990;
+  text-align: center;
+}
+
+.navbar-inverse .nav-collapse .nav > li:hover > a {
+  color: #935212;
 }
 
 .navbar.transparent.navbar-inverse .navbar-inner {
@@ -93,6 +107,32 @@ code {
 
 blockquote p {
   font-size:14px;
+}
+
+@media (max-width: 979px){
+  .navbar-inverse .nav-collapse ul{
+    margin:20px 0 0;
+  }
+
+  .navbar-inverse .nav-collapse .nav > li > a {
+    font-size: 12pt;
+  }
+
+  .navbar-inverse .nav-collapse .navbar-search {
+    text-align: center;
+    border-top:1px solid #AAA;
+    margin:0;
+  }
+
+  .navbar-inverse .nav-collapse .navbar-search .search-query {
+    margin:10px 0;
+  }
+
+  .navbar-inverse .nav-collapse .nav > li {
+    border-top:1px solid #AAA;
+    padding:10px 0;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -130,7 +170,6 @@ blockquote p {
   .navbar .container {
     background-size: 200px;
     background-position: 10px 20px;
-    height:40px;
   }
 
   #nav-logo {
