@@ -8,10 +8,6 @@
       </a>
       <a href="{{page.root}}/index.html" id="nav-logo" class="pull-left"></a>
       <div class="nav-collapse collapse pull-right span12">
-        <form class="navbar-search pull-right" method="get" action="http://www.google.com/search">
-          <input type="hidden" name="sitesearch" value="{{site.site}}" />
-          <input name="q" type="text" class="search-query" placeholder="Search" />
-        </form>
         <ul class="nav pull-right">
           <li id="nav-bootcamps">
             <a href="{{page.root}}/bootcamps/index.html">Bootcamps</a>
@@ -28,6 +24,10 @@
           <li id="nav-about">
             <a href="{{page.root}}/pages/index.html">About</a>
           </li>
+          <form class="navbar-search" method="get" action="http://www.google.com/search">
+            <input type="hidden" name="sitesearch" value="{{site.site}}" />
+            <input name="q" type="text" class="search-query" placeholder="Search" />
+          </form>
         </ul>
       </div>
     </div>
