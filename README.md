@@ -66,7 +66,7 @@ quick recipe to get started using HomeBrew.
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 brew install ruby
 gem install jekyll
-gem install redcarpet 
+gem install RedCloth
 ~~~
 
 Design Notes
