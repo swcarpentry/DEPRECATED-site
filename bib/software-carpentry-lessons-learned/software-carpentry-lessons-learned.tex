@@ -1,16 +1,14 @@
-\documentclass{article}
-\usepackage{authblk}
-\usepackage{graphicx}
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage{f1000_styles}
 \usepackage{hyperref}
+\begin{document}
 
 \title{Software Carpentry: Lessons Learned}
-\date{\today}
+\author[1]{Greg Wilson}
+\affil[1]{Mozilla Foundation / gvwilson@software-carpentry.org}
 
-\author[a]{Greg Wilson}
-\affil[a]{Mozilla Foundation / gvwilson@software-carpentry.org}
-
-\begin{document}
 \maketitle
+\thispagestyle{fancy}
 
 \begin{abstract}
 
@@ -21,8 +19,9 @@ article explains what we have learned along the way the challenges we
 now face, and our plans for the future.
 
 \end{abstract}
+\clearpage
 
-\section{Introduction}
+\section*{Introduction}
 
 In January 2012, John Cook posted this to his widely-read blog
 \cite{cook2012}:
@@ -81,55 +80,12 @@ hard to apply what we teach to their own work, and several of our
 experiments---most notably our attempts to teach online---have been
 failures.
 
-\subsection*{Acknowledgments}
-
-I am grateful for contributions, corrections, and inspiration from:
-
-\begin{itemize}
-\item
-  Azalee Bostroem (Space Telescope Science Institute)
-\item
-  Chris Cannam (Queen Mary, University of London)
-\item
-  Stephen Crouch (Software Sustainability Institute)
-\item
-  Matt Davis (Space Telescope Science Institute)
-\item
-  Luis Figueira (Queen Mary, University of London)
-\item
-  Richard ``Tommy'' Guy (Wave Accounting)
-\item
-  Edmund Hart (University of British Columbia)
-\item
-  Neil Chue Hong (Software Sustainability Institute)
-\item
-  Katy Huff (University of Wisconsin)
-\item
-  Michael Jackson (Edinburgh Parallel Computing Centre)
-\item
-  W. Trevor King (Drexel University)
-\item
-  Justin Kitzes (University of California, Berkeley)
-\item
-  Stephen McGough (University of Newcastle)
-\item
-  Lex Nederbragt (University of Oslo)
-\item
-  Tracy Teal (Michigan State University)
-\item
-  Ben Waugh (University College London)
-\item
-  Lynne J. Williams (Rotman Research Institute)
-\item
-  Ethan White (Utah State University)
-\end{itemize}
-
-\section{From Red to Green}
+\section*{From Red to Green}
 
 Some historical context will help explain where and why we have
 succeeded and failed.
 
-\subsection{Version 1: Red Light}
+\subsection*{Version 1: Red Light}
 
 In 1995-96, the author organized a series of articles in \emph{IEEE
 Computational Science \& Engineering} titled, ``What Should Computer
@@ -164,7 +120,7 @@ lessons were learned:
   science.
 \end{enumerate}
 
-\subsection{Versions 2 and 3: Another Red Light}
+\subsection*{Versions 2 and 3: Another Red Light}
 
 The Software Carpentry course materials were updated and released in
 2004-05 as point-form slides under a Creative Commons license thanks to
@@ -206,7 +162,7 @@ some inter-departmental level, this course, like many other
 interdisciplinary courses, fell between two stools.
 
 \begin{quote}
-\emph{It Works Too Well to be Interesting}
+\textbf{It Works Too Well to be Interesting}
 
 We have also found that what we teach simply isn't interesting to most
 computer scientists. They are interested in doing research to advance
@@ -242,7 +198,7 @@ it's vitally important, and who is likely senior to those faculty
 advocating the change.
 
 \begin{quote}
-\emph{It Adds Up}
+\textbf{It Adds Up}
 
 Saying, ``We'll just add a little computing to every other course,'' is
 a cheat: five minutes per hour equals four entire courses in a four-year
@@ -256,7 +212,7 @@ three years of graduate school. At that point, students have time (at
 least, more time than they'll have once they're faculty) and real
 problems of their own that they want to solve.
 
-\subsection{Version 4: Orange Light}
+\subsection*{Version 4: Orange Light}
 
 The author rebooted Software Carpentry in May 2010 with support from
 Indiana University, Michigan State University, Microsoft, MITACS, Queen
@@ -304,7 +260,7 @@ scalable, sustainable model. One instructor simply can't reach enough
 people, and cobbling together funding from half a dozen different
 sources every twelve to eighteen months is a high-risk approach.
 
-\subsection{Version 5: Green Light}
+\subsection*{Version 5: Green Light}
 
 Software Carpentry restarted once again in January 2012 with a new grant
 from the Sloan Foundation, and backing from the Mozilla Foundation. This
@@ -331,16 +287,16 @@ in the UK), but our other costs now take care of themselves.
 Our two-day boot camps have been an unqualified success. Both the number
 of boot camps, and the number of people attending, have grown steadily:
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
-\includegraphics{bootcamps.png}
-\caption{Cumulative Number of Boot Camps}
+\includegraphics[width=0.4\textwidth]{bootcamps.png}
+\caption{\label{f:bootcamps}Cumulative Number of Boot Camps}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
-\includegraphics{enrolment.png}
-\caption{Cumulative Enrolment}
+\includegraphics[width=0.4\textwidth]{enrolment.png}
+\caption{\label{f:enrolment}Cumulative Enrolment}
 \end{figure}
 
 More importantly, feedback from participants is strongly positive. While
@@ -349,7 +305,7 @@ instruction (discussed below), 80-90\% of attendees typically report
 that they were glad they attended and would recommend the boot camps to
 colleagues.
 
-\section{What We Do}
+\section*{What We Do}
 
 So what does a typical boot camp look like?
 
@@ -432,7 +388,7 @@ universities will charge us hundreds or thousands of dollars per day for
 using their classrooms if any money changes hands at any point.
 
 \begin{quote}
-\emph{Commercial Offerings}
+\textbf{Commercial Offerings}
 
 Our material is all Creative Commons licensed, so anyone who wants to
 use it for corporate training can do so without explicit permission from
@@ -468,13 +424,13 @@ are otherwise often under-represented, such as women and minority
 students, since they know in advance that they will be in a supportive
 environment.
 
-\section{Small Things Add Up}
+\section*{Small Things Add Up}
 
 As in chess, success in teaching often comes from the accumulation of
 seemingly small advantages. Here are a few of the less significant
 things we do that we believe have contributed to our success.
 
-\subsection{Live Coding}
+\subsection*{Live Coding}
 
 We use live coding rather than slides: it's more convincing, it enables
 instructors to be more responsive to ``what if?'' questions, and it
@@ -483,7 +439,7 @@ realized we were teaching them by watching us work). This does put more
 of a burden on instructors than a pre-packaged slide deck, but most find
 it more fun.
 
-\subsection{Open Everything}
+\subsection*{Open Everything}
 
 Our grant proposals, mailing lists, feedback from boot camps, and
 everything else that isn't personally sensitive is out in the open.
@@ -491,7 +447,7 @@ While we can't prove it, we believe that the fact that people can see us
 actively succeeding, failing, and learning buys us some credibility and
 respect.
 
-\subsection{Open Lessons}
+\subsection*{Open Lessons}
 
 This is an important special case of the previous point. Anyone who
 wants to use our lessons can take what we have, make changes, and offer
@@ -500,7 +456,7 @@ this workflow is still foreign to most educators, but it is allowing us
 to scale and adapt more quickly and more cheaply than the centralized
 approaches being taken by many high-profile online education ventures.
 
-\subsection{Use What We Teach}
+\subsection*{Use What We Teach}
 
 We also make a point of eating our own cooking, e.g., we use GitHub for
 our web site and to plan boot camps. Again, this buys us credibility,
@@ -509,7 +465,7 @@ things they're going to teach. The (considerable) downside is that it
 can be quite difficult for newcomers to contribute material; we are
 therefore working to streamline that process.
 
-\subsection{Meet the Learners on Their Own Ground}
+\subsection*{Meet the Learners on Their Own Ground}
 
 Learners tell us that it's important to them to leave the boot camp with
 their own working environment set up. We therefore continue to teach on
@@ -521,7 +477,7 @@ their own: older or smaller machines simply aren't fast enough, and
 again, it's important to many learners to leave with their machines set
 up.
 
-\subsection{Collaborative Note-Taking}
+\subsection*{Collaborative Note-Taking}
 
 We often use \href{http://etherpad.org}{Etherpad} for collaborative
 note-taking and to share snippets of code and small data files with
@@ -538,7 +494,7 @@ make mistakes that affect classmates) and because classroom WiFi
 frequently can't handle a flurry of multi-megabyte downloads, and other
 solutions like FTP and Dropbox have similar problems.
 
-\subsection{Sticky Notes and Minute Cards}
+\subsection*{Sticky Notes and Minute Cards}
 
 Giving each learner two sticky notes of different colors allows
 instructors to do quick true/false questions as they're teaching. It
@@ -551,7 +507,7 @@ slow) on the red sticky. It only takes a couple of minutes to collate
 these, and allows instructors to adjust to learners' interests and
 speed.
 
-\subsection{Pair Programming}
+\subsection*{Pair Programming}
 
 Pairing is a good practice in real life, and an even better way to
 teach: partners can not only help each other out during the practical,
@@ -560,7 +516,7 @@ and discuss common research interests during breaks. To facilitate it,
 we strongly prefer flat seating to banked (theater-style) seating; this
 also makes it easier for helpers to reach learners who need assistance.
 
-\subsection{Keep Experimenting}
+\subsection*{Keep Experimenting}
 
 We are constantly trying out new ideas (though not always on purpose).
 As of June 2013, we have several deliberate experiments on the go:
@@ -595,7 +551,7 @@ few lectures in them. We strongly encourage this, and would welcome a
 chance to work with anyone who wishes to explore this themselves.
 \end{description}
 
-\section{Instructor Training}
+\section*{Instructor Training}
 
 To help people teach, we now run an
 \href{http://teaching.software-carpentry.org}{online training course}
@@ -625,8 +581,7 @@ collaborators. This is probably the most important reason from Software
 Carpentry's point of view, since it's what makes our model sustainable.
 \item[\emph{To practice teaching.}]
 This is also important to people contemplating academic careers.
-\item[\emph{To help get people of diverse backgrounds into the
-pipeline.}]
+\item[\emph{To help diversity the pipeline.}]
 Computing is 12-15\% female, and that figure has been \emph{dropping}
 since the 1980s. While figures on female participation in computational
 science are hard to come by, a simple head count shows the same gender
@@ -642,13 +597,13 @@ the room, and don't have to mark anything afterward. It's a refreshing
 change from teaching undergraduate calculus\ldots{}
 \end{description}
 
-\section{TODO}
+\section*{TODO}
 
 We've learned a lot, and we're doing a much better job of reaching and
 teaching people than we did eighteen months ago, but there are still
 many things we need to improve.
 
-\subsection{Too Slow \emph{and} Too Fast}
+\subsection*{Too Slow \emph{and} Too Fast}
 
 The biggest challenge we face is the diversity of our learners'
 backgrounds and skill levels. No matter what we teach, and how fast or
@@ -667,7 +622,7 @@ doesn't know) before each boot camp starts. We hope that will lead to
 some reliable way to stream learners, but short of one-to-one
 interviews, we believe this problem will never go away.
 
-\subsection{Finances}
+\subsection*{Finances}
 
 Our second-biggest problem is long-term financial sustainability. The
 ``host site covers costs'' model allows us to offer more boot camps, but
@@ -678,7 +633,7 @@ do this, and it seems unfair to charge some but not others. We are
 currently exploring other possibilities, including overhead charges for
 administrative costs and various forms of sponsorship.
 
-\subsection{Long-Term Assessment}
+\subsection*{Long-Term Assessment}
 
 Third, while we believe we're helping scientists, we have not yet done
 the long-term follow-up needed to prove this. This is partly because of
@@ -696,7 +651,7 @@ question of what impact we're having on scientists' productivity still
 needs to be addressed.
 
 \begin{quote}
-\emph{Meeting Our Own Standards}
+\textbf{Meeting Our Own Standards}
 
 One of the reasons we need to do long-term follow-up is to find out for
 our own benefit whether we're teaching the right things the right way.
@@ -710,7 +665,7 @@ obviously be able to make better decisions if we had more quantitative
 data to base them on.
 \end{quote}
 
-\subsection{``Is It Supposed to Hurt This Much?''}
+\subsection*{``Is It Supposed to Hurt This Much?''}
 
 Fourth, getting software installed is often harder than using it. This
 is a hard enough problem for experienced users, but almost by definition
@@ -726,7 +681,7 @@ detailed it is, it will be incomprehensible to some, and lacking for
 others.
 
 \begin{quote}
-\emph{Edit This}
+\textbf{Edit This}
 
 And while it may seem like a trivial thing, editing text is always
 harder than we expect. We don't want to encourage people to use naive
@@ -736,7 +691,7 @@ collection of open and almost-open GUI editors, but it remains a
 stumbling block.
 \end{quote}
 
-\subsection{Teaching on the Web}
+\subsection*{Teaching on the Web}
 
 Challenge \#5 is to move more of our teaching and follow-up online. We
 have tried several approaches, from MOOC-style online-only offerings to
@@ -745,7 +700,7 @@ desktop sharing. In all cases, turnout has been mediocre at the start
 and dropped off rapidly. The fact that this is true of most high-profile
 MOOCs as well is little comfort\ldots{}
 
-\subsection{What vs.~How}
+\subsection*{What vs.~How}
 
 Sixth on our list is the tension between teaching the ``what'' and the
 ``how'' of programming. When we teach a scripting language like Python,
@@ -765,7 +720,7 @@ equal'' instead of ``exactly equal'', our learners quite reasonably ask,
 ``What should I use as a tolerance for my computation?'' Saying, ``One
 part in a million, just because,'' isn't satisfying\ldots{}
 
-\subsection{Standardization vs.~Customization}
+\subsection*{Standardization vs.~Customization}
 
 Both of the previous points tie into the challenge of standardizing
 curriculum across a large group of volunteer instructors with very
@@ -776,7 +731,7 @@ we recruit instructors from among scientists is so that they can
 customize content and delivery for local needs---but we need to be more
 systematic about varying on purpose rather than by accident.
 
-\subsection{Watching vs.~Doing}
+\subsection*{Watching vs.~Doing}
 
 Finally, we try to make our teaching as interactive as possible, but we
 still don't give learners hands-on exercises as frequently as we should.
@@ -793,7 +748,7 @@ diversity of learners in the typical boot camp, though we hope that will
 diminish as we organize and recruit along disciplinary lines instead of
 geographically.
 
-\section{Conclusions}
+\section*{Conclusions}
 
 To paraphrase William Gibson, the future is already here---it's just
 that the skills needed to implement it aren't evenly distributed. A
@@ -812,7 +767,107 @@ today, but to allow them to be part of the changes that are transforming
 science in front of our eyes. If you would like to help, we'd like to
 hear from you.
 
-\bibliographystyle{plain}
-\bibliography{software-carpentry-lessons-learned}
+\subsection*{Competing Interests}
+
+The author is an employee of the Mozilla Foundation. Over the years,
+Software Carpentry has received support from:
+
+\begin{itemize}
+\item
+  The Sloan Foundation
+\item
+  Microsoft
+\item
+  NumFOCUS
+\item
+  Continuum Analytics
+\item
+  Enthought
+\item
+  The Python Software Foundation
+\item
+  Indiana University
+\item
+  Michigan State University
+\item
+  MITACS
+\item
+  The Mozilla Foundation
+\item
+  Queen Mary University London
+\item
+  Scimatic Inc.
+\item
+  SciNET
+\item
+  SHARCNET
+\item
+  The UK Met Office
+\item
+  The MathWorks
+\item
+  Los Alamos National Laboratory
+\item
+  Lawrence Berkeley National Laboratory
+\end{itemize}
+
+\subsection*{Grant Information}
+
+Software Carpentry is currently supported by a grant from the Sloan
+Foundation.
+
+\subsection*{Acknowledgements}
+
+The author wishes to thank Brent Gorda, who helped create Software
+Carpentry sixteen years ago; the hundreds of people who have helped
+organize and teach workshops over the years; and the thousands of
+people who have taken a few days to learn how to get more science
+done in less time, with less pain.  Particular thanks go to the
+following for their comments, corrections, and inspiration:
+
+\begin{itemize}
+\item
+  Azalee Bostroem (Space Telescope Science Institute)
+\item
+  Chris Cannam (Queen Mary, University of London)
+\item
+  Stephen Crouch (Software Sustainability Institute)
+\item
+  Matt Davis (Space Telescope Science Institute)
+\item
+  Luis Figueira (Queen Mary, University of London)
+\item
+  Richard ``Tommy'' Guy (Wave Accounting)
+\item
+  Edmund Hart (University of British Columbia)
+\item
+  Neil Chue Hong (Software Sustainability Institute)
+\item
+  Katy Huff (University of Wisconsin)
+\item
+  Michael Jackson (Edinburgh Parallel Computing Centre)
+\item
+  W. Trevor King (Drexel University)
+\item
+  Justin Kitzes (University of California, Berkeley)
+\item
+  Stephen McGough (University of Newcastle)
+\item
+  Lex Nederbragt (University of Oslo)
+\item
+  Tracy Teal (Michigan State University)
+\item
+  Ben Waugh (University College London)
+\item
+  Lynne J. Williams (Rotman Research Institute)
+\item
+  Ethan White (Utah State University)
+\end{itemize}
+
+
+
+\nocite{*}
+{\small\bibliographystyle{unsrt}
+\bibliography{software-carpentry-lessons-learned}}
 
 \end{document}
