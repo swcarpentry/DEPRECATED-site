@@ -7,16 +7,14 @@ boot camps.
 import datetime
 import os
 import sys
-import re
-import yaml
 from optparse import OptionParser
-from PyRSS2Gen import RSS2, RSSItem, Guid
+from PyRSS2Gen import Category, Guid
 from make_rss_feed import ContentEncodedRSS2, ContentEncodedRSSItem
 try:  # Python 3
     from urllib.parse import urlparse
 except ImportError:  # Python 2
     from urlparse import urlparse
-from util import CONFIG_YML, STANDARD_YML, load_info
+from util import load_info
 
 #----------------------------------------
 
@@ -32,11 +30,7 @@ def main():
 
     # TODO - TEST TO UPDATE BOOTCAMP_URLS
     # TODO - SORT INTO DATE ORDER
-    # TODO - CLEAN UP RSS FEED CONTENT
     # TODO - PARSE FEED FOR COMPLIANCE
-    # TODO - resolve country
-    # TODO - resolve pubDate w.r.t specification
-    # TODO - replace title and description
     # http://cyber.law.harvard.edu/rss/rss.html
     # http://www.w3schools.com/rss/rss_item.asp
     # python bin/make_bootcamps.py -o _site/ -s _site/
@@ -61,28 +55,41 @@ def build_bootcamp_rss(config, filename):
     Generate RSS2 file for bootcamps given the metadata blobs for
     recent bootcamps.
     '''
-    items = []
     site = config['site']
+    # TODO REMOVE
+    site='http://software-carpentry.org'
+    publish_time = datetime.datetime.now()
+    items = []
+
     for bc in config['bootcamps']:
-        if bc['country'] == 'United-Kingdom':
-            # Create RSS items.
-            at = ''
-            if bc.get('address'):
-                at = 'at {0}'.format(bc['address'])
-            instructors = ''
-            if bc.get('instructor'):
-                instructors='led by {0}'.format(', '.join(bc['instructor']))
-            description = 'A boot camp will be held on {0} {1} {2}'.format(bc['humandate'], at, instructors)
-            guid = Guid('{0}/{1}'.format(site,bc['slug']), isPermaLink=False)
-            items.append(ContentEncodedRSSItem(title=bc['venue'],
-#                                               creator=bc['contact'],
-                                               author=bc['contact'],
-                                               guid=guid,
-                                               link=bc['url'],
-                                               description=description,
-                                               content=bc['country'],
-#                                               category=bc['country'],
-                                               pubDate=datetime.datetime.fromordinal(bc['startdate'].toordinal())))
+        # Create RSS items.
+        at = ''
+        if bc.get('address'):
+            at = 'at {0}'.format(bc['address'])
+        instructors = ''
+        if bc.get('instructor'):
+            instructors='led by {0}'.format(', '.join(bc['instructor']))
+        description = 'A boot camp will be held on {0} {1} {2}'.format(bc['humandate'], at, instructors)
+        guid = Guid('{0}/{1}'.format(site,bc['slug']), isPermaLink=False)
+        country = Category(bc['country'], 'http://software-carpentry.org/locations')
+        items.append(ContentEncodedRSSItem(title=bc['venue'],
+                                           creator=bc['contact'],
+                                           guid=guid,
+#                                           link=bc['url'],
+                                           link=site, # TODO remove
+                                           description=description,
+                                           categories=[country],
+                                           pubDate=publish_time))
+
+    items2 = [ContentEncodedRSSItem(title=bc['venue'],
+                                   creator=bc['contact'],
+                                   guid=get_guid(site, bc),
+#                                   link=bc['url'],
+                                   link=site, # TODO remove
+                                   description=get_description(bc),
+                                   categories=[get_country(site, bc)],
+                                   pubDate=publish_time)
+           for bc in config['bootcamps']]
 
     # Create RSS feed.
     rss = ContentEncodedRSS2(title='Software Carpentry boot camps',
@@ -94,6 +101,21 @@ def build_bootcamp_rss(config, filename):
     # Save.
     with open(filename, 'w') as writer:
         rss.write_xml(writer)
+
+def get_guid(site, bootcamp):
+    return Guid('{0}/{1}'.format(site,bootcamp['slug']), isPermaLink=False)
+
+def get_country(site, bootcamp):
+    return Category(bootcamp['country'], '{0}/{1}'.format(site, 'locations'))
+
+def get_description(bootcamp):
+    address = ''
+    if bootcamp.get('address'):
+        address = 'at {0}'.format(bootcamp['address'])
+    instructors = ''
+    if bootcamp.get('instructor'):
+        instructors='led by {0}'.format(', '.join(bootcamp['instructor']))
+    return 'A boot camp will be held on {0} {1} {2}'.format(bootcamp['humandate'], address, instructors)
 
 #----------------------------------------
 
