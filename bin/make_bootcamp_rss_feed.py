@@ -25,8 +25,10 @@ def main():
     config = load_info(os.curdir)
     config['site'] = options.site
 
+    bootcamps = get_future_boot_camps(config['bootcamps'])
     build_bootcamp_rss(config,
-                       os.path.join(options.output, 'bootcamp-feed.xml'))
+                       os.path.join(options.output, 'bootcamp-feed.xml'),
+                       bootcamps)
 
 #----------------------------------------
 
@@ -43,7 +45,7 @@ def parse_args():
 
 #----------------------------------------
 
-def build_bootcamp_rss(config, filename):
+def build_bootcamp_rss(config, filename, bootcamps):
     '''
     Generate RSS2 file for bootcamps given the metadata blobs for
     recent bootcamps.
@@ -58,7 +60,7 @@ def build_bootcamp_rss(config, filename):
                                    description=get_description(bc),
                                    categories=[get_country(site, bc)],
                                    pubDate=publish_time)
-             for bc in config['bootcamps']]
+             for bc in bootcamps]
 
     # Create RSS feed.
     rss = ContentEncodedRSS2(title='Software Carpentry boot camps',
@@ -70,6 +72,16 @@ def build_bootcamp_rss(config, filename):
     # Save.
     with open(filename, 'w') as writer:
         rss.write_xml(writer)
+
+def get_future_boot_camps(bootcamps):
+    '''
+    Create a list of boot camps that are in the future and return these
+    in reverse chronological order.
+    '''
+    publish_date = datetime.datetime.now().date()
+    bootcamps = [bc for bc in bootcamps if bc['startdate'] >= publish_date]
+    bootcamps.reverse()
+    return bootcamps
 
 def get_guid(site, bootcamp):
     '''
