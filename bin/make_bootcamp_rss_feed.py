@@ -49,15 +49,12 @@ def build_bootcamp_rss(config, filename):
     recent bootcamps.
     '''
     site = config['site']
-    # TODO REMOVE
-    site='http://software-carpentry.org'
     publish_time = datetime.datetime.now()
     # Create RSS items.
     items = [ContentEncodedRSSItem(title=bc['venue'],
                                    creator=bc['contact'],
                                    guid=get_guid(site, bc),
-#                                   link=bc['url'],
-                                   link=site, # TODO remove
+                                   link=bc['url'],
                                    description=get_description(bc),
                                    categories=[get_country(site, bc)],
                                    pubDate=publish_time)
