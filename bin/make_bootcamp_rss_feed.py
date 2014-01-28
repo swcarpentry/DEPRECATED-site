@@ -70,7 +70,7 @@ def build_bootcamp_rss(config, filename):
     site = config['site']
     for bc in config['bootcamps']:
         if bc['country'] == 'United-Kingdom':
-            print bc
+#            print bc
 #            lines.extend(self.bootcamp(config['site'], config['timestamp'], bc))
             # Create RSS items.
             items.append(ContentEncodedRSSItem(title=bc['venue'],
@@ -100,7 +100,7 @@ class BootCampWriter(object):
         lines = ['BEGIN',]
         for bc in config['bootcamps']:
             if bc['country'] == 'United-Kingdom':
-                print bc
+#                print bc
                 lines.extend(self.bootcamp(config['site'], config['timestamp'], bc))
         lines.extend(['END', ''])
         content = '\r\n'.join(lines)
