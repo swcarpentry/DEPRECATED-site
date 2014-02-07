@@ -4,9 +4,11 @@
 \usepackage{enumitem}
 \begin{document}
 
-\title{Software Carpentry: Lessons Learned}
+% clarify we/I/the author
+
+\title{Software Carpentry: lessons learned}
 \author[1]{Greg Wilson}
-\affil[1]{Mozilla Foundation / gvwilson@software-carpentry.org}
+\affil[1]{Mozilla Science Lab / gvwilson@software-carpentry.org}
 
 \maketitle
 \thispagestyle{fancy}
@@ -14,7 +16,7 @@
 \begin{abstract}
 
 Over the last 15 years, Software Carpentry has evolved from a week-long
-training course at the US national laboratories into a worldwide
+training course at the US National Laboratories into a worldwide
 volunteer effort to raise standards in scientific computing. This
 article explains what we have learned along the way the challenges we
 now face, and our plans for the future.
@@ -36,20 +38,20 @@ magnitude in solving power. A model that might have taken a year to
 solve 10 years ago can now solve in less than 30 seconds.''
 \end{quote}
 
-A million-fold speedup is impressive, but hardware and algorithms are
+A million-fold speed-up is impressive, but hardware and algorithms are
 only two sides of the iron triangle of programming. The third is
 programming itself, and while improvements to languages, tools, and
 practices have undoubtedly made software developers more productive
-since 1987, the speedup is percentages rather than orders of magnitude.
+since 1987, the speed-up is percentages rather than orders of magnitude.
 Setting aside the minority who do high-performance computing (HPC), the
 time it takes the ``desktop majority'' of scientists to produce a new
 computational result is increasingly dominated by how long it takes to
 write, test, debug, install, and maintain software.
 
-The problem is, most scientists are never taught how to do this. While
+The problem is that most scientists are never taught how to do this. While
 their undergraduate programs may include a generic introduction to
 programming or a statistics or numerical methods course (in which
-they're often expected to pick up programming on their own), they are
+they are often expected to pick up programming on their own), they are
 almost never told that version control exists, and rarely if ever shown
 how to design a maintainable program in a systematic way, or how to turn
 the last twenty commands they typed into a re-usable script. As a
@@ -62,7 +64,7 @@ over 4300 scientists in 2013. In them, more than 100 volunteer
 instructors helped attendees learn about program design, task
 automation, version control, testing, and other unglamorous but
 time-tested skills \cite{wilson2013}. Two independent assessments in
-2012 showed that attendees are actually learning and applying at least
+2012 showed that attendees are actually learning, and applying at least
 some of what we taught; quoting \cite{aranda2012}:
 
 \begin{quote}
@@ -78,23 +80,23 @@ recommend the workshop to others).
 
 Despite these generally positive results, many researchers still find it
 hard to apply what we teach to their own work, and several of our
-experiments---most notably our attempts to teach online---have been
+experiments, most notably our attempts to teach online, have been
 failures.
 
-\section*{From Red to Green}
+\section*{From red to green}
 
 Some historical context will help explain where and why we have
 succeeded and failed.
 
-\subsection*{Version 1: Red Light}
+\subsection*{Version 1: Red light}
 
 In 1995-96, the author organized a series of articles in \emph{IEEE
 Computational Science \& Engineering} titled, ``What Should Computer
 Scientists Teach to Physical Scientists and Engineers?'' \cite{wilson1996}.
 The articles grew out of the frustration he had working with scientists
-who wanted to run before they could walk---i.e., to parallelize complex
-programs that weren't broken down into self-contained functions, that
-didn't have any automated tests, and that weren't under version control
+who wanted to run before they could walk, i.e., to parallelize complex
+programs that were not broken down into self-contained functions, that
+did not have any automated tests, and that were not under version control
 \cite{wilson2006a}.
 
 In response, John Reynders (then director of the Advanced Computing
@@ -113,15 +115,15 @@ were learned:
 \item
   Textbook software engineering is not the right thing to teach most
   scientists. In particular, careful documentation of requirements and
-  lots of up-front design aren't appropriate for people who (almost by
-  definition) don't yet know what they're trying to do. Agile
+  lots of up-front design are not appropriate for people who (almost by
+  definition) do not yet know what they are trying to do. Agile
   development methods, which rose to prominence during this period, are
   a less bad fit to researchers' needs, but even they are not well
   suited to the ``solo grad student'' model of working so common in
   science.
 \end{enumerate}
 
-\subsection*{Versions 2 and 3: Another Red Light}
+\subsection*{Versions 2 and 3: Another red light}
 
 The Software Carpentry course materials were updated and released in
 2004-05 under a Creative Commons license thanks to support from the
@@ -146,7 +148,7 @@ offer credit courses at some inter-departmental level, this course,
 like many other interdisciplinary courses, fell between two stools.
 
 \begin{quote}
-\textbf{It Works Too Well to be Interesting}
+\textbf{It works too well to be interesting}
 
 We have also found that what we teach simply isn't interesting to most
 computer scientists. They are interested in doing research to advance
@@ -164,7 +166,7 @@ Piecemeal improvement may be normal in open source development, but
 Wikipedia aside, it is still rare in other fields. In particular,
 people often use one another's slide decks as starting points for
 their own courses, but rarely offer their changes back to the original
-author in order to improve it. This is partly because educators'
+author in order to improve them. This is partly because educators'
 preferred file formats (Word, PowerPoint, and PDF) can't be handled
 gracefully by existing version control systems, but more importantly,
 there simply isn't a ``culture of contribution'' in education for
@@ -174,16 +176,17 @@ The most important lesson learned in this period was that while many
 faculty in science, engineering, and medicine agree that their
 students should learn more about computing, they \emph{won't} agree on
 what to take out of the current curriculum to make room for it. A
-typical undergraduate science degree has roughly 1800 hours of class
-and laboratory time; anyone who wants to add more programming,
-statistics, writing, or anything else must either lengthen the program
-(which is financially and institutionally infeasible) or take
-something out. However, everything in the program is there because it
-has a passionate defender who thinks it's vitally important, and who
-is likely senior to those faculty advocating the change.
+typical undergraduate science degree in the US or Canada has roughly
+1800 hours of class and laboratory time; anyone who wants to add more
+programming, statistics, writing, or anything else must either
+lengthen the program (which is financially and institutionally
+infeasible) or take something out. However, everything in the program
+is there because it has a passionate defender who thinks it's vitally
+important, and who is likely senior to those faculty advocating the
+change.
 
 \begin{quote}
-\textbf{It Adds Up}
+\textbf{It adds up}
 
 Saying, ``We'll just add a little computing to every other course,'' is
 a cheat: five minutes per hour equals four entire courses in a four-year
@@ -197,7 +200,7 @@ three years of graduate school. At that point, students have time (at
 least, more time than they'll have once they're faculty) and real
 problems of their own that they want to solve.
 
-\subsection*{Version 4: Orange Light}
+\subsection*{Version 4: orange light}
 
 The author rebooted Software Carpentry in May 2010 with support from
 Indiana University, Michigan State University, Microsoft, MITACS, Queen
@@ -222,9 +225,11 @@ Despite this round's overall success, there were several
 disappointments:
 
 \begin{enumerate}
+
 \item
   Once again, we discovered that five eight-hour days are more wearying
   than enlightening.
+
 \item
   And once again, only a handful of other people contributed material,
   not least because creating videos is significantly more challenging
@@ -233,12 +238,14 @@ disappointments:
   the change, saving, and re-exporting the PDF, inserting new slides
   into a video and updating the soundtrack seems to take at least half
   an hour regardless of how small the change is.
+
 \item
   Most importantly, the MOOC format didn't work: only 5-10\% of those
-  who started with us finished, and the majority were people who already
-  knew most of the material. Both figures are in line with completion
-  rates and learner demographics for other MOOCs \cite{jordan2013}, but
-  are no less disappointing because of that.
+  who started with us completed the course, and the majority were
+  people who already knew most of the material. Both figures are in
+  line with completion rates and learner demographics for other MOOCs
+  \cite{jordan2013}, but are no less disappointing because of that.
+
 \end{enumerate}
 
 The biggest take-away from this round was the need come up with a
@@ -246,18 +253,18 @@ scalable, sustainable model. One instructor simply can't reach enough
 people, and cobbling together funding from half a dozen different
 sources every twelve to eighteen months is a high-risk approach.
 
-\subsection*{Version 5: Green Light}
+\subsection*{Version 5: green light}
 
 Software Carpentry restarted once again in January 2012 with a new
 grant from the Sloan Foundation, and backing from the Mozilla
 Foundation. This time, the model was two-day intensive workshops like
 those pioneered by The Hacker Within, a grassroots group of grad
-students helping grad students at the University of Wisconsin --
+students helping grad students at the University of Wisconsin -
 Madison.
 
 Shortening the workshops made it possible for more people to attend,
-and increased the proportion of material they retained. It also forced
-us to think much harder about what skills scientists really
+and increased the proportion of the material they retained. It also
+forced us to think much harder about what skills scientists really
 needed. Out went object-oriented programming, XML, Make, GUI
 construction, design patterns, and software development
 lifecycles. Instead, we focused on a handful of tools (discussed in
@@ -266,11 +273,11 @@ learners really noticing.
 
 Reaching more people also allowed us to recruit more instructors from
 workshop participants, which was essential for scaling. Switching to a
-``host site covers costs'' model was equally important: we still need
-funding for the coordinator positions (the author and two part-time
-administrative assistants at Mozilla, and part of one staff member's
-time at the Software Sustainability Institute in the UK), but our
-other costs now take care of themselves.
+``host site covers costs'' model was equally important: funding is
+still needed for the coordinator positions (the author and two
+part-time administrative assistants at Mozilla, and part of one staff
+member's time at the Software Sustainability Institute in the UK), but
+our other costs now take care of themselves.
 
 Our two-day workshops have been an unqualified success. Both the number
 of workshops, and the number of people attending, have grown steadily:
@@ -278,22 +285,22 @@ of workshops, and the number of people attending, have grown steadily:
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{workshops.pdf}
-\caption{\label{f:workshops}Cumulative Number of Workshops}
+\caption{\label{f:workshops}Cumulative number of workshops}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{\label{f:enrolment}Cumulative Enrolment}
+\caption{\label{f:enrolment}Cumulative enrolment}
 \end{figure}
 
-More importantly, feedback from participants is strongly positive. While
-there are continuing problems with software setup and the speed of
-instruction (discussed below), 80-90\% of attendees typically report
-that they were glad they attended and would recommend the workshops to
-colleagues.
+More importantly, feedback from participants is strongly
+positive. While there are continuing problems with software set-up and
+the speed of instruction (discussed below), 80-90\% of attendees
+typically report that they were glad they attended and would recommend
+the workshops to colleagues.
 
-\section*{What We Do}
+\section*{What we do}
 
 So what does a typical workshop look like?
 
@@ -311,15 +318,15 @@ So what does a typical workshop look like?
   step-by-step as a set of comprehensible, reusable, and testable
   functions.
 \item
-  \emph{Day 2 a.m.}: Version control. We begin by emphasizing how it's
-  a better way to back up files than creating directories with names
+  \emph{Day 2 a.m.}: Version control. We begin by emphasizing how this
+  is a better way to back up files than creating directories with names
   like ``final'', ``really\_final'', ``really\_final\_revised'', and
   so on, then show them that it's also a better way to collaborate
   than FTP or Dropbox.
 \item
   \emph{Day 2 p.m.}: Using databases and SQL.  The real goal is to
-  show them what structured data actually is---in particular, why
-  atomic values and keys are important---so that they will understand
+  show them what structured data actually is (in particular, why
+  atomic values and keys are important) so that they will understand
   why it's important to store information this way.
 \end{itemize}
 
@@ -350,41 +357,47 @@ is the \emph{lingua franca} of statistical computing, particularly in
 the life sciences. A handful of workshops also cover tools such as
 LaTeX, or domain-specific topics such as audio file processing. We hope
 to do more of the latter going forward now that we have enough
-instructors to specialize.
+instructors to be able to specialize.
 
 We aim for no more than 40 people per room at a workshop, so that
 every learner can receive personal attention when needed.  Where
 possible, we now run two or more rooms side by side, and use a
 pre-assessment questionnaire as a sorting hat to stream learners by
 prior experience, which simplifies teaching and improves their
-experience.  We do \emph{not} to shuffle people from one room to
-another between the first and second day: with the best
-inter-instructor coordination in the world, it still results in
-duplication, missed topics, and jokes that make no sense.
+experience.  We do \emph{not} shuffle people from one room to another
+between the first and second day: with the best inter-instructor
+coordination in the world, doing so would still result in duplication,
+missed topics, and jokes that make no sense.
 
-Our workshops were initially free, but we now often have a small
-registration fee (typically \$20--40), primarily because it reduces
-the no-show rate from a third to roughly 5\%.  When we do this, we
-must be very careful not to trip over institutional rules about
-commercial use of their space: some universities will charge us
-hundreds or thousands of dollars per day for using their classrooms if
-any money changes hands at any point.  We have also experimented with
-refundable deposits, but the administrative overheads were
-unsustainable.
+Our workshops are often free, but many now charge a small registration
+fee (typically \$20-40), primarily because it reduces the no-show rate
+from a third to roughly 5\%.  When this is done, we must be careful
+not to trip over institutional rules about commercial use of their
+space: some universities will charge hundreds or thousands of dollars
+per day for use of their classrooms if any money changes hands.  As
+this is usually several times more than a small registration fee would
+bring in, we usually choose the higher no-show rate as the lesser
+evil.
+
+We have also experimented with refundable deposits, but the
+administrative overheads were unsustainable.  It also does not help
+get around the rules mentioned in the previous paragraph, since money
+still appears to be changing hands in the university's eyes.
 
 \begin{quote}
-\textbf{Commercial Offerings}
+\textbf{Commercial offerings}
 
-Our material is all covered by the Creative Commons -- Attribution
-license, so anyone who wants to use it for corporate training can do
-so without explicit permission from us. We encourage this: it would be
-great if graduate students could help pay their bills by sharing what
-they know, in the way that many programmers earn part or all of their
-living from working on open source software.
+Our material \cite{swcsite,swcgithub} is all covered by the Creative
+Commons Attribution license, so anyone who wants to use it for
+corporate training can do so without explicit permission from us. We
+encourage this: it would be great if graduate students could help pay
+their bills by sharing what they know, in the way that many
+programmers earn part or all of their living from working on open
+source software.
 
 What \emph{does} require permission is use of our name and logo, both
-of which are trademarked. We're happy to give that permission if we've
-certified the instructor and have a chance to double-check the
+of which are trademarked. We are happy to give such permission if we
+have certified the instructor and have a chance to double-check the
 content, but we do want a chance to check: we have had instances of
 people calling something ``Software Carpentry'' when it had nothing to
 do with what we usually teach. We've worked hard to create material
@@ -393,30 +406,30 @@ around it, and we'd like to make sure our name continues to mean
 something.
 \end{quote}
 
-As well as instructors, we rely local helpers to wander the room and
-answer questions during practicals. These helpers may be participants in
-previous workshops who are interested in becoming instructors, grad
-students who've picked up some or all of this on their own, or members
-of the local open source community; where possible, we aim to have at
-least one helper for every eight learners.
+As well as instructors, we rely on local helpers to wander the room
+and answer questions during practical sessions. These helpers may be
+alumni of previous workshops who are interested in becoming
+instructors, grad students who have picked up some or all of this on
+their own, or members of the local open source community; where
+possible, we aim to have at least one helper for every eight learners.
 
-We find workshops go a lot better if people come in groups (e.g., 4--5
+We find workshops go a lot better if people come in groups (e.g., 4-5
 people from one lab) or have other pre-existing ties (e.g., the same
 disciplinary background). They are less inhibited about asking
 questions, and can support each other (morally and technically) when
 the time comes to put what they've learned into practice after the
-workshop is over. Group signups also yield much higher turnout from
+workshop is over. Group sign-ups also yield much higher turnout from
 groups that are otherwise often under-represented, such as women and
 minority students, since they know in advance that they will be in a
 supportive environment.
 
-\section*{Small Things Add Up}
+\section*{Small things add up}
 
 As in chess, success in teaching often comes from the accumulation of
 seemingly small advantages. Here are a few of the less significant
 things we do that we believe have contributed to our success.
 
-\subsection*{Live Coding}
+\subsection*{Live coding}
 
 We use live coding rather than slides: it's more convincing, it enables
 instructors to be more responsive to ``what if?'' questions, and it
@@ -425,15 +438,15 @@ realized we were teaching them by watching us work). This does put more
 of a burden on instructors than a pre-packaged slide deck, but most find
 it more fun.
 
-\subsection*{Open Everything}
+\subsection*{Open everything}
 
 Our grant proposals, mailing lists, feedback from workshops, and
-everything else that isn't personally sensitive is out in the open.
-While we can't prove it, we believe that the fact that people can see us
-actively succeeding, failing, and learning buys us some credibility and
-respect.
+everything else that isn't personally sensitive are out in the open
+(see \cite{swcsite} for links).  While we cannot prove it, we believe
+that the fact that people can see us actively succeeding, failing, and
+learning earns us some credibility and respect.
 
-\subsection*{Open Lessons}
+\subsection*{Open lessons}
 
 This is an important special case of the previous point. Anyone who
 wants to use our lessons can take what we have, make changes, and offer
@@ -442,7 +455,7 @@ this workflow is still foreign to most educators, but it is allowing us
 to scale and adapt more quickly and more cheaply than the centralized
 approaches being taken by many high-profile online education ventures.
 
-\subsection*{Use What We Teach}
+\subsection*{Use what we teach}
 
 We also make a point of eating our own cooking, e.g., we use GitHub for
 our web site and to plan workshops. Again, this buys us credibility,
@@ -451,19 +464,19 @@ things they're going to teach. The (considerable) downside is that it
 can be quite difficult for newcomers to contribute material; we are
 therefore working to streamline that process.
 
-\subsection*{Meet the Learners on Their Own Ground}
+\subsection*{Meet the learners on their own ground}
 
-Learners tell us that it's important to them to leave the workshop
+Learners tell us that it is important to them to leave the workshop
 with their own working environment set up. We therefore continue to
 teach on all three major platforms (Linux, Mac OS X, and Windows),
 even though it would be simpler to require learners to use just
 one. We have experimented with virtual machines on learners' computers
 to reduce installation problems, but those introduce problems of their
 own: older or smaller machines simply aren't fast enough.  We have
-also tried using VMs in the cloud, but this makes us dependent on
-university-quality WiFi\ldots{}
+also tried using virtual machines (VMs) in the cloud, but this makes
+us dependent on university-quality WiFi\ldots{}
 
-\subsection*{Collaborative Note-Taking}
+\subsection*{Collaborative note-taking}
 
 We often use \href{http://etherpad.org}{Etherpad} for collaborative
 note-taking and to share snippets of code and small data files with
@@ -473,55 +486,57 @@ almost always mentioned positively in post-workshop feedback, and
 several workshop participants have started using it in their own
 teaching.
 
-We are still trying to come up with an equally good way to share larger
-files dynamically as lessons progress.  Version control does \emph{not}
-work, both because our learners are new to it (and therefore likely to
-make mistakes that affect classmates) and because classroom WiFi
-frequently can't handle a flurry of multi-megabyte downloads.
+We are still trying to come up with an equally good way to share
+larger files dynamically as the lessons progress.  Version control
+does \emph{not} work, both because our learners are new to it (and
+therefore likely to make mistakes that affect classmates) and because
+classroom WiFi frequently can't handle a flurry of multi-megabyte
+downloads.
 
-\subsection*{Sticky Notes and Minute Cards}
+\subsection*{Sticky notes and minute cards}
 
 Giving each learner two sticky notes of different colors allows
 instructors to do quick true/false questions as they're teaching. It
-also allows real-time feedback during hands-on work: learners can put a
-green sticky on their laptop when they have something done, or a red
-sticky when they need help. We also use them as minute cards: before
-each break, learners take a minute to write one thing they've learned on
-the green sticky, and one thing they found confusing (or too fast or too
-slow) on the red sticky. It only takes a couple of minutes to collate
-these, and allows instructors to adjust to learners' interests and
-speed.
+also allows real-time feedback during hands-on work: learners can put
+a green sticky note on their laptop when they have something
+completed, or a red one when they need help. We also use them as
+minute cards: before each break, learners take a minute to write one
+thing they've learned on the green sticky note, and one thing they
+found confusing (or too fast or too slow) on the red. It only takes a
+couple of minutes to collate these, and allows the instructors to
+adjust to learners' interests and speed.
 
-\subsection*{Pair Programming}
+\subsection*{Pair programming}
 
 Pairing is a good practice in real life, and an even better way to
 teach: partners can not only help each other out during the practical,
-but clarify each other's misconceptions when the solution is presented,
-and discuss common research interests during breaks. To facilitate it,
-we strongly prefer flat seating to banked (theater-style) seating; this
-also makes it easier for helpers to reach learners who need assistance.
+but can also clarify each other's misconceptions when the solution is
+presented, and discuss common research interests during breaks. To
+facilitate this, we strongly prefer flat (dinner-style) seating to
+banked (theater-style) seating; this also makes it easier for helpers
+to reach learners who need assistance.
 
-\subsection*{Keep Experimenting}
+\subsection*{Keep experimenting}
 
 We are constantly trying out new ideas (though not always on purpose).
 Among our current experiments are:
 
 \begin{description}
 
-\item[\emph{Partner and Adapt}] We have built a very fruitful
-  partnership with the Software Sustainability Institute (SSI), who
-  now manage our activities in the UK, and are adapting our general
+\item[\emph{Partner and adapt:}] We have built a very fruitful
+  partnership with the Software Sustainability Institute (SSI), which
+  now manages our activities in the UK, and are adapting our general
   approach to meet particular local needs.
 
-\item[\emph{A Driver's License for HPC}] As another example of this
+\item[\emph{A driver's license for HPC:}] As another example of this
   collaboration, we are developing a ``driver's license'' for
   researchers who wish to use the DiRAC HPC facility. During several
   rounds of beta testing, we have refined an hour-long exam to assess
   people's proficiency with the Unix shell, testing, Makefiles, and
-  other skills. This exam was deployed in the fall of 2013, and we
-  hope to be able to report on it by mid-2014.
+  other skills. This exam was deployed in late 2013, and we hope to be
+  able to report on it by mid-2014.
 
-\item[\emph{New Channels}] On June 24-25, 2013, we ran our first
+\item[\emph{New channels:}] On June 24-25, 2013, we ran our first
   workshop for women in science, engineering, and medicine. This event
   attracted 120 learners, 9 instructors, a dozen helpers, and direct
   sponsorship from several companies, universities, and non-profit
@@ -529,7 +544,7 @@ Among our current experiments are:
   we are exploring ways to reach other groups that are
   underrepresented in computing.
 
-\item[\emph{Smuggling It Into the Curriculum}] Many of our instructors
+\item[\emph{Smuggling it into the curriculum:}] Many of our instructors
   also teach regular university courses, and several of them are now
   using part or all of our material as the first few lectures in
   them. We strongly encourage this, and would welcome a chance to work
@@ -537,16 +552,15 @@ Among our current experiments are:
 
 \end{description}
 
-\section*{Instructor Training}
+\section*{Instructor training}
 
-To help people teach, we now run an
-\href{http://teaching.software-carpentry.org}{online training course}
-for would-be instructors. It takes 2--4 hours/week of their time for
-12--14 weeks (depending on scheduling interruptions), and introduces
-them to the basics of educational psychology, instructional design,
-and how these things apply to teaching programming. It's necessarily
-very shallow, but most participants report that they find the material
-interesting as well as useful.
+To help people teach, we now run an online training course for
+would-be instructors \cite{swctraining}. It takes 2-4 hours/week of
+their time for 12-14 weeks (depending on scheduling interruptions),
+and introduces them to the basics of educational psychology,
+instructional design, and how these things apply to teaching
+programming. It is necessarily very shallow, but most participants
+report that they find the material interesting as well as useful.
 
 Why do people volunteer as instructors?
 
@@ -572,13 +586,11 @@ Why do people volunteer as instructors?
   This is also important to people contemplating academic careers.
  
 \item[\emph{To help diversify the pipeline.}]  Computing is 12-15\%
-  female, and that figure has been \emph{dropping} since the
-  1980s. While figures on female participation in computational
-  science are hard to come by, a simple head count shows the same
-  gender skew. Some of our instructors are involved in part because
-  they want to help break that cycle by participating in activities
-  like our workshop for women in science and engineering in Boston in
-  June 2013.
+  female, and that figure has been \emph{dropping} since its high
+  point in the 1980s \cite{stross2008}. Some of our instructors are
+  involved in part because they want to help break that cycle by
+  participating in activities like our workshops for women in science
+  and engineering.
 
 \item[\emph{To learn new things, or learn old things in more detail.}]
   Working alongside an instructor with more experience is a great way
@@ -586,7 +598,7 @@ Why do people volunteer as instructors?
 
 \item[\emph{It's fun.}]  Our instructors get to work with smart people
   who actually want to be in the room, and don't have to mark anything
-  afterward. It's a refreshing change from teaching undergraduate
+  afterwards. It's a refreshing change from teaching undergraduate
   calculus\ldots{}
 
 \end{description}
@@ -597,7 +609,7 @@ We've learned a lot, and we're doing a much better job of reaching and
 teaching people than we did eighteen months ago, but there are still
 many things we need to improve.
 
-\subsection*{Too Slow \emph{and} Too Fast}
+\subsection*{Too slow \emph{and} too fast}
 
 The biggest challenge we face is the diversity of our learners'
 backgrounds and skill levels. No matter what we teach, and how fast or
@@ -615,11 +627,11 @@ it seems to work well enough for our purposes.
 
 Our second-biggest problem is financial sustainability. The ``host
 site covers costs'' model allows us to offer more workshops, but does
-not cover the 2 full-time equivalent coordinating positions at the
+not cover the two full-time equivalent coordinating positions at the
 center of it all.  We do ask host sites to donate toward these costs,
 but are still looking for a long-term solution.
 
-\subsection*{Long-Term Assessment}
+\subsection*{Long-term assessment}
 
 Third, while we believe we're helping scientists, we have not yet done
 the long-term follow-up needed to prove this. This is partly because of
@@ -630,63 +642,62 @@ the unknowns cancel out.
 
 What we've done so far is collect verbal feedback at the end of every
 workshop (mostly by asking attendees what went well and what didn't)
-and administer surveys immediately before and afterwards. Neither has
-been done systematically, though, which limits the insight we can
-actually glean. We are taking steps to address that, but the larger
+and to administer surveys immediately before and afterwards. Neither
+has been done systematically, though, which limits the insight we can
+actually glean. We are taking steps to address this, but the larger
 question of what impact we're having on scientists' productivity still
 needs to be addressed.
 
 \begin{quote}
-\textbf{Meeting Our Own Standards}
+\textbf{Meeting our own standards}
 
-One of the reasons we need to do long-term follow-up is to find out for
-our own benefit whether we're teaching the right things the right way.
-As just one example, some of us believe that Subversion is significantly
-easier for novices to understand than Git because there are fewer places
-data can reside and fewer steps in its normal workflow. Others believe
-just as strongly that there is no difference, or that Git is actually
-easier to learn. While learnability isn't the only concern---the large
-social network centered around GitHub is a factor as well---we would
-obviously be able to make better decisions if we had more quantitative
-data to base them on.
+One of the reasons we need to do long-term follow-up is to find out
+for our own benefit whether we're teaching the right things the right
+way.  As just one example, some of us believe that Subversion is
+significantly easier for novices to understand than Git because there
+are fewer places data can reside and fewer steps in its normal
+workflow. Others believe just as strongly that there is no difference,
+or that Git is actually easier to learn. While the large social
+network centered around GitHub is a factor in our choice as well, we
+would obviously be able to make better decisions if we had more
+quantitative data to base them on.
 \end{quote}
 
-\subsection*{``Is It Supposed to Hurt This Much?''}
+\subsection*{``Is it supposed to hurt this much?''}
 
 Fourth, getting software installed is often harder than using it. This
-is a hard enough problem for experienced users, but almost by definition
-our audience is \emph{inexperienced}, and our learners don't (yet) know
-about system paths, environment variables, the half-dozen places
-configuration files can lurk on a modern system, and so on. Combine that
-with two version of Mac OS X, three of Windows, and two oddball Linux
-installations, and it's almost inevitable that every time we introduce a
-new tool, it won't work as expected (or at all) for at least one person
-in the room. Detailed documentation has not proven effective: some
-learners won't read it (despite repeated prompting), and no matter how
-detailed it is, it will be incomprehensible to some, and lacking for
-others.
+is a hard enough problem for experienced users, but almost by
+definition our audience is \emph{inexperienced}, and our learners
+don't (yet) know about system paths, environment variables, the
+half-dozen places configuration files can lurk on a modern system, and
+so on. Combine that with two versions of Mac OS X, three of Windows,
+and two oddball Linux distributions, and it's almost inevitable that
+every time we introduce a new tool, it won't work as expected (or at
+all) for at least one person in the room. Detailed documentation has
+not proven effective: some learners won't read it (despite repeated
+prompting), and no matter how detailed it is, it will be
+incomprehensible to some, and lacking for others.
 
 \begin{quote}
-\textbf{Edit This}
+\textbf{Edit this}
 
 And while it may seem like a trivial thing, editing text is always
 harder than we expect. We don't want to encourage people to use naive
 editors like Notepad, and the two most popular legacy editors on Unix
 (Vi and Emacs) are both usability nightmares. We now recommend a
-collection of open and almost-open GUI editors, but it remains a
-stumbling block.
+handful of GUI editors, but it remains a stumbling block.
 \end{quote}
 
-\subsection*{Teaching on the Web}
+\subsection*{Teaching on the web}
 
-Challenge \#5 is to move more of our teaching and follow-up online. We
-have tried several approaches, from MOOC-style online-only offerings to
-webcast tutorials and one-to-one online office hours via VoIP and
-desktop sharing. In all cases, turnout has been mediocre at the start
-and dropped off rapidly. The fact that this is true of most high-profile
-MOOCs as well is little comfort\ldots{}
+Challenge number five is to move more of our teaching and follow-up
+online. We have tried several approaches, from MOOC-style online-only
+offerings to webcast tutorials and one-to-one online office hours via
+internet phone calls and desktop sharing. In all cases, turnout has
+been mediocre at the start and dropped off rapidly. The fact that this
+is also true of most high-profile MOOCs is little comfort.
 
-\subsection*{What vs.~How}
+\subsection*{What vs.~how}
 
 Sixth on our list is the tension between teaching the ``what'' and the
 ``how'' of programming. When we teach a scripting language like Python,
@@ -706,16 +717,16 @@ equal'' instead of ``exactly equal'', our learners quite reasonably ask,
 ``What should I use as a tolerance for my computation?'' for which
 nobody has a good answer.
 
-\subsection*{Standardization vs.~Customization}
+\subsection*{Standardization vs.~customization}
 
 What we \emph{actually} teach varies more widely than the content of
 most university courses with prescribed curricula. We think this is a
-strength---one of the reasons we recruit instructors from among
-scientists is so that they can customize content and delivery for
-local needs---but we need to be more systematic about varying on
-purpose rather than by accident.
+strength, and one of the reasons we recruit instructors from among
+scientists is that they are best placed to customize content and
+delivery for local needs. However, we do need to be more systematic
+about varying our content on purpose rather than by accident.
 
-\subsection*{Watching vs.~Doing}
+\subsection*{Watching vs.~doing}
 
 Finally, we try to make our teaching as interactive as possible, but
 we still don't give learners hands-on exercises as frequently as we
@@ -731,7 +742,7 @@ diversity of learners in the typical workshop, though we hope that will
 diminish as we organize and recruit along disciplinary lines instead of
 geographically.
 
-\subsection*{Better Teaching Practices}
+\subsection*{Better teaching practices}
 
 Computing education researchers have learned a lot in the past two
 decades about why people find it hard to learn how to program, and how
@@ -742,7 +753,7 @@ but are less good about actually applying them in our workshops.
 
 \section*{Conclusions}
 
-To paraphrase William Gibson, the future is already here---it's just
+To paraphrase William Gibson, the future is already here: it's just
 that the skills needed to implement it aren't evenly distributed. A
 small number of scientists can easily build an application that scours
 the web for recently-published data, launch a cloud computing node to
@@ -757,7 +768,7 @@ impossible for them to know what other new things are possible. Our
 ambition is to change that: not just to make scientists more productive
 today, but to allow them to be part of the changes that are transforming
 science in front of our eyes. If you would like to help, we'd like to
-hear from you.
+hear from you: please mail us at admin@software-carpentry.org.
 
 \subsection*{Competing Interests}
 
@@ -864,6 +875,8 @@ following for their comments, corrections, and inspiration:
 
 \section{Pre-Assessment Questionnaire}
 
+These are a few of the questions in our standard pre-assessment questionnaire.
+
 \begin{itemize}
 
 \item
@@ -901,15 +914,6 @@ following for their comments, corrections, and inspiration:
 \item
   In three sentences or less, please describe your current field of
   work or your research question.
-
-\item
-  What OS will you use on the laptop you bring to the workshop?
-  \begin{itemize}[noitemsep]
-    \item Linux
-    \item Apple OS X
-    \item Windows
-    \item I do not know what operating system I use.
-  \end{itemize}
 
 \item
   With which programming languages, if any, could you write a program
@@ -957,15 +961,6 @@ following for their comments, corrections, and inspiration:
     \end{itemize}
 
   \item
-    How familiar are you with Git version control?
-    \begin{itemize}[noitemsep]
-    \item Not familiar with Git.
-    \item Only familiar with the name.
-    \item Familiar with Git but have never used it.
-    \item Familiar with Git because I have used or am using it.
-    \end{itemize}
-
-  \item
     Consider this task: given the URL for a project on GitHub, check
     out a working copy of that project, add a file called notes.txt,
     and commit the change.
@@ -973,34 +968,6 @@ following for their comments, corrections, and inspiration:
     \item Could not complete.
     \item Could complete with documentation or search engine help.
     \item Could complete with little or no documentation or search engine help.
-    \end{itemize}
-
-  \item
-    How familiar are you with unit testing and code coverage?
-    \begin{itemize}[noitemsep]
-    \item Not familiar with unit testing or code coverage.
-    \item Only familiar with the terms.
-    \item Familiar with unit testing or code coverage but have never used it.
-    \item Familiar with unit testing or code coverage because I have used or am using them.
-    \end{itemize}
-
-  \item
-    Consider this task: given a 200-line function to test, write half
-    a dozen tests using a unit testing framework and use code coverage
-    to check that they exercise every line of the function.
-    \begin{itemize}[noitemsep]
-    \item Could not complete.
-    \item Could complete with documentation or search engine help.
-    \item Could complete with little or no documentation or search engine help.
-    \end{itemize}
-
-  \item
-    How familiar are you with SQL?
-    \begin{itemize}[noitemsep]
-    \item Not familiar with SQL.
-    \item Only familiar with the name.
-    \item Familiar with SQL but have never used it.
-    \item Familiar with SQL because I have used or am using them.
     \end{itemize}
 
   \item
@@ -1013,15 +980,6 @@ following for their comments, corrections, and inspiration:
     \item Could not complete.
     \item Could complete with documentation or search engine help.
     \item Could complete with little or no documentation or search engine help.
-    \end{itemize}
-
-  \item
-    How familiar do you think you are with the command line?
-    \begin{itemize}[noitemsep]
-    \item Not familiar with the command line.
-    \item Only familiar with the term.
-    \item Familiar with the command line but have never used it.
-    \item Familiar with the command line because I have or am using it.
     \end{itemize}
 
   \item
