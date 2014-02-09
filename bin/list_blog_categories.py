@@ -9,10 +9,18 @@ import sys
 from collections import defaultdict
 from util import harvest_metadata
 
+show_count, filenames = False, sys.argv[1:]
+if filenames[0] == '-n':
+    show_count, filenames = True, filenames[1:]
+
 categories = defaultdict(set)
-for filename in sys.argv[1:]:
-    these = harvest_metadata(filename)['category']
+for f in filenames:
+    these = harvest_metadata(f)['category']
     for t in these:
-        categories[t].add(filename)
+        categories[t].add(f)
+
 for k in sorted(categories.keys()):
-    print '{0}: {1}'.format(k, ', '.join(categories[k]))
+    if show_count:
+        print '{0}: {1}'.format(len(categories[k]), k)
+    else:
+        print '{0}: {1}'.format(k, len(categories[k]))
