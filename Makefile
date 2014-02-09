@@ -118,6 +118,9 @@ biblio :
 categories :
 	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
+categories_n :
+	@python bin/list_blog_categories.py -n $(SRC_BLOG)
+
 ## check      : build locally into _site directory for checking.
 check :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
