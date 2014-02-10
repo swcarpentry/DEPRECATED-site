@@ -1,0 +1,65 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "An Online Peer Instruction Tool"
+date: 2014-02-09
+time: "09:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  <a href="http://en.wikipedia.org/wiki/Peer_instruction">Peer instruction</a>
+  is a teaching technique originally developed by Eric Mazur and colleagues in the early 1990s.
+  Study after study has shown that peer instructions works better than conventional lecturing,
+  but to the best of my knowledge,
+  no online learning platform directly supports peer instruction.
+  I'd like to fix that,
+  and I hope some of our readers would like to help.
+</p>
+<!-- end excerpt -->
+<p>
+  <a href="http://youtu.be/2LbuoxAy56o">This video</a> shows peer instruction in action
+  in a classroom in India.
+  Its basic instructional cycle is:
+</p>
+<ol>
+  <li>The instructor poses a multiple-choice question.</li>
+  <li>Each student votes for an answer.</li>
+  <li>Students discuss their thinking with their peers.</li>
+  <li>Students re-vote.</li>
+  <li>The instructor reveals and explains the correct answer.</li>
+</ol>
+<p>
+  This technique works better than either someone talking in front of the class
+  or a recorded video.
+  The reason is the discussion phase:
+  it gives learners a chance to find out how other people are thinking,
+  which in turn allows peers to correct each other's misconceptions.
+</p>
+<p>
+  Moodle, Blackboard, and various MOOC platforms don't support that kind of interleaved discussion,
+  and neither do tools Skype.
+  In particular,
+  their voice and chat tools don't directly support transitions between:
+</p>
+<ul>
+  <li>one-to-many broadcast, in which the instructor is presenting to the whole class, and</li>
+  <li>many few-to-few discussions, in which learners talk amongst themselves.</li>
+</ul>
+<p>
+  I'd like a tool
+  that would let the moderator toggle between these two modes
+  so that the group doesn't lose a minute or two making each transition.
+  (I think this would be useful for meetings in general,
+  not just for teaching.)
+  Discussion groups could be set up in a bunch of ways
+  (learner's choice time, moderator-assigned, randomly matched each),
+  and it'd be nice if the voting was built in
+  and if the moderator could ring a bell or something a few seconds before transitions
+  so that learners weren't cut off mid-sentence.
+  Given <a href="http://www.webrtc.org/">WebRTC</a> and some back-end hacking,
+  it seems like a prototype wouldn't be all that difficult to hack together;
+  if you'd like to try,
+  please get in touch.
+</p>

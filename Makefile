@@ -118,6 +118,9 @@ biblio :
 categories :
 	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
+categories_n :
+	@python bin/list_blog_categories.py -n $(SRC_BLOG)
+
 ## check      : build locally into _site directory for checking.
 check :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
@@ -156,7 +159,7 @@ sterile : clean
 #-------------------------------------------------------------------------------
 
 # build : compile site into $(OUT) with $(SITE) as Software Carpentry base URL
-build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/.htaccess $(OUT)/img/main_shadow.png
+build : $(OUT)/bootcamps.ics $(OUT)/feed.xml $(OUT)/bootcamp-feed.xml $(OUT)/.htaccess $(OUT)/img/main_shadow.png
 
 # Copy the .htaccess file.
 $(OUT)/.htaccess : ./_htaccess
@@ -172,6 +175,11 @@ $(OUT)/bootcamps.ics : ./bin/make_calendar.py $(OUT)/index.html
 $(OUT)/feed.xml : ./bin/make_rss_feed.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
 	python ./bin/make_rss_feed.py -o $(OUT) -s $(SITE)
+
+# Make the bootcamp RSS feed file.
+$(OUT)/bootcamp-feed.xml : ./bin/make_bootcamp_rss_feed.py $(OUT)/index.html
+	@mkdir -p $$(dirname $@)
+	python ./bin/make_bootcamp_rss_feed.py -o $(OUT) -s $(SITE)
 
 # Make the site pages (including blog posts).
 $(OUT)/index.html : _config.yml $(SRC_HTML)
