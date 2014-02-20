@@ -162,7 +162,7 @@ def archive(all_urls, results, reader, archiver):
             upcoming_urls.append(all_urls[i])
 
     yaml.dump(upcoming_urls, reader, default_flow_style=False)
-    if archive_info > 0:
+    if archive_info:
         yaml.dump(archive_info, archiver)
 
 if __name__ == '__main__':
