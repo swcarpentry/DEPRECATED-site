@@ -42,7 +42,7 @@ def main(args):
     all_urls = yaml.load(reader)
     reader.close()
 
-    results, faulty = process(all_urls, archive, verbose)
+    results, faulty = process(all_urls, verbose)
     if faulty:
         print >> sys.stderr, 'Errors in these URLs:'
         for f in faulty:
@@ -74,7 +74,7 @@ def setup(args):
 
     return options.input, options.output, options.archive, options.tolerate, options.verbose
 
-def process(all_urls, archive, verbose):
+def process(all_urls, verbose):
     '''
     Process URLs, returning list of valid info structures and list
     of URLs found faulty.
@@ -162,7 +162,8 @@ def archive(all_urls, results, reader, archiver):
             upcoming_urls.append(all_urls[i])
 
     yaml.dump(upcoming_urls, reader, default_flow_style=False)
-    yaml.dump(archive_info, archiver)
+    if archive_info > 0:
+        yaml.dump(archive_info, archiver)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
