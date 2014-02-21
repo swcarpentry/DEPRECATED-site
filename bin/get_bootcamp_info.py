@@ -10,6 +10,7 @@ If it is not, output is only written if *all* entries are correct.
 
 import sys
 import re
+import datetime
 from optparse import OptionParser
 import yaml
 import requests
@@ -29,20 +30,34 @@ CLEANUP = {
 def main(args):
     '''Main driver.'''
 
-    reader, writer, tolerate, verbose = setup(args)
+    reader_filename, writer_filename, archiver_filename, tolerate, verbose = setup(args)
+
+    reader, writer = sys.stdin, sys.stdout
+    if reader_filename != '-':
+        reader = open(reader_filename, 'r')
+    if writer_filename != '-':
+        # We append due the way that we call this script in `Makefile`.
+        writer = open(writer_filename, 'a')
+
     all_urls = yaml.load(reader)
+    reader.close()
 
     results, faulty = process(all_urls, verbose)
     if faulty:
         print >> sys.stderr, 'Errors in these URLs:'
         for f in faulty:
             print >> sys.stderr, '  {0}'.format(f)
+    elif archiver_filename:
+        reader = open(reader_filename, 'w')
+        archiver = open(archiver_filename, 'a')
+        archive(all_urls, results, reader, archiver)
+        reader.close()
+        archiver.close()
 
     if (not faulty) or tolerate:
         cleanup(results)
         yaml.dump(results, writer)
 
-    reader.close()
     writer.close()
 
 def setup(args):
@@ -50,19 +65,14 @@ def setup(args):
     parser = OptionParser()
     parser.add_option('-i', '--input', dest='input', help='input file', default='-')
     parser.add_option('-o', '--output', dest='output', help='output file', default='-')
+    parser.add_option('--archive', dest='archive', help='archive file', default=None)
     parser.add_option('-t', '--tolerate', dest='tolerate', help='tolerate errors',
                       default=False, action='store_true')
     parser.add_option('-v', '--verbose', dest='verbose', help='report progress',
                       default=False, action='store_true')
     options, args = parser.parse_args(args)
 
-    reader, writer = sys.stdin, sys.stdout
-    if options.input != '-':
-        reader = open(options.input, 'r')
-    if options.output != '-':
-        writer = open(options.output, 'w')
-
-    return reader, writer, options.tolerate, options.verbose
+    return options.input, options.output, options.archive, options.tolerate, options.verbose
 
 def process(all_urls, verbose):
     '''
@@ -131,6 +141,29 @@ def fail(template, *args):
     msg = template.format(*args)
     print >> sys.stderr, msg
     sys.exit(1)
+
+def archive(all_urls, results, reader, archiver):
+    upcoming_urls = []
+    archive_info = []
+
+    # Have to loop over the positions to sync all_urls and results
+    for i in range(len(all_urls)):
+        end_url = all_urls[i].split('/')[-1]
+        # Check sync between all_urls and results
+        if end_url == results[i]['slug']:
+            # Check if has at least 30 days that bootcamp ended
+            if ('enddate' in results[i] and
+                    datetime.date.today() - results[i]['enddate'] >
+                    datetime.timedelta(30)):
+                archive_info.append(results[i])
+            else:
+                upcoming_urls.append(all_urls[i])
+        else:
+            upcoming_urls.append(all_urls[i])
+
+    yaml.dump(upcoming_urls, reader, default_flow_style=False)
+    if archive_info:
+        yaml.dump(archive_info, archiver)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
