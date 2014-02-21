@@ -1935,3 +1935,20 @@
   url: http://swcarpentry.github.io/2014-01-18-ucb/
   user: swcarpentry
   venue: University of California Berkeley
+- address: '405 Avenue Ogilvy #101, Montreal'
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-01-21
+  eventbrite: 9698535581
+  humandate: Jan 20-21, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Greg Wilson, Julia Evans]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-01-20-montreal
+  startdate: 2014-01-20
+  url: http://gvwilson.github.io/2014-01-20-montreal/
+  user: gvwilson
+  venue: CRIM (Montreal)
