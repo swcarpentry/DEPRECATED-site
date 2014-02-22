@@ -89,70 +89,84 @@ SWC_BIB = software-carpentry-bibliography
 # By default, show the commands in the file.
 all : commands
 
-## commands   : show all commands.
+## commands     : show all commands.
 # Note the double '##' in the line above: this is what's matched to produce
 # the list of commands.
 commands :
 	@grep -E '^##' Makefile | sed -e 's/## //g'
 
-## authors    : list all blog post authors.
+## authors      : list all blog post authors.
 authors :
 	@python bin/list_blog_authors.py $(SRC_BLOG) | cut -d : -f 1
 
-## cache      : collect bootcamp information from GitHub and store in local cache.
-cache :
+## archive      : collect and archive bootcamp information from GitHub and store in local cache.
+archive :
 	cp $(CONFIG_DIR)/bootcamps_saved.yml ./_bootcamp_cache.yml
 	@python bin/get_bootcamp_info.py -t \
 	    -i $(CONFIG_DIR)/bootcamp_urls.yml \
 	    -o ./_bootcamp_cache.yml \
 	    --archive $(CONFIG_DIR)/bootcamps_saved.yml
 
-## cache_verb : collect bootcamp information from GitHub and store in local cache (verbose).
-cache_verb :
+## archive_verb : collect and archive bootcamp information from GitHub and store in local cache (verbose).
+archive_verb :
 	cp $(CONFIG_DIR)/bootcamps_saved.yml ./_bootcamp_cache.yml
 	@python bin/get_bootcamp_info.py -v -t \
 	    -i $(CONFIG_DIR)/bootcamp_urls.yml \
 	    -o ./_bootcamp_cache.yml \
 	    --archive $(CONFIG_DIR)/bootcamps_saved.yml
 
-## biblio     : make HTML and PDF of bibliography.
+## cache        : collect bootcamp information from GitHub and store in local cache.
+cache :
+	cp $(CONFIG_DIR)/bootcamps_saved.yml ./_bootcamp_cache.yml
+	@python bin/get_bootcamp_info.py -t \
+	    -i $(CONFIG_DIR)/bootcamp_urls.yml \
+	    -o ./_bootcamp_cache.yml
+
+## cache_verb   : collect bootcamp information from GitHub and store in local cache (verbose).
+cache_verb :
+	cp $(CONFIG_DIR)/bootcamps_saved.yml ./_bootcamp_cache.yml
+	@python bin/get_bootcamp_info.py -v -t \
+	    -i $(CONFIG_DIR)/bootcamp_urls.yml \
+	    -o ./_bootcamp_cache.yml
+
+## biblio       : make HTML and PDF of bibliography.
 # Have to cd into 'bib' because bib2xhtml expects the .bst file in
 # the same directory as the .bib file.
 biblio :
 	@cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
 	@cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
 
-## categories : list all blog category names.
+## categories   : list all blog category names.
 categories :
 	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
 
 categories_n :
 	@python bin/list_blog_categories.py -n $(SRC_BLOG)
 
-## check      : build locally into _site directory for checking.
+## check        : build locally into _site directory for checking.
 check :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
 
-## dev        : build into development directory on server.
+## dev          : build into development directory on server.
 dev :
 	make SITE=$(DEV_URL) OUT=$(DEV_DIR) build
 
-## install    : build into installation directory on server.
+## install      : build into installation directory on server.
 install :
 	make SITE=$(INSTALL_URL) OUT=$(INSTALL_DIR) build
 
-## links      : check links.
+## links        : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
 #  which has been put in bin/linklint.
 links :
 	bin/linklint -doc /tmp/site-links -textonly -root _site /@
 
-## valid      : check validity of HTML.
+## valid        : check validity of HTML.
 #  Depends on xmllint being installed.  Ignores entity references.
 valid :
 	xmllint --noout $$(find _site -name '*.html' -print) 2>&1 | python bin/unwarn.py
 
-## clean      : clean up.
+## clean        : clean up.
 clean :
 	@rm -rf \
 	$(GENERATED) \
@@ -160,7 +174,7 @@ clean :
 	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
 	$$(find . -name '*~' -print)
 
-## sterile    : *really* clean up.
+## sterile      : *really* clean up.
 sterile : clean
 	rm -f ./_bootcamp_cache.yml
 

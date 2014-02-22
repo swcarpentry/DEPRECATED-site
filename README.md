@@ -146,6 +146,10 @@ To create a new blog post:
 Available Commands
 ------------------
 
+*   `archive_verb`: collect and archive bootcamp information from GitHub and
+    store in local cache (verbose).
+*   `archive`: collect and archive bootcamp information from GitHub and store in
+    local cache.
 *   `authors`: list all blog post authors.
 *   `biblio`: make HTML and PDF of bibliography.
 *   `cache_verb` : collect bootcamp information from GitHub and store in local cache (verbose).
