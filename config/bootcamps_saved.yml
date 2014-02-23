@@ -1477,10 +1477,17 @@
   url: http://swcarpentry.github.io/2013-09-12-bristol/
   user: swcarpentry
   venue: University of Bristol
-- {country: Canada, enddate: 2013-09-22, humandate: 'Sept 21-22, 2013', latlng: '43.468889,-80.54',
-  layout: bootcamp, registration: open, slug: 2013-09-21-uwaterloo, startdate: 2013-09-21,
-  url: 'http://swcarpentry.github.io/2013-09-21-uwaterloo/', user: swcarpentry, venue: University
-    of Waterloo}
+- country: Canada
+  enddate: 2013-09-22
+  humandate: Sept 21-22, 2013
+  latlng: 43.468889,-80.54
+  layout: bootcamp
+  registration: open
+  slug: 2013-09-21-uwaterloo
+  startdate: 2013-09-21
+  url: http://swcarpentry.github.io/2013-09-21-uwaterloo/
+  user: swcarpentry
+  venue: University of Waterloo
 - country: United-States
   enddate: 2013-09-26
   eventbrite: 7723648641
@@ -1551,12 +1558,20 @@
   url: http://swcarpentry.github.io/2013-10-29-vertpaleo/
   user: swcarpentry
   venue: Society of Vertebrate Paleontology Annual Meeting
-- {address: 'Aquarium Conference Room, NOAA National Marine Fisheries Service, Woods
-    Hole', contact: james.maning@noaa.gov, country: United-States, enddate: 2013-11-15,
-  humandate: 'Nov 14-15, 2013', humantime: '9:00 - 16:30', latlng: '41.526667,-70.663056',
-  layout: bootcamp, registration: open, slug: 2013-11-14-whoi, startdate: 2013-11-14,
-  url: 'http://swcarpentry.github.io/2013-11-14-whoi/', user: swcarpentry, venue: Woods
-    Hole Scientific Community}
+- address: Aquarium Conference Room, NOAA National Marine Fisheries Service, Woods Hole
+  contact: james.maning@noaa.gov
+  country: United-States
+  enddate: 2013-11-15
+  humandate: Nov 14-15, 2013
+  humantime: 9:00 - 16:30
+  latlng: 41.526667,-70.663056
+  layout: bootcamp
+  registration: open
+  slug: 2013-11-14-whoi
+  startdate: 2013-11-14,
+  url: http://swcarpentry.github.io/2013-11-14-whoi/
+  user: swcarpentry
+  venue: Woods Hole Scientific Community
 - address: Phillips Auditorium at the Center for Astrophysics, 60 Garden Street
   contact: harvard@lists.software-carpentry.org
   country: United-States
@@ -1842,7 +1857,7 @@
   humandate: Jan 8-9, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Jonah Duckles, Molly Gibson, Adina Howe, William Trimble]
-  latlng: TBD
+  latlng: 42.02662,-93.64647
   layout: bootcamp
   registration: restricted
   root: .
@@ -2237,7 +2252,7 @@
   humandate: Jan 8-9, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Jonah Duckles, Molly Gibson, Adina Howe, William Trimble]
-  latlng: TBD
+  latlng: 42.02662,-93.64647
   layout: bootcamp
   registration: restricted
   root: .
