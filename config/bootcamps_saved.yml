@@ -1568,7 +1568,7 @@
   layout: bootcamp
   registration: open
   slug: 2013-11-14-whoi
-  startdate: 2013-11-14,
+  startdate: 2013-11-14
   url: http://swcarpentry.github.io/2013-11-14-whoi/
   user: swcarpentry
   venue: Woods Hole Scientific Community
@@ -2361,3 +2361,19 @@
   url: http://gvwilson.github.io/2014-01-20-montreal/
   user: gvwilson
   venue: CRIM (Montreal)
+- address: 3909 Halls Ferry Rd Vicksburg, MS 39180
+  contact: aron@ahmadia.net
+  country: United-States
+  enddate: 2014-01-22
+  humandate: January 21-22, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Aron Ahmadia, Randal Olson]
+  latlng: 32.301199,-90.871617
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-01-21-erdc
+  startdate: 2014-01-21
+  url: http://geocarpentry.github.io/2014-01-21-erdc/
+  user: geocarpentry
+  venue: US Army Engineer Research and Development Center
