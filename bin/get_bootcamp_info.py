@@ -24,7 +24,7 @@ REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
 
 CLEANUP = {
-    'latlng' : lambda(s): s if LATLNG_RE.match(s) else None
+    'latlng' : lambda(s): s if ((type(s) == str) and LATLNG_RE.match(s)) else None
 }
 
 def main(args):
