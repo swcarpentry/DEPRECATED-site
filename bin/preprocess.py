@@ -104,8 +104,15 @@ def main():
     # Get information from legacy boot camp pages and merge with cached info.
     config['bootcamps'] = harvest_bootcamps(options.site, cached_bootcamp_info)
 
-    # Select those that'll be displayed on the home page.
-    upcoming = [bc for bc in config['bootcamps'] if bc['startdate'] >= config['today']]
+    # Select those that'll be displayed on the home page.  Use a loop instead of
+    # a list comprehension to get better error reporting.
+    upcoming = []
+    for bc in config['bootcamps']:
+        try:
+            if bc['startdate'] >= config['today']:
+                upcoming.append(bc)
+        except TypeError, e:
+            print >> sys.stderr, 'Unable to process start date "{0}"'.format(bc['startdate'])
     config['bootcamps_upcoming'] = upcoming[:upcoming_length]
     config['bootcamps_num_upcoming'] = len(upcoming)
 
