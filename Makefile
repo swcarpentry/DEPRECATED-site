@@ -26,22 +26,10 @@ SRC_BLOG = $(wildcard ./blog/????/??/*.html)
 SRC_BOOTCAMP_PAGES = $(wildcard ./bootcamps/????-??-*/index.html)
 
 # All bootcamp source files.
-SRC_BOOTCAMP = $(SRC_BOOTCAMP_PAGES) \
-./bootcamps/index.html \
-./bootcamps/operations.html \
-./bootcamps/previous.html \
-./bootcamps/pre-learner.html \
-./bootcamps/post-learner.html \
-./bootcamps/post-instructor.html
+SRC_BOOTCAMP = $(SRC_BOOTCAMP_PAGES) $(wildcard ./bootcamps/*.html)
 
 # Source files for badge pages.
-SRC_BADGES = \
-./badges/index.html \
-./badges/core.html \
-./badges/creator.html \
-./badges/helper.html \
-./badges/instructor.html \
-./badges/organizer.html
+SRC_BADGES = $(wildcard ./badges/*.html)
 
 # Source files for checklists.
 SRC_CHECKLISTS = ./bootcamps/checklists/*.html
