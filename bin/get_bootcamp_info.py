@@ -23,8 +23,14 @@ REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 
 LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
 
+def _cleanup_handler(record, key, value):
+    if ((type(value) == str) and LATLNG_RE.match(value)):
+        return value
+    else:
+        print >> sys.stderr, 'Bad field in "{0}" for key "{1}": "{2}"'.format(record, key, value)
+        return None
 CLEANUP = {
-    'latlng' : lambda(s): s if LATLNG_RE.match(s) else None
+    'latlng' : _cleanup_handler
 }
 
 def main(args):
@@ -131,10 +137,10 @@ def check_info(url, info):
 
 def cleanup(entries):
     '''Sanitize entries (e.g., convert 'TBD' to none).'''
-    for e in entries:
-        for k in CLEANUP:
-            if k in e:
-                e[k] = CLEANUP[k](e[k])
+    for entry in entries:
+        for key in CLEANUP:
+            if key in entry:
+                entry[key] = CLEANUP[key](entry, key, entry[key])
 
 def fail(template, *args):
     '''Format and print error message, then exit.'''
