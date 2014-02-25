@@ -131,8 +131,8 @@ categories :
 categories_n :
 	@python bin/list_blog_categories.py -n $(SRC_BLOG)
 
-## check        : build locally into _site directory for checking.
-check :
+## site         : build locally into _site directory for checking.
+site :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
 
 ## dev          : build into development directory on server.
@@ -142,6 +142,10 @@ dev :
 ## install      : build into installation directory on server.
 install :
 	make SITE=$(INSTALL_URL) OUT=$(INSTALL_DIR) build
+
+## check        : check consistency of various things.
+check :
+	python bin/check_bootcamp_info.py config/bootcamp_urls.yml config/bootcamps_saved.yml
 
 ## links        : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
