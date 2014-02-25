@@ -1474,6 +1474,7 @@
   url: http://swcarpentry.github.io/2013-09-21-uwaterloo/
   user: swcarpentry
   venue: University of Waterloo
+  instructor: [Gabriel Devenyi, Tommy Guy]
 - country: United-States
   enddate: 2013-09-26
   eventbrite: 7723648641
@@ -1558,6 +1559,7 @@
   url: http://swcarpentry.github.io/2013-11-14-whoi/
   user: swcarpentry
   venue: Woods Hole Scientific Community
+  instructor: [Ross Dickson, Will Trimble]
 - address: 3700 San Martin Drive, Baltimore, MD 21218
   contact: gvwilson@software-carpentry.org
   country: United-States
