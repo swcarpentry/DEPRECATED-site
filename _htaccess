@@ -39,14 +39,6 @@ RewriteRule .* /blog/index.html [R,L]
 
 ### Wordpress Page Redirects ###
 
-# wordpress bootcamps URLs
-RewriteCond %{REQUEST_URI} ^/boot-camps/
-RewriteRule ^(.*) /bootcamps/ [R,L]
-
-# wordpress bootcamps category URLs
-RewriteCond %{REQUEST_URI} ^/category/boot-camp/
-RewriteRule ^(.*) /bootcamps/ [R,L]
-
 # About team page
 RewriteCond %{REQUEST_URI} ^/about/our-team/?$
 RewriteRule ^(.*) /about/team.html [R,L]
@@ -55,10 +47,6 @@ RewriteRule ^(.*) /about/team.html [R,L]
 RewriteCond %{REQUEST_URI} ^/about/.*$
 RewriteCond %{REQUEST_URI} !.html$
 RewriteRule ^(.*?)/?$ $1.html [R,L]
-
-# reading list 
-RewriteCond %{REQUEST_URI} ^/4_0/reading/?$
-RewriteRule ^(.*) /about/biblio.html [R,L]
 
 # Handle 4_0 episode links that don't end in .html 
 RewriteCond %{REQUEST_URI} ^/4_0/[^/]+/.+
