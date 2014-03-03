@@ -54,7 +54,7 @@ we use Python because most of our volunteers speak it.
 *   Type `make` to see a list of all available commands.
 *   Type `make cache` to fetch information about upcoming bootcamps.
     This must be done before building the web site.
-*   Type `make check` to build everything in `_site` for testing.
+*   Type `make site` to build everything in `_site` for testing.
     (Depending on your machine, this takes about 10-15 seconds.)
 
 We try to use the same MarkDown interpreters as GitHub does for
@@ -131,7 +131,7 @@ To create a new blog post:
 5.  Please add any images your blog post needs to the same blog/YYYY/MM directory as the post itself.
     Please use lower-case names without special characters for image files.
 6.  `make` in the root directory will list available commands;
-    `make check` will rebuild the web site in the `_site` directory.
+    `make site` will rebuild the web site in the `_site` directory.
     Open `_site/index.html` to see your post on the blog's home page,
     `_site/blog/index.html` to see it on the blog home page,
     and `_site/YYYY/MM/post-name.html` to see the post itself.
@@ -155,19 +155,20 @@ Available Commands
 *   `cache_verb` : collect bootcamp information from GitHub and store in local cache (verbose).
 *   `cache`: collect bootcamp information from GitHub and store in local cache.
 *   `categories : list all blog category names.
-*   `check`: build locally into _site directory for checking.
+*   `check`: check consistency of bootcamp info, urls and other.
 *   `clean`: clean up.
 *   _`commands`_: show all commands (the default).
 *   `dev`: build into development directory on server.
 *   `install`: build into installation directory on server.
 *   `links`: check links.
 *   `sterile`: *really* clean up.
+*   `site`: build locally into _site directory for checking.   
 *   `valid`: check validity of HTML.
 
 The Details
 -----------
 
-`make check`, `make dev`, and `make install` do the following:
+`make site`, `make dev`, and `make install` do the following:
 
 1.  Run `bin/preprocess.py` to create the `./_config.yml` file required by Jekyll
     and the `_includes/recent_blog_posts.html` file containing excerpts of recent blog posts.
