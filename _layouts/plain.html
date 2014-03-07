@@ -1,0 +1,28 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include header.html %}
+    <title>{{page.title}}</title>
+  </head>
+  <body>
+    <header class="header">
+      {% include navbar.html %}
+    </header>
+    <section id="title" class="content">
+      <div class="container">
+        <h1>{{page.title}}{% if page.subtitle %}:<br/>{{page.subtitle}}{% endif %}</h1>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container">
+        {{content}}
+        {% include disqus.html %}
+      </div>
+    </section>
+    {% include footer.html %}
+    {% include javascript.html %}
+    {% include google-analytics.html %}
+  </body>
+</html>

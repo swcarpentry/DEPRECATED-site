@@ -1,0 +1,2783 @@
+---
+layout: plain
+root: ..
+title: "Code and Data for the Social Sciences"
+subtitle: "A Practitioner's Guide"
+---
+<div class="author">
+  <div align="center">
+    <h2>Matthew Gentzkow &amp; Jesse M. Shapiro</h2>
+    <h3>
+      <em>Chicago Booth and NBER</em>
+    </h3>
+    <h4>
+      Copyright (c) 2014, Matthew Gentzkow and Jesse M. Shapiro.
+      <br/>
+      E-mail: matthew.gentzkow@chicagobooth.edu, jesse.shapiro@chicagobooth.edu.
+    </h4>
+  </div>
+  <blockquote>
+    <p>
+      Please cite this document as: Gentzkow, Matthew and Jesse
+      M. Shapiro. 2014. Code and Data for the Social Sciences: A
+      Practitioner's Guide. University of Chicago mimeo,
+      <a href="http://faculty.chicagobooth.edu/matthew.gentzkow/research/CodeAndData.pdf">http://faculty.chicagobooth.edu/matthew.gentzkow/research/CodeAndData.pdf</a>,
+      last updated January 2014.
+    </p>
+  </blockquote>
+</div>
+
+<h2>Table of Contents</h2>
+
+<ul>
+  <li><a href="#introduction">Chapter 1: Introduction</a></li>
+  <li><a href="#automation">Chapter 2: Automation</a></li>
+  <li><a href="#version_control">Chapter 3: Version Control</a></li>
+  <li><a href="#directories">Chapter 4: Directories</a></li>
+  <li><a href="#keys">Chapter 5: Keys</a></li>
+  <li><a href="#abstraction">Chapter 6: Abstraction</a></li>
+  <li><a href="#documentation">Chapter 7: Documentation</a></li>
+  <li><a href="#management">Chapter 8: Management</a></li>
+  <li><a href="#coding_style">Chapter 9: Code Style</a>
+    <ul>
+      <li>Code should be logical</li>
+      <li>Code should be readable</li>
+      <li>Code should be robust</li>
+      <li>Code should be efficient</li>
+    </ul>
+  </li>
+  <li><a href="#further_reading">For Further Reading</a></li>
+  <li><a href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+
+<h2 id="introduction">Chapter 1: Introduction</h2>
+
+<p>
+  What does it mean to do empirical social science? Asking good
+  questions. Digging up novel data. Designing statistical
+  analysis. Writing up results.
+</p>
+
+<p>
+  For many of us, most of the time, what it means is writing and
+  debugging code. We write code to clean data, to transform data, to
+  scrape data, and to merge data. We write code to execute statistical
+  analyses, to simulate models, to format results, to produce
+  plots. We stare at, puzzle over, fight with, and curse at code that
+  isn't working the way we expect it to. We dig through old code
+  trying to figure out what we were thinking when we wrote it, or why
+  we're getting a different result from the one we got the week
+  before.
+</p>
+
+<p>
+  Even researchers lucky enough to have graduate students or research
+  assistants who write code for them still spend a significant amount
+  of time reviewing code, instructing on coding style, or fixing
+  broken code.
+</p>
+
+<p>
+  Though we all write code for a living, few of the economists,
+  political scientists, psychologists, sociologists, or other
+  empirical researchers we know have any formal training in computer
+  science. Most of them picked up the basics of programming without
+  much effort, and have never given it much thought since. Saying they
+  should spend more time thinking about the way they write code would
+  be like telling a novelist that she should spend more time thinking
+  about how best to use Microsoft Word. Sure, there are people who
+  take whole courses in how to change fonts or do mail merge, but
+  anyone moderately clever just opens the thing up and figures out how
+  it works along the way.
+</p>
+
+<p>
+  This manual began with a growing sense that our own version of this
+  self-taught seat-of-the-pants approach to computing was hitting its
+  limits. Again and again, we encountered situations like:
+</p>
+
+<ul>
+
+  <li>
+    In trying to replicate the estimates from an early draft of a
+    paper, we discover that the code that produced the estimates no
+    longer works because it calls files that have since been
+    moved. When we finally track down the files and get the code
+    running, the results are different from the earlier ones.
+  </li>
+
+  <li>
+    In the middle of a project we realize that the number of
+    observations in one of our regressions is surprisingly low. After
+    much sleuthing, we find that many observations were dropped in a
+    merge because they had missing values for the county identifier we
+    were merging on. When we correct the mistake and include the
+    dropped observations, the results change dramatically.
+  </li>
+
+  <li>
+    A referee suggests changing our sample definition. The code that
+    defines the sample has been copied and pasted throughout our
+    project directory, and making the change requires updating dozens
+    of files. In doing this, we realize that we were actually using
+    different definitions in different places, so some of our results
+    are based on inconsistent samples.
+  </li>
+
+  <li>
+    We are keen to build on work a research assistant did over the
+    summer. We open her directory and discover hundreds of code and
+    data files. Despite the fact that the code is full of long,
+    detailed comments, just figuring out which files to run in which
+    order to reproduce the data and results takes days of
+    work. Updating the code to extend the analysis proves all but
+    impossible. In the end, we give up and rewrite all of the code
+    from scratch.
+  </li>
+
+  <li>
+    We and our two research assistants all write code that refers to a
+    common set of data files stored on a shared drive. Our work is
+    constantly interrupted because changes one of us makes to the data
+    files causes the others' code to break.
+  </li>
+
+</ul>
+
+<p>
+  At first, we thought of these kinds of problems as more or less
+  inevitable. Any large scale endeavor has a messy underbelly, we
+  figured, and good researchers just keep calm, fight through the
+  frustrations, and make sure the final results are right. But as the
+  projects grew bigger, the problems grew nastier, and our piecemeal
+  efforts at improving matters&mdash;writing handbooks and protocols
+  for our RAs, producing larger and larger quantities of comments,
+  notes, and documentation&mdash;proved ever more ineffective, we had
+  a growing sense that there must be a way to do better.
+</p>
+
+<p>
+  In the course of a project involving a really big dataset, we had
+  the chance to work with a computer scientist who had, for many
+  years, taught the course on databases at the University of
+  Chicago. He showed us how we could organize our really big dataset
+  so that it didn't become impossible to work with. Neat, we thought,
+  and went home.
+</p>
+
+<p>
+  Around that time we were in the middle of assembling a small (but to
+  us, very important) dataset of our own. We spent hours debating
+  details of how to organize the files. A few weeks in we realized
+  something. We were solving the same problem the computer scientist
+  had shown us how to solve. Only we were solving it blind, without
+  the advantage of decades of thought about database design.
+</p>
+
+<p>
+  Here is a good rule of thumb: If you are trying to solve a problem,
+  and there are multi-billion dollar firms whose entire business model
+  depends on solving the same problem, and there are whole courses at
+  your university devoted to how to solve that problem, you might want
+  to figure out what the experts do and see if you can't learn
+  something from it.
+</p>
+
+<p>
+  This handbook is about translating insights from experts in code and
+  data into practical terms for empirical social scientists. We are
+  not ourselves software engineers, database managers, or computer
+  scientists, and we don't presume to contribute anything to those
+  disciplines. If this handbook accomplishes something, we hope it
+  will be to help other social scientists realize that there are
+  better ways to work.
+</p>
+
+<p>
+  Much of the time, when you are solving problems with code and data,
+  you are solving problems that have been solved before, better, and
+  on a larger scale. Recognizing that will let you spend less time
+  wrestling with your RA's messy code, and more time on the research
+  problems that got you interested in the first place.
+</p>
+
+<h2 id="automation">Chapter 2: Automation</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Automate everything that can be automated.</p>
+
+  <p>(B) Write a single script that executes all code from beginning to end.</p>
+
+</blockquote>
+
+<p>
+  Let's start with a simple research project. We wish to test the
+  hypothesis that the introduction of television to the US increased
+  sales of potato chips. We receive an Excel file by e-mail with two
+  worksheets: (i) "tv", which contains for each county in the US the
+  year that television was first introduced; and (ii) "chips", which
+  contains total sales of potato chips by county by year from 1940 to
+  1970. We wish to run a panel regression of log chip sales on a dummy
+  variable for television being available with county and year fixed
+  effects.
+</p>
+
+<p>
+  Here is one way we might proceed: Open the file in Excel and use
+  "Save As" to save the worksheets as text files. Open up a
+  statistical program like Stata, and issue the appropriate commands
+  to load, reshape, and merge these text files. Define a new variable
+  to hold logged chip sales, and issue the command to run the
+  regression. Open a new MS Word file, copy the output from the
+  results window of the statistical program into a table, write up an
+  exciting discussion of the findings, and save. Submit to a
+  journal.
+</p>
+
+<p>
+  Just about everybody learns early in graduate school, if not before,
+  that this "interactive" mode of research is bad. They learn that the
+  data building and statistical analysis should be stored in
+  scripts&mdash;<code>.do</code> files in Stata, <code>.m</code> files
+  in Matlab, <code>.r</code> files in R, and so forth.
+</p>
+
+<p>
+  It is worth pausing to remember why we don't like the interactive
+  mode. There are many reasons, but two big ones.
+</p>
+
+<p>
+  The first is replicability. If the next day, or the next year, we
+  want to reproduce our regression of chip sales on TV, we might dig
+  up <code>tv.csv</code> and <code>chips.csv</code>, load them back
+  into Stata, and set to work reshaping, merging, defining variables,
+  and so forth. Perhaps we will get lucky, since this analysis is so
+  simple, and get back the same coefficient when we run the
+  regression. Or perhaps not. Even in this simple example, there are
+  innumerable things that could go wrong: since writing the paper we
+  have received an updated version of <code>tv.csv</code> and we
+  inadvertently use the new one rather than the old one; we forget
+  that we dropped several counties whose chip sales were implausibly
+  large; we compute regular standard errors whereas before we computed
+  robust standard errors; and so on.
+</p>
+
+<p>
+  On a deeper level, because there is no record of the precise steps
+  that were taken, there is no authoritative definition of what the
+  numbers in our paper actually are. If someone later asks why the
+  number of observations reported in our table is different from the
+  number of observations in the raw data, or how we computed our
+  standard errors, or what we did with county-years with missing chip
+  sales, and we ran the analysis interactively, we will have no way to
+  say for sure.
+</p>
+
+<p>
+  The second reason is efficiency. If we decide to run a different
+  regression, say using the level rather than the log of chip sales,
+  we will have to go back and repeat all of the steps of building and
+  cleaning the data. We can avoid this by saving the combined dataset
+  before running any regressions, but if we later wish to change which
+  observations we keep and which we drop, we will be back to square
+  one.
+</p>
+
+<p>
+  In a real project, there might be a thousand steps from raw data to
+  final results. For each of these, there could be several
+  alternatives, detours, and experiments that were tried and
+  discarded. Each step is typically run hundreds of times as the
+  analysis is developed and refined. Trying to run and re-run all
+  these steps interactively would be completely untenable.
+</p>
+
+<p>
+  For this reason, most researchers learn to script key steps,
+  especially data manipulation and statistical analysis. Here is what
+  the project directory for the paper above might look like after we
+  switched to writing <code>.do</code> files, expanded our analysis a
+  bit, and switched to LaTeX for word processing:
+</p>
+
+<pre>
+chips.csv               mergefiles.do           tv_potato_submission.pdf
+cleandata.do            regressions_alt.do      tv_potato.tex
+extract0B.xls           regressions_alt.log     tv.csv
+fig1.eps                regressions.do          tvdata.dta
+fig2.eps                regressions.log
+figures.do              tables.txt
+</pre>
+
+<p>
+  This is certainly a big improvement over our initial interactive
+  approach. If we stare at these files for a while, we can probably
+  work out more or less what they are. <code>extract0B.xls</code> is
+  the raw data file, <code>chips.csv</code> and <code>tv.csv</code>
+  are the text files exported from Excel, and <code>tvdata.dta</code>
+  is the combined data file in Stata
+  format. <code>Mergefiles.do</code> and <code>cleandata.do</code> are
+  the scripts that build the
+  data, <code>figures.do</code>, <code>regressions.do</code>,
+  and <code>regressions_alt.do</code> are the scripts that run the
+  analysis, and the <code>.log</code> and <code>.eps</code> files are
+  the output. <code>Tv_potato.tex</code> is the
+  paper, <code>tables.txt</code> contains the tables,
+  and <code>tv_potato_submission.pdf</code> is the PDF version we
+  submitted to the journal.
+</p>
+
+<p>
+  But if we set about actually trying to reproduce
+  <code>tv_potato_submission.pdf</code>, we'd immediately run into a bunch of
+  questions. Should we export all observations from <code>extract0B.xls</code>, or
+  just those with nonmissing data? Which should be run first,
+  <code>cleandata.do</code> or <code>mergedata.do</code>? Does it matter in which order we run
+  <code>regressions.do</code> and <code>figures.do</code>? Is the
+  output from <code>regression_alt.do</code> actually used in the
+  paper or is this file just left over from some experimentation? What
+  is <code>tables.txt</code>? Is it produced manually or by code? Which numbers in
+  the log files correspond to the numbers reported in the paper? Is
+  <code>tv_potato_submission.pdf</code> just a PDF version
+  of <code>tv_potato.tex</code> or did we do additional formatting,
+  etc. before submitting to the journal?
+</p>
+
+<p>
+  We suspect that the experience of trying to reverse-engineer the
+  build steps for a directory like this will feel familiar to many
+  readers who have tried to make sense of directories their RAs or
+  coauthors produced, or even directories that they produced
+  themselves a few months in the past. In this toy example, the
+  problems are probably surmountable and, assuming that we didn't do
+  anything silly like modify and rerun <code>regressions.do</code>
+  after the PDF was produced, we could probably reproduce the paper in
+  a reasonable amount of time. But as most of us know from painful
+  experience, the reverse-engineering process for a moderately complex
+  project can easily become days or weeks of frustrating work, and the
+  probability of those "silly" mistakes that render replication all
+  but impossible is remarkably high.
+</p>
+
+<p>
+  To make the output of our directory replicable, we need to automate
+  more steps. And we need a way to store the information about the
+  order in which the steps are run.
+</p>
+
+<p>
+  First, let's add a Stat/Transfer script
+  called <code>export_to_csv.stc</code> that handles the conversion
+  from Excel. (Stata can also do this directly using the "import
+  excel" command.) Next, let's switch from
+  outputting <code>tables.txt</code> to
+  outputting <code>tables.tex</code>, a LaTeX file produced by Stata's
+  "outreg" command.
+</p>
+
+<p>
+  Finally, let's add another key script to the directory, called
+  <code>rundirectory.bat</code>, which is a Windows shell script. Its
+  contents look like this:
+</p>
+
+<pre>
+----- rundirectory.bat ----
+stattransfer export_to_csv.stc
+statase -b mergefiles.do
+statase -b cleandata.do
+statase -b regressions.do
+statase -b figures.do
+pdflatex tv_potato.tex
+</pre>
+
+<p>
+  The <code>rundirectory.bat</code> script works like a roadmap,
+  telling the operating system how to run the directory. Importantly,
+  the rundirectory script also tells a human reader how the directory
+  works. But unlike a readme file with notes on the steps of the
+  analysis, <code>rundirectory.bat</code> cannot be incomplete,
+  ambiguous, or out of date.
+</p>
+
+<p>
+  The proof in the pudding is that we can now delete all of the output
+  files in the directory&mdash;the <code>.csv</code> files,
+  the <code>.log</code> and <code>.eps</code> files, <code>tables.tex</code>, the
+  <code>.pdf</code>&mdash;and reproduce them by running
+  <code>rundirectory.bat</code>. This is the precise sense in which
+  the output is now replicable.
+</p>
+
+<p>
+  Writing a shell script like <code>rundirectory.bat</code> is
+  easy.<a href="#footnote-1"><sup class="footnote">1</sup></a> You may
+  need a few tweaks, such as adding Stata to your system path, but
+  many of these will be useful anyway. You could write all these steps
+  into a Stata script (<code>rundirectory.do</code>), but a system
+  shell provides a more natural interface for calling commands from
+  multiple software packages, and for operating system commands like
+  moving or renaming files.
+</p>
+
+<p>
+  Of course, rundirectory.bat does not automate <em>everything</em>.
+  We could (and, admittedly, are tempted to) write a little Python
+  script to submit the paper to a journal, but that seems like
+  overkill even to us.
+</p>
+
+<p>
+  On the other hand, we have consistently found that pushing the
+  boundaries of automation pays big dividends. The costs tend to be
+  lower than they appear, and the benefits bigger. A rule of research
+  is that you will end up running every step more times than you
+  think. And the costs of repeated manual steps quickly accumulate
+  beyond the costs of investing once in a reusable tool.
+</p>
+
+<p>
+  We used to routinely export files from Excel to CSV by hand. It
+  worked OK until we had a project that required exporting 200
+  separate text files from an Excel spreadsheet. We followed our usual
+  practice and did the export manually. Some time later, the provider
+  sent us a new Excel file reflecting some updates to the data. We had
+  learned our lesson.
+</p>
+
+<blockquote class="footnote" id="footnote-1">
+  <p>
+    [1]
+    If you don't use Windows, Linux shell files work almost the same
+    way. And if you're comfortable with Python, you can do even
+    better, and write a <code>rundirectory.py</code> that will work on
+    both Windows and Linux systems.
+  </p>
+</blockquote>
+
+<h2 id="version_control">Chapter 3: Version Control</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Store code and data under version control.</p>
+
+  <p>(B) Run the whole directory before checking it back in.</p>
+
+</blockquote>
+
+<p>
+  In the last chapter, we showed what the project directory for our
+  seminal TV and potato chips project might look like. After we work
+  on the directory for a while, the key files might look like
+  this:
+</p>
+
+<pre>
+cleandata_022113.do     cleandata_022613.do     regressions.log
+cleandata_022113a.do    cleandata_022613_jms.do regressions_022413.do
+chips.csv               tvdata.dta              regressions_022713_mg.do
+regressions_022413.log
+</pre>
+
+<p>
+  Dates are used to demarcate versions of files. Initials (JMS for
+  Jesse, MG for Matt) are used to indicate authorship.
+</p>
+
+<p>
+  There are good reasons to store multiple versions of the same
+  file. The most obvious is that it provides a quick way to roll back
+  changes you want to discard. Another is that it facilitates
+  comparison. Maybe Matt wants to show Jesse how he's thinking of
+  changing their main specification.
+  Creating <code>regressions_022713_mg.do</code> may be a good way to
+  illustrate what he has in mind. If Jesse doesn't like it, he can
+  always delete it.
+</p>
+
+<p>
+  The goal is admirable, but the method is wrong. There are two main
+  reasons why. First, it is a pain. The researcher needs to decide
+  when to "spawn" a new version and when to continue to edit the old
+  one (hence <code>022113a</code>). The researcher needs to tag
+  authorship and date every file. Failing to do that will result in
+  confusion: Why is the date on the file name February 21 when the
+  operating system says this was last edited in March?
+</p>
+
+<p>
+  And confusion is the second, and by far the more important, reason
+  why this "date and initial" method is poor. Look at the file names
+  above and answer the following questions: Which is the log file
+  produced by <code>regressions_022713_mg.do</code>? Did the author (darn you,
+  Matt!) fail to change the output file name in the code, overwriting
+  <code>regressions_022413.log</code>? Did he simply not output a log?
+</p>
+
+<p>
+  Which version of cleandata.do produces the data file used by
+  <code>regressions_022413.do</code>? Is it the one
+  labeled <code>022113a</code>&mdash;the last one before February 24?
+  Or was <code>regressions_022413</code> created on February 24 but edited later,
+  raising the possibility that it needs output from
+  <code>cleandata_022613.do</code> to run correctly? Unfortunately, we
+  failed to tag <code>tvdata.dta</code> with a date and
+  initial&mdash;probably because changing the file name in three
+  different places with each new version is an enormous hassle.
+</p>
+
+<p>
+  Given a few minutes to look at the system dates and file contents,
+  you could probably work out which inputs are needed by which
+  scripts. And, having learned your lesson, next time you will
+  harangue your coauthor and RAs to remember to date and initial every
+  script, log file, and intermediate data file, so hopefully there's
+  no more confusion.
+</p>
+
+<p>
+  This is too much work just to keep track of multiple versions of
+  files. And it creates a serious risk that, later, you won't be able
+  to sort out which file goes with which, and hence you won't be able
+  to replicate your results. Fortunately, your computer can take care
+  of this for you, automatically, using free software that you can set
+  up in a few minutes.
+</p>
+
+<p>
+  Before we tell you how, we will start with a fact. (This is, after
+  all, a handbook for empirical researchers.) <em>Not one piece of
+  commercial software you have on your PC, your phone, your tablet,
+  your car, or any other modern computing device was written with the
+  "date and initial" method.</em>
+</p>
+
+<p>
+  Instead, software engineers use a tool called version control
+  software to track successive versions of a given piece of
+  code. Version control works like this. You set up a "repository" on
+  your PC (or, even better, on a remote server). Every time you want
+  to modify a directory, you "check it out" of the repository. After
+  you are done changing it, you check it back in. That's it. You don't
+  change file names, add dates, or anything. Instead, the software
+  remembers every version that was ever checked in.
+</p>
+
+<p>
+  What happens if you change your mind about something? You ask the
+  software for a history of changes to the directory and, if you want
+  to go back to an old version of the directory or even of a single
+  file, the operation just takes a click. 
+</p>
+
+<p>
+  And what about your sneaky coauthor's decision to change the main
+  regression model specification without telling you? The version
+  control software automatically records who authored every
+  change. And if you want to see what the changes were, most modern
+  packages will show you a color-coded side-by-side comparison
+  illustrating which lines of code changed and
+  how.<a href="#footnote-2"><sup class="footnote">2</sup></a>
+</p>
+
+<p>
+  The main thing about this approach that is great, and the reason
+  real software engineers <em>must</em> use a tool like this, is that
+  it maintains a single, authoritative version of the directory at all
+  times. In rare cases where two people try to make simultaneous and
+  conflicting changes to the same file, the software will warn them
+  and help them reconcile the conflicts.
+</p>
+
+<p>
+  A major ancillary benefit is therefore that you can edit without
+  fear. If you make a mistake, or if you start in a new direction but
+  later change your mind, you can always roll back all or part of your
+  changes with ease. This requires no keeping track of dates and
+  initials. All file names can remain just as nature intended. The
+  software handles the versioning for you, so you can focus on writing
+  the code and making it right. You didn't spend six years in grad
+  school so you could type in today's date all over the place.
+</p>
+
+<p>
+  To visualize how much better your life would be with your code and
+  data under version control, recall (if, gasp, you are old enough)
+  what word processing was like before the invention of the "undo"
+  command. A bad keystroke might spell doom. Version control is like
+  an undo command for <em>everything</em>.
+</p>
+
+<p>
+  So our first rule is to keep everything&mdash;code and
+  data&mdash;under version control. In fact, version control is
+  fantastic for things like drafts of your papers, too. It allows you
+  to overwrite changes without fear, to keep track of authorship,
+  etc. (Some readers will have noticed the attractions of the "version
+  history" feature of GoogleDocs, which is based on version control
+  models from software engineering. With version control software you
+  get that functionality with LaTeX, LyX, or whatever is your favorite
+  editing package.)
+</p>
+
+<p>
+  But if you want to get the most out of this approach, there is a
+  second rule: you have to run the entire directory before you check
+  in your changes. Return to our example, now dropping the annoying
+  date and initial tags, and adding back <code>rundirectory.bat</code>
+  (which, you'll recall, will run every script from top to bottom).
+</p>
+
+<pre>
+rundirectory.bat	tvdata.dta
+cleandata.do		regressions.do
+chips.csv		regressions.log
+</pre>
+
+<p>
+  Suppose Jesse modifies <code>cleandata.do</code> and runs it to overwrite
+  <code>tvdata.dta</code>. If Jesse checks in that change, Matt may find later that
+  <code>regressions.do</code> breaks when he tries to run it, because
+  of a change to <code>tvdata.dta</code> that regressions.do wasn't
+  expecting.
+</p>
+
+<p>
+  The way to fix this problem and ensure it never happens again is
+  just to execute <code>rundirectory.bat</code>, from start to finish,
+  and check for errors before checking in the directory. If every
+  version you check in has been run successfully
+  via <code>rundirectory.bat</code>, then you know that, barring
+  changes in the software itself, the next time you check it out, you
+  will get back the output in regressions.log exactly.
+</p>
+
+<p>
+  Note that this is not a problem with the version control software.
+  The "date and initial" method creates the same potential for this
+  type of within-directory conflict, arguably more so, since a lot of
+  effort is required to keep track of which input files are required
+  for which scripts. Rather, version control, coupled with the rule of
+  checking in complete runs of a directory, provides a comprehensive
+  solution that guarantees both replicability and undo-ability with
+  minimal effort.
+</p>
+
+<p>
+  OK, you're convinced. Now what? A step-by-step guide to setting up
+  and using version control software is a bit outside our scope
+  here. But for what it's worth, we use a Subversion repository that
+  we interact with using the very nice TortoiseSVN browser for
+  Windows. Comparable software exists for Macs. More recent version
+  control methods like Git or BitBucket may be worth checking out. It
+  will probably take you a couple days to set up a repository and
+  learn how you want to interact with it. You will break even on that
+  time investment within a month or two.
+</p>
+
+<blockquote class="footnote" id="footnote-2">
+  <p>
+    [2]
+    For a slightly more advanced user, there are also well-defined
+    methods for changing code in a way that is explicitly tentative,
+    so you can "pencil in" some changes and let your coauthor have a
+    look before you take them on board.
+  </p>
+</blockquote>
+
+<h2 id="directories">Chapter 4: Directories</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Separate directories by function.</p>
+
+  <p>(B) Separate files into inputs and outputs.</p>
+
+  <p>(C) Make directories portable.</p>
+
+</blockquote>
+
+<p>
+  Let's return to the main directory for our potato chip project:
+</p>
+
+<pre>
+                   ---C:/tv_and_potato/---
+chips.csv	mergefiles.do 		tv_potato_submission.pdf 
+cleandata.do	regressions_alt.do 	tv_potato.tex 
+extract0B.xls	regressions_alt.log	tv.csv 
+fig1.eps	regressions.do 		tvdata.dta
+fig2.eps	regressions.log 	rundirectory.bat
+figures.do	tables.txt		export_to_csv.stc
+</pre>
+
+<p>
+  The directory above contains all the steps for the entire project,
+  governed by the single batch file <code>rundirectory.bat</code>.
+</p>
+
+<p>
+  Having a single directory that has and does everything has some
+  appeal, but for most real-world research projects this
+  organizational system is not ideal. Consider the following
+  scenarios. (i) The researcher wants to change a regression
+  specification, but does not want to re-run the entire data
+  build. (ii) The researcher learns about a neat Stata command that
+  makes the script <code>export_to_csv.stc</code> and its outputs <code>tv.csv</code> and
+  <code>chips.csv</code> unnecessary. Before making this improvement,
+  however, the researcher must search through <code>regressions.do</code> and
+  <code>regressions_alt.do</code> to make sure these scripts do not depend on
+  <code>tv.csv</code> and <code>chips.csv</code> in addition
+  to <code>tvdata.dta</code>.
+</p>
+
+<p>
+  Consider the following alternative directory structure (leaving
+  aside the TeX and PDF files for simplicity):
+</p>
+
+<table>
+  <tr>
+    <td valign="top">
+      <pre>
+---C:/build---
+/input
+    extract0B.xls
+      </pre>
+    </td>
+    <td valign="top">
+      <pre>
+---C:/analysis---
+/input
+    tvdata.dta
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <pre>
+/code
+    rundirectory.bat
+    export_to_csv.stc
+    mergefiles.do
+      </pre>
+    </td>
+    <td valign="top">
+      <pre>
+/code
+    rundirectory.bat
+    getinput.bat
+    regressions.do
+    regressions_alt.do
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <pre>
+/output
+    tvdata.dta
+      </pre>
+    </td>
+    <td valign="top">
+      <pre>
+/output
+    fig1.eps
+    fig2.eps
+    tables.txt
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <pre>
+/temp
+    chips.csv
+    tv.csv
+      </pre>
+    </td>
+    <td valign="top">
+      <pre>
+/temp
+    regressions.log
+    regressions_alt.log
+      </pre>
+    </td>
+  </tr>
+</table>
+
+<p>
+  There are now two high-level directories. One contains the code to
+  build a useable Stata file from the raw inputs. The other contains
+  code to take the Stata file and turn it into figures and tables for
+  the paper.
+</p>
+
+<p>
+  Within each high-level directory there is a consistent subdirectory
+  structure that separates inputs, outputs, code, and temporary or
+  intermediate files. Each directory is still controlled by a single
+  script called <code>rundirectory.bat</code> that executes from start
+  to finish. (In fact, we would advocate for
+  having <code>rundirectory.bat</code> start by cleaning the contents
+  of <code>/temp</code> and <code>/output</code>, so you can be sure
+  all your output is produced by your current code.)
+</p>
+
+<p>
+  It is now easy to modify the analysis without re-running the data
+  build. And it is now clear from the directory structure that only
+  <code>tvdata.dta</code> is required by the analysis
+  code: <code>chips.csv</code> and <code>tv.csv</code> are explicitly
+  designated as temp files.
+</p>
+
+<p>
+  A disadvantage of this structure is that the code in <code>C:/analysis</code>
+  will break if it is run on a different machine (where the link to
+  <code>tvdata.dta</code> is not valid), or if the structure
+  of <code>tvdata.dta</code> changes. What we actually do in practice
+  is therefore slightly more complicated: in place
+  of <code>tvdata.dta</code>, we link to <em>fixed revisions</em> of
+  our datasets on shared network storage. This means
+  an <code>/analysis/</code> directory like the one above can be run
+  anywhere with network access. The fixed revision bit means that if
+  someone modifies the structure of the data and checks in a new
+  revision, the analysis code will continue to work, as it still
+  points to the old revision. (Of course at some point someone will
+  probably want to redirect it to the new revision, but the user gets
+  to decide when to do this, rather than having her code break
+  unexpectedly.)
+</p>
+
+<p>
+  We have only outlined a few of the advantages of using modular,
+  functional directories to organize code. There are many others. For
+  example, the output of <code>C:/build</code> is now easily
+  accessible by any directory, which makes it easier to have multiple
+  projects that use the same data file without creating multiple,
+  redundant copies. And, separating scripts into functional groups
+  makes debugging easier and faster when something goes wrong.
+</p>
+
+<h2 id="keys">Chapter 5: Keys</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Store cleaned data in tables with unique, non-missing keys.</p>
+
+  <p>(B) Keep data normalized as far into your code pipeline as you can.</p>
+
+</blockquote>
+
+<p>
+  It is well known that television went to big cities first. So a good
+  analysis of the effect of television on potato chip consumption
+  requires good data on population as a control. We ask an RA to
+  prepare a population dataset to facilitate our analysis. Here it
+  is:
+</p>
+
+<table border="1">
+  <tr>
+    <th>country</th>
+    <th>state</th>
+    <th>cnty_pop</th>
+    <th>state_pop</th>
+    <th>region</th>
+  </tr>
+  <tr>
+    <td>36037</td>
+    <td>NY</td>
+    <td>3817735</td>
+    <td>43320903</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>36038</td>
+    <td>NY</td>
+    <td>422999</td>
+    <td>43320903</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>36039</td>
+    <td>NY</td>
+    <td>324920</td>
+    <td>.</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>36040</td>
+    <td>.</td>
+    <td>143432</td>
+    <td>43320903</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>.</td>
+    <td>NY</td>
+    <td>.</td>
+    <td>43320903</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>37001</td>
+    <td>VA</td>
+    <td>3228290</td>
+    <td>7173000</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>37002</td>
+    <td>VA</td>
+    <td>449499</td>
+    <td>7173000</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>37003</td>
+    <td>VA</td>
+    <td>383888</td>
+    <td>7173000</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>37004</td>
+    <td>VA</td>
+    <td>483829</td>
+    <td>7173000</td>
+    <td>3</td>
+  </tr>
+</table>
+
+<p>
+  What a mess. How can the population of the state of New York be 43
+  million for one county but "missing" for another? If this is a
+  dataset of counties, what does it mean when the "county" field is
+  missing? If region is something like Census region, how can two
+  counties in the same state be in different regions? And why is it
+  that all the counties whose codes start with 36 are in New York
+  except for one, where the state is unknown?
+</p>
+
+<p>
+  We can't use these data, because we don't understand what they
+  mean. Without looking back at the underlying code, we could never
+  say confidently what every variable is, or even every row. And we
+  can forget trying to merge on attributes from another dataset. How
+  would we know which state goes with county 36040? Or which region to
+  use for 37003?
+</p>
+
+<p>
+  We know many researchers who spend time wrestling with datasets like
+  this, and barking at RAs, students, or collaborators to fix
+  them.
+</p>
+
+<p>
+  There must be a better way, because we know that large organizations
+  like financial institutions, retailers, and insurers have to manage
+  much more complex data in real time, with huge consequences of
+  mistakes.
+</p>
+
+<p>
+  Long ago, smart people figured out a fundamental principle of
+  database design: that the physical structure of a database should
+  communicate its logical structure.
+</p>
+
+<p>
+  If you gave your county Census data to someone with training in
+  databases, you'd probably get back something like this, called
+  a <em>relational database</em>:
+</p>
+
+<table border="1">
+  <tr>
+    <td valign="top">
+      <table>
+	<tr>
+	  <th>county</th>
+	  <th>state</th>
+	  <th>population</th>
+	</tr>
+	<tr>
+	  <td>36037</td>
+	  <td>NY</td>
+	  <td>3817735</td>
+	</tr>
+	<tr>
+	  <td>36038</td>
+	  <td>NY</td>
+	  <td>422999</td>
+	</tr>
+	<tr>
+	  <td>36039</td>
+	  <td>NY</td>
+	  <td>324920</td>
+	</tr>
+	<tr>
+	  <td>36040</td>
+	  <td>NY</td>
+	  <td>143432</td>
+	</tr>
+	<tr>
+	  <td>37001</td>
+	  <td>VA</td>
+	  <td>3228290</td>
+	</tr>
+	<tr>
+	  <td>37002</td>
+	  <td>VA</td>
+	  <td>449499</td>
+	</tr>
+	<tr>
+	  <td>37003</td>
+	  <td>VA</td>
+	  <td>383888</td>
+	</tr>
+	<tr>
+	  <td>37004</td>
+	  <td>VA</td>
+	  <td>483829</td>
+	</tr>
+      </table>
+    </td>
+    <td valign="top">
+      <table>
+	<tr>
+	  <th>state</th>
+	  <th>population</th>
+	  <th>region</th>
+	</tr>
+	<tr>
+	  <td>NY</td>
+	  <td>43320903</td>
+	  <td>1</td>
+	</tr>
+	<tr>
+	  <td>VA</td>
+	  <td>7173000</td>
+	  <td>3</td>
+	</tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p>
+  Now the ambiguity is gone. Every county has a population and a
+  state. Every state has a population and a region. There are no
+  missing states, no missing counties, and no conflicting
+  definitions. The database is self-documenting. In fact, the database
+  is now so clear that we can forget about names like "county_pop" and
+  "state_pop" and just stick to "population." Anyone would know which
+  entity's population you mean.
+</p>
+
+<p>
+  Note that when we say relational database here, we are referring to
+  how the data are structured, not to the use of any fancy
+  software. The data above could be stored as two tab-delimited text
+  files, or two Stata <code>.dta</code> files, or two files in any
+  standard statistical package that expects rectangular data.
+</p>
+
+<p>
+  Stepping back from this example, there are a few key principles at
+  work here. To understand these it is helpful to have some
+  vocabulary. Data is stored in rectangular arrays
+  called <em>tables</em>. In the example above, there is a county
+  table and a state table.<em> </em>We will refer to rows of tables
+  as <em>elements</em> and<em> </em>columns of tables
+  as <em>variables.</em>
+</p>
+
+<p>
+  Critically, each table has a <em>key</em> (rule A). A key is a
+  variable or set of variables that uniquely identifies the elements
+  of a table. The variables that form the key never take on missing
+  values, and a key's value is never duplicated across rows of the
+  table. So, a state table has one and only one row for New York, and
+  no rows where state is missing.
+</p>
+
+<p>
+  Each variable in a table is an attribute of the table's
+  elements. County population is a property of a county, so it lives
+  in the county table. State population is a property of a state, so
+  it cannot live in the county table. If we had panel data on
+  counties, we would need separate tables for things that vary at the
+  county level (like state) and things that vary at the county-year
+  level (like population). This is the main reason that most data
+  files researchers use for analysis do not satisfy the database
+  rules: they typically combine variables defined at several different
+  levels of aggregation.
+</p>
+
+<p>
+  The variables in a table can include one or more <em>foreign
+  keys</em>. A foreign key is the key for another table in the
+  database. In the county table, the variable "state" is a foreign
+  key: it matches a county to an element of the state table. Foreign
+  keys obey the same rules as all variables: they are included at the
+  level of logical attribution. States are in regions, and counties
+  are in states, so "state" shows up in the county table, and "region"
+  in the state table.
+</p>
+
+<p>
+  Data stored in the form we have outlined is
+  considered <em>normalized</em>.  Storing normalized data means your
+  data will be easier to understand and it will be harder to make
+  costly mistakes.
+</p>
+
+<p>
+  Most statistical software won't run a regression on a relational
+  database. To perform our analysis we are going to need to merge (or
+  join, in database-speak) the tables together to produce a single
+  rectangular array. Plus, we might need to calculate some variables
+  that aren't in our source data, such as the log of population.
+</p>
+
+<p>
+  To get from the data you downloaded, entered, or bought from an
+  original source to the matrix on which you will perform estimation,
+  we recommend proceeding in three steps.
+</p>
+
+<p>
+  First, store your raw data in normalized files that preserve the
+  information in the original data source and follows the rules
+  above. Don't worry about how you plan to use the data. Rather,
+  imagine that you are preparing the data for release to a broad group
+  of users with differing needs. Do this because you, yourself, are
+  likely to want to use the data in ways you do not currently
+  anticipate.
+</p>
+
+<p>
+  Second, construct a second set of normalized files that includes the
+  transformations of the original variables that you will need for
+  your analysis. For example, you might add to the county table a
+  variable indicating the county's population rank within its
+  state. At this stage you can also bring in variables from other
+  databases. For example, you might use a geography database to bring
+  in county latitude and longitude.
+</p>
+
+<p>
+  Third, merge together the tables in the database to form the
+  rectangular array on which you will estimate your model. At this
+  stage, your database should still have unique, non-missing keys, but
+  it will likely not be normalized. In our example, you will have a
+  county-level file that includes variables like region that are not
+  properties of counties. If you had panel data, your file would
+  include both county-level and county-year-level variables. Do no
+  data manipulation in this step. If your analysis requires the log of
+  state population, calculate it while your database complies with the
+  rules.
+</p>
+
+<p>
+  Following the steps above means you can keep your data in a
+  normalized form until the last possible step in the code (rule
+  B).
+</p>
+
+<h2 id="abstraction">Chapter 6: Abstraction</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Abstract to eliminate redundancy.</p>
+
+  <p>(B) Abstract to improve clarity.</p>
+
+  <p>(C) Otherwise, don't abstract.</p>
+
+</blockquote>
+
+<p>
+  We are concerned about spatial correlation in potato chip
+  consumption. We want to test whether per capita potato chip
+  consumption in a county is correlated with the average per capita
+  potato chip consumption among other counties in the same
+  state. First we must define the "leave-out" mean of per capita
+  consumption for each county:
+</p>
+
+<pre>
+egen total_pc_potato = total(pc_potato), by(state)
+egen total_obs = count(pc_potato), by(state)
+gen leaveout_state_pc_potato = (total_pc_potato - pc_potato) / (total_obs - 1)
+</pre>
+
+<p>
+  We can now test whether <code>pc_potato</code> is correlated with
+  <code>leaveout_state_pc_potato</code>. If so, we may need to adjust
+  how we compute the standard errors in our model. We perform our
+  analysis and are comforted to find little evidence of spatial
+  correlation.
+</p>
+
+<p>
+  But what if we are using the wrong level of aggregation? Maybe
+  spatial correlation will show up at the level of the metropolitan
+  area. Let's copy and paste the code above and then adapt it to use
+  metropolitan area instead of state as the level of aggregation:
+</p>
+
+<pre>
+egen total_pc_potato = total(pc_potato), by(metroarea)
+egen total_obs = count(pc_potato), by(state)
+gen leaveout_metro_pc_potato = (total_pc_potato - pc_potato) / (total_obs - 1)
+</pre>
+
+<p>
+  And while we're at it, let's check if there is more spatial
+  correlation in potato chip consumption when measured on a
+  per-household rather than per-capita basis. For this we will need a
+  third leave-out mean:
+</p>
+
+<pre>
+egen total_hh_potato = total(hh_potato), by(metroarea)
+egen total_obs = count(hh_potato), by(state)
+gen leaveout_metro_hh_potato = (total_hh_potato - pc_potato) / (total_obs - 1)
+</pre>
+
+<p>
+  Note the errors. In the first "copy-and-paste" operation, we failed
+  to replace an instance of state with metroarea. In the second, we
+  propagated the first error, plus we failed to replace one use of the
+  per-capita potato variable with the per-household analogue. The code
+  will run, but everything after the first code block will be totally
+  wrong.
+</p>
+
+<p>
+  Consider an alternative to the copy-and-paste approach, which is to
+  write a general-purpose function that computes the leave-out mean of
+  a variable:
+</p>
+
+<pre>
+program leaveout_mean
+    syntax, invar(varname) outvar(name) byvar(varname)
+    tempvar tot_invar count_invar
+    egen 'tot_invar'= total('invar'), by('byvar')
+    egen 'count_invar'= count('invar'), by('byvar')
+    gen 'outvar' = ('tot_invar' - 'invar') / ('count_invar' - 1)
+end
+</pre>
+
+<p>
+  Having defined the function above, we can now replace our three code
+  blocks with three lines:
+</p>
+
+<pre>
+leaveout_mean, invar(pc_potato) outvar(leaveout_state_pc_potato) byvar(state)
+leaveout_mean, invar(pc_potato) outvar(leaveout_metro_pc_potato) byvar(metro)
+leaveout_mean, invar(hh_potato) outvar(leaveout_metro_hh_potato) byvar(metro)
+</pre>
+
+<p>
+  Now the amount of copying and pasting is minimized: each input is
+  changed only once as we go from line to line. And because we wrote
+  the leaveout_mean function to be totally general, we can use it for
+  other projects as well as this
+  one.<a href="#footnote-3"><sup class="footnote">3</sup></a> We will
+  never again have to write code from scratch to compute a leave-out
+  mean.
+</p>
+
+<p>
+  Key to achieving these goals is recognizing that all three code
+  blocks were just specific instances of the same abstract idea:
+  compute the mean of a variable across observations in a group,
+  excepting the given observation. In programming, turning the
+  specific instances of something into a general-purpose tool is known
+  as <em>abstraction</em>.
+</p>
+
+<p>
+  Abstraction is essential to writing good code for at least two
+  reasons. First, as we saw above, it eliminates redundancy, which
+  reduces the scope for error and increases the value you can get from
+  the code you write. Second, just as importantly, it makes code more
+  readable.<a href="#footnote-4"><sup class="footnote">4</sup></a> A
+  reader scanning one of the three code blocks above might easily miss
+  their purpose. By contrast, a call to a function called
+  leaveout_mean is hard to misunderstand.
+</p>
+
+<p>
+  Abstraction can be taken too far. If an operation only needs to be
+  performed once, and the code that performs it is easy to read, we
+  would not advise abstraction. Abstracting without a purpose can lead
+  you to spend a lot of time dealing with cases that will never come
+  up in your work.
+</p>
+
+<p>
+  When you do have a function you plan to use often, you should take
+  the time to implement it carefully. One thing we have found helpful
+  is the software engineering practice of "unit testing." This means
+  writing a script that tests out the behavior of the function you've
+  written to make sure it works as intended. For example, we might
+  make some fake data and verify that the leaveout_mean calculates the
+  leave-out mean correctly. An advantage of unit testing is that it
+  allows you to safely change your function without fear that you will
+  introduce errors that will break your code down the line. It also
+  provides a convenient way to document how the function works: what
+  inputs it requires, what inputs it will not accept, etc.
+</p>
+
+<p>
+  Abstraction is not just about code. It is relevant anywhere you find
+  yourself repeating an operation. The principles in this chapter, for
+  example, explain why word processing packages come with templates
+  for standard document types like memos or reports. And these
+  principles are the reason why, rather than just repeatedly telling
+  our RAs how we thought code should be written, we decided to write
+  this handbook!
+</p>
+
+<blockquote class="footnote" id="3">
+  <p>
+    [3]
+    In Stata, as with just about any program you are likely to use, it
+    is easy to make a function portable and accessible anytime you use
+    the program.
+  </p>
+</blockquote>
+
+<blockquote class="footnote" id="footnote-4">
+  <p>
+    [4]
+    In fact, we have found that the general version of a function is
+    often easier to write as well as easier to read. (To see why,
+    think about how much harder it would be to program a linear
+    regression for a specific matrix of variables than for a general
+    one.)
+  </p>
+</blockquote>
+
+<h2 id="documentation">Chapter 7: Documentation</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Don't write documentation you will not maintain.</p>
+
+  <p>(B) Code should be self-documenting.</p>
+
+</blockquote>
+
+<p>
+  We have estimated the effect of television on potato chip
+  consumption. To illustrate the pernicious consequences for society
+  we wish to perform a welfare analysis, for which we will need to
+  compute an elasticity. Fortunately, Jesse's dissertation studied the
+  effect of a tax increase on demand for potatoes, from which we can
+  back out the elasticity of demand.
+</p>
+
+<p>
+  Here is how a section of our Stata code might look:
+</p>
+
+<pre>
+<em>* Elasticity = Percent Change in Quantity / Percent Change in Price</em>
+<em>* Elasticity = 0.4 / 0.2 = 2</em>
+<em>* See Shapiro (2005), The Economics of Potato Chips,</em>
+<em>* Harvard University Mimeo, Table 2A.</em>
+compute_welfare_loss, elasticity(2)
+</pre>
+
+<p>
+  Notice the helpful comments that provide a roadmap to the
+  reader.
+</p>
+
+<p>
+  Many researchers we know spend a lot of energy haranguing
+  themselves, their coauthors, and their research assistants to write
+  more comments like the above, and in general, to carefully document
+  the organization of their code and data outside of the scripts and
+  data files themselves. You might expect us to say the same. After
+  all, we love organizing things. But in this chapter we will try to
+  convince you to document less, not more. To see why, we continue our
+  story.
+</p>
+
+<p>
+  A few months after writing the first version of our script we return
+  to our code to revise the analysis. We find the following:
+</p>
+
+<pre>
+<em>* Elasticity = Percent Change in Quantity / Percent Change in Price</em>
+<em>* Elasticity = 0.4 / 0.2 = <font color="red">2</font></em>
+<em>* See Shapiro (2005), The Economics of Potato Chips,</em>
+<em>* Harvard University Mimeo, Table 2A.</em>
+compute_welfare_loss, elasticity(<font color="red">3</font>)
+</pre>
+
+<p>
+  Notice the conflict in <font color="red">red</font>. Maybe someone
+  noticed a typo in the original calculation, or decided to use the
+  estimates from Table 2B instead of Table 2A of Jesse's
+  dissertation. Whatever its origin, the problem is clear: the
+  comments contradict the code, and it is now unclear which (if
+  either) is correct. Someone will have to go back to the source to
+  figure out what number we should be using.
+</p>
+
+<p>
+  Readers will notice that this is an instance of a more general
+  problem: anytime you have more than one representation of the same
+  information (in this case, an elasticity), you run the risk that the
+  two will someday come in conflict. In the best case scenario, you
+  will need to do some work to untangle the mess. In the worst case
+  scenario, your results will be wrong or internally inconsistent.
+</p>
+
+<p>
+  The problem of internal inconsistency is especially severe when it
+  comes to documentation&mdash;comments, notes, readmes,
+  etc.&mdash;because you don't <em>have</em> to keep them up to date
+  for your code to work or for your results to be quantitatively
+  right. It is therefore tempting to make improvements to the code
+  without making parallel improvements to the comments, only to find
+  later that your comments are confusing or misleading. In the case
+  above, the practice of letting comments go stale resulted in code
+  that is probably less clear than it would have been if we had not
+  had so much documentation in the first place.
+</p>
+
+<p>
+  To avoid such confusion, you will need to keep your comments up to
+  date, meaning just as up to date as your code. If it's not worth
+  maintaining a piece of documentation up to that standard, it
+  probably isn't worth writing it in the first place (rule A).
+</p>
+
+<p>
+  That raises the important question of how to make the code clear
+  without extensive comments. Imagine the selection above with no
+  comments at all. How would a reader know why the elasticity is 2 and
+  not 3?
+</p>
+
+<p>
+  To solve that problem we turn to the code itself. Much of the
+  content of the comments above can be readily incorporated into the
+  code:
+</p>
+
+<pre>
+<em>* See Shapiro (2005), The Economics of Potato Chips,</em>
+<em>* Harvard University Mimeo, Table 2A.</em>
+local percent_change_in_quantity = -0.4
+local percent_change_in_price = 0.2
+local elasticity = 'percent_change_in_quantity'/'percent_change_in_price'
+compute_welfare_loss, elasticity('elasticity')
+</pre>
+
+<p>
+  This code block contains just as much documentation as the one we
+  started with. It makes clear both the formula for the price
+  elasticity and the quantitative components we are using. But it is
+  far better than the original code, because it has far less scope for
+  internal inconsistency. You can't change the percent change in
+  quantity without also changing the elasticity, and you can't get a
+  different elasticity number with these percent changes.
+</p>
+
+<p>
+  When possible, then, you should write your code to be
+  self-documenting (rule B). Use the naming of variables and the
+  structure of the code to help guide a reader through your
+  operations. That's a good idea anyway, because even the best
+  comments can't untangle a coding mess. To boot, writing such code
+  will mean you don't have to write comments and other notes only to
+  find that they have later lost their grip on what the code is really
+  doing.
+</p>
+
+<p>
+  These principles apply far beyond code, and indeed they underlie
+  many of the other chapters in this handbook. Organizing your data
+  files so that their structure makes their meaning clear lets you
+  avoid pairing every dataset you make with extensive documentation
+  (chapter <a href="#chap_Keys">5</a>). Naming files, directories, and
+  other objects intelligently means their names declare their function
+  (chapter <a href="#chap_Directories">4</a>). A cleverly drawn figure
+  or table will often say so much that notes are present only to
+  confirm the obvious or clarify minor details. And so on.
+</p>
+
+<p>
+  Documentation does have its place. In the example above, if we don't
+  include the citation to Jesse's stellar thesis, how will a reader
+  know where 0.4 comes from? There is no (practical) way to script the
+  link back to the original paper, so a comment is appropriate.
+</p>
+
+<p>
+  Documentation can be used to make clear that something is right when
+  it at first may seem wrong. Suppose, for example, we have a
+  variable <em>y</em> distributed lognormal with
+  location <em>&mu;</em> and scale <em>&sigma;</em>. If we wish to
+  compute the log of the variable's expectation, it might be wise to
+  write:
+</p>
+
+<pre>
+<em>* Log of the expectation is not the expectation of the log</em>
+<em>* See http://en.wikipedia.org/wiki/Log-normal_distribution</em>
+log_expected_y = 'mu' + 0.5*('sigma'^2)
+</pre>
+
+<p>
+  so that a reader isn't surprised that the expression is not simply
+  log(<em>E(y)</em>) = <em>&mu;</em>. Of course, what to document is
+  in the eye of the beholder: if you and your collaborators are not
+  likely to forget the expression for the expectation of a lognormal,
+  then the comment above is probably superfluous.
+</p>
+
+<p>
+  Documentation can also be used to prevent unintended
+  behavior. Suppose you write a command to estimate a regression model
+  via maximum likelihood. If two or more variables are collinear, your
+  solver will iterate forever. So, you may wish to put a warning in
+  the code: "Don't try to estimate an unidentified model." But be
+  careful. As we note above, nothing documents code quite like
+  code. Writing a function to test whether your <em>(X'X)</em>
+  matrix has full rank will provide just as much documentation, will
+  not require the user to be conscientious enough to read the
+  comments, and will likely lead to a faster resolution of the
+  problem.
+</p>
+
+<p>
+  Which brings us to a related point. In Jesse's house there is a
+  furnace room with two switches. One controls a light. The other
+  turns off the hot water for the whole house. When he first moved in,
+  people (let's not name names) conducting innocent business would
+  occasionally shut off the hot water while fumbling for the light
+  switch. He tried having a sign: "Do not touch this switch." But in
+  the dark, in a hurry, a sign is worthless. So he put a piece of tape
+  over the switch. If there are some inputs you really, really want to
+  prevent, comments that say "don't ever do X" are not the way to
+  go. Write your code so it will not let those inputs in the door in
+  the first place.
+</p>
+
+<h2 id="management">Chapter 8: Management</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Manage tasks with a task management system.</p>
+
+  <p>(B) E-mail is not a task management system.</p>
+
+</blockquote>
+
+<pre>
+From: Jesse Shapiro
+To: Matthew Gentzkow
+Re: potato chips
+Hey Matt,
+
+Do you have that robustness check where we control for the amount of
+ranch dip sold in each county? I am writing the section on dipping
+sauces and wanted to mention it.
+
+-Jesse
+</pre>
+
+<hr/>
+
+<pre>
+From Matthew Gentzkow
+To: Jesse Shapiro
+
+Sorry, I thought you were doing that because it's similar to that
+other thing you were doing with controlling for salsa sales.  Let me
+know if you want to do it or if you want me to take over.
+
+-MG
+</pre>
+
+<hr/>
+
+<pre>
+From: Jesse Shapiro
+To: Matthew Gentzkow, Michael Sinkinson
+
+I thought Matt was doing ranch dip and Mike was doing salsa?
+
+-Jesse
+</pre>
+
+<hr/>
+
+<pre>
+From: Michael Sinkinson
+To: Matthew Gentzkow, Jesse Shapiro
+
+I did the salsa robustness check two weeks ago. See my e-mail from 8/14, 9:36am.
+
+-Mike
+</pre>
+
+<hr/>
+
+<pre>
+From: Jesse Shapiro
+To: Michael Sinkinson, Matthew Gentzkow
+
+Right, but in that e-mail you were controlling for the log of salsa
+consumption. I thought we agreed we wanted the level of consumption?
+
+-Jesse
+</pre>
+
+<hr/>
+
+<pre>
+From: Michael Sinkinson
+To: Jesse Shapiro, Matthew Gentzkow
+
+On it!
+
+-Mike
+</pre>
+
+<p>
+  What's wrong with this picture? Mainly, it's ambiguity. Mike thought
+  his task was done, when Jesse thought it was not. Matt thought Jesse
+  was working on the ranch dressing task, but Jesse thought Matt was
+  doing it. In fact, a careful reader will notice that even after all
+  that e-mail, it's <em>still</em> not clear who is going to do the
+  ranch dressing robustness check!
+</p>
+
+<p>
+  It's worse than that. If we come back to the salsa task in two
+  weeks, where will we look to find out its status? This thread? The
+  one Mike mentions from 8/14? And how will we reference our
+  discussion? By date? By forwarding this whole thread, including all
+  the extraneous exchanges about ranch dressing?
+</p>
+
+<p>
+  If you work alone, these problems are small. You probably have a
+  legal pad or a Word document or a spot on your whiteboard where you
+  keep track of what you need to do. Every now and again you might
+  forget what you were planning to do or where you jotted something
+  down, but if you are organized you probably get by ok.
+</p>
+
+<p>
+  The minute two people need to work together, however, the problems
+  exemplified in the thread above are big. And although we haven't
+  proved this formally, we think they grow more than arithmetically
+  with the number of people (coauthors, RAs, etc.) involved in a
+  project.
+</p>
+
+<p>
+  Software firms handle project and task management systematically.
+  Microsoft does not just say, "Hey Matt, when you get a chance, can
+  you add in-line spell-checking to Word?"
+</p>
+
+<p>
+  Rather, enterprises engaged in collaborative work use project and
+  task management systems that enforce organized communication and
+  reporting about tasks. In the old days, those often involved handing
+  physical reports up the chain of command. Now, they increasingly
+  involve the use of browser-based task-management portals.
+</p>
+
+<p>
+  In one of these portals, Mike's salsa task would have looked like
+  this:
+</p>
+
+<pre>
+<strong>Task:</strong>: Salsa Robustness Check
+<strong>Assigned To:</strong> Michael Sinkinson
+<strong>Assigned By:</strong> Jesse Shapiro
+<strong>Subscribed to Comments:</strong> Matthew Gentzkow
+<strong>Status:</strong> Completed.
+<strong>Description:</strong>
+
+Run main specifications adding a control for per capita salsa consumption.
+Add a line to our robustness table reflecting the results.
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Comment by:</strong> Michael Sinkinson
+
+On it!
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Comment by:</strong> Michael Sinkinson
+
+See the new version of the paper posted in /drafts/Potato Chips and
+the supporting code in /analysis/Potato Chips. Is this what you had in
+mind?
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Comment by:</strong> Jesse Shapiro
+
+Almost. Our econometric model implies that salsa consumption should
+enter in levels not logs. Can you revise?
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Comment by:</strong> Michael Sinkinson
+
+Ok, how about now?
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Comment by:</strong> Jesse Shapiro
+
+Yup, looks good.
+</pre>
+
+<hr/>
+
+<pre>
+<strong>Completed by:</strong> Michael Sinkinson
+</pre>
+
+<p>
+  Notice that now there is no ambiguity about whose responsibility the
+  task is or what the goals are. Anyone looking at the task header
+  will know that Mike is expected to do it, and no explicit
+  communication is needed to figure out who is doing what.
+</p>
+
+<p>
+  There is also a natural place to store communication about the
+  task. Everyone expects that questions and answers will be posted to
+  the appropriate task. And, weeks, months, or years later, there will
+  still be a task-specific record of who did what and why.
+</p>
+
+<p>
+  There are lots of good online systems for task management available
+  at the moment that look something like the example above. Many are
+  free or at least have a free no-frills option. Most have apps for
+  mobile devices and offer some kind of e-mail integration so, for
+  example, Mike's comments above would be e-mailed to Jesse so he
+  knows there's something he needs to look at.
+</p>
+
+<p>
+  These systems are changing all the time and which one you want is a
+  matter of taste, style, budget, and the like, so we won't review
+  them all here. Good free options as of this writing
+  include <a href="http://www.asana.com">Asana</a>,
+  <a href="http://www.wrike.com">Wrike</a>,
+  and <a href="http://www.getflow.com">Flow</a>. We use a program
+  called JIRA, which is not free and requires a little more work to
+  install.
+</p>
+
+<p>
+  While we're on the subject of useful tools, you should probably get
+  yourself set up with some kind of collaborative note-taking
+  environment. That way, you're not bound by the limitations of your
+  task management system in what you can share or record. It's helpful
+  to have a place to jot down thoughts or display results that are
+  less structured than the code that produces your final paper, but
+  more permanent than an e-mail or conversation.
+</p>
+
+<p>
+  The best system is one that lets you easily organize notes by
+  project and share them with other users. It's great if you can add
+  rich attachments so you can show your collaborators a graph, a code
+  snippet, a table, etc.
+</p>
+
+<p>
+  There are a bunch of options, and again, many are
+  free. <a href="http://www.evernote.com">Evernote</a> has a free
+  basic option and is available across lots of platforms and
+  interfaces. Another option for Windows users is OneNote, which is
+  included with Microsoft Office.
+</p>
+
+<h2 id="coding_style">Chapter 9: Code Style</h2>
+
+<blockquote>
+
+  <h3>Rules</h3>
+
+  <p>(A) Code should be logical, readable, robust, and efficient.</p>
+
+</blockquote>
+
+<p>
+  Social scientists sometimes write code that is like
+  stream-of-consciousness: a more or less random series of steps that
+  happen to produce the right result. A good way to generate this kind
+  of code is to use a statistical program like Stata interactively for
+  an hour and then copy and paste the list of commands into a text
+  editor. This code will do what it is supposed to do. But it will be
+  very difficult for someone other than the person who produced
+  it&mdash;or even for that same person after a day or two&mdash;to
+  read and understand it. It will be virtually impossible to modify or
+  extend it. And if anything about the environment changes&mdash;if
+  you try to run it on a different computer, say, or change the name
+  of an input file&mdash;it will break.
+</p>
+
+<p>
+  It is obvious that Google Maps or Microsoft Word could not be
+  written this way. The code for these programs must be written so
+  that many people over many years can read and understand it. It must
+  have a logical structure that makes it easy to fix, modify, and
+  extend, and allows people to take pieces developed for one problem
+  and apply them to another. It must be robust enough to remain viable
+  in a constantly changing environment. And it must be
+  efficient. Although social science projects are orders of magnitude
+  smaller, our code needs to fulfill these same requirements.
+</p>
+
+<p>
+  We believe in applying these principles to every piece of code we or
+  our RAs write without exception. It is tempting to write bad code
+  first and plan to clean it up later. But we are convinced that this
+  way of working is inefficient.
+</p>
+
+<p>
+  We also believe team members should take the time to improve code
+  they are modifying or extending even if they did not write it
+  themselves. A core of good code plus a long series of edits and
+  accretions equals bad code. The problem is that the logical
+  structure that made sense for the program when it was small no
+  longer makes sense as it grows. It is critical to regularly look at
+  the program as a whole and improve the logical structure through
+  reorganization and abstraction. Programmers call this "refactoring."
+  Even if your immediate task only requires modifying a small part of
+  a program, we encourage you to take the time to improve the program
+  more broadly. At a minimum, you should guarantee that the code
+  quality of the program overall is at least as good as it was when
+  you started.
+</p>
+
+<p>
+  As with other writing there is a certain amount of subjectivity in
+  judging what is good code. Choices involve tradeoffs. The right
+  choice in one language may be the wrong choice in another.
+</p>
+
+<h3>Code should be logical</h3>
+
+<h4>Despise redundancy</h4>
+
+<blockquote>
+  <p>
+    Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+    <br />
+    <em>The Pragmatic Programmer</em>
+  </p>
+</blockquote>
+
+<p>
+  If you remember nothing else about code style, remember
+  this: <em>redundancy is evil</em>.
+</p>
+
+<p>
+  Amateur code is plagued by redundancy. Blocks of code are copied and
+  pasted. Constant values are hard coded and repeated multiple
+  times. A new script is created by starting with an old one,
+  modifying a few lines, and then hitting "save as." As a result, the
+  same piece of knowledge (an instruction to the computer, a constant
+  value, an algorithm, an algebraic formula) is represented multiple
+  times.
+</p>
+
+<p>
+  Why is this evil? Most obviously, it means that someone who wants to
+  change some piece of knowledge must change it in multiple places. If
+  it can be represented in multiple places, the coder is unlikely to
+  know where to find it so they must go searching throughout the
+  program. Often, a piece of knowledge is changed in one place but not
+  another leading to nasty bugs. The logical structure of the code is
+  obscured because it's not obvious to the reader whether the
+  knowledge represented in one place is meant to be the same as that
+  in another place, or if not how they are meant to be
+  different. (There is little worse than having to put two large
+  blocks of code side by side and try to diff them by hand.) In a
+  moderately complex program, one reaches a point where understanding
+  or modifying it is virtually impossible and it's better to throw it
+  out and rewrite it from scratch.
+</p>
+
+<p>
+  <em>Never copy and paste code</em>. Or, if never is a bit too
+  strong, do this rarely, reluctantly, when you are sure there is no
+  alternative, only for small snippets of code, and only when you will
+  make significant changes after pasting.
+</p>
+
+<p>
+  When you are tempted to copy and paste, step back and ask yourself:
+  What is the piece of knowledge I'm duplicating? How can I
+  restructure the logic of the code so it has a single authoritative
+  representation. Maybe you should use a loop. Maybe you should
+  abstract some set of steps as a function. Maybe you should store
+  some options, input parameters, or metadata separately.
+</p>
+
+<h4>Separate functional code and metadata</h4>
+
+<p>
+  This is a corollary to the previous point. Not only should every
+  piece of knowledge have a single, unambiguous, authoritative
+  representation, but that representation should be where the reader
+  would expect to find it.
+</p>
+
+<p>
+  Code should be used to represent algorithms. Metadata (either set
+  off separately within a script or stored in a separate file) should
+  be used to represent the quantities that define specific instances
+  of those algorithms&mdash;parameters, options, physical quantities,
+  and so on.
+</p>
+
+<p>
+  Never hard code real numbers. E.g.<a href="#footnote-5"><sup class="footnote">5</sup></a>
+</p>
+
+<pre>
+effect_size = coefficient * population / 3
+height = measurement / 7.12
+</pre>
+
+<p>
+  What is 3? What is 7.12? The reader of the code has to guess. If
+  someone realizes later that 3 should be 4, they have to go hunting
+  through the code to find it. As already noted, hard coded values
+  often are referred to multiple times, introducing redundancy. It is
+  much better to write
+</p>
+
+<pre>
+num_cities = 3
+height_conversion_factor = 7.12
+
+effect_size = coefficient * population / num_cities
+height = measurement / height_conversion_factor
+</pre>
+
+<p>
+  The key point is, 3 is not a good name for the number of
+  cities. It's ambiguous&mdash;it could refer to 3 cities or 3 apples
+  or 3 kilograms. And it will end up pointing to the wrong piece of
+  information if the number of cities changes. The name num_cities is
+  better because it is both descriptive and appropriately
+  abstract.
+</p>
+
+<p>
+  Similarly, never hard code references to arrays. It is common to see
+  code like this:
+</p>
+
+<pre>
+parameters[27] = alphahat
+parameters[28] = betahat
+</pre>
+
+<p>
+  If the parameter vector changes, someone will have to go through the
+  code and change all the 28's to 29's. Someone who wants to refer to
+  the value of alpha later has to keep track of where in the parameter
+  vector it is located. This is a recipe for buggy code and
+  frustration. It is better to write
+</p>
+
+<pre>
+index_alpha = 27
+index_beta = 28
+
+parameters[index_alpha] = alphahat
+parameters[index_beta] = betahat
+</pre>
+
+<p>
+  or to make parameters a struct object so you can write
+</p>
+
+<pre>
+parameters.alpha = alphahat
+parameters.beta = betahat
+</pre>
+
+<p>
+  If the same constants are used in multiple scripts, they should be
+  stored in a separate file.
+</p>
+
+<h4>Abstract if and only if it improves the code you are writing right now</h4>
+
+<p>
+  Abstraction means changing the boundary between algorithm and
+  inputs/metadata. The Stata code
+</p>
+
+<pre>
+egen total_income = total(income), by(state)
+egen total_obs = total(1), by(state)
+gen y = (total_income - income) / (total_obs - 1)
+</pre>
+
+<p>
+  is an algorithm that computes leave-out mean income by state. One
+  could instead abstract this algorithm so it could work for counties,
+  cities, etc. by defining a function that allows the user to say
+</p>
+
+<pre>
+leave_out_mean_income, gen(y) byvar(state)
+</pre>
+
+<p>
+  or abstract it further so it could also work for variables other
+  than income
+</p>
+
+<pre>
+leave_out_mean, gen(y) byvar(state) meanvar(income)
+</pre>
+
+<p>
+  If you have redundant code, you should abstract. If your program
+  uses a leave-out-mean by state and also a leave-out mean by county,
+  it's time to write the <code>leave_out_mean</code> function.
+</p>
+
+<p>
+  But what if your code currently only computes the leave-out mean
+  once, for income by state? Abstraction may still make the logical
+  structure of the code clearer. In the first version of the leave-out
+  mean code above, the reader has to spend a few seconds staring at
+  the code to realize what it does. Many readers don't care about the
+  details of how the leave-out mean is computed. The generalized code
+  is clearer, and writing the generalized code doesn't take much more
+  time than writing the specific code.
+</p>
+
+<p>
+  Abstraction is not always a net gain, however. One could in
+  principle generalize the function above to compute many different
+  kinds of means so the user could write
+</p>
+
+<pre>
+compute_mean, gen(y) byvar(state) meanvar(income) ///
+  meantype(leave_out)
+</pre>
+
+<p>
+  Chances are, this will take a lot of time and will not do all that
+  much to improve the readability of the code.
+</p>
+
+<p>
+  The other advantage of abstraction is that if someone needs to
+  compute another leave-out mean later, they have a tool at the
+  ready. However, as a general rule it's best not to invest time in
+  generalizing code if there is no immediate gain. It's tempting to
+  add all kinds of functionality to programs that might be useful
+  someday. But if it's not useful right now, there's a good chance it
+  won't ever be used in which case the generalization is a waste of
+  time.
+</p>
+
+<h4>Write functions and files with a clear purpose</h4>
+
+<p>
+  A reader should be able to look at the name of a function or file
+  and guess what it does. This is good:
+</p>
+
+<pre>
+set memory 2g
+set_path
+define_rhs_variables
+define_lhs_variables
+</pre>
+
+<p>
+  This is bad:
+</p>
+
+<pre>
+do_preliminaries_part_1
+do_preliminaries_part_2
+</pre>
+
+<p>
+  Files called <code>figures.do</code> and <code>tables.do</code> are
+  better than files called <code>analysis.do</code>
+  and <code>more_analysis.do</code>.
+</p>
+
+<p>
+  This requires that objects not only have descriptive names, but that
+  they be defined in such a way that each object has a clear,
+  intuitive purpose.
+</p>
+
+<p>
+  This is one of several reasons why we try to keep functions and
+  files short. It's unlikely that the purpose of a 500-line script
+  will be clear or intuitive.
+</p>
+
+<p>
+  Often, it's not obvious how to take a long and unwieldy script and
+  make it short and purposeful. When this is difficult, it's usually a
+  sign that you need to step back and think about the logical
+  structure of the program as a whole.
+</p>
+
+<h4>Make your functions shy</h4>
+
+<p>
+  A reader should know exactly which variables a function uses as
+  inputs and which variables it can potentially change.
+</p>
+
+<p>
+  Most functions should explicitly declare their inputs and outputs
+  and should only operate on local variables. Make the set of inputs
+  and outputs as small as possible; the functions should be reluctant
+  to touch any more data than they need to. For example, if a function
+  only depends on the parameter beta, pass it only beta and not the
+  entire parameter vector.
+</p>
+
+<p>
+  Use global variables rarely if ever.
+</p>
+
+<h3>Code should be readable</h3>
+
+<h4>Keep it short</h4>
+
+<p>
+  No line of code should be more than 100 or so characters long. Long
+  scripts should be factored into smaller functions. Individual
+  functions should not normally be more than 80 or so lines long.
+</p>
+
+<h4>Order your functions for linear reading</h4>
+
+<p>
+  A reader should be able to read your code from top to bottom without
+  skipping around. Subfunctions should therefore appear immediately
+  after the higher level functions that call them. 
+</p>
+
+<h4>Choose descriptive names</h4>
+
+<p>
+  Good names replace comments and make code self documenting. It's
+  better to write
+</p>
+
+<pre>
+gen income_percap = income / population
+</pre>
+
+<p>
+  than
+</p>
+
+<pre>
+<em>* Define income per capita variable</em>
+gen ipc = income / population
+</pre>
+
+<p>
+  It's better to write
+</p>
+
+<pre>
+function [name] = lookup_name(id_number)
+</pre>
+
+<p>
+  than
+</p>
+
+<pre>
+<em>%</em>
+<em>% lname: This function takes an id_number as input and</em>
+<em>%     returns the name of the corresponding person.</em>
+<em>%</em>
+
+function [output] = lname(input)
+</pre>
+
+<p>
+  It's better to have a file called <code>appendix_tables.do</code>
+  with no header comment than a file called <code>atab.do</code> with
+  a header comment explaining that the file produces tables for the
+  appendix.
+</p>
+
+<p>
+  By default, names for variables, functions, files, etc. should
+  consist of complete words. Only use abbreviations where you are
+  confident that a reader not familiar with your code would understand
+  them and that there is no ambiguity. Most economists would
+  understand that "income_percap" means income per capita, so there is
+  no need to write out income_percapita. But "income_pc" could mean a
+  lot of different things depending on the context. Abbreviations like
+  st, cnty, and hhld are fine if they are used consistently throughout
+  a body of code. But using "blk_income" to represent the income in a
+  census block would be confusing.
+</p>
+
+<p>
+  Avoid having multiple objects whose names do not make clear how they
+  are different: e.g., scripts called <code>state_level_analysis.do</code> and
+  <code>state_level_analysisb.do</code> or variables
+  called <code>x</code> and <code>xx</code>.
+</p>
+
+<p>
+  Names can be shorter or more abbreviated when the objects they
+  represent are used frequently and/or very close to where they are
+  defined. E.g., it is sometimes useful to define short names to use
+  in algebraic calculations. This is hard to read:
+</p>
+
+<pre>
+log_coefficient = log((income_percap' * income_percap)^(-1) *///
+  income_percap' * log_wage)
+</pre>
+
+<p>This is better:</p>
+
+<pre>
+X = income_percap
+Y = log_wage
+log_coefficient = log((X'*X)^(-1)*X'*Y) 
+</pre>
+
+<h4>Pay special attention to coding algebra</h4>
+
+<p>
+  Make sure that key calculations are clearly set off from the rest of
+  the code. If you have a function called demand() with 15 lines of
+  setup code, 1 line that actually computes the demand function, and 5
+  more lines of other code, that 1 line should be set off from the
+  rest of the code or isolated inside a sub-function so it is obvious
+  to a reader scanning the document.
+</p>
+
+<p>
+  Break complicated algebraic calculations into pieces. Programming
+  languages have no objection to definitions like
+</p>
+
+<pre>
+gen percap_gdp_real = ///
+  (consumption + govt_expenditures + exports - imports - taxes) * ///
+  10^6 / (price_index * pop_thousands * 1000)
+</pre>
+
+<p>
+  or far longer ones. But a human may find it easier to parse the
+  following:
+</p>
+
+<pre>
+gen gdp_millions_nominal = ///
+  (consumption + govt_expenditures + exports - imports - taxes) 
+gen gdp_total_real = gdp_millions * 10^6 / price_index
+gen pop_total = pop_thousands * 10^3
+gen gdp_percap_real = gdp_total_real / pop_total
+</pre>
+
+<p>
+  Complex calculations are better represented in mathematical notation
+  than in code. This is a case where storing documentation (a LaTex or
+  PDF with the calculations written out) alongside code can make
+  sense.
+</p>
+
+<h4>Make logical switches intuitive</h4>
+
+<p>
+  When coding switches, make sure that the conditions are
+  intuitive. Often there is more than one way to express a logical
+  condition. Choosing the most intuitive expression makes the logical
+  meaning of the switch clear, and helps users parse the code
+  quickly. In the following example using Matlab code,
+  suppose <code>x</code> is a vector of 0s and 1s:
+</p>
+
+<pre>
+if max(x) == 0
+    y = 0
+end
+</pre>
+
+<p>
+  This block of code is logically equivalent to:
+</p>
+
+<pre>
+if all(x == 0)
+    y = 0
+end
+</pre>
+
+<p>
+  Both switches check whether the vector x contains only 0s. However,
+  the first condition parses as "if the maximum entry
+  of <code>x</code> if equal to 0", while the second parses as "if all
+  entries of <code>x</code> are zero". The second test is better
+  because it is logically identical to what we want to check, whereas
+  the first test relies on the fact that all entries of x are greater
+  than or equal to 0.
+</p>
+
+<h4>Use enough comments and no more</h4>
+
+<p>
+  Eliminate redundant comments. There is no need for a comment that
+  says "performs analysis" at the top of a file called
+  <code>analysis.do</code>. There is no need for a comment that says
+  "define log population" before the line
+</p>
+
+<pre>
+lpop = log(pop)
+</pre>
+
+<p>
+  The purpose of each script should be clear. If the file name by
+  itself does not make the purpose clear, there should be a comment at
+  the top of the file to clarify.
+</p>
+
+<p>
+  The required inputs for every function should be clear. For example,
+  a function may require that a certain input be a positive
+  integer. If the name of the function and the name of the inputs does
+  not make this clear, there should be a comment at the top of the
+  file to clarify.
+</p>
+
+<p>
+  Comments should be used to explain code that might otherwise seem
+  unintuitive to the user. For example, the function below translates
+  the mean and standard deviation of a variable into parameters of an
+  underlying lognormal distribution. A comment is in order so that the
+  user knows what is going on:
+</p>
+
+<pre>
+program define simulate_spending
+    syntax, gen(name) mean_spending(real) sd_spending(real)
+
+    <em>* using known results to translate moments of spending into  </em>
+    <em>* parameters of lognormal distribution</em>
+    <em>* see http://en.wikipedia.org/wiki/Log-normal_distribution</em>
+    local sigma = sqrt(ln(1 + ('sd_spending'/'mean_spending')^2))
+    local mu = ln('mean_spending') - 0.5 * ('sigma'^2)
+    display 'sigma'
+    display 'mu'
+    gen 'gen' = exp(rnormal('mu', 'sigma'))
+end 
+</pre>
+
+<h4>Be consistent</h4>
+
+<p>
+  There are many points of coding style that are mostly a matter of
+  taste. E.g., sometimes people write variable names like
+  <code>hhld_annual_income</code> and other times
+  like <code>hhldAnnualIncome</code>. Although some people have strong
+  feelings about which is better, we don't. What is important is that
+  everyone on a team use consistent conventions. This is especially
+  important within scripts: if you are editing a program in which all
+  scripts use two-space indent you should use two-space indent too,
+  even if that breaks the normal rule. (Or, you should use grep to
+  update the script to four-space indent).
+</p>
+
+<h3>Code should be robust</h3>
+
+<h4>Check for errors</h4>
+
+<p>
+  Programming languages typically come with debugging tools and
+  informative error handling. Often they are enough, and we do not
+  need to write additional error checking ourselves. For example if in
+  Stata I write
+</p>
+
+<pre>
+gen str x = "hello"
+gen y = x^2
+</pre>
+
+<p>
+  then Stata will return:
+</p>
+
+<pre>
+type mismatch
+r(109); 
+</pre>
+
+<p>
+  Typically, this will be enough information to alert the user to the
+  fact that the code failed because the user attempted to square a
+  string. Adding additional error-checking to check
+  that <code>x</code> is not a string will add one or more lines of
+  code with little gain in functionality.
+</p>
+
+<p>
+  However, there are some circumstances in which error-checking should
+  be added to code.
+</p>
+
+<p>
+  Error-checking should be added for robustness. For example, if the
+  wrong argument will cause your script to become stuck in an infinite
+  loop, or call so much memory that it crashes your computer, or erase
+  your hard drive, you should include code to ensure that the
+  arguments satisfy sufficient conditions so that those outcomes will
+  not occur.
+</p>
+
+<p>
+  Error-checking should be added to avoid unintentional behavior. For
+  example, suppose function <code>multiplybytwo()</code> multiplies a
+  number by 2 but is only written to handle positive reals. For
+  negative reals it produces an incoherent value. Because a user might
+  expect the function to work on any real, it would be a good idea to
+  throw an error if the user supplies a negative real argument. (Of
+  course, it would be even better not to write a function with such
+  confusing behavior.)
+</p>
+
+<p>
+  Error-checking should be added to improve clarity of error
+  messages. For example, suppose that function <code>norm()</code>
+  requires a vector input. Suppose the default error message that gets
+  returned in the event you pass <code>norm()</code> it a scalar is
+  "<em>Input to '*' cannot be an empty array."</em> A user could spend
+  a lot of time trying to understand the source of the error. If you
+  suspect that people may be tempted to pass the function a scalar, it
+  is probably worth checking the input and returning a more
+  informative error message like "<em>Input to norm() must be a
+  vector.</em>" Chances are that this will save a few more 30-minute
+  debugging sessions in the future and be worth the time.
+</p>
+
+<p>
+  Note that there is an intrinsic tradeoff between time spent coding
+  error-handling and time spent debugging. It is not efficient to code
+  explicit handling of all conceivable errors. For example, it is
+  probably not worth adding a special warning in the case where the
+  user passes a string to <code>norm()</code>, because the user is
+  unlikely to make that mistake in the first place.
+</p>
+
+<p>
+  Error checking code should be written so it is easy to read. It
+  should be clearly separated from other code, either in a block at
+  the top of a script or in a separate function. It should be
+  automated whenever possible. If you find yourself writing a comment
+  of the form:
+</p>
+
+<pre>
+<em>% Note that x must be a vector</em>
+</pre>
+
+<p>
+  ask yourself whether you can replace this with code that throws an
+  error when <code>isvector(x)</code> is false. Code is more precise
+  than comments, and it lets the language do the work.
+</p>
+
+<p>
+  The usual warning against redundancy applies to error-checking. If
+  you have a large program many of whose functions operate on a data
+  matrix X, and there are various conditions that the data matrix must
+  satisfy, write a function called <code>is_valid_data_matrix()</code>
+  rather than repeating all the validation checks at the top of each
+  function.
+</p>
+
+<h4>Write tests</h4>
+
+<p>
+  Real programmers write "unit tests" for just about every piece of
+  code they write. These scripts check that the piece of code does
+  everything it is expected to do. For a demand function that returns
+  quantity given price, for example, the unit test might confirm that
+  several specific prices return the expected values, that the demand
+  curve slopes down, and that the function properly handles zero,
+  negative, or very large prices. For a program to compile, it must
+  pass all the unit tests. Many bugs are thus caught automatically. A
+  large program will often have as much testing code as program
+  code.
+</p>
+
+<p>
+  Many people advocate writing unit tests <em>before</em> writing the
+  associated program code.
+</p>
+
+<p>
+  Economists typically do not write unit tests, but they test their
+  code anyway. They just do it manually. An economist who wrote a
+  demand function would give it several trial values interactively to
+  make sure it performed as expected. This is inefficient because
+  writing the test would take no more time than testing manually, and
+  it would eliminate the need to repeat the manual tests every time
+  the code is updated. This is just a special case of the more general
+  principle that any manual step that can be turned into code should
+  be.
+</p>
+
+<p>
+  We therefore advocate writing unit tests wherever possible.
+</p>
+
+<h3>Code should be efficient</h3>
+
+<h4>Profile slow code relentlessly</h4>
+
+<p>
+  Languages like Matlab and R provide sophisticated profiling
+  tools. For any script for which computation time is an issue
+  (typically, anything that takes more than a minute or so to run),
+  you should profile frequently. The profiler often reveals simple
+  changes that can dramatically increase the speed of the code.
+</p>
+
+<p>
+  Profiling code in Stata or similar statistical packages is more
+  difficult. Often, the sequential nature of the code means it is easy
+  to see where it is spending time. When this is not the case, insert
+  timing functions into the code to clarify which steps are slow.
+</p>
+
+<p>
+  Speed can occasionally be a valid justification for violating the
+  other coding principles we articulate above. Sometimes we are
+  calling a function so many times that the tiny overhead cost of
+  good, readable code structure imposes a big burden in terms of
+  run-time. But these exceptions are rare and occur only in cases
+  where computational costs are significant.
+</p>
+
+<h4>Store "too much" output from slow code</h4>
+
+<p>
+  There is an intrinsic tradeoff between storage and CPU time. We
+  could version no intermediate data or results, and rerun the entire
+  code pipeline for a project back to the raw data stage each time we
+  change one of the tables. This would save space but would require a
+  tremendous amount of computation time. Or, we could break up a
+  project's code into hundreds of directories, each of which does one
+  small thing, and store all the intermediate output along the
+  way. This would let us make changes with little computation time but
+  would use a lot of storage (and would likely make the pipeline
+  harder to follow). Usually, we compromise, aggregating code into
+  directories for conceptual reasons and to efficiently manage
+  storage.
+</p>
+
+<p>
+  It is important to keep this tradeoff in mind when writing slow
+  code. Within reason, err on the side of storing too much output when
+  code takes a long time to run. For example, suppose you write a
+  directory to estimate several specifications of a model. Estimation
+  takes one hour. At the time you write the directory, you expect to
+  need only one parameter from the model. Outputting only that
+  parameter is a mistake. It will (likely) be trivial to store
+  estimates of all the model parameters, and the benefits will be
+  large in compute time if, later, you decide it would be better to
+  report results on two or three of the model's parameters.
+</p>
+
+<p>
+  If estimation is instantaneous, re-estimating the model later to
+  change output format will not be costly in terms of compute time. In
+  such cases, concerns about clarity and conceptual boundaries of
+  directories should take priority over concerns about CPU time.
+</p>
+
+<h4>Separate slow code from fast code</h4>
+
+<p>
+  Slow code that one plans to change rarely, such as code that
+  estimates models, runs simulations, etc., should ideally be
+  separated from fast code that one expects to change often, such as
+  code that computes summary statistics, outputs tables, etc. This
+  makes it easy to modify the presentation of the output without
+  having to rerun the slow steps over and over.
+</p>
+
+<p>
+  Consider again a directory that estimates several specifications
+  that take, together, an hour to run. The code that produces tables
+  from those specifications will likely run in seconds. Therefore, it
+  should be stored in a separate directory. We are likely to want to
+  make many small changes to how we format the output, none of which
+  will affect which specifications we want to run. It will not be
+  efficient to have to repeatedly re-estimate the same model in order
+  to change, say, the order of presentation of the parameters in the
+  table.
+</p>
+
+<p>
+  Again, if instead estimation were very fast, it might be reasonable
+  to include the script that produces tables inside the same directory
+  as the script that estimates models. In such a case, the decision
+  should be based on clarity, robustness, and the other principles
+  articulated above, rather than on economizing CPU time.
+</p>
+
+<blockquote class="footnote" id="footnote-5">
+  <p>
+    [5]
+    Code examples in this document mainly use either Stata or Matlab syntax.
+  </p>
+</blockquote>
+
+<h2 id="further_reading">For Further Reading</h2>
+
+<p>
+  The ideas in this handbook are not new. The chapters are an attempt
+  to communicate well-trod ideas from software engineering and
+  computer science to a social science audience.
+</p>
+
+<p>
+  Here we list additional resources that have influenced our
+  thinking. You may find these helpful if you wish to see some of the
+  topics we have covered in greater depth.
+</p>
+
+<p>
+  Note that the single best resource we know of is not a book, but a
+  website called <a href="http://software-carpentry.org/">Software
+  Carpentry</a> devoted to teaching computing to scientists.
+</p>
+
+<p>
+  Bowman, Judith S., Sandra L. Emerson and Marcy Darnovsky. 2001.
+  <em>The Practical SQL Handbook: Using SQL Variants.</em>
+  New York: Addison-Wesley.
+  [Chapter 2 contains a nice overview of database design.]
+</p>
+
+<p>
+  Brooks, Frederick P. 1975.
+  <em>The Mythical Man-month.</em>
+  Reading: Addison-Wesley.
+</p>
+
+<p>
+  Hunt, Andrew and David Thomas. 2000.
+  <em>The Pragmatic Programmer: From Journeyman to Master.</em>
+  Addison-Wesley: New York.
+</p>
+
+<p>
+  Immon, William H. 2005.
+  <em>Building the Data Warehouse</em>.
+  New York: Wiley.
+</p>
+
+<p>
+  Martin, Robert C. 2008.
+  <em>Clean Code: A Handbook of Agile Software Craftsmanship.</em>
+  New York: Prentice Hall.
+</p>
+
+<p>
+  Lutz, Mark and David Ascher. 1999.
+  <em>Learning Python.</em>
+  New York: O'Reilly Media.
+</p>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+
+<p>
+  We benefited greatly from the input of coauthors and colleagues on
+  the methods described in this handbook. Ben Skrainka's Institute for
+  Computational Economics lecture slides showed us that we were not
+  alone.
+</p>
+
+<p>
+  Most importantly, we acknowledge the tireless work of the research
+  assistants who suffered through our obsessions and wrong turns.
+</p>
+
+</body>
+</html>
