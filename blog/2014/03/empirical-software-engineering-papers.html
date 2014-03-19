@@ -1,0 +1,136 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Empirical Software Engineering Papers"
+date: 2014-03-19
+time: "10:00:00"
+category: ["Research", "Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  When I teach scientists programming,
+  I frequently cite empirical studies in software engineering
+  to back up my claims about various tools and practices making people more productive.
+  No good, short survey of those papers exists&mdash;writing one
+  has been on my to-do list for several years&mdash;but
+  I hope the pointers below will be a useful substitute.
+</p>
+<!-- end excerpt -->
+<p>
+  The best short introduction to empirical software engineering is
+  Robert Glass's book <a href="http://www.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/"><em>Facts and Fallacies of Software Engineering</em></a>,
+  but it's twelve years old now,
+  and the field has exploded since it was published.
+  Steve McConnell's <a href="http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/"><em>Code Complete: A Practical Handbook of Software Construction</em></a>
+  is slightly more up to date,
+  and the anthology <a href="http://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/"><em>Making Software: What Really Works, and Why We Believe It</em></a>
+  is more recent still,
+  but they are both too long and too dense for most people.
+</p>
+<p>
+  If all you want is a sense of what's out there,
+  <a href="http://neverworkintheory.org/">It Will Never Work in Theory</a>
+  is an infrequently-updated blog of interesting new results.
+  Some of my favorite entries are:
+</p>
+<ul>
+  <li>
+    <a href="http://neverworkintheory.org/2011/06/30/lets-go-to-the-whiteboard.html">Let's Go to the Whiteboard</a>:
+    what programmers actually draw when they talk about programs,
+    and why.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/07/18/understanding-broadcast-based-peer-review-on-open-source-projects.html">Understanding Broadcast Based Peer Review on Open Source Projects</a>:
+    explores the "toss it out there and hope someone catches it" model of code review
+    used in many open source projects.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/07/26/usability-implications-of-requiring-parameters-in-objects-constructors.html">Usability Implications of Requiring Parameters in Objects' Constructors</a>:
+    a good introduction to the kinds of things that careful qualitative analysis can tell us
+    about the usability of programming languages and their features.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/08/24/is-transactional-programming-actually-easier.html">Is Transactional Programming Actually Easier?</a>:
+    uses a quantitative approach to tackle the same kinds of usability questions.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2012/10/25/an-experiment-about-static-and-dynamic-type-systems.html">An Experiment About Static and Dynamic Type Systems</a>:
+    another example of what careful, controlled experimentation can reveal about a language.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/11/08/a-field-study-of-api-learning-obstacles.html">A Field Study of API Learning Obstacles</a>:
+    full of rich insights and practical implications relevant for anyone trying to improve the developer documentation of their products.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/08/30/what-makes-a-good-bug-report.html">What Makes a Good Bug Report?</a>:
+    looks at what the bug reporter can and should do to get a faster and more useful response.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/09/06/does-adding-manpower-also-affect-quality.html">Does Adding Manpower Also Affect Quality?</a>:
+    its two main conclusions are that
+    increased team size and linear growth are correlated with later periods of better product quality,
+    but periods of accelerated team expansion are correlated with later periods of reduced software quality.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2013/07/07/how-and-why-process-metrics-are-better.html">How, and Why, Process Metrics Are Better</a>:
+    found that if you want to predict how many bugs there are in a piece of code,
+    you're better off looking at how the code was produced than at the code itself.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/10/24/an-empirical-comparison-of-the-accuracy-rates-of-novices-using-the-quorum-perl-and-randomo-programming-languages.html">An Empirical Comparison of the Accuracy Rates of Novices using the Quorum, Perl, and Randomo Programming Languages</a>:
+    found that Perl is as hard to learn as a language with a randomly-designed syntax.
+    Many of the comments on the blog and by email to the paper's authors were hostile;
+    the lead author <a href="http://neverworkintheory.org/2011/10/27/author-response-quorum-vs-perl-vs-randomo-novice-accuracy-rates.html">responded</a>,
+    and <a href="http://neverworkintheory.org/2014/01/29/stefik-siebert-syntax.html">recently published</a>
+    a larger study using three different investigative techniques
+    that bears out the results of the original paper.
+    (I'm hoping to get them to repeat their study for Python, Perl, R, and MATLAB some time this year...)
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/12/02/the-fcs1-a-language-independent-assessment-of-cs1-knowledge.html">The FCS1: A Language Independent Assessment of CS1 Knowledge</a>:
+    describes a <a href="http://en.wikipedia.org/wiki/Concept_inventory">concept inventory</a>
+    for basic programming concepts.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2013/03/08/halving-fail-rates-using-peer-instruction.html">Halving Fail Rates using Peer Instruction</a>:
+    another landmark paper in CS education,
+    this one showing that <a href="http://mazur.harvard.edu/research/detailspage.php?rowid=8">peer instruction</a>
+    improves retention in introductory programming classes.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2011/12/10/a-decade-of-research-and-development-on-program-animation-the-jeliot-experience.html">A Decade of Research and Development on Program Animation: The Jeliot Experience</a>:
+    recapitulates a long-running computing education research project,
+    and shows how both the authors' ideas and the field as a whole have evolved over the years.
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2012/05/17/do-faster-releases-improve-software-quality.html">Do Faster Releases Improve Software Quality?</a>:
+    explores what happened when Firefox shifted from occasional large releases
+    to frequent small ones.
+    Long story short,
+    with shorter release cycles, users do not experience significantly more post-release bugs,
+    and bugs are fixed faster,
+    but users experience these bugs earlier during software execution (i.e., the program crashes earlier).
+  </li>
+  <li>
+    <a href="http://neverworkintheory.org/2013/06/13/uml-in-practice-2.html">UML in Practice</a>:
+    an award-winning paper that explores why most programmers in industry <em>don't</em> use
+    one of academics' favorite creations.
+  </li>
+  <li>
+    Reviews of <a href="http://neverworkintheory.org/2012/05/03/a-review-of-code-simplicity.html"><em>Code Simplicity</em></a>
+    and <a href="http://neverworkintheory.org/2013/08/12/review-essence-of-software-engineering.html"><em>The Essence of Software Engineering</em></a>,
+    two disappointing books that prove that many software engineering researchers still don't see what evidence has to do with anything.
+  </li>
+</ul>
+<p>
+  I'd welcome pointers to other openly-access papers
+  reporting empirical studies that are relevant to what we teach.
+  (Unfortunately,
+  and ironically,
+  the ACM and IEEE are among the most backward of professional societies
+  when it comes to open access publishing.
+  As a result,
+  a lot of really interesting work in this field
+  currently languishes in unfindable obscurity behind their paywalls.)
+</p>
