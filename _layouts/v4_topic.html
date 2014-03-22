@@ -26,11 +26,15 @@ root: ../..
           {% if page.youtube %}
             <div class="youtube">
               <iframe title="{{page.lesson_title}}/{{page.title}}"
-                      src="http://www.youtube.com/embed/{{page.youtube.slug}}"
+                      src="http://www.youtube.com/embed/{{page.youtube.slug}}?html5=True"
                       time="{{page.youtube.time}}"
                       width="640" height="506"
                       frameborder="0"
                       allowfullscreen="allowfullscreen"></iframe>
+            </div>
+            <div>
+                <a href="http://www.youtube.com/watch?v={{page.youtube.slug}}&html5=True">
+                    {{page.lesson_title}}/{{page.title}} at YouTube</a>
             </div>
           {% endif %}
 

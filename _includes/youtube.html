@@ -1,8 +1,10 @@
 <div class="youtube">
   <iframe title="{{video_title}}"
-          src="http://www.youtube.com/embed/{{video_slug}}"
+          src="http://www.youtube.com/embed/{{video_slug}}?html5=True"
           time="{{video_time}}"
           width="640" height="506"
           frameborder="0"
           allowfullscreen="allowfullscreen"></iframe>
+  <a href="http://www.youtube.com/watch?v={{video_slug}}&html5=True">
+      {{video_title}}</a>
 </div>
