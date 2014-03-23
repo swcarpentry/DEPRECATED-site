@@ -18,18 +18,19 @@ category: ["Opinion"]
   <a href="http://third-bit.com/pages/not-on-the-shelves-2003.html">2003</a>,
   and
   <a href="http://third-bit.com/pages/not-on-the-shelves-2009.html">2009</a>
-  led (directly or indirectly) to
+  led to
   <a href="http://www.amazon.com/Beautiful-Code-Leading-Programmers-Practice/dp/0596510047/"><em>Beautiful Code</em></a>,
   <a href="http://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/"><em>Making Software</em></a>,
-  and <a href="http://aosabook.org/en/index.html"><em>The Architecture of Open Source Applications</em></a>;
-  I'd welcome comments on what <em>isn't</em> out there
-  that you really wish you could read.
+  <a href="http://aosabook.org/en/index.html"><em>The Architecture of Open Source Applications</em></a>,
+  and a few others books as well.
+  I'd welcome comments on what <em>isn't</em> in this list that you really wish you could read.
 </p>
 <!-- end excerpt -->
 <p><strong><em>Software Carpentry for Scientists and Engineers</em></strong></p>
 <p>
-  This book is an introduction to basic software development practices for graduate students and professionals
-  whose background is science or engineering rather than programming.
+  This book is an introduction to lab skills for scientific computing
+  aimed at graduate students and professionals
+  whose backgrounds are in science, engineering, medicine, and related fields.
   The four core topics&mdash;task automation, version control, structured programming, and data management&mdash;are
   are introduced via tutorials on the Unix shell, Git, Python, and SQL,
   then elaborated on with further tutorials on using the web to share data,
@@ -39,33 +40,38 @@ category: ["Opinion"]
   the book does give readers a useful toolkit
   and a sense of where to go next.
 </p>
+<p><em>
+  Note: we have
+  <a href="{{page.root}}/v5/book.html">a beta version of the first half of this</a>,
+  and hope to deliver it mid-2014.
+</em></p>
 <p><strong><cite>Big, Fast, Cheap, or Good: A Student's Guide to Software Engineering</cite></strong></p>
 <p>
-  The
-  <a href="http://www.amazon.com/Software-Engineering-A-Practitioners-Approach/dp/0078022126/">biggest</a>
+  The two dominant
+  <a href="http://www.amazon.com/Software-Engineering-A-Practitioners-Approach/dp/0078022126/">undergraduate</a>
   <a href="http://www.amazon.com/Software-Engineering-9th-Ian-Sommerville/dp/0137035152/">textbooks</a>
   in software engineering
-  have only a tenuous relationship with the realities of either
-  undergraduate student life
-  or real-world software development.
+  leave out a lot of the things real software engineers do,
+  and have only a tenuous relationship with the realities of undergraduate student life.
   In contrast,
   this short book focuses on
   empirical results in software engineering research,
   the design and construction of actual open source applications,
   and a development process that makes sense for students
-  who are tackling team development for the first time without a more experienced mentor to guide them,
-  and who are required to time-slice between several courses.
+  who are developing in teams for the first time
+  while time-slicing commitments to several courses.
 </p>
 <p><strong><em>A Practical Introduction to Debugging</em></strong></p>
 <p>
-  Most programmers spend a large part of their time debugging;
-  most authors write about something else.
+  Most programmers spend a large part of their time debugging,
+  but most books only show working code,
+  and never discuss how to prevent, diagnose, and fix errors.
   <a href="http://www.amazon.com/Debugging-Indispensable-Software-Hardware-Problems/dp/0814474578/">Most</a>
   <a href="http://www.amazon.com/Debugging-Thinking-Multidisciplinary-Approach-Technologies/dp/1555583075/">books</a>
-  <a href="http://www.amazon.com/Debug-It-Prevent-Pragmatic-Programmers/dp/193435628X/">on</a>
-  <a href="http://www.amazon.com/The-Developers-Guide-Debugging-Edition/dp/1470185520/">the</a>
-  <a href="http://www.amazon.com/The-Art-Debugging-GDB-Eclipse/dp/1593271743/">subject</a>
-  are either high-level handwaving ("Make sure you're debugging the right thing")
+  <a href="http://www.amazon.com/Debug-It-Prevent-Pragmatic-Programmers/dp/193435628X/">ostensibly</a>
+  <a href="http://www.amazon.com/The-Developers-Guide-Debugging-Edition/dp/1470185520/">about</a>
+  <a href="http://www.amazon.com/The-Art-Debugging-GDB-Eclipse/dp/1593271743/">debugging</a>
+  are either high-level handwaving ("Make sure you're solving the right problem")
   user's guides for particular debugging tools,
   or <a href="http://www.amazon.com/Find-Bug-Book-Incorrect-Programs/dp/0321223918/">out of date</a>.
   (The one notable exception,
@@ -88,52 +94,34 @@ category: ["Opinion"]
   and communication protocol (standard input and standard output).
   This book's starting point is the now-commonplace observation that HTTP and data formats like XML and JSON have taken their place,
   and goes on to build a suite of ever-more-sophisticated tools for assembling web-based applications that use them.
-  Crucially,
-  the author does not shy away from the thorny issues of transactions and partial failure:
-  from the midpoint onward,
-  her examples all discuss the ways in which distributed applications differs from their desktop predecessors,
-  and how programmers should take that into account.
-</p>
-<p><strong><em>Jonad in a Nutshell</em></strong></p>
-<p>
-  Windows <a href="http://en.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a>
-  (originally codenamed Monad)
-  was as revolutionary in its own way as XML and HTTP:
-  instead of flat text,
-  PowerShell allowed tools to send one another streams of objects,
-  with all the flexibility and extensibility that implies.
-  This book describes Jonad,
-  an open source workalike that uses Javascript as its scripting language
-  instead of PowerShell's custom Perl-like syntax,
-  and JSON as a default data format instead of lines of text.
+  Drawing from sources as diverse as
+  Jon Udell's <a href="http://blog.jonudell.net/2011/01/24/seven-ways-to-think-like-the-web/">Seven Ways to Think Like the Web</a>,
+  <a href="http://en.wikipedia.org/wiki/Windows_PowerShell">Microsoft PowerShell</a>,
+  and the <a href="http://en.wikipedia.org/wiki/Kinetic_Rule_Language">Kinetic Rule Language</a>,
+  the authors present a vision in which syndication of distributed streams of events
+  is the new normal.
 </p>
 <p><strong><em>Computing and the Law: A Guide for the Perplexed</em></strong></p>
 <p>
-  The legal aspects of the software business were complicated enough
-  when the major problem was people using software without paying for it.
+  The legal aspects of software have always been complicated;
+  the web has done nothing to make them simpler.
   This book seeks to help programmers understand the rules (or lack thereof)
   they have to live with
-  by tracing the historical development of patents, copyrights, and professional responsibilities
+  by tracing the historical development of patents, copyrights, privacy, and professional liability
   from the Industrial Revolution to the present day.
   Aimed squarely at people with no prior exposure to legal terminology,
   it explains concepts clearly and provides examples for each.
-  Where they can,
-  the authors concentrate on principles rather than particular statutes,
-  as the latter are so often either non-existent or changing rapidly.
-  This not only makes the book more readable,
-  it also ensures that it won't quickly be outdated.
 </p>
 <p><strong><em>Difference Engines</em></strong></p>
 <p>
-  Modern version control systems do a great job of managing text,
+  Modern version control systems handle text well,
   but are much clumsier when it comes to images, MP3s, spreadsheets, and other so-called "binary" files.
   The reason is simple:
   those formats are supported by tools for reading and writing,
   but not for differencing and merging.
-  This survey describes an open source library of tools
+  This survey describes a collection of open source libraries
   (the "engines" of the title)
-  that can handle many widely-used formats
-  from structured text like HTML to common audio and video standards.
+  that can handle many of those formats in a more-or-less uniform way.
   Readers will enjoy the combination of theory
   (such as proofs of some algorithms' performance characteristics)
   and practice
