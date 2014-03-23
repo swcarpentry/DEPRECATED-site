@@ -101,8 +101,9 @@ def main():
     config['blog_favorites'] = [p for p in config['blog'] if p['favorite']]
     config['blog_favorites'].reverse()
 
-    # Get information from legacy boot camp pages and merge with cached info.
-    config['bootcamps'] = harvest_bootcamps(options.site, cached_bootcamp_info)
+    # Ensure that information about bootcamps is in the right order.
+    cached_bootcamp_info.sort(lambda x, y: cmp(x['slug'], y['slug']))
+    config['bootcamps'] = cached_bootcamp_info
 
     # Select those that'll be displayed on the home page.  Use a loop instead of
     # a list comprehension to get better error reporting.
@@ -163,40 +164,6 @@ def harvest_blog(config):
 
     all_meta.sort(lambda x, y: cmp(x['date'], y['date']) or cmp(x['time'], y['time']))
     return all_meta
-
-#----------------------------------------
-
-def harvest_bootcamps(site, bootcamps):
-    '''Harvest metadata from all boot camp index.html pages and merge with cached info.'''
-    pages = glob.glob('bootcamps/*/index.html')
-    metadata = harvest(pages)
-    for f in metadata:
-        bootcamps.append(metadata[f])
-        slug = f.split('/')[1]
-        bootcamps[-1]['slug'] = slug
-        bootcamps[-1]['url'] = urljoin(site, 'bootcamps/{0}/index.html'.format(slug))
-        fill_optional_metadata(bootcamps[-1], 'contact')
-    bootcamps.sort(lambda x, y: cmp(x['slug'], y['slug']))
-    return bootcamps
-
-#----------------------------------------
-
-def harvest(filespec):
-    '''
-    Get content and metadata from HTML files. Return a single metadata
-    dictionary if a single path is given as input, or a dictionary
-    mapping filenames to metadata dictionaries if multiple paths are
-    given.
-    '''
-
-    if isinstance(filespec, basestring):
-        return harvest_metadata(filespec)
-
-    elif isinstance(filespec, list):
-        return dict([(f, harvest_metadata(f)) for f in filespec])
-
-    else:
-        assert False, 'Unknown filespec "{0}"'.format(filespec)
 
 #----------------------------------------
 
