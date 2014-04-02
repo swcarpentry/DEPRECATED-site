@@ -1,0 +1,126 @@
+---
+layout: blog
+root: ../../..
+author: John Blischak
+title: "Summary of Mar 2014 Meeting to Discuss Novice R Material"
+date: 2014-04-02
+time: "11:00:00"
+category: ["Community"]
+---
+<!-- start excerpt -->
+<p>
+  Last week we had our first meeting to discuss the development of the novice R
+  material. Our goal was to determine our plan for collaboratively creating the
+  lessons.
+</p>
+<!-- end excerpt -->
+<h2>Current state of SWC R material</h2>
+<p>
+  Currently, we have already taught many R bootcamps. However, since there is no
+  canoncial set of SWC lessons, SWC R instructors have been independently
+  developing separate sets of lessons. While great material has been developed,
+  this is problematic for two main reasons. First, organizing and teaching a
+  bootcamp is already a lot of work without also having to develop the
+  curriculum. Second, this approach divides our contributions leading to lots of
+  duplicated effort. Ideally we would all contribute to the same lessons to
+  create a better result than any of us could have acheived
+  individually. However, this state of affairs was not surprising since 
+  <a href="../03/collaborative-lesson-development.html">collaborative lesson
+  development</a> is still immature.
+</p>
+<p>
+  Thus we had four main options to choose from:
+</p>
+<ol>
+  <li>
+    Use an existing set of R materials as the base to build from.
+  </li>
+  <li>
+    Combine multiple existing sets of R materials.
+  </li>
+  <li>
+    "Translate"
+    the <a href="https://github.com/swcarpentry/bc/tree/master/novice/python">novice
+    Python lessons</a> to R.
+  </li>
+  <li>
+    Start from scratch.
+  </li>
+</ol>
+<p>
+  Option #1 requires a lot of effort from the original creator of the materials
+  since she or he is the most familiar with the state of the material (as an
+  example, this is the option we chose for
+  the <a href="https://github.com/swcarpentry/bc/tree/master/intermediate/r">intermediate
+  R lessons</a>, with <a href="https://github.com/karthik">Karthik Ram</a> not
+  only developing the materials but also updating them after others reviewed
+  each lesson). Option #2 has the benefit of combining the best parts of
+  multiple sets of bootcamp lessons, but the big drawback is that it would
+  require volunteers becoming familiar with the content of the multiple sets of
+  lessons. Option #3 aligns the Python and R materials, but also presents the
+  challenge of introducing R-specific control flow and data structures within a
+  lesson originally developed for Python. Option #4 is the most open-ended
+  option, but also requires the most work.
+</p>
+<h2>Our plan</h2>
+<p>
+  We decided on Option #3, "translating" Greg's novice Python lessons to R. This
+  allows the SWC R community to benefit from the recent discussion around
+  creating novice Python material (and of course hopefully allow us to
+  contribute back our findings from teaching these lessons at bootcamps to
+  improve both the R and Python lessons). Here is our plan:
+</p>
+<ul>
+  <li>
+    <a href="https://github.com/sarahsupp">Sarah Supp</a> translated the Python
+    lessons to R in Markdown format, which she used to teach at
+    the <a href="http://swcarpentry.github.io/2014-03-17-nyu/">NYU bootcamp</a>
+    on March 17th.
+  </li>
+  <li>
+    <a href="https://github.com/dbarneche">Diego Barneche</a> has translated the
+    Markdown into R Markdown.
+  </li>
+  <li>
+    <a href="https://github.com/gavinsimpson">Gavin Simpson</a> will perform the
+    first edits to include more R-specific material.
+  </li>
+  <li>
+    <a href="https://github.com/naupaka">Naupaka Zimmerman</a> will perform the
+    second round of edits.
+  </li>
+  <li>
+    <a href="https://github.com/jainsley">Joshua Ainsley</a> will perform the
+    third round of edits.
+  </li>
+</ul>
+<p>
+  Between each round of edits, everyone will be able to contribute
+  comments/suggestions to the pull requests.
+</p>
+<h2>How to get involved</h2>
+<p>
+There are lots of ways you can get involved in the development of the novice R
+material, including:
+</p>
+<ul>
+  <li>
+    Join the
+    <a href="http://lists.software-carpentry.org/mailman/listinfo/r-discuss_lists.software-carpentry.org">r-discuss</a>
+    mailing list.
+    </li>
+  <li>
+    Review the forthcoming pull requests.
+  </li>
+  <li>
+    Test <a href="http://ramnathv.github.io/posts/rblocks-pkg">rblocks</a>, a
+    new R package developed by <a href="https://github.com/ramnathv">Ramnath
+    Vaidyanathan</a> to implement <a href="https://github.com/jiffyclub">Matt
+    Davis'</a> <a href="http://ipythonblocks.org/">ipythonblocks</a>.
+  </li>
+  <li>
+    Create domain-specific lessons that could supplement the main novice R
+    materials (I'd recommend proposing your idea on the mailing list prior to
+    developing an entire lesson).
+  </li>
+</ul>
