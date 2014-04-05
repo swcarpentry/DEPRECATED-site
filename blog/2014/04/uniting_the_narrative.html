@@ -1,0 +1,33 @@
+---
+layout: blog
+root: ../../..
+author: Bill Mills
+title: "Uniting the Narrative"
+date: 2014-04-04
+time: "08:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+The Victoria workshop that just wrapped a few hours ago was my first stab at teaching SWC live, and I have to say - few things feel better in teaching than the tiny victory of having material that is right on pitch.  I've had the lurking notion for years that the hilariously overshot lectures ('I need to cover the syllabus in half time so I can go on sabbatical'), conference talks ('One slide per 30 seconds for a solid hour seems reasonable') and lab presentations ('A 5 by 5 grid of histograms on one slide will communicate ALL the science!') were the tragic offspring of time constraints and one-upmanship, and in desperate need of a pan-academia slide deck disarmament treaty.  I always pushed my students to strip it down, just hit the highlights and leave the details for the paper, because I always suspected that that little bit of entertainer's savvy was how we could really reach people: not by fact-bombing the audience into a glassy torpor, but by electrifying their curiosity just enough that the energy that propelled them forward was their own.
+</p>
+<!-- end excerpt -->
+<p>
+The SWCv5 beta material is hair-close to realizing this.  That a totally green instructor could lay down the Git material - the hardest novice unit, which I presented almost exactly verbatim - and have it all work with no real hitches (except supporting older OSX'es, and 10.6 isn't really that old) is already a pedagogical blue ribbon for this content; by all rights that should have been a way bigger mess than it was.  Where I knew we were really zeroing in on pitch-perfect content was in how excited a lot of the students reported being about version control after this workshop; getting people to git in the past has been like breaking rocks with my hands, but a lot of these students got it and were keen to apply it.
+</p>
+
+<p>
+The internal content of the git unit is almost where it ought to be; I would tone down diff to the clearest case and introduce the very simplest example of a repo fork by getting learners to pair up rather than going through the slightly artificial exercise of cloning their own repo, but other than that I think it's where it should be (PR TBD).  Beyond internal content, I think the way forward with the novice material in general and the git material in particular is to start exploring unit integration.  We delivered really solid fundamentals in SQL, git, Python and the shell in Victoria, but it still felt like all the ingredients were sitting beside the pot rather than in it.  Is there a way to construct a cohesive narrative with these units, that over two days tells the story of a real project and its workflow?  I think so.
+</p>
+
+<p>
+The easiest narrative hook comes with the git material.  As long as it isn't the very first unit taught, git can be built right on top of the results of a previous unit, whether it's the SQL table dump, the *.ipynb notebook JSON or the shell scripts written at the end of the bash lesson - just git init on top of that and off you go.  Notice that this preserves very loose coupling between the lessons - all that's actually required of the preceding lesson is that it generated a file (any file) - so no real constraints are being put on what the instructor can teach or how successful the students will have had to have been in the unit before git, but still the students get to see some continuity between tools, and we begin to paint a picture of what a real practice involving these tools looks like.
+</p>
+
+<p>
+Similar strategies can be used to integrate the other units without strong coupling; start with the easy win of SQL as many instructors like to do, and then in the shell lesson, generate some CSVs from the SQL database for the Python lesson to then later plot - throw git in at any point as described above, and we've got a completely integrated picture of a workflow, without introducing any new tools or content into the units, or putting inflexible demands on the results of each; the only breakpoint in that recipe would be if a student failed to produce a CSV successfully, in which case we can just give them one so they can move on, and no one gets left behind.
+</p>
+
+<p>
+A comment I got from several students after the workshop was 'hey this stuff is awesome, but I'm having trouble imagining how I'm going to merge this into my existing practice' - I think that illustrating a united, whole-picture workflow for them will help them make contact between the cool things we're talking about, and the realities of their work - and I think we are sitting right on the doorstep of being able to do that for them successfully.
+</p>
