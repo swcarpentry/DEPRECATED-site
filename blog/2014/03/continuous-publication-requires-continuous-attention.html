@@ -2,9 +2,9 @@
 layout: blog
 root: ../../..
 author: Greg Wilson
-title: "Continuous Publication Requires Continuous Attention"
-date: 2014-03-29
-time: "10:30:00"
+title: "Does Continuous Publication Require Continuous Attention?"
+date: 2014-04-05
+time: "08:30:00"
 category: ["Opinion"]
 ---
 <!-- start excerpt -->
@@ -29,7 +29,7 @@ category: ["Opinion"]
 <!-- end excerpt -->
 <p><img src="http://upload.wikimedia.org/wikipedia/commons/1/1c/Agile-vs-iterative-flow.jpg" alt="Continuous Delivery" /></p>
 <p>
-  What's missing here,
+  What's missing from this picture,
   though,
   is the cost to customers
   (or in the case of publishing, readers).
@@ -59,10 +59,88 @@ category: ["Opinion"]
   keeping up to date with changes to things previously read will only become harder.
 </p>
 <p>
-  I used to think that
-  <a href="http://en.wikipedia.org/wiki/Automatic_summarization">automatic text summarization</a>
-  would help,
-  but results to date have been disappointing.
-  I would welcome pointers to anyone working on new forms of scholarly publishing
-  that explicitly address re-issuance.
+  What science may be moving toward is a "continuous patch" model
+  rather than a "continuous release" model.
+  <a href="{{page.root}}/pages/team.html#nedebragt.lex">Lex Nederbragt</a>
+  wrote in a comment on an early draft of this post:
 </p>
+<blockquote>
+  <p>
+    What I think may happen is that
+    research is released not through arXiv anymore,
+    but on either personal or central sites where researchers add and update results.
+    Each small but significant change will be summarised
+    in some sort of..."release note".
+    Authors also may use their blog to give an overview of recent changes.
+    Discussions of the work will ensue through the release site comment section,
+    or issues a la github,
+    and perhaps another researcher who wants to add an analysis [will fork] the repo
+    and submit a pull request...
+    At certain points,
+    researchers will want to write up a somewhat larger overview paper,
+    which actually may be submitted and published through the traditional journal...
+  </p>
+</blockquote>
+<p>
+  To which
+  <a href="{{page.root}}/pages/team.html#barmby.pauline">Pauline Barmby</a>
+  replied:
+</p>
+<blockquote>
+  <p>
+    From an author point-of-view though,
+    there is something to be said for having an end goal:
+    my experience to date is that I never really finish a research project,
+    I just get sick of it.
+    While you could always improve something,
+    at some point you just have to stop and move on to the next thing...
+    From a reader point-of-view:
+    I already struggle to keep up with the literature in my field as it currently exists.
+    It's not obvious where I would find the time to "check for updates" when I am referring to existing work.
+    If my own current project might have dependencies on published work then I might do so,
+    although again that delays getting my project done.
+    So I agree...
+    there is a cost to incremental publishing,
+    and I think it applies to both reader and writer.
+  </p>
+</blockquote>
+<p>
+  The tradeoff here is not new.
+  <em>Encapsulated context</em> gives you the whole story at once:
+  you need to carry less around in your head,
+  but you have to notice and synthesize changes.
+  <em>Incremental context</em> gives you the changes,
+  and is quicker to assimilate
+  <em>if</em> (and only if)
+  you're keeping track of the current state of the conversation.
+  <a href="http://meldmerge.org/">Diff</a>
+  <a href="https://sourcegear.com/diffmerge/downloads.php">and</a>
+  <a href="http://winmerge.org/">merge</a>
+  tools
+  do a decent job of translating encapsulated context into incremental context for simple text files like programs,
+  but are oblivious to semantics.
+  <a href="http://en.wikipedia.org/wiki/Automatic_summarization">More</a>
+  <a href="http://en.wikipedia.org/wiki/Sentiment_analysis">complicated</a>
+  <a href="http://en.wikipedia.org/wiki/Discourse_analysis">tools</a>
+  have mostly failed in practice,
+  leaving the burden of comprehension on the reader.
+</p>
+<p>
+  And of course (and as always),
+  there's the problem of attribution.
+  If I make a small incremental improvement in your work,
+  how should it be cited and credited?
+  Returning to the conversation about the first draft of this article:
+</p>
+<blockquote>
+  <p>
+    Pauline Barmby wrote:
+    I see that (given 20 years or so) some kind of new recognition model can be developed.
+  </p>
+  <p>
+    W. Trevor King wrote:
+    Until then,
+    I think you just have to highlight your contributions in your CV,
+    and talk about how awesome folks think your release process is in your research statement ;).
+  </p>
+</blockquote>
