@@ -1,0 +1,57 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Bridging the Writing Gap"
+date: 2014-04-06
+time: "06:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  A few months ago,
+  we had an <a href="https://github.com/swcarpentry/bc/issues/199">interesting discussion</a>
+  about what Software Carpentry should teach about writing and publishing in the 21st Century.
+  One thing that came through loud and clear was the gulf between
+  people who value the "I can see what I'm doing" of Microsoft Word
+  and those who care more about the "I can tell what I did" of version control<sup><a href="#1">1</a></sup>.
+</p>
+<p>
+  Sites like <a href="https://www.writelatex.com/">writeLaTeX</a> and <a href="https://www.sharelatex.com/">ShareLaTeX</a>
+  are trying to bridge that gulf by giving people
+  a WYSIWYG authoring tool in the browser
+  that uses LaTeX as a storage format.
+  This is pretty exciting:
+  since it (potentially) allows collaborators to interact in whichever mode they prefer,
+  it allows people to transition from one to the other instead of requiring them to make a great leap sideways.
+</p>
+<p>
+  Both sites currently allow people to save work on site or in Dropbox.
+  It would be very cool if they also allowed people to save work in online version control repositories
+  such as GitHub.
+  Someone who <em>isn't</em> comfortable with version control
+  could simply select "Save..." to push their changes,
+  while someone who's already mastered pull requests and merging could interact that way,
+  so that once again,
+  the system could help people transition gradually from one mode to the other.
+</p>
+<!-- end excerpt -->
+<p>
+  A lot of technical issues would have to be worked out, of course:
+  would successive saves from the WYSIWYG tool be rebased automatically,
+  how would merge conflicts be presented in the WYSIWYG interface,
+  and so on.
+  But I really like the idea that we could show bootcamp participants
+  how to write the way they're used to,
+  then how to do better when and as <em>they</em> are ready.
+  If you're interested in working on this,
+  please <a href="mailto:{{site.contact}}">mail us</a>;
+  we'd be happy to help assemble a coalition of the willing.
+</p>
+<p id="1"><em>
+    [1]
+    I still don't understand why diff-and-merge tools for Word, Excel, and PowerPoint
+    (and their Open/LibreOffice equivalents)
+    don't ship with Git, Mercurial, and Subversion;
+    I can't think of any technical advance more likely to increase uptake of version control by non-programmers.
+</em></p>
