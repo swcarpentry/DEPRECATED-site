@@ -1,0 +1,83 @@
+ident,region,Python,R,Unix shell,Git/GitHub,Subversion,Mercurial,SQL,regex,NumPy/SciPy,Make,testing (Python),OOP (Python),data viz (Python),data viz (R),plyr,packaging (Python),packaging (R),install (Linux),install (Mac OS X),install (Windows),install (Desktop VMs),install (Cloud VMs)
+0,North America,Intermediates,Intermediates,Intermediates,Novices,,,,,,,Novices,,,Intermediates,Intermediates,,,Linux,,Windows,Desktop VMs,
+1,North America,Intermediates,Intermediates,Intermediates,Intermediates,,,,Novices,Novices,,Novices,Intermediates,Intermediates,Intermediates,Novices,,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+2,North America,Intermediates,Intermediates,Intermediates,Novices,,,,Novices,Novices,,,Novices,,Intermediates,Intermediates,,,Linux,Mac OS X,Windows,,
+3,North America,Novices,Intermediates,Intermediates,Novices,Novices,,Novices,Novices,Novices,Novices,Novices,Novices,Novices,Novices,,Novices,Novices,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+4,Australia/New Zealand,Novices,Intermediates,Novices,Intermediates,,,,Novices,,,Novices,Novices,,Intermediates,Intermediates,,Intermediates,,Mac OS X,,,
+5,North America,Novices,Intermediates,Intermediates,Intermediates,,,Intermediates,Intermediates,Novices,Intermediates,Novices,Novices,Novices,Intermediates,Intermediates,,Intermediates,Linux,Mac OS X,Windows,,
+6,North America,Novices,Intermediates,Novices,Intermediates,,,Intermediates,Novices,,,,,Novices,Intermediates,Novices,,,,Mac OS X,Windows,,
+7,Australia/New Zealand,Novices,Intermediates,Intermediates,Intermediates,Novices,Novices,Novices,Intermediates,,Intermediates,,Novices,,Intermediates,,,Intermediates,Linux,Mac OS X,,,
+8,North America,Novices,Intermediates,Intermediates,Novices,,,,Novices,,,,Novices,,Intermediates,Novices,,,,Mac OS X,,,
+9,Australia/New Zealand,,Intermediates,Novices,Intermediates,,,,,,Novices,,,,Intermediates,Novices,,Novices,,Mac OS X,,,
+10,North America,Intermediates,Intermediates,Intermediates,Intermediates,,,Novices,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Linux,Mac OS X,Windows,,
+11,North America,Novices,Intermediates,Intermediates,Intermediates,,,Novices,Intermediates,Novices,Novices,,,Novices,Intermediates,Intermediates,,Intermediates,Linux,Mac OS X,,Desktop VMs,Cloud VMs
+12,North America,Intermediates,Intermediates,Intermediates,Novices,,,Intermediates,Intermediates,Intermediates,Novices,Novices,Novices,Intermediates,Intermediates,Intermediates,Novices,Novices,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+13,North America,,Intermediates,Intermediates,Novices,,,,Novices,,Novices,,,,Intermediates,Intermediates,,Intermediates,,Mac OS X,,,
+14,North America,Novices,,Intermediates,Novices,Novices,,Intermediates,Intermediates,Novices,,,,Novices,,,,,Linux,,Windows,Desktop VMs,
+15,North America,Intermediates,,Intermediates,Intermediates,Intermediates,,Intermediates,Intermediates,,Intermediates,Intermediates,Intermediates,,,,Novices,,Linux,Mac OS X,,Desktop VMs,Cloud VMs
+16,North America,Intermediates,,Novices,Novices,,,,Novices,Novices,,Novices,Novices,Intermediates,,,Novices,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+17,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,,,Intermediates,,Linux,Mac OS X,,Desktop VMs,Cloud VMs
+18,Australia/New Zealand,Intermediates,,Intermediates,Intermediates,Novices,,,Intermediates,Intermediates,,Intermediates,Intermediates,Intermediates,,,,,Linux,Mac OS X,Windows,,
+19,North America,Intermediates,,Intermediates,Intermediates,Novices,,,,Intermediates,,Novices,Novices,Intermediates,,,Novices,,Linux,Mac OS X,,,
+20,North America,Intermediates,,Intermediates,Novices,,Novices,Novices,Novices,Intermediates,,Novices,Intermediates,Novices,,,,,Linux,Mac OS X,,,
+21,Europe,Intermediates,,Novices,Novices,Novices,Intermediates,,Novices,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,Mac OS X,,,
+22,North America,Intermediates,,Intermediates,Intermediates,,,,Intermediates,Novices,Novices,Novices,,Intermediates,,,,,Linux,Mac OS X,,,
+23,North America,Intermediates,,Intermediates,Novices,,,Intermediates,Novices,Intermediates,Novices,Novices,Intermediates,Intermediates,,,Novices,,Linux,Mac OS X,Windows,,
+24,North America,Intermediates,,Intermediates,Intermediates,,,,,Intermediates,,Novices,Intermediates,,,,Novices,,Linux,,,,
+25,North America,Intermediates,,Intermediates,Intermediates,Novices,Novices,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Novices,,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+26,North America,Intermediates,,Intermediates,Novices,,Novices,,Novices,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,,,,Linux,,Windows,Desktop VMs,
+27,South America,Intermediates,,Intermediates,Intermediates,,Novices,Novices,Novices,Novices,Intermediates,Novices,Intermediates,Novices,,,Novices,,Linux,,,Desktop VMs,Cloud VMs
+28,North America,Intermediates,,Intermediates,Intermediates,Intermediates,,,Novices,Intermediates,Novices,Novices,Novices,Novices,,,,,Linux,Mac OS X,,,
+29,Europe,Intermediates,,Intermediates,,Novices,Intermediates,Intermediates,Novices,Novices,Intermediates,Intermediates,Intermediates,Novices,,,Novices,,Linux,Mac OS X,,,
+30,North America,Novices,,Intermediates,Novices,,,,,Novices,Novices,Novices,Novices,Novices,,,Novices,,Linux,Mac OS X,Windows,,
+31,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Novices,Intermediates,Novices,Intermediates,Novices,,,Intermediates,,Linux,,Windows,,
+32,North America,Novices,,Intermediates,Novices,Novices,,,Novices,,Novices,,,Intermediates,,,,,Linux,,Windows,Desktop VMs,
+33,North America,Novices,,Novices,Novices,Novices,,,Novices,Novices,,Novices,Novices,Novices,,,,,Linux,,,,
+34,North America,Intermediates,,Novices,Intermediates,,,,,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,Mac OS X,,Desktop VMs,
+35,Asia/China,Novices,,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Novices,Intermediates,Novices,Novices,Novices,,,Novices,,Linux,,Windows,Desktop VMs,
+36,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+37,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,,Novices,Intermediates,Novices,Novices,Intermediates,Intermediates,,,Novices,,Linux,,,,
+38,North America,Novices,,Novices,Intermediates,,,,,Intermediates,Novices,Novices,Novices,Intermediates,,,,,Linux,Mac OS X,,,
+39,Europe,Intermediates,,Intermediates,Novices,,,Novices,,,,Novices,Intermediates,,,,,,Linux,Mac OS X,,,
+40,Europe,Intermediates,,,Intermediates,Novices,,,,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,,,,
+41,Europe,Novices,,Novices,Novices,Novices,,Novices,,Novices,Novices,Novices,Novices,Novices,,,,,Linux,,,,
+42,North America,Intermediates,,Intermediates,,Novices,Novices,,Novices,Intermediates,Intermediates,Novices,,Intermediates,,,,,Linux,,,Desktop VMs,
+43,North America,Novices,,Novices,,,,,Novices,Novices,,,Novices,,,,,,,Mac OS X,,,
+44,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+45,North America,Novices,,Novices,Novices,,,,,Novices,,Novices,,,,,,,Linux,Mac OS X,Windows,,
+46,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Novices,Novices,Intermediates,Intermediates,Novices,,,Novices,Intermediates,Linux,Mac OS X,,,
+47,North America,Novices,,Intermediates,,,,Novices,Novices,,Novices,Novices,Novices,,,,,,,,Windows,,
+48,Europe,,,Novices,Novices,Novices,,,Intermediates,,,,,,,,,,Linux,,Windows,Desktop VMs,
+49,North America,Novices,,Novices,Novices,,,,,Novices,,,Novices,Novices,,,Novices,Novices,Linux,Mac OS X,Windows,,
+50,North America,Intermediates,,Intermediates,Intermediates,Novices,,,,Intermediates,Novices,Novices,Novices,Novices,,,,,Linux,Mac OS X,Windows,Desktop VMs,
+51,North America,Intermediates,,Intermediates,Intermediates,Intermediates,,Novices,Novices,Intermediates,,Intermediates,Intermediates,Intermediates,,,Intermediates,,Linux,Mac OS X,,Desktop VMs,
+52,Europe,Novices,,Intermediates,Novices,,,,Novices,,,Novices,,Novices,,,,,Linux,Mac OS X,,,
+53,Europe,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Novices,,,Novices,,Linux,Mac OS X,Windows,Desktop VMs,
+54,North America,Intermediates,,Novices,Novices,Novices,,Novices,,Intermediates,,Novices,Novices,Intermediates,,,,,,Mac OS X,,,
+55,North America,Intermediates,,Intermediates,Intermediates,Novices,,Intermediates,Novices,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,,Novices,,Linux,Mac OS X,,,
+56,Europe,Novices,,Novices,Novices,Intermediates,Novices,Novices,,,Novices,Novices,,,,,,,,Mac OS X,Windows,,
+57,North America,Intermediates,,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+58,Europe,Novices,Novices,Intermediates,Intermediates,Intermediates,Novices,Novices,Intermediates,Novices,Intermediates,Intermediates,Novices,Novices,,,,,Linux,,,,
+59,North America,Intermediates,Novices,Novices,Novices,,,,Novices,Intermediates,,Novices,Novices,Novices,,,,,,Mac OS X,,Desktop VMs,
+60,North America,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Novices,Intermediates,Novices,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+61,North America,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,Intermediates,Intermediates,Novices,Intermediates,Novices,Novices,Novices,Novices,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+62,North America,Novices,Novices,Novices,Novices,,,,Novices,Novices,,,Novices,Novices,Novices,,,,Linux,Mac OS X,Windows,,
+63,North America,Novices,Novices,Novices,Novices,,,,Novices,Novices,,Novices,Novices,Novices,Novices,,,,Linux,,Windows,Desktop VMs,
+64,North America,Intermediates,Novices,Intermediates,Novices,,,Novices,Intermediates,Novices,,,Novices,Novices,Intermediates,Novices,Novices,Intermediates,Linux,Mac OS X,,,
+65,North America,Novices,Novices,Novices,Novices,,Novices,,Novices,Novices,,,Novices,Novices,Novices,Novices,,,Linux,Mac OS X,,Desktop VMs,Cloud VMs
+66,North America,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,,Intermediates,,Linux,Mac OS X,Windows,Desktop VMs,
+67,Australia/New Zealand,Intermediates,Novices,Novices,Intermediates,,,Novices,Novices,Intermediates,,Novices,Novices,Intermediates,,,Novices,,Linux,Mac OS X,,,
+68,Australia/New Zealand,Intermediates,Novices,Intermediates,Intermediates,,,Novices,Novices,Novices,Novices,Novices,Intermediates,Intermediates,Novices,,Intermediates,,Linux,,Windows,Desktop VMs,Cloud VMs
+69,North America,Intermediates,Novices,Intermediates,Intermediates,Intermediates,,,Intermediates,Intermediates,,Intermediates,Intermediates,Novices,Novices,Novices,,,Linux,Mac OS X,Windows,,
+70,South Africa,Novices,Novices,Intermediates,Intermediates,,,Novices,,Novices,,Novices,Novices,Novices,Novices,,,,Linux,Mac OS X,Windows,Desktop VMs,
+71,North America,Intermediates,Novices,Intermediates,Intermediates,Novices,,Novices,Intermediates,Novices,Intermediates,Novices,Novices,,Novices,,,,Linux,Mac OS X,Windows,,
+72,North America,Intermediates,Novices,Intermediates,Intermediates,Novices,,Intermediates,Novices,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Novices,,Intermediates,,Linux,,Windows,,
+73,North America,Intermediates,Novices,Novices,Intermediates,Novices,,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,,,,,,Mac OS X,,,Cloud VMs
+74,Europe,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Novices,Intermediates,Intermediates,Intermediates,Novices,Novices,,Intermediates,Novices,Linux,Mac OS X,Windows,Desktop VMs,Cloud VMs
+75,Europe,Intermediates,,Novices,Novices,Novices,Intermediates,Novices,Novices,Intermediates,Novices,Novices,Novices,Intermediates,,,,,Linux,,Windows,,
+76,North America,Novices,Novices,Novices,Novices,,,Novices,Novices,Novices,,Novices,,,Intermediates,,,,Linux,,,,Cloud VMs
+77,North America,Intermediates,,Intermediates,Intermediates,Intermediates,,Novices,Novices,Novices,Intermediates,Intermediates,Intermediates,Novices,,,Intermediates,,Linux,Mac OS X,,Desktop VMs,Cloud VMs
+78,North America,,,Intermediates,Intermediates,Novices,,Intermediates,Novices,,,,,,,,,,Linux,Mac OS X,Windows,,
+79,Europe,Intermediates,,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,Intermediates,,Intermediates,Novices,Intermediates,Novices,,,Novices,,Linux,Mac OS X,,,Cloud VMs
+80,North America,Novices,,Intermediates,Novices,,,Novices,Novices,Novices,,Novices,,Novices,,,,,Linux,Mac OS X,Windows,,
+81,North America,Intermediates,,Intermediates,Novices,,Intermediates,Novices,Novices,Intermediates,Novices,Intermediates,Intermediates,Novices,,,Intermediates,,Linux,Mac OS X,,,
