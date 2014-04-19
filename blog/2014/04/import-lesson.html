@@ -1,0 +1,80 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Import Lesson"
+date: 2014-04-19
+time: "18:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  I've written and spoken several times in the last year
+  about an absence that puzzles me:
+  while massive open contribution is now normal for both software
+  (think Linux and Python)
+  and knowledge
+  (Wikipedia),
+  it's rare for teaching materials.
+  Lots of sites allow people to deposit slides, lesson plans, exercises, and the like,
+  but collaborating on their creation is still very rare:
+  by and large,
+  they don't fork, modify, and merge to improve things.
+</p>
+<p>
+  Most of the reasons are undoubtedly social,
+  but there are technical obstacles as well.
+  In particular,
+  there isn't anything equivalent to dependency checking:
+  if I build my lesson B on top of your lesson A,
+  and you then change lesson A,
+  I have to re-read both to make sure that B still makes sense.
+</p>
+<p>
+  It shouldn't be too hard to build a tool to do this
+  based on the terms that various lessons use and define.
+  Here's how I imagine it working:
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>
+    A lesson's "inputs" are the terms it uses without defining;
+    its "outputs" are the terms it defines.
+  </li>
+  <li>
+    Definitions are explicitly marked
+    (e.g., written as <code>&lt;term&gt;something&lt;/term&gt;</code>
+    or <code>&lt;a href="glossary.html#something"&gt;something&lt;/a&gt;</code>).
+    Uses are not,
+    because it would be a lot more work for authors to maintain.
+  </li>
+  <li>
+    <code>rob lesson_file_1 lesson_file_2 ...</code>
+    checks that the specified lessons are consistent
+    by extracting all the terms defined in all the lessons
+    and checking that no term is used before it is defined.
+    This requires multiple extractors and detectors to handle various file types,
+    but that's straightforward to do.
+    (I've called the tool <code>rob</code> after one of my favorite teachers,
+    and because there's no other widely-used open source tool with that name.)
+  </li>
+  <li>
+    <code>rob -d external_lesson_dir lesson_file_1 lesson_file_2 ...</code>
+    looks in the directory <code>external_lesson_dir</code>
+    for a manifest similar to those used by package managers
+    to find definitions in external "imported" lessons.
+    This allows someone to build a lesson on top of something like Software Carpentry
+    in the same way that they can build their own libraries on top of NumPy or SciPy.
+  </li>
+</ol>
+<p>
+  <code>rob</code> is very simple-minded,
+  but I think that's a good thing:
+  things like SCORM have failed to catch on with non-specialists
+  because they require a large investment up front.
+  And a lot of details would have to be worked out before <code>rob</code> would be useful,
+  like synonym handling and circular references among glossary entries,
+  but even simple use-def checking would make life easier.
+  If you're interested in trying to build this,
+  please <a href="mailto:{{site.contact}}">give us a shout</a>.
+</p>
