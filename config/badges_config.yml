@@ -78,6 +78,7 @@ instructor:
 - {name: Luke Lee, user: lee.luke}
 - {name: Matthew Lightman, user: lightman.matthew}
 - {name: Yuxi Luo, user: luo.yuxi}
+- {name: Cam Macdonell, user: macdonell.cam}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Emily Jane McTavish, user: mctavish.ej}
@@ -92,7 +93,7 @@ instructor:
 - {name: Caitlyn Pickens, user: pickens.c}
 - {name: Karthik Ram, user: ram.k}
 - {name: Ariel Rokem, user: rokem.a}
-- {name: Bill Rowell, user: rowell.bill}
+- {name: Billy Rowell, user: rowell.bill}
 - {name: Martin Schilling, user: schilling.martin}
 - {name: Jorden Schossau, user: schossau.j}
 - {name: Anthony Scopatz, user: scopatz.a}
@@ -105,6 +106,7 @@ instructor:
 - {name: Gayathri Swaminathan, user: swaminathan.gayathri}
 - {name: Tracy Teal, user: teal.t}
 - {name: Will Trimble, user: trimble.will}
+- {name: Stephen Turner, user: turner.s}
 - {name: Nelle Varoquaux, user: varoquaux.n}
 - {name: Bogdan Vera, user: vera.b}
 - {name: Alex Viana, user: viana.a}
