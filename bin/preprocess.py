@@ -70,6 +70,9 @@ def main():
         'today'           : options.today
     })
 
+    config['people'] = map(lambda x: os.path.relpath(x, '_includes'), 
+	sorted(glob.glob('_includes/people/*.html')))
+
     # Cache the window size.
     recent_length = config['recent_length']
     upcoming_length = config['upcoming_length']
