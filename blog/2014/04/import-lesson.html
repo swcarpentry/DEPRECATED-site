@@ -3,79 +3,95 @@ layout: blog
 root: ../../..
 author: Greg Wilson
 title: "Import Lesson"
-date: 2014-04-19
+date: 2014-04-21
 time: "18:00:00"
 category: ["Teaching"]
 ---
 <!-- start excerpt -->
 <p>
-  I've written and spoken several times in the last year
-  about an absence that puzzles me:
-  while massive open contribution is now normal for both software
-  (think Linux and Python)
-  and knowledge
-  (Wikipedia),
-  it's rare for teaching materials.
-  Lots of sites allow people to deposit slides, lesson plans, exercises, and the like,
-  but collaborating on their creation is still very rare:
-  by and large,
-  they don't fork, modify, and merge to improve things.
-</p>
-<p>
-  Most of the reasons are undoubtedly social,
-  but there are technical obstacles as well.
-  In particular,
-  there isn't anything equivalent to dependency checking:
-  if I build my lesson B on top of your lesson A,
-  and you then change lesson A,
-  I have to re-read both to make sure that B still makes sense.
-</p>
-<p>
-  It shouldn't be too hard to build a tool to do this
-  based on the terms that various lessons use and define.
-  Here's how I imagine it working:
+  <a href="http://lorenabarba.com">Lorena Barba</a> has done it again.
+  Having created a wonderful
+  <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">12-step introduction to the Navier-Stokes equations</a>
+  using the IPython Notebook,
+  she has now published <a href="http://lorenabarba.com/blog/announcing-aeropython/">AeroPython</a>,
+  which teaches the use of potential flow for aerodynamic analysis via the panel method.
+  You don't have to know what that is
+  to appreciate the beauty of what she has built&mdash;I certainly don't,
+  at least not yet&mdash;but I'd like to explore something that
+  <em>isn't</em> in those notebooks.
+  Before doing that,
+  though,
+  I need to introduce an acronym that never caught on.
 </p>
 <!-- end excerpt -->
-<ol>
-  <li>
-    A lesson's "inputs" are the terms it uses without defining;
-    its "outputs" are the terms it defines.
-  </li>
-  <li>
-    Definitions are explicitly marked
-    (e.g., written as <code>&lt;term&gt;something&lt;/term&gt;</code>
-    or <code>&lt;a href="glossary.html#something"&gt;something&lt;/a&gt;</code>).
-    Uses are not,
-    because it would be a lot more work for authors to maintain.
-  </li>
-  <li>
-    <code>rob lesson_file_1 lesson_file_2 ...</code>
-    checks that the specified lessons are consistent
-    by extracting all the terms defined in all the lessons
-    and checking that no term is used before it is defined.
-    This requires multiple extractors and detectors to handle various file types,
-    but that's straightforward to do.
-    (I've called the tool <code>rob</code> after one of my favorite teachers,
-    and because there's no other widely-used open source tool with that name.)
-  </li>
-  <li>
-    <code>rob -d external_lesson_dir lesson_file_1 lesson_file_2 ...</code>
-    looks in the directory <code>external_lesson_dir</code>
-    for a manifest similar to those used by package managers
-    to find definitions in external "imported" lessons.
-    This allows someone to build a lesson on top of something like Software Carpentry
-    in the same way that they can build their own libraries on top of NumPy or SciPy.
-  </li>
-</ol>
 <p>
-  <code>rob</code> is very simple-minded,
-  but I think that's a good thing:
-  things like SCORM have failed to catch on with non-specialists
-  because they require a large investment up front.
-  And a lot of details would have to be worked out before <code>rob</code> would be useful,
-  like synonym handling and circular references among glossary entries,
-  but even simple use-def checking would make life easier.
-  If you know of something like this that exists already,
-  or would like to lend a hand,
-  please <a href="mailto:{{site.contact}}">give us a shout</a>.
+  Most programmers are familiar with the term "API",
+  which stands for "Application Programming Interface".
+  It's the functions, classes, and what-not that a library provides,
+  i.e.,
+  the things a programmer can call or use after loading that library.
+  The complementary term that never caught on is "XPI",
+  or "External Programming Interface",
+  which is the set of things a library <em>needs</em> in order to run.
+  For example,
+  the XPI of the Python <code>glob</code> library includes:
+</p>
+<ul>
+  <li><code>sys.getdefaultencoding()</code></li>
+  <li><code>sys.getfilesystemencoding()</code></li>
+  <li><code>os.curdir</code></li>
+  <li><code>os.error</code></li>
+  <li><code>os.listdir(dirname)</code></li>
+  <li><code>os.path.join(dirname, filename)</code></li>
+  <li><code>os.path.lexists(pathname)</code></li>
+  <li><code>os.path.split(pathname)</code></li>
+</ul>
+<p>
+  and a few things from the <code>re</code> and <code>fnmatch</code> libraries.
+</p>
+<p>
+  I sometimes think of lessons in terms of APIs and XPIs.
+  A lesson's API is what it defines and explains;
+  its XPI is the terms and concepts it relies on.
+  As with code,
+  APIs are usually explicit:
+  "this library provides these functions"
+  and
+  "this lesson introduces these topics".
+  In contrast,
+  XPIs are usually implicit:
+  programs don't list the things they use,
+  they just use them,
+  and the only way to discover exactly what concepts a lesson depends on
+  is to read it through carefully.
+  That takes so much time
+  that it's often faster for people to write their own short lesson on a topic
+  than to integrate with one someone else has written.
+</p>
+<p>
+  And then there's the maintenance problem.
+  Software Carpentry's lessons are constantly evolving;
+  how can someone who depends on them know whether
+  everything they require is still there
+  a year or two down the road?
+  With software,
+  they can recompile their program or re-run its unit tests
+  and see whether things still work.
+  There's no equivalent for lessons&mdash;no easy way to find out
+  whether dependencies that used to resolve are still there.
+</p>
+<p>
+  Sooner or later,
+  any large, multi-author project has to find a way to track and manage dependencies.
+  Conversely,
+  I believe that if a project <em>can't</em> do this,
+  it won't be able to scale up.
+  It isn't the only obstacle to
+  <a href="../03/collaborative-lessons-development.html">collaborative lesson development</a>,
+  or the biggest,
+  but it <em>is</em> an obstacle,
+  even within Software Carpentry itself.
+  If we can figure out how to solve it,
+  we'll be one step closer to helping other Lorena Barbas
+  create more wonderful lessons.
 </p>
