@@ -102,3 +102,138 @@ env DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib/ \
   if you want to play a solo,
   you have to learn your scales.
 </p>
+<hr/>
+<p>
+  Postscript:
+  there were several comments on this post
+  <a href="https://github.com/swcarpentry/site/pull/475">on GitHub</a>
+  while it was still in draft;
+  I've included them below,
+  and more would be welcome.
+</p>
+<dl>
+  <dt>Aron Ahmadia:</dt>
+  <dd>
+<p>This is a good issue.  I know you were just picking this 
+dynamic library problem an example, but it's one that's near to my heart
+ as somebody who helps develop cross-platform tools.  Dynamic library 
+loaders are very complicated pieces of machinery, and they present 
+similar-yet-different interfaces on OS X, Windows, and Linux.  </p>
+
+<p>I do believe that we're getting a lot better at providing 
+"batteries-included" platforms for developers to work on, without having
+ to understand the underlying guts of their tools.  It used to be that 
+if you wanted to perform a computation involving solving a system of 
+linear equations, you had to know how to write C or Fortran code, 
+perhaps call the LAPACK library if you wanted it to be very fast, call 
+the compiler, the linker, and maybe use a Makefile, all to run your code
+ from the command line.</p>
+
+<p>Nowadays, you can solve this system of equations in a single line of 
+code in Python (using SciPy), MATLAB, or even on the web with tools like
+ SageMathCloud or Wolfram Alpha.  We're making progress in layering 
+low-level library dependencies away from users, but we're not done yet. 
+ Tools like conda and hashdist are emerging specifically to help 
+increase the range of experts, allowing developers to focus on building 
+tools higher in the stack.</p>
+
+<p>Packaging, interoperability, and portability remain as challenges in 
+scientific computing, for all languages and platforms.  I think advances
+ in tools and techniques will continue to have significant impact in 
+improving productivity, aiding replicability and reproducibility, and 
+reducing the need for scientists to set arcane environment variables to 
+get their web scraper going.</p>
+  </dd>
+  <dt>Titus Brown:</dt>
+  <dd>
+            <p>I think well-configured VMs and cloud computing machines <em>are</em>
+ a solution; it's super hard to write software for everyone's individual
+ laptop, but if I tell you "Ubuntu 12.04 with these packages, and here's
+ how to install them with apt-get, and then build our software", well, 
+that's just going to work.</p>
+  </dd>
+  <dt>Raniere Silva:</dt>
+  <dd>
+<p>VMs can help but sometimes they just make the problem "worse" because
+ you will need specific versions of virtualization software, network 
+configured properly, ... since the VM was made to "Ubuntu X" and you are
+ using "Ubuntu Y".</p>
+  </dd>
+  <dt>Titus Brown:</dt>
+  <dd>
+<p>sure, but the Ubuntu Long Term Support releases should mitigate that 
+quite a bit -- I'm now relying on 12.04 for our scientific software, and
+ 12.04 is supported through 2017, I think.</p>
+  </dd>
+  <dt>Greg Wilson:</dt>
+  <dd>
+    <p>
+It comes down to numbers: is the percentage of packages that JFI (Just
+Install) high enough that most scientists, most of the time, don't run
+into problems whose solution requires 10X the knowledge they have?
+Python's `cryptography` library isn't a small or obscure package, and
+Anaconda on Mac OS X isn't a rare combination; how long until events
+like that on the VM of your choice are so infrequent as to be a non-issue?</p>
+  </dd>
+  <dt>Jonah Duckles:</dt>
+  <dd>
+    <p><a href="http://docker.io/">Docker.io</a> might one-day help on the Linux platform, but as you point out, Macs are well, different.  </p>
+
+<p>Additionally, when you write a piece of code people find useful then 
+open source it.  If it becomes popular you will be dealing with a 
+torrent of correspondence as people try to run your code on every 
+conceivable software platform under the sun.</p>
+  </dd>
+  <dt>Aron Ahmadia:</dt>
+  <dd>
+    <p>@gvwilson: I think we've crossed that bridge with the core SciPy Stack on the major platforms.</p>
+
+<p>@ctb: The VM
+ solution isn't a silver bullet, unfortunately.   For one, VMs don't 
+work on supercomputers.  Additionally, as Greg alludes, when you combine
+ more tools, you increase the risk that you will need a library at a 
+version that isn't provided by the VM because the VM is too new or old, 
+coming to the limits of "interoperability".  </p>
+
+<p>Despite this, I think it remains to be seen whether we see VMs emerge
+ on major HPC platforms, or installation-isolating tools like Docker, 
+HashDist, or Conda enter mainstream popularity.</p>
+  </dd>
+  <dt>Neil Chue Hong:</dt>
+  <dd>
+            <p>The message I get from your post is: "This isn't as easy as we'd want it to be",</p>
+
+<p>The reason I don't think VMs are the whole solution is that they 
+don't - in their present general usage - solve the issue of me making 
+multiple difficult to install tools work together.</p>
+
+<p>Another solution - not necessarily the right one - is having an 
+expert in every group/department who installs new software on a central 
+set of managed machines for the group (aka the SysAdmin model or HPC 
+centre model). But it can create an artificial divide between those who 
+know what they'd like to do, and those who know what's possible on their
+ machines. </p>
+  </dd>
+  <dt>Titus Brown:</dt>
+  <dd>
+            <p>VMs don't solve everything. But they solve an awful lot, 
+especially at the level that Software Carpentry students and instructors
+ work at, and I wish I understood why people ignore 'em.  EOM. :)</p>
+  </dd>
+  <dt>Davis Jones:</dt>
+  <dd>
+            <p>I would've much rather seen this interesting and useful 
+discussion as comments on the published blog post, rather than in github
+ on the draft blog post. :(</p>
+  </dd>
+  <dt>drlabotatory (real name unknown):</dt>
+  <dd>
+            <p>Something like this happened to my partner and I during 
+the SciPy 2013 git/testing tutorial. We got in a situation where git was
+ refusing to commit our changes, and none of the usual suggested 
+solutions from the instructors worked. In the end, the instructor had to
+ "drive" and fix the problem, but we were all in a rush. It got fixed, 
+but we didn't learn how. So ultimately my take home message regarding 
+git was "here there be dragons."</p>
+  </dd>
+</dl>
