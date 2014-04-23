@@ -1,0 +1,104 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Mr. Biczo Was Right"
+date: 2014-04-23
+time: "08:00:00"
+category: ["Opinion", "Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  I didn't have nearly enough time to enjoy everything that was going on
+  at <a href="https://us.pycon.org/2014/">PyCon 2014</a> last week.
+  One event I particularly regret missing was a sprint
+  organized in part by the folks at <a href="http://scrapinghub.com/">Scrapinghub</a>.
+  They got a bunch of people to write little scrapers to go through old conference websites,
+  pull out speakers' names,
+  and run them through a gender identification library
+  in order to plot changes in gender balance per conference over time.
+  The code is all <a href="https://github.com/scrapinghub/pycon-speakers">available on GitHub</a>,
+  and Gayane Petrosyan
+  (currently at the <a href="https://www.hackerschool.com/">Hacker School</a> in New York City)
+  has started <a href="http://nbviewer.ipython.org/github/pgayane/pycon-speakers/blob/dataanalysis/gender.ipynb">plotting</a>
+  some of the results.
+</p>
+<!-- end excerpt -->
+<p>
+  It's a really cool project,
+  and you really ought to fork it,
+  add a scraper for a conference or two,
+  and send a pull request with your results.
+  If you're going to do that on a Mac,
+  though,
+  you may run into <a href="https://github.com/pyca/cryptography/issues/693">a problem</a>.
+  If you're using Continuum's <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> installation of Python,
+  then <code>pip install scrapy</code> fails
+  with a lengthy stack trace and the cryptic message, "Reason: image not found."
+  <a href="{{page.root}}/pages/team.html#davis.m">Matt Davis</a>,
+  eventually figured out that you have to set a shell variable before trying to install
+  the Python <code>cryptography</code> library
+  that Scrapy depends on:
+</p>
+<pre>
+DYLD_LIBRARY_PATH=$HOME/anaconda/lib
+</pre>
+<p>
+  This piece of information didn't appear anywhere on the Internet
+  (at least not that we could find).
+  The clue that set us on the right path
+  was a fix recommended in issue #693 from the <code>cryptography</code> library:
+</p>
+<pre>
+env DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib/ \
+    ARCHFLAGS="-arch x86_64 -Wno-error=unused-command-line-argument-hard-error-in-future" \
+    LDFLAGS="-L/usr/local/opt/openssl/lib" \
+    CFLAGS="-I/usr/local/opt/openssl/include" \
+    pip install cryptography
+</pre>
+<p>
+  When I started this post,
+  I planned to enumerate all the bits of background knowledge someone would need
+  in order to solve this problem.
+  The list quickly became unmanageable:
+  environment variables and dynamically-loaded libraries in general,
+  this particular variable and library in particular,
+  the fact that the operating system's search for the latter
+  can be controlled by the former,
+  the way Python libraries can depend on compiled C libraries...
+  There's a lot going on here,
+  and most people,
+  even ones who've been through a bootcamp,
+  would give up on contributing to this project
+  before they got the required software stack to work.
+</p>
+<p>
+  This post isn't meant to be a criticism of Scrapy,
+  the <code>cryptography</code> library,
+  or Anaconda:
+  they're all useful, well-engineered tools.
+  Instead,
+  my goal was to explain why we can't just teach people end-user tasks like data analysis.
+  "Gender balance per conference over time" is a pretty innocuous question,
+  but even someone who understands
+  how to write a few lines of code to connect a scraping service
+  to Python's Natural Language Toolkit
+  would probably be defeated in this case.
+</p>
+<p>
+  Pre-configured virtual machines and all-in-one installers aren't a solution to this problem:
+  they only give you what their creators thought to include,
+  and as soon as you want to take advantage of anything else,
+  you're right back in the minefield.
+  The internet isn't a solution either:
+  I've been programming for over thirty years,
+  and I didn't know that the magic word I needed was <code>DYLD_LIBRARY_PATH</code>.
+  What I <em>do</em> know is that
+  every attempt I've seen to sprint for the finish line&mdash;to teach
+  the skills people want to do
+  before teaching the basic concepts those skills depend on&mdash;has produced more frustration than enlightenment.
+  In the end,
+  it turns out that my high school music teacher was right:
+  if you want to play a solo,
+  you have to learn your scales.
+</p>
