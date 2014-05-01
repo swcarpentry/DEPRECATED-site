@@ -59,11 +59,11 @@ title: Blog
 
   {% for year in site.blog_years %}
     <h3 id="{{year}}">{{year}}</h3>
-    {% for month in site.months %}
+    {% for month in site.months reversed %}
       {% if site.blog_count[year][month] > 0 %}
         <h4 id="{{year}}-{{month}}">{{site.month_names[month]}} {{year}}</h4>
         <table class="table table-striped table-condensed blogindex">
-          {% for post in site.blog_lookup[year][month] %}
+          {% for post in site.blog_lookup[year][month] reversed %}
             <tr>
               <td class="date">{{post.date}}:</td>
               <td><a href="{{page.root}}/{{post.path}}">{{post.title}}</a></td>
