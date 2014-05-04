@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-05-04", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$4f1a173f14aca04fedcb0dab96c8f7abebcdae26952dabab56ec4c94cf95a1f3", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$4f1a173f14aca04fedcb0dab96c8f7abebcdae26952dabab56ec4c94cf95a1f3", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/tarkowski.leszek.json"
+ }
+}
