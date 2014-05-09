@@ -5,6 +5,7 @@
 - {airport: Baltimore Washington, count: 4, latlng: '39.175278,-76.668333'}
 - {airport: Paris Charles de Gaulle, count: 1, latlng: '49.012778,2.55'}
 - {airport: Christchurch, count: 1, latlng: '-43.489167,172.532222'}
+- {airport: Charlottesville, count: 1, latlng: '38.139643,-78.452342'}
 - {airport: Charleston, count: 1, latlng: '32.898611,-80.040278'}
 - {airport: Urbana-Champaign, count: 1, latlng: '40.039167,-88.278056'}
 - {airport: Cape Town, count: 1, latlng: '-33.964722,18.601667'}
@@ -18,7 +19,7 @@
 - {airport: Hamburg, count: 1, latlng: '53.630278,9.988056'}
 - {airport: Washington Dulles, count: 1, latlng: '38.944444,-77.455556'}
 - {airport: Houston, count: 1, latlng: '29.980278,-95.339722'}
-- {airport: Indianapolis, count: 2, latlng: '39.717222,-86.294167'}
+- {airport: Indianapolis, count: 3, latlng: '39.717222,-86.294167'}
 - {airport: Long Island MacArthur, count: 1, latlng: '40.795,-73.1'}
 - {airport: Joplin Missouri, count: 1, latlng: '37.050558,-94.233336'}
 - {airport: Krakow, count: 1, latlng: '50.0775,19.784722'}
@@ -46,7 +47,7 @@
 - {airport: Portland, count: 1, latlng: '45.588611,-122.5975'}
 - {airport: Pittsburgh, count: 2, latlng: '40.491389,-80.232778'}
 - {airport: Raleigh Durham, count: 3, latlng: '35.8775,-78.787222'}
-- {airport: Seattle Tacoma, count: 2, latlng: '47.448889,-122.309167'}
+- {airport: Seattle Tacoma, count: 3, latlng: '47.448889,-122.309167'}
 - {airport: San Francisco, count: 4, latlng: '37.618889,-122.374722'}
 - {airport: Singapore, count: 1, latlng: '1.355556,103.987222'}
 - {airport: San Jose, count: 1, latlng: '37.361667,-121.928889'}
@@ -58,10 +59,11 @@
 - {airport: Sydney, count: 3, latlng: '-33.946111,151.177222'}
 - {airport: Trieste, count: 1, latlng: '45.827778,13.466389'}
 - {airport: Tucson, count: 2, latlng: '32.116111,-110.941389'}
+- {airport: Knoxville, count: 1, latlng: '35.81,-84.0'}
 - {airport: Viracopos, count: 1, latlng: '-23.008056,-47.134444'}
 - {airport: Edmonton, count: 1, latlng: '53.309722,-113.579722'}
 - {airport: Halifax, count: 1, latlng: '44.880833,-63.508611'}
-- {airport: Montreal Dorval, count: 2, latlng: '45.468056,-73.741389'}
+- {airport: Montreal Dorval, count: 4, latlng: '45.468056,-73.741389'}
 - {airport: Vancouver, count: 9, latlng: '49.195,-123.181944'}
 - {airport: 'London, Ontario', count: 1, latlng: '43.035556,-81.153889'}
 - {airport: Toronto, count: 6, latlng: '43.677222,-79.630556'}
