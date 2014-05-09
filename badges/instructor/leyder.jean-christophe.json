@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-05-09", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f10baa08af48075465acdab2f39e096af68405a9689f33006dfab488d3ebeae9", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f10baa08af48075465acdab2f39e096af68405a9689f33006dfab488d3ebeae9", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/leyder.jean-christophe.json"
+ }
+}

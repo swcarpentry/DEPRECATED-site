@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-05-09", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8a864b41c475fbd1c922e68eb230a0082c8c5aaaf17ec513ce2dfb48c0aa8137", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8a864b41c475fbd1c922e68eb230a0082c8c5aaaf17ec513ce2dfb48c0aa8137", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/zonca.andrea.json"
+ }
+}

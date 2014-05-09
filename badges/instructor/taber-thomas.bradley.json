@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-05-09", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$446d5c141a77a97861581a65cbd2c8277e0d383eedde6bc09ac4597fab5cbb97", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$446d5c141a77a97861581a65cbd2c8277e0d383eedde6bc09ac4597fab5cbb97", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/taber-thomas.bradley.json"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-05-09", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$77cecb3c6e178c8ab84c8fa4599e8f645addd4bf4bd5991d516d3d341504ddd2", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$77cecb3c6e178c8ab84c8fa4599e8f645addd4bf4bd5991d516d3d341504ddd2", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/friedline.chris.json"
+ }
+}
