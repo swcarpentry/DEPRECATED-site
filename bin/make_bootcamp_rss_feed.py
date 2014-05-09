@@ -107,13 +107,16 @@ def get_description(bootcamp):
     '''
     address = ''
     if bootcamp.get('address'):
-        address = 'at {0}'.format(bootcamp['address'])
-    instructors = ''
-    if bootcamp.get('instructor'):
-        instructors='led by {0}'.format(
-            ','.join(bootcamp['instructor'])) 
-    return 'A boot camp will be held on {0} {1} {2}'.format(
-        bootcamp['humandate'], address, instructors)
+        try:
+            address = 'at {0}'.format(bootcamp['address'])
+        except UnicodeEncodeError, e:
+            print >> sys.stderr, 'Unable to decode address for {0}'.format(bootcamp['slug'])
+            address = ''
+        instructors = ''
+        if bootcamp.get('instructor'):
+            instructors='led by {0}'.format(','.join(bootcamp['instructor'])) 
+        return 'A boot camp will be held on {0} {1} {2}'.format(
+            bootcamp['humandate'], address, instructors)
 
 #----------------------------------------
 
