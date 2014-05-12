@@ -1,0 +1,107 @@
+---
+layout: blog
+root: ../../..
+author: Karen Cranston
+title: "Our First Data Carpentry Workshop"
+date: 2014-05-12
+time: "18:00:00"
+category: ["Bootcamps", "Data Carpentry"]
+---
+<!-- start excerpt -->
+<p>
+  After months of planning, we finally ran the inaugural Data Carpentry workshop at NESCent on May 8 and 9.
+  Modelled on Software Carpentry, this workshop focused on managing and manipulating data rather than writing code.
+  here were graduate students, postdocs, faculty and staff, mostly from the three Triangle universities (Duke, UNC-CH and NCSU).
+</p>
+<!-- end excerpt -->
+<p>
+  We taught four different sections:
+</p>
+<ul>
+  <li>
+    bash:
+    Differences between Excel documents and plain text;
+    getting plan text out of Excel;
+    navigating the bash shell;
+    exploring, finding and subsetting data using cat, head, tail, cut, grep, find, sort, uniq
+    (Karen Cranston)
+  </li>
+  <li>
+    R:
+    navigating R studio;
+    importing tabular data into dataframes;
+    subsetting dataframes;
+    basic statistics and plotting
+    (Tracy Teal)
+  </li>
+  <li>
+    SQL:
+    how to format your data for database import;
+    importing csv files into SQLite;
+    querying the database;
+    creating views;
+    building complex queries
+    (Ethan White)
+  </li>
+  <li>
+    advanced bash:
+    putting shell commands in a script;
+    chaining together the SQL and R work
+    (Hilmar Lapp)
+  </li>
+</ul>
+<p>
+  Thoughts:
+</p>
+<ul>
+  <li>
+    Do SQL before R!
+    It makes more sense in terms of workflow (extract subset of data;
+    export to csv for analyses) but is also much easier for the students (easier syntax, can see data in Firefox plugin).
+    The students seemed to get SQL - fewer red sticky notes and better questions
+    (how would I structure this other query? vs Help me with bash / R syntax?).
+  </li>
+  <li>
+    Should include more discussion in each section about how to structure data and files to make your life easier.
+    Ethan did this for SQL section, and it was very effective.
+  </li>
+  <li>
+    Motivation is easier than software carpentry.
+    People are already struggling with data, and desperate for better tools and practices.
+  </li>
+  <li>
+    What is the best tool for particular jobs? is still a big question. When would I use bash vs R vs SQL?
+  </li>
+  <li>
+    +1 for using a real (published!) data set that was relevent to at least some of the participants;
+    for using the same data throughout the course;
+    and for having an instructor with intimate knowledge of the data (could explain some of the quirks of the data).
+    #squirrelcannon
+  </li>
+  <li>
+    Bash scripting section: people were most confused here;
+    an outline and / or concept map would have been useful;
+    people (including the helpers!) didn't have a good idea of what we were trying to accomplish.
+  </li>
+  <li>
+    We needed to do a better job of providing the commands / scripts we were writing to students.
+    People who fall behind need a way to catch up.
+    Ways to do this include:
+    providing a printed 'cheat sheet' of commands at the start of the session;
+    providing material online
+    (this worked less well in Data Carpentry than Software Carpentry because instructors were keeping material in git but not teaching git);
+    having one helper dedicated to entering commands in the Etherpad.
+  </li>
+  <li>
+    Many students asked about "getting data off the web".
+    We aren't quite sure what that means.
+    It might mean using APIs to access NCBI, GBIF but we don't think that is true.
+    Most data in Dryad, etc. is too messy to use without extensive cleanup (or, is unusable due to lack of metadata).
+  </li>
+  <li>
+    We had a more women than men among the participants.
+    I am not sure how much of this is due to s/Software/Data (Data less scary than Software?),
+    due to having 50% female instructors or some other reason.
+    May be related to the motivation question I mentioned above.
+  </li>
+</ul>
