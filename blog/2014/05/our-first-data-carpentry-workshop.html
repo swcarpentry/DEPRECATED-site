@@ -3,40 +3,72 @@ layout: blog
 root: ../../..
 author: Karen Cranston
 title: "Our First Data Carpentry Workshop"
-date: 2014-05-12
+date: 2014-05-13
 time: "18:00:00"
 category: ["Bootcamps", "Data Carpentry"]
 ---
 <!-- start excerpt -->
 <p>
-  After months of planning, we finally ran the inaugural Data Carpentry workshop at NESCent on May 8 and 9.
-  Modelled on Software Carpentry, this workshop focused on managing and manipulating data rather than writing code.
-  here were graduate students, postdocs, faculty and staff, mostly from the three Triangle universities (Duke, UNC-CH and NCSU).
+  On May 8 and 9, 2014, 4 instructors, 4 assistants, and 27 learners filed into
+  the largest meeting space at the National Evolutionary Synthesis Center (NESCent) for the inaugural Data Carpentry bootcamp.
+  Data Carpentry is modeled on Software Carpentry,
+  but instead of software focuses on tools and practices for more productively managing and manipulating data.
+  The inaugural group of learners for this bootcamp was very diverse, at all kinds of levels:
+  they comprised graduate students, postdocs, faculty and staff, from each of the three largest local research universities
+  (Duke University, University of North Carolina at Chapel Hill, and North Caroline State University),
+  with a balanced gender-ratio (in fact, women slightly outnumbered men),
+  with research areas ranging from evolutionary biology and ecology to microbial ecology,
+  fungal phylogenomics, marine biology, and environmental engineering.
+  One participant was even a library scientist from Duke Library.
 </p>
 <!-- end excerpt -->
+<p>
+  As it has become easier and less costly to acquire data in the biological sciences,
+  we expected that many researchers were interested in Data Carpentry to help manage and analyze increasing amounts of data.
+  We started asked learners why they were attending,
+  and specific responses did reflect this challenge of handling data and what people wanted to do, or not do, with their data:
+</p>
+<ul>
+  <li>I'm tired of feeling out of my depth on computation and want to increase my confidence.</li>
+  <li>I usually manage data in Excel and it's terrible and I want to do it better</li>
+  <li>I'm organizing GIS data and it's becoming a nightmare</li>
+  <li>This workshop sounds like a good way to dive in head first</li>
+  <li>My advisor insists that we store 50,000 barcodes in a spreadsheet, and something must be done about that.</li>
+  <li>I want to teach a reproducible research class.</li>
+  <li>I'm having a hard time analyzing microarray, SNP or multivariate data with Excel and Access.</li>
+  <li>I want to use public data.</li>
+  <li>I work with faculty at undergrad institutions and want to teach data practices, but I need to learn it myself first.</li>
+  <li>I'm interested in going in to industry and companies are asking for data analysis experience.</li>
+  <li>I'm trying to reboot my lab's workflow to manage data and analysis in a more sustainable way.</li>
+  <li>I'm re-entering data over and over again by hand and know there's a better way</li>
+  <li>I have overwhelming amounts of NGS data</li>
+</ul>
+<p>
+  The bootcamp was designed to address these issues and was preceded by months of planning, discussions, and agonizing among the instructors
+  over what to focus on among the many potentially useful subjects, techniques, and tools for effective data management.
+  Here is what we finally decided to teach, and the lessons we learned from that as well as from the feedback we received from the learners.
+</p>
 <p>
   We taught four different sections:
 </p>
 <ul>
   <li>
-    bash:
+    Wrangling data in the shell (bash):
     Differences between Excel documents and plain text;
-    getting plan text out of Excel;
+    getting plain text out of Excel;
     navigating the bash shell;
     exploring, finding and subsetting data using cat, head, tail, cut, grep, find, sort, uniq
     (Karen Cranston)
   </li>
   <li>
-    R:
-    navigating R studio;
+    Managing and analyzing data in R: navigating R studio;
     importing tabular data into dataframes;
     subsetting dataframes;
     basic statistics and plotting
     (Tracy Teal)
   </li>
   <li>
-    SQL:
-    how to format your data for database import;
+    Combining and subsetting data in SQL: how to format your data for database import;
     importing csv files into SQLite;
     querying the database;
     creating views;
@@ -44,64 +76,76 @@ category: ["Bootcamps", "Data Carpentry"]
     (Ethan White)
   </li>
   <li>
-    advanced bash:
-    putting shell commands in a script;
-    chaining together the SQL and R work
+    Creating repeatable workflows using shell scripts: putting shell commands in a script;
+    looping over blocks of commands;
+    chaining together data synthesis in SQL with data analysis in R
     (Hilmar Lapp)
   </li>
 </ul>
 <p>
-  Thoughts:
+  This was the first-ever bootcamp of this kind that we taught,
+  so after it was all done, many observations and thoughts came to mind:
 </p>
 <ul>
   <li>
-    Do SQL before R!
-    It makes more sense in terms of workflow (extract subset of data;
-    export to csv for analyses) but is also much easier for the students (easier syntax, can see data in Firefox plugin).
-    The students seemed to get SQL - fewer red sticky notes and better questions
-    (how would I structure this other query? vs Help me with bash / R syntax?).
+    The SQL section should come before the R section!
+    It makes more sense in terms of workflow (extract subset of data, export to CSV for analyses)
+    but is also an easier entry for learners (easier syntax, can see data in Firefox plugin).
+    The learners seemed to get SQL:
+    there were fewer red sticky notes and questions were more about transfer ("how would I structure this other query")
+    than comprehension ("how do I correct bash / R syntax").
   </li>
   <li>
-    Should include more discussion in each section about how to structure data and files to make your life easier.
-    Ethan did this for SQL section, and it was very effective.
+    Each section should include discussion about how to structure data and files to make one's life easier.
+    Ethan did this for the SQL section, and it was very effective.
   </li>
   <li>
-    Motivation is easier than software carpentry.
-    People are already struggling with data, and desperate for better tools and practices.
+    Motivation for taking the bootcamp does not need to be "sold", as compared to Software Carpentry.
+    Many people are already struggling with data, and are hungry for better tools and practices.
+    Our bootcamp filled up in less than 24 hours after opening registration.
   </li>
   <li>
-    What is the best tool for particular jobs? is still a big question. When would I use bash vs R vs SQL?
+    What the best tool is for a particular job is still a big question.
+    When would I use bash vs R vs SQL?
+    Learners brought this up repeatedly, and we didn't always have good answers that didn't involve hand waving,
+    perhaps in part because the answer depends so much on context and the problem at hand.
   </li>
   <li>
-    +1 for using a real (published!) data set that was relevent to at least some of the participants;
-    for using the same data throughout the course;
+    +1 for using a real (published!) data set that was relevant to at least some of the participants;
+    for using this same data set throughout the course;
     and for having an instructor with intimate knowledge of the data (could explain some of the quirks of the data).
-    #squirrelcannon
+    <a href="https://twitter.com/search?q=%23squirrelcannon">#squirrelcannon</a>
   </li>
   <li>
-    Bash scripting section: people were most confused here;
-    an outline and / or concept map would have been useful;
-    people (including the helpers!) didn't have a good idea of what we were trying to accomplish.
+    For the shell scripting section,
+    an outline and/or concept map would have been useful to give learners a good idea upfront of what we were trying to accomplish.
+    Without this, some learners (and helpers!) were confused about which endpoint we were working towards.
   </li>
   <li>
-    We needed to do a better job of providing the commands / scripts we were writing to students.
-    People who fall behind need a way to catch up.
-    Ways to do this include:
-    providing a printed 'cheat sheet' of commands at the start of the session;
+    People who fall behind need a good way to catch up.
+    Ways to do this include providing a printed cheat sheet of commands at the start of the session;
     providing material online
-    (this worked less well in Data Carpentry than Software Carpentry because instructors were keeping material in git but not teaching git);
-    having one helper dedicated to entering commands in the Etherpad.
-  </li>
-  <li>
-    Many students asked about "getting data off the web".
-    We aren't quite sure what that means.
-    It might mean using APIs to access NCBI, GBIF but we don't think that is true.
-    Most data in Dryad, etc. is too messy to use without extensive cleanup (or, is unusable due to lack of metadata).
-  </li>
-  <li>
-    We had a more women than men among the participants.
-    I am not sure how much of this is due to s/Software/Data (Data less scary than Software?),
-    due to having 50% female instructors or some other reason.
-    May be related to the motivation question I mentioned above.
+    (unlike the meanwhile well polished Software Carpentry material,
+    the material for Data Carpentry is still in the early stages of online documentation);
+    and having one helper dedicated to entering commands in the etherpad.
   </li>
 </ul>
+<p>
+  There were also various things we wanted to teach but that came under the chopping block due to lack of time and other reasons.
+  One of these, and one that learners asked about repeatedly, was the subject of "Getting data off the web".
+  It will take more thought to pin down what that should actually mean for the purpose of teaching it (and thus being "teachable")
+  as part of Data Carpentry bootcamp aimed at zero-barrier to entry.
+  It might mean using APIs to access data from NCBI or GBIF, but it's far from clear whether that would be meeting learners' needs or not.
+  For most general-purpose data repositories, such as Dryad, most of their data are too messy to use without extensive cleanup.
+</p>
+<p>
+  Finally, we'd like to thank our sponsors for their support,
+  including NESCent for hosting the event and keeping us nourished,
+  and the Data Observation Network for Earth (DataONE),
+  without whom this event wouldn't have taken place. 
+</p>
+<p>
+  <em>
+    For more on this bootcamp, see <a href="https://storify.com/tracykteal/datacarpentry-2014-05-08">this Storify</a>.
+  </em>
+</p>
