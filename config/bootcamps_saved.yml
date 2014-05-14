@@ -1970,3 +1970,623 @@
   url: http://geocarpentry.github.io/2014-01-21-erdc/
   user: geocarpentry
   venue: US Army Engineer Research and Development Center
+- address: Hartley Conference Center, Mitchell Earth Sciences bldg., Stanford, CA
+  contact: arokem@gmail.com
+  country: United-States
+  enddate: 2014-01-28
+  humandate: Jan 27-28, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ariel Rokem, Justin Kitzes]
+  latlng: 37.4225, 122.1653
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-01-27-Stanford
+  startdate: 2014-01-27
+  url: http://arokem.github.io/2014-01-27-Stanford/
+  user: arokem
+  venue: Stanford University
+- address: Newman Alumni Center (tentative)
+  contact: SKhuri@med.miami.edu
+  country: United-States
+  enddate: 2014-01-28
+  humandate: Jan 27-28, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Jenny Bryan, Carlos Anderson, Bernhard Konrad, Justin Ely, Victor Ng,
+    Jonah Duckles]
+  latlng: 25.7174346,-80.2781389
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-01-27-miami
+  startdate: 2014-01-27
+  url: http://jennybc.github.io/2014-01-27-miami/
+  user: jennybc
+  venue: University of Miami
+- address: Alma Mater Room, I Hotel and Conference Center, 1900 South 1st Street,
+    Champaign, IL 61820
+  contact: davis68@illinois.edu
+  country: United-States
+  enddate: 2014-01-31
+  humandate: Jan 30-31, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Michael Selik, Neal Davis]
+  latlng: 40.093692, -88.237606
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-01-30-cse
+  startdate: 2014-01-30
+  url: http://uiuc-cse.github.io/2014-01-30-cse/
+  user: uiuc-cse
+  venue: University of Illinois, Computational Science and Engineering
+- address: 15 Vassar Street, 48-316
+  contact: aron@ahmadia.net
+  country: United-States
+  enddate: 2014-02-01
+  humandate: Jan 30 - Feb 1, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Aron Ahmadia, Randy Olson]
+  latlng: 42.361947,-71.090936
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-01-30-mit
+  startdate: 2014-01-30
+  url: http://geocarpentry.github.io/2014-01-30-mit/
+  user: geocarpentry
+  venue: Massachusetts Institute of Technology
+- address: 1424 Bren Hall, University of California, Santa Barbara
+  contact: jkitzes@berkeley.edu
+  country: United-States
+  enddate: 2014-02-01
+  humandate: Jan 31-Feb 1, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Justin Kitzes, Shane Grigsby, Mark Wilber]
+  latlng: 34.412114,-119.842014
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-01-31-ucsb
+  startdate: 2014-01-31
+  url: http://swcarpentry.github.io/2014-01-31-ucsb/
+  user: swcarpentry
+  venue: University of California Santa Barbara
+- address: Norwich Research Park, Norwich
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-02-04
+  humandate: Feb 3-4, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Aleksandra Pawlik, Rob Davey]
+  latlng: 52.6217629,-1.2409930
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-03-TGAC
+  startdate: 2014-02-03
+  url: http://apawlik.github.io/2014-02-03-TGAC/
+  user: apawlik
+  venue: The Genome Analysis Centre (TGAC)
+- address: Institute for Marine and Antarctic Studies, <a href="http://www.utas.edu.au/commercial-services-development/building-works/current-projects/institute-for-marine-and-antarctic-studies-imas">Castray
+    Esplanade, Battery Point</a>
+  contact: d.irving@student.unimelb.edu.au
+  country: Australia
+  enddate: 2014-02-11
+  humandate: Feb 10-11, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Damien Irving]
+  latlng: -42.8806,147.3250
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-02-10-hobart
+  startdate: 2014-02-10
+  url: http://damienirving.github.io/2014-02-10-hobart/
+  user: damienirving
+  venue: AMOS conference
+- address: 366 Adelaide Street West, Toronto
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-02-12
+  eventbrite: 9459779455
+  humandate: Feb 11-12, 2014
+  humantime: 8:45 am - 4:30 pm
+  instructor: [Trevor Bekolay, Bonny Biswas, Abigail Cabunoc, Greg Wilson]
+  latlng: 43.64711,-79.39423
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-11-toronto
+  startdate: 2014-02-11
+  url: http://swcarpentry.github.io/2014-02-11-toronto/
+  user: swcarpentry
+  venue: Mozilla Toronto
+- address: 8888 University Drive, Burnaby
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-03-01
+  eventbrite: 8883102599
+  humandate: Feb 22 and Mar 1, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Bernhard Konrad, Scott Chamberlain, Christina Koch, Lynne Williams]
+  latlng: 49.276765,-122.917957
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-22-SFU
+  startdate: 2014-02-22
+  url: http://bernhardkonrad.github.io/2014-02-22-SFU/
+  user: bernhardkonrad
+  venue: Simon Fraser University
+- address: TBD
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-02-16
+  humandate: Feb 15-16, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Emily Jane McTavish, Jonah Duckles]
+  latlng: 39.091816,-94.550378
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-15-umkc
+  startdate: 2014-02-15
+  url: http://swcarpentry.github.io/2014-02-15-umkc/
+  user: swcarpentry
+  venue: University of Missouri - Kansas City
+- address: High St, Kensington NSW 2052 (Boral Theatre in the AGSM)
+  contact: a.letten@unsw.edu.au
+  country: Australia
+  enddate: 2014-02-14
+  humandate: Feb 13-14, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Daniel Falster, Rich FitzJohn, Diego Barneche]
+  latlng: -33.917410,151.231307
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-02-13-UNSW
+  startdate: 2014-02-13
+  url: http://nicercode.github.io/2014-02-13-UNSW/
+  user: nicercode
+  venue: University of New South Wales
+- address: CB06.06.103 (Bld 6, level 6, Rm 103)<br> 15 Broadway, Ultimo NSW 2007,
+    Australia <a href ="http://maps.uts.edu.au/map.cfm">map</a>
+  contact: daniel.falster@mq.edu.au
+  country: Australia
+  enddate: 2014-02-19
+  humandate: Feb 18-19, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Daniel Falster, Rich FitzJohn, Diego Barneche]
+  latlng: -33.883898,151.201013
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-18-UTS
+  startdate: 2014-02-18
+  url: http://nicercode.github.io/2014-02-18-UTS/
+  user: nicercode
+  venue: University of Technology, Sydney
+- address: Accra - Cape Coast Rd, Biriwa, Central, Biriwa
+  contact: admin@software-carpentry.org
+  country: Ghana
+  enddate: 2014-02-20
+  humandate: Feb 18-20, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Stefano Cozzini, Kwasi Kwakwa]
+  latlng: 5.161988,-1.165945
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-02-18-aims
+  startdate: 2014-02-18
+  url: http://swcarpentry.github.io/2014-02-18-aims/
+  user: swcarpentry
+  venue: African Institute for Mathematical Sciences
+- address: London
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-02-19
+  humandate: Feb 18-19, 2014
+  humantime: 10:00 am - 5:00 pm
+  instructor: [James Hetherington, Owain Kenway, Miguel Bernabeu Llinares, Mayeul
+      d'Avezac]
+  latlng: 51.5243625,-0.1344750
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-02-18-UCL
+  startdate: 2014-02-18
+  url: http://apawlik.github.io/2014-02-18-UCL/
+  user: apawlik
+  venue: University College London
+- address: Madrid
+  contact: abostroem@stsci.edu
+  country: Spain
+  enddate: 2014-02-24
+  humandate: Feb 24-25, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Azalee Bostroem, Justin Ely]
+  latlng: 40.46871,-3.94383
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-02-24-esac
+  startdate: 2014-02-25
+  url: http://justincely.github.io/2014-02-24-esac/
+  user: justincely
+  venue: ESAC
+- address: ETH Hoenggerberg, HIT E51, Zurich
+  contact: admin@software-carpentry.org
+  country: Switzerland
+  enddate: 2014-03-01
+  humandate: Feb 28-Mar 1, 2014
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Stefano Cozzini, Sam Thomson]
+  latlng: 47.4103, 8.508272
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-02-28-ethz
+  startdate: 2014-02-28
+  url: http://swcarpentry.github.io/2014-02-28-ethz/
+  user: swcarpentry
+  venue: ETH Zurich
+- address: Brown Science and Engineering Library Electronic Classroom, Clark Hall
+    (Room 133)
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-03-11
+  humandate: Mar 10-11 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Michael Hansen, Stephen Turner, Erik Bray]
+  latlng: 38.033553,-78.507977
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-03-10-uva
+  startdate: 2014-03-10
+  url: http://synesthesiam.github.io/2014-03-10-uva/
+  user: synesthesiam
+  venue: University of Virginia
+- address: 4 Washington Place, 2nd Floor, Manhattan (for Python) and<br/> 1 MetroTech
+    Center, 19th Floor, Brooklyn (for R)
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-03-18
+  eventbrite: 10435144799
+  humandate: Mar 17-18, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Elena Glassman, Matthew Lightman, Michael Selik, Sarah Supp, Tracy
+      Teal, Alex Viana, David Warde-Farley]
+  ipythonnotebook: http://nbviewer.ipython.org/urls
+  latlng: 40.729513,-73.996461
+  layout: bootcamp
+  raw: raw.github.com/swcarpentry/bc/gh-pages
+  registration: open
+  root: .
+  slug: 2014-03-17-nyu
+  startdate: 2014-03-17
+  url: http://swcarpentry.github.io/2014-03-17-nyu/
+  user: swcarpentry
+  venue: New York University
+- address: Kinzie and Tamalpais Rooms, David Brower Center, 2150 Alliston Way, Berkeley
+    CA
+  contact: davclark@berkeley.edu
+  country: United-States
+  enddate: 2014-03-18
+  humandate: Mar 17-18, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Justin Kitzes, Matt Davis, Chang She, Cindee Madison, Chris Holdgraf,
+    Thomas Kluyver, Dav Clark, Anna Schneider]
+  latlng: 37.873913,-122.250563
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-03-17-ucb
+  startdate: 2014-03-17
+  url: http://swcarpentry.github.io/2014-03-17-ucb/
+  user: swcarpentry
+  venue: University of California - Berkeley
+- address: HUB 145, 4001 Stevens Way NE and OUG 220, 4060 George Washington Ln NE,
+    Seattle
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-03-18
+  eventbrite: 10299635487
+  humandate: Mar 17-18, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Bernhard Konrad, Jenny Bryan, Tommy Guy, Christina Koch, Lynne Williams,
+    Trevor King]
+  latlng: 47.655335,-122.303519
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-03-17-uw
+  startdate: 2014-03-17
+  url: http://ljwilliams.github.io/2014-03-17-uw/
+  user: ljwilliams
+  venue: University of Washington
+- address: 100 S. Grant Street, West Lafayette, IN
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-03-18
+  humandate: March 17-18, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Neal Davis, Joshua Herr, Jeff Shelton]
+  latlng: 40.423784,-86.909696
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-03-17-purdue
+  startdate: 2014-03-17
+  url: http://swcarpentry.github.io/2014-03-17-purdue/
+  user: swcarpentry
+  venue: Purdue University (Rawls Hall)
+- address: <a href="http://maps.unimelb.edu.au/parkville/building/104#.Uw0fhPiLelM">Alan
+    Gilbert Building</a>
+  contact: d.irving@student.unimelb.edu.au
+  country: Australia
+  enddate: 2014-03-28
+  humandate: Mar 18, 21, 26 & 28, 2014
+  humantime: 9:00 am - 12:30 pm
+  instructor: [Damien Irving]
+  latlng: -37.7963,144.9614
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-03-18-combine
+  startdate: 2014-03-18
+  url: http://resbaz.github.io/2014-03-18-combine/
+  user: resbaz
+  venue: University of Melbourne
+- address: Room 110, Petch Building
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-04-03
+  eventbrite: 10138651981
+  humandate: Apr 2-3, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ethan White, Greg Wilson, Bill Mills]
+  latlng: 48.461821,-123.310443
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-02-uvic
+  startdate: 2014-04-02
+  url: http://swcarpentry.github.io/2014-04-02-uvic/
+  user: swcarpentry
+  venue: University of Victoria
+- address: <a href="http://vejviser.sdu.dk/opslag?lid=1082">Room U24</a> on day 1,
+    <a href="http://vejviser.sdu.dk/opslag?lid=1799">room U30A</a> on day 2
+  contact: admin@software-carpentry.org
+  country: Denmark
+  enddate: 2014-04-04
+  humandate: Apr 3-4, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Luis Pedro Coelho, Steven Koenig]
+  latlng: 55.368735,10.426408
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-03-sdu
+  startdate: 2014-04-03
+  url: http://luispedro.github.io/2014-04-03-sdu/
+  user: luispedro
+  venue: University of Southern Denmark
+- address: 101 David L. Boren Blvd, Norman OK 73019
+  contact: jduckles@ou.edu
+  country: United-States
+  enddate: 2014-04-05
+  helpers: [Mark Stacy, Mark Laufersweiler]
+  humandate: April 4-5, 2014
+  instructor: [Jonah Duckles, Emily Jane McTavish]
+  latlng: 35.183121,-97.441238
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-04-04-ou
+  startdate: 2014-04-04
+  url: http://jduckles.github.io/2014-04-04-ou/
+  user: jduckles
+  venue: University of Oklahoma
+- address: 3080 Center Green Drive, Boulder, CO
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-04-10
+  humandate: Apr 09-10, 2014
+  humantime: 9:00 am - 4:45 pm
+  instructor: [Edmund Hart, Camille Avestruz]
+  latlng: 40.031528, -105.245847
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-04-09-ucar
+  startdate: 2014-04-09
+  url: http://emhart.github.io/2014-04-09-ucar/
+  user: emhart
+  venue: University Corporation for Atmospheric Research
+- address: School of Life Sciences on Gibbet Hill Campus, Coventry
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-04-10
+  humandate: Apr 09-10, 2014
+  humantime: 9:45 am - 4:00 pm
+  instructor: [Aleksandra Pawlik, Christina Koch]
+  latlng: 52.3802961,-1.5639370
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-04-09-GARNET
+  startdate: 2014-04-09
+  url: http://apawlik.github.io/2014-04-09-GARNET/
+  user: apawlik
+  venue: GARNet, Warwick University
+- address: Lawrence Berkeley National Laboratory, Berkeley, California
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-04-15
+  humandate: Apr 14-15, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: ['Katy Huff, Rachel Slaybaugh, Azalee Bostroem, Cindee Madison, Jessica
+      Kerr, Molly Gibson, and Suzanne Kiihne']
+  latlng: 37.8734481,-122.2563972
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-wise
+  startdate: 2014-04-14
+  url: http://swcarpentry.github.io/2014-04-14-wise/
+  user: swcarpentry
+  venue: Women in Science and Engineering
+- address: Room 523, Palais de Congres, Montreal, Quebec
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-04-15
+  eventbrite: 10151376039
+  humandate: Apr 14-15, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Anthony Scopatz, Ivan Gonzalez, Marcello Barisonzi, Marianne Corvellec,
+    Denis Haine]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-pycon
+  startdate: 2014-04-14
+  url: http://swcarpentry.github.io/2014-04-14-pycon/
+  user: swcarpentry
+  venue: Software Skills for Scientists and Engineers
+- address: Palais de Congres, Montreal, Quebec
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-04-15
+  eventbrite: 10812972893
+  humandate: Apr 14-15, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Luke Lee, Jessica Hamrick]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-pycon-lib
+  startdate: 2014-04-14
+  url: http://dhavide.github.io/2014-04-14-pycon-lib/
+  user: dhavide
+  venue: Software Skills for Librarians
+- address: Room 525, Palais de Congres, Montreal, Quebec
+  contact: admin@software-carpentry.org
+  country: Canada
+  eventbrite: 10151618765
+  humandate: Apr 14, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Titus Brown]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-pycon-ngs
+  startdate: 2014-04-14
+  url: http://swcarpentry.github.io/2014-04-14-pycon-ngs/
+  user: swcarpentry
+  venue: Next-Generation Sequencing
+- address: Room 525, Palais de Congres, Montreal, Quebec
+  contact: admin@software-carpentry.org
+  country: Canada
+  eventbrite: 10319320365
+  helper: [Denis Haine, John Blischak]
+  humandate: Apr 15, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ramnath Vaidyanathan]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-pycon-r
+  startdate: 2014-04-15
+  url: http://swcarpentry.github.io/2014-04-14-pycon-r/
+  user: swcarpentry
+  venue: R for Python Programmers
+- address: Room 521BC, Palais de Congres, Montreal, Quebec
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-04-15
+  eventbrite: 10812792353
+  humandate: Apr 14-15, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Greg Wilson]
+  latlng: 45.530677,-73.624497
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-14-pycon-teach
+  startdate: 2014-04-14
+  url: http://gvwilson.github.io/2014-04-14-pycon-teach/
+  user: gvwilson
+  venue: How to Teach Programming
+- address: 366 Adelaide Street West, Suite 500, Toronto, Ontario
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-04-30
+  eventbrite: 9481333925
+  humandate: April 28-30, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Greg Wilson, Warren Code]
+  latlng: 43.64711,-79.39423
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-28-training
+  startdate: 2014-04-28
+  url: http://swcarpentry.github.io/2014-04-28-training/
+  user: swcarpentry
+  venue: Instructor Training
+- address: Vilvite, Thorm&oslash;hlensgate 51, 5006 Bergen
+  contact: david.fredman@uib.no
+  country: Norway
+  enddate: 2014-04-24
+  humandate: April 23-24, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Lex Nederbragt, Karin Lagesen, David Fredman]
+  latlng: 60.3812811,5.3291539
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-04-23-uib
+  startdate: 2014-04-23
+  url: http://elixirno.github.io/2014-04-23-uib/
+  user: elixirno
+  venue: University of Bergen
+- address: Virginia Science and Technology Campus, Ashburn, VA
+  contact: joshua.r.herr@gmail.com
+  country: United-States
+  enddate: 2014-04-30
+  humandate: Apr 29-30, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Aron Ahmadia, Joshua R. Herr, William Rowell]
+  latlng: 39.059322,-77.445661
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-04-29-gwu
+  startdate: 2014-04-29
+  url: http://jrherr.github.io/2014-04-29-gwu/
+  user: jrherr
+  venue: George Washington University
+- address: Waterfront Campus, European Way, Southampton, Hampshire, SO14 3ZH
+  country: United-Kingdom
+  enddate: 2014-05-09
+  humandate: May 08-09, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Bogdan Vera, Devasena Inupakutika]
+  latlng: 41.7901128,-87.6007318
+  layout: bootcamp
+  organizer: Maike Sonnewald
+  registration: restricted
+  root: .
+  slug: 2014-05-08-soton
+  startdate: 2014-05-08
+  url: http://DevasenaInupakutika.github.io/2014-05-08-soton/
+  user: DevasenaInupakutika
+  venue: National Oceanography Centre

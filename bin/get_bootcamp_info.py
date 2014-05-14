@@ -23,6 +23,8 @@ REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 
 LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
 
+ARCHIVE_WINDOW = 3
+
 def _cleanup_handler(record, key, value):
     if ((type(value) == str) and LATLNG_RE.match(value)):
         return value
@@ -157,10 +159,7 @@ def archive(all_urls, results, reader, archiver):
         end_url = all_urls[i].split('/')[-1]
         # Check sync between all_urls and results
         if end_url == results[i]['slug']:
-            # Check if has at least 30 days that bootcamp ended
-            if ('enddate' in results[i] and
-                    datetime.date.today() - results[i]['enddate'] >
-                    datetime.timedelta(30)):
+            if should_be_archived(results[i]):
                 archive_info.append(results[i])
             else:
                 upcoming_urls.append(all_urls[i])
@@ -170,6 +169,13 @@ def archive(all_urls, results, reader, archiver):
     yaml.dump(upcoming_urls, reader, default_flow_style=False)
     if archive_info:
         yaml.dump(archive_info, archiver)
+
+def should_be_archived(record):
+    if 'enddate' in record:
+        checkdate = record['enddate']
+    else:
+        checkdate = record['startdate']
+    return (datetime.date.today() - checkdate) > datetime.timedelta(ARCHIVE_WINDOW)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
