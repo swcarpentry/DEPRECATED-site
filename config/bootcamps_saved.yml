@@ -2508,23 +2508,6 @@
   url: http://swcarpentry.github.io/2014-04-14-pycon-r/
   user: swcarpentry
   venue: R for Python Programmers
-- address: Room 521BC, Palais de Congres, Montreal, Quebec
-  contact: admin@software-carpentry.org
-  country: Canada
-  enddate: 2014-04-15
-  eventbrite: 10812792353
-  humandate: Apr 14-15, 2014
-  humantime: 9:00 am - 4:30 pm
-  instructor: [Greg Wilson]
-  latlng: 45.530677,-73.624497
-  layout: bootcamp
-  registration: open
-  root: .
-  slug: 2014-04-14-pycon-teach
-  startdate: 2014-04-14
-  url: http://gvwilson.github.io/2014-04-14-pycon-teach/
-  user: gvwilson
-  venue: How to Teach Programming
 - address: 366 Adelaide Street West, Suite 500, Toronto, Ontario
   contact: gvwilson@software-carpentry.org
   country: Canada
