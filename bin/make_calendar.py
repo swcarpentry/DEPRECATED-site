@@ -71,7 +71,7 @@ class ICalendarWriter(object):
             end = info['enddate']
         else:  # one day boot camp?
             end = info['startdate']
-        end + datetime.timedelta(1)  # non-inclusive end date
+        end += datetime.timedelta(1)  # non-inclusive end date
         lines = [
             u'BEGIN:VEVENT',
             u'UID:{0}'.format(uid),
