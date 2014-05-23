@@ -65,30 +65,6 @@ title: Make Things
   </table>
 
   <p>
-    These older repositories are still accessible,
-    but their content is no longer being maintained:
-  </p>
-
-  <ul>
-    <li>
-      <a href="https://github.com/swcarpentry/website">website</a>:
-      the old website.
-    </li>
-    <li>
-      <a href="https://github.com/swcarpentry/boot-camps">boot-camps</a>:
-      used for lesson materials and bootcamp home pages Sept. 2012&ndash;July 2013.
-    </li>
-    <li>
-      <a href="https://github.com/swcarpentry/lessons_3_0">lessons_3_0</a>:
-      Version 3 lesson materials.
-    </li>
-    <li>
-      <a href="https://github.com/swcarpentry/lessons_4_0">lessons_4_0</a>:
-      Version 4 lesson materials.
-    </li>
-  </ul>
-
-  <p>
     Pull requests are always welcome,
     or you can <a href="mailto:{{site.contact}}">mail us</a>
     to talk about what you'd like to do
@@ -97,46 +73,23 @@ title: Make Things
 </div>
 
 <div id="content">
-  <h2>New Exercises, Lessons, and Examples</h2>
+  <h2>New Lesson Material</h2>
 
   <p>
-    We welcome new exercises and lessons
-    (particularly lessons that show how the things we teach fit together
-    by working through medium-sized problems).
+    We welcome new lessons and exercises
+    (particularly lessons that show how the things we teach fit together).
     A good exercise has a single clear focus,
     and should be doable in five minutes or less;
     for examples,
     take a look at the "Challenges" sections of
     <a href="{{site.github_io_url}}/bc/lessons/swc-shell/tutorial.html">our introduction to the Unix shell</a>.
-    We'd particularly like Python exercises that use
-    <a href="#related">ipythonblocks and skimage.novice</a> in the IPython Notebook,
-    exercises for our <a href="{{site.github_io_url}}/bc/lessons/swc-web/tutorial.html">web programming lesson</a>,
-    and ones for using Git and GitHub.
   </p>
 
   <p>
     For an example of what we'd like in a longer lesson,
-    please look at the <a href="{{page.root}}/v4/invperc/">invasion percolation example</a>,
-    which covers topics as diverse as restructuring code to make it more testable,
-    performance profiling,
-    and the advantages of lazy data structures.
-    Such examples can be specific to different research disciplines,
-    which often makes them the most convincing part of our bootcamp.
-    If you're looking for starting points,
-    we'd like to rewrite our examples of
-    <a href="{{page.root}}/v4/setdict/phylogen.html">constructing phylogenetic trees</a>,
-    <a href="{{page.root}}/v4/media/steg.html">counting stars</a>,
-    and
-    <a href="{{page.root}}/v4/media/stars.html">steganography</a>.
-    We'd like to add
-    a simple N-body simulation that included discussion of testing in the face of floating-point roundoff,
-    calculating and visualizing spatial correlations between different data sets,
-    something like Prof. Lorena Barba's
-    <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">12 Steps to Navier Stokes</a>
-    (but shorter, since we only have a couple of hours),
-    and some more gene sequence wrangling.
-    If you'd like to tackle one of these,
-    or have ideas of your own,
+    please look at
+    <a href="https://github.com/swcarpentry/bc/pulls">the pull requests in our lesson repository</a>.
+    And if you have ideas of your own,
     please <a href="mailto:{{site.contact}}">email us</a>:
     we'd be happy to chat.
   </p>
@@ -155,10 +108,12 @@ title: Make Things
 
   <dl>
 
-    <dt>Website Makeover</dt>
+    <dt>Diffing and Merging</dt>
     <dd>
-      Our website desperately needs a makeover,
-      which requires graphic design talent and CSS skills more than it does Python coding.
+      A groups of students have built
+      <a href="http://nbdiff.org/">a diff-and-merge tool for the IPython Notebook</a>.
+      Polishing this would help everyone in the IPython community,
+      not just us.
     </dd>
 
     <dt>Blocks and Images</dt>
@@ -170,81 +125,32 @@ title: Make Things
       Enhancements to either of these are very welcome.
     </dd>
 
-    <dt>Diffing and Merging</dt>
-    <dd>
-      The most important project to us is actually a tool that will diff and merge notebooks
-      so that we can work with them more easily in version control.
-      A groups of students are working on this in Montreal as a <a href="https://github.com/tarmstrong/nbdiff">course project</a>,
-      so it's difficult for other people to help code right now,
-      but we hope to open it up soon.
-    </dd>
-
-    <dt>Badging</dt>
-    <dd>
-      We issue <a href="{{page.root}}/badges/index.html">badges</a> for instructors, organizers,
-      and people who write lesson materials,
-      and plan to start issuing them soon for people who've taken part in our bootcamps.
-      However,
-      our badging infrastructure has fallen behind updates to the standard,
-      so we need to upgrade it,
-      and to convert our existing badges to the newer format.
-    </dd>
-
     <dt>Browsercast</dt>
     <dd>
-      Over the summer,
-      David Wolever built a prototype of a tool called <a href="https://github.com/wolever/browsercast">Browsercast</a>,
-      which is meant to be a replacement for screencasting.
-      Instead of taking what's happening on your screen and turning it into a video that is large and opaque
-      (i.e., you can't search for text in it or copy/paste things from it),
-      Browsercast replays an IPython Notebook session in the browser in sync with a voiceover.
-      What we need is a plugin for <a href="https://github.com/ipython/nbconvert">nbconvert</a>
-      (the notebook-to-whatever conversion tool used to generate static HTML pages, PDFs, and so on from IPython Notebooks)
-      that will take the notebook and the annotations saying,
-      "The start of this cell corresponds to time 2:07 in the audio,"
-      and produce an HTML page that people can view without having the notebook running on their machine.
-      A couple of volunteers have started looking at this,
-      and more help would be welcome.
+      Gabriel Ivanica is building an HTML5-based tool for playing slideshows in sync with a voiceover.
+      This project builds on <a href="https://github.com/tarmstrong/bcast-experiments/">earlier work</a>;
+      see <a href="http://blog.gabrielivanica.com/2014/04/25/browsercast-google-summer-2014/">this blog post</a>
+      for more information.
     </dd>
 
-    <dt>Variable Expansion in the IPython Notebook</dt>
+    <dt>Peer Instruction on the Web</dt>
     <dd>
-      I've been using <a href="http://regexpal.com">http://regexpal.com</a> to teach regular expressions for a while,
-      and then I thought, "Hey, I can do this in the notebook."
-      It urns out that writing extensions (called "magics") for the notebook is pretty easy,
-      so I <a href="https://github.com/gvwilson/regexmagic">built one</a>
-      that takes a cell whose first line is a regex,
-      and other lines are text,
-      and shows the matches.
-      Except there's a problem:
-      right now, the notebook interprets the text <code>{something}</code> to mean,
-      "Expand the variable 'something' before passing the text to the extension,"
-      so a regex like <code>\d{2-4}</code> (which is supposed to match 2, 3, or 4 digits) doesn't work.
-      We can get around this by doubling up the braces,
-      but the IPython notebook developers think that the right solution is to refactor the code that handles magics
-      so that people can get the original (unexpanded) text.
-      Turns out that's easier said than done,
-      but if you'd like to dive into the guts of the notebook,
-      this is your chance.
+      Piotr Banaszkiewicz is developing a web-based tool for peer instruction,
+      a teaching technique which has been proven to be more effective than traditional lecturing.
+      For more information,
+      see
+      <a href="http://piotr.banaszkiewicz.org/blog/2014/04/24/peer-instruction-a-summer-project-for-mozilla/">this blog post</a>
+      or <a href="https://github.com/pbanaszkiewicz/peer-instruction">his GitHub repository</a>.
     </dd>
 
     <dt>Turtle Graphics</dt>
     <dd>
-      It would be really cool to be able to use Python's <a href="http://docs.python.org/2/library/turtle.html">turtle graphics module</a> for teaching in the notebook.
       Turtle graphics goes all the way back to the original work at MIT on teaching kids to program
-      and Paper's wonderful book <a href="http://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746"><em>Mindstorms</em></a>.
-      It's great for teaching,
-      but only if you can see the picture evolve on the screen in front of you:
-      if all you get is the final image, you don't know where to start debugging.
-      Unfortunately,
-      the notebook is set up mostly for batch processing:
-      you press "shift+enter" in a cell,
-      the text is sent to the back-end Python process,
-      the result is sent back and displayed.
-      It should be possible to plug something into the <code>turtle</code> module so that instead of actually drawing,
-      it produces a list of atomic line-drawing commands.
-      These can be sent back to the notebook,
-      where a bit of Javascript can replay the drawing in the browser to give the desired insight.
+      and Paper's wonderful book
+      <a href="http://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746"><em>Mindstorms</em></a>.
+      Several students at <a href="http://www.macewan.ca">MacEwan University</a>
+      have built <a href="https://github.com/macewanCMPT395/PACattack">a prototype</a>;
+      further work would be very welcome.
     </dd>
 
     <dt>A Perl Back End</dt>
@@ -256,23 +162,6 @@ title: Make Things
       a Perl back-end would probably get a lot of love.
     </dd>
 
-    <dt>Data Structure Visualization</dt>
-    <dd>
-      Philip Guo built an <a href="http://www.pythontutor.com/">online Python tutor</a> that draws what's in memory while the program executes.
-      He managed to get it partially integrated into an earlier version of the IPython Notebook,
-      but it was all duct tape and prayer.
-      It would be very cool to have a notebook extension that would let you say, "Show me the state of memory right now,"
-      and produce a static image in the notebook showing what things looked like at that moment.
-      The introspection on the Python side isn't particularly hard&mdash;certainly not for basic data types&mdash;and if you could make it work for one language,
-      you could re-use the browser-side stuff for other languages.
-    </dd>
-
-    <dt>Editing Diagrams</dt>
-    <dd>
-      It would be very cool if we could edit diagrams directly in the notebook.
-      I think this can be done by integrating <a href="http://code.google.com/p/svg-edit/">svg-edit</a>;
-      if it can, it would be useful for people who want to do slideshows using the notebook as well as for teaching.
-    </dd>
   </dl>
 
 </div>
