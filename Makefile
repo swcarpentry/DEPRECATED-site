@@ -120,7 +120,7 @@ cache_verb :
 ## biblio       : make HTML and PDF of bibliography.
 # Have to cd into 'bib' because bib2xhtml expects the .bst file in
 # the same directory as the .bib file.
-biblio :
+biblio : bib/${SWC_BIB}.tex bib/software-carpentry.bib
 	@cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
 	@cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
 
