@@ -2508,23 +2508,6 @@
   url: http://swcarpentry.github.io/2014-04-14-pycon-r/
   user: swcarpentry
   venue: R for Python Programmers
-- address: 366 Adelaide Street West, Suite 500, Toronto, Ontario
-  contact: gvwilson@software-carpentry.org
-  country: Canada
-  enddate: 2014-04-30
-  eventbrite: 9481333925
-  humandate: April 28-30, 2014
-  humantime: 9:00 am - 4:30 pm
-  instructor: [Greg Wilson, Warren Code]
-  latlng: 43.64711,-79.39423
-  layout: bootcamp
-  registration: open
-  root: .
-  slug: 2014-04-28-training
-  startdate: 2014-04-28
-  url: http://swcarpentry.github.io/2014-04-28-training/
-  user: swcarpentry
-  venue: Instructor Training
 - address: Vilvite, Thorm&oslash;hlensgate 51, 5006 Bergen
   contact: david.fredman@uib.no
   country: Norway

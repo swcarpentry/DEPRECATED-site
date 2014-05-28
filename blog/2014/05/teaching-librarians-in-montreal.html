@@ -1,0 +1,184 @@
+---
+layout: blog
+root: ../../..
+author: Dhavide Aruliah
+title: "Teaching Librarians in Montreal"
+date: 2014-05-28
+time: "09:00:00"
+category: ["Bootcamps", "Librarians"]
+---
+<!-- start excerpt -->
+<p>
+  Preston Holmes, Jessica Hamrick, Luke Lee, and I helped deliver a
+  Software Carpentry bootcamp during the PyCon sprints in Montreal in
+  April 2014. The audience consisted of roughly 35 librarians coming
+  mostly from the Montreal area.
+</p>
+<!-- end excerpt -->
+<p>
+  Planning for this bootcamp was daunting. I had some experience
+  teaching at Software Carpentry bootcamps (as did Preston and
+  Jessica) but our material was almost exclusively directed at
+  graduate students in science, not librarians. On top of that, the
+  instructors were all scientists, so choosing appropriate motivating
+  metaphors was difficult for us. We each spent some time prior to the
+  bootcamp struggling to figure out appropriate materials we could use
+  for an audience of librarians. As always, it was difficult to
+  prepare to teach without a strong sense of what the students know
+  already. We considered constructing examples using
+  <a href="http://www.lib.umich.edu/open-access-bibliographic-records">Open
+  Access bibliographic data sets</a> and
+  using <a href="http://python.org/pypi/pymarc">pymarc</a> to process
+  MARC records. We also considered scraping HTML or XML files as an
+  example use case that librarians would find motivating.
+</p>
+<p>
+  We taught the shell in the morning of the first day. We went fairly
+  slowly discussing the basic model of interaction with a computer
+  through the shell, standard file/directory commands, working with
+  text editors, closing with a little bit of material on pipes,
+  redirection and combining tools into scripts. We did not get all
+  that far; in particular, we found ourselves trying to tie together a
+  few commands into a script file but this was largely lost on the
+  audience. We touched briefly on pipes and redirection, but, by and
+  large, we didn't say much.
+</p>
+<p>
+  The librarians, for the most part, had little experience working
+  with command-line user interfaces and programming (although they
+  were very comfortable with boolean operators and search
+  queries). Actually, the feedback we received seemed to indicate that
+  helping the participants set up a notional model of how files and
+  directories work and what the shell actually does was one of the
+  best features of the bootcamp for many of the them.
+</p>
+<p>
+  In the afternoon of the first day, we started going through the
+  basics of Python. The pace was quite fast starting from basic data
+  types, lists, for loops, and going into using modules and writing or
+  running scripts in Python versus interaction with the IPython
+  shell. We avoided the IPython notebook due to set up issues and
+  confusing learners with the model of execution. To close the day, we
+  gave the learners an exercise to construct a Python script using
+  command-line arguments.
+</p>
+<p>
+  We asked for feedback at the end of the first day. There was an
+  <em>overwhelming</em> consensus that we needed to slow down and to
+  allocate more time for hands on stuff. There was confusion in what
+  happens when one is using the bash shell versus the IPython shell or
+  the generic Python shell. In switching between these, we were losing
+  some of the people. In retrospect, our expectations of how quickly
+  the audience could internalise and apply programming concepts were
+  far too ambitious.
+</p>
+<p>
+  In response to the feedback from day 1, we recapitulated most of the
+  ideas in the morning of day 2 (pointing to the Software Carpentry
+  website for more resources). Refreshing the material on the Unix
+  shell went quickly because the participants seemed comfortable with
+  most of that. We did spend some time describing our own mental
+  processes when running distinct shells concurrently. In revisiting
+  Python, we discussed lists again with methods and for loops much
+  more slowly and in more detail (using slides
+  from <a href="{{page.root}}/v4/">V4 lessons</a> to illustrate). We
+  initially intended to spend only half an hour doing a recap;
+  instead, we spend most of the morning going till just 45 minutes
+  before the lunch break.
+</p>
+<p>
+  The rest of day 2 was spent on a single collaborative exercise. The
+  participants had asked for more time for hands on work so this
+  seemed like a good approach. Together, we built a Python script to
+  address <a href="https://github.com/jhamrick/library-exercise">a
+  brilliantly simple use case</a> that Jessica dreamed up during the
+  morning. Jessica had manually transcribed data from an image of a
+  library circulation card into a text file. The text file had a
+  two-line header (the Title and Authour) followed by rows of due
+  dates when the book was due back. The dates were inconsistent but
+  only in three different ways. That is, they were given in the format
+  Month-Day-Year separated by spaces. The Months were all expressed in
+  three character abbriviated form. The dates were inconsistent but
+  only in three ways: the year was either four digits
+  (e.g., <code>1962</code>) or two digits (e.g., <code>62</code>) or
+  two digits preceded by an apostrophe (e.g., <code>'62</code>). The
+  dates also ranged only between the 1950s and 1960s (so no Y2K
+  issues).
+</p>
+<p>
+  In hindsight, Jessica's reduction to a data set corrupted in limited
+  ways was the smartest choice. We were making matters too complicated
+  for novices in playing with MARC files or more complicated tasks. In
+  reducing a feasible use case of cleaning a meaningful dirty data set
+  into one that is cleaner, we were able to construct a lengthy script
+  incrementally. Logical questions arose about more complicated
+  corruptions (e.g., <code>YYYY-MM-DD</code> vs. <code>MM-DD-YY</code>
+  vs. <code>DD-MM-YY</code>, etc.)  but the audience was satisfied
+  with hearing that is more advanced (i.e., requiring regular
+  expressions) that we can extend this script to deal with later.
+</p>
+<p>
+  In finishing up before lunch of day 2, we started developing the
+  script explaining at the same time how to do file I/O. This
+  dovetailed well with the earlier description of files in the Unix
+  shell and how to navigate directories. By lunch, we had a working
+  script that opened the file, loaded its contents into a list, closed
+  it, and printed out the list.
+</p>
+<p>
+  At this point, we had lost Luke and Preston leaving Jessica and I to
+  cover for the rest of the afternoon. Over lunch, Jessica and I
+  discussed strategy. We had the idea of using this script to motivate
+  version control with git coupled with incremental development. This
+  also worked really well since, rather than introducing git in the
+  abstract, we had a concrete problem that the audience had already
+  engaged with.
+</p>
+<p>
+  After lunch, we made sure everyone had git installed before
+  returning to the script. There were some installation headaches (the
+  latest git binaries for Mac didn't work on all hardware). I tried to
+  trouble-shoot this but was not much help. In fact, one of the
+  librarians, being persistent, figured out which git binary was
+  appropriate, posted a link on the etherpad and, before long, most of
+  those who had struggled with getting git installed on their Mac had
+  it running (this was independent of my fumbled attempts).
+</p>
+<p>
+  With git running, Jessica was building the script at the front of
+  the room and we jointly guided the development with frequent
+  commits, explaining the process. There was the usual headache of
+  explaining the syntax of git, but having spent enough time on the
+  shell beforehand, the audience could cope. With each change, we kept
+  the entire group in sync. Occasionally, I would check out to see
+  where I could help someone who couldn't get it right (usually a line
+  miscopied).
+</p>
+<p>
+  At one point, we had a teachable moment: two of the participants
+  accidentally overwrote the data file with an empty file. They had
+  both made the same copy-and-paste error in using the same file for
+  input and output. Fortunately, we had already introduced version
+  control with git! We got everyone to repeat the same mistake so that
+  they overwrote their input file with an empty file. Once we all
+  verified that we had erased our data, we recovered the backup from
+  the repository using git checkout. This actually reinforced the
+  value of version control for backup as well as incremental
+  development.
+</p>
+<p>
+  We went straight to the end of the day working on this single script
+  (that was about 80 lines long at the end including comments). The
+  audience was incredibly engaged and every single person left in the
+  room got it working! This was a new experience for me (with almost
+  20 years experience teaching at the post-secondary level) and it
+  felt fantastic. As an academic instructor, it is embarrassingly easy
+  to fall into the trap of trying to cover too mucgh content. What
+  happened at this bootcamp is that we didn't actually over much
+  content. My feeling, however, is that the participants collectively
+  got enough of a meaningful learning experience that they could
+  manage on their own from then on. Librarians in general are pretty
+  good at working in the gaps between disciplines and are pretty
+  determined to figure things out; what I learned from this experience
+  is how to use their strengths constructively.
+</p>
