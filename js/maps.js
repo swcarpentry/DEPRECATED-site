@@ -67,8 +67,9 @@ SWC.maps = (function() {
           //icon: openPin,
           visible: true,
         });
+        // Use double-quoted string for the part containing 'venue' to avoid having to escape single quotes in bootcamp.venue.
         var info_string = '<div class="info-window">' +
-          '<h5><a href="{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}">{{bootcamp.venue|replace: '\'','\\\''}}</a></h5>' +
+          "<h5><a href=\"{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}\">{{bootcamp.venue}}</a></h5>" +
           '<h6><a href="{{page.root}}/{{bootcamp.path}}">{{bootcamp.humandate}}</a></h6>' +
           '</div>';
             set_info_window(map, marker, info_window, info_string);
