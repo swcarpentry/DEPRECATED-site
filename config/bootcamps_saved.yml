@@ -2556,3 +2556,119 @@
   url: http://DevasenaInupakutika.github.io/2014-05-08-soton/
   user: DevasenaInupakutika
   venue: National Oceanography Centre
+- address: Mills Library L107, 1280 Main St. W. Hamilton, Ontario
+  contact: devenyga@mcmaster.ca
+  country: Canada
+  enddate: 2014-05-06
+  eventbrite: 11361824523
+  humandate: May 5-6, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Greg Wilson, Gabriel Devenyi]
+  latlng: 43.2627392,-79.9175982
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-05-05-mcmaster
+  startdate: 2014-05-05
+  url: http://gdevenyi.github.io/2014-05-05-mcmaster/
+  user: gdevenyi
+  venue: McMaster University Wong e-Classroom
+- address: "Av. Italia, km 8, sala 2106 no pavilhao 2."
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2014-05-13
+  eventbrite: 11429715587
+  helper: [Marcus Vinicius Freire Guimaraes]
+  humandate: 12 e 13 de Maio, 2014
+  humantime: 8:00 - 17:30
+  instructor: [Raniere Silva, Fernando Mayer]
+  latlng: -32.06811,-52.16238
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-05-12-furg
+  startdate: 2014-05-12
+  url: http://r-gaia-cs.github.io/2014-05-12-furg/
+  user: r-gaia-cs
+  venue: Universidade Federal do Rio Grande
+- address: One Bungtown Road, Cold Spring Harbor, NY
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-05-13
+  humandate: May 12-13, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Will Trimble, Sheldon McKay]
+  latlng: 40.859197,-73.468704
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-05-12-cshl
+  startdate: 2014-05-12
+  url: http://wltrimbl.github.io/2014-05-12-cshl/
+  user: wltrimbl
+  venue: Cold Spring Harbor Laboratory, Hershey Building, east conference room
+- address: Mozilla, 366 Adelaide Street West, Toronto
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-05-13
+  humandate: May 12-13, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Joshua Ainsley, Abigail Cabunoc, Greg Wilson]
+  latlng: 43.64711,-79.39423
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-05-12-oicr-toronto
+  startdate: 2014-05-12
+  url: http://swcarpentry.github.io/2014-05-12-oicr-toronto/
+  user: swcarpentry
+  venue: Ontario Institute for Cancer Research
+- address: University of British Columbia, Vancouver, BC
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-05-13
+  humandate: May 12-13, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jenny Bryan, Shaun Jackman, Andy Leung]
+  latlng: 49.26508,-123.25378
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-05-12-ubc
+  startdate: 2014-05-12
+  url: http://jennybc.github.io/2014-05-12-ubc/
+  user: jennybc
+  venue: bioinformatics.ca
+- address: Karolinska Institutet Science Park, Stockholm
+  contact: admin@software-carpentry.org
+  country: Sweden
+  enddate: 2014-05-20
+  humandate: May 19-20, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Konrad Hinsen, Nelle Varoquaux, Karin Lagesen, Lex Nederbragt]
+  latlng: 59.329323,18.068581
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-05-19-scilifelab
+  startdate: 2014-05-19
+  url: http://gvwilson.github.io/2014-05-19-scilifelab/
+  user: gvwilson
+  venue: Science Life Lab
+- address: Room 620, Administrative and Research Center, 3100 Marine St. Boulder,
+    CO 80309
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-05-23
+  humandate: May 23, 2014
+  humantime: 8:00 am - 5:00 pm
+  instructor: [Aron Ahmadia, Ted Hart]
+  latlng: 40.013187,-105.253465
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-05-23-csdms
+  startdate: 2014-05-23
+  url: http://geocarpentry.github.io/2014-05-23-csdms/
+  user: geocarpentry
+  venue: Community Surface Dynamics Modeling System Meeting
