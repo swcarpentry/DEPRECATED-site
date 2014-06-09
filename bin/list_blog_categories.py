@@ -6,6 +6,7 @@ Usage: categories.py $(ls blog/????/??/*.html)
 """
 
 import sys
+import traceback
 from collections import defaultdict
 from util import harvest_metadata
 
@@ -15,9 +16,14 @@ if filenames[0] == '-n':
 
 categories = defaultdict(set)
 for f in filenames:
-    these = harvest_metadata(f)['category']
-    for t in these:
-        categories[t].add(f)
+    try:
+        these = harvest_metadata(f)['category']
+        for t in these:
+            categories[t].add(f)
+    except Exception as e:
+        print >> sys.stderr, 'Failed in {0}'.format(f)
+        traceback.print_exc(None, sys.stderr)
+        sys.exit(1)
 
 for k in sorted(categories.keys()):
     if show_count:
