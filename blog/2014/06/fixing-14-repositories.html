@@ -1,0 +1,147 @@
+---
+layout: blog
+root: ../../..
+author: Will Trimble
+title: "Fixing 14 Repositories"
+date: 2014-06-15
+time: "17:00:00"
+category: ["Teaching", "Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  We cloned our workshop repository at the beginning of the workshop at Spelman
+  to give everyone an identical directory tree and contents to explore,
+  and to distribute the sample data files.
+  On the first day of our workshop,
+  about a third of the learners (all running Windows) could not clone the workshop repository:
+  <code>git clone</code> was failing for them with the error:
+</p>
+<!-- end excerpt -->
+<pre>
+$ git clone http://github.com/wltrimbl/2014-06-10-spelman
+...
+fatal: cannot create directory at 'misc/aux': Invalid argument
+warning: clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry the checkout with 'git checkout -f HEAD'
+</pre>
+<p>
+  I had two problems:
+</p>
+<ol>
+  <li>I couldn't reproduce the problem because I only had a Mac with me.</li>
+  <li>I wanted to make sure other workshops did not have the same problem.</li>
+</ol>
+<h2>1. A virtual crutch for the Windows-challenged: EC2</h2>
+<p>
+  Amazon rents computers for between $0.02 / hour to $2 / hour,
+  and for $4 I could rent a Windows computer for two days.
+</p>
+<p>
+  Starting a Windows machine was a matter of giving Amazon my credit card,
+  creating an SSH keypair,
+  starting one of the Windows Server 2008 images,
+  and getting the EC2 dashboard to tell me the Administrator Password for the machine I'd rented.
+</p>
+<p>
+  Per <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstancesWindows.html">the instructions</a>,
+  Microsoft Remote Desktop (a free app) lets you log in and use the desktop of a remote Windows machine.
+  It behaves much like virtual box,
+  except that the vitual box is in a data center in Virginia and not on my laptop.
+</p>
+<p>
+  This gave me access to a bare-bones locked-down Windows machine.
+  I had to change the security settings to allow downloads from the browser,
+  and this let me install git bash.
+  When I tried <code>git clone</code> I saw the same error message and got the same partial checkout that my students had.
+</p>
+<p>
+  It turns out this was <a href="https://github.com/swcarpentry/bc/issues/463">a known issue</a>
+  that was already fixed with PR#464 and PR#465,
+  but I had forked this workshop's repository before these fixes were applied,
+  so I found a workaround:
+  correcting the problem in the upstream repository,
+  then instructing everyone to run:
+</p>
+<pre>
+$ git fetch
+$ git checkout -f gh-pages
+</pre>
+<p>
+  The workaround didn't repair the repository&mdash;git was still unhappy&mdash;but
+  it did syncrhonize all the files for the rest of the class.
+</p>
+<p>
+  <em>
+    Bottom line:
+    instructors who have never laid hands on a Windows machine can,
+    for a modest fee,
+    test all the install and configuration quirks on those versions of windows offered by Amazon EC2.
+  </em>
+</p>
+<p>
+  Next I wondered:
+  if I forked the repository when it had a problem,
+  how many other instructors did the same?
+</p>
+<h2>2. How many workshops suffer from the same issue?</h2>
+<p>
+  Once I knew what the problem was I realized I could test repositories
+  by cloning them on a Linux machine and testing each to see if it had the <code>aux</code> directory.
+  <a href="./cloneallthebootcamps.sh">cloneallthebootcamps.sh</a> does this, though not very intelligently.
+  It clones all the future workshop repos
+  (on 2014-06-12, 27 repositories, requiring requiring 1.6Gb on disk)
+  and checks for <code>aux</code> in the default branch.
+</p>
+<p>
+  Initially, 14 were affected.
+  Two days later, that number is down to 5:
+</p>
+<pre>
+$ find 2014* -name aux -type d
+2014-06-16-toronto/misc/aux
+2014-07-02-smu/misc/aux
+2014-07-15-toronto/misc/aux
+2014-08-18-unimelb/misc/aux
+2014-09-15-unimelb/misc/aux
+</pre>
+<p>
+  Out of curiosity (or mischief),
+  and empowered by a script that would download dozens of repositories for little effort,
+  I ran the tests on old bootcamps.
+  Looking at 55 repositories in 2014 before 2014-06-06 the only ones I find with the evil <code>aux</code> directory are:
+</p>
+<pre>
+  2014-05-05-mcmaster/misc/aux
+  2014-06-03-cern/misc/aux
+</pre>
+<p>
+  This means that we identified the flaw in the middle of the third workshop,
+  and had it corrected by the fifth.
+</p>
+<p>
+  What did we learn?
+</p>
+<ol>
+  <li>
+    "I don't have a windows machine" is not really a credible excuse for not testing
+    (and, more importantly, becoming familiar with the install and invokation procedure)
+    on Windows.
+    "I don't want to do it because it takes an hour to initialize and install and it's an unfamiliar computing environment"
+    is now the more honest response.
+  </li>
+  <li>
+    Serious problems can propagate into many repositories before being detected
+    because of the lag between setting up the website
+    (typically weeks in advance) and that of the workshop.
+  </li>
+  <li>
+    It's a little bit of a pain to fix the same problem in 14 repositories.
+  </li>
+</ol>
+<p>
+  <em>
+    Editor: and #4: a few minutes of scripting can save hours of pain, and not just for the person writing the script.
+    Many thanks to Will for looking for this in everyone else's repositories as well as his own.
+  </em>
+</p>
