@@ -9,106 +9,185 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 ---
 <!-- start excerpt -->
 <p>
-  <strong>Summary</strong>: In advance of a bootcamp to be held for a Midwestern university's mechanical engineering department this fall, I've started reworking the traditional Software Carpentry (SWC) curriculum, and will be creating new teaching materials to accompany the workshop. Content changes are being made to accommodate the instructional needs of engineering students at the sponsoring university, while remaining consistent with the basic tenets and goals of the SWC movement. Comments and suggestions from the community on this matter are welcomed and encouraged, particularly in the area of PowerShell scripting (at which I'm currently a novice.) I'm also looking for instructors that might be willing to help teach such a bootcamp in the Detroit area this fall.
+  <strong>Summary</strong>: In advance of a bootcamp to be held for a
+  Midwestern university's mechanical engineering department this fall,
+  I've started reworking the traditional Software Carpentry (SWC)
+  curriculum, and will be creating new teaching materials to accompany
+  the workshop. Content changes are being made to accommodate the
+  instructional needs of engineering students at the sponsoring
+  university, while remaining consistent with the basic tenets and
+  goals of the SWC movement. Comments and suggestions from the
+  community on this matter are welcomed and encouraged, particularly
+  in the area of PowerShell scripting (at which I'm currently a
+  novice.) I'm also looking for instructors that might be willing to
+  help teach such a bootcamp in the Detroit area this fall.
 <p>
 <!-- end excerpt -->
 <p>
-  <strong>Introduction</strong>: A former research colleague of mine recently asked if a Software Carpentry workshop could be crafted to meet the needs of engineering students at the university where he currently teaches. After exchanging several emails, we agreed his students would benefit from having MATLAB replace Python during the programming portions of the workshop. Additionally, since the university's computers run the Windows operating system, it was decided that Microsoft's PowerShell language would supplant the traditional session on Bash shell scripting. Version control would remain unchanged, continuing to use Git. With these constraints in mind, I wrote up a brief synopsis of a tentative workshop itinerary and ran it past Greg Wilson to see if it would meet the criteria for being called a "Software Carpentry" workshop. He has given his tentative approval, but suggested I run my proposed workshop content past the community-at-large for further comment and advice. This blog post is intended to convey my reasoning behind the suggested modifications, as well as to lay out the new workshop materials.
+  <strong>Introduction</strong>: A former research colleague of mine
+  recently asked if a Software Carpentry workshop could be crafted to
+  meet the needs of engineering students at the university where he
+  currently teaches. After exchanging several emails, we agreed his
+  students would benefit from having MATLAB replace Python during the
+  programming portions of the workshop. Additionally, since the
+  university's computers run the Windows operating system, it was
+  decided that Microsoft's PowerShell language would supplant the
+  traditional session on Bash shell scripting. Version control would
+  remain unchanged, continuing to use Git. With these constraints in
+  mind, I wrote up a brief synopsis of a tentative workshop itinerary
+  and ran it past Greg Wilson to see if it would meet the criteria for
+  being called a "Software Carpentry" workshop. He has given his
+  tentative approval, but suggested I run my proposed workshop content
+  past the community-at-large for further comment and advice. This
+  blog post is intended to convey my reasoning behind the suggested
+  modifications, as well as to lay out the new workshop materials.
 </p>
 <p>
-  <strong>Audience</strong>: Workshop attendees will be a mix of graduate and undergraduate mechanical engineering students. My colleague reports that they lack substantive programming experience, and display difficulty with relatively simple programming tasks such as declaring and typing variables. Although the traditional SWC curriculum covers these notions, it is felt these engineering students (especially those going into sub-disciplines such as Mechatronics that rely heavily on integrating software and hardware design), would benefit from seeing the manner in which programming abstractions are physically created. Thus, while most SWC attendees (primarily scientists) model physical systems on top of software abstractions, the proposed "engineering-focused" version of SWC would attempt to show how physical systems (electronic devices, mostly) permit the creation of these software conceptualizations. For example, while a pointer provides a useful mapping mechanism for programmers, there exists an electronic circuit that maintains the voltages and currents needed to implement the mapping. The Boolean logic that girds modern programming languages has to be somehow realized, and this is currently achieved by exploiting the electrical characteristics of semiconductor materials. While we cannot cover electronic design in any serious depth during a two-day bootcamp, it is my hope that we can provide students with a useful mental model that helps them understand how complex logic is constructed from a network of simple electronic devices. Starting with an enhanced understanding of computing mechanisms, I am further hopeful that the students will be better able to construct code that is aligned with the tools (both hardware and software) they have available to them.
+  <strong>Audience</strong>: Workshop attendees will be a mix of
+  graduate and undergraduate mechanical engineering students. My
+  colleague reports that they lack substantive programming experience,
+  and display difficulty with relatively simple programming tasks such
+  as declaring and typing variables. Although the traditional SWC
+  curriculum covers these notions, it is felt these engineering
+  students (especially those going into sub-disciplines such as
+  Mechatronics that rely heavily on integrating software and hardware
+  design), would benefit from seeing the manner in which programming
+  abstractions are physically created. Thus, while most SWC attendees
+  (primarily scientists) model physical systems on top of software
+  abstractions, the proposed "engineering-focused" version of SWC
+  would attempt to show how physical systems (electronic devices,
+  mostly) permit the creation of these software
+  conceptualizations. For example, while a pointer provides a useful
+  mapping mechanism for programmers, there exists an electronic
+  circuit that maintains the voltages and currents needed to implement
+  the mapping. The Boolean logic that girds modern programming
+  languages has to be somehow realized, and this is currently achieved
+  by exploiting the electrical characteristics of semiconductor
+  materials. While we cannot cover electronic design in any serious
+  depth during a two-day bootcamp, it is my hope that we can provide
+  students with a useful mental model that helps them understand how
+  complex logic is constructed from a network of simple electronic
+  devices. Starting with an enhanced understanding of computing
+  mechanisms, I am further hopeful that the students will be better
+  able to construct code that is aligned with the tools (both hardware
+  and software) they have available to them.
 </p>
 <p>
-  Since the students use MATLAB for the majority of their day-to-day programming assignments, it makes sense that we use MATLAB rather than Python when teaching programming concepts. A <a href="http://software-carpentry.org/blog/2014/01/feedback-manchester-matlab-bootcamp.html">MATLAB-based SWC bootcamp</a> was <a href="http://www.walkingrandomly.com/?p=5324">taught at Manchester University</a> earlier this year, and seems to have been <a href="http://www.software.ac.uk/blog/2014-02-03-matlab-software-carpentry-bootcamp-highlights-attendee">well-received</a>. Programming techniques critical for good MATLAB performance, such as memory allocation and loop vectorization, will be emphasized in the code examples. MATLAB will also be used to cover debugging and testing concepts. Scripting concepts will be taught to this audience using Microsoft's PowerShell language, as it is built into the operating system (OS) for Windows 7 and beyond. Since all the students are working the Windows OS, this precludes the need to install a Linux-like shell (such as Cygwin) to teach Bash shell scripting. 
+  Since the students use MATLAB for the majority of their day-to-day
+  programming assignments, it makes sense that we use MATLAB rather
+  than Python when teaching programming
+  concepts. A
+  <a href="http://software-carpentry.org/blog/2014/01/feedback-manchester-matlab-bootcamp.html">MATLAB-based SWC bootcamp</a>
+  was <a href="http://www.walkingrandomly.com/?p=5324">taught at
+  Manchester University</a> earlier this year, and seems to have
+  been <a href="http://www.software.ac.uk/blog/2014-02-03-matlab-software-carpentry-bootcamp-highlights-attendee">well-received</a>.
+  Programming techniques critical for good MATLAB performance, such as
+  memory allocation and loop vectorization, will be emphasized in the
+  code examples. MATLAB will also be used to cover debugging and
+  testing concepts. Scripting concepts will be taught to this audience
+  using Microsoft's PowerShell language, as it is built into the
+  operating system (OS) for Windows 7 and beyond. Since all the
+  students are working the Windows OS, this precludes the need to
+  install a Linux-like shell (such as Cygwin) to teach Bash shell
+  scripting.
 </p>
 <p>
-  <strong>Concerns:</strong> My most fundamental worry is that I am trying to cover too much material in the time available. There is some possibility that this workshop could be spread out over three days, instead of the customary two-day format. Any suggestions or advice in this regard will be welcomed. I am also a newcomer to the world of PowerShell, so I'm very open to collaborating with someone who has PowerShell experience in generating teaching materials. All coursework generated for this bootcamp will be made freely available to the SWC community. Thanks!
+  <strong>Concerns:</strong> My most fundamental worry is that I am
+  trying to cover too much material in the time available. There is
+  some possibility that this workshop could be spread out over three
+  days, instead of the customary two-day format. Any suggestions or
+  advice in this regard will be welcomed. I am also a newcomer to the
+  world of PowerShell, so I'm very open to collaborating with someone
+  who has PowerShell experience in generating teaching materials. All
+  coursework generated for this bootcamp will be made freely available
+  to the SWC community. Thanks!
 <p>
   <strong>Proposed Agenda:</strong>
 </p>
 <p>
-  <em>*** DAY 1 ***</em>
+  <em>Day 1</em>
 </p>
 <p>
-  8:30 - 9:30 am: <strong>Programming as Engineering Skill</strong>. <em>Discuss engineering aspects of programming. "Instead of software design becoming more like 'real' engineering, we're about to see the latter become more like the former." (A Greg Wilson blog post from 2009; <a href="http://third-bit.com/2009/04/15/actually-we-can-wag-the-dog.html">link</a>)</em>
+  8:30 - 9:30 am: <strong>Programming as Engineering
+  Skill</strong>. <em>Discuss engineering aspects of
+  programming. "Instead of software design becoming more like 'real'
+  engineering, we're about to see the latter become more like the
+  former." (see <a href="http://third-bit.com/2009/04/15/actually-we-can-wag-the-dog.html">this blog post</a> from 2009.)</em>
 </p>
 <ul>
   <li>Engineers as Programmers: Why engineering and programming are becoming irreversibly intertwined.
     <ul>
-	  <li>Programmable interfaces (APIs)</li>
-	  <li>Software is "eating the world" (Marc Andressssen in 2011 <a href="http://online.wsj.com/news/articles/SB10001424053111903480904576512250915629460">WSJ essay</a>.)</li>
-	  <li>Design through computer simulation and analysis</li>
-	  <li>Programming skills as critical as calculus?</li>
-	</ul>
+      <li>Programmable interfaces (APIs)</li>
+      <li>Software is "eating the world" (Marc Andressssen in a 2011 <a href="http://online.wsj.com/news/articles/SB10001424053111903480904576512250915629460">WSJ essay</a>.)</li>
+      <li>Design through computer simulation and analysis</li>
+      <li>Programming skills as critical as calculus?</li>
+    </ul>
   </li>
-  <p></p>
   <li>Engineering the Computer: How engineering advances make programming possible. <em>(Much of this material will come from a Mechatronics course that I've taught the past several years.)</em>
     <ul>
-	  <li>Electrical conductivity</li>
-	  <li>Semiconductor materials</li>
-	  <li>Diode as electronic "valve"</li>
-	  <li>Transistor as electronic "switch"</li>
-	  <li>Logic gate as electronic "function"</li>
-	  <li>Flip-flop as electronic "bit storage"</li>
-	  <li>Data register as beginning of "memory"</li>
-	  <li>Analog voltage levels become digital "bits"</li>
-	  <li>Memory and logic combined into CPU</li>
-	</ul>
+      <li>Electrical conductivity</li>
+      <li>Semiconductor materials</li>
+      <li>Diode as electronic "valve"</li>
+      <li>Transistor as electronic "switch"</li>
+      <li>Logic gate as electronic "function"</li>
+      <li>Flip-flop as electronic "bit storage"</li>
+      <li>Data register as beginning of "memory"</li>
+      <li>Analog voltage levels become digital "bits"</li>
+      <li>Memory and logic combined into CPU</li>
+    </ul>
   </li> 
-  <p></p>
   <li>Physical Constraints on Abstract Programs: How engineering decisions influence software design and usage. (Similar to physical constraints that engineers face when designing a bridge, or trying to accelerate a chemical reaction.)
     <ul>
-	  <li>Limited memory (reuse requires memory managment)</li>
-	  <li>Limited processing power (sequential rather than parallel execution, clock speed)</li>
-	  <li>Pointers into memory stack</li>
-	  <li>Variable memory allocation (dynamic vs. static)</li>
-	  <li>Microcode</li>
-	  <li>Assembly language programming</li>
-	  <li>Higher-level compiled languages</li>
-	</ul>
+      <li>Limited memory (reuse requires memory managment)</li>
+      <li>Limited processing power (sequential rather than parallel execution, clock speed)</li>
+      <li>Pointers into memory stack</li>
+      <li>Variable memory allocation (dynamic vs. static)</li>
+      <li>Microcode</li>
+      <li>Assembly language programming</li>
+      <li>Higher-level compiled languages</li>
+    </ul>
   </li> 
-  <p></p>
   <li>Anatomy of a Variable: Implications of declaring a program variable.
     <ul>
-	  <li>Purpose of a variable (beneficial to people, machine doesn't care!)</li>
-	  <li>Variable contents are just ones and zeros</li>
-	  <li>Where does a variable value start and end?</li>
-	  <li>What "type" is a variable?</li>
-	</ul>
+      <li>Purpose of a variable (beneficial to people, machine doesn't care!)</li>
+      <li>Variable contents are just ones and zeros</li>
+      <li>Where does a variable value start and end?</li>
+      <li>What "type" is a variable?</li>
+    </ul>
   </li>
-  <p></p>
   <li>Anatomy of a Program: How software is prepared for execution, and how data is stored. <em>(Not going into depth here, but rather trying to explain why these activities are important in software programming.)</em>
     <ul>
-	  <li>Purpose of a program (again, for people!)
-	  <li>Defining a function</li>
-	  <li>Conditional statements</li>
-	  <li>Writing a program</li>
-	  <li>Compiling a program</li>
-	  <li>Running a program</li>
-	</ul>
+      <li>Purpose of a program (again, for people!)
+      <li>Defining a function</li>
+      <li>Conditional statements</li>
+      <li>Writing a program</li>
+      <li>Compiling a program</li>
+      <li>Running a program</li>
+    </ul>
   </li> 
-  <p></p>
   <li>Exchanging Information: How software shares data among internal components, and with the world.
     <ul>
-	  <li>Reading data from external sources</li>
-	  <li>Storing a run time variable (volatile)</li>
-	  <li>Storing results (non-volatile)</li>
+      <li>Reading data from external sources</li>
+      <li>Storing a run time variable (volatile)</li>
+      <li>Storing results (non-volatile)</li>
     </ul>
   </li>    
 </ul>
 
 <p>
-  9:30 - 10:30 am: <strong>Hardware Example</strong>. <em>Provide students "hands-on" experience of using software to accomplish an "engineering" task, by lighting LEDs via Arduino boards.</em>
+  9:30 - 10:30 am: <strong>Hardware Example</strong>. <em>Provide
+    students "hands-on" experience of using software to accomplish an
+    "engineering" task, by lighting LEDs via Arduino boards.</em>
 </p>
 <ul>
   <li>Arduino Programming: Have students use an Arudino "sketch" (mostly pre-written) to blinks lights
     <ul>
-	  <li>Distinguish between steps of programming, compiling, executing, and debugging</li>
-	  <li>Illustrate compilation directives</li>
-	  <li>Highlight program "flow"</li>
-	  <li>Write to serial port to provide status information</li>
-	  <li>Emphasize need for revision control</li>
-	  <li>Have students pull program from GitHub</li>
+      <li>Distinguish between steps of programming, compiling, executing, and debugging</li>
+      <li>Illustrate compilation directives</li>
+      <li>Highlight program "flow"</li>
+      <li>Write to serial port to provide status information</li>
+      <li>Emphasize need for revision control</li>
+      <li>Have students pull program from GitHub</li>
     </ul>
   </li>
 </ul>
@@ -118,62 +197,58 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 </p>
 
 <p>
-  10:45 - 12:00 noon: <strong>Introduction to MATLAB</strong>. <em>Introduce students to MATLAB interface</em>
+  10:45 - 12:00 noon: <strong>Introduction to MATLAB</strong>.
 </p>
 <ul>
   <li>Why MATLAB?: Advantages and disadvantages of programming in MATLAB.
     <ul>
-	  <li>Optimized for linear algebra</li>
-	  <li>Pros: Well-supported toolboxes; strong following in controls community; standard interface; well-tested</li>
-	  <li>Cons: Expensive; not widely used in all science fields</li>
+      <li>Optimized for linear algebra</li>
+      <li>Pros: Well-supported toolboxes; strong following in controls community; standard interface; well-tested</li>
+      <li>Cons: Expensive; not widely used in all science fields</li>
     </ul>
   </li>
-  <p></p>
   <li>MATLAB as IDE: Maneuvering about the MATLAB environment.
     <ul>
-	  <li>Program $PATH</li>
-	  <li>Command window</li>
-	  <li>Workspace window</li>
-	  <li>Command history</li>
-	  <li>MATLAB as a dynamic language</li>
-	  <li>View existing data (.dat files)</li>
+      <li>Program $PATH</li>
+      <li>Command window</li>
+      <li>Workspace window</li>
+      <li>Command history</li>
+      <li>MATLAB as a dynamic language</li>
+      <li>View existing data (.dat files)</li>
     </ul>
   </li>
-  <p></p>
   <li>MATLAB Numbers and Arrays: Examining the basic data types used within MATLAB
     <ul>
-	  <li>Numbers vs. Arrays</li>
-	  <li>Array orientation is important!</li>
-	  <li><span style="font-family:monospace">numel</span>, <span style="font-family:monospace">size</span>, and <span style="font-family:monospace">reshape</span> functions</li>
-	  <li>Avoid array looping (use vectorization instead)</li>
-	  <li>Memory preallocation</li>
-	  <li>Special arrays: <span style="font-family:monospace">eye</span>, <span style="font-family:monospace">ones</span>, <span style="font-family:monospace">zeros</span></li>
-	  <li>Element-wise array operations</li>
-	  <li>Array indexing (1-based)</li>
-	  <li>Array slicing</li>
+      <li>Numbers vs. Arrays</li>
+      <li>Array orientation is important!</li>
+      <li><code>numel</code>, <code>size</code>, and <code>reshape</code> functions</li>
+      <li>Avoid array looping (use vectorization instead)</li>
+      <li>Memory preallocation</li>
+      <li>Special arrays: <code>eye</code>, <code>ones</code>, <code>zeros</code></li>
+      <li>Element-wise array operations</li>
+      <li>Array indexing (1-based)</li>
+      <li>Array slicing</li>
     </ul>
   </li>
-  <p></p>
   <li>MATLAB Data Types: Examining the programming structures available within MATLAB
     <ul>
-	  <li>Numeric <span style="font-family:monospace">(intXX, single, double)</span></li>
-	  <li>Complex number</li>
-	  <li>Array (vector, matrix)</li>
-	  <li>String as Array</li>
-	  <li>Structure Array <span style="font-family:monospace">(struct)</span></li>
-	  <li>Cell Array <span style="font-family:monospace">(cell)</span></li>
-	  <li>Tables and categorical arrays (recently added by MathWorks to avoid toolbox dependencies)</li>
-	  <li>Coercion <span style="font-family:monospace">(cast, typecast, char, int2str, str2num)</span></li>
-	  <li>Type Verification <span style="font-family:monospace">(isinteger, isfloat, isnumeric, isreal)</span></li>
+      <li>Numeric <code>(intXX, single, double)</code></li>
+      <li>Complex number</li>
+      <li>Array (vector, matrix)</li>
+      <li>String as Array</li>
+      <li>Structure Array <code>(struct)</code></li>
+      <li>Cell Array <code>(cell)</code></li>
+      <li>Tables and categorical arrays (recently added by MathWorks to avoid toolbox dependencies)</li>
+      <li>Coercion <code>(cast, typecast, char, int2str, str2num)</code></li>
+      <li>Type Verification <code>(isinteger, isfloat, isnumeric, isreal)</code></li>
     </ul>
   </li>
-  <p></p>
   <li>MATLAB Operators and Functions: Logical and mathematical operators.
     <ul>
-	  <li>Logical comparisons <span style="font-family:monospace">(==, <, >)</span></li>
-	  <li>Mathematical operators  <span style="font-family:monospace">(+, -, *, \string^)</span></li>
-	  <li>Built-In functions <span style="font-family:monospace">(mean, max, min)</span></li>
-	  <li>Commenting code in MATLAB</li>
+      <li>Logical comparisons <code>(==, <, >)</code></li>
+      <li>Mathematical operators  <code>(+, -, *, \string^)</code></li>
+      <li>Built-In functions <code>(mean, max, min)</code></li>
+      <li>Commenting code in MATLAB</li>
     </ul>
   </li>
 </ul>
@@ -188,49 +263,45 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>Flow Control: Directing the operation of a MATLAB program.
     <ul>
-	  <li>If/then/else loop</li>
-	  <li>For loop</li>
-	  <li>While loop</li>
-	  <li>Switch/case</li>
+      <li>If/then/else loop</li>
+      <li>For loop</li>
+      <li>While loop</li>
+      <li>Switch/case</li>
     </ul>
   </li>
-  <p></p>
   <li>User-Defined Functions: Structure of a MATLAB function.
     <ul>
-	  <li>Function header (define function name, inputs, and outputs)</li>
-	  <li>Accessing input values (<span style="font-family:monospace">nargin</span>)</li>
-	  <li>Accommodating a variable number of inputs</li>
-	  <li>Manipulating and analyzing data</li>
-	  <li>Returning output values (no <span style="font-family:monospace">return</span> statement needed)</li>
+      <li>Function header (define function name, inputs, and outputs)</li>
+      <li>Accessing input values (<code>nargin</code>)</li>
+      <li>Accommodating a variable number of inputs</li>
+      <li>Manipulating and analyzing data</li>
+      <li>Returning output values (no <code>return</code> statement needed)</li>
     </ul>
   </li>
-  <p></p>
   <li>Automating Your Work: Writing MATLAB code.
     <ul>
-	  <li>Importing data (graphical interface and command line)</li>
-	  <li>Sending messages to command window (<span style="font-family:monospace">disp</span> and <span style="font-family:monospace">display</span>)</li>
-	  <li>Writing functions (encapsulation and independence)</li>
-	  <li>Writing programs</li>
-	  <li>Saving programs</li>
-	  <li>Executing programs</li>
+      <li>Importing data (graphical interface and command line)</li>
+      <li>Sending messages to command window (<code>disp</code> and <code>display</code>)</li>
+      <li>Writing functions (encapsulation and independence)</li>
+      <li>Writing programs</li>
+      <li>Saving programs</li>
+      <li>Executing programs</li>
     </ul>
   </li>
-  <p></p>
   <li>MATLAB Objects: Making sense of the move to object-oriented programming within MATLAB.
     <ul>
-	  <li>Object programming</li>
-	  <li>MATLAB classes</li>
-	  <li>Dot notation</li>
-	  <li>Object instantiation</li>
-	  <li>Displaying object methods and attributes (<span style="font-family:monospace">methods</span>, etc.)</li>
+      <li>Object programming</li>
+      <li>MATLAB classes</li>
+      <li>Dot notation</li>
+      <li>Object instantiation</li>
+      <li>Displaying object methods and attributes (<code>methods</code>, etc.)</li>
     </ul>
   </li>
-  <p></p>
   <li>Using External Libraries: Making use of pre-written and tested code.
     <ul>
-	  <li>MATLAB toolboxes</li>
-	  <li>Simulink</li>
-	  <li>Compiling code for Arduino</li>
+      <li>MATLAB toolboxes</li>
+      <li>Simulink</li>
+      <li>Compiling code for Arduino</li>
     </ul>
   </li>
 </ul>
@@ -245,50 +316,45 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>Shell Scripting: Expose students to scripting applications.
     <ul>
-	  <li>What is a shell?</li>
-	  <li>MATLAB shell</li>
-	  <li>Bash shell</li>
-	  <li>PowerShell</li>
-	  <li>Other shells</li>
+      <li>What is a shell?</li>
+      <li>MATLAB shell</li>
+      <li>Bash shell</li>
+      <li>PowerShell</li>
+      <li>Other shells</li>
     </ul>
-  <p></p>
-  <li>Introducing PowerShell: Exploring the PowerShell console, and how it can be customized
+    <li>Introducing PowerShell: Exploring the PowerShell console, and how it can be customized
     <ul>
-	  <li>Brief history of PowerShell</li>
-	  <li>Modifying window size and title</li>
-	  <li>Setting colors, fonts, and text size</li>
-	  <li>Quick edit mode</li>
+      <li>Brief history of PowerShell</li>
+      <li>Modifying window size and title</li>
+      <li>Setting colors, fonts, and text size</li>
+      <li>Quick edit mode</li>
     </ul>
-  <p></p>
-  <li>PowerShell Basics: Getting started with PowerShell Scripting
+    <li>PowerShell Basics: Getting started with PowerShell Scripting
     <ul>
-	  <li>Cmdlets</li>
-	  <li>Parameters</li>
-	  <li>Command Types</li>
-	  <li>Command Information</li>
-	  <li>Variables</li>
+      <li>Cmdlets</li>
+      <li>Parameters</li>
+      <li>Command Types</li>
+      <li>Command Information</li>
+      <li>Variables</li>
     </ul>
-  <p></p>
-  <li>Data Handling within PowerShell: Managing the flow of data from within PowerShell scripts
+    <li>Data Handling within PowerShell: Managing the flow of data from within PowerShell scripts
     <ul>
-	  <li>Generating output</li>
-	  <li>File manipulation</li>
-	  <li>Integrating with WMI and .NET (very brief!)</li>
+      <li>Generating output</li>
+      <li>File manipulation</li>
+      <li>Integrating with WMI and .NET (very brief!)</li>
     </ul>
-  <p></p>
-  <li>Applying PowerShell: Example of using PowerShell to automate data entry and analysis
+    <li>Applying PowerShell: Example of using PowerShell to automate data entry and analysis
     <ul>
-	  <li>Example problem</li>
-	  <li>Data entry</li>
-	  <li>Data analysis</li>
-	  <li>Launching PowerShell from within MATLAB (<span style="font-family:monospace">!powershell</span>)</li>
-	  <li>Launching MATLAB from PowerShell</li>
+      <li>Example problem</li>
+      <li>Data entry</li>
+      <li>Data analysis</li>
+      <li>Launching PowerShell from within MATLAB (<code>!powershell</code>)</li>
+      <li>Launching MATLAB from PowerShell</li>
     </ul>
   </li>
 </ul>
-
 <p>
-  <em>*** DAY 2 ***</em>
+  <em>Day 2</em>
 </p>
 <p>
   8:30 - 10:30 am: <strong>Version Control</strong>. <em>Introduce students to version control</em>
@@ -296,22 +362,21 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>Version Control: Why it is a good idea, and various means of implementation.
     <ul>
-	  <li>Benefits of version control</li>
-	  <li>Means of implementing version control</li>
-	  <li>Opportunities for collaboration</li>
-	  <li>Why we teach Git</li>
+      <li>Benefits of version control</li>
+      <li>Means of implementing version control</li>
+      <li>Opportunities for collaboration</li>
+      <li>Why we teach Git</li>
     </ul>
-  <p></p>
-  <li>Git: How Git is structured, and how it works in a Windows environment. <em>(Again, a greater emphasis on the physical implementation of a Git repo than is provided in the standard SWC curriculum.)</em>
+    <li>Git: How Git is structured, and how it works in a Windows environment. <em>(Again, a greater emphasis on the physical implementation of a Git repo than is provided in the standard SWC curriculum.)</em>
     <ul>
-	  <li>Brief history of Git</li>
-	  <li>Structure of a Git repository</li>
-	  <li>Initializing a Git repo</li>
-	  <li>Adding files to be committed</li>
-	  <li>Committing files to repo</li>
-	  <li>Comparing committed files</li>
-	  <li>Exploring repo history</li>
-	  <li>Git tools in a Windows environment</li>
+      <li>Brief history of Git</li>
+      <li>Structure of a Git repository</li>
+      <li>Initializing a Git repo</li>
+      <li>Adding files to be committed</li>
+      <li>Committing files to repo</li>
+      <li>Comparing committed files</li>
+      <li>Exploring repo history</li>
+      <li>Git tools in a Windows environment</li>
     </ul>
   </li>
 </ul>
@@ -326,12 +391,12 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>GitHub: Using the GitHub interface.
     <ul>
-	  <li>Relationship between Git and GitHub</li>
-	  <li>Establishing a remote repository</li>
-	  <li>Cloning an existing repo</li>
-	  <li>Merging repos and resolving conflicts</li>
-	  <li>Standard GitHub practices and terminology</li>
-	  <li>Using GitHub to share electrical schematics and 3D models</li>
+      <li>Relationship between Git and GitHub</li>
+      <li>Establishing a remote repository</li>
+      <li>Cloning an existing repo</li>
+      <li>Merging repos and resolving conflicts</li>
+      <li>Standard GitHub practices and terminology</li>
+      <li>Using GitHub to share electrical schematics and 3D models</li>
     </ul>
   </li>
 </ul>
@@ -346,18 +411,17 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>Standard Plots: Built-in plotting functions.
     <ul>
-	  <li>Data formats (<span style="font-family:monospace">csv</span>, <span style="font-family:monospace">txt</span>, <span style="font-family:monospace">xls</span>, etc.)</li>
-	  <li>Line Charts <span style="font-family:monospace">(plot)</span></li>
-	  <li>Programmatic vs. interactive analysis (finding peaks, frequency, etc.)</li>
-	  <li>Barcharts, histograms, and color maps</li>
+      <li>Data formats (<code>csv</code>, <code>txt</code>, <code>xls</code>, etc.)</li>
+      <li>Line Charts <code>(plot)</code></li>
+      <li>Programmatic vs. interactive analysis (finding peaks, frequency, etc.)</li>
+      <li>Barcharts, histograms, and color maps</li>
     </ul>
-  <p></p>
-  <li>Plot Appearance: Modifying plots.
+    <li>Plot Appearance: Modifying plots.
     <ul>
-	  <li>Linetypes and data markers</li>
-	  <li>Overlaying plots</li>
-	  <li>Data range</li>
-	  <li>Chart text and legends</li>
+      <li>Linetypes and data markers</li>
+      <li>Overlaying plots</li>
+      <li>Data range</li>
+      <li>Chart text and legends</li>
     </ul>
   </li>
 </ul>
@@ -372,40 +436,37 @@ category: ["Bootcamps", "Engineering", "MATLAB", "PowerShell"]
 <ul>
   <li>Program Status: Using print commands to show program status and query program variables.
     <ul>
-	  <li>Printing values to screen</li>
-	  <li>Mixing strings and numerical values</li>
-	  <li>Formatting numerical values</li>
-	  <li>Waiting for user input</li>
+      <li>Printing values to screen</li>
+      <li>Mixing strings and numerical values</li>
+      <li>Formatting numerical values</li>
+      <li>Waiting for user input</li>
     </ul>
-  <p></p>
-  <li>Debugging: Expose students to debugging methods within MATLAB.
+    <li>Debugging: Expose students to debugging methods within MATLAB.
     <ul>
-	  <li>Timing function duration (<span style="font-family:monospace">tic</span> and <span style="font-family:monospace">toc</span>)</li>
-	  <li>Profiling program execution (<span style="font-family:monospace">profile on</span>, <span style="font-family:monospace">profile off</span>)</li>
-	  <li>Entering and exiting the MATLAB debugger</li>
-	  <li>Stepping through a program</li>
-	  <li>Setting breakpoints</li>
-	  <li>Good debugging practices</li>
+      <li>Timing function duration (<code>tic</code> and <code>toc</code>)</li>
+      <li>Profiling program execution (<code>profile on</code>, <code>profile off</code>)</li>
+      <li>Entering and exiting the MATLAB debugger</li>
+      <li>Stepping through a program</li>
+      <li>Setting breakpoints</li>
+      <li>Good debugging practices</li>
     </ul>
-  <p></p>
-  <li>Unit Testing: Expose students to the concept of unit testing.
+    <li>Unit Testing: Expose students to the concept of unit testing.
     <ul>
-	  <li>Purpose of unit testing</li>
-	  <li>History of unit testing</li>
-	  <li>Test-driven development</li>
+      <li>Purpose of unit testing</li>
+      <li>History of unit testing</li>
+      <li>Test-driven development</li>
     </ul>
-  <p></p>
-  <li>Unit Testing in MATLAB: Explain how unit testing is implemented within MATLAB.
+    <li>Unit Testing in MATLAB: Explain how unit testing is implemented within MATLAB.
     <ul>
-	  <li>Cloning a unit test class within MATLAB</li>
-	  <li>Defining class to carry out unit tests</li>
-	  <li>Writing test functions</li>
-	  <li>Asserting returned values (hard failure using <span style="font-family:monospace">assertEqual</span>, <span style="font-family:monospace">assertSize</span>, etc.)</li>
-	  <li>Verifying returned values (soft failure using <span style="font-family:monospace">verifyEqual</span>, <span style="font-family:monospace">verifySize</span>, etc.)</li>
-	  <li>Executing tests using the <span style="font-family:monospace">run</span> method</li>
-	  <li>Setting up and tearing down test fixtures</li>
-	  <li>Selecting which tests to run</li>
-	  <li>Merging unit tests into test suites</li>
+      <li>Cloning a unit test class within MATLAB</li>
+      <li>Defining class to carry out unit tests</li>
+      <li>Writing test functions</li>
+      <li>Asserting returned values (hard failure using <code>assertEqual</code>, <code>assertSize</code>, etc.)</li>
+      <li>Verifying returned values (soft failure using <code>verifyEqual</code>, <code>verifySize</code>, etc.)</li>
+      <li>Executing tests using the <code>run</code> method</li>
+      <li>Setting up and tearing down test fixtures</li>
+      <li>Selecting which tests to run</li>
+      <li>Merging unit tests into test suites</li>
     </ul>
   </li>
 </ul>
