@@ -1,0 +1,166 @@
+---
+layout: blog
+root: ../../..
+author: Bill Mills
+title: "Reflections on Claremont"
+date: 2014-06-19
+time: "21:00:00"
+category: ["Bootcamps", "Claremont Colleges"]
+---
+<!-- start excerpt -->
+<p>
+  The Claremont Colleges bootcamp just wrapped a couple of hours ago,
+  and judging from my pile of happy sticky note responses, I think we
+  nailed it pretty good.  Things were a bit fast on the first day of
+  intro shell and Python, but I think we hit something pitch perfect
+  for day two on intermediate Python and Git.  As this Python-heavy
+  workshop progressed, some questions started coming into focus from
+  student responses, discussions with instructors and organizers, and
+  examinations of just how to teach this ascendent skill in scientific
+  computing.  To be clear: I have never taught our Python material,
+  and I consider myself a fairly casual Pythonista.  This is a debate
+  that the masters need to consider, but I'm hoping here to use my
+  agnostic outsider's perspective to help set the conversation up.
+</p>
+<!-- end excerpt -->
+<p>
+  Two major axes span the space of teaching Python, and actually
+  they're just the same two big questions found in teaching anything:
+  what to teach, and how to teach it.  But these old pedagogical
+  chestnuts really resonate with the practice of teaching Python,
+  because the place that Python's ecology has evolved to has made them
+  pressing and polarized matters.
+</p>
+<p>
+  First up: what to teach.  I've had the privilege of watching two
+  awesome deliveries of the Python material at the two bootcamps I
+  have taught, but excellent as they were, they could not have been
+  more different.  The Claremont Python lecture began from a place of
+  absolute fundamentals&mdash;what is a variable type, what is
+  assignment, what is an operator&mdash;those omni-linguistic channels
+  of thought that shape programmatic logic and structure everywhere.
+  Approaching the problem not just as basic Python but basic
+  programming laid down a bulletproof foundation that moved gradually
+  enough and depended on little enough chuft that almost everyone
+  could keep up, even with a huge and varied group like we had at
+  Claremont.
+</p>
+<p>
+  Python in Victoria earlier this year was a different animal
+  altogether.  That workshop was heavily tools oriented&mdash;lots and
+  varied plotting, calculating some simple statistics from datasets
+  using things like numpy and matplotlib (as I recall), and heavy use
+  of the IPython Notebook.  Actually, I'll never forget one
+  quasi-magical thing that happened during the Victoria Python
+  lecture; it was time to introduce for loops, and I expected the
+  instructor would get bogged down picking apart syntax and trying to
+  hash out in exact detail the guts of this pattern that students
+  wrestle with the first time they see it; but instead, they just
+  sailed right through it, talking about it like it was second
+  nature&mdash;and the students got it!  Somehow they assimilated this
+  new idea with barely a speedbump, and just rolled right along
+  playing with plotting tools.  Waltzing through the chuft and getting
+  students to get their hands dirty with useful tools right away seems
+  so compelling and engaging, especially when they walk out of the
+  room agog with possibility, but one person made a point I can't
+  shake: how demoralizing is it for students when the next day they
+  can't use any of the tools they were so excited by, because they
+  don't have enough fundamentals to proficiently wield them?
+</p>
+<p>
+  Anyway, the proof is in the sticky notes, and much to my surprise,
+  there wasn't really much of a criticism of pace or level of the
+  Python material at Claremont on day one&mdash;the comment that got
+  repeated a bunch of times, was "I wish there had been more hands on
+  examples and puzzle problems to work on". So where is that shining
+  kernel of value here&mdash;in the self-actualization and engagement
+  of hands-on activity, or in the exciting promise of all the cool
+  things the world of Python has to offer?  Is it even possible to
+  make engaging examples out of the tiniest nuts and bolts of
+  programming, and can we float the nifty packages while imparting
+  enough fluency that students can drive them on their own?  The "what
+  to teach" axis of this problem space can be reskinned as a slider
+  from 'foundations' to 'tools'; finding the happiest home therein is
+  to my mind an open question.
+</p>
+<p>
+  The second axis was of course, "...and how to teach it".  The choice
+  of vehicle for how to introduce Python seems to me like a pretty
+  crowded room.  You've got your standard vanilla.py to run at the
+  bash prompt; you've got your command-line IPython shell; you've got
+  your IPython Notebook; and you've got your web-based Python
+  environments&mdash;and each one has its own virtues and pathologies.
+  Where we really ran afoul of this embarrassment of riches at
+  Claremont, was when we tried to use scripting and the interactive
+  shell all at the same time.  For many of these students, this was
+  their first exercise in anything REPL, and their first dive into raw
+  text document creation; all these boxes with nothing but text looked
+  kind of the same to them after a while, and it showed in the
+  questions and comments.  Many of the helper questions during the day
+  boiled down to students getting confused between text editor,
+  IPython prompt, and bash prompt, and that same confusion was
+  explicitly called out in the sticky note feedback at the end.  It
+  was glaring clear that we needed to clear the air, and give the
+  students something solid to focus on, instead of asking them to
+  rapidly switch their thinking from scripting to bashing to
+  interactively issuing Python commands&mdash;all things they had
+  encountered for the first time in the last couple of hours.
+</p>
+<p>
+  After this experience, the IPython Notebook's star seemed to be
+  rising.  Here is a one hundred percent contained environment where
+  code is entered inline and results are delivered immediately
+  afterwards both spatially and temporally (an instant and
+  context-heavy feedback that is so key for learning).  But problems
+  lurk here too.  As I was helping for the second Python lesson at
+  Claremont (which used the notebook exclusively), at least half the
+  strategies I gave boiled down to "hit run all and it'll probably be
+  okay".  Students were getting lost in the nonlinear state machine
+  that the notebook implicitly creates, without getting a chance to
+  get a solid grasp of what that meant or even that that was the case.
+  We were able to keep on rolling just by re-running every cell, but
+  there wasn't time for the students to really reflect on what that
+  was all about.  All this was, of course, after scrambling to get
+  everyone's notebooks working in the first place; in terms of
+  overhead, the notebook is an aircraft carrier compared to the log
+  raft of a script to run at the command line&mdash;immensely powerful
+  but sometimes tricky to bring together.
+</p>
+<p>
+  It wouldn't be a post from me if I didn't consider an idea probably
+  no one will like: what if we cut way down on the big guns, and stuck
+  to a script-and-execute model?  This would not only eliminate the
+  tragedies of getting all the IPython and Notebook stuff working for
+  everyone, but would start building the muscle memory of writing
+  programs and running them at the command line, which is much more
+  reflective of the day-to-day trade of building software.  Getting
+  some of these extra platforms out of the way might make room for
+  fundamentals as well as exciting and powerful package and tool
+  demonstrations, and keep the whole process much more focused, which
+  is one thing we absolutely need to do.
+</p>
+<p>
+  And yet, there is absolutely no pedagogical equal for immediate
+  feedback, which is something the script-and-run model is slow to
+  yield, while IPython nails it cold.  So as a middle ground, what
+  about an IPython Notebook where we encourage students to run the
+  whole book each time they added to it, and maybe take some time to
+  point out how stuff gets weird if you execute cells out of order.
+  This isn't too far a cry from building a complete and consistent
+  script, it keeps the student's attention all in one place, and it
+  provides compelling immediate feedback; set it up so there's a 20
+  minute example at the start that is non-fatal to miss for those
+  still struggling to get the notebook up, and we might have a way
+  through the crowded room.  That's one untested strategy&mdash;but
+  all told, we've got another slider to adjust in our approach to
+  teaching Python: rock-solid programs, or dynamic interactive
+  environments?
+</p>
+<p>
+  Where you make contact with the dartboard of content vs. style will
+  largely boil down to your priorities and personal flare; since the
+  full range of these options is valuable, our goal should not be to
+  pick winners and losers, but to pull in the best of all of what's
+  out there.  What the data seems to be showing after this latest
+  round, is keep your platform focused, and keep it very hands-on.
+</p>
