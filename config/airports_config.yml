@@ -47,6 +47,7 @@
 - {airport: Portland, count: 1, latlng: '45.588611,-122.5975'}
 - {airport: Pittsburgh, count: 2, latlng: '40.491389,-80.232778'}
 - {airport: Raleigh Durham, count: 3, latlng: '35.8775,-78.787222'}
+- {airport: San Diego, count: 1, latlng: '32.731900, -117.197312'}
 - {airport: Seattle Tacoma, count: 3, latlng: '47.448889,-122.309167'}
 - {airport: San Francisco, count: 4, latlng: '37.618889,-122.374722'}
 - {airport: Singapore, count: 1, latlng: '1.355556,103.987222'}
