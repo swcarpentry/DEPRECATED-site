@@ -1,0 +1,359 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Summary of June 2014 Lab Meeting"
+date: 2014-06-27
+time: "13:00:00"
+category: ["Community", "Lab Meeting"]
+---
+<!-- start excerpt -->
+<p>
+  At our monthly lab meeting yesterday (June 26),
+  we discussed a wide range of topics (though only about half as much as was on the agenda).
+  Details notes and votes are below; the key points are:
+</p>
+<ol>
+  <li>
+    We would like to do what we can to help the careers of people who volunteer for Software Carpentry.
+    In particular,
+    we'd like to find a way to highlight people who have taught lots of bootcamps,
+    contributed lots of material,
+    or both,
+    <em>without</em> discouraging people who haven't,
+    or getting into a situation in which bootcamp hosts ask,
+    "Why aren't you sending your most experienced people to us?"
+    We've opened <a href="https://github.com/swcarpentry/bc/issues/575">a GitHub issue</a>
+    for people who'd like to discuss this topic,
+    and we'd be grateful if you could share experiences with other systems
+    and suggestions about what we could do.
+  </li>
+  <li>
+    We will have a meeting on Thursday, July 3 to discuss plans for the July 22-23 sprint.
+    The time and connection details will be posted here on July 2.
+  </li>
+  <li>
+    People were either neutral or in favor of switching to Python 3.
+    There was concern about compatibility,
+    but it seems that most scientific packages are now Py3-compatible
+    (and that there are some that only work with Py3, and not with Py2).
+    In practice, this will mean:
+    <ul>
+      <li>changing what people have on their machine when they leave the bootcamp, and</li>
+      <li>minor modifications to our lessons (e.g., <code>print</code> as a function).</li>
+    </ul>
+  </li>
+  <li>
+    By default,
+    Mercurial launches a GUI diff/merge tool when there's a conflict rather than displaying a textual diff.
+    Novices seem to find side-by-side merge easier to work with,
+    which raises the question:
+    should we use a graphical tool for diff and merge when teaching Git as well?
+    Again,
+    most people were either neutral or in favor,
+    subject to ease of installation.
+    We'll try this at a couple of workshops in the coming months and report back.
+  </li>
+  <li>
+    Should we install Matt Davis's <code>ipythonblocks</code> module by default?
+    Nobody was opposed,
+    but it turned out that only a handful of people actually use it in teaching.
+    We'll poll our instructors to find out more about usage before making a final decision.
+  </li>
+  <li>
+    In order to make it easy for people who want to teach regular expressions to do so,
+    we'll integrate the software that runs <a href="http://regexpal.com">regexpal.com</a>
+    (which ironically is down at the time of this writing)
+    into the <code>bc</code> repo
+    so that instructors can create a page in their bootcamp site where learners can play around.
+  </li>
+  <li>
+    Jonah Duckles has created <a href="https://github.com/swcarpentry/bc/pull/415">a pull request</a>
+    that would change the way installation instructions are managed.
+    Instead of editing <code>_includes/setup.html</code>,
+    instructors would add a list of topics to the header of <code>index.html</code>
+    that Jekyll's templating logic would use to control what is and isn't displayed.
+    Most people were in favor,
+    so we'll merge this once the PR is finished.
+  </li>
+  <li>
+    Many people are still not happy with the way our lesson materials are organized,
+    or with what pre-requisite knowledge we actually expect.
+    We will organize a meeting for next Thursday (July 3) to talk about options,
+    then open a discussion issue on GitHub if we can come up with concrete alternatives.
+  </li>
+  <li>
+    Raniere Silva has been working over the last few weeks to generate EPUB and PDF from our materials.
+    The goal is to allow anyone who wants to produce book-form notes to do so
+    for use in a regular class,
+    to give to learners after a bootcamp,
+    or for self-study.
+    He's been making good progress,
+    but there are still lots of small problems (particularly with the PDF).
+    We'll be hacking on this at the sprint.
+  </li>
+</ol>
+<!-- end excerpt -->
+<p><strong>Agenda</strong></p>
+<ul>
+<li>Announcements</li>
+<li>Directions</li>
+<li>Volunteers/Reviewers Wanted</li>
+<li>Plans for the July 22-23 sprint: <a href="https://etherpad.mozilla.org/swc-sprint-2014">https://etherpad.mozilla.org/swc-sprint-2014</a></li>
+<li>Other Business
+<ul>
+<li>Online Helpouts (Russell Alleen-Willems)</li>
+</ul></li>
+</ul>
+<p><strong>Attendees (Second Round)</strong></p>
+<ul>
+<li>Greg Wilson (Mozilla, Toronto)</li>
+<li>Gabriel Devenyi (McMaster, Hamilton, @staticwave_ace)</li>
+<li>Matt Davis (Synthicity, Berkeley (@jiffyclub))</li>
+<li>Jeramia Ory (King's College, PA @DrLabRatOry)</li>
+<li>Jens von der Linden (University of Washington, Seattle)</li>
+<li>Kwasi Kwakwa (Imperial College London)</li>
+<li>Xu Fei (New York, NY)</li>
+<li>Jeremiah Lant (Louisville, Kentucky)</li>
+<li>Christian Jacobs (Imperial College London, UK)</li>
+<li>Erika Mudrak (Cornell, Ithaca @ErikaMudrak)</li>
+<li>Bernhard Konrad (Vancouver, BC)</li>
+<li>Tim McNamara (Auckland, NZ)</li>
+<li>Aron Ahmadia (Washington, D.C.)</li>
+<li>Chris Beitel (UC Davis; Eisen Lab; @datascimed)</li>
+<li>Ben Marwick (U of Washington, Seattle, @benmarwick)</li>
+<li>Katy Huff (UCBerkeley)</li>
+<li>Damien Irving (University of Melbourne, Australia / @DrClimate)</li>
+<li>Amanda Harlin (Uni of Oklahoma, @amandaharlin)</li>
+</ul>
+<p><strong>Attendees (First Round)</strong></p>
+<ul>
+<li>Raniere Silva (University of Campinas, S&atilde;o Paulo, Brazil</li>
+<li>R&eacute;mi Emonet (University of Saint &Eacute;tienne, France)</li>
+<li>Jonah Duckles (University of Oklahoma, Norman, Oklahoma @jduckles)</li>
+<li>Brian Northan</li>
+<li>Pauline Barmby, (Western U, London Canada, @PBarmby)</li>
+<li>Russell Alleen-Willems (Diachronic Design, Seattle, Washington, @DiachronicD)</li>
+<li>Marios Isaakidis (@misaakidis)</li>
+<li>Denis Haine (U of Montreal)</li>
+<li>Ethan White (Utah State University / @ethanwhite)</li>
+<li>Emily Davenport (University of Chicago)</li>
+<li>Lex Nederbragt (University of Oslo)</li>
+<li>Stephen Turner (University of Virginia, @genetics_blog)</li>
+<li>Karin Lagesen (University of Oslo, @karinlag)</li>
+<li>Fran&ccedil;ois Michonneau (University of Florida, @FrancoisInvert)</li>
+<li>John Blischak (University of Chicago)</li>
+<li>Brian Glanz (@openscience, Wash DC today)</li>
+<li>Dana Bauer (Rackspace, Philadelphia)</li>
+<li>Azalee Bostroem (Space Telescope Science Institute)</li>
+<li>Sheila Miguez (Chicago, IL)</li>
+<li>Abigail Cabunoc (OICR, @abbycabs)</li>
+<li>Tracy Teal (@tracykteal)</li>
+<li>Rob Davey (@froggleston - joined late!)</li>
+<li>Amy Brown (@amyrbrown)</li>
+</ul>
+<p><strong>Announcements</strong></p>
+<ul>
+<li>See <a href="https://github.com/swcarpentry/bc/issues?labels=getting-started">https://github.com/swcarpentry/bc/issues?labels=getting-started</a> for issues that instructor trainees are encouraged to work on</li>
+<li>How should we mentor new instructors?
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/568">https://github.com/swcarpentry/bc/issues/568</a></li>
+</ul></li>
+</ul>
+<p><strong>Directions</strong></p>
+<ul>
+<li>Lessons in Python and R on creating packages?
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/536">https://github.com/swcarpentry/bc/issues/536</a> (this is OS X commands lack features...)</li>
+<li><a href="https://github.com/swcarpentry/bc/pull/507">https://github.com/swcarpentry/bc/pull/507</a></li>
+<li>Volunteers:
+<ul>
+<li>I'm happy to give a look at the R packaging lesson (Fran&ccedil;ois Michonneau)</li>
+<li>The R lesson could still use some reviews. Josh is going to respond to the current round of reviews in the next week or so (John Blischak)</li>
+<li>I could help with this in Python. - jiffyclub</li>
+<li>I would be happy to help with this in Python - Jeremiah Lant
+<ul>
+<li>Good Python packaging hints here: <a href="http://python-packaging-user-guide.readthedocs.org/en/latest/">http://python-packaging-user-guide.readthedocs.org/en/latest/</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Switch to Python 3?
+<ul>
+<li>Is it fully science-supporting? (numpy, scipy....)
+<ul>
+<li>Those ones, yes.</li>
+</ul></li>
+<li>Anaconda now supports it</li>
+<li>&quot;Canopy provides access to Python 2.7.6&quot; - no indication on side of 3.0 support</li>
+<li>But most code is still written in Python 2.7</li>
+<li>Integer division is a huge stumbling/exasperation point for novices</li>
+<li>Votes: 0 +1+10 +1+0-100+1+10000+0.50+1+1+1+1+10000+100</li>
+<li>Votes for using 3.* syntax but installing 2.7: -1+1+1-1-1+1+1</li>
+<li>List of incompatible packages? Currently summarized in <a href="https://github.com/swcarpentry/bc/issues/107#issuecomment-32144981">https://github.com/swcarpentry/bc/issues/107#issuecomment-32144981</a></li>
+</ul></li>
+<li>Add a GUI diff/merge tool to our version control lessons?
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/527">https://github.com/swcarpentry/bc/issues/527</a></li>
+<li><a href="https://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool">https://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool</a></li>
+<li>Votes:+1+1 0+1+0.5+1+1+10-1+0.50-1+1+1+1+1-1+1+1+1+0+100-1+1</li>
+<li>Karin: +1 for gui, -1 if not cross platform, same here (ethan white, raniere silva, Jory Schossau)</li>
+<li><a href="http://meldmerge.org/">http://meldmerge.org/</a> does have cross-platform installers (an unofficial one for Windows, MacPorts/Fink for OSX, normal package management for *nix)</li>
+<li>P4Merge claims to be Mac/Linux/Windows: <a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools">http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools</a></li>
+<li>Volunteers to give it a try:</li>
+</ul></li>
+<li>Install ipythonblocks by default?
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/486">https://github.com/swcarpentry/bc/issues/486</a></li>
+<li>note: it is used in some lessons</li>
+<li>Votes: +1+1+1+0+1+1-1+1+1+1+1+1+1+1</li>
+<li>How many people use it: Greg, Karin, Damien, Tracy (sometimes)</li>
+<li>Volunteers to do the work:
+<ul>
+<li>Matt Davis</li>
+</ul></li>
+</ul></li>
+<li>Integrate regexpal.com into our lessons for teaching regular expressions
+<ul>
+<li>See <a href="https://github.com/swcarpentry/bc/issues/498">https://github.com/swcarpentry/bc/issues/498</a></li>
+<li>Votes: +1 +1 +1+1+1+1+1+1+1+000+1+1+1+10+1</li>
+<li>Volunteers:
+<ul>
+<li>R&eacute;mi: I could help if needed (and if it is just integration) - I could do something, it is not perfect from a style point of view but it seem to work (see the issue)</li>
+<li>Matt Davis</li>
+</ul></li>
+</ul></li>
+<li>How to decide on reorg of lesson material?
+<ul>
+<li>Meeting: +1 +1</li>
+<li>GitHub issue: +1 +1 +1 +1 +1+1+1+1</li>
+<li>Mailing list thread:</li>
+</ul></li>
+<li>Use templates to control what's displayed in setup instructions
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/415">https://github.com/swcarpentry/bc/pull/415</a></li>
+<li>Votes: +1+1+10+1+10+000+00+1+1+1+10+1+1+1+1+10+10+1</li>
+</ul></li>
+<li>Highlight &quot;senior&quot; instructors somehow on <a href="http://software-carpentry.org/pages/team.html">http://software-carpentry.org/pages/team.html</a> ?
+<ul>
+<li>See also <a href="https://github.com/swcarpentry/bc/pull/570">https://github.com/swcarpentry/bc/pull/570</a></li>
+<li>Suggestions: open a discussion thread - this one's complicated</li>
+<li>Count option can lead to &quot;Senior&quot; later by defining what that means</li>
+</ul></li>
+<li>EPUB version of lesson
+<ul>
+<li>The majors issues was addressed: <a href="https://github.com/swcarpentry/bc/pull/435">https://github.com/swcarpentry/bc/pull/435</a> Raniere wants green light to merge all the related PR.</li>
+</ul></li>
+</ul>
+<p><strong>July 22-23 Sprint</strong></p>
+<ul>
+<li>Planning: <a href="https://etherpad.mozilla.org/swc-sprint-2014">https://etherpad.mozilla.org/swc-sprint-2014</a></li>
+<li>Meet with hosts/project leaders/anyone else who's interested next Thursday (July 3) to talk details - if you're interested in being part of the meeting, please sign up below
+  <table class="table table-striped">
+    <tr>
+      <td valign="top">
+	<ul>
+	  <li>Raniere Silva</li>
+	  <li>Azalee Bostroem</li>
+	  <li>Fran&ccedil;ois Michonneau</li>
+	  <li>Brian Northan</li>
+	  <li>Brian Glanz</li>
+	  <li>Chris Beitel</li>
+	  <li>Matt Davis</li>
+	</ul>
+      </td>
+      <td valign="top">
+	<ul>
+	  <li>Amanda Harlin</li>
+	  <li>Damien Irving</li>
+	  <li>Tim McNamara</li>
+	  <li>Xu Fei</li>
+	  <li>Gabriel Devenyi</li>
+	  <li>April Wright</li>
+	</ul>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+<p><strong>Other Business</strong></p>
+<ul>
+<li>Google Hangouts/Helpouts</li>
+</ul>
+<hr/>
+<p><strong>Volunteers/Reviewers Wanted</strong> (we didn't get to this because time ran out)</p>
+<ul>
+<li>Bioinformatics capstone example
+<ul>
+<li>Really good discussion at <a href="https://github.com/swcarpentry/bc/issues/532">https://github.com/swcarpentry/bc/issues/532</a></li>
+<li>Volunteers: Karin L</li>
+</ul></li>
+<li>&quot;Starry night&quot; image manipulation using sk.image.novice and ipythonblocks
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/508">https://github.com/swcarpentry/bc/pull/508</a></li>
+<li>Reviewers:P Barmby</li>
+</ul></li>
+<li>Syndicating data as a way to introduce web programming
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/513">https://github.com/swcarpentry/bc/pull/513</a>
+<ul>
+<li>Replaces <a href="https://github.com/swcarpentry/bc/pull/502">https://github.com/swcarpentry/bc/pull/502</a></li>
+</ul></li>
+<li>Volunteers:</li>
+</ul></li>
+<li>Creating slides to introduce topics
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/510">https://github.com/swcarpentry/bc/pull/510</a></li>
+<li>Needs work on CSS</li>
+<li>Needs intro decks for each major topic</li>
+<li>Hope to record these as &quot;why you care about this lesson&quot; videos</li>
+<li>See <a href="https://github.com/swcarpentry/bc/issues/559">https://github.com/swcarpentry/bc/issues/559</a></li>
+<li>Volunteers: Dav Clark, Jacob Levernier</li>
+</ul></li>
+<li>Novice lesson on indexing in NumPy
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/487">https://github.com/swcarpentry/bc/pull/487</a></li>
+<li>Reviewers: Jeremiah Lant</li>
+</ul></li>
+<li>Improving our &quot;how do I do X?&quot; instructions
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/482">https://github.com/swcarpentry/bc/issues/482</a></li>
+<li>Volunteers:</li>
+</ul></li>
+<li>Code review lesson + Git branching
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/issues/517">https://github.com/swcarpentry/bc/issues/517</a></li>
+<li><a href="https://github.com/swcarpentry/bc/pull/471">https://github.com/swcarpentry/bc/pull/471</a></li>
+<li>Volunteers:P Barmby R Davey</li>
+</ul></li>
+<li>What are we doing to do about statistics/data analysis/Pandas in Python?
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/432">https://github.com/swcarpentry/bc/pull/432</a></li>
+<li><a href="https://github.com/swcarpentry/bc/pull/266">https://github.com/swcarpentry/bc/pull/266</a></li>
+<li>Volunteers:</li>
+</ul></li>
+<li>Add next/previous navigation links for lessons
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/384">https://github.com/swcarpentry/bc/pull/384</a></li>
+<li>Volunteers:</li>
+</ul></li>
+<li>Medical image processing example
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/529">https://github.com/swcarpentry/bc/pull/529</a></li>
+</ul></li>
+<li>Rewriting shell lesson that it only talks about Nelle
+<ul>
+<li>Minimal rewrite: <a href="https://github.com/swcarpentry/bc/pull/535">https://github.com/swcarpentry/bc/pull/535</a></li>
+<li>More extensive rewrite: <a href="https://github.com/swcarpentry/bc/pull/437">https://github.com/swcarpentry/bc/pull/437</a></li>
+<li>Notes: <a href="https://github.com/swcarpentry/bc/issues/405">https://github.com/swcarpentry/bc/issues/405</a></li>
+</ul></li>
+<li>Version control with Mercurial:
+<ul>
+<li><a href="https://github.com/swcarpentry/bc/pull/439">https://github.com/swcarpentry/bc/pull/439</a></li>
+</ul></li>
+<li>Give instructors more credit
+<ul>
+<li>Make their names more prominent on bootcamp webpages</li>
+<li>See <a href="https://github.com/swcarpentry/bc/pull/570">https://github.com/swcarpentry/bc/pull/570</a></li>
+<li>Votes:</li>
+</ul></li>
+</ul>
