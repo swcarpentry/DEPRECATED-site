@@ -1977,7 +1977,7 @@
   humandate: Jan 27-28, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Ariel Rokem, Justin Kitzes]
-  latlng: 37.4225, 122.1653
+  latlng: 37.4225, -122.1653
   layout: bootcamp
   registration: restricted
   root: .
@@ -2672,3 +2672,294 @@
   url: http://geocarpentry.github.io/2014-05-23-csdms/
   user: geocarpentry
   venue: Community Surface Dynamics Modeling System Meeting
+- address: SeaCave in the Eckart Bldg, La Jolla, CA
+  contact: ntpierce@ucsd.edu
+  country: United-States
+  enddate: 2014-05-30
+  humandate: May 29-30, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Chris Lasher, Will Trimble, Andrea Zonca]
+  latlng: 32.867307,-117.252586
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-05-29-ucsd
+  startdate: 2014-05-29
+  url: http://gotgenes.github.io/2014-05-29-ucsd/
+  user: gotgenes
+  venue: Scripps Institution of Oceanography, UC San Diego
+- address: Faculty of Medicine, Nursing and Health Sciences (Krongold Centre (Building
+    5) / Room G19), Wellington Road, Clayton, Victoria 3800
+  contact: Matthew.Dimmock@monash.edu
+  country: Australia
+  enddate: 2014-06-04
+  humandate: Jun 02-04, 2014
+  humantime: 1:00 pm - 5:00 pm
+  instructor: [Matthew Dimmock, Damien Irving]
+  latlng: -37.915211,145.134682
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-02-monash
+  startdate: 2014-06-02
+  url: http://badger-d.github.io/2014-06-02-monash/
+  user: badger-d
+  venue: Monash University
+- address: Pisa
+  contact: admin@software-carpentry.org
+  country: Italy
+  enddate: 2014-06-06
+  humandate: Jun 04-06, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Aleksandra Pawlik, "R\xE9mi Emonet"]
+  latlng: 43.720699,10.408022
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-03-cern
+  startdate: 2014-06-05
+  url: http://apawlik.github.io/2014-06-03-cern/
+  user: apawlik
+  venue: "Italian National Institute for Nuclear Physics, Department of Physics, Universit\xE0\
+    \ di Pisa"
+- address: Mann Library, Room B30A<br>237 Mann Drive<br>Ithaca, NY 14853
+  contact: mudrak@cornell.edu
+  country: United-States
+  enddate: 2014-06-05
+  eventbrite: 11562775573
+  humandate: Jun 4-5, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Gabriel A. Devenyi, Jeramia Ory]
+  latlng: 42.449286,-76.476284
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-04-cornell
+  startdate: 2014-06-04
+  url: http://gdevenyi.github.io/2014-06-04-cornell/
+  user: gdevenyi
+  venue: Cornell University
+- address: 20 Konstantinou Kavafi Street, 2121 Aglantzia, Nicosia
+  contact: admin@software-carpentry.org
+  country: Cyprus
+  enddate: 2014-06-11
+  humandate: Jun 10-11, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Luis Pedro Coelho, Marios Isaakidis]
+  latlng: 35.164972,33.361289
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-10-cyi
+  startdate: 2014-06-10
+  url: http://luispedro.github.io/2014-06-10-cyi/
+  user: luispedro
+  venue: Cyprus Institute
+- address: Albro-Falconer-Manely Science Center, Room 232, 440 Westview Dr. S.W.,
+    Atlanta, GA 30354
+  contact: hqin@spelman.edu
+  country: United-States
+  enddate: 2014-06-11
+  humandate: Jun 10-11, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Will Trimble, Elijah Lowe]
+  latlng: 33.745,-84.409
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-10-spelman
+  startdate: 2014-06-10
+  url: http://wltrimbl.github.io/2014-06-10-spelman/
+  user: wltrimbl
+  venue: Spelman College
+- address: Amman
+  contact: admin@software-carpentry.org
+  country: Jordan
+  enddate: 2014-06-17
+  humandate: Jun 16-17, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Luis Pedro Coelho, Marios Isaakidis]
+  latlng: 31.956578,35.945695
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-15-khbp
+  startdate: 2014-06-16
+  url: http://luispedro.github.io/2014-06-15-khbp/
+  user: luispedro
+  venue: Ibis Hotel (Open One Meeting Room)
+- address: UCDavis Shields Library
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-06-17
+  eventbrite: '11471139487'
+  humandate: Jun 16-17, 2014
+  humantime: 8:30 am - 5:00 pm
+  instructor: [Naupaka Zimmerman, Bernhard Konrad, Dav Clark, Andrea Zonca]
+  latlng: 38.5397144,-121.7490892
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-16-davis
+  startdate: 2014-06-16
+  url: http://BernhardKonrad.github.io/2014-06-16-davis/
+  user: BernhardKonrad
+  venue: UC Davis
+- address: 888 Columbia Ave, Claremont, CA 91711; Kravis Center, room LC62 (Freeberg
+    Forum)
+  contact: psn@kecksci.claremont.edu
+  country: United-States
+  enddate: 2014-06-17
+  eventbrite: 11558171803
+  humandate: Jun 16-17, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Preston Holmes, Bill Mills]
+  latlng: 34.102082,-117.711183
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-16-claremont
+  startdate: 2014-06-16
+  url: http://ptone.github.io/2014-06-16-claremont/
+  user: ptone
+  venue: Claremont Colleges
+- address: 366 Adelaide Street West, Toronto, Ontario
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-06-17
+  eventbrite: 11526822035
+  helper: [Catalina Anghel]
+  humandate: Jun 16-17, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Pauline Barmby, Jennifer Campbell, Greg Wilson]
+  latlng: 43.64711,-79.39423
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-06-16-toronto
+  startdate: 2014-06-16
+  url: http://swcarpentry.github.io/2014-06-16-toronto/
+  user: swcarpentry
+  venue: Mozilla Toronto
+- address: CRTP Classroom, 2nd Floor, Hock Plaza, 2424 Erwin Road
+  contact: cliburn.chan@duke.edu
+  country: United-States
+  enddate: 2014-06-17
+  humandate: Jun 16-17, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Cliburn Chan, Karen Cranston, Joshua Granek]
+  latlng: 36.009706, -78.941628
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-16-duke
+  startdate: 2014-06-16
+  url: http://cliburn.github.io/2014-06-16-duke/
+  user: cliburn
+  venue: Duke University
+- address: Bowers Auditorium, Sage Hall, 205 Prospect, New Haven, CT 06511
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-06-21
+  eventbrite: 11719002853
+  humandate: June 20-21, 2014
+  humantime: 9:00 am - 4:45 pm
+  instructor: [Camille Avestruz, Matthew Lightman]
+  ipythonnotebook: http://nbviewer.ipython.org/urls
+  latlng: 41.317165,-72.923847
+  layout: bootcamp
+  raw: raw.github.com/swcarpentry/bc/gh-pages
+  registration: restricted
+  root: .
+  slug: 2014-06-20-yale
+  startdate: 2014-06-20
+  url: http://cavestruz.github.io/2014-06-20-yale/
+  user: cavestruz
+  venue: Yale University
+- address: Delta Bessborough Hotel, 601 Spadina Crescent East, Saskatoon, SK
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-06-24
+  humandate: Jun 22-24, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Ian Mitchell]
+  latlng: 52.127165, -106.658892
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-06-22-caims
+  startdate: 2014-06-22
+  url: http://dhavide.github.io/2014-06-22-caims/
+  user: dhavide
+  venue: Canadian Applied and Industrial Mathematics Society
+- address: 1230 York Ave, New York, NY 10065
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-06-25
+  humandate: June 24-25, 2014
+  humantime: 9:00 am - 4:45 pm
+  instructor: [Camille Avestruz, Tim Cerino, Dan Chen, Ivan Gonzalez]
+  ipythonnotebook: http://nbviewer.ipython.org/urls
+  latlng: 40.76332, -73.955464
+  layout: bootcamp
+  raw: raw.github.com/swcarpentry/bc/gh-pages
+  registration: restricted
+  root: .
+  slug: 2014-06-24-ru
+  startdate: 2014-06-24
+  url: http://cavestruz.github.io/2014-06-24-ru/
+  user: cavestruz
+  venue: Rockefeller University
+- address: Room 08-146AB, Smilow Center for Translational Research, 3400 Civic Center
+    Blvd., Philadelphia
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-06-25
+  helper: [Alyssa Batula, Maneesha Sane]
+  humandate: Jun 24-25, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dana Bauer, Adina Howe]
+  latlng: 39.94733,-75.193134
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-06-24-wise-penn
+  startdate: 2014-06-24
+  url: http://swcarpentry.github.io/2014-06-24-wise-penn/
+  user: swcarpentry
+  venue: Women in Science and Engineering (Philadelphia)
+- address: Department of Meteorology, Whiteknights, Earley Gate,Reading, RG6 7BE,
+    Berkshire
+  contact: admin@software-carpentry.org, Kathie Bowden (k.e.bowden@reading.ac.uk),
+    <a href="http://www.met.reading.ac.uk/contact.html">Meteorology Dept.</a>
+  country: United-Kingdom
+  enddate: 2014-06-26
+  humandate: June 25-26, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Christina Koch, Devasena Inupakutika]
+  latlng: 51.4419,0.9456
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-25-Reading
+  startdate: 2014-06-25
+  url: http://DevasenaInupakutika.github.io/2014-06-25-Reading/
+  user: DevasenaInupakutika
+  venue: University of Reading
+- address: South bend, IN
+  contact: joshua.r.herr@gmail.com
+  country: United-States
+  enddate: 2014-06-27
+  helper: []
+  humandate: Jun 26-27, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Joshua R. Herr, Sheldon McKay]
+  latlng: 41.705467, -86.235296
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-26-nd
+  startdate: 2014-06-26
+  url: http://jrherr.github.io/2014-06-26-nd/
+  user: jrherr
+  venue: University of Notre Dame
