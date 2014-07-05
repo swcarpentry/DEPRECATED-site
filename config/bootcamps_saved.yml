@@ -1762,7 +1762,7 @@
   enddate: 2013-12-06
   humandate: Dec 3-6, 2013
   humantime: 9:00 am - 4:30 pm
-  instructor: [Will Trimble, ' Amanda Whitlock', Bernhard Konrad, Aron Ahmadia, R.
+  instructor: [Will Trimble, Amanda Whitlock, Bernhard Konrad, Aron Ahmadia, R.
       David Murray]
   latlng: 38.976734, -76.503296
   layout: bootcamp
@@ -2429,8 +2429,8 @@
   enddate: 2014-04-15
   humandate: Apr 14-15, 2014
   humantime: 9:00 am - 4:30 pm
-  instructor: ['Katy Huff, Rachel Slaybaugh, Azalee Bostroem, Cindee Madison, Jessica
-      Kerr, Molly Gibson, and Suzanne Kiihne']
+  instructor: [Katy Huff, Rachel Slaybaugh, Azalee Bostroem, Cindee Madison, Jessica
+      Kerr, Molly Gibson, and Suzanne Kiihne]
   latlng: 37.8734481,-122.2563972
   layout: bootcamp
   registration: open
