@@ -1,7 +1,7 @@
 ---
 layout: blog
 root: ../../..
-title: "Reflections On the First Zero-Entry Highschool Workshop at Rockefellar University"
+title: "Reflections On the First Zero-Entry High school Workshop at Rockefeller University"
 author: "Daniel Chen"
 date: 2014-07-05
 time: ""
@@ -15,76 +15,130 @@ category: [""]
 
 **Introduction**
 
-camille, ivan, timothy, and daniel all had the great opportunity to
+camille, ivan, timothy, and Daniel all had the great opportunity to
 teach software carpentry's first zero-entry workshop to high school
-students.  We were able to teach at rockafellar thanks to the
-scientific and foresight by jeannie and ____ and the rest of the
-rockafellar team along with arlis, greg wilson and the swc team.
+students.  We were able to teach at Rockefeller thanks to the
+scientific and foresight by Jeannie and ____ and the rest of the
+Rockefeller team along with arlis, Greg Wilson and the swc team.
 
 The main goal of this workshop was to expose tomorrow's scientists to
-scientific computing as early as possible.  For example, as genomic
+scientific computing as early as possible.  For example, as genomics
 data for biology continues to grow, we are beginning to see a shift of
-biologists from the pipeter to the data scientist.  Our goal was not
+biologists from the pipetter to the data scientist.  Our goal was not
 to teach everyone all the skills needed so they can dive into
-retrieving, cleaning, and analysing genomic or astro data the next
+retrieving, cleaning, and analyzing genomics or astronomy data the next
 day, but rather show them what is possible with computers, and expose
-them for the first time that the gui may not always be the best tool
+them for the first time that the GUI may not always be the best tool
 for the job; and give some foundation of knowledge and concepts for
-pepetual self learning.
+perpetual self learning.
 
 We followed the traditional swc workshop materials, adapting the pace
 as needed.  Bash, python, and git were covered.
 
 **What Went Well, and What Didn't**
 
+High School Students
+
+Since there is a lot of material that we cover in 2 days, the lessons
+are given in 90 minute blocks.  For the typical NYC high school (I'm
+now speaking from personal experience), there are 10 blocks of 45
+minues each through out each day.  Some classes may take a 2 period
+block (90 minutes), but almost never is the entire day solely taught
+in 90 minute blocks.  In higher education a 90 minute class is almost
+considered the baseline and is very common with many other classes
+lasting much longer.  This difference was echoed to us when we
+finished our workshop and had a 15 minute open discussion of what
+worked for the students, and what did not.  Many suggested to have 4
+half-day workshops, each covering 1 topic with some `homework'.
+Reflecting on this point, this makes sense and should be tested the
+next time we teach high school students.
+
 Bash
 
 We began in bash with the basic pwd, cd, and ls commands.  Eventually
 moving to mkdir and touch.  The helpers realized very quickly that the
-students were struggling to keep up.  2 common themes were:
+students were struggling to keep up.  Common questions were:
 
-    - 'did i do this right? it doesnt look like what's up there'
-    - 'i don't understand what is going on'.
+    - Did I do this right?
+        - It doesn't look like what's up there
+    - I don't understand what is going on
 
-For those who live in bash, or use the terminal regularly, we
+For those of us who live in bash, or use the terminal regularly, we
 customize the look of the prompt, removing extraneous information,
-changing the '$', etc.  From the student's point of view, they've
+adding colors, and etc.  From the student's point of view, they've
 never seen a blinking cursor in its current context.  Trying to follow
 along while blindly typing what the see on the screen, except what
 they see on the presentation screen was not what they saw on their own
-monitor. and thus confusion arised, even though many of them created
-and moved into the correct directory.  The students were very literal,
-as they shold be when exposed to a new concept.  However, as literal
-as they were, spelling mistakes were common, and learning to tab
-complete was a lesson they were learning the hard way.
+monitor; thus confusion arose, even though many of them created and
+moved into the correct directory.  A possible workaround is to have
+all students copy paste an ls alias that colors directories (this is
+not a default in OSX), and everyone (instructors included) export the
+same PS1.  The former can be done right after the ls command is
+brought up, and searching through the man pages for the --color flag.
+Experimentation with when the optimal time to export the PS1 variable
+would have to be conducted, but it seems that a black box 'please copy
+paste this so your terminal looks like mine' may be sufficient.
 
-When using bash to navigate between files, zero-entry bootcampers do
-not have a mental image of the directory structure/hierarchy.  A gui
-file systesm window that is shown simultaneously with the basic
-navigation and touch/mkdir commands solidify and contexualize what
+The students were very literal, as they should be when exposed to a new
+concept.  However, as literal as they were, spelling mistakes were
+common, and learning to tab complete was a lesson they were learning
+the hard way.
+
+When using bash to navigate and create files, zero-entry bootcampers
+do not have a mental image of the directory structure/hierarchy.  A
+GUI file system window that is shown simultaneously with the basic
+navigation and touch/mkdir commands solidify and contextualize what
 exactly is going on in the file system them that mkdir and touch
-ACTUALLY create files in the GUI interface as well.
+ACTUALLY create files in the GUI interface as well.  This can be
+accomplished by running the following terminal commands for Windows,
+OSX, and linux operating systems, respectively:
+
+    - explorere .
+    - open .
+    - xdg-open . (or 'nautilus .' in Ubuntu)
+
 
 
 Conceptual notes
 
-To open GUI file viewer from the command line in different OS’s:
-Mac OSX, calling `open .` 
-Linux Gnome: `nautilus . &`
-Linux other flavors: `xdg-open .`
-Xdg-open is the generic open command.  Of you call it on a directory it will use cautious.  Of you call it on a file it will try to open it using the default application depending on file extension
-Windows: `explorere .`
-From the perspective of zero-entry bootcampers, almost everything is a buzzword.  Pro-tip:  Definitions for words like “float”, “escaping a character”, long-hand mnemonics for commands (i.e. pwd = “Print Working Directory”, cd = “change directory”) or differences between using () {} ‘’ and “ “ in bash, python, etc. need to be re-iterated.  
-Some kind of physical cheat-sheet with basic commands for bash, git, ipynb, and python would be useful. Also bash wildcards syntax
-Also Ctrl-C to break in Bash, Ctrl-D to exit Py interpreter, Q to exit a manpage
-For high school kids, attention spans are short (so surprisingly short).  Pro-tip:  Short concept, short exercise, rinse, and repeat.
-For kids that have a little more experience, they’ll get bored.  Pro-tip: Send them to a site with short challenge exercises so they don’t get bored (i.e. rosalind.info/problems/list-view/  or  projecteuler.net for python;  http://pcottle.github.io/learnGitBranching/ for git.
-I found that kids had trouble understanding the value of toy exercises. When I was helping with during the Python session, some seemed to be very worried about having the example or exercise “right”, as the value of the task was just this. I think that exercises/examples should be tuned to connect to their previous experiences or otherwise have some sense of completion (e.g. ipythonblocks).
-we gave them a mini project that was a cumulation of all the python material by asking them to read in a file of comma separated animals, their bain mass, and body mass, asked them to parse the information and calculate the bain:body ratio and have it saved to a list (or dictionary)
-Even though Tim did a great job essentially doing the problem for them before assigning the problem, when it was their turn, many of the students were simply ‘stumped’ and overwhelmed and had ‘no idea where to start’
-This became a very powerful example of breaking down the problem (engineering), and the use of comments.
-Showing them comments and how they can be used to pesudo-write code and get some process out without be burdened by actual code 1. forces them to actually break down a problem into manageable practices and makes the problem less daunting.  2. show a real practical use case of comments and how they can be used before any code is written, not just documenting what you already have done.
-I think we did a great job introducing good practices in programming.  Hopefully the next time they are asked to implement their knowledge it becomes less daunting
+From the perspective of zero-entry bootcampers, almost everything is a
+buzzword.  Pro-tip: Definitions for words like “float”, “escaping a
+character”, long-hand mnemonics for commands (i.e. pwd = “Print
+Working Directory”, cd = “change directory”) or differences between
+using () {} ‘’ and “ “ in bash, python, etc. need to be re-iterated.
+Some kind of physical cheat-sheet with basic commands for bash, git,
+ipynb, and python would be usefu`l. Also bash wildcards syntax Also
+Ctrl-C to break in Bash, Ctrl-D to exit Py interpreter, Q to exit a
+manpage For high school kids, attention spans are short (so
+surprisingly short).  Pro-tip: Short concept, short exercise, rinse,
+and repeat.  For kids that have a little more experience, they’ll get
+bored.  Pro-tip: Send them to a site with short challenge exercises so
+they don’t get bored (i.e. rosalind.info/problems/list-view/ or
+projecteuler.net for python;
+http://pcottle.github.io/learnGitBranching/ for git.  I found that
+kids had trouble understanding the value of toy exercises. When I was
+helping with during the Python session, some seemed to be very worried
+about having the example or exercise “right”, as the value of the task
+was just this. I think that exercises/examples should be tuned to
+connect to their previous experiences or otherwise have some sense of
+completion (e.g. ipythonblocks).  we gave them a mini project that was
+a cumulation of all the python material by asking them to read in a
+file of comma separated animals, their bain mass, and body mass, asked
+them to parse the information and calculate the bain:body ratio and
+have it saved to a list (or dictionary) Even though Tim did a great
+job essentially doing the problem for them before assigning the
+problem, when it was their turn, many of the students were simply
+‘stumped’ and overwhelmed and had ‘no idea where to start’ This became
+a very powerful example of breaking down the problem (engineering),
+and the use of comments.  Showing them comments and how they can be
+used to pesudo-write code and get some process out without be burdened
+by actual code 1. forces them to actually break down a problem into
+manageable practices and makes the problem less daunting.  2. show a
+real practical use case of comments and how they can be used before
+any code is written, not just documenting what you already have done.
+I think we did a great job introducing good practices in programming.
+Hopefully the next time they are asked to implement their knowledge it
+becomes less daunting
 
 Logistical notes
 They really need coffee in the afternoon. 
