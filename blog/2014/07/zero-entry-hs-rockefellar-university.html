@@ -55,3 +55,44 @@ students were very literal, as they shold be when exposed to a new
 concept.  However, as literal as they were, spelling mistakes were
 common, and learning to tab complete was a lesson they were learning
 the hard way.
+
+
+Conceptual notes
+When using bash to navigate between files, zero-entry bootcampers do not have a mental image of the directory structure/hierarchy.  Pro-tip:  Pull up a finder to show them that mkdir and touch ACTUALLY create files in the GUI interface as well.
+To open GUI file viewer from the command line in different OS’s:
+Mac OSX, calling `open .` 
+Linux Gnome: `nautilus . &`
+Linux other flavors: `xdg-open .`
+Xdg-open is the generic open command.  Of you call it on a directory it will use cautious.  Of you call it on a file it will try to open it using the default application depending on file extension
+Windows: `explorere .`
+From the perspective of zero-entry bootcampers, almost everything is a buzzword.  Pro-tip:  Definitions for words like “float”, “escaping a character”, long-hand mnemonics for commands (i.e. pwd = “Print Working Directory”, cd = “change directory”) or differences between using () {} ‘’ and “ “ in bash, python, etc. need to be re-iterated.  
+Some kind of physical cheat-sheet with basic commands for bash, git, ipynb, and python would be useful. Also bash wildcards syntax
+Also Ctrl-C to break in Bash, Ctrl-D to exit Py interpreter, Q to exit a manpage
+For high school kids, attention spans are short (so surprisingly short).  Pro-tip:  Short concept, short exercise, rinse, and repeat.
+For kids that have a little more experience, they’ll get bored.  Pro-tip: Send them to a site with short challenge exercises so they don’t get bored (i.e. rosalind.info/problems/list-view/  or  projecteuler.net for python;  http://pcottle.github.io/learnGitBranching/ for git.
+I found that kids had trouble understanding the value of toy exercises. When I was helping with during the Python session, some seemed to be very worried about having the example or exercise “right”, as the value of the task was just this. I think that exercises/examples should be tuned to connect to their previous experiences or otherwise have some sense of completion (e.g. ipythonblocks).
+we gave them a mini project that was a cumulation of all the python material by asking them to read in a file of comma separated animals, their bain mass, and body mass, asked them to parse the information and calculate the bain:body ratio and have it saved to a list (or dictionary)
+Even though Tim did a great job essentially doing the problem for them before assigning the problem, when it was their turn, many of the students were simply ‘stumped’ and overwhelmed and had ‘no idea where to start’
+This became a very powerful example of breaking down the problem (engineering), and the use of comments.
+Showing them comments and how they can be used to pesudo-write code and get some process out without be burdened by actual code 1. forces them to actually break down a problem into manageable practices and makes the problem less daunting.  2. show a real practical use case of comments and how they can be used before any code is written, not just documenting what you already have done.
+I think we did a great job introducing good practices in programming.  Hopefully the next time they are asked to implement their knowledge it becomes less daunting
+
+Logistical notes
+They really need coffee in the afternoon. 
+Seating makes a difference in keeping the kids engaged and off of facebook/browsing/world cup watching - the closer they are to the front of the room, the more engaged they’ll likely be
+They need more frequent sticky note check-ins, i.e. “Green sticky up if you’re keeping up/done with the exercise/etc.”
+They are more used to raising a hand than red sticky up.  But having multiple means of calling for help caters to different people
+The etherpad is especially useful for the younger crowd at the beginning of the bootcamp - many of them are too shy to ask questions, and the chatroom-like environment works for them
+when you want them to copy paste commands from the command line… maybe don’t put in the “$ command”.  they just copy the entire line (with your $) and do not see the mistake
+suggest swc instructors all export a temporary PS1 variable so all the terminals look the same.  The students were REALLY confused in the beginning of bash because what they saw on the screen was not what they saw on the projector.  (at least to whoever is doing bash)
+having a directory of 48,000 files of mixed file types and having them mv a certain pattern of files (e.g. i want my 2013 pictures that are some form of .jpg into a pics/2013 subfolder) really gave them a real world context on why the GUI is bad.  having the gui file manager window crash or take 5 minutes to draw all the icons helped bring it all home.  Not to mention, we finished the entire exercise before the gui loaded all the icons.  If only there was that powerful of an example for git…
+maybe one of the instructors can “accidentally” blow up their presentation materials at the beginning of their talk, and then rescue them from their repo?
+Whiteboard / Blackboard is useful
+
+Technical notes
+man pages don’t work in git bash.  Pro-tip:  Have them look at the man page online if you want to walk them through reading a man page.
+ipython notebook can lose connectivity if the wireless goes on and off (we think this was the reason).  Pro-tip:  Kernel->Interrupt, Kernel->Restart, Cell->Run All
+For windows users, they can’t use many of the Bash commands in the ipython notebook Pro-tip: preface the cell with %%bash
+Git for snow leopard: need to get v 1.8 not the version the website.  This should get around the 4GB xcode download.  If that doesn’t work, download “Git for Mac Users” https://mac.github.com/ .  open the application.  to go properties, there is a option in one of the tabs to “enable command line tools” (maybe do this first? in the future?)
+Installation: include some final steps that let students verify that the installations were successful, e.g. `which python`, `which git` 
+Which git doesn't work on some people (like the snow.  Got init will diagnose a people better.
