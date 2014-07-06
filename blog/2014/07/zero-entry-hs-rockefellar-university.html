@@ -8,17 +8,17 @@ time: ""
 category: [""]
 ---
 <!-- start excerpt -->
-<p>
-**Introduction**
 
-Camille Avestruz, Ivan Gonzalez, Timothy Cerino, and Daniel Chen all
+<p><strong>Introduction</strong></p>
+
+<p>Camille Avestruz, Ivan Gonzalez, Timothy Cerino, and Daniel Chen all
 had the great opportunity to teach Software Carpentry's first
 zero-entry workshop to high school students.  We were able to teach at
 Rockefeller thanks to the scientific foresight by Jeanne Garbarino,
-____ and the rest of the Rockefeller team along with Arliss Collins,
-Greg Wilson and the swc team.
+<em>_</em>_ and the rest of the Rockefeller team along with Arliss Collins,
+Greg Wilson and the swc team.</p>
 
-The main goal of this workshop was to expose tomorrow's scientists to
+<p>The main goal of this workshop was to expose tomorrow's scientists to
 scientific computing as early as possible.  For example, as genomics
 data for biology continues to grow, we are beginning to see a shift of
 biologists from the pipetter to the data scientist.  Our goal was not
@@ -27,19 +27,18 @@ retrieving, cleaning, and analyzing genomics or astronomy data the next
 day, but rather show them what is possible with computers, and expose
 them for the first time that the GUI may not always be the best tool
 for the job; and give some foundation of knowledge and concepts for
-perpetual self learning.
+perpetual self learning.</p>
 
-We followed the traditional swc workshop materials, adapting the pace
-as needed.  Bash, python, and git were covered.
-  
-</p>
+<p>We followed the traditional swc workshop materials, adapting the pace
+as needed.  Bash, python, and git were covered.</p>
+
 <!-- end excerpt --> 
 
-**What Went Well, and What Didn't**
+<p><strong>What Went Well, and What Didn't</strong></p>
 
-**High School Students**
+<p><strong>High School Students</strong></p>
 
-Since there is a lot of material that we cover in 2 days, the lessons
+<p>Since there is a lot of material that we cover in 2 days, the lessons
 are given in 90 minute blocks.  For the typical NYC high school (I'm
 now speaking from personal experience), there are 10 blocks of 45
 minues each through out each day.  Some classes may take a 2 period
@@ -52,43 +51,44 @@ worked for the students, and what did not.  Many suggested to have 4
 half-day workshops, each covering 1 topic with many small in-class
 practice problems and a `homework'.  Reflecting on this point, this
 makes sense and should be tested the next time we teach high school
-students.
+students.</p>
 
-Teaching these workshops usually has a bimodial distribution of
+<p>Teaching these workshops usually has a bimodial distribution of
 students in terms of proficiency, experience, and familiarity of the
 materials being covered.  In our particular case, we pre-screened the
-class, but only about 2 students had prior experience with the material.
+class, but only about 2 students had prior experience with the material.</p>
 
-Sending these students to a site with short challenge exercises so
+<p>Sending these students to a site with short challenge exercises so
 they don’t get bored (i.e. rosalind.info/problems/list-view/ or
 projecteuler.net for python;
 http://pcottle.github.io/learnGitBranching/ for git would have helped
-for those few who thought the pace was too slow.
+for those few who thought the pace was too slow.</p>
 
-The world cup probably didn't help either :D
+<p>The world cup probably didn't help either :D</p>
 
-Sticky notes, the Etherpad, and raising your hand
+<p>Sticky notes, the Etherpad, and raising your hand</p>
 
-The sticky notes (red up for a problem, green up for gettable),
+<p>The sticky notes (red up for a problem, green up for gettable),
 etherpad document, etherpad chat, and the basic raising of the hand to
 ask for help was extremely effective.  Students were using all means
 of getting help, although I would have to say most were doing what
 they were used to in the classroom, which is raising their hands.  For
 those that were shy, the etherpad chat was a way for the instructor to
 clarify an idea or answer.  Once again, the sticky notes also provided
-a great means for honest feedback.
+a great means for honest feedback.</p>
 
-**Bash**
+<p><strong>Bash</strong></p>
 
-We began in bash with the basic pwd, cd, and ls commands.  Eventually
+<p>We began in bash with the basic pwd, cd, and ls commands.  Eventually
 moving to mkdir and touch.  The helpers realized very quickly that the
-students were struggling to keep up.  Common questions were:
+students were struggling to keep up.  Common questions were:</p>
 
-    - Did I do this right?
-        - It doesn't look like what's up there
-    - I don't understand what is going on
+<pre><code>- Did I do this right?
+    - It doesn't look like what's up there
+- I don't understand what is going on
+</code></pre>
 
-For those of us who live in bash, or use the terminal regularly, we
+<p>For those of us who live in bash, or use the terminal regularly, we
 customize the look of the prompt, removing extraneous information,
 adding colors, and etc.  From the student's point of view, they've
 never seen a blinking cursor in its current context.  Trying to follow
@@ -102,48 +102,48 @@ same PS1.  The former can be done right after the ls command is
 brought up, and searching through the man pages for the --color flag.
 Experimentation with when the optimal time to export the PS1 variable
 would have to be conducted, but it seems that a black box 'please copy
-paste this so your terminal looks like mine' may be sufficient.
+paste this so your terminal looks like mine' may be sufficient.</p>
 
-This brings me to my next point, when using the etherpad, it will be
-useful to *not* copy the `$' before the actual bash command.  Many of
+<p>This brings me to my next point, when using the etherpad, it will be
+useful to <em>not</em> copy the <code>$' before the actual bash command.  Many of
 the students are still trying to get some idea of what is goin on that
 they will copy the entire line, then attempt to copy/paste and when
 they finally remember the correct terminal copy/paste commands, the
 command will error out and will not understand why.  This could be a
 failure on our part in not properly explaining the components of a
-bash command (e.g., the first `token' is always a 'verb'), but at this
+bash command (e.g., the first</code>token' is always a 'verb'), but at this
 level, it may be too much information trying to navigate the file
-system and the nitty-gritty of bash all at once.
+system and the nitty-gritty of bash all at once.</p>
 
-The students were very literal, as they should be when exposed to a new
+<p>The students were very literal, as they should be when exposed to a new
 concept.  However, as literal as they were, spelling mistakes were
 common, and learning to tab complete was a lesson they were learning
-the hard way.
+the hard way.</p>
 
-When using bash to navigate and create files, zero-entry bootcampers
+<p>When using bash to navigate and create files, zero-entry bootcampers
 do not have a mental image of the directory structure/hierarchy.  A
 GUI file system window that is shown simultaneously with the basic
 navigation and touch/mkdir commands solidify and contextualize what
 exactly is going on in the file system them that mkdir and touch
 ACTUALLY create files in the GUI interface as well.  This can be
 accomplished by running the following terminal commands for Windows,
-OSX, and linux operating systems, respectively:
+OSX, and linux operating systems, respectively:</p>
 
-    - explorere .
-    - open .
-    - xdg-open . (or 'nautilus .' in Ubuntu)
+<pre><code>- explorere .
+- open .
+- xdg-open . (or 'nautilus .' in Ubuntu)
+</code></pre>
 
-From the first series of feedback, we learned that repetition
-is extremely important.  For example, when we are teaching what `cd'
-is and when we say `cd into a new directory' it was important for the
+<p>From the first series of feedback, we learned that repetition
+is extremely important.  For example, when we are teaching what <code>cd'
+is and when we say</code>cd into a new directory' it was important for the
 instructors to say `cd, change directory into your swc folder'.  This
 applied to the other topics cover as well and is especially important
 since these are new terms for the students and it naturally slows down
 the lesson (having tons of spelling mistakes work just as well as a
-natural delay).
+natural delay).</p>
 
-
-After reading the first round of feedbacks, we put up a small
+<p>After reading the first round of feedbacks, we put up a small
 excercise on the screen during lunch.  This gave the students to read
 and see what the task was when they return.  Additionally, with Gabe's
 help, we came up with a more practical excercise that show cases the
@@ -159,11 +159,11 @@ That also included explaining the problem in bash, giving them time to
 come up with the wildcard expression to move the files, and watching
 the GUI crash a few times.  This example really gave them a real world
 context on why the GUI is bad and we reiterated that a massive file
-dump like the example shown is not uncommon in science.
+dump like the example shown is not uncommon in science.</p>
 
-**Python**
+<p><strong>Python</strong></p>
 
-We took the feed back regarding pacing in bash and paced the python
+<p>We took the feed back regarding pacing in bash and paced the python
 lessons in a much more digestiable fashion.  We finished off the day
 covering conditionals, with some feedback about the section on
 dictionaries to be too long.  By the second day I overheard students
@@ -176,58 +176,59 @@ swc work directory, create a folder for today's work, open up a
 ipython notebook, and review some questions that was brought up in the
 preview day's feedback.  It was facinating to see that even amounst
 all the confusion regarding bash the previous day, filesystem
-navigation was not an issue on the next day.
+navigation was not an issue on the next day.</p>
 
-We finished the session off with loops, functions, basic file I/O, and
+<p>We finished the session off with loops, functions, basic file I/O, and
 we gave them a practical excercies to read in a dataset of animals and
 their brain mass and body mass.  The task was to each animal's
 brain:body mass ratio and save the information so it can be used
-later.
+later.</p>
 
-Some things we learned teaching python: 
+<p>Some things we learned teaching python: </p>
 
-    - Students had trouble understanding the value of toy
-    exercises. When I was helping with during the Python session, some
-    seemed to be very worried about having the example or exercise
-    “right”, as the value of the task was just this.
-        
-        - exercises/examples should be tuned to connect to their
-    previous experiences or otherwise have some sense of completion
-    (e.g. ipythonblocks).  
+<pre><code>- Students had trouble understanding the value of toy
+exercises. When I was helping with during the Python session, some
+seemed to be very worried about having the example or exercise
+“right”, as the value of the task was just this.
 
-    - During the last capstone excercise, many of the students were
-    simply ‘stumped’ and overwhelmed and had ‘no idea where to start’,
-    even though the basic components were covered.  This became a very
-    powerful example of breaking down the problem (engineering), and
-    the use of comments.  Showing them comments and how they can be
-    used to pesudo-write code and get some process out without be
-    burdened by actual code 1. forces them to actually break down a
-    problem into manageable practices and makes the problem less
-    daunting.  2. show a real practical use case of comments and how
-    they can be used before any code is written, not just documenting
-    what you already have done.  I think we did a great job
-    introducing good practices in programming.  Hopefully the next
-    time they are asked to implement their knowledge it becomes less
-    daunting
+    - exercises/examples should be tuned to connect to their
+previous experiences or otherwise have some sense of completion
+(e.g. ipythonblocks).  
 
-    - Windows users can preface the ipython notebook code block with
-    '%%bash' to run bash commands such as 'ls' and 'head'
+- During the last capstone excercise, many of the students were
+simply ‘stumped’ and overwhelmed and had ‘no idea where to start’,
+even though the basic components were covered.  This became a very
+powerful example of breaking down the problem (engineering), and
+the use of comments.  Showing them comments and how they can be
+used to pesudo-write code and get some process out without be
+burdened by actual code 1. forces them to actually break down a
+problem into manageable practices and makes the problem less
+daunting.  2. show a real practical use case of comments and how
+they can be used before any code is written, not just documenting
+what you already have done.  I think we did a great job
+introducing good practices in programming.  Hopefully the next
+time they are asked to implement their knowledge it becomes less
+daunting
 
-    - Because of the guest wireless system, students were being
-    knocked offline during an ipython notebook session, and this
-    affected the actual notebook being able to run the code blocks.
-    Running a kernel interrupt, kernel restart, and run all cells
-    brought students back to a working state.
+- Windows users can preface the ipython notebook code block with
+'%%bash' to run bash commands such as 'ls' and 'head'
 
-**Git**
+- Because of the guest wireless system, students were being
+knocked offline during an ipython notebook session, and this
+affected the actual notebook being able to run the code blocks.
+Running a kernel interrupt, kernel restart, and run all cells
+brought students back to a working state.
+</code></pre>
 
-Version control is probably one of the more difficult topics to both
+<p><strong>Git</strong></p>
+
+<p>Version control is probably one of the more difficult topics to both
 cover, preach, and attempt to convert non-users into using.  We began
 by mentioning 2 common problems, the first of which is nicely depicted
 in this PhD Comic:
-http://www.phdcomics.com/comics/archive.php?comicid=1531
+http://www.phdcomics.com/comics/archive.php?comicid=1531</p>
 
-The second was an example of backing up data while working on a
+<p>The second was an example of backing up data while working on a
 thesis.  The biggest barrier to entry, is showing them why it is
 better than their current workflow: dropbox, track changes, save as
 with a number or date, collaboration, etc.  We began by diagraming git
@@ -238,9 +239,9 @@ in git to get a sense of how things are being tracked using 2 files
 keeping track of guacamole ingredients and instruction on how to make
 guacamole.  We mostly went over version control on a local and
 individual level.  During the final section of the workshop we went
-over collaboration using the guacamole recepie on github.
+over collaboration using the guacamole recepie on github.</p>
 
-Here we also ran into many technical problems regarding the older
+<p>Here we also ran into many technical problems regarding the older
 versions of OSX, namely snow leopard.  The problem arises when one
 tries to init the directory to be tracked.  Simply checking the git
 installation by using 'which git' does not accurately diagnose the
@@ -248,11 +249,11 @@ prblem.  The fix was to use an older version of git than the one
 posted on the main website.  However, it seems that an even more
 universal and simplier solution is to install the github application
 and within preferences, have the program install the command line
-tools.
+tools.</p>
 
-**Conclusion**
+<p><strong>Conclusion</strong></p>
 
-From the student feedback and instructor observations, the workshop
+<p>From the student feedback and instructor observations, the workshop
 was a success.  The students asked very good questions about practical
 use cases for each of the topics covered. The turnaround between bash
 proficieny between the 2 days was astounding.  We also spent some time
@@ -262,8 +263,8 @@ have to seem 100% appliciable to your current work (although that may
 help), practice doing various (unrelated) tasks train the mind to see
 how a solution can be applied to other problems becuase of an
 underlying patten.  Thus, we directed them to a few python and git
-websites to give them practice.
+websites to give them practice.</p>
 
-Our goal was to give them enough instruction to get over the big
+<p>Our goal was to give them enough instruction to get over the big
 initial learning hurdle into bash, python, and git so that they have
-the foundation to explore and learn on their own.
+the foundation to explore and learn on their own.</p>
