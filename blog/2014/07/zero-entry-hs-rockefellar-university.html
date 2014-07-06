@@ -4,8 +4,8 @@ root: ../../..
 title: "Reflections On the First Zero-Entry High school Workshop at Rockefeller University"
 author: "Daniel Chen"
 date: 2014-07-05
-time: ""
-category: [""]
+time: "09:00:00"
+category: ["Rockefeller University"]
 ---
 <!-- start excerpt -->
 
@@ -49,7 +49,7 @@ lasting much longer.  This difference was echoed to us when we
 finished our workshop and had a 15 minute open discussion of what
 worked for the students, and what did not.  Many suggested to have 4
 half-day workshops, each covering 1 topic with many small in-class
-practice problems and a `homework'.  Reflecting on this point, this
+practice problems and a 'homework'.  Reflecting on this point, this
 makes sense and should be tested the next time we teach high school
 students.</p>
 
@@ -83,10 +83,11 @@ a great means for honest feedback.</p>
 moving to mkdir and touch.  The helpers realized very quickly that the
 students were struggling to keep up.  Common questions were:</p>
 
-<pre><code>- Did I do this right?
-    - It doesn't look like what's up there
-- I don't understand what is going on
-</code></pre>
+<ul>
+  <li> Did I do this right? </li>
+  <li> It doesn't look like what's up there </li>
+  <li> I don't understand what is going on </li>
+</ul>
 
 <p>For those of us who live in bash, or use the terminal regularly, we
 customize the look of the prompt, removing extraneous information,
@@ -105,13 +106,13 @@ would have to be conducted, but it seems that a black box 'please copy
 paste this so your terminal looks like mine' may be sufficient.</p>
 
 <p>This brings me to my next point, when using the etherpad, it will be
-useful to <em>not</em> copy the <code>$' before the actual bash command.  Many of
+useful to <em>not</em> copy the '$' before the actual bash command.  Many of
 the students are still trying to get some idea of what is goin on that
 they will copy the entire line, then attempt to copy/paste and when
 they finally remember the correct terminal copy/paste commands, the
 command will error out and will not understand why.  This could be a
 failure on our part in not properly explaining the components of a
-bash command (e.g., the first</code>token' is always a 'verb'), but at this
+bash command (e.g., the first 'token' is always a 'verb'), but at this
 level, it may be too much information trying to navigate the file
 system and the nitty-gritty of bash all at once.</p>
 
@@ -129,15 +130,16 @@ ACTUALLY create files in the GUI interface as well.  This can be
 accomplished by running the following terminal commands for Windows,
 OSX, and linux operating systems, respectively:</p>
 
-<pre><code>- explorere .
-- open .
-- xdg-open . (or 'nautilus .' in Ubuntu)
-</code></pre>
+<ul>
+  <li> explorere . </li>
+  <li> open . </li>
+  <li>  xdg-open . (or 'nautilus .' in Ubuntu) </li>
+</ul>
 
 <p>From the first series of feedback, we learned that repetition
 is extremely important.  For example, when we are teaching what <code>cd'
 is and when we say</code>cd into a new directory' it was important for the
-instructors to say `cd, change directory into your swc folder'.  This
+instructors to say 'cd, change directory into your swc folder'.  This
 applied to the other topics cover as well and is especially important
 since these are new terms for the students and it naturally slows down
 the lesson (having tons of spelling mistakes work just as well as a
@@ -151,7 +153,7 @@ necessity of learning bash.  We created a directory of 48,000 files of
 mixed names and file types and asked the students how they would move
 a certain pattern of files (e.g. i want my 2013 pictures that are some
 form of .jpg into a pics/2013 subfolder).  This was a powerful example
-since the `usual' way they would have done the task is through the
+since the 'usual' way they would have done the task is through the
 GUI.  However with that many files in the directory, the GUI actually
 had problems drawing all the icons to display.  By the time the GUI
 loaded up the icons, we were almost finished with the entire task.
@@ -169,7 +171,7 @@ covering conditionals, with some feedback about the section on
 dictionaries to be too long.  By the second day I overheard students
 being excited about their new found knowledge, as if they are thinking
 in terms of a logical set of commands to give a computer to accomplish
-a task.  It was inspiring to know that at the same time `it is just
+a task.  It was inspiring to know that at the same time 'it is just
 the tip of the iceberg and there's a lot more out there.'  We began
 the second day reviewing everything in the previous day.  Go to the
 swc work directory, create a folder for today's work, open up a
@@ -186,16 +188,18 @@ later.</p>
 
 <p>Some things we learned teaching python: </p>
 
-<pre><code>- Students had trouble understanding the value of toy
+<ul>
+  <li>
+     Students had trouble understanding the value of toy
 exercises. When I was helping with during the Python session, some
 seemed to be very worried about having the example or exercise
-“right”, as the value of the task was just this.
-
-    - exercises/examples should be tuned to connect to their
+“right”, as the value of the task was just this. </li>
+  <li>
+    exercises/examples should be tuned to connect to their
 previous experiences or otherwise have some sense of completion
-(e.g. ipythonblocks).  
-
-- During the last capstone excercise, many of the students were
+(e.g. ipythonblocks).</li>
+  <li>
+    During the last capstone excercise, many of the students were
 simply ‘stumped’ and overwhelmed and had ‘no idea where to start’,
 even though the basic components were covered.  This became a very
 powerful example of breaking down the problem (engineering), and
@@ -208,17 +212,16 @@ they can be used before any code is written, not just documenting
 what you already have done.  I think we did a great job
 introducing good practices in programming.  Hopefully the next
 time they are asked to implement their knowledge it becomes less
-daunting
-
-- Windows users can preface the ipython notebook code block with
-'%%bash' to run bash commands such as 'ls' and 'head'
-
-- Because of the guest wireless system, students were being
+daunting. </li>
+  <li>
+    Windows users can preface the ipython notebook code block with
+'%%bash' to run bash commands such as 'ls' and 'head' </li>
+  <li> Because of the guest wireless system, students were being
 knocked offline during an ipython notebook session, and this
 affected the actual notebook being able to run the code blocks.
 Running a kernel interrupt, kernel restart, and run all cells
-brought students back to a working state.
-</code></pre>
+brought students back to a working state. </li>
+</ul>
 
 <p><strong>Git</strong></p>
 
