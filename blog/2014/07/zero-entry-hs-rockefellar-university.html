@@ -37,7 +37,7 @@ as needed.  Bash, python, and git were covered.
 
 **What Went Well, and What Didn't**
 
-High School Students
+**High School Students**
 
 Since there is a lot of material that we cover in 2 days, the lessons
 are given in 90 minute blocks.  For the typical NYC high school (I'm
@@ -49,11 +49,36 @@ considered the baseline and is very common with many other classes
 lasting much longer.  This difference was echoed to us when we
 finished our workshop and had a 15 minute open discussion of what
 worked for the students, and what did not.  Many suggested to have 4
-half-day workshops, each covering 1 topic with some `homework'.
-Reflecting on this point, this makes sense and should be tested the
-next time we teach high school students.
+half-day workshops, each covering 1 topic with many small in-class
+practice problems and a `homework'.  Reflecting on this point, this
+makes sense and should be tested the next time we teach high school
+students.
 
-Bash
+Teaching these workshops usually has a bimodial distribution of
+students in terms of proficiency, experience, and familiarity of the
+materials being covered.  In our particular case, we pre-screened the
+class, but only about 2 students had prior experience with the material.
+
+Sending these students to a site with short challenge exercises so
+they don’t get bored (i.e. rosalind.info/problems/list-view/ or
+projecteuler.net for python;
+http://pcottle.github.io/learnGitBranching/ for git would have helped
+for those few who thought the pace was too slow.
+
+The world cup probably didn't help either :D
+
+Sticky notes, the Etherpad, and raising your hand
+
+The sticky notes (red up for a problem, green up for gettable),
+etherpad document, etherpad chat, and the basic raising of the hand to
+ask for help was extremely effective.  Students were using all means
+of getting help, although I would have to say most were doing what
+they were used to in the classroom, which is raising their hands.  For
+those that were shy, the etherpad chat was a way for the instructor to
+clarify an idea or answer.  Once again, the sticky notes also provided
+a great means for honest feedback.
+
+**Bash**
 
 We began in bash with the basic pwd, cd, and ls commands.  Eventually
 moving to mkdir and touch.  The helpers realized very quickly that the
@@ -79,6 +104,17 @@ Experimentation with when the optimal time to export the PS1 variable
 would have to be conducted, but it seems that a black box 'please copy
 paste this so your terminal looks like mine' may be sufficient.
 
+This brings me to my next point, when using the etherpad, it will be
+useful to *not* copy the `$' before the actual bash command.  Many of
+the students are still trying to get some idea of what is goin on that
+they will copy the entire line, then attempt to copy/paste and when
+they finally remember the correct terminal copy/paste commands, the
+command will error out and will not understand why.  This could be a
+failure on our part in not properly explaining the components of a
+bash command (e.g., the first `token' is always a 'verb'), but at this
+level, it may be too much information trying to navigate the file
+system and the nitty-gritty of bash all at once.
+
 The students were very literal, as they should be when exposed to a new
 concept.  However, as literal as they were, spelling mistakes were
 common, and learning to tab complete was a lesson they were learning
@@ -97,65 +133,115 @@ OSX, and linux operating systems, respectively:
     - open .
     - xdg-open . (or 'nautilus .' in Ubuntu)
 
+From the first series of feedback, we learned that repetition
+is extremely important.  For example, when we are teaching what `cd'
+is and when we say `cd into a new directory' it was important for the
+instructors to say `cd, change directory into your swc folder'.  This
+applied to the other topics cover as well and is especially important
+since these are new terms for the students and it naturally slows down
+the lesson (having tons of spelling mistakes work just as well as a
+natural delay).
 
 
-Conceptual notes
+After reading the first round of feedbacks, we put up a small
+excercise on the screen during lunch.  This gave the students to read
+and see what the task was when they return.  Additionally, with Gabe's
+help, we came up with a more practical excercise that show cases the
+necessity of learning bash.  We created a directory of 48,000 files of
+mixed names and file types and asked the students how they would move
+a certain pattern of files (e.g. i want my 2013 pictures that are some
+form of .jpg into a pics/2013 subfolder).  This was a powerful example
+since the `usual' way they would have done the task is through the
+GUI.  However with that many files in the directory, the GUI actually
+had problems drawing all the icons to display.  By the time the GUI
+loaded up the icons, we were almost finished with the entire task.
+That also included explaining the problem in bash, giving them time to
+come up with the wildcard expression to move the files, and watching
+the GUI crash a few times.  This example really gave them a real world
+context on why the GUI is bad and we reiterated that a massive file
+dump like the example shown is not uncommon in science.
 
-From the perspective of zero-entry bootcampers, almost everything is a
-buzzword.  Pro-tip: Definitions for words like “float”, “escaping a
-character”, long-hand mnemonics for commands (i.e. pwd = “Print
-Working Directory”, cd = “change directory”) or differences between
-using () {} ‘’ and “ “ in bash, python, etc. need to be re-iterated.
-Some kind of physical cheat-sheet with basic commands for bash, git,
-ipynb, and python would be usefu`l. Also bash wildcards syntax Also
-Ctrl-C to break in Bash, Ctrl-D to exit Py interpreter, Q to exit a
-manpage For high school kids, attention spans are short (so
-surprisingly short).  Pro-tip: Short concept, short exercise, rinse,
-and repeat.  For kids that have a little more experience, they’ll get
-bored.  Pro-tip: Send them to a site with short challenge exercises so
-they don’t get bored (i.e. rosalind.info/problems/list-view/ or
-projecteuler.net for python;
-http://pcottle.github.io/learnGitBranching/ for git.  I found that
-kids had trouble understanding the value of toy exercises. When I was
-helping with during the Python session, some seemed to be very worried
-about having the example or exercise “right”, as the value of the task
-was just this. I think that exercises/examples should be tuned to
-connect to their previous experiences or otherwise have some sense of
-completion (e.g. ipythonblocks).  we gave them a mini project that was
-a cumulation of all the python material by asking them to read in a
-file of comma separated animals, their bain mass, and body mass, asked
-them to parse the information and calculate the bain:body ratio and
-have it saved to a list (or dictionary) Even though Tim did a great
-job essentially doing the problem for them before assigning the
-problem, when it was their turn, many of the students were simply
-‘stumped’ and overwhelmed and had ‘no idea where to start’ This became
-a very powerful example of breaking down the problem (engineering),
-and the use of comments.  Showing them comments and how they can be
-used to pesudo-write code and get some process out without be burdened
-by actual code 1. forces them to actually break down a problem into
-manageable practices and makes the problem less daunting.  2. show a
-real practical use case of comments and how they can be used before
-any code is written, not just documenting what you already have done.
-I think we did a great job introducing good practices in programming.
-Hopefully the next time they are asked to implement their knowledge it
-becomes less daunting
+**Python**
 
-Logistical notes
-They really need coffee in the afternoon. 
-Seating makes a difference in keeping the kids engaged and off of facebook/browsing/world cup watching - the closer they are to the front of the room, the more engaged they’ll likely be
-They need more frequent sticky note check-ins, i.e. “Green sticky up if you’re keeping up/done with the exercise/etc.”
-They are more used to raising a hand than red sticky up.  But having multiple means of calling for help caters to different people
-The etherpad is especially useful for the younger crowd at the beginning of the bootcamp - many of them are too shy to ask questions, and the chatroom-like environment works for them
-when you want them to copy paste commands from the command line… maybe don’t put in the “$ command”.  they just copy the entire line (with your $) and do not see the mistake
-suggest swc instructors all export a temporary PS1 variable so all the terminals look the same.  The students were REALLY confused in the beginning of bash because what they saw on the screen was not what they saw on the projector.  (at least to whoever is doing bash)
-having a directory of 48,000 files of mixed file types and having them mv a certain pattern of files (e.g. i want my 2013 pictures that are some form of .jpg into a pics/2013 subfolder) really gave them a real world context on why the GUI is bad.  having the gui file manager window crash or take 5 minutes to draw all the icons helped bring it all home.  Not to mention, we finished the entire exercise before the gui loaded all the icons.  If only there was that powerful of an example for git…
-maybe one of the instructors can “accidentally” blow up their presentation materials at the beginning of their talk, and then rescue them from their repo?
-Whiteboard / Blackboard is useful
+We took the feed back regarding pacing in bash and paced the python
+lessons in a much more digestiable fashion.  We finished off the day
+covering conditionals, with some feedback about the section on
+dictionaries to be too long.  By the second day I overheard students
+being excited about their new found knowledge, as if they are thinking
+in terms of a logical set of commands to give a computer to accomplish
+a task.  It was inspiring to know that at the same time `it is just
+the tip of the iceberg and there's a lot more out there.'  We began
+the second day reviewing everything in the previous day.  Go to the
+swc work directory, create a folder for today's work, open up a
+ipython notebook, and review some questions that was brought up in the
+preview day's feedback.  It was facinating to see that even amounst
+all the confusion regarding bash the previous day, filesystem
+navigation was not an issue on the next day.
 
-Technical notes
-man pages don’t work in git bash.  Pro-tip:  Have them look at the man page online if you want to walk them through reading a man page.
-ipython notebook can lose connectivity if the wireless goes on and off (we think this was the reason).  Pro-tip:  Kernel->Interrupt, Kernel->Restart, Cell->Run All
-For windows users, they can’t use many of the Bash commands in the ipython notebook Pro-tip: preface the cell with %%bash
-Git for snow leopard: need to get v 1.8 not the version the website.  This should get around the 4GB xcode download.  If that doesn’t work, download “Git for Mac Users” https://mac.github.com/ .  open the application.  to go properties, there is a option in one of the tabs to “enable command line tools” (maybe do this first? in the future?)
-Installation: include some final steps that let students verify that the installations were successful, e.g. `which python`, `which git` 
-Which git doesn't work on some people (like the snow.  Got init will diagnose a people better.
+We finished the session off with loops, functions, basic file I/O, and
+we gave them a practical excercies to read in a dataset of animals and
+their brain mass and body mass.  The task was to each animal's
+brain:body mass ratio and save the information so it can be used
+later.
+
+Some things we learned teaching python: 
+
+    - Students had trouble understanding the value of toy
+    exercises. When I was helping with during the Python session, some
+    seemed to be very worried about having the example or exercise
+    “right”, as the value of the task was just this.
+        
+        - exercises/examples should be tuned to connect to their
+    previous experiences or otherwise have some sense of completion
+    (e.g. ipythonblocks).  
+
+    - During the last capstone excercise, many of the students were
+    simply ‘stumped’ and overwhelmed and had ‘no idea where to start’,
+    even though the basic components were covered.  This became a very
+    powerful example of breaking down the problem (engineering), and
+    the use of comments.  Showing them comments and how they can be
+    used to pesudo-write code and get some process out without be
+    burdened by actual code 1. forces them to actually break down a
+    problem into manageable practices and makes the problem less
+    daunting.  2. show a real practical use case of comments and how
+    they can be used before any code is written, not just documenting
+    what you already have done.  I think we did a great job
+    introducing good practices in programming.  Hopefully the next
+    time they are asked to implement their knowledge it becomes less
+    daunting
+
+    - Windows users can preface the ipython notebook code block with
+    '%%bash' to run bash commands such as 'ls' and 'head'
+
+    - Because of the guest wireless system, students were being
+    knocked offline during an ipython notebook session, and this
+    affected the actual notebook being able to run the code blocks.
+    Running a kernel interrupt, kernel restart, and run all cells
+    brought students back to a working state.
+
+**Git**
+
+Version control is probably one of the more difficult topics to both
+cover, preach, and attempt to convert non-users into using.  We began
+by mentioning 2 common problems, the first of which is nicely depicted
+in this PhD Comic:
+http://www.phdcomics.com/comics/archive.php?comicid=1531
+
+The second was an example of backing up data while working on a
+thesis.  The biggest barrier to entry, is showing them why it is
+better than their current workflow: dropbox, track changes, save as
+with a number or date, collaboration, etc.  We began by diagraming git
+on an oversize notepad.  However, due to the nature of the room, it
+was difficult to see the drawn figures from the back.  We went back an
+fourth between the git diaram and the actual committing and checkouts
+in git to get a sense of how things are being tracked.
+
+Here we also ran into many technical problems regarding the older
+versions of OSX, namely snow leopard.  The problem arises when one
+tries to init the directory to be tracked.  Simply checking the git
+installation by using 'which git' does not accurately diagnose the
+prblem.  The fix was to use an older version of git than the one
+posted on the main website.  However, it seems that an even more
+universal and simplier solution is to install the github application
+and within preferences, have the program install the command line
+tools.
