@@ -79,9 +79,10 @@ a great means for honest feedback.</p>
 
 <h4>Bash</h4>
 
-<p>We began in bash with the basic pwd, cd, and ls commands.  Eventually
-moving to mkdir and touch.  The helpers realized very quickly that the
-students were struggling to keep up.  Common questions were:</p>
+<p>We began in bash with the basic <code>pwd</code>, <code>cd</code>,
+and <code>ls</code> commands.  Eventually moving to mkdir and touch.
+The helpers realized very quickly that the students were struggling to
+keep up.  Common questions were:</p>
 
 <ul>
   <li> Did I do this right? </li>
@@ -97,49 +98,54 @@ along while blindly typing what the see on the screen, except what
 they see on the presentation screen was not what they saw on their own
 monitor; thus confusion arose, even though many of them created and
 moved into the correct directory.  A possible workaround is to have
-all students copy paste an ls alias that colors directories (this is
-not a default in OSX), and everyone (instructors included) export the
-same PS1.  The former can be done right after the ls command is
-brought up, and searching through the man pages for the --color flag.
-Experimentation with when the optimal time to export the PS1 variable
-would have to be conducted, but it seems that a black box 'please copy
-paste this so your terminal looks like mine' may be sufficient.</p>
+all students copy paste an <code>alias</code> for <code>ls</code> that
+colors directories (this is not a default in OSX), and everyone
+(instructors included) export the same PS1.  The former can be done
+right after the ls command is brought up, and searching through the
+man pages for the <code>--color</code> flag.  Experimentation with
+when the optimal time to export the PS1 variable would have to be
+conducted, but it seems that a black box 'please copy paste this so
+your terminal looks like mine' may be sufficient.</p>
 
-<p>This brings me to my next point, when using the etherpad, it will be
-useful to <em>not</em> copy the '$' before the actual bash command.  Many of
-the students are still trying to get some idea of what is going on that
-they will copy the entire line, then attempt to copy/paste and when
-they finally remember the correct terminal copy/paste commands, the
-command will error out and will not understand why.  This could be a
-failure on our part in not properly explaining the components of a
-bash command (e.g., the first 'token' is always a 'verb'), but at this
-level, it may be too much information trying to navigate the file
-system and the nitty-gritty of bash all at once.</p>
+<p>This brings me to my next point, when using the etherpad, it will
+be useful to <em>not</em> copy the <code>$</code> before the actual
+bash command.  Many of the students are still trying to get some idea
+of what is going on that they will copy the entire line, then attempt
+to copy/paste and when they finally remember the correct terminal
+copy/paste commands, the command will error out and will not
+understand why.  This could be a failure on our part in not properly
+explaining the components of a bash command (e.g., the first 'token'
+is always a 'verb'), but at this level, it may be too much information
+trying to navigate the file system and the nitty-gritty of bash all at
+once.</p>
 
-<p>The students were very literal, as they should be when exposed to a new
-concept.  However, as literal as they were, spelling mistakes were
+<p>The students were very literal, as they should be when exposed to a
+new concept.  However, as literal as they were, spelling mistakes were
 common, and learning to tab complete was a lesson they were learning
 the hard way.</p>
 
-<p>When using bash to navigate and create files, zero-entry bootcampers
-do not have a mental image of the directory structure/hierarchy.  A
-GUI file system window that is shown simultaneously with the basic
-navigation and touch/mkdir commands solidify and contextualize what
+<p>When using bash to navigate and create files, zero-entry
+bootcampers do not have a mental image of the directory
+structure/hierarchy.  A GUI file system window that is shown
+simultaneously with the basic navigation and <code>touch</code>
+and <code>mkdir</code> commands solidify and contextualize what
 exactly is going on in the file system them that mkdir and touch
 ACTUALLY create files in the GUI interface as well.  This can be
 accomplished by running the following terminal commands for Windows,
 OSX, and linux operating systems, respectively:</p>
 
 <ul>
-  <li> explorere . </li>
-  <li> open . </li>
-  <li>  xdg-open . (or 'nautilus .' in Ubuntu) </li>
+  <li> <code>explorere . </code></li>
+  <li> <code>open . </code></li>
+  <li> <code>xdg-open . </code>(or <code>nautilus .</code> in
+  Ubuntu) </li>
 </ul>
 
-<p>From the first series of feedback, we learned that repetition
-is extremely important.  For example, when we are teaching what <code>cd'
-is and when we say</code>cd into a new directory' it was important for the
-instructors to say 'cd, change directory into your swc folder'.  This
+<p>From the first series of feedback, we learned that repetition is
+extremely important.  For example, when we are teaching
+what <code>cd</code> is and when we say '<code>cd</code> into a new
+directory' it was important for the instructors to say
+'<code>cd</code>, change directory into your swc folder'.  This
 applied to the other topics cover as well and is especially important
 since these are new terms for the students and it naturally slows down
 the lesson (having tons of spelling mistakes work just as well as a
@@ -180,9 +186,9 @@ preview day's feedback.  It was fascinating to see that even amongst
 all the confusion regarding bash the previous day, filesystem
 navigation was not an issue on the next day.</p>
 
-<p>We finished the session off with loops, functions, basic file I/O, and
-we gave them a practical exercise to read in a dataset of animals and
-their brain mass and body mass.  The task was to each animal's
+<p>We finished the session off with loops, functions, basic file I/O,
+and we gave them a practical exercise to read in a dataset of animals
+and their brain mass and body mass.  The task was to each animal's
 brain:body mass ratio and save the information so it can be used
 later.</p>
 
@@ -215,7 +221,8 @@ time they are asked to implement their knowledge it becomes less
 daunting. </li>
   <li>
     Windows users can preface the ipython notebook code block with
-'%%bash' to run bash commands such as 'ls' and 'head' </li>
+<code>%%bash</code> to run bash commands such as <code>ls</code>
+and <code>head</code> </li>
   <li> Because of the guest wireless system, students were being
 knocked offline during an ipython notebook session, and this
 affected the actual notebook being able to run the code blocks.
@@ -246,21 +253,21 @@ over collaboration using the guacamole recipe on github.</p>
 
 <p>Here we also ran into many technical problems regarding the older
 versions of OSX, namely snow leopard.  The problem arises when one
-tries to init the directory to be tracked.  Simply checking the git
-installation by using 'which git' does not accurately diagnose the
-problem.  The fix was to use an older version of git than the one
-posted on the main website.  However, it seems that an even more
-universal and simpler solution is to install the github application
-and within preferences, have the program install the command line
-tools.</p>
+tries to <code>git init</code> the directory to be tracked.  Simply
+checking the git installation by using <code>which git</code> does not
+accurately diagnose the problem.  The fix was to use an older version
+of git than the one posted on the main website.  However, it seems
+that an even more universal and simpler solution is to install the
+github application and within preferences, have the program install
+the command line tools.</p>
 
 <h3>Conclusion</h3>
 
 <p>From the student feedback and instructor observations, the workshop
 was a success.  The students asked very good questions about practical
 use cases for each of the topics covered. The turnaround between bash
-proficiency between the 2 days was astounding.  We also spent some time
-throughout the workshop referencing a few good links on where to
+proficiency between the 2 days was astounding.  We also spent some
+time throughout the workshop referencing a few good links on where to
 practice their new found skills, explaining that the problems do not
 have to seem 100% applicable to your current work (although that may
 help), practice doing various (unrelated) tasks train the mind to see
