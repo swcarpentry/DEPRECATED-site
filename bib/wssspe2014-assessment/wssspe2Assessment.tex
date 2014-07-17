@@ -1,0 +1,199 @@
+\documentclass[submission,copyright,creativecommons]{eptcs}
+\providecommand{\event}{WSSSPE 2, 2014} % Name of the event you are submitting to
+\usepackage{breakurl}             % Not needed if you use pdflatex only.
+\usepackage{color,soul}
+
+\newcommand{\fixme}[1]{\hl{\#FIXME: #1}}
+
+\title{Which Sustainable Software Practices\\ Do Scientists Find Most Useful?}
+
+\author{
+    Jory Schossau
+    \institute{Michigan State University}
+    \email{jory@msu.edu}
+    \and
+    Greg Wilson
+    \institute{Software Carpentry}
+    \email{gvwilson@software-carpentry.org}
+}
+
+\def\titlerunning{Which Sustainable Software Practices Do Scientists Find Most Useful?}
+\def\authorrunning{J.D. Schossau, G.V. Wilson}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a sentence in the abstract.
+This is another sentence in the abstract.
+This is yet another sentence in the abstract.
+This is the final sentence in the abstract.
+\end{abstract}
+
+\section{Introduction}
+
+Education about sustainable software practices (SSP)
+is fundamentally important to actual adoption.
+Unfortunately,
+discussion about sustainable practices with the average scientist often founders
+because most scientists aren't using even \textit{basic} practices.
+First encounters must therefore typically focus on concepts such as
+when and where to use a script instead of a spreadsheet,
+how to automate file manipulations typically performed by hand,
+why to use a version control system to track work,
+and how to write code for sanity and posterity.
+
+Teaching these topics is the main aim of Software Carpentry,
+a volunteer organization through which scientists (and others)
+with the right knowledge and teaching skills can teach other scientists.
+Its two-day workshops,
+typically held at universities,
+are just long enough to introduce learners to the handful of core competencies mentioned earlier.
+Participants are typically excited about the subjects they learn,
+but at present,
+we can only make informed guesses about
+which practices are actually useful for these scientists in their daily work,
+which practices they are actually adopting (which is not the same thing),
+and how effectively we are teaching them.
+To answer these questions,
+we need data.
+
+\section{Surveys}
+
+In the summer of 2013
+the lead author designed a survey
+to be administered to attendees directly before and after a Software Carpentry workshop.
+This survey has let us gather information about
+how well the workshop prepared attendees to handle sample real-world problems in the core competency areas,
+so that we could see if what we set out to teach was being taught.
+We decided early on to include only one skill-related question per core competency;
+while this means we gather less (and less accurate) information per subject,
+both research and experience have shown that shorter surveys are more likely to be completed.
+
+The first set of questions on the survey was unique to the the pre-workshop survey.
+These questions covered basic demographics such as career stage,
+time spent programming,
+and operating system preference,
+and were used to help tailor workshops to the audience.
+These questions revealed that most of our learners had little to no experience programming,
+but that particular workshops would sometimes be filled with people who were more proficient.
+It has proven very useful for instructors to know even this much about their learners.
+
+\fixme{figures}
+
+The second set of questions asked about familiarity with a topic,
+and then,
+if applicable,
+about self-reported ability to solve a small real-world problem.
+The difference between the pre-workshop and post-workshop survey responses allowed us to measure the effect of the workshop.
+However, since asking people the same question twice doesn't yield a good measure of ability,
+the post-workshop survey was created with similar but different questions to avoid likely recognition bias.
+
+\fixme{figures}
+
+Figure \fixme{fignum} shows changes in participants' pre-workshop familiarity with using the Unix shell.
+We expected this distribution to be highly right-skewed because:
+
+\begin{enumerate}
+\item 
+many attendees didn't have a computational background, and
+
+\item 
+workshops involved hands-on lessons with the shell.
+\end{enumerate}
+
+Figure \fixme{fignum} shows changes in skill level with the shell after the workshop.
+We didn't have any preconceived expectations, \fixme{sure we did}
+but found it encouraging that most people increased by at least one level.
+
+\fixme{more to say if I remake the figure with a better query/filter}
+
+\section{Interviews}
+
+At the same time as we began gathering survey data,
+the first author developed and began using a semi-structured protocol for interviews
+in order to understand what practices scientists were finding useful six months after a workshop.
+24 participants were interviewed concerning their work,
+workshop experience,
+how Software Carpentry helped them,
+and how they might change the experience.
+The transcripts of these interviews were analyzed
+using the standard qualitative technique of open, axial, and selective coding,
+which helped determine how best to translate qualitative responses into quantitative categorical data.
+
+\fixme{figure 3 - coding from interviews}
+
+We were initially surprised that Python was mentioned most often as the most useful topic rather than the command line.
+The other core competencies followed in popularity of helpfulness,
+which was more or less expected,
+but some other fairly popular categories emerged during the coding process which were completely unanticipated.
+These categories had been labeled "knowing", "psychology", and "resources".
+
+\begin{itemize}
+    \item
+    Knowing represents the satisfaction attendees have expressed that they had been told about a technology or method
+    for which they had no immediate use.
+    This can include simply knowing about a core competency without any planned use,
+    but also includes knowing about certain software or how types of scripting work.
+    
+    \item
+    Psychology represents the usefulness attendees have expressed of learning about the psychology of programming,
+    including empirically validated insights about how people work with computers,
+    need breaks,
+    or should write code.
+    The second author (who taught several of the workshops from which survey participants were drawn)
+    frequently cites this information while teaching a workshop.
+    
+    \item
+    Resources represents attendees' mention of learning about books, websites, videos, and other sources of information
+    not directly used within the workshop,
+    but explicitly highlighted for their educational value.
+    \fixme{Throw in some quotes so the reader knows what I'm talking about}
+\end{itemize}
+
+One participant's story of benefit from Software Carpentry stood out.
+Their neighborhood was being repeatedly targeted by a small group of thieves,
+so they decided to use their newfound skills from Software Carpentry to build an inexpensive surveillance camera.
+They used an Arduino computer with storage and camera,
+and created a Python script to manage the device,
+all versioned with Git.
+The footage obtained from this system allowed local law enforcement to catch and sentence the thieves.
+We obviously can't expect everyone to benefit quite this much,
+but this example does show how broadly useful even two days' worth of training can be.
+
+The most unexpected result from our study was a nearly unanimous opinion about what should change about the workshops:
+more depth,
+more exercises,
+and more about working with data files and plotting.
+This finding about the need for scientists to know more about how to simply work with data
+falls into a long line of informal and formal feedback,
+and has led to the launch of a sibling project called Data Carpentry.
+
+\section{Future Work}
+
+As well as surveying workshop participants,
+we are now collecting data from our instructors
+to find out what technologies they used,
+what topics they covered,
+how they think it went,
+and how well they think the least skilled attendee could perform on the hypothetical problems.
+We will match this data with how the participants answered to see if there was anything unusual,
+such as a disconnect in perceived instructional pacing,
+or to see if there are trends of topics that are difficult for participants to grasp
+and difficult for the instructors to measure their comprehension.
+
+\fixme{the next paragraph says we're \textbf{going} to do 6-month studies, but didn't we say above that we're already doing them?}
+\fixme{I thought we wanted to turn interviews @ 6mo, into atuomated surveys @ 6mo.}
+
+Interviews give us a lot of insight,
+but are labor-intensive and hence unscalable.
+Our next goal is therefore to construct and validate better pre- and post-workshop questionnaires
+so that we can track skill uptake and participant satisfaction
+more systematically on a larger scale.
+
+\section{Bibliography}
+
+
+\nocite{*}
+\bibliographystyle{eptcs}
+\bibliography{references}
+\end{document}
