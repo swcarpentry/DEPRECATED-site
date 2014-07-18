@@ -7,9 +7,9 @@
 
 \title{Code Review For and By Scientists}
 \author{
-  Marian Petre \\ \small{Open University} \\ \small{m.petre@open.ac.uk}
+  Marian Petre \\ Open University \\ m.petre@open.ac.uk
   \and
-  Greg Wilson \\ \small{Software Carpentry} \\ \small{gvwilson@software-carpentry.org}
+  Greg Wilson \\ Software Carpentry \\ gvwilson@software-carpentry.org
 }
 
 \maketitle
@@ -147,7 +147,7 @@ they identified four main reasons why they think they ought to do code review:
 
 \noindent \emph{1) Rigor:}
 Scientists want to get the right answer and be able to reproduce their work later.
-(Most recognizeed that correctness and reproducibility aren't the same thing.)
+(Most recognized that correctness and reproducibility aren't the same thing.)
 
 \noindent \emph{2) Reusability:}
 Scientists are very aware that their understanding of code dissipates over time
@@ -157,7 +157,8 @@ They may not know how code review will help with that, but they hope that it wil
 
 \noindent \emph{3) Collaboration:}
 Many scientists hoped that they could use code review
-as an excuse for conversations about code with their colleagues that simply don't happen right now.
+as an excuse for conversations about code with their colleagues---conversations
+that simply don't happen right now.
 Some believed that review would foster better testing,
 encourage scientists to produce code that is easier to understand and share,
 and make team members more aware of each other's research.
@@ -219,7 +220,7 @@ there's a scientist who says,
 One concrete step we could take is to show scientists what it actually looks like to do a code review:
 not just the end result, but the process itself.
 
-The most successful groups both saw code review done and did it.
+The most successful groups both saw code review done and did it themselves.
 Their mentors walked through an initial code review;
 articulated what they look for in the code, what they see, and how they interpret it;
 and made concrete suggestions about first steps that clarified scientists' expectations.
@@ -243,8 +244,9 @@ And finally,
 involves walking and talking through the code together,
 whether one-to-one, as a group, or with one person leading.
 
-There are other axes of variation:
-is review conducted one-to-one, one-to-many, or as a group?
+There are several axes of variation:
+is review synchronous, asynchronous, or mixed?
+Is it conducted one-to-one, one-to-many, or as a group?
 Does it use advance preparation or is done on the day?
 Is there a leader or hierarchy, or just peers?
 The choices about which options to mix depends on whether the goal is
@@ -260,7 +262,7 @@ The groups that were most successful in the second study
 took the time for a synchronous conversation to introduce themselves and to discuss their goals and expectations
 (often in addition to introductory emails).
 Their mentors set out a review process and timetable at the outset,
-based on his or her experience.
+based on their experience.
 This usually involved a synchronous conversation of fixed length at regular intervals (3-4 weeks)
 with interim goals and tasks agreed during each of those conversations.
 
@@ -283,9 +285,12 @@ the benefits of code review to science are profound in terms of improving reprod
 promoting re-usability,
 disseminating best practices,
 and thereby improving efficiency and avoiding error.
+In other words,
+they believe code review improves their \emph{science}
+as well as the code itself.
 Moreover,
 they believe that the cost of introducing code review is quickly recovered,
-and that good practices can be introduced incrementally in ways that are not disruptive or expensive.  
+and that good practices can be introduced incrementally in ways that are not disruptive or expensive.
 
 The scientists engaged in the pilot study because they wanted to write more accurate, efficient, and re-usable code,
 and wanted support in learning how to do so.
@@ -308,12 +313,21 @@ Some groups also needed to negotiate issues of confidentiality (for datasets as 
 Based on our study,
 we believe the following should be priorities when scientists start doing code review:
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Have a goal, a benefit in mind.
 
 \item Start with a conversation:
 articulate your goals and expectations, build rapport.
+
+\item Choose the right pieces of code for the first reviews.
+A good starting point is 3--4 pages long,
+fairly self-contained,
+and under active development,
+so that small patches are coming in regularly.
+(As noted above,
+scientists find reviewing improvements as work is being done
+more useful than a ``drive-by'' review at the end of development.)
 
 \item Make your code available (in a repository).
 Include a typical data set, an overview of how the code works
@@ -332,7 +346,32 @@ Tailor your comments to others on the same terms.
 \item Make the process reciprocal:
 be prepared to make as well as receive comments.
 
-\end{itemize}
+\end{enumerate}
+
+We have learned a lot from these two studies,
+but they are only the beginning.
+As our work progresses,
+we hope to:
+
+\begin{enumerate}
+
+\item
+articulate a curriculum for scientists who would like to adopt code review;
+
+\item;
+provide examples of people doing review and talking about their reasoning,
+most likely in the form of short screencasts of reviews being done;
+and
+
+\item
+develop heuristics to help people decide
+which scientific software needs specialist scientific knowledge,
+and which doesn’t.
+
+\end{enumerate}
+
+If you would like to help with this work,
+we would enjoy hearing from you.
 
 {\small
 \bibliographystyle{unsrt}
