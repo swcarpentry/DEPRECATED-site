@@ -1,20 +1,23 @@
-\documentclass[submission,copyright,creativecommons]{eptcs}
+\documentclass[10pt,twocolumn,submission,copyright,creativecommons]{article}
 \providecommand{\event}{WSSSPE 2, 2014} % Name of the event you are submitting to
 \usepackage{breakurl}             % Not needed if you use pdflatex only.
 \usepackage{color,soul}
+\usepackage{enumitem}
+\usepackage[margin=1.0in]{geometry}
+\setlist{noitemsep}
 
 \newcommand{\fixme}[1]{\hl{\#FIXME: #1}}
 
 \title{Which Sustainable Software Practices\\ Do Scientists Find Most Useful?}
 
 \author{
-    Jory Schossau
-    \institute{Michigan State University}
-    \email{jory@msu.edu}
+    Jory Schossau \\
+    \small{Michigan State University} \\
+    \small{jory@msu.edu}
     \and
-    Greg Wilson
-    \institute{Software Carpentry}
-    \email{gvwilson@software-carpentry.org}
+    Greg Wilson \\
+    \small{Software Carpentry} \\
+    \small{gvwilson@software-carpentry.org}
 }
 
 \def\titlerunning{Which Sustainable Software Practices Do Scientists Find Most Useful?}
@@ -23,19 +26,18 @@
 \maketitle
 
 \begin{abstract}
-This is a sentence in the abstract.
-This is another sentence in the abstract.
-This is yet another sentence in the abstract.
-This is the final sentence in the abstract.
+\fixme{ABSTRACT}
 \end{abstract}
 
 \section{Introduction}
+
+\fixme{add citations} like \cite{b:hannay2009}
 
 Education about sustainable software practices (SSP)
 is fundamentally important to actual adoption.
 Unfortunately,
 discussion about sustainable practices with the average scientist often founders
-because most scientists aren't using even \textit{basic} practices.
+because most scientists aren't using even \emph{basic} practices.
 First encounters must therefore typically focus on concepts such as
 when and where to use a script instead of a spreadsheet,
 how to automate file manipulations typically performed by hand,
@@ -193,7 +195,9 @@ more systematically on a larger scale.
 \section{Bibliography}
 
 
-\nocite{*}
-\bibliographystyle{eptcs}
+{\small
+\bibliographystyle{unsrt}
 \bibliography{wssspe2014-assessment}
+}
+
 \end{document}
