@@ -1,0 +1,54 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Using a Package Manager for Lessons and Papers"
+date: 2014-07-21
+time: "13:00:00"
+category: ["Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  I've been musing for a couple of years now about
+  ways in which we could re-purpose off-the-shelf software engineering tools and techniques
+  to serve the needs of teachers.
+  One theme,
+  which I touched on in <a href="https://www.youtube.com/watch?v=FtKO619O5g0">my SciPy 2014 talk</a>,
+  is to get people to patch shared learning materials
+  in the way they patch Wikipedia articles and open source code.
+  Another is to use <a href="https://en.wikipedia.org/wiki/Package_manager">package managers</a>
+  like RPM, Homebrew, and Conda to track dependencies between lessons,
+  so that I could say something like <code>conda install suffragette_movement</code>
+  and get a lesson on the struggle for women's voting rights,
+  along with the other lessons and materials it depends on
+  (or updates and links to those other lessons if I already have some of them installed).
+</p>
+<!-- end excerpt -->
+<p>
+  Setting aside for the moment the risk that this would be a technical "solution" to a social problem
+  (because we all know how well <em>those</em> work),
+  I've started wondering:
+  should we be using package managers to aid reproducible research?
+  In particular,
+  if I know the DOI that identifies a particular paper,
+  should I be able to type:
+</p>
+<pre>
+  $ conda install doi://10.1109/SECSE.2009.5069155
+</pre>
+<p>
+  and get the LaTeX source for the article,
+  the style files it depends on,
+  its data (or links to such),
+  and the code used to generate the results
+  (including updates to third-party libraries that code depends on)?
+  It begs the question of <em>how</em> results are regenerated,
+  of course,
+  and mutter mutter virtual environments to avoid conflicts between papers mutter mutter,
+  but it seems like a way to manage the kinds of things that
+  <a href="http://ivory.idyll.org/blog/2014-citations.html">some of our colleagues are already thinking about</a>.
+</p>
+<p>
+  So,
+  what's wrong with this idea?
+</p>
