@@ -25,10 +25,12 @@
 \author{
 	Jory Schossau \\
 	\small{Michigan State University} \\
+	\small{Michigan, USA} \\
 	\small{jory@msu.edu}
 	\and
 	Greg Wilson \\
 	\small{Software Carpentry} \\
+	\small{Toronto, CA} \\
 	\small{gvwilson@software-carpentry.org}
 }
 
@@ -38,7 +40,15 @@
 	\maketitle
 	
 	\begin{abstract}
-		\fixme{ABSTRACT}
+	Sustainable software practices for many scientists 
+	means moving away from Excel 
+	and employing some digital housekeeping.
+	The largest barrier to better practices for scientists is simply education.
+	Here we study a population of scientists attending two--day workshops
+	in which they learn about the command line, versioning, scripting, and other core practices.
+	These practices are important to computer scientists, 
+	but which of these sustainable software practices do scientists find most useful?
+	We present our initial findings and comments on our experiences seeking an answer to this question.
 	\end{abstract}
 	
 	\section{Introduction}
@@ -67,9 +77,9 @@
 	we can only make informed guesses about
 	which practices are actually useful for these scientists in their daily work,
 	which practices they are actually adopting (which is not the same thing),
-	and how effectively we are teaching them.
+	and how effectively Software Carpentry is teaching them.
 	To answer these questions,
-	we need data.
+	there needs to be data.
 	
 	\section{Surveys}
 	In the summer of 2013
@@ -98,33 +108,33 @@
 	but that particular workshops would sometimes be filled with people who were more proficient.
 	It has proven very useful for instructors to know even this much about their learners. Figure.~\ref{frequency}
 	
-	\begin{figure}
-    	\centering
-    	\includegraphics[width=\linewidth]{figures/ProgrammingLanguages}
-    	\caption{
-            Difference in self--assessment before and after a workshop
-            of quantity of programming languages
-            with which participants believe they are sufficiently proficient
-            to import data and compute mean and standard devaition ($n=95$).
-    	}
-    	\label{ProgrammingLanguages}
-	\end{figure}
+	%\begin{figure}
+    %	\centering
+    %	\includegraphics[width=\linewidth]{figures/ProgrammingLanguages}
+    %	\caption{
+    %        Difference in self--assessment before and after a workshop
+    %        of quantity of programming languages
+    %        with which participants believe they are sufficiently proficient
+    %        to import data and compute mean and standard devaition ($n=95$).
+    %	}
+    %	\label{ProgrammingLanguages}
+	%\end{figure}
 	
-	One question on the survey inquired about the number of languages the participant felt comfortable with 
-	importing data and gathering mean and standard deviation.
-	The multiple choice list includes 7 languages 
-	participants are likely to know,
-	and a field more others.
-	The question was duplicated on the post--workshop survey
-	because the difference in responses might help measure workshop impact.
-	Figure.~\ref{ProgrammingLanguages} shows response differences
-	for each participant as quantity of languages selected.
-	Unfortunately, two--thirds of responses show no sign of change in language competence,
-	and the remaining are split between reporting 
-	increases and decreases in language competence.
-	Furthermore, many of these responses don't include the same languages.
-	Speculation suggests people either don't care about the question,
-	or their ability to self-assess changes during the workshop.
+	%One question on the survey inquired about the number of languages the participant felt comfortable with 
+	%importing data and gathering mean and standard deviation.
+	%The multiple choice list includes 7 languages 
+	%participants are likely to know,
+	%and a field more others.
+	%The question was duplicated on the post--workshop survey
+	%because the difference in responses might help measure workshop impact.
+	%Figure.~\ref{ProgrammingLanguages} shows response differences
+	%for each participant as quantity of languages selected.
+	%Unfortunately, two--thirds of responses show no sign of change in language competence,
+	%and the remaining are split between reporting 
+	%increases and decreases in language competence.
+	%Furthermore, many of these responses don't include the same languages.
+	%Speculation suggests people either don't care about the question,
+	%or their ability to self-assess changes during the workshop.
 	
 	The second set of questions asked about familiarity with a topic,
 	and then,
@@ -177,7 +187,7 @@
 		\centering
     	\makebox[\textwidth][c]{\includegraphics[width=2.4in]{figures/ShellDetailSkill1}}
     	\caption{
-    	Improvement from beginning with no ability ($n=7$).
+    	Improvement from beginning with no ability. ($n=7$)~~~~~~~~~~~~~~~~~~~~~~~~~~
     	}
     	\label{shellDetailSkill1}
     \end{subfigure}
@@ -185,7 +195,7 @@
         \centering
     	\makebox[\textwidth][c]{\includegraphics[width=2.4in]{figures/ShellDetailSkill2}}
     	\caption{
-    	Improvement from beginning with copy \& paste ability($n=9$).
+    	Improvement from beginning with copy \& paste ability. ($n=9$)~~~~~~~~~~~~~~~~~~~~~~~~
     	}
     	\label{shellDetailSkill2}
     \end{subfigure}
@@ -282,7 +292,7 @@
 	\label{InterviewResponses}
 	\end{figure}
 
-	\begin{wrapfigure}[5]{l}{.5\linewidth}
+	\begin{wrapfigure}[6]{l}{.5\linewidth}
     \fbox{\begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep}
     \centering
     ``Most important \ldots was the insight into the psychological basis of working.''
