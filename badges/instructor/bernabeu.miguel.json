@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-07-22", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f4f66cf072f390952bc9b2cfce6d813e54deca5e9ecc2e4da6dd4a53f6a46365", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f4f66cf072f390952bc9b2cfce6d813e54deca5e9ecc2e4da6dd4a53f6a46365", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/bernabeu.miguel.json"
+ }
+}
