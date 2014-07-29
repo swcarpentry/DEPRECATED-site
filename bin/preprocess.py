@@ -122,7 +122,7 @@ def main():
 
     # Save.
     with open(CONFIG_YML, 'w') as writer:
-        yaml.dump(config, writer)
+        yaml.dump(config, writer, encoding='utf-8', allow_unicode=True)
 
 #----------------------------------------
 

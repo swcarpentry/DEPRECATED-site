@@ -64,7 +64,7 @@ def main(args):
 
     if (not faulty) or tolerate:
         cleanup(results)
-        yaml.dump(results, writer, allow_unicode=True)
+        yaml.dump(results, writer, encoding='utf-8', allow_unicode=True)
 
     writer.close()
 
@@ -167,9 +167,10 @@ def archive(all_urls, results, reader, archiver):
             upcoming_urls.append(all_urls[i])
 
     yaml.dump(upcoming_urls, reader, default_flow_style=False,
-              allow_unicode=True)
+              encoding='utf-8', allow_unicode=True)
     if archive_info:
-        yaml.dump(archive_info, archiver, allow_unicode=True)
+        yaml.dump(archive_info, archiver, encoding='utf-8',
+                allow_unicode=True)
 
 def should_be_archived(record):
     if 'enddate' in record:
