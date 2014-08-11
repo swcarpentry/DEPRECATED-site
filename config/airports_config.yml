@@ -26,7 +26,7 @@
 - {airport: Indianapolis, count: 3, latlng: '39.717222,-86.294167'}
 - {airport: Long Island MacArthur, count: 1, latlng: '40.795,-73.1'}
 - {airport: Krakow, count: 1, latlng: '50.0775,19.784722'}
-- {airport: Lansing, count: 10, latlng: '42.778611,-84.587222'}
+- {airport: Lansing, count: 9, latlng: '42.778611,-84.587222'}
 - {airport: Los Angeles, count: 1, latlng: '33.9415889,-118.40853'}
 - {airport: London City, count: 1, latlng: '51.505,0.054167'}
 - {airport: New York La Guardia, count: 6, latlng: '40.777222,-73.8725'}
@@ -67,6 +67,7 @@
 - {airport: Stansted, count: 1, latlng: '51.885,0.235'}
 - {airport: Stuttgart, count: 1, latlng: '48.689722,9.221944'}
 - {airport: Sydney, count: 3, latlng: '-33.946111,151.177222'}
+- {airport: Tuscalooa, count: 1, latlng: '33.221378,-87.607539'}
 - {airport: Tel Aviv, count: 1, latlng: '32.009444,34.876667'}
 - {airport: Trieste, count: 1, latlng: '45.827778,13.466389'}
 - {airport: Tucson, count: 1, latlng: '32.116111,-110.941389'}
