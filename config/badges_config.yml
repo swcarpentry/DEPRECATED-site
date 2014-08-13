@@ -20,6 +20,7 @@ instructor:
 - {name: Carlos Anderson, user: anderson.c}
 - {name: Dhavide Aruliah, user: aruliah.d}
 - {name: Camille Avestruz, user: avestruz.camille}
+- {name: Christie Bahlai, user: bahlai.christie}
 - {name: Pauline Barmby, user: barmby.pauline}
 - {name: Diego Barneche, user: barneche.diego}
 - {name: Philipp Bayer, user: bayer.p}
@@ -35,6 +36,7 @@ instructor:
 - {name: Abigail Cabunoc, user: cabunoc.abigail}
 - {name: Rosangela Canino-Koning, user: canino-koning.r}
 - {name: Chris Cannam, user: cannam.c}
+- {name: Timothy Cerino, user: cerino.t}
 - {name: Scott Chamberlain, user: chamberlain.s}
 - {name: Cliburn Chan, user: chan.cliburn}
 - {name: Daniel Chen, user: chen.daniel}
@@ -111,6 +113,8 @@ instructor:
 - {name: Bill Mills, user: mills.b}
 - {name: Ian Mitchell, user: mitchell.i}
 - {name: Ben Morris, user: morris.b}
+- {name: Erika Mudrak, user: mudrak.erika}
+- {name: Ian Munoz, user: munoz.ian}
 - {name: R. David Murray, user: murray.david}
 - {name: Lex Nederbragt, user: nederbragt.l}
 - {name: Brenna O'Brien, user: obrien.brenna}
@@ -152,6 +156,7 @@ instructor:
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
 - {name: Amanda Whitlock, user: whitlock.a}
+- {name: Jason Williams, user: williams.jason}
 - {name: Lynne Williams, user: williams.l}
 - {name: Ryan Williams, user: williams.ryan}
 - {name: Greg Wilson, user: wilson.g}
