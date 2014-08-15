@@ -2963,3 +2963,274 @@
   url: http://jrherr.github.io/2014-06-26-nd/
   user: jrherr
   venue: University of Notre Dame
+- address: University Park, NG7 2RD, Nottingham
+  contact: gavin.thomas@sheffield.ac.uk
+  country: United-Kingdom
+  enddate: 2014-07-11
+  helper: []
+  humandate: Jul 10-11, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Aur Saraf, Devasena Inupakutika]
+  latlng: 52.938636,-1.195158
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-10-Nottingham
+  startdate: 2014-07-10
+  url: http://DevasenaInupakutika.github.io/2014-07-10-Nottingham/
+  user: DevasenaInupakutika
+  venue: The University of Nottingham
+- address: Li Ka Shing Center at Stanford's Medical School, room LK130
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-07-01
+  humandate: Jun 30-Jul 1, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Paul Ivanov, Naupaka Zimmerman]
+  latlng: 37.431904,-122.175787
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-06-30-stanford
+  startdate: 2014-06-30
+  url: http://ivanov.github.io/2014-06-30-stanford/
+  user: ivanov
+  venue: Stanford University
+- address: Sobey School of Business, 4th floor, 923 Robie Street, Halifax, NS
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-07-03
+  humandate: Jul 2-3, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Stephanie Gagne]
+  latlng: 44.631627,-63.580168
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-07-02-smu
+  startdate: 2014-07-02
+  url: http://dhavide.github.io/2014-07-02-smu/
+  user: dhavide
+  venue: Saint Mary's University
+- address: Stanley Milner Library, 7 Sir Winston Churchill Square, Edmonton, AB
+  contact: macdonellc4@macewan.ca
+  country: Canada
+  enddate: 2014-07-11
+  eventbrite: '11668602103'
+  humandate: Jul 10-11, 2014
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Cam Macdonell, Sam Popowich, Dana Ouellette, Vicky Varga]
+  latlng: 53.542948,-113.489552
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-10-epl
+  startdate: 2014-07-10
+  url: http://cmacdonell.github.io/2014-07-10-epl/
+  user: cmacdonell
+  venue: Software Skills for Librarians at EPL
+- address: Rm 3200, 40 St. George Street, University of Toronto
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-07-09
+  eventbrite: 11725123159
+  helper: [Elizabeth Patitsas, Catalina Anghel]
+  humandate: Jul 8-9, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Emily Davenport, Erika Mudrak, Dana Bauer, Camille Avestruz]
+  latlng: 43.659641,-79.396792
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-07-08-wise-toronto
+  startdate: 2014-07-08
+  url: http://erdavenport.github.io/2014-07-08-wise-toronto/
+  user: erdavenport
+  venue: Women in Science and Engineering (Toronto)
+- address: Hilton Garden Inn conference room, 1 Circle Rd, Stony Brook, NY 11794
+  contact: olsonran@msu.edu
+  country: United-States
+  enddate: 2014-07-09
+  humandate: Jul 08-09, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Tommy Guy, Randy Olson]
+  latlng: 40.918188, -73.122074
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-08-stonybrook
+  startdate: 2014-07-08
+  url: http://guyrt.github.io/2014-07-08-stonybrook/
+  user: guyrt
+  venue: Stony Brook University
+- address: Frisco, CO, USA
+  contact: joshua.r.herr@gmail.com
+  country: United-States
+  enddate: 2014-07-11
+  helper: []
+  humandate: Jul 10-11, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Joshua R. Herr, Fan Yang, Ted M. Hart]
+  latlng: 39.582399, -106.098913
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-10-esip
+  startdate: 2014-07-10
+  url: http://jrherr.github.io/2014-07-10-esip/
+  user: jrherr
+  venue: Federation of Earth Science Information Partners (ESIP) Summer Meeting
+- address: Kenneth C. Rowe Management Building, Room 1014
+  contact: diego.barneche@mq.edu.au
+  country: Canada
+  enddate: 2014-07-15
+  helper: [Daniel Morrison]
+  humandate: Jul 14-15, 2014
+  humantime: 8:00/9:00 am - 6:00/5:00 pm
+  instructor: [Diego Barneche, Gavin Simpson, Ross Dickson]
+  latlng: 44.6372747,-63.5889263
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-14-Dalhousie
+  startdate: 2014-07-14
+  url: http://dbarneche.github.io/2014-07-14-Dalhousie/
+  user: dbarneche
+  venue: Dalhousie University
+- address: Mozilla Toronto, 366 Adelaide Street West, Toronto, Ontario
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-07-16
+  eventbrite: 11727066973
+  helper: [Ruth Collings, Thomas Guignard, Alif Zaman, Orion Buske, Dale Russell]
+  humandate: Jul 15-16, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Abigail Cabunoc, Cam Macdonell, Jennifer Campbell, Greg Wilson]
+  latlng: 43.64711,-79.39423
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-15-toronto
+  startdate: 2014-07-15
+  url: http://swcarpentry.github.io/2014-07-15-toronto/
+  user: swcarpentry
+  venue: Librarians in Toronto
+- address: Portland Hilton, Broadway I and II rooms, 921 SW 6th Ave, Portland, OR
+    97204
+  contact: olsonran@msu.edu
+  country: United-States
+  enddate: 2014-07-18
+  humandate: July 17-18, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, Randy Olson]
+  latlng: 45.5175515,-122.6799365
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-07-17-aspb
+  startdate: 2014-07-17
+  url: http://swcarpentry.github.io/2014-07-17-aspb/
+  user: swcarpentry
+  venue: American Society of Plant Biologists
+- address: North Campus Research Complex (NCRC)<br/>Building 18, South Atrium<br/>2800
+    Plymouth Rd.
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-07-20
+  humandate: July 19-20, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Carlos Anderson, Leigh Sheneman, Elijah Lowe]
+  latlng: 41.7901128,-87.6007318
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-19-umich
+  startdate: 2014-07-19
+  url: http://redcurry.github.io/2014-07-19-umich/
+  user: redcurry
+  venue: University of Michigan
+- address: Computer Teaching Suite (room 252), Whittle Building (building 52), College
+    Road, Cranfield, MK43 0AL
+  contact: support@archer.ac.uk
+  country: United-Kingdom
+  enddate: 2014-07-23
+  humandate: Jul 21-23, 2014
+  humantime: 9:30 am - 5:00 pm
+  instructor: [Mike Jackson, Andrew Turner, Arno Proeme]
+  latlng: 52.074389,-0.629225
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-07-21-cranfield
+  startdate: 2014-07-21
+  url: http://hpcarcher.github.io/2014-07-21-cranfield/
+  user: hpcarcher
+  venue: Cranfield University
+- address: 19700 Helix Drive, Ashburn, VA 20147
+  contact: sheldon.mckay@gmail.com
+  country: United-States
+  helper: [Anitha Parvatham, Rob Svirskas, Ben Arthur, Christopher Bruns, Don Olbris,
+    Greg Pinero, Peter Bukowinski]
+  humandate: July 23-24, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, William Rowell]
+  latlng: 39.0714096,-77.46427019999999
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-23-jfrc
+  startdate: 2014-07-23
+  url: http://mckays630.github.io/2014-07-23-jfrc/
+  user: mckays630
+  venue: Janelia Farm Research Campus
+- address: Li Ka Shing Center at Stanford's Medical School, room LK120
+  contact: amyhodge@stanford.edu
+  country: United-States
+  enddate: 2014-07-29
+  eventbrite: '12096909181'
+  helper: [Christian Battista, Chris Beitel, Louise Giam, Amy Hodge, Jillynne Quinn,
+    Kelly Zalocusky]
+  humandate: Jul 28-29, 2014
+  humantime: Jul 28 9:00 am - 5:00 pm </br> Jul 29 10:00 am - 6:00 pm
+  instructor: [Christina Koch, Jens von der Linden]
+  latlng: 37.431904,-122.175787
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-07-28-stanford
+  startdate: 2014-07-28
+  url: http://jensv.github.io/2014-07-28-stanford/
+  user: jensv
+  venue: Stanford University
+- address: Boardroom, St. Leo's College, St. Lucia, Brisbane
+  contact: philipp.bayer@uqconnect.edu.au
+  country: Australia
+  enddate: 2014-07-31
+  humandate: Jul 30-31, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Damien Irving, Philipp Bayer, Tim McNamara]
+  latlng: -27.50142,153.01515
+  layout: bootcamp
+  registration: close
+  root: .
+  slug: 2014-07-30-pyconaus
+  startdate: 2014-07-30
+  url: http://philippbayer.github.io/2014-07-30-pyconaus/
+  user: philippbayer
+  venue: PyCon AU / University of Queensland
+- address: 1261 Duck Road Kitty Hawk, NC 27949-4472
+  contact: aron@ahmadia.net
+  country: United-States
+  enddate: 2014-08-07
+  humandate: August 5-7, 2014
+  humantime: 8:00 am - 5:00 pm
+  instructor: [Aron Ahmadia, Chris Kees]
+  latlng: 36.192977, -75.761568
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-05-frf
+  startdate: 2014-08-05
+  url: http://geocarpentry.github.io/2014-08-05-frf/
+  user: geocarpentry
+  venue: Field Research Facility
