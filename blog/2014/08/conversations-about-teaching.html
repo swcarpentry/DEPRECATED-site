@@ -1,0 +1,229 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Conversations About Teaching"
+date: 2014-08-15
+time: "12:00:00"
+category: ["Teaching", "Community"]
+archives: 
+---
+<!-- start excerpt -->
+<p>
+  Over the last few days,
+  there have been
+  <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/2014-August/001944.html">four</a>
+  <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/2014-August/001951.html">related</a>
+  <a href="{{site.mailing_lists}}/r-discuss_lists.software-carpentry.org/2014-August/000119.html">discussion</a>
+  <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/2014-August/002018.html">threads</a>
+  on the Software Carpentry mailing lists
+  about what we use, what we teach, and how we teach it.
+  Together,
+  they highlight what we're doing well and where we need to do better.
+</p>
+<!-- end excerpt -->
+<p>
+  Stuart Rossiter did a great job of
+  <a
+  href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-August/002024.html">summarizing the first two of those</a>
+  (with some 
+  <a href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-August/002027.html">later follow-up</a>):
+</p>
+<blockquote>
+  <p>There was discussion on:</p>
+  <ol>
+    <li>
+      IDE vs. IPython Notebook vs. command-line/text editor for Python teaching
+    </li>
+    <li>
+      IPython Notebook vs. Markdown for lecture notes
+      (specifically for Python teaching but by implication could extend to teaching other topics)
+    </li>
+    <li>
+      Tools themselves causing disruptive cognitive loads,
+      related to whether how they work hides (or merges) too many "fundamental" concepts/levels,
+      and the ever-present issue of how this relates to learner backgrounds
+      (and how/whether you can tailor things for an audience, including how one could assess this empirically)
+    </li>
+  </ol>
+  <p>
+    Notice that 1 is really a specific example of 3,
+    i.e.,
+    what tool gets the best balance of power/familiarity/understanding fundamentals?
+    However,
+    it's interesting that all the responses (I think) to 1 were actually about what IDE worked best,
+    and not about the types of tool.
+  </p>
+  <p>
+    2 is in many ways a flavour of 3,
+    but where the learners/users are the SWC contributors.
+    As such, people's backgrounds and the use cases for the tools obviously mean that things like diff handling become important
+    (but, interestingly, most of the discussion was really about familiarity because that's the main barrier-to-entry).
+  </p>
+  <p>
+    1 and 2 also implicitly bring up the discussion as to whether we teach one consistent toolset.
+    Here,
+    there is a tension between SWC students getting mastery of a well defined tool and concept-set
+    versus them understanding the landscape of tools and concepts.
+  </p>
+</blockquote>
+<p>
+  This highlights two related tensions in many kinds of teaching
+  (not just Software Carpentry):
+</p>
+<ol>
+  <li>
+    <em>Fundamentals vs. authentic tasks.</em>
+    On the one hand,
+    people need fundamental concepts in order to know how to use specific tools and practices properly.
+    On the other hand,
+    people come to classes like ours because they want to be able to actually do things,
+    and the sooner they're able to accomplish authentic tasks,
+    the more likely they are to learn and to continue learning.
+  </li>
+  <li>
+    <em>Foxes vs. hedgehogs.</em>
+    As the saying goes,
+    "The fox knows how to do many things; the hedgehod knows how to do one thing well."
+    If we concentrate on a handful of tasks with lots of reinforcement
+    (as Bennet Fauber
+    <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/2014-August/002021.html">stressed</a>),
+    learners will leave knowing how to do a few things well&mdash;but only a few.
+    A broad overview of the full landscape of tools and techniques
+    may give them a better understanding of how things fit together,
+    but may also just confuse them,
+    and in either case they will leave having actually mastered fewer things.
+  </li>
+</ol>
+<p>
+  Our lessons try to strike a balance between the practical and the conceptual
+  by advertising the first and smuggling in the second.
+  For example,
+  our <a href="{{page.root}}/v5/novice/shell/index.html">introduction to the Unix shell</a>
+  only covers 15 commands in three hours.
+  Along the way,
+  though,
+  it shows people how a filesystem is organized,
+  how to get the computer to repeat things so that they don't have to,
+  and (hopefully) why lots of small single-purpose tools that work well together
+  are better than one large tool that tries to do everything.
+  Similarly,
+  the real goal of <a href="{{page.root}}/v5/novice/python/index.html">our introduction to Python</a>
+  isn't really to teach people the syntax of Python:
+  it's to convince them that they ought to write short, readable, testable, reusable functions,
+  and that those are actually all the same thing.
+</p>
+<p>
+  Stuart goes on to ask whether the Software Carpentry brand consists of
+  "just" our topics and teaching style,
+  or is tied to the specific tools we use.
+  I want to say it's the former,
+  but in practice,
+  you can't teach programming without picking a language and an editor.
+  Since we don't have the resources to build and maintain lessons covering all combinations of all possibilities,
+  we have to make choices,
+  which effectively means we're advocating some things over others.
+</p>
+<p>
+  Meawhile,
+  Tim McNamara re-raises the perennial question of
+  <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/2014-August/002018.html">assessment</a>:
+</p>
+<blockquote>
+  <p>
+    There seems to be be many statements that follow this format:
+    "in my experience, X is better for learners".
+    The problem is that for each X,
+    not-X is also strongly supported.
+    The key points for me is that we're making inferences about outcomes (e.g., learner growth/satisfaction)
+    on the basis of anecdotal evidence (personal experience).
+  </p>
+  <p>
+    It strikes me that Software Carpentry is in a unique position to actually test and validate which tools work best.
+    We run many bootcamps,
+    have people who know experimental design and have increasingly strong
+    tooling to support to enable experiments.
+  </p>
+</blockquote>
+<p>
+  I couldn't agree more,
+  but as Titus Brown said in reply:
+</p>
+<blockquote>
+  <p>
+    we have had a hard time getting the necessary funding to do good assessments for Software Carpentry.
+    I think we need to support someone trained, focused, and willing to engage long term
+    (~2+ years)
+    with this as their primary project.
+  </p>
+</blockquote>
+<p>
+  We've learned the hard way that assessing the impact of the various things we're doing is neither easy nor cheap.
+  We don't know how to measure the productivity of programmers,
+  or the productivity of scientists,
+  and the unknowns don't cancel out when you put the two together.
+  Jory Schossau has done valuable service by analyzing survey data and interviewing bootcamp participants
+  (see <a href="http://arxiv.org/abs/1407.6220">this pre-print</a> for results to date),
+  but if we want to get the right answer,
+  we're going to have to find a backer.
+</p>
+<p>
+  As this discussion was going on,
+  Ethan White <a href="https://twitter.com/ethanwhite/status/499715179945672704">tweeted</a>:
+</p>
+<blockquote>
+  <p>
+    Next time you think about getting involved in a debate about programming languages or text editors,
+    go build something cool instead.
+  </p>
+</blockquote>
+<p>
+  I think
+  <a href="{{site.mailing_lists}}/r-discuss_lists.software-carpentry.org/2014-August/000119.html">this thread</a>
+  shows that there's a useful third path.
+  In it,
+  a dozen instructors who have been teaching R compare notes about what they're doing and how it's working.
+  I really enjoyed the exchange of specifics,
+  and I think that more discussions like this
+  will do a lot to strengthen our instructor community.
+</p>
+<p>
+  To wrap up,
+  here are my take-aways from this past week:
+</p>
+<ol>
+  <li>
+    I need to do a much better job in the instructor training course
+    of introducing people to our existing material,
+    the tools we use,
+    and the "why" behind both.
+    This probably means adding at least one more two-week cycle to the training;
+    I hope that's a cost potential instructors will be willing to bear.
+  </li>
+  <li>
+    I need to foster more discussions like the one about
+    <a href="{{site.mailing_lists}}/r-discuss_lists.software-carpentry.org/2014-August/000119.html">how we teach R</a>,
+    and turn those discussions into training material so we don't have to repeat them
+    every twelve months.
+    To get started on that,
+    I'm going to prod people who've taught this year to complete our post-bootcamp instructor survey,
+    and try to get discussions going on
+    <a href="{{site.mailing_lists}}/discuss_lists.software-carpentry.org/">the discussion list</a>
+    about how we all actually teach the shell, Python, and Git.
+  </li>
+  <li>
+    We need to find resources to do assessment properly.
+  </li>
+  <li>
+    I need to do a better job of monitoring the mailing list
+    (and get someone else to keep an eye on it when I'm not available).
+    Some of the discussion was less respectful than our <a href="{{page.root}}/conduct.html">code of conduct</a> requires,
+    and the onus is on us to make sure that everyone always feels welcome.
+  </li>
+</ol>
+<p>
+  We've come a long way since our first workshop at Los Alamos sixteen years ago&mdash;if
+  all goes well, we'll reach our ten thousandth learner some time in the next twelve months&mdash;but
+  we've still got a lot to learn.
+  We'd welcome your suggestions about what to try next.
+</p>
