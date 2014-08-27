@@ -1,0 +1,122 @@
+---
+layout: blog
+root: ../../..
+author: Damien Irving
+title: "The new Matlab teaching materials: a review"
+date: 2014-08-29
+time: "09:00:00"
+category: ["Matlab", "Bootcamps", "Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  When Software Carpentry started running bootcamps back in 2012, Python was used 
+  exclusively for the programming lessons. While these lessons were as language agnostic 
+  as possible (i.e. the materials focused on transferrable programming concepts as opposed 
+  to specifics of the Python language), people soon expressed an interest in running 
+  bootcamps using other languages. R very quickly established itself as a regular 
+  alternative to Python, but it wasn't until early 2014 that the first ever Matlab 
+  bootcamp was held (see <a href="http://www.walkingrandomly.com/?p=5324">here</a> and 
+  <a href="http://software-carpentry.org/blog/2014/01/feedback-manchester-matlab-bootcamp.html">here</a> 
+  for blog posts about the event; the official event page is 
+  <a href="http://apawlik.github.io/2014-01-14-manchester/">here</a>).
+</p>
+<!-- end excerpt -->
+<p>
+  Fortunately for the Software Carpentry community, the instructors from that event have 
+  subsequently written up their teaching materials and made them freely available via a 
+  CC-BY (Creative Commons - Attribution) license (there’s been some issues with the FTP 
+  site where those materials are located, so in the meantime you can find a copy 
+  <a href="https://github.com/resbaz/lessons/tree/master/matlab/intermediate">here</a> at 
+  the Research Bazaar GitHub repo). There’s still some debate as to whether the ongoing 
+  maintenance and development of these materials should be supported by Software Carpentry 
+  or MathWorks (because unlike Python and R, Matlab is proprietary software), but in the 
+  meantime demand has been so strong in Melbourne that we went ahead and organised a 
+  bootcamp as soon as we could get our hands on the teaching materials.
+</p>
+<p>  
+  Our <a href="http://resbaz.github.io/2014-08-18-unimelb/">August bootcamp at the 
+  University of Melbourne</a> filled the 45 seat room and had a further 25 on the waiting 
+  list. On the first day we taught the new Matlab lessons, while on the second we covered 
+  the standard Software Carpentry lessons on the shell and version control. In other 
+  words, Matlab was used to teach programming, while the shell and version control were 
+  pitched as tools to manage your code and data effectively.
+</p>
+<p>
+  What I've tried to do below is distill the main comments/feedback received from 
+  instructors, helpers and participants. For more detailed commentary, see 
+  <a href="https://github.com/resbaz/lessons/issues/4">the relevant GitHub issue</a>. At 
+  times these comments may sound critical, but it should be kept in mind that these 
+  Matlab lessons are brand new. Unlike the current Python lessons, they haven't had the 
+  luxury of years of development using feedback from hundreds of bootcamps. At the end of 
+  the day, the participants at our bootcamp got the undivided attention of eight Matlab 
+  gurus for two whole days (thanks to all the helpers who came along). Such dedicated 
+  programming assistance is unheard of in the academic world, and consequently this 
+  unique learning experience was greatly appreciated by all who attended.
+</p>
+<p>
+  Comments:
+</p>
+<ul>
+  <li>
+    The Matlab materials provide approximately two challenges for each of the four main 
+    lessons (see <a href="https://github.com/resbaz/lessons/blob/master/matlab/intermediate/InstructorMaterials/AppendixA_Exercises.m">here</a>). 
+    These challenges are very well documented (i.e. the relevant data files and answers 
+    are all conveniently contained in an 
+    <a href="https://github.com/resbaz/lessons/tree/master/matlab/intermediate/Exercises">Exercises</a> 
+    directory), however their completion requires that the participants to be familiar 
+    with <i>all</i> the content in the associated lesson. Since each of the lessons 
+    involves up to an hour of live coding/demonstration, the bootcamp involved very long 
+    periods of demonstration followed by challenges that also took a very long time to 
+    complete. This not only made it difficult for participants to maintain concentration, 
+    but it also meant that there were long periods where the helpers were not really 
+    involved in the action.
+    <ul>
+	  <li>
+	    There were shorter recommended activities scattered throughout the teaching notes, 
+	    but these often asked the participants to do something they’d never seen before 
+	    (e.g. one of the recommended activities asks the participants to define a 
+	    function, even though at that point the instructor hasn’t even demonstrated the 
+	    associated syntax and typical use cases). Our instructors therefore used those 
+	    recommended activities as examples that they themselves could demonstrate to the 
+	    audience.
+	  </li>
+    </ul>
+  </li>
+  <li>
+    Unlike the novice Python lessons, there's isn't a consistent data analysis story 
+    weaved throughout the four Matlab lessons. As a consequence, the data analysis 
+    examples seem a little disjointed.
+  </li>
+  <li>
+    The Matlab lessons and challenges escalate in complexity very quickly. In Software 
+    Carpentry terminology, they are definitely "intermediate" as opposed to "novice" level 
+    materials.
+  </li>
+  <li>
+    One useful feature of the Python lesson materials is that the instructor notes are 
+    essentially written as a verbatim script of what an instructor could/would say at 
+    each point of the bootcamp. This makes things much easier for new instructors, because 
+    there is no ambiguity about how the materials could/should be delivered. While the 
+    Matlab materials provide significant guidance (i.e. they’re not far off), they cannot 
+    be used as a verbatim script.
+  </li>
+</ul>
+
+<p>
+  Going forward, I think these Matlab materials should be designated as our current 
+  intermediate level lessons, with a view to addressing the comments above in the coming 
+  months/years (i.e. shorter and more regular challenges, a verbatim script to help new 
+  instructors, a consistent data analysis example throughout, and a number of other small 
+  fixes outlined in the <a href="https://github.com/resbaz/lessons/issues/4">GitHub issue</a>). 
+  As a starting point for a set of novice level Matlab lessons, I would suggest we simply 
+  re-write the current Python lessons using Matlab (in fact, we’ve already started 
+  <a href="https://github.com/resbaz/lessons/tree/master/matlab/novice">here</a> if people 
+  would like to jump in and help out). The final novice Python lesson (on command line 
+  programs) probably isn’t relevant to Matlab users, but the other five lessons could very 
+  easily be written in Matlab (there's a lot of similarities between the languages). 
+  In this way the Matlab materials would resemble the current state of the R materials: 
+  the novice lessons are a clone of the Python lessons, while the intermediate lessons are 
+  an independent set. This development pattern seems reasonable in that similar lessons 
+  are appropriate for novice learners no matter the language, whereas the teaching of more 
+  complex topics quickly becomes more language specific.
+</p>
