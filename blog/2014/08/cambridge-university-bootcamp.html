@@ -1,0 +1,88 @@
+---
+layout: blog
+root: ../../..
+author: Rob Beagrie
+title: "Software Carpentry boot camp at Cambridge University"
+date: 2014-08-29
+time: "19:00:00"
+category: ["Bootcamps"]
+---
+<!-- start excerpt -->
+<p> At the beginning of this week Thomas Kluyver and I taught a Software
+Carpentry bootcamp at the University of Cambridge. We had around 35 learners of
+very different experience and took them through Bash, Git and Python over the
+course of two days.  </p>
+<!-- end excerpt -->
+<p> First of all I want to thank everyone who helped organize and run the
+bootcamp this week, especially Thomas for sharing the teaching duties and our
+excellent helpers Jelena Aleksic and David Molnar. We also had a lot of help
+from our host Gabriella Rustici along with Paul Judge and David Judge. We held
+the bootcamp in a university teaching room, so we used a suite of desktop
+computers and had them all loaded with the Software Carpentry virtual machine,
+which eliminated much of the extra time spent solving setup issues on the first
+morning.  </p>
+
+<p> Since we also wanted people to go away with a working setup that they could
+use on their own, I sent round the standard bootcamp installation instructions
+to all the learners the week before the bootcamp and asked them to have a go
+installing all the software on their own machines. The idea was that we could
+then help people with individual installation issues during the coffee/lunch
+breaks if necessary. In the end, only two people came to us having had problems
+with installation, which probably reflects a mixture of improvements to the SWC
+windows installer, a relatively high number of more experienced learners and a
+number of people not attempting to install things before the bootcamp.  </p>
+
+<p>The pre-bootcamp questionnaire revealed a very wide spread of previous
+experience. We had a number of absolute beginners, but nearly one third of the
+group reported that they currently programmed once a week or more. Almost all of
+the respondants also indicated that they had already had some experience with
+the command line. In order not to frustrate those who had more advanced
+knowledge, we decided to add links to some of the intermediate Software
+Carpentry lessons on the <a
+href="http://rbeagrie.github.io/2014-08-26-cam/">Bootcamp website</a>. At the
+beginning of the first day we let everyone know that we were aware of the wide
+range in experience but we would be working at a pace suitable for novices, so
+anyone who felt comfortable with the material should feel free to work at their
+own pace and move on to the intermediate material if they finished early.
+Walking around during the challenges I had the impression that the vast majority
+of the class was working at the instructor's pace, but perhaps knowing that they
+weren't being forced to slow down helped the more advanced people not to get
+annoyed. Even so, we had a few pink stickies at the end of the day from people
+who felt that the Bash lessons were too slow for more experienced users, and
+that the course website had not been clear enough about the expected entry
+level.  </p>
+
+<p> Before the bootcamp I invested some time in organizing the files for the
+shell lessons. Since we were working from virtual machines, it made sense to
+have all the example files in a consistent file tree. I think this helped a lot
+with the lesson flow, and we had a few learners comment that the unix session
+was especially easy to follow. One person did say that we could have been
+clearer about which directory everyone was supposed to be in at the beginning of
+each new section. Thomas took the afternoon's Git session which seemed to go
+really well. Instead of having the learners collaborate from two repositories on
+their local machines, we had them pair up and work on each other's repositories.
+This approach seemed to motivate people really well and we got a lot of positive
+comments about that session at the end of the day.  </p>
+
+<p> Our biggest technical hurdle came on Wednesday morning, when it transpired
+that I had forgotten to check that the iPython notebook was installed on the
+virtual machines. After some copying and pasting of "sudo apt" commands, we got
+the notebook working only to find that numpy and matplotlib were not installed
+either. In the end it only took around 15 minutes to get everyone set up and
+people seemed quite quick to forgive me my oversight! Our audience were keen to
+learn about debugging and defensive programming, so Thomas and I decided to skip
+SQL in order to give ourselves enough time to cover everything. Despite having a
+whole day for python, we had still only gotten through the first three lessons
+by the afternoon coffee break and decided to skip over if/else to get to the
+material on assertions and test driven development. We got quite a few positive
+comments about this material at the end, but there was also a little frustration
+as some of the challenges in lesson five require if/else statements to solve.
+</p>
+
+<p> One final thing I'd recommend for anyone planning to run a bootcamp in the
+future - I took a small notebook with me and wrote down lots of small issues
+that cropped up as we were going through the material. If I hadn't written these
+all down immediately I would have forgotten them by the end of the day, but I
+now have a little stockpile of material for issues and pull requests I can send
+back upstream, hopefully making things easier for myself (and everyone else)
+next time around!  </p>
