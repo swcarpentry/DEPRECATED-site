@@ -54,10 +54,12 @@ and to PLOS, the Mozilla Science Lab, and the Sloan Foundation for their support
 Our first study,
 done in conjunction with the Public Library of Science (PLOS),
 ran from August to October 2013.
-Professional developers working at Mozilla reviewed samples of code
-taken from papers published in \emph{PLOS Computational Biology} in the preceding 18 months,
-and their reviews were shared with the scientists.
-We then conducted semi-structured interviews \cite{b:rosenthal2007,b:bryman2008} with 11 developers in late August and early September,
+Professional developers working at Mozilla
+who routinely use asynchronous code review in their work
+reviewed samples of code
+taken from papers published in \emph{PLOS Computational Biology} in the preceding 18 months.
+Their reviews were shared with the scientists;
+we then conducted semi-structured interviews \cite{b:rosenthal2007,b:bryman2008} with 11 developers in late August and early September,
 and with 4 authors whose code had been reviewed in late September and early October,
 to determine
 whether non-scientists could usefully review typical scientific software,
@@ -140,7 +142,7 @@ as well as for the author:
 
 Despite these frustrations,
 participants in this study were positive about it.
-We therefore we set up a second study
+We therefore set up a second study
 that paired experienced scientific programmers with small groups of less-experienced ones
 to explore ways of transferring the practice itself.
 This second study also aimed to address the fact that
@@ -186,6 +188,9 @@ another scientist-developer with experience of code review,
 from a different institution but usually in the same or a cognate discipline,
 who would introduce the team to code review processes and good practices.
 Teams and mentors collaborated during March--June 2014.
+Each mentor decided how to introduce and conduct reviews with the team,
+informed by the mentor's own experience and discussion with the team.
+The scientists identified which of their code to review, in consultation with the mentor.
 We followed teams' interactions on email (via shared mailing lists) and within their repositories,
 attended meetings when possible (using video or telephone conferencing),
 and interviewed participants periodically through the study about their goals, experiences, and impressions.
@@ -227,11 +232,14 @@ there's a scientist who says,
 One concrete step we could take is to show scientists what it actually looks like to do a code review:
 not just the end result, but the process itself.
 
-The most successful groups both saw code review done and did it themselves.
+The most successful groups---those that completed the pilot study,
+made code review part of their daily practice,
+and considered it beneficial---both saw code review done and did it themselves.
 Their mentors walked through an initial code review;
 articulated what they look for in the code, what they see, and how they interpret it;
 and made concrete suggestions about first steps that clarified scientists' expectations.
-But scientists perceived the real benefits only after they undertook the process themselves,
+But participants (both scientists and mentors) from all of the successul teams
+perceived the real benefits only after they undertook the process themselves,
 engaging in code review for each other,
 and discussing those reviews with others.
 
@@ -251,19 +259,14 @@ And finally,
 involves walking and talking through the code together,
 whether one-to-one, as a group, or with one person leading.
 
-There are several axes of variation:
-is review synchronous, asynchronous, or mixed?
-Is it conducted one-to-one, one-to-many, or as a group?
+There are other axes of variation:
+is review one-to-one, one-to-many, or done in a group?
 Does it use advance preparation or is done on the day?
-Is there a leader or hierarchy, or just peers?
-The choices about which options to mix depends on whether the goal is
-fixing code, learning from code, or learning from other developers.
-Although all code review offers opportunities to learn about code and about best practices,
-activity focused on learning, group development, and knowledge transfer tends to include synchronous elements
-in order to develop rapport and trust.
-Preparation offline gives developers time to focus on the code,
-engage with it personally,
-and form independent opinions. 
+Is there a leader?
+These choices should depend on whether the goal is
+fixing code, learning from code, or learning from other developers:
+while offline preparation helps developers form independent opinions,
+synchronous activity helps develop rapport and trust.
 
 The groups that were most successful in the second study
 took the time for a synchronous conversation to introduce themselves and to discuss their goals and expectations
@@ -278,7 +281,7 @@ Finally,
 None of the mentors expected scientists to overhaul complete code bases.
 The advice from one mentor was cogent:
 if you check the docstring and write a test every time you touch a method,
-the work will accumulate.
+the code improvements will accumulate over time with minimal effort.
 This insight was echoed in different ways throughout the study.
 Adopting good practices and applying them incrementally,
 doing one thing at a time as it is needed,
@@ -332,20 +335,12 @@ A good starting point is 3--4 pages long,
 fairly self-contained,
 and under active development,
 so that small patches are coming in regularly.
-(As noted above,
-scientists find reviewing improvements as work is being done
-more useful than a ``drive-by'' review at the end of development.)
 
-\item Make your code available (in a repository).
-Include a typical data set, an overview of how the code works
-(e.g.,
-the relevant scientific paper,
-a diagram of the structure of the software,
-an overview of the goals and context in which it was developed).
+\item Make your code available in a repository
+with a typical data set
+and an overview of how the code works.
 
 \item Set up a schedule and commit a little time on a regular basis.
-
-\item Choose small enough chunks of code for discussion (typically 3--4 pages rather than 30--40).
 
 \item Understand that it's the code that's being reviewed (not you).
 Tailor your comments to others on the same terms.
@@ -363,17 +358,20 @@ we hope to:
 \begin{enumerate}
 
 \item
-articulate a curriculum for scientists who would like to adopt code review;
+articulate a curriculum for scientists who would like to adopt code review,
 
 \item
-provide examples of people doing review and talking about their reasoning,
-most likely in the form of short screencasts of reviews being done;
-and
+provide examples of people doing review and talking about their reasoning
+(most likely in the form of short screencasts of reviews being done),
 
 \item
 develop heuristics to help people decide
-which scientific software needs specialist scientific knowledge,
-and which doesn't.
+which scientific software needs specialist scientific knowledge
+and which doesn't,
+and
+
+\item
+track what happens to code in the months \emph{after} review.
 
 \end{enumerate}
 
