@@ -53,14 +53,18 @@ def build_bootcamp_rss(config, filename, bootcamps):
     site = config['site']
     publish_time = datetime.datetime.now()
     # Create RSS items.
-    items = [ContentEncodedRSSItem(title=bc['venue'],
-                                   creator=bc['contact'],
-                                   guid=get_guid(site, bc),
-                                   link=bc['url'],
-                                   description=get_description(bc),
-                                   categories=[get_country(site, bc)],
-                                   pubDate=publish_time)
-             for bc in bootcamps]
+    try:
+        items = [ContentEncodedRSSItem(title=bc['venue'],
+                                       creator=bc['contact'],
+                                       guid=get_guid(site, bc),
+                                       link=bc['url'],
+                                       description=get_description(bc),
+                                       categories=[get_country(site, bc)],
+                                       pubDate=publish_time)
+                 for bc in bootcamps]
+    except KeyError as e:
+        print >> sys.stderr, 'Failed to find key {0} in {1}'.format(str(e), bc)
+        sys.exit(1)
 
     # Create RSS feed.
     rss = ContentEncodedRSS2(title='Software Carpentry boot camps',
