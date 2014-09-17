@@ -1,0 +1,118 @@
+---
+layout: blog
+root: ../../..
+author: Michael Li
+title: "How to Prepare for the Data Incubator"
+date: 2014-09-17
+time: "15:30:00"
+category: ["Community"]
+---
+<!-- start excerpt -->
+<p>
+  At <a href="http://www.thedataincubator.com">The Data Incubator</a>,
+  we receive thousands of applications to join our data science fellowship.
+  Our admissions bar is very high and we are often asked,
+  "What can I do to prepare for the fellowship application process?"
+</p>
+<p>
+  Here are five important skills to develop and some resources on how to help you develop them.
+  While we don't expect our applicants to possess all of these skills,
+  most applicants already have a strong background in many of them.
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>
+    <p>
+      <strong>Scraping</strong>:
+      There's a lot of data out there so you'll need to learn how to get access to it.
+      Whether it's JSON, HTML or some homebrew format, you should be able to handle them with ease.
+      Modern scripting languages like Python are ideal for this.
+      In Python, look at packages like
+      <a href="http://docs.python.org/2/library/urllib2.html">urllib2</a>,
+      <a href="http://docs.python-requests.org/en/latest/">requests</a>,
+      <a href="http://pypi.python.org/pypi/simplejson/">simplejson</a>,
+      <a href="http://docs.python.org/2/library/re.html">re</a>,
+      and <a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/">beautiful soup</a>
+      to make handling web requests and data formats easier.
+      More advanced topics include error handling
+      (<a href="http://pypi.python.org/pypi/retrying">retrying</a>)
+      and parallelization
+      (<a href="http://docs.python.org/2/library/multiprocessing.html">multiprocessing</a>).
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>SQL</strong>:
+      Once you have a large amount of structured data, you will want to store and process it.
+      SQL is the original query language and its syntax is so prevalent that there are SQL query interfaces for everything from
+      <a href="https://code.google.com/p/sqldf/">sqldf</a> for R data frames
+      to <a href="http://hive.apache.org/">Hive</a> for Mapreduce.
+    </p>
+    <p>
+      Normally, you would have to go through a painful install process to play with SQL.
+      Fortunately, there's a nice
+      <a href="http://sqlzoo.net/wiki/Main_Page">online interactive tutorial</a>
+      available where you can submit your queries and learn interactively.
+      Additionally, Mode Analytics has a
+      <a href="http://sqlschool.modeanalytics.com/">great tutorial</a>
+      geared towards data scientists,
+      although it is not interactive.
+      When you're ready to use SQL locally,
+      <a href="http://www.sqlite.org/">SQLite</a>
+      offers a simple-to-install version of SQL.
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Data frames</strong>:
+      SQL is great for handling large amounts of data but unfortunately it lacks machine learning and visualization.
+      So the workflow is often to use SQL or mapreduce to get data to a manageable size
+      and then process it using a libraries like R's
+      <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html">data frames</a>
+      or Python's
+      <a href="http://pandas.pydata.org/">pandas</a>.
+      For Pandas, Wes McKinney, who created pandas, has a great video tutorial on youtube.
+      Watch it <a href="https://www.youtube.com/watch?v=w26x-z-BdWQ">here</a>
+      and follow along by checking out the
+      <a href="http://github.com/estimate/pandas-exercises">github code</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Machine-Learning</strong>:
+      A lot of data science can be done with select, join, and groupby (or equivalently, map and reduce)
+      but sometimes you need to do some non-trivial machine-learning.
+      Before you jump into fancier algorithms,
+      try out simpler algorithms like
+      <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes</a>
+      and <a href="http://en.wikipedia.org/wiki/Regularization_(mathematics)">regularized</a>
+      <a href="http://en.wikipedia.org/wiki/Linear_regression">linear regression</a>.
+      In Python,
+      these are implemented in <a href="http://scikit-learn.org/stable/">scikit learn</a>.
+      In R, they are implemented in the <a href="http://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html">glm</a>
+      and <a href="http://cran.r-project.org/web/packages/gbm/gbm.pdf">gbm</a> libraries.
+      You should make sure you understand the basics really well before trying out fancier algorithms.
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Visualization</strong>:
+      Data science is about communicating your findings, and data visualization is an incredibly valuable part of that.
+      Python offers Matlab-like plotting via
+      <a href="http://matplotlib.org/users/pyplot_tutorial.html">matplotlib</a>,
+      which is functional,
+      even if its ascetically lacking.
+      R offers <a href="http://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf">ggplot</a>,
+      which is prettier.
+      Of course,
+      if you're really serious about dynamic visualizations,
+      try <a href="http://d3js.org/">d3</a>.
+    </p>
+  </li>
+</ol>
+<p>
+  These are some of the foundational skills that will be invaluable to your career as a data scientist.
+  While they only cover a subset of what we talk about at The Data Incubator
+  (there's a lot more to cover in stats, machine-learning, and mapreduce),
+  this is a great start.
+</p>
