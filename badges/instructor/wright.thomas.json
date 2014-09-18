@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-09-18", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$3fac024b97a923c74fcbfa657bdea506a43943254940e31a86ea3bf6a21df41f", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$3fac024b97a923c74fcbfa657bdea506a43943254940e31a86ea3bf6a21df41f", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/wright.thomas.json"
+ }
+}
