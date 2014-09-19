@@ -14,7 +14,6 @@ creator:
 - {name: Ethan White, user: white.e}
 - {name: Greg Wilson, user: wilson.g}
 instructor:
-- {name: Vid A, user: a.vid}
 - {name: Joshua Adelman, user: adelman.joshua}
 - {name: Aron Ahmadia, user: ahmadia.a}
 - {name: Joshua Ainsley, user: ainsley.joshua}
@@ -154,6 +153,7 @@ instructor:
 - {name: Margaret Staton, user: staton.margaret}
 - {name: Shoaib Sufi, user: sufi.s}
 - {name: Sarah Supp, user: supp.s}
+- {name: 'Svaksha ', user: svaksha}
 - {name: Gayathri Swaminathan, user: swaminathan.gayathri}
 - {name: Bradley Taber-Thomas, user: taber-thomas.bradley}
 - {name: Leszek Tarkowski, user: tarkowski.leszek}
