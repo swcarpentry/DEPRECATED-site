@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-09-18", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$4dfc938201daf46df0cd894bc4ed011c3824345dfc681af57daf658087c9442d", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$4dfc938201daf46df0cd894bc4ed011c3824345dfc681af57daf658087c9442d", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/robinson.rosario.json"
+ }
+}

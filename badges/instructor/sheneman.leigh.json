@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-09-18", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$1daeb30b170a09669396d2000a3f95e76e6461d957ed62ceae146481b8d8d6e6", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$1daeb30b170a09669396d2000a3f95e76e6461d957ed62ceae146481b8d8d6e6", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/sheneman.leigh.json"
+ }
+}

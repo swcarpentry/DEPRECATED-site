@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-09-18", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e8afa4e67f9730f2d33da05805a12f267f0ed1c6c8b37d5360ebef4a801ec455", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e8afa4e67f9730f2d33da05805a12f267f0ed1c6c8b37d5360ebef4a801ec455", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/alleen-willems.russell.json"
+ }
+}
