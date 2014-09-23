@@ -1,0 +1,127 @@
+---
+layout: blog
+root: ../../..
+author: Warren Code
+title: "Learning Goals"
+date: 2014-09-23
+time: "19:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  A few weeks ago,
+  Greg Wilson asked me how to better express the learning objectives listed in the Software Carpentry lessons.
+  My main concerns with the existing goals are that they focus too much on specific skills,
+  rather than attitude changes,
+  and is that they are generally stated as lesson descriptions
+  (more like instructor goals or a lesson outline)
+  rather than as learning goals for participants.
+</p>
+<!-- end excerpt -->
+<p>
+  One improvement would be to frame things in terms of what will help someone change their practice soon,
+  with less focus on skill mastery.
+  If nobody can write a nested loop or use Git by the end of the workshop,
+  but everybody adopts a sensible research workflow within a few months,
+  the workshop ought to be considered a huge success.
+  If everyone learned all of Python in two days and never used it in their research work,
+  it would be a failure.
+  These goals are hinted at in
+  <a href="{{page.root}}/v5/novice/sql/index.html">some of the topic-level pages for lessons</a>
+  and appear in the Instructor Guide,
+  but aren't clearly set out in the lessons themselves.
+</p>
+<p>
+  For example,
+  the lesson on <a href="{{page.root}}/v5/novice/teaching/04-python.html">conditionals in Python</a> says:
+</p>
+<blockquote>
+  <p>
+    The final example asks them to build a command-line tool that works with the Unix pipe-and-filter model.
+    We do this because it is a useful skill and because it helps learners see that the software they use isn't magical.
+    Tools like grep might be more sophisticated than the programs our learners can write at this point in their careers,
+    but it's crucial they realize this is a difference of scale rather than kind.
+  </p>
+</blockquote>
+<p>
+  That's great,
+  but it isn't clear to instructors how the activities support these goals
+  or how they'll know if this is being achieved.
+  Here's a clumsily-worded alternative:
+</p>
+<blockquote>
+  <p>
+    With reference to the Software Carpentry online resources,
+    official documentation (man pages for Unix stuff, docs.python.org for Python, etc.)
+    and appropriate internet searching (e.g., Stack Overflow),
+    the participant will be able to choose a data structure
+    for collecting information when looping over a file (e.g., a list or dictionary)
+    that works <em>and</em> yields readable code.
+  </p>
+</blockquote>
+<p>
+  In addition,
+  the lesson should articulate some very specific skill goals
+  where all (or at least most) participants will enjoy some success during the workshop.
+  This is very important for motivation to continue with learning rather than shut down.
+  For example:
+</p>
+<blockquote>
+  <p>
+    By the end of this lesson,
+    participants will be able to use Python to pattern-match lines in a simple CSV file containing headers
+    and print results as output.
+  </p>
+</blockquote>
+<p>
+  Goals like these give something meaningful to assess during the lesson
+  to see if the immediate skill lesson has been successful
+  (where I'm using the word "assess" in the broad sense:
+  it's nice for later reporting if there are recorded observations or test/quiz data from students,
+  but at a minimum the helpers will see if everyone has processed the file as described).
+  Meanwhile,
+  including the attitude/approach goals will emphasize that the real value of the workshop is
+  an overall change in research practice. 
+</p>
+<p>
+  The smaller goals also give a bit more of a sense of lesson size,
+  which is very helpful if one wants to start chaining together or remixing lessons.
+  Some course design strategies suggest a hierarchy of goals, such as:
+</p>
+<ul>
+  <li>
+    <em>course goals</em>:
+    a few broad statements relating to the purpose and philosophy of the course
+    (for Software Carpentry, goals related to more productive research and programming in general);
+  </li>
+  <li>
+    <em>topic goals</em>:
+    more detailed than course goals,
+    these are basically a way of grouping the more specific goals
+    (e.g., learners will be able to automate tasks associate with plain text files);
+    and
+  </li>
+  <li>
+    <em>learning goals</em> (or <em>lesson goals</em>):
+    splitting the topic goals into 10-15 minute chunks
+    to help get a better sense of how much time it might take to cover everything.
+  </li>
+</ul>
+<p>
+  Some ideas for doing this are on pages 8-12 of
+  <a href="http://www.deefinkandassociates.com/GuidetoCourseDesignAug05.pdf">A Self-Directed Guide to Designing Courses for Significant Learning</a>
+  (a resource used in UBC's local course design workshop).
+</p>
+<p>
+  A lot of these changes are moving away from "I want them to know this thing once I explain it"
+  to "I want them to be able to do this measurable thing".
+  There are more examples,
+  including some from introductory programming courses,
+  in <a href="http://cwsei.ubc.ca/resources/files/Learning_Goals_at_UBC_and_CU_examples.pdf">these</a>
+  <a href="http://cwsei.ubc.ca/Files/ComSc_LG/CPSC_Learning_Goals.pdf">two</a>
+  documents
+  (which are taken from <a href="http://cwsei.ubc.ca/resources/learn_goals.htm">this page</a>).
+  I would also recommend some of these ideas for learning goals for the instructor training.
+  It gives the various lesson blocks clearer purpose,
+  which can help with passing materials on to new instructors.
+</p>
