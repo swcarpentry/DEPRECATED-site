@@ -1,0 +1,191 @@
+## Intro
+
+* United Airlines did it to me again, so I had time to think about where we are and where I'd like us to be
+* Instructor training is getting better, and two more trainers are spinning up
+* Time to worry about the lessons again
+
+## Problems
+
+* bc repo is too big
+  * lessons and workshop sites don't have to be tied together because very few people change the latter when doing the former
+* scope creep: we have lessons that most workshops will never get to
+  * part of why the bc repo has become bloated
+* some lessons don't work well
+  * micro (e.g., the temperature conversion examples in the Python lesson)
+  * macro (e.g., introducing NumPy and visualization early in the Python lesson)
+  * goal (computational competence) is getting lost
+    * we're teaching Python and R as languages instead of using them as vehicles to teach good programming practice
+
+## Proposal
+
+* break up the bc repository
+  * we don't put code for different libraries in one big repo - why would we do the equivalent for lessons?
+* result is:
+  * one repo that's a template for workshop websites
+  * one repo for each lesson (e.g., 'novice/bash' becomes its own repo)
+* but if we do this, there's no reason to have just one lesson for any combination of subject and level
+  * allows specialization by topic: novice-python-economists, accelerated-R-biologists, etc.
+  * allows differentiation by teaching approach: Jane's "Git for novices" may be quite different from Ahmed's
+  * makes it a lot easier for people to add specialized lessons (which they maintain)
+* Software Carpentry certifies lessons in the same way that it certifies instructors
+  * and certifies workshops based on the lessons they're including
+
+## Mechanics
+
+* specify a template for structuring a lesson
+  * just as R and Django specify where things go for a package or application
+* extract novice Software Carpentry lessons from the bc repo as a starting point
+  * _without_ losing history
+* extract workshop website stuff into another repo
+
+## Challenges
+
+* what to do with outstanding pull requests against bc?
+  * "merge 'em all before splitting" is probably impractical, so...?
+* findability: how to locate lesson repos once we have lots?
+  * start with a links page on software-carpentry.org (because we'll only have half a dozen things to track)
+  * worry about handling growth if growth occurs
+* trackability: how can people keep up with changes to lessons?
+  * right now, only have to subscribe to the bc repo - subscribing to half a dozen is more annoying
+  * try it and see
+  * (in practice, most instructors _aren't_ paying attention to bc: the 90/9/1 rule)
+* how to handle resources shared by all (or most) lesson repos?
+  * dynamic resources (like CSS files) are easy: load 'em from software-carpentry.org
+  * compile-time resources (like _include and _layouts files) can be duplicated for now
+    * submodules didn't work well the last time we tried them
+    * if all lesson repos are forks of a template, owners can pull in updates via Git
+  * treat small data sets (e.g., inflammation data) as part of the base template
+* what about software setup instructions?
+  * can't put in central site: really want a single page _that instructors can customize_
+  * so duplicate for now and figure it out later
+* problems addressed:
+  * bc repo is too big: addressed.
+  * scope creep: avoids problem by removing binary in/out distinction for lesson materials
+  * some lessons don't work well: not directly addressed, but this approach makes experimentation easier
+
+## Next Steps
+
+* Define _simple_ template for lessons
+  * filename conventions, directory layout, manifest file, etc.
+  * must accommodate files in different source formats
+  * _or_ template only specifies Markdown; everything else is up to the author(s) to maintain
+* Create tool to:
+  * Generate new files in the right places with the right names
+  * Check that files are consistent with format requirements
+  * Similar in spirit to tools like django-admin and to bin/swc_index_validator.py in the bc repo
+
+## Straw Man Template
+
+Each lesson is in a directory, and may include multiple topics.
+
+* index.md : home page for lesson
+* dd-slug.md : topics (where 'dd' is a sequence number and 'slug' is a mnemonic, e.g., 03-functions.md)
+* introduction.md : slides for 3-minute "why learn this?" presentation
+* glossary.md : definitions of key terms
+* reference.md : cheat sheet for key commands, etc.
+* guide.md : instructor's guide
+* code/ : sub-directory containing all code samples, which are executed from the root directory
+* data/ : sub-directory containing all data specific to this lesson
+  * index.md : describes data sets
+  * filename.xyz : single-file dataset
+  * folder/ : multi-file datasets are all in their own directories
+* img/ : images (including plots) used in lesson
+
+### Overall Index
+
+The index.md file is structured as follows:
+
+    # Lesson Title
+
+    Paragraph of introductory material.
+
+    > ## Learning Objectives
+    >
+    > * Overall objective 1
+    > * Overall objective 2
+
+    ## Topics
+
+    * [Topic Title](dd-slug.html)
+    * [Topic Title](dd-slug.html)
+
+    ## Other Resources
+
+    * [Introduction](intro.html)
+    * [Glossary](glossary.html)
+    * [Reference Guide](reference.html)
+    * [Instructor's Guide](guide.html)
+
+### Topics
+
+Each topic file's name is dd-slug.md, where 'dd' is a sequence number
+and 'slug' is a mnenominc, e.g., '03-functions.md'.  Each topic should
+take 10-30 minutes to cover, and should be structured as follows:
+
+    # Topic Title
+
+    > ## Learning Objectives {.objectives}
+    >
+    > * Learning objective 1
+    > * Learning objective 2
+
+    Paragraphs of introductory material.
+
+    ## Sub-heading
+
+    Paragraphs of text.
+
+    ~~~ {.python}
+    some code:
+        to be displayed
+    ~~~
+    ~~~ {.output}
+    output
+    from
+    program
+    ~~~
+
+    > ## Challenge Title {.challenge}
+    >
+    > Description of challenge
+
+    ## Another Sub-heading
+
+    As above...
+
+    > ## Key Points {.keypoints}
+    >
+    > * Key point 1
+    > * Key point 2
+
+Some features of this are:
+
+* We will use Pandoc for Markdown-to-HTML conversion, so we can use
+  {.attribute} syntax for specifying things instead of the clunky
+  postfix syntax our current notes use (because it's the only thing
+  that Jekyll supports).
+
+* Rather than using <div class="whatever">...</div> to mark sections,
+  this uses blockquotes whose headings have specific classes - the
+  sections we need to mark are relatively small, and CSS will take
+  care of displaying these the way we want.
+
+### Glossary
+
+Each term in the glossary is laid out as a separate blockquote, with
+the term in a heading.  Yes, this is odd, but we want to avoid putting
+HTML in Markdown, and we can't add identifiers to paragraphs using
+{#whatever} notation - that only works on headers.
+
+    # Glossary
+
+    > ## Term {#some-anchor}
+    > The definition.
+    > See also: [some word](#local-anchor)
+
+### Introductory Slides
+
+Every lesson must come with a short slide deck (2-3 minutes)
+explaining what the subject is, how knowing it will help learners, and
+what's going to be covered.  Slides are written in Markdown, and
+compiled into HTML using reveal.js.
