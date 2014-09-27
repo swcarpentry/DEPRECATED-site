@@ -34,10 +34,10 @@ category: ["Lab Meeting"]
       <li>Git: Matt Davis and Jessica Hamrick</li>
       <li>Python: Azalee Bostroem and Trevor Bekolay</li>
       <li>SQL: Abigail Cabunoc and Sheldon McKay</li>
-      <li>R: John Blischak</li>
+      <li>R: John Blischak and Denis Haine</li>
       <li>Mercurial: Doug Latornell</li>
-      <li>Build system: Raniere Silva and R&eacute;mi Emonet</li>
       <li>MATLAB: Ashwin Srinath and Isabell Kiral-Kornek</li>
+      <li>Build system: Raniere Silva and R&eacute;mi Emonet</li>
     </ul>
   </li>
   <li>
@@ -64,60 +64,62 @@ category: ["Lab Meeting"]
       about how we could share good teaching practices among our instructors.
       The specific suggestions made at this week's meeting were:
       <ol>
-	<li>
-	  <p>
-	    <em>Match each new instructor with an experienced instructor as a mentor.</em>
-	    Azalee Bostroem,
-	    Erik Bray,
-	    Abigail Cabunoc,
-	    Matt Davis,
-	    Gabriel Devenyi,
-	    Ivan Gonzalez,
-	    Adina Howe
-	    Karin Lagesen,
-	    Bill Mills,
-	    Tracy Teal,
-	    and Naupaka Zimmerman
-	    all volunteered to be mentors;
-	    we'll match them with people who finished instructor training this summer.
-	  </p>
-	</li>
-	<li>
-	  <p>
-	    We'll set up a weekly or bi-weekly meeting in which
-	    people who have taught in the past couple of weeks
-	    can "hand off" what they've learned about the lessons
-	    to people who are going to teach in the coming couple of weeks.
-	    This will also be an opportunity for Greg Wilson to debrief recent instructors.
-	  </p>
-	</li>
-	<li>
-	  <p>
-	    We will ask instructors to send us their <a href="{{page.root}}/bootcamps/checklists/lead_instructor.html">checklists</a>
-	    after each workshop
-	    so that we can see what they actually did
-	    (and trim the things they didn't).
-	  </p>
-	</li>
-	<li>
-	  <p>
-	    We'll have &quot;in-service days&quot; a couple of times a year
-	    in which people who have been teaching for a while
-	    can find out what changes have been made to our lessons recently.
-	  </p>
-	</li>
+        <li>
+          <p>
+            <em>Match each new instructor with an experienced instructor as a mentor.</em>
+            Azalee Bostroem,
+            Erik Bray,
+            Abigail Cabunoc,
+            Matt Davis,
+            Gabriel Devenyi,
+            Ivan Gonzalez,
+            Adina Howe
+            Karin Lagesen,
+            Bill Mills,
+            Tracy Teal,
+            and Naupaka Zimmerman
+            all volunteered to be mentors;
+            we'll match them with people who finished instructor training this summer.
+          </p>
+        </li>
+        <li>
+          <p>
+            We'll set up a weekly or bi-weekly meeting in which
+            people who have taught in the past couple of weeks
+            can "hand off" what they've learned about the lessons
+            to people who are going to teach in the coming couple of weeks.
+            This will also be an opportunity for Greg Wilson to debrief recent instructors.
+          </p>
+        </li>
+        <li>
+          <p>
+            We will ask instructors to send us their <a href="{{page.root}}/bootcamps/checklists/lead_instructor.html">checklists</a>
+            after each workshop
+            so that we can see what they actually did
+            (and trim the things they didn't).
+          </p>
+        </li>
+        <li>
+          <p>
+            We'll have &quot;in-service days&quot; a couple of times a year
+            in which people who have been teaching for a while
+            can find out what changes have been made to our lessons recently.
+          </p>
+        </li>
       </ul>
     </p>
   </li>
   <li>
     <p>
       Before we break up the <code>bc</code> repository,
-      we're going to simplify things by getting rid of the <code>master</code> branch
-      in the <a href="{{site.github_url}}/bc"><code>bc</code> repository</a>
-      and start using <code>gh-pages</code> as the starting point for features.
+      we're going to simplify things by using <code>gh-pages</code> as the main branch
+      (i.e., the starting point for new features)
+      instead of the <code>master</code> branch.
       We have been using <code>master</code> as a staging area
       (i.e., as a development branch, with <code>gh-pages</code> as the release branch),
-      but this is causing unnecessary work and confusion.
+      but this has been causing confusion.
+      We won't delete <code>master</code> until outstanding pull requests are merged,
+      but we'll set up our new lesson repositories with <code>gh-pages</code> as their default.
     </p>
   </li>
   <li>
