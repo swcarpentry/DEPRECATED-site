@@ -1,0 +1,214 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "September 2014 Lab Meeting Report"
+date: 2014-09-26
+time: "11:30:00"
+category: ["Lab Meeting"]
+---
+<!-- start excerpt -->
+<p>
+  After a two-month break for a sprint and some holidays,
+  we held another monthly lab meeting this week.
+  About 50 people showed up to talk about issues large and small;
+  the key points are below.
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>
+    <p>
+      As <a href="proposal-for-topic-maintainers.html">mentioned last week</a>,
+      we are asking specific people to take charge of particular topics in our core material.
+      They will <em>not</em> be responsible for developing lessons themselves
+      (though they may of course do so).
+      Instead,
+      their job will be to keep issues and pull requests moving by reviewing,
+      managing discussion,
+      merging into the master branch,
+      and so on.
+      Our initial maintainers are:
+    </p>
+    <ul>
+      <li>Bash: Gabriel Devenyi and Christina Koch</li>
+      <li>Git: Matt Davis and Jessica Hamrick</li>
+      <li>Python: Azalee Bostroem and Trevor Bekolay</li>
+      <li>SQL: Abigail Cabunoc and Sheldon McKay</li>
+      <li>R: John Blischak</li>
+      <li>Mercurial: Doug Latornell</li>
+      <li>Build system: Raniere Silva and R&eacute;mi Emonet</li>
+      <li>MATLAB: Ashwin Srinath and Isabell Kiral-Kornek</li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      Related to this,
+      we are going to break up the <a href="{{site.github_url}}/bc"><code>bc</code> repository</a>.
+      It currently holds both our lessons and the templates for creating workshop sites,
+      and has become too large and too complicated to manage.
+      Our plan is to have a one-to-one match between repositories and lessons
+      (e.g., the <code>novice/python</code> lesson will be in a small repository of its own);
+      we're working out a detailed proposal,
+      and hope to have it up early next week.
+      Trevor King, Trevor Bekolay, R&eacute; Emonet, and Erik Bray have volunteered to help
+      with the Git magic that will be needed to do this without losing history&mdash;more help
+      will be very welcome when the time comes.
+    </p>
+  </li>
+  <li>
+    <p>
+      <a href="building-better-teachers.html">Greg Wilson's post on <em>Building a Better Teacher</em></a>
+      and companion posts by <a href="more-thoughts-on-better-teachers.html">Azalee Bostroem</a>
+      and <a href="further-thoughts-on-better-teachers.html">Justin Kitzes</a>
+      have generated a lot of suggestions over the past three weeks
+      about how we could share good teaching practices among our instructors.
+      The specific suggestions made at this week's meeting were:
+      <ol>
+	<li>
+	  <p>
+	    <em>Match each new instructor with an experienced instructor as a mentor.</em>
+	    Azalee Bostroem,
+	    Erik Bray,
+	    Abigail Cabunoc,
+	    Matt Davis,
+	    Gabriel Devenyi,
+	    Ivan Gonzalez,
+	    Adina Howe
+	    Karin Lagesen,
+	    Bill Mills,
+	    Tracy Teal,
+	    and Naupaka Zimmerman
+	    all volunteered to be mentors;
+	    we'll match them with people who finished instructor training this summer.
+	  </p>
+	</li>
+	<li>
+	  <p>
+	    We'll set up a weekly or bi-weekly meeting in which
+	    people who have taught in the past couple of weeks
+	    can "hand off" what they've learned about the lessons
+	    to people who are going to teach in the coming couple of weeks.
+	    This will also be an opportunity for Greg Wilson to debrief recent instructors.
+	  </p>
+	</li>
+	<li>
+	  <p>
+	    We will ask instructors to send us their <a href="{{page.root}}/bootcamps/checklists/lead_instructor.html">checklists</a>
+	    after each workshop
+	    so that we can see what they actually did
+	    (and trim the things they didn't).
+	  </p>
+	</li>
+	<li>
+	  <p>
+	    We'll have &quot;in-service days&quot; a couple of times a year
+	    in which people who have been teaching for a while
+	    can find out what changes have been made to our lessons recently.
+	  </p>
+	</li>
+      </ul>
+    </p>
+  </li>
+  <li>
+    <p>
+      Before we break up the <code>bc</code> repository,
+      we're going to simplify things by getting rid of the <code>master</code> branch
+      in the <a href="{{site.github_url}}/bc"><code>bc</code> repository</a>
+      and start using <code>gh-pages</code> as the starting point for features.
+      We have been using <code>master</code> as a staging area
+      (i.e., as a development branch, with <code>gh-pages</code> as the release branch),
+      but this is causing unnecessary work and confusion.
+    </p>
+  </li>
+  <li>
+    <p>
+      Naupaka Zimmerman, Chris Kees, and Karin Lagesen volunteered to help us revamp
+      our <a href="{{page.root}}/bootcamps/assess/pre-learner.html">pre-assessment survey</a>
+      based on feedback we've received in the last few months.
+      In particular,
+      they'll make it easier to customize for particular workshops,
+      and try to come up with questions that will help us discriminate more accurately
+      between different levels of novice learner.
+    </p>
+  </li>
+  <li>
+    <p>
+      Daniel Chen has received about 15 descriptions of what was actually taught in various workshops
+      from those workshops' instructors.
+      He, Fan Yang, and Marios Isaakidis will use these descriptions
+      to revamp our <a href="{{page.root}}/bootcamps/assess/post-instructor.html">post-workshop instructor survey</a>
+      to help us learn more about how our lessons are actually being used,
+      and how well they're working.
+    </p>
+  </li>
+  <li>
+    <p>
+      We're going to start using the term "workshop" instead of the term "bootcamp",
+      since the latter is harder to translate in some languages,
+      and has paramilitary connotations to some people.
+    </p>
+  </li>
+</ol>
+<p>
+  Many thanks to everyone who took part in these meetings&mdash;we have a lot of work in front of us,
+  but a good crew to do it.
+</p>
+<div class="row-fluid">
+  <div class="span6">
+    <p><strong>Round 1 Attendees (18:30-19:30 Eastern on Thursday, Sept 25)</strong></p>
+    <ul>
+      <li>Greg Wilson (Software Carpentry / Toronto)</li>
+      <li>Bennet Fauber (University of Michigan)</li>
+      <li>Matt Davis</li>
+      <li>Damien Irving (University of Melbourne)</li>
+      <li>Isabell Kiral-Kornek (University of Melbourne)</li>
+      <li>Ashwin Srinath (Clemson University, SC)</li>
+      <li>Trevor Bekolay (University of Waterloo)</li>
+      <li>Balamurugan Desinghu (University of Chicago)</li>
+      <li>Sarah Supp (Univ Wisconsin - Madison)</li>
+      <li>Azalee Bostroem (UC Davis)</li>
+      <li>Kirill Palamartchouk (Newcastle University, UK) Sorry, unable to type today</li>
+      <li>Raniere Silva (University of Campinas, Brazil)</li>
+      <li>Gabriel Devenyi (McGill University)</li>
+      <li>R&eacute;mi Emonet (University of Saint &EACUTE;tienne, FR)</li>
+      <li>Bill Mills (Mozilla Science Lab / Vancouver)</li>
+      <li>Trevor (Olympia)</li>
+      <li>Pauline Barmby (Western U, London Canada)</li>
+      <li>Jason Williams (Cold Spring Harbor Laboratory)</li>
+    </ul>
+  </div>
+  <div class="span6">
+    <p><strong>Round 2 Attendees (11:00-12:00 Eastern time on Friday, Sept 26)</strong></p>
+    <ul>
+      <li>Greg Wilson (Software Carpentry / Toronto)</li>
+      <li>Kristjan Onu (Gagest / Montreal)</li>
+      <li>John Blischak (University of Chicago)</li>
+      <li>Denis Haine (Universit&eacute; de Montr&eacute;al)</li>
+      <li>Nichole Bennett (University of Texas/Okinawa Institute of Science and Technology)</li>
+      <li>Abigail Cabunoc (Mozilla Science Lab / Toronto)</li>
+      <li>Ethan White (Utah State Univ/Univ of Florida)</li>
+      <li>Fran&ccedil;ois Michonneau (University of Florida)</li>
+      <li>Naupaka Zimmerman (U of Arizona)</li>
+      <li>Lynne Williams (Child and Family Research Imaging Facility/Vancouver)</li>
+      <li>Jose Beltran (Stockholm University)</li>
+      <li>Adina Howe (Argonne National Lab)</li>
+      <li>Fan Yang (Iowa State University)</li>
+      <li>Arliss Collins (Mozilla Science Lab)</li>
+      <li>Karin Lagesen (University of Oslo)</li>
+      <li>Marios Isaakidis (Cyprus University of Technology)</li>
+      <li>Janet Riley (Cantina Consulting, Boston)</li>
+      <li>Tracy Teal (Michigan State)</li>
+      <li>Sheldon McKay (New York)</li>
+      <li>Robert Till (CUNY - John Jay)</li>
+      <li>Amy Brown (no fixed address/Toronto)</li>
+      <li>Ivan Gonzalez</li>
+      <li>Olav Vahtras (KTH Stockholm)</li>
+      <li>JC Leyder</li>
+      <li>Tom (Sickkids)</li>
+      <li>Stephen Turner (University of Virginia)</li>
+      <li>Erik Bray (STScI)</li>
+      <li>Daniel Chen (CUMC)</li>
+      <li>Chris Kees (ERDC/Coastal &amp; Hydraulics Lab)</li>
+    </ul>
+  </div>
+</div>
