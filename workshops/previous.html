@@ -1,7 +1,7 @@
 ---
-layout: bootcamp_previous
+layout: workshop_previous
 root: ..
-title: Previous Bootcamps
+title: Previous Workshops
 ---
 <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto; margin-bottom: 15px"></div>
 
@@ -31,13 +31,13 @@ title: Previous Bootcamps
   <img src="{{page.root}}/img/flags/32/United-States.png" alt="United States" />
 </div>
 
-<table class="table table-striped bootcamps">
-  {% for bootcamp in site.bootcamps reversed %}
-    {% if bootcamp.startdate < site.today %}
+<table class="table table-striped workshops">
+  {% for workshop in site.workshops reversed %}
+    {% if workshop.startdate < site.today %}
       <tr>
-        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
-        <td class="link"><a href="{{bootcamp.url}}">{{bootcamp.venue}}</a></td>
-        <td class="date">{{bootcamp.humandate}}</td>
+        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+        <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
+        <td class="date">{{workshop.humandate}}</td>
       </tr>
     {% endif %}
   {% endfor %}

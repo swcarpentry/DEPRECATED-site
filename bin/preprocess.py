@@ -18,8 +18,8 @@ from util import CONFIG_YML, \
                  STANDARD_YML, \
                  AIRPORTS_YML, \
                  BADGES_YML, \
-                 BOOTCAMP_URLS_YML, \
-                 BOOTCAMP_CACHE, \
+                 WORKSHOP_URLS_YML, \
+                 WORKSHOP_CACHE, \
                  P_BLOG_EXCERPT, \
                  harvest_metadata, \
                  load_info
@@ -52,11 +52,11 @@ def main():
     # Get the standard stuff.
     options, args = parse_args()
 
-    # Check that a cached bootcamp information file is available, and
+    # Check that a cached workshop information file is available, and
     # report an error if it's not.  Do this early to avoid wasting
-    # time; store in local variable until other bootcamp info is
+    # time; store in local variable until other workshop info is
     # loaded and available for merging.
-    cached_bootcamp_info = load_cached_bootcamp_info(os.curdir, BOOTCAMP_CACHE)
+    cached_workshop_info = load_cached_workshop_info(os.curdir, WORKSHOP_CACHE)
 
     # Load other information.
     config = load_info(options.config_dir, STANDARD_YML)
@@ -104,21 +104,21 @@ def main():
     config['blog_favorites'] = [p for p in config['blog'] if p['favorite']]
     config['blog_favorites'].reverse()
 
-    # Ensure that information about bootcamps is in the right order.
-    cached_bootcamp_info.sort(lambda x, y: cmp(x['slug'], y['slug']))
-    config['bootcamps'] = cached_bootcamp_info
+    # Ensure that information about workshops is in the right order.
+    cached_workshop_info.sort(lambda x, y: cmp(x['slug'], y['slug']))
+    config['workshops'] = cached_workshop_info
 
     # Select those that'll be displayed on the home page.  Use a loop instead of
     # a list comprehension to get better error reporting.
     upcoming = []
-    for bc in config['bootcamps']:
+    for bc in config['workshops']:
         try:
             if bc['startdate'] >= config['today']:
                 upcoming.append(bc)
         except TypeError, e:
             print >> sys.stderr, 'Unable to process start date "{0}"'.format(bc['startdate'])
-    config['bootcamps_upcoming'] = upcoming[:upcoming_length]
-    config['bootcamps_num_upcoming'] = len(upcoming)
+    config['workshops_upcoming'] = upcoming[:upcoming_length]
+    config['workshops_num_upcoming'] = len(upcoming)
 
     # Save.
     with open(CONFIG_YML, 'w') as writer:
@@ -142,13 +142,13 @@ def parse_args():
 
 #----------------------------------------
 
-def load_cached_bootcamp_info(folder, filename):
-    '''Load cached bootcamp info if available, fail if not.'''
+def load_cached_workshop_info(folder, filename):
+    '''Load cached workshop info if available, fail if not.'''
     path = os.path.join(folder, filename)
     if not os.path.isfile(path):
-        print >> sys.stderr, 'Bootcamp information cache "{0}" does not exist.'.format(path)
+        print >> sys.stderr, 'Workshop information cache "{0}" does not exist.'.format(path)
         print >> sys.stderr, 'Please use "make cache" before building site,'
-        print >> sys.stderr, 'Or run "bin/get_bootcamp_info" to regenerate it.'
+        print >> sys.stderr, 'Or run "bin/get_workshop_info" to regenerate it.'
         sys.exit(1)
     return load_info(folder, filename)
 

@@ -1,6 +1,6 @@
 """
-Download information about bootcamps from GitHub.
-Usage: get_bootcamp_info [-i input_file] [-o output_file] [-t]
+Download information about workshops from GitHub.
+Usage: get_workshop_info [-i input_file] [-o output_file] [-t]
 -i: optional input filename (default sys.stdin)
 -o: optional output filename (default sys.stdout)
 -t: tolerate errors (default False)
@@ -129,7 +129,7 @@ def extract_info_from_url(url):
     return user, slug
 
 def check_info(url, info):
-    '''Check that all required information for bootcamp is present.'''
+    '''Check that all required information for workshop is present.'''
     missing = REQUIRED_KEYS - set(info.keys())
     if missing:
         missing = sorted(list(missing))

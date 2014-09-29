@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-'''Check consistency of bootcamp info.'''
+'''Check consistency of workshop info.'''
 
 import sys
 import yaml

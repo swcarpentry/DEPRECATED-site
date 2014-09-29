@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Create bootcamp-feed.xml for RSS feed for Software Carpentry 
+Create workshop-feed.xml for RSS feed for Software Carpentry 
 boot camps.
 '''
 
@@ -25,10 +25,10 @@ def main():
     config = load_info(os.curdir)
     config['site'] = options.site
 
-    bootcamps = get_future_boot_camps(config['bootcamps'])
-    build_bootcamp_rss(config,
-                       os.path.join(options.output, 'bootcamp-feed.xml'),
-                       bootcamps)
+    workshops = get_future_boot_camps(config['workshops'])
+    build_workshop_rss(config,
+                       os.path.join(options.output, 'workshop-feed.xml'),
+                       workshops)
 
 #----------------------------------------
 
@@ -45,10 +45,10 @@ def parse_args():
 
 #----------------------------------------
 
-def build_bootcamp_rss(config, filename, bootcamps):
+def build_workshop_rss(config, filename, workshops):
     '''
-    Generate RSS2 file for bootcamps given the metadata blobs for
-    recent bootcamps.
+    Generate RSS2 file for workshops given the metadata blobs for
+    recent workshops.
     '''
     site = config['site']
     publish_time = datetime.datetime.now()
@@ -61,7 +61,7 @@ def build_bootcamp_rss(config, filename, bootcamps):
                                        description=get_description(bc),
                                        categories=[get_country(site, bc)],
                                        pubDate=publish_time)
-                 for bc in bootcamps]
+                 for bc in workshops]
     except KeyError as e:
         print >> sys.stderr, 'Failed to find key {0} in {1}'.format(str(e), bc)
         sys.exit(1)
@@ -77,46 +77,46 @@ def build_bootcamp_rss(config, filename, bootcamps):
     with open(filename, 'w') as writer:
         rss.write_xml(writer)
 
-def get_future_boot_camps(bootcamps):
+def get_future_boot_camps(workshops):
     '''
     Create a list of boot camps that are in the future and return these
     in reverse chronological order.
     '''
     publish_date = datetime.datetime.now().date()
-    bootcamps = [bc for bc in bootcamps if bc['startdate'] >= publish_date]
-    bootcamps.reverse()
-    return bootcamps
+    workshops = [bc for bc in workshops if bc['startdate'] >= publish_date]
+    workshops.reverse()
+    return workshops
 
-def get_guid(site, bootcamp):
+def get_guid(site, workshop):
     '''
     Create non-permalink Guid consisting of Software Carpentry 
-    site URL and bootcamp identifier ('slug').
+    site URL and workshop identifier ('slug').
     '''
-    return Guid('{0}/{1}'.format(site, bootcamp['slug']), 
+    return Guid('{0}/{1}'.format(site, workshop['slug']), 
                 isPermaLink=False)
 
-def get_country(site, bootcamp):
+def get_country(site, workshop):
     '''
     Create 'country' category in domain 
     http://software-carpentry.org/locations with boot camp's country
     as value.
     '''
-    return Category(bootcamp['country'], 
+    return Category(workshop['country'], 
                     '{0}/{1}'.format(site, 'locations'))
 
-def get_description(bootcamp):
+def get_description(workshop):
     '''
     Create description string with boot camp date, address (if known)
     and instructors (if known).
     '''
     address = ''
-    if bootcamp.get('address'):
-        address = u'at {0}'.format(bootcamp['address'])
+    if workshop.get('address'):
+        address = u'at {0}'.format(workshop['address'])
     instructors = ''
-    if bootcamp.get('instructor'):
-        instructors = u'led by {0}'.format(u','.join(bootcamp['instructor']))
+    if workshop.get('instructor'):
+        instructors = u'led by {0}'.format(u','.join(workshop['instructor']))
     return u'A boot camp will be held on {0} {1} {2}'.format(
-        bootcamp['humandate'], address, instructors)
+        workshop['humandate'], address, instructors)
 
 #----------------------------------------
 
