@@ -58,18 +58,18 @@ SWC.maps = (function() {
     map           = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
     // Go over all the upcoming camps and create pins in the map
-    {% for bootcamp in site.bootcamps %}
-      {% if bootcamp.latlng and bootcamp.startdate >= site.today %}
+    {% for workshop in site.workshops %}
+      {% if workshop.latlng and workshop.startdate >= site.today %}
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng({{bootcamp.latlng}}),
+          position: new google.maps.LatLng({{workshop.latlng}}),
           map: map,
-          title: "{{bootcamp.venue}}, {{bootcamp.humandate}}",
+          title: "{{workshop.venue}}, {{workshop.humandate}}",
           //icon: openPin,
           visible: true,
         });
         var info_string = "<div class=\"info-window\">" +
-          "<h5><a href=\"{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}\">{{bootcamp.venue}}</a></h5>" +
-          "<h6><a href=\"{{page.root}}/{{bootcamp.path}}\">{{bootcamp.humandate}}</a></h6>" +
+          "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
+          "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>" +
           "</div>";
         set_info_window(map, marker, info_window, info_string);
       {% endif %}
@@ -102,18 +102,18 @@ SWC.maps = (function() {
 	});
 
     // Go over all the previous camps and create pins in the map
-    {% for bootcamp in site.bootcamps %}
-      {% if bootcamp.latlng and bootcamp.startdate < site.today %}
+    {% for workshop in site.workshops %}
+      {% if workshop.latlng and workshop.startdate < site.today %}
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng({{bootcamp.latlng}}),
+          position: new google.maps.LatLng({{workshop.latlng}}),
           map: map,
-          title: "{{bootcamp.venue}}, {{bootcamp.humandate}}",
+          title: "{{workshop.venue}}, {{workshop.humandate}}",
           //icon: openPin,
           visible: true,
         });
         var info_string = "<div class=\"info-window\">" +
-          "<h5><a href=\"{% if bootcamp.url %}{{bootcamp.url}}{% else %}{{page.root}}/{{bootcamp.path}}{% endif %}\">{{bootcamp.venue}}</a></h5>" +
-          "<h6><a href=\"{{page.root}}/{{bootcamp.path}}\">{{bootcamp.humandate}}</a></h6>" +
+          "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
+          "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>" +
           "</div>";
         set_info_window(map, marker, info_window, info_string);
         markers.push(marker); // For clustering
