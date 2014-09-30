@@ -3,7 +3,7 @@ Software Carpentry Web Site
 
 This repository holds the source for
 the [Software Carpentry](http://software-carpentry.org) web site.
-Home pages for bootcamps are not stored in this repository:
+Home pages for workshops are not stored in this repository:
 if you want to create one,
 please see the instructions in the [`bc` repository](https://github.com/swcarpentry/bc).
 
@@ -52,7 +52,7 @@ We use Jekyll because it's what [GitHub](http://github.com/) uses;
 we use Python because most of our volunteers speak it.
 
 *   Type `make` to see a list of all available commands.
-*   Type `make cache` to fetch information about upcoming bootcamps.
+*   Type `make cache` to fetch information about upcoming workshops.
     This must be done before building the web site.
 *   Type `make site` to build everything in `_site` for testing.
     (Depending on your machine, this takes about 10-15 seconds.)
@@ -75,22 +75,22 @@ Design Notes
 *   We generate our own RSS feed (in `feed.xml`) and blog home page
     because Jekyll insists on using `_posts/YYYY-MM-DD-name.html`,
     and we don't want to have hundreds of files in one directory.
-*   Bootcamp pages for old bootcamps
-    are stored in the `bootcamps` directory of this repository,
+*   Workshop pages for old workshops
+    are stored in the `workshops` directory of this repository,
     since there's little point in creating repos for them.
-    New bootcamps should be created using the process described below.
+    New workshops should be created using the process described below.
 
-Adding Bootcamps
+Adding Workshops
 ----------------
 
-Old bootcamps' home pages are stored in `bootcamps/yyyy-mm-dd-site/index.html`.
-Newer bootcamps' home pages are stored in their own repositories on GitHub.
-The make target `make cache` runs the program `bin/get_bootcamp_info.py`
-which reads a list of GitHub repository URLs from the file `config/bootcamp_urls.yml`
-and (re-)creates the file `./_bootcamp_cache.yml`.
-That file is then used to build `./index.html`, `bootcamps/index.html`, and so on.
-To add another GitHub-hosted bootcamp to this web site,
-simply add a line to `config/bootcamp_urls.yml`.
+Old workshops' home pages are stored in `workshops/yyyy-mm-dd-site/index.html`.
+Newer workshops' home pages are stored in their own repositories on GitHub.
+The make target `make cache` runs the program `bin/get_workshop_info.py`
+which reads a list of GitHub repository URLs from the file `config/workshop_urls.yml`
+and (re-)creates the file `./_workshop_cache.yml`.
+That file is then used to build `./index.html`, `workshops/index.html`, and so on.
+To add another GitHub-hosted workshop to this web site,
+simply add a line to `config/workshop_urls.yml`.
 Please keep these ordered by date.
 
 Blogging 
@@ -146,16 +146,16 @@ To create a new blog post:
 Available Commands
 ------------------
 
-*   `archive_verb`: collect and archive bootcamp information from GitHub and
+*   `archive_verb`: collect and archive workshop information from GitHub and
     store in local cache (verbose).
-*   `archive`: collect and archive bootcamp information from GitHub and store in
+*   `archive`: collect and archive workshop information from GitHub and store in
     local cache.
 *   `authors`: list all blog post authors.
 *   `biblio`: make HTML and PDF of bibliography.
-*   `cache_verb` : collect bootcamp information from GitHub and store in local cache (verbose).
-*   `cache`: collect bootcamp information from GitHub and store in local cache.
+*   `cache_verb` : collect workshop information from GitHub and store in local cache (verbose).
+*   `cache`: collect workshop information from GitHub and store in local cache.
 *   `categories : list all blog category names.
-*   `check`: check consistency of bootcamp info, urls and other.
+*   `check`: check consistency of workshop info, urls and other.
 *   `clean`: clean up.
 *   _`commands`_: show all commands (the default).
 *   `dev`: build into development directory on server.
@@ -172,11 +172,11 @@ The Details
 
 1.  Run `bin/preprocess.py` to create the `./_config.yml` file required by Jekyll
     and the `_includes/recent_blog_posts.html` file containing excerpts of recent blog posts.
-    This tool collects metadata about blog posts and bootcamps
+    This tool collects metadata about blog posts and workshops
     and combines it with static configuration information.
 2.  Run Jekyll to build the web site.
 3.  Run `bin/make_rss_feed.py` to generate the RSS feed file `feed.xml`.
-4.  Run `bin/make_calendar.py` to generate the ICal calendar file `bootcamps.ics`.
+4.  Run `bin/make_calendar.py` to generate the ICal calendar file `workshops.ics`.
 5.  Copy `./_htaccess` to create the `.htaccess` file for the web site.
 
 Badges
