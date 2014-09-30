@@ -41,7 +41,7 @@ nocomments:
       <div class="span4">
         <h4>What We Do</h4>
         <p>
-          We run <a href="{{page.root}}/bootcamps/index.html">bootcamps</a> all over the world,
+          We run <a href="{{page.root}}/workshops/index.html">workshops</a> all over the world,
           and provide <a href="{{page.root}}/lessons.html">open access lessons</a>
           for self-paced instruction.
           We also run a <a href="{{page.root}}/pages/join.html#instructors">training program</a>
@@ -53,7 +53,7 @@ nocomments:
         <p>
 	  We depend on people like you to
           <a href="{{page.root}}/pages/join.html">discuss what and how to teach</a>,
-	  <a href="{{page.root}}/bootcamps/request.html">host a bootcamp</a>,
+	  <a href="{{page.root}}/workshops/request.html">host a workshop</a>,
           <a href="{{page.root}}/pages/create.html#content">create new teaching materials</a>,
           or improve <a href="{{page.root}}/pages/create.html#related">the tools we use</a>.
         </p>
@@ -63,7 +63,7 @@ nocomments:
   <div class="container">
     <div class="row-fluid pagination-centered">
       <div class="span4">
-        <h4><a href="{{page.root}}/bootcamps/index.html"><em>Find a bootcamp...</em></a></h4>
+        <h4><a href="{{page.root}}/workshops/index.html"><em>Find a workshop...</em></a></h4>
       </div>
       <div class="span4">
         <h4><a href="{{page.root}}/pages/join.html"><em>Join us...</em></a></h4>
@@ -87,23 +87,23 @@ nocomments:
       </div>
       <div class="span4">
 
-        <h4><a href="bootcamps/index.html#future">Upcoming Bootcamps</a></h4>
+        <h4><a href="workshops/index.html#future">Upcoming Workshops</a></h4>
         <table class="table table-hover">
-        {% for bootcamp in site.bootcamps_upcoming %}
+        {% for workshop in site.workshops_upcoming %}
           <tr>
             <td>
-              <img src="{{page.root}}/img/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" />
-              <a href="{{bootcamp.url}}">{{bootcamp.venue}}</a>
+              <img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" />
+              <a href="{{workshop.url}}">{{workshop.venue}}</a>
               <br />
-              {{bootcamp.humandate|replace: ' ', '&nbsp;'}}
+              {{workshop.humandate|replace: ' ', '&nbsp;'}}
             </td>
           </tr>
         {% endfor %}
 
           <tr><td>
-            <a class="pull-right" href="bootcamps/index.html#future">...see all</a><br />
+            <a class="pull-right" href="workshops/index.html#future">...see all</a><br />
             <div align="center"><p>
-              <em><a href="{{page.root}}/bootcamps/request.html">Request a bootcamp!</a></em>
+              <em><a href="{{page.root}}/workshops/request.html">Request a workshop!</a></em>
             </p></div>
           </td></tr>
 
@@ -113,8 +113,8 @@ nocomments:
         <a class="twitter-timeline" href="https://twitter.com/swcarpentry" data-widget-id="410241789077909504">Tweets by @swcarpentry</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-        <h4><a href="{{page.root}}/bootcamps/request.html">Request a Bootcamp</a></h4>
-        <p><a href="{{page.root}}/bootcamps/request.html">Let us know</a> if you would like a software carpentry bootcamp in your area</p>
+        <h4><a href="{{page.root}}/workshops/request.html">Request a Workshop</a></h4>
+        <p><a href="{{page.root}}/workshops/request.html">Let us know</a> if you would like a software carpentry workshop in your area</p>
 
       </div>
     </div>

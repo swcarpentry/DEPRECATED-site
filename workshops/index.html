@@ -1,11 +1,11 @@
 ---
-layout: bootcamp_index
+layout: workshop_index
 root: ..
-title: Bootcamps
+title: Workshops
 ---
 <div id="about">
   <p>
-    A bootcamp is an on-site workshop,
+    A workshop is an on-site workshop,
     typically two days long,
     that covers the core skills needed to be productive in a small research team:
   </p>
@@ -18,11 +18,11 @@ title: Bootcamps
   <p>
     Short tutorials alternate with hands-on practical exercises;
     learners work on their own laptops using either native software or a virtual machine,
-    so that they have a working environment when the bootcamp is done.
+    so that they have a working environment when the workshop is done.
   </p>
   <p>
     <em>
-      All bootcamp participants are required to abide by our <a href="{{page.root}}/conduct.html">code of conduct</a>
+      All workshop participants are required to abide by our <a href="{{page.root}}/conduct.html">code of conduct</a>
       to ensure that all attendees to have an enjoyable and fulfilling experience.
     </em>
   </p>
@@ -33,8 +33,8 @@ title: Bootcamps
     </li>
     <li>
       Want to run one?
-      See our <a href="{{page.root}}/bootcamps/operations.html">operations guide</a>
-      or <a href="{{page.root}}/bootcamps/checklists/index.html">checklists</a>.
+      See our <a href="{{page.root}}/workshops/operations.html">operations guide</a>
+      or <a href="{{page.root}}/workshops/checklists/index.html">checklists</a>.
     </li>
     <li>
       Want us to teach one where you are?
@@ -47,17 +47,17 @@ title: Bootcamps
 </div>
 
 <div id="future">
-  <h2>Future Bootcamps</h2>
-  <table class="table table-striped bootcamps">
-    {% for bootcamp in site.bootcamps %}
-      {% if bootcamp.startdate >= site.today %}
+  <h2>Future Workshops</h2>
+  <table class="table table-striped workshops">
+    {% for workshop in site.workshops %}
+      {% if workshop.startdate >= site.today %}
         <tr>
-          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{bootcamp.country}}.png" alt="{{bootcamp.country}}" /></td>
-          <td class="link"><a href="{{bootcamp.url}}">{{bootcamp.venue}}</a></td>
+          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+          <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
           <td class="registration">
-            {% if bootcamp.registration %}{{bootcamp.registration}}{% endif %}
+            {% if workshop.registration %}{{workshop.registration}}{% endif %}
           </td>
-          <td class="date">{{bootcamp.humandate}}</td>
+          <td class="date">{{workshop.humandate}}</td>
         </tr>
       {% endif %}
     {% endfor %}
@@ -73,7 +73,7 @@ title: Bootcamps
             frameborder="0"
             scrolling="no"></iframe>
     <p style="text-align: right; margin-top: 5px;margin-bottom: 5px;">
-      <a class="label swc-blue-bg" style="margin-right: 10px" href="http://software-carpentry.org/bootcamps.ics">Calendar Feed</a>
+      <a class="label swc-blue-bg" style="margin-right: 10px" href="http://software-carpentry.org/workshops.ics">Calendar Feed</a>
     </p>
   </div>
 </div>
@@ -83,15 +83,15 @@ title: Bootcamps
   <p>
     To help us improve our instruction,
     we have prepared
-    a <a href="{{page.root}}/bootcamps/assess/pre-learner.html">pre-assessment questionnaire for learners</a>
+    a <a href="{{page.root}}/workshops/assess/pre-learner.html">pre-assessment questionnaire for learners</a>
     that can be used to ensure instruction is at the right level,
-    a <a href="{{page.root}}/bootcamps/assess/post-learner.html">post-assessment questionnaire for learners</a>
-    to help us determine how well the bootcamp went,
+    a <a href="{{page.root}}/workshops/assess/post-learner.html">post-assessment questionnaire for learners</a>
+    to help us determine how well the workshop went,
     and
-    a <a href="{{page.root}}/bootcamps/assess/post-instructor.html">post-assessment questionnaire for instructors</a>
+    a <a href="{{page.root}}/workshops/assess/post-instructor.html">post-assessment questionnaire for instructors</a>
     for calibration.
-    Please contact us if you are organizing a bootcamp
+    Please contact us if you are organizing a workshop
     for help delivering and evaluating
-    <a href="{{page.root}}/bootcamps/assess/index.html">these questionnaires</a>.
+    <a href="{{page.root}}/workshops/assess/index.html">these questionnaires</a>.
   </p>
 </div>
