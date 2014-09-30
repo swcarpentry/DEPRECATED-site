@@ -7,7 +7,7 @@ root: ../../..
 title: "UCL Bootcamp: Version Control Wrap-Up"
 category: ["Assessment", "University College London"]
 ---
-<p>For the boot camp at UCL, we tried using <a href="http://mercurial.selenic.com">Mercurial</a> (with <a href="http://easyhg.org">EasyMercurial</a>) instead of Subversion in the version control segment.</p>
+<p>For the bootcamp at UCL, we tried using <a href="http://mercurial.selenic.com">Mercurial</a> (with <a href="http://easyhg.org">EasyMercurial</a>) instead of Subversion in the version control segment.</p>
 <p>You can see the plan for the segment on this <a href="https://code.soundsoftware.ac.uk/projects/easyhg/wiki/SC2012BootcampPlan">EasyMercurial project page</a>. Briefly, we opened with a few plain slides about the purpose of version control, followed by a hands-on example in three parts (working by yourself, working by yourself with an online remote repository, and working with others). We started at the beginning and got as far as "hg bisect", but did not cover branching.</p>
 <p>I was presenting the segment, so I'm not well placed to judge how effective it was as a learning experience.  But I did make some notes.</p>
 <p><strong>Command line or GUI?</strong></p>
@@ -17,7 +17,7 @@ category: ["Assessment", "University College London"]
 <p>It seems counter-intuitive to say that the command line is better for basic stuff and the GUI better for advanced stuff, but perhaps that is the way it is. It would be interesting to have more feedback from others who were present.</p>
 <p><strong>Peer-to-Peer or Master Repository?</strong></p>
 <p>A common requirement is to share code between "my computer" and "the lab compute server" (implied for example in the "frequently asked question" at the end of the Software Carpentry version control lecture <a href="{{page.root}}/v4/vc/">front page</a>).</p>
-<p>We approached this by using a master repository stored on an external server, in this case Bitbucket. But since we have a distributed version-control system, we could have taken a peer-to-peer approach, pushing and pulling between peer repositories on the two machines directly. We could have done this for sharing changes between paired neighbours in the boot camp, as well.</p>
+<p>We approached this by using a master repository stored on an external server, in this case Bitbucket. But since we have a distributed version-control system, we could have taken a peer-to-peer approach, pushing and pulling between peer repositories on the two machines directly. We could have done this for sharing changes between paired neighbours in the bootcamp, as well.</p>
 <p>Using a master repository has advantages such as redundancy, availability, and backups. It's probably better practice in a real lab, and it's also easier to use a known remote server in a setting like this where everyone has one machine in front of them with a dynamic IP address using an unknown network topology.  On the other hand, there are situations in which it's useful to know that a peer-to-peer arrangement is possible, and I do wonder whether we should have demonstrated it in some way.</p>
 <p><strong>One We Made Earlier?</strong></p>
 <p>We didn't have any pre-prepared working material in the segment, just a few introductory slides followed by building a repository from scratch (with recipes in it). One suggestion was that we could provide a canned repository for people to start from to get them more quickly into "working together" mode.</p>
