@@ -3234,3 +3234,393 @@
   url: http://geocarpentry.github.io/2014-08-05-frf/
   user: geocarpentry
   venue: Field Research Facility
+- address1: 567 Wilson Road, BPS Room 1441, East Lansing, MI
+  address2: UT Austin, GDC 7.808
+  contact: tkteal@msu.edu
+  country: United-States
+  enddate: 2014-07-25
+  eventbrite1: 11953052903
+  eventbrite2: 11953089011
+  helper: [Alexis Black Pyrkosz, Kevin Hall, Qingpeng Zhang, Ben Johnson, Josh Nahum,
+    April Wright, Nichole Bennett, Kelly Pierce, Jiarong Guo]
+  humandate: July 24-25, 2014
+  humantime: 9:30 am - 5 pm MSU and 8:30 am - 4 pm UT Austin
+  instructor: [Tracy Teal, Christie Bahlai, Josh Herr, Elijah Lowe]
+  latlng: 42.723303,-84.479780
+  layout: bootcamp2
+  raw: raw.github.com/datacarpentry/2014-07-24-beacon/gh-pages
+  registration: open
+  root: .
+  slug: 2014-07-24-beacon
+  startdate: 2014-07-24
+  url: http://datacarpentry.github.io/2014-07-24-beacon/
+  user: datacarpentry
+  venue: MSU BEACON
+  venue1: MSU BEACON
+  venue2: UT Austin BEACON (via teleconference)
+- address: Farrell Teaching and Learning Center, Holden Auditorium and FLTC 214, Saint
+    Louis, MO
+  contact: molly.gibson@wustl.edu
+  country: United-States
+  enddate: 2014-08-12
+  humandate: Aug 11-12, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Molly Gibson, Daniel Chen, Neem Serra, Jessica Kerr, Ariel Rokem]
+  latlng: 38.6350207,-90.2630784
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-11-wustl
+  startdate: 2014-08-11
+  url: http://mollygibson.github.io/2014-08-11-wustl/
+  user: mollygibson
+  venue: Washington University School of Medicine
+- address: Room 419 Light Hall 1301 Medical Center Dr Nashville, TN 37232
+  contact: scott.s.burns@gmail.com
+  country: United-States
+  enddate: 2014-08-13
+  humandate: Aug 12-13, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Scott Burns, Chris Fonnesbeck, Firas Wehbe, Daniel Fabbri]
+  latlng: 36.1422857,-86.8020581
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-12-vu
+  startdate: 2014-08-12
+  url: http://vu-bc.github.io/2014-08-12-vu/
+  user: vu-bc
+  venue: Vanderbilt University
+- address: Li Ka Shing Center room 120, 291 Campus Drive, Stanford, CA 94305
+  contact: abostroem@gmail.com
+  country: United-States
+  enddate: 2014-08-15
+  helper: [Matar Haller, Chris Beitel, Ian Korf, Dani Traphagen]
+  humandate: Aug 14-15, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Azalee Bostroem, Chris Lonnen (Lonnen)]
+  latlng: 37.4320382,-122.175779
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-14-stanford
+  startdate: 2014-08-14
+  url: http://abostroem.github.io/2014-08-14-stanford/
+  user: abostroem
+  venue: Stanford University
+- address: Auditório Ministro João Alberto Lins de Barros do CBPF – Rua Lauro Muller,
+    455 – térreo – Botafogo – Rio de Janeiro – RJ
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2014-08-18
+  helper: []
+  humandate: Aug 18, 2014
+  humantime: 9:00 am - 13:00 pm
+  instructor: [Alex Viana, Raniere Silva]
+  latlng: -22.954318,-43.174687
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-08-18-ufrj
+  startdate: 2014-08-18
+  url: http://r-gaia-cs.github.io/2014-08-18-ufrj/
+  user: r-gaia-cs
+  venue: Universidade Federal do Rio de Janeiro
+- address: <a href="http://maps.unimelb.edu.au/parkville/building/149">Old Arts building</a>
+  contact: d.irving@student.unimelb.edu.au
+  country: Australia
+  enddate: 2014-08-27
+  humandate: Aug 18, 25 & 27, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Damien Irving, Scott Kolbe, Isabell Kiral-Kornek, Bernard Meade]
+  latlng: -37.7963,144.9614
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-08-18-unimelb
+  startdate: 2014-08-18
+  url: http://resbaz.github.io/2014-08-18-unimelb/
+  user: resbaz
+  venue: University of Melbourne
+- address: Am Botanischen Garten 7, R.E49 - PC-room, Kiel
+  contact: rkiko@geomar.de
+  country: Germany
+  enddate: 2014-08-22
+  helper: [Pieter Vandromme, Pina Springer]
+  humandate: Aug 21-22, 2014
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Rainer Kiko, Bernhard Konrad]
+  latlng: 54.346504, 10.115453
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-21-kiel
+  startdate: 2014-08-21
+  url: http://rkiko.github.io/2014-08-21-kiel/
+  user: rkiko
+  venue: Christian Albrechts University, Kiel
+- address: LRSM Auditorium, 3231 Walnut Street, Philadelphia, PA 19104
+  contact: gvwilson@software-carpentry.org
+  country: United-States
+  enddate: 2014-08-22
+  helper: []
+  humandate: Aug 21-22, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Chris Friedline, R. David Murray]
+  latlng: 39.952803,-75.189727
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-08-21-upenn
+  startdate: 2014-08-21
+  url: http://swcarpentry.github.io/2014-08-21-upenn/
+  user: swcarpentry
+  venue: University of Pennsylvania
+- address: TTU Media and Communications Building, Room 0152, 15th and Flint, Lubbock,
+    TX
+  contact: eric.bruning@ttu.edu
+  country: United-States
+  enddate: 2014-08-24
+  helper: [Eric Bruning, Vanna Sullivan, Tony Reinhart, Aaron Hill]
+  humandate: Aug 23-24, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [April Wright, John Fonner]
+  latlng: 33.578205, -101.855120
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-23-ttu
+  startdate: 2014-08-23
+  url: http://wrightaprilm.github.io/2014-08-23-ttu/
+  user: wrightaprilm
+  venue: Texas Tech University
+- address: 3rd Floor Teaching Lab, Wisconsin Institutes for Discovery, 330 N Orchard
+    St, Madison, WI
+  contact: lmichael@wisc.edu
+  country: United-States
+  enddate: 2014-08-26
+  eventbrite: '12454047391'
+  helper: [Anthony Scopatz]
+  humandate: Aug 25-26, 2014
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Karl Broman, Matt Gidden, Daijiang Li, Lauren Michael, Paul Wilson]
+  latlng: 43.074974,-89.406738
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-25-wisc
+  startdate: 2014-08-25
+  url: http://UW-Madison-ACI.github.io/2014-08-25-wisc/
+  user: UW-Madison-ACI
+  venue: University of Wisconsin-Madison
+- address: Craik-Marshall Building, University of Cambridge, Downing Site, Cambridge,
+    CB2 3AR
+  contact: cambridge@lists.software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-08-27
+  helper: [Jelena Aleksic, David Molnar]
+  humandate: Aug 26-27, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Rob Beagrie, Thomas Kluyver]
+  latlng: 52.201893,0.12303
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-08-26-cam
+  startdate: 2014-08-26
+  url: http://rbeagrie.github.io/2014-08-26-cam/
+  user: rbeagrie
+  venue: Cambridge University
+- address: Instituto de Informática prédio 43413(67) - Sala 102.
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2014-08-29
+  helper: []
+  humandate: Aug 28-29, 2014
+  humantime: 9:00 am - 6:00 pm
+  instructor: [Alex Viana, Raniere Silva]
+  latlng: -30.0762942,-51.1245446
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-08-28-ufrgs
+  startdate: 2014-08-28
+  url: http://acviana.github.io/2014-08-28-ufrgs/
+  user: acviana
+  venue: Universidade Federal do Rio Grande do Sul (Campus do Vale)
+- address: CCSL-IME/USP, Sala B-7. Rua do Matão, 1010
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2014-09-02
+  eventbrite: 12386974775
+  helper: []
+  humandate: Set 01-02, 2014
+  humantime: 9:00 am - 6:00 pm
+  instructor: [Alex Viana, Raniere Silva]
+  latlng: -23.558745,-46.731859
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-09-01-ccsl
+  startdate: 2014-09-01
+  url: http://r-gaia-cs.github.io/2014-09-01-ccsl/
+  user: r-gaia-cs
+  venue: Centro de Competência em Software Livre
+- address: CCSL-IME/USP, Sala B-7. Rua do Matão, 1010
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2014-09-05
+  eventbrite: 12387143279
+  helper: []
+  humandate: Set 04-05, 2014
+  humantime: 9:00 am - 6:00 pm
+  instructor: [Alex Viana, Raniere Silva]
+  latlng: -23.558745,-46.731859
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-09-04-ccsl
+  startdate: 2014-09-04
+  url: http://r-gaia-cs.github.io/2014-09-04-ccsl/
+  user: r-gaia-cs
+  venue: Centro de Competência em Software Livre
+- address: Newark, DE, USA
+  contact: joshua.r.herr@gmail.com
+  country: United-States
+  enddate: 2014-09-12
+  helper: [Erin Crowgey, Reza Hammond, Modupe Adetunji, Liang Sun, Matthew Ralston]
+  humandate: Sep 11-12, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Joshua R. Herr, Joshua L. Adelman]
+  latlng: 39.678214, -75.750622
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-11-udel
+  startdate: 2014-09-11
+  url: http://jrherr.github.io/2014-09-11-udel/
+  user: jrherr
+  venue: University of Delaware
+- address: Engineering 6 room 4022, 200 University Ave, Waterloo
+  contact: nmabukhdeir@uwaterloo.ca
+  country: Canada
+  enddate: 2014-09-14
+  helper: [WatPy, SHARCNET]
+  humandate: September 13-14, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Nasser M Abukhdeir, Pawel Pomorski, Albert O'Connor]
+  latlng: 43.473269, -80.538639
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-13-uwaterloo
+  startdate: 2014-09-13
+  url: http://amjoconn.github.io/2014-09-13-uwaterloo/
+  user: amjoconn
+  venue: Unversity of Waterloo
+- address: <a href="http://maps.unimelb.edu.au/parkville/building/104#.Uw0fhPiLelM">Theatre
+    3, Alan Gilbert Building</a>
+  contact: d.irving@student.unimelb.edu.au
+  country: Australia
+  enddate: 2014-09-25
+  humandate: Sep 15, 18, 22 & 25, 2014
+  humantime: 1:30 pm - 5:00 pm
+  instructor: [Damien Irving]
+  latlng: -37.7963,144.9614
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-09-15-unimelb
+  startdate: 2014-09-15
+  url: http://resbaz.github.io/2014-09-15-unimelb/
+  user: resbaz
+  venue: University of Melbourne
+- address: Room 1.51, Royal School of Mines (RSM) Building, South Kensington Campus,
+    Imperial College London, London.
+  contact: support@archer.ac.uk
+  country: United-Kingdom
+  enddate: 2014-09-17
+  humandate: Sep 16-17, 2014
+  humantime: 10:00 am - 5:00 pm
+  instructor: [Mike Jackson, Arno Proeme]
+  latlng: 51.499471,-0.176400
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-09-16-imperial
+  startdate: 2014-09-16
+  url: http://hpcarcher.github.io/2014-09-16-imperial/
+  user: hpcarcher
+  venue: Imperial College London
+- address: Day 1 - Biological Scienes Learning Center (BSLC) 109; Day 2 - Gordon Center
+    for Integrative Science (GCIS) W301
+  contact: jdblischak@uchicago.edu
+  country: United-States
+  enddate: 2014-09-19
+  helper: [Daniel Rabe, Nick Knoblauch, Suchandra Thapa, Bala Desinghu]
+  humandate: Sep 18-19, 2014
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Will Trimble, Emily Davenport, Dan Braithwaite, John Blischak]
+  latlng: 41.7901128,-87.6007318
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-18-chicago
+  startdate: 2014-09-18
+  url: http://jdblischak.github.io/2014-09-18-chicago/
+  user: jdblischak
+  venue: University of Chicago
+- address: 1 Cyclotron Road Berkeley, CA 94720
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-09-23
+  helper: [Kyle Barbary, Yigong Zhang]
+  humandate: Sep 22-23, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Matt Davis, Jessica Hamrick, Thomas Kluyver]
+  latlng: 37.8759281,-122.2500418
+  layout: bootcamp
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-09-22-lbl
+  startdate: 2014-09-22
+  url: http://swcarpentry.github.io/2014-09-22-lbl/
+  user: swcarpentry
+  venue: Lawrence Berkeley Lab
+- address: 20th and C St NW. Washington DC. (Martin Building Dining Room E)
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-09-25
+  helper: [Açmae El Yacoubi]
+  humandate: Sep 24-25, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ivan Gonzalez, Steve Eddins, Daniel Chen]
+  latlng: 38.892944, -77.044877
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-24-frb
+  startdate: 2014-09-24
+  url: http://chendaniely.github.io/2014-09-24-frb/
+  user: chendaniely
+  venue: Federal Reserve Board
+- address: Earth, Ocean and Atmospheric Sciences, ESB-5108
+  contact: sallen@eos.ubc.ca
+  country: Canada
+  enddate: 2014-08-26
+  helper: [Jordan Aaron, Karina Ramos Musalem, Drew Snauffer, Nancy Soontiens, Kathi
+      Unglert, Kang Wang]
+  host: Susan Allen
+  humandate: Sep 25-26, 2014
+  humantime: 9:00 - 4:00 Thu, 9:00 - 4:30 Fri
+  instructor: [Doug Latornell, Susan Allen]
+  latlng: 49.263,-123.252
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-25-ubc
+  startdate: 2014-09-25
+  url: http://douglatornell.github.io/2014-09-25-ubc/
+  user: douglatornell
+  venue: University of British Columbia
