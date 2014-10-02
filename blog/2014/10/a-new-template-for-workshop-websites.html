@@ -1,0 +1,154 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "A New Template for Workshop Websites"
+date: 2014-10-02
+time: "17:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<!-- end excerpt -->
+
+The first step in reorganizing the `bc` repository is
+making it easier --- *much* easier --- for people to create websites for workshops.
+The [current instructions](https://github.com/swcarpentry/bc) are almost 3000 words long,
+and even experienced GitHub users find the process daunting,
+so we're going to simplify things as much as we can,
+even if that means not doing things the "right" way.
+
+Here's what you'll do to create a website for a workshop when we're done:
+
+1. Download the latest version of `create_workshop.sh` from the Software Carpentry website.
+
+2. Run `create_workshop.sh github_user_name workshop_id`.
+
+3. Go into the newly-created directory named `workshop_id`.
+   This will be a GitHub repository on their machine
+   with a single branch called `gh-pages` containing:
+
+   * `README.md` : a brief description of Software Carpentry
+     with a prominent link to the workshop's GitHub page.
+
+   * `Makefile`: useful commands for checking and building the website.
+     `make` on its own (without a target) will display help.
+
+   * `index.html`: the workshop's home page.
+
+   * `bin/check.py`: a program to check the workshop's layout
+     and the contents of its home page.
+
+   * `_layouts/workshop.html`: a page template for the site.
+
+   and a remote called `origin`
+   pointing at a newly-created GitHub repository `github.com/github_user_name/workshop_id`.
+   (We could simplify further by getting rid of `_layouts/workshop.html`,
+   and putting everything in `index.html`,
+   but we want to make it easy for instructors to add more pages to their website.)
+
+4. Edit the YAML header in `index.html`
+   to specify the workshop's dates, instructors, EventBrite registration key, topics, etc.
+
+5. `git push origin gh-pages`.
+
+That's all we need to set up a single-page site for a workshop,
+because:
+
+1. We can load CSS, Javascript, and images from the Software Carpentry website.
+
+2. We can embed setup instructions in `index.html` (see below).
+
+3. `index.html` can link to rendered online versions of the lessons and the Code of Conduct.
+
+Managing the Site
+-----------------
+
+`Makefile` will contain these targets:
+
+* `make`:
+  without a target, this will print help.
+
+* `make commands`:
+  prints the same help.
+
+* `make check`:
+  run `bin/check.py` to make sure everything is formatted properly.
+
+* `make site`:
+  build the workshop website locally for checking.
+  This will require Jekyll (and possibly other tools).
+
+* `make listed`:
+  check that the workshop is listed on the Software Carpentry site.
+
+* `make standalone`:
+  get local copies of the CSS, Javascript, and images needed to display the website
+  from the `source` remote on GitHub.
+
+* `make page page_name.html`:
+  create a new HTML page with the given name and the right layout.
+  (This isn't strictly necessary,
+  but it make life a little easier.)
+
+* `make clean`:
+  tidy up
+  (i.e., delete the locally-built website).
+
+Localizing
+----------
+
+The repository will also have a read-only Git remote called `source`
+pointing at a GitHub repository `github.com/swcarpentry/workshop_source`.
+If people want local copies of the CSS, Javascript, and images needed to render their site
+(e.g., for offline work),
+then can pull from `source`.
+(`Makefile` will contain a target for this.)
+
+Adding Content
+--------------
+
+Instructors can add more pages to the workshop by running `make page page_name.html`
+then editing `page_name.html`
+and pushing it to `origin`.
+They can add data files,
+code samples,
+and the like just as easily.
+
+Customizing Lessons
+-------------------
+
+In order to customize a lesson,
+instructors will:
+
+1. clone the lesson's repository on GitHub in the usual way;
+
+2. modify the lesson;
+
+3. add a link to the workshop site's `index.html` to point to the new lesson.
+
+Instructors *can* add lesson material to the workshop repository,
+but we will encourage them to decouple lessons from workshops,
+since the former are likely to be re-used
+while the latter are not.
+
+Sending Fixes
+-------------
+
+The one thing this scheme *doesn't* have is
+a link between the workshop's repository and the `workshop_source` repository
+that contains the master copy of the workshop site material.
+This is deliberate:
+as [the current instructions](https://github.com/swcarpentry/bc#getting-started) explain,
+instructors can't just clone a website template repository on GitHub
+because GitHub will only let a particular user have one clone of a particular repository.
+
+In order to send fixes to the master copy of the website template,
+people will therefore have to fork `workshop_source`,
+make the changes in their local copy of that,
+and then issue a pull request.
+This does mean copying changes manually from a workshop website
+to a local copy of `workshop_source`,
+but there doesn't seem to be any easy way around that.
+In practice,
+we expect changes to the template will be relatively infrequent,
+so most instructors won't ever encounter this.
