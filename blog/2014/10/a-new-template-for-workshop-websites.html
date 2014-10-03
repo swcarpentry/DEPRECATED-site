@@ -11,20 +11,79 @@ category: ["Tooling"]
 <!-- end excerpt -->
 The first step in reorganizing the `bc` repository is making it easier
 (*much* easier) for people to create websites for workshops.  The
-current instructions (https://github.com/swcarpentry/bc) are almost
+[current instructions](https://github.com/swcarpentry/bc) are almost
 3000 words long, and even experienced GitHub users find the process
 daunting, so we're going to simplify things as much as we can, even if
 that means not doing things the "right" way.
+
+Background
+----------
+
+1. If a repository has a branch called `gh-pages` (which stands for
+   "GitHub pages"), then GitHub uses the HTML and Markdown files in
+   that branch to create a website for the repository.  If the
+   repository's URL is `http://github.com/darwin/finches`, the URL for
+   the website is `http://darwin.github.io/finches`.
+
+2. If an HTML or Markdown file has a header consisting of three
+   dashes, some data about the page, and three more dashes:
+
+   ~~~
+   ---
+   key: value
+   other_key: other_value
+   ---
+   stuff in the page
+   ~~~
+
+   then GitHub doesn't just copy the file over verbatim.  Instead, it
+   runs the file through a translator called
+   [Jekyll](https://en.wikipedia.org/wiki/Jekyll_%28software%29) that
+   processes specially-formatted instructions embedded in the file.
+
+3. The most important instruction is `{{variable}}`: when Jekyll sees
+   this, it replaces it with the value of `variable`.  This is used
+   to insert things like a contact email address into the page.
+
+   Another instruction is:
+
+   ~~~
+   {% if some_test %}
+   something to display
+   {% endif %}
+   ~~~
+
+   Jekyll will only include the guarded text if the condition
+   `some_test` is true.
+
+4. Jekyll gets variables from a file called `_config.yml` located in
+   the repo's root directory, and the header of each individual page.
+   Variables from `_config.yml` are put in an object called `site`,
+   and referred to as `site.variable`.  Variables from the page's
+   header are put in an object called `page`, and referred to as
+   `page.variable`.
+
+5. A repository can have special sub-directory called `_layouts`.  If
+   a page like `index.html` has a variable called `layout`, and that
+   variable's value is `standard.html`, Jekyll loads the file
+   `_layouts/standard.html` and copies the content of `index.html`
+   into it, then expands the result.  This is used to give the pages
+   in a site a uniform appearance.
+
+Setup
+-----
 
 Here's what you'll do to create a website for a workshop when we're
 done:
 
 1. Download the latest version of a shell script called
-   `create_workshop.sh` from the Software Carpentry website.
+   `create_workshop.sh` from the Software Carpentry website.  When
+   run, this script will create a Git repository beneath the current
+   working directory and fill it with starter files.
 
-2. Run `create_workshop.sh github_user_name workshop_id`, where
-   `github_user_name` could be `swcarpentry`, your name, or whatever,
-   and `workshop_id` is something like `2015-01-02-esu`.
+2. Run `bash create_workshop.sh github_user_name workshop_id`, where
+   `github_user_name` could be `swcarpentry`, your GitHub ID, or
+   whatever, and `workshop_id` is something like `2015-01-02-esu`.
 
 3. Go into the newly-created directory named `workshop_id`.  This will
    be a GitHub repository on your machine with a single branch called
@@ -33,8 +92,8 @@ done:
    * `README.md` : a brief description of Software Carpentry with a
      prominent link to the workshop's GitHub page.
 
-   * `Makefile`: useful commands for checking and building the
-     website.  `make` on its own (without a target) will display help.
+   * `Makefile`: contains commands for checking and building the
+     website (see "Managing the Site" below).
 
    * `index.html`: the workshop's home page.
 
@@ -77,10 +136,13 @@ Managing the Site
 * `make commands`: prints the same help.
 
 * `make check`: run `bin/check.py` to make sure everything is
-  formatted properly.
+  formatted properly, and print error messages identifying problems if
+  it's not.
 
-* `make site`: build the workshop website locally for checking.  This
-  will require Jekyll.
+* `make site`: build the workshop website locally for previewing.
+  This assumes `make check` has given the site a clean bill of health,
+  and requires Jekyll.  (You can push changes to GitHub and view them
+  there as well.)
 
 * `make listed`: check that the workshop is listed on the Software
   Carpentry site.
