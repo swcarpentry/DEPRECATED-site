@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-03", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$3343b123e4e1a102ec3ae361b78f4ff5ae43cc94e090b5a2400343ebac78c276", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$3343b123e4e1a102ec3ae361b78f4ff5ae43cc94e090b5a2400343ebac78c276", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/talafuse.scott.json"
+ }
+}
