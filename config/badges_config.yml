@@ -19,6 +19,7 @@ instructor:
 - {name: Joshua Ainsley, user: ainsley.joshua}
 - {name: Russell Alleen-Willlems, user: alleen-willems.russell}
 - {name: Carlos Anderson, user: anderson.c}
+- {name: Catalina Anghel, user: anghel.catalina}
 - {name: Dhavide Aruliah, user: aruliah.d}
 - {name: Camille Avestruz, user: avestruz.camille}
 - {name: Christie Bahlai, user: bahlai.christie}
@@ -63,10 +64,12 @@ instructor:
 - {name: Richard Enbody, user: enbody.r}
 - {name: Aaron Erlich, user: erlich.aaron}
 - {name: Daniel Falster, user: falster.daniel}
+- {name: Xu Fei, user: fei.xu}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Jordan Fish, user: fish.jordan}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
 - {name: Robert Flight, user: flight.r}
+- {name: Philip Fowler, user: fowler.p}
 - {name: Chris Friedline, user: friedline.chris}
 - {name: Julian Garcia, user: garcia.julian}
 - {name: Aaron Garoutte, user: garoutte.aaron}
@@ -89,6 +92,7 @@ instructor:
 - {name: Damien Irving, user: irving.d}
 - {name: Paul Ivanov, user: ivanov.p}
 - {name: Mike Jackson, user: jackson.m}
+- {name: Christian Jacobs, user: jacobs.christian}
 - {name: David Jones, user: jones.d}
 - {name: David Jones, user: jones.dm}
 - {name: Jessica Kerr, user: kerr.j}
@@ -107,6 +111,7 @@ instructor:
 - {name: Luke Lee, user: lee.luke}
 - {name: JC Leyder, user: leyder.jean-christophe}
 - {name: Matthew Lightman, user: lightman.matthew}
+- {name: Johnny Lin, user: lin.johnny}
 - {name: Elijah Lowe, user: lowe.elijah}
 - {name: Yuxi Luo, user: luo.yuxi}
 - {name: Cam Macdonell, user: macdonell.cam}
@@ -115,6 +120,7 @@ instructor:
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Emily Jane McTavish, user: mctavish.ej}
 - {name: Lauren Michael, user: michael.lauren}
+- {name: Simon Michnowicz, user: michnowicz.s}
 - {name: Brian Miles, user: miles.brian}
 - {name: Bill Mills, user: mills.b}
 - {name: Ian Mitchell, user: mitchell.i}
@@ -128,6 +134,7 @@ instructor:
 - {name: Jeramia Ory, user: ory.j}
 - {name: Geoff Oxberry, user: oxberry.g}
 - {name: Aleksandra Pawlik, user: pawlik.a}
+- {name: John Pearson, user: pearson.john}
 - {name: Jason Pell, user: pell.j}
 - {name: David Perez-Suarez, user: perez-suarez.david}
 - {name: Fernando Perez, user: perez.f}
@@ -136,6 +143,7 @@ instructor:
 - {name: Francoise Provencher, user: provencher.francoise}
 - {name: Karthik Ram, user: ram.k}
 - {name: David Rio, user: rio.david}
+- {name: Scott Ritchie, user: ritchie.scott}
 - {name: James Robinson, user: robinson.james}
 - {name: Rosario Robinson, user: robinson.rosario}
 - {name: Ariel Rokem, user: rokem.a}
@@ -148,6 +156,7 @@ instructor:
 - {name: Leigh Sheneman, user: sheneman.leigh}
 - {name: Raniere Silva, user: silva.raniere}
 - {name: Rachel Slaybaugh, user: slaybaugh.rachel}
+- {name: Clare Sloggett, user: sloggett.clare}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
 - {name: Margaret Staton, user: staton.margaret}
@@ -156,6 +165,7 @@ instructor:
 - {name: 'Svaksha ', user: svaksha}
 - {name: Gayathri Swaminathan, user: swaminathan.gayathri}
 - {name: Bradley Taber-Thomas, user: taber-thomas.bradley}
+- {name: Scott Talafuse, user: talafuse.scott}
 - {name: Leszek Tarkowski, user: tarkowski.leszek}
 - {name: Tracy Teal, user: teal.t}
 - {name: Matt Terry, user: terry.m}
@@ -168,11 +178,13 @@ instructor:
 - {name: Jens von der Linden, user: vonderlinden.jens}
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
+- {name: Easton White, user: white.easton}
 - {name: Amanda Whitlock, user: whitlock.a}
 - {name: Jason Williams, user: williams.jason}
 - {name: Lynne Williams, user: williams.l}
 - {name: Ryan Williams, user: williams.ryan}
 - {name: Greg Wilson, user: wilson.g}
+- {name: Kara Woo, user: woo.kara}
 - {name: Christopher Woods, user: woods.c}
 - {name: April Wright, user: wright.april}
 - {name: Thomas Wright, user: wright.thomas}

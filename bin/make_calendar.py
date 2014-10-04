@@ -23,7 +23,7 @@ def main():
     options, args = parse_args()
     config = load_info(os.curdir)
     config['site'] = options.site
-    calendar_file = os.path.join(options.output, 'bootcamps.ics')
+    calendar_file = os.path.join(options.output, 'workshops.ics')
 
     icw = ICalendarWriter()
     icw(calendar_file, config)
@@ -55,8 +55,8 @@ class ICalendarWriter(object):
             'VERSION:2.0',
             'PRODID:-//Software Carpentry/Boot Camps//NONSGML v1.0//EN',
         ]
-        for bc in config['bootcamps']:
-            lines.extend(self.bootcamp(config['site'], config['timestamp'], bc))
+        for bc in config['workshops']:
+            lines.extend(self.workshop(config['site'], config['timestamp'], bc))
         lines.extend(['END:VCALENDAR', ''])
         content = '\r\n'.join(lines)
         # From RFC 5545, section 3.1.4 (Character Set):
@@ -64,7 +64,7 @@ class ICalendarWriter(object):
         with open(filename, 'wb') as writer:
             writer.write(content.encode('utf-8'))
 
-    def bootcamp(self, site, timestamp, info):
+    def workshop(self, site, timestamp, info):
         uid = '{0}@{1}'.format(info['slug'],
                                urlparse(site).netloc or 'software-carpentry.org')
         if 'enddate' in info:

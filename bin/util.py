@@ -19,11 +19,11 @@ BADGES_YML = 'badges_config.yml'
 # File generated from admin database with instructor airport locations (in config directory).
 AIRPORTS_YML = 'airports_config.yml'
 
-# File containing URLs for bootcamp repositories (in config directory).
-BOOTCAMP_URLS_YML = 'bootcamp_urls.yml'
+# File containing URLs for workshop repositories (in config directory).
+WORKSHOP_URLS_YML = 'workshop_urls.yml'
 
-# File containing cached information about bootcamps.
-BOOTCAMP_CACHE = '_bootcamp_cache.yml'
+# File containing cached information about workshops.
+WORKSHOP_CACHE = '_workshop_cache.yml'
 
 # Patterns used to extract content and excerpts from compiled blog
 # entries.  Using regular expressions is a hack, but is *much* simpler

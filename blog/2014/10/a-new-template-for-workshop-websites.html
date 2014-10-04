@@ -1,0 +1,401 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "A New Template for Workshop Websites"
+date: 2014-10-02
+time: "17:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  The first step in reorganizing the <code>bc</code> repository is
+  making it easier (<em>much</em> easier) for people to create
+  websites for workshops.  The
+  <a href="https://github.com/swcarpentry/bc">current instructions</a>
+  are almost 3000 words long, and even experienced GitHub users find
+  the process daunting, so we're going to simplify things as much as
+  we can, even if that means not doing things the "right"
+  way.
+</p>
+<!-- end excerpt -->
+<p><strong>Background</strong></p>
+<ol>
+  <li>
+    <p>
+      If a repository has a branch called <code>gh-pages</code> (which
+      stands for "GitHub pages"), then GitHub uses the HTML
+      and Markdown files in that branch to create a website for the
+      repository. If the repository's URL
+      is <code>http://github.com/darwin/finches</code>, the URL for
+      the website is <code>http://darwin.github.io/finches</code>.
+  </p>
+  </li>
+  <li>
+    <p>If an HTML or Markdown file has a header consisting of three
+    dashes, some data about the page, and three more dashes:
+<pre>
+---
+key_1: value_1
+key_2: value_2
+---
+page contents
+</pre>
+    <p>
+      then GitHub doesn't just copy the file over verbatim. Instead,
+      it runs the file through a translator
+      called <a href="https://en.wikipedia.org/wiki/Jekyll_%28software%29">Jekyll</a>
+      that processes instructions embedded in the file to generate the
+      final HTML.
+    </p>
+  </li>
+  <li>
+    <p>One of these instructions is <code>{% raw %}{{variable}}{% endraw %}</code>. When
+    Jekyll sees this, it replaces the curly braces and the variable's
+    name with the value of <code>variable</code>. This is used to
+    insert things like contact email addresses into the
+    page. (Variables from the page's header actually have to be
+    referred to as <code>{% raw %}{{page.variable}}{% endraw %}</code>, rather than simply
+    as <code>{% raw %}{{variable}}{% endraw %}</code>, because Jekyll can also get
+    variables in other ways that we're not using.)
+  </p>
+  </li>
+  <li>
+    <p>
+      If a page like <code>index.html</code> has a variable
+      called <code>layout</code>, and that variable's value
+      is <code>standard.html</code>, Jekyll looks for a file
+      call <code>_layouts/standard.html</code> and uses it as a
+      template for laying out the page. This is used to give the pages
+      in a site a uniform appearance.
+  </p>
+  </li>
+</ol>
+<p><strong>Setup</strong></p>
+<p>
+  Here's what you'll do to create a website for a workshop when we're
+  done:
+</p>
+<ol>
+  <li>
+    <p>
+      Download the latest version of a shell script
+      called <code>create_workshop.sh</code> from the Software
+      Carpentry website and run it like this:
+  </p>
+<pre>
+$ bash create_workshop.sh github_user_name workshop_id
+</pre>
+    <p>
+      where <code>github_user_name</code> could
+      be <code>swcarpentry</code>, your GitHub ID, or whatever,
+      and <code>workshop_id</code> is something
+      like <code>2015-01-02-esu</code>. This will create a Git
+      repository beneath the current working directory and fill it
+      with starter files.
+    </p>
+  </li>
+  <li>
+    <p>Go into the newly-created directory
+    named <code>workshop_id</code>. This will be a GitHub repository
+    on your machine with a single branch called <code>gh-pages</code>
+    containing:
+    </p>
+    <ul>
+      <li><code>README.md</code> : a brief description of Software Carpentry with a prominent link to the workshop's GitHub page.</li>
+      <li><code>Makefile</code>: contains commands for checking and building the website (see "Managing the Site" below).</li>
+      <li><code>index.html</code>: the workshop's home page.</li>
+      <li><code>bin/check.py</code>: a program to check the workshop's layout and the contents of its home page.</li>
+      <li><code>_layouts/workshop.html</code>: a page template for the site.</li>
+    </ul>
+    <p>
+      This repository will have a remote called <code>origin</code>
+      pointing at a newly-created
+      repository <code>github.com/github_user_name/workshop_id</code>. (We
+      could get rid of <code>_layouts/workshop.html</code>, and put
+      everything in <code>index.html</code>, but we want to make it
+      easy for instructors to add more pages to their website.)
+    </p>
+  </li>
+  <li>
+    <p>
+      Edit the header in <code>index.html</code> to specify the
+      workshop's dates, instructors, EventBrite registration key,
+      topics, etc. (See "Required Variables" below.)
+    </p>
+  </li>
+  <li>
+    <p>Make sure that <code>index.html</code> contains links to the
+    lessons being taught in the workshop (see "Linking to
+    Lessons" below).
+    </p>
+  </li>
+  <li>
+    <p>Delete the installation instructions for software packages that
+    aren't being used in the workshop (see "Software Installation
+    Instructions" below).
+    </p>
+  </li>
+  <li>
+    <p>
+      <code>git push origin gh-pages</code> to publish the workshop's
+      home page
+      at <code>http://github_user_name.github.io/workshop_id/</code>.
+    </p>
+  </li>
+</ol>
+<p>
+  This is all we need to do to set up a single-page site for a
+  workshop, because:
+</p>
+<ol>
+  <li>
+    We can load CSS, Javascript, and images from the Software
+    Carpentry website.
+  </li>
+  <li>
+    We can embed setup instructions in <code>index.html</code>, so
+    there's no need for <code>_include</code> files.
+  </li>
+  <li>
+    <code>index.html</code> can link to rendered online versions of
+    the lessons and the Code of Conduct, so we don't need to include
+    that in the workshop site every time (but see "Customizing
+    Lessons" below).
+  </li>
+</ol>
+<p><strong>Required Variables</strong></p>
+<p>
+  <code>index.html</code>'s YAML header must define the following
+  variables in order for the workshop website to show up properly on
+  the main Software Carpentry site:
+</p>
+<ul>
+  <li>
+    <code>layout</code> must be <code>workshop</code> (which tells
+    Jekyll to use <code>_layouts/workshop.html</code> as a page
+    template).
+  </li>
+  <li>
+    <code>venue</code> is the name of the institution or group hosting
+    the workshop, such as "Euphoric State University".
+  </li>
+  <li>
+    <code>address</code> is the workshop's address, such as "Room
+    101, Winston Smith Memorial Union, O'Brien Street."
+  </li>
+  <li>
+    <code>country</code> must be a hyphenated country name like
+    'United-States'. It is used to look up flags for display in the
+    main web site.
+  </li>
+  <li>
+    <code>latlng</code> is the latitude and longitude of the workshop
+    site (so we can put a pin on our map).
+  </li>
+  <li>
+    <code>humandate</code> is the human-friendly dates for the
+    workshop (e.g., Jul 3-4, 2015). Please use three- or four-letter
+    month names and abbreviations (e.g., <code>Dec</code> instead
+    of <code>December</code>) so that columns will lay out properly on
+    the main website.
+  </li>
+  <li>
+    <code>startdate</code> is the workshop's starting date in
+    YYYY-MM-DD format, e.g., 2015-07-03.
+  </li>
+  <li>
+    <code>enddate</code> is the workshop's ending date in the same
+    format. If your workshop is only one day long,
+    the <code>enddate</code> field should be omitted.
+  </li>
+  <li>
+    <code>instructor</code> is a comma-separated list of instructor
+    names. This must be enclosed in square brackets, as
+    in <code>["Alan Turing","Grace
+    Hopper"]</code>. Please do not include affiliations, links,
+    or anything else besides the instructors' names.
+  </li>
+  <li>
+    <code>helper</code> is a comma-separated list of helper names
+    formatted the same way, such as <code>["John von
+    Neumann"]</code>
+  </li>
+  <li>
+    <code>contact</code> is the contact email address to use for your
+    workshop, such as <code>alan@turing.edu</code>.
+  </li>
+</ul>
+<p>
+  The header may optionally define:
+</p>
+<ul>
+  <li>
+    <code>eventbrite</code>: a multi-digit Eventbrite registration
+    key. If you are using Eventbrite, the admins will set this key for
+    you. If you are using something else for registration, this field
+    isn't needed.
+  </li>
+</ul>
+<p><strong>Software Installation Instructions</strong></p>
+<p>
+  We have tried managing software installation instructions three
+  different ways in the last year. Several instructors found file
+  inclusion directives and conditional blocks confusing, so we will go
+  back to the brute force solution: the
+  default <code>index.html</code> page will include setup instructions
+  for everything, and website authors will delete the bits they don't
+  need.
+</p>
+<p><strong>Customizing Lessons</strong></p>
+<p>
+  The default <code>index.html</code> page contains links to our
+  standard lessons, along with a paragraph outlining what's covered in
+  each. As with software installation instructions, instructors can
+  delete links and descriptions that aren't relevant to their
+  workshop, then insert links and descriptions for custom lessons of
+  their own.
+</p>
+<p><strong>Managing the Site</strong></p>
+<p>
+  To help people manage their workshop sites, <code>Makefile</code>
+  will contain these targets:
+</p>
+<ul>
+  <li>
+    <code>make</code>: without a target, this will print help.
+  </li>
+  <li>
+    <code>make commands</code>: prints the same help.
+  </li>
+  <li>
+    <code>make check</code>: run <code>bin/check.py</code> to make
+    sure everything is formatted properly, and print error messages
+    identifying problems if it's not.
+  </li>
+  <li>
+    <code>make site</code>: build the workshop website locally for
+    previewing. This assumes <code>make check</code> has given the
+    site a clean bill of health, and requires Jekyll. (You can push
+    changes to GitHub and view them there as well.)
+  </li>
+  <li>
+    <code>make listed</code>: check that the workshop is listed on the
+    Software Carpentry site.
+  </li>
+  <li>
+    <code>make standalone</code>: get local copies of the CSS,
+    Javascript, images, etc. (See "Localizing" below.)
+  </li>
+  <li>
+    <code>make page page_name.html</code>: create a new HTML page
+    called <code>page_name.html</code> (or whatever) with the right
+    header, layout, etc. (See "Adding Content" below.)
+  </li>
+  <li>
+    <code>make permission user_name</code>: give the user whose GitHub
+    user ID is <code>user_name</code> permission to push to the GitHub
+    repository, modify its issues, etc.
+  </li>
+  <li>
+    <code>make clean</code>: tidy up (i.e., delete the locally-built
+    website).
+  </li>
+</ul>
+<p><strong>Localizing</strong></p>
+<p>
+  The repository will also have a read-only Git remote
+  called <code>source</code> pointing
+  at <code>github.com/swcarpentry/workshop_source</code>. If people
+  want local copies of the CSS, Javascript, and images needed to
+  render their site (e.g., for offline work), then can pull
+  from <code>source</code>. (<code>Makefile</code> will contain a
+  target for this.)
+</p>
+<p><strong>Adding Content</strong></p>
+<p>
+  Instructors can add their own data files, code samples, and so on to
+  the workshop's web site simply by adding those files to the Git repo
+  and pushing to <code>origin</code>. They can also run <code>make
+  page page_name.html</code> to create a new page
+  called <code>page_name.html</code>, then add it and
+  push. <code>bin/check.py</code> and <code>make check</code> will
+  check the format of these pages as well as the format
+  of <code>index.html</code>.
+</p>
+<p><strong>Customizing Lessons</strong></p>
+<p>
+  If instructors want to present a modified version of a lesson, or
+  add an entirely new lesson, they will:
+</p>
+<ol>
+  <li>
+    clone the lesson's repository on GitHub in the usual way;
+  </li>
+  <li>
+    modify their clone;
+  </li>
+  <li>
+    push the changes to their repository on GitHub; and
+  </li>
+  <li>
+    add a link to their workshop's site pointing at that lesson.
+  </li>
+</ol>
+<p>
+  Instructors <em>can</em> add lesson material to the workshop
+  repository, but we will encourage them to keep the lessons separate
+  because:
+</p>
+<ol>
+  <li>
+    It will keep the workshop repository small.
+  </li>
+  <li>
+    It will allow other people to use their lessons by reference
+    (i.e., by linking to them) rather than by value (i.e., by copying
+    the material).
+  </li>
+</ol>
+<p><strong>Sending Fixes</strong></p>
+<p>
+  The one thing this scheme <em>doesn't</em> have is a link between
+  the workshop's repository and the <code>workshop_source</code>
+  repository that contains the master copy of the workshop site
+  material. This is deliberate: as per the current instructions,
+  instructors can't just clone a website template repository on GitHub
+  because GitHub will only let a particular user have one clone of a
+  particular repository.
+</p>
+<p>
+  In order to send fixes to the master copy of the website template,
+  people will therefore have to fork <code>workshop_source</code>,
+  make the changes in their local copy of that, and then issue a pull
+  request. This does mean copying changes manually from a workshop
+  website to a local copy of <code>workshop_source</code>, but there
+  doesn't seem to be any easy way around that. In practice, we expect
+  changes to the template will be relatively infrequent, so most
+  instructors won't ever encounter this.
+</p>
+<p>
+  Instructors and others <em>will</em> be able to file issues in
+  the <code>workshop_source</code> repository to suggest
+  improvements. We will also use that repository's wiki to keep track
+  of teaching tips (just as we're using the <code>bc</code>
+  repository's wiki right now).
+</p>
+<p><strong>Checklists</strong></p>
+<p>
+  When <code>create_workshop.sh</code> creates the GitHub repository
+  for the workshop, it will also create several issues in that
+  repository's issue tracker to help the workshop's hosts and
+  instructors keep track of the things they need to do, such as
+  sending out welcome messages to learners, checking that learners
+  will have access to WiFi, and so on. Whoever created the GitHub
+  repository will need to run:
+</p>
+<pre>$ make permission user_name</pre>
+<p>
+  for each of the other instructors to give them permission to push
+  changes and modify issues.
+</p>

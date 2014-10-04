@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-03", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$20f7e4eda04096837fe499d3e4bb6535ea6cf947221dfb68ade572d78330a295", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$20f7e4eda04096837fe499d3e4bb6535ea6cf947221dfb68ade572d78330a295", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/ritchie.scott.json"
+ }
+}
