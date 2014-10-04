@@ -50,13 +50,13 @@ page contents
     </p>
   </li>
   <li>
-    <p>One of these instructions is <code>{{variable}}</code>. When
+    <p>One of these instructions is <code>{% raw %}{{variable}}{% endraw %}</code>. When
     Jekyll sees this, it replaces the curly braces and the variable's
     name with the value of <code>variable</code>. This is used to
     insert things like contact email addresses into the
     page. (Variables from the page's header actually have to be
-    referred to as <code>{{page.variable}}</code>, rather than simply
-    as <code>{{variable}}</code>, because Jekyll can also get
+    referred to as <code>{% raw %}{{page.variable}}{% endraw %}</code>, rather than simply
+    as <code>{% raw %}{{variable}}{% endraw %}</code>, because Jekyll can also get
     variables in other ways that we're not using.)
   </p>
   </li>
