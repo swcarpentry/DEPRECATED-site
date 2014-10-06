@@ -45,7 +45,7 @@ So here's what the YAML template might look like for a lesson:
 ```
 title: "Beginner Shell"
 authors: [Gabriel A. Devenyi, Greg Wilson]
-present-time: "2h"
+presentation-time: "2h"
 preq: [http://www.github.com/repo/commitid, http://www.github.com/anotherrepo]
 ```
 
