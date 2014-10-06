@@ -34,7 +34,7 @@ Next is the question of what kind of metadata we might want to include.
 The title of the lesson is essential since its not explicitly the name of any of the files.
 The list of authors of the material could also live in a YAML header although there has also been discussion of extracting such information directly from the git history.
 [There have recently been discussions](http://software-carpentry.org/blog/2014/09/sept-2014-lab-meeting-report.html) and an attempt to measure the amount of time required to teach lessons, including the (mean, median, average) time to present in the metadata allows someone constructing a multi-lesson workshop programmatically to determine if they have time to present all the material.
-With the breakup of the lessons reposisotry into smaller chunks, and the proliferation of intermediate lessons, alternative lessons and extras, it would also be useful to specify "dependencies" for a given lesson.
+With the breakup of the lessons repository into smaller chunks, and the proliferation of intermediate lessons, alternative lessons and extras, it would also be useful to specify "dependencies" for a given lesson.
 The exact structure of how to define these dependencies is a little more tricky. If we structure all of lesson repositories the same, and we can convince other groups to also do this, we can specify dependencies as a github URL, either to a repository, or a repository and a specific commit.
 This dependency system would allow two benefits:
 
