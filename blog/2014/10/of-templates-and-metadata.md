@@ -46,7 +46,7 @@ So here's what the YAML template might look like for a lesson:
 title: "Beginner Shell"
 authors: [Gabriel A. Devenyi, Greg Wilson]
 presentation-time: "2h"
-preq: [http://github.com/user/repo/tree/commitid, github.com/anotheruser/anotherrepo]
+preq: [http://github.com/user/repo/tree/commitid, http://github.com/anotheruser/anotherrepo]
 ```
 
 The ``dd-slug.md`` files may also contain YAML metadata, perhaps similar bits such as the title and time estimate, or authors.
