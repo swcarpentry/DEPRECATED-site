@@ -16,8 +16,8 @@ This post is going to directly reference and comment on the content of that post
 First, I want to look at the templates from a slightly different perspective, how we should structure these templates in order to assist in programmatically building the site and the workshops, as well as assisting in sharing.
 Some of these ideas have been discussed in a different context on Greg's post on [a new template for workshop websites](http://software-carpentry.org/blog/2014/10/a-new-template-for-workshop-websites.html).
 
-To assist in the production of workshop websites and to better define the relationship between, some lesson repositories should contain some metadata.
-The YAML format seems to be a well-adopted and reasonably flexible format for storing metadata in files, in fact we're already using it as part of our existing Github-Jekyl workshop and site hosting.
+To assist in the production of workshop websites and to better define the relationship between, lesson repositories should contain some metadata.
+The YAML format seems to be a well-adopted and reasonably flexible format for storing metadata in files, in fact we're already using it as part of our existing Github-Jekyll workshop and site hosting.
 The file ``index.md`` is the the sensible place to look for a lesson's metadata, as its the first thing people are writing and it should therefore be populated early in writing.
 
 YAML headers on the top of the lessons would look like this:
@@ -61,4 +61,4 @@ There are several files which appear in the template list which should be option
 - ``glossary.md``
 - ``reference.md``
 
-This content isn't core to lessons and I'm not even sure that anyone looks at it. I think we should examine the literature and Google analytics for our glossary to see if anyone is actually using it. 
+This content isn't core to lessons and I'm not even sure that anyone looks at it. I think we should examine the literature and Google analytics for our glossary to see if anyone is actually using it.
