@@ -2,7 +2,7 @@
 layout: blog
 root: ../../..
 author: Gabriel A. Devenyi
-title: "Of Templates and Metadata
+title: "Of Templates and Metadata"
 date: 2014-10-06
 time: "10:00:00"
 category: ["Tooling"]
