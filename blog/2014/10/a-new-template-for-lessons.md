@@ -296,7 +296,7 @@ or Gentzkow and Shapiro's
 However,
 it may cause novice learners problems.
 If `code/program.py` includes a hard-wired path to a data file,
-that path must be either `data/datafile.ext` or `data/datafile.ext`.
+that path must be either `datafile.ext` or `data/datafile.ext`.
 The first will only work if the program is run with the lesson's root directory as the current working directory,
 while the second will only work if the program is run from within the `code/` directory.
 This is a learning opportunity for students working from the command line,
