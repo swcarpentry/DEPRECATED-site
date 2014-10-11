@@ -3,8 +3,8 @@ layout: blog
 root: ../../..
 author: Gabriel A. Devenyi
 title: "Of Templates and Metadata"
-date: 2014-10-06
-time: "10:00:00"
+date: 2014-10-11
+time: "18:00:00"
 category: ["Tooling"]
 ---
 <p>
@@ -13,6 +13,7 @@ category: ["Tooling"]
   Greg recently posted
   <a href="{{page.root}}/blog/2014/10/a-new-template-for-workshop-websites.html">a straw man template</a>
   for how lessons might be structured after the repo split.
+  He followed up after with <a href="{{page.root}}/blog/2014/10/a-new-template-for-lessons.md">more details.</a>
   There a lot of good ideas there on how we can encourage good structure for lessons
   and help learners and instructors alike going forward.
 </p>
