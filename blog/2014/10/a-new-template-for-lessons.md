@@ -52,8 +52,8 @@ That directory is a self-contained Git repository
     See "Introductory Slides" below.
 
 4.  `glossary.md`: definitions of key terms.
-    This is the API for the lesson,
-    i.e., what it exports that other lessons can use.
+    This is what the lesson exports that other lessons can use
+    (just as an API is the functions a library exports for other code to use).
     See "Glossary" below.
 
 5.  `reference.md`: a reference guide to key terms and commands, syntax, etc.,
