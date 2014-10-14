@@ -1,0 +1,120 @@
+---
+layout: blog
+root: ../../..
+author: Gabriel A. Devenyi
+title: "Of Templates and Metadata"
+date: 2014-10-11
+time: "18:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  As an appendix to the
+  <a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">splitting the repository post</a>,
+  Greg recently posted
+  <a href="{{page.root}}/blog/2014/10/a-new-template-for-workshop-websites.html">a straw man template</a>
+  for how lessons might be structured after the repo split.
+  He followed up after with <a href="{{page.root}}/blog/2014/10/a-new-template-for-lessons.md">more details.</a>
+  There a lot of good ideas there on how we can encourage good structure for lessons
+  and help learners and instructors alike going forward.
+</p>
+<!-- end excerpt -->
+<p>
+  First,
+  To assist in the production of workshop websites and to better define the relationship between them,
+  lesson repositories should contain some metadata.
+  <a href="http://www.yaml.org/">YAML</a>
+  is a widely-adopted and reasonably flexible format for storing metadata in files:
+  we're already using it as part of our existing Github-Jekyll workshop and site hosting.
+  The file <code>index.md</code> is the the sensible place to look for a lesson's metadata,
+  as its the first thing people are writing and it should therefore be populated early in writing.
+</p>
+<p>
+  YAML headers on the top of the lessons would look like this:
+</p>
+<pre>
+---
+title: "Beginner Shell"
+authors: [Gabriel A. Devenyi, Greg Wilson]
+---
+</pre>
+<p>
+  Next is the question of what kind of metadata we want to include.
+  The title of the lesson is essential since its not explicitly the name of any of the files.
+  The list of authors of the material could also live in a YAML header,
+  although there has also been discussion of extracting such information directly from the Git history.
+  (Relying on the Git history would also avoid the problem of figuring out
+  how large a change qualifies someone for being listed as an author.)
+</p>
+<p>
+  <a href="http://software-carpentry.org/blog/2014/09/sept-2014-lab-meeting-report.html">There have recently been discussions</a>
+  about recording and reporting the time required to teach lessons.
+  Including the average in the metadata would allow someone constructing a multi-lesson workshop to determine if they have time to present all the material.
+</p>
+<p>
+  With the breakup of the lessons repository into smaller chunks,
+  and the proliferation of intermediate and alternative lessons
+  it would also be useful to specify dependencies for a given lesson.
+  The exact structure for this is tricky,
+  since we have to strike a balance between what's useful and how much effort is required of authors.
+  Options include:
+</p>
+<ol>
+  <li>
+    the URLs of lessons that this one depends on
+  </li>
+  <li>
+    keywords identifying the concepts this lesson requires people to know beforehand
+  </li>
+  <li>
+    a long-form human-readable description of what learners need to know beforehand.
+  </li>
+</ol>
+<p>
+  The first probably won't work for us because we expect to have several lessons covering the same topic,
+  i.e.,
+  an introduction to the shell for astronomers and physicists,
+  another for life scientists,
+  and a third for economists.
+  These will probably vary primarily in the examples they present,
+  rather in the concepts they cover,
+  so any of them could be used as a pre-requisite for a shell-based lesson on version control.
+  The second requires us to agree on terms in order to be truly useful;
+  judging from the history of the Semantic Web, that's unlikely.
+  And while the third is probably easiest,
+  it's also the hardest for software tools to work with:
+  we wouldn't be able to check that a particular sequence of lessons hangs together
+  without some natural language processing,
+  and even then it probably wouldn't be reliable.
+</p>
+<p>
+  So here's what the YAML template might look like for a lesson:
+</p>
+<pre>
+---
+title: "Beginner Shell"
+authors: [Gabriel A. Devenyi, Greg Wilson]
+presentation-time: "2h"
+preq: [http://github.com/user/repo/tree/commitid, http://github.com/anotheruser/anotherrepo]
+---
+</pre>
+<p>
+  The ``dd-slug.md`` files may also contain YAML metadata,
+  perhaps similar bits such as the title and time estimate, or authors.
+  Having such data would allow further processing programmatically.
+</p>
+<p>
+  Tying this all together with
+  <a href="http://software-carpentry.org/blog/2014/10/a-new-template-for-workshop-websites.html">the Makefile that Greg proposed</a>,
+  we can construct a workshop that includes lessons from a number of lesson repositories, check dependencies, and construct a nice site.
+</p>
+<p>
+  Finally,
+  what about the <code>glossary.md</code> and <code>reference.md</code> files mentioned in the template?
+  The terms defined in the glossary could be used as a specification of what this lesson talks about
+  in place of keywords in <code>index.md</code>,
+  but it's redundant to have both.
+  The reference guide is similarly redundant&mdash;we can point people at any number of online references written by other people&mdash;but
+  we do need something,
+  since learners tell us after almost every workshop that they want a cheat sheet of some kind.
+</p>
