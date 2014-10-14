@@ -1,0 +1,443 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "A New Template for Lessons"
+date: 2014-10-14
+time: "11:30:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  We blogged two weeks ago about
+  <a href="{{page.root}}/blog/2014/10/a-new-template-for-workshop-websites.html">a new template for workshop websites</a>.
+  It's now time to start thinking about what lessons will look like:
+  as we said at <a href="{{page.root}}/blog/2014/09/sept-2014-lab-meeting-report.html">the last lab meeting</a>,
+  we're going to break the current lesson repository into smaller and more manageable pieces,
+  but we need to decide what those pieces will look like first.
+  The post below is our current thoughts;
+  comments, and follow-on posts about alternatives, would be very welcome.
+</p>
+<!-- end excerpt -->
+<h2>Terms</h2>
+<p>
+  A <em>lesson</em> is a complete story about some subject, typically
+  taught in 2-4 hours.
+</p>
+<p>
+  A <em>topic</em> is a single scene in that story, typically 5-15
+  minutes long.
+</p>
+<p>
+  A <em>slug</em> is a short identifier for something, such
+  as <code>filesys</code> (for "file system").
+</p>
+<h2>Design Choices</h2>
+<ul>
+  <li>
+    We define everything in terms of Markdown. If lesson authors want to
+    use something else for their lessons (e.g., IPython Notebooks), it's
+    up to them to generate and commit Markdown formatted according to
+    the rules below.
+  </li>
+  <li>
+    We will use Pandoc for Markdown-to-HTML conversion, so we can
+    use <code>{.attribute}</code> syntax for specifying anchors and
+    classes rather than the clunky syntax our current notes use to be
+    compatible with Jekyll.
+  </li>
+  <li>
+    We will avoid putting HTML inside Markdown since it's ugly to read
+    and write, and error-prone to process. As a consequence, we put
+    things like the learning objectives and each challenge exercise in a
+    block indented with <code>&gt;</code> to make scope easier for
+    people and machines to see.
+  </li>
+</ul>
+<h2>Overall Layout</h2>
+<p>
+  Each lesson is stored in a directory that is laid out as described
+  below. That directory is a self-contained Git repository (i.e.,
+  there are no submodules or clever tricks with symbolic links).
+</p>
+<ol>
+  <li>
+    <code>index.md</code>: the home page for the lesson. (See "Home
+    Page" below.)
+  </li>
+  <li>
+    <code>dd-slug.md</code>: the topics in the lesson. <code>dd</code>
+    is a sequence number such as <code>01</code>, <code>02</code>, etc.,
+    and <code>slug</code> is an abbreviated single-word mnemonic for the
+    topic. Thus, <code>03-filesys.md</code> is the third topic in this
+    lesson, and is about the filesystem. (Note that we use hyphens
+    rather than underscores in filenames.) See "Topics" below.
+  </li>
+  <li>
+    <code>intro.md</code>: slides for a short presentation (3 minutes or
+    less) explaining what the lesson is about and why people would want
+    to learn it. See "Introductory Slides" below.
+  </li>
+  <li>
+    <code>glossary.md</code>: definitions of key terms. This is what the
+    lesson exports that other lessons can use (just as an API is the
+    functions a library exports for other code to use). See "Glossary"
+    below.
+  </li>
+  <li>
+    <code>reference.md</code>: a reference guide to key terms and
+    commands, syntax, etc., to be printed and given to learners. See
+    "Reference Guide" below.
+  </li>
+  <li>
+    <code>instructors.md</code>: the instructor's guide for the
+    lesson. See "Instructor's Guide" below.
+  </li>
+  <li>
+    <code>code/</code>: a sub-directory containing all code samples. See
+    "Software and Data" below.
+  </li>
+  <li>
+    <code>data/</code>: a sub-directory containing all data files for
+    this lesson. See "Software and Data" below.
+  </li>
+  <li>
+    <code>img/</code>: images (including plots) used in the lesson. See
+    "Images" below.
+  </li>
+  <li>
+    <code>web/</code>: web resources, such as CSS files, icons, and
+    Javascript. See "Web Resources" below.
+  </li>
+  <li>
+    <code>_layouts/</code>: page layout templates. See "Web Resources"
+    below.
+  </li>
+  <li>
+    <code>_includes/</code>: page inclusions. See "Web Resources" below.
+  </li>
+  <li>
+    <code>bin/</code>: tools for managing lessons. See "Tools" below.
+  </li>
+  <li>
+    <code>Makefile</code> contains commands to build and manage the
+    lesson. (See "Tools" below.)
+  </li>
+</ol>
+<h2>Home Page</h2>
+<p>
+  <code>index.md</code> must be structured as follows:
+</p>
+<pre>
+---
+layout: lesson
+title: Lesson Title
+keywords: ["some", "key terms", "in a list"]
+---
+Paragraph of introductory material.
+
+> ## Prerequisites {.prereq}
+>
+> A short paragraph describing what learners need to know
+> before tackling this lesson.
+
+> ## Learning Objectives {.objectives}
+>
+> * Overall objective 1
+> * Overall objective 2
+
+## Topics
+
+* [Topic Title 1](01-slug.html)
+* [Topic Title 2](02-slug.html)
+
+## Other Resources
+
+* [Introduction](intro.html)
+* [Glossary](glossary.html)
+* [Reference Guide](reference.html)
+* [Instructor's Guide](guide.html)
+* [Setting Up](http://software-carpentry.org/setup/some-page.html)
+</pre>
+<p>
+  <strong>Note:</strong> software installation and configuration
+  instructions <em>aren't</em> in the lesson. They may be shared with
+  other lessons, so they will be stored centrally on the Software
+  Carpentry web site and linked from the lessons that need them.
+</p>
+<p>
+  <strong>Note:</strong> the description of prerequisites is prose for
+  human consumption, not a machine-comprehensible list of
+  dependencies. We may supplement the former with the latter once we
+  have more experience with this lesson format and know what we
+  actually want to do.
+</p>
+<h2>Topics</h2>
+<p>
+  Each topic must be structured as follows:
+</p>
+<pre>
+---
+layout: topic
+title: Topic Title
+---
+> ## Learning Objectives {.objectives}
+>
+> * Learning objective 1
+> * Learning objective 2
+
+Paragraphs of text mixed with:
+
+~~~ {.python}
+some code:
+    to be displayed
+~~~
+~~~ {.output}
+output
+from
+program
+~~~
+~~~ {.error}
+error reports from program (if any)
+~~~
+
+and possibly including:
+
+> ## Callout Box {.callout}
+>
+> An aside of some kind.
+
+> ## Key Points {.keypoints}
+>
+> * Key point 1
+> * Key point 2
+
+> ## Challenge Title {.challenge}
+>
+> Description of a single challenge.
+> There may be several challenges.
+</pre>
+<ol>
+  <li>
+    There are no sub-headings inside a topic other than the ones shown,
+    and only one block of challenges at the end. If a topic needs
+    sub-headings, it probably wants to be broken into two or more files.
+  </li>
+  <li>
+    Callout boxes are formatted as block quotes containing a level-2
+    heading having the <code>callout</code> class and some text, code,
+    etc.
+  </li>
+  <li>
+    Each challenge is formatted in the same way, i.e., as a block quote
+    with a level-2 heading having the <code>challenge</code> class.
+  </li>
+</ol>
+<h2>Introductory Slides</h2>
+<p>
+  Every lesson must include a short slide deck suitable for a short
+  presentation (3 minutes or less) that the instructor can use to
+  explain to learners what the subject is, how knowing it will help
+  learners, and what's going to be covered. Slides are written in
+  Markdown, and compiled into HTML for use
+  with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.
+</p>
+<pre>
+---
+layout: slides
+---
+body of slides
+</pre>
+<h2>Glossary</h2>
+<p>
+  Each term in the glossary is laid out as a separate block quote,
+  with the term in a heading. Yes, this is odd, but as noted in the
+  introduction, we want to avoid putting HTML in Markdown, and we
+  can't add identifiers to paragraphs using <code>{#whatever}</code>
+  notation: that only works on headers.
+</p>
+<pre>
+---
+layout: glossary
+---
+> ## First Term {#first-anchor}
+> The definition.
+> See also: [another word](#another-anchor)
+
+> ## Another Term {#another-anchor}
+> The definition.
+> See also: [first term](#some-anchor)
+</pre>
+<h2>Reference Guide</h2>
+<p>
+  The layout of the reference guide is up to the lesson's author. The
+  only thing required is the YAML header:
+</p>
+<pre>
+---
+layout: reference
+---
+</pre>
+<h2>Instructor's Guide</h2>
+<p>
+  The instructor's guide is laid out as follows:
+</p>
+<pre>
+---
+layout: guide
+---
+
+introductory text
+
+## General Points
+
+1.  first point
+
+1.  second point (separated by blank line,
+    may span multiple lines,
+    starts with `1.` to indicate numbered list.
+
+## Large Sub-Topic
+
+1.  first point on a sub-topic large enough to need a section
+
+1.  second point
+</pre>
+<h2>Software and Data</h2>
+<p>
+  All of the software samples used in the lesson must go in a
+  directory called <code>code/</code>. Every sample must be listed in
+  the file <code>code/index.md</code>, which must be formatted as
+  follows:
+</p>
+<pre>
+---
+layout: index
+---
+* `filename.ext`: one-line description
+* `filename.ext`: one-line description
+</pre>
+<p>
+  Stand-alone data files must go in a directory
+  called <code>data/</code>. Groups of related data files must be put
+  together in a sub-directory of <code>data/</code> with a meaningful
+  (short) name. Every data file or data set must be listed in the
+  file <code>code/index.md</code>, which must be formatted as follows:
+</p>
+<pre>
+---
+layout: index
+---
+* `filename.ext`: one-line description
+* `sub-directory/`: one-line description
+</pre>
+<p>
+  <strong>Note:</strong> This mirrors the layout a scientist would use
+  for actual work (see Noble's
+  "<a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424">A
+  Quick Guide to Organizing Computational Biology Projects</a>" or
+  Gentzkow and Shapiro's
+  "<a href="http://faculty.chicagobooth.edu/jesse.shapiro/research/CodeAndData.pdf">Code
+  and Data for the Social Sciences: A Practitioner's
+  Guide</a>"). However, it may cause novice learners
+  problems. If <code>code/program.py</code> includes a hard-wired path
+  to a data file, that path must be either <code>datafile.ext</code>
+  or <code>data/datafile.ext</code>. The first will only work if the
+  program is run with the lesson's root directory as the current
+  working directory, while the second will only work if the program is
+  run from within the <code>code/</code> directory. This is a learning
+  opportunity for students working from the command line, but a
+  confusing annoyance inside IDEs and the IPython Notebook (where the
+  tool's current working directory is less obvious). And yes, the
+  right answer is to pass filenames on the command line, but that
+  requires learners to understand how to get command line arguments,
+  which isn't something they'll be ready for in the first hour or two.
+</p>
+<h2>Images</h2>
+<p>
+  Images used in the lessons must go in an <code>img/</code>
+  directory. We strongly prefer SVG for line drawings, since they are
+  smaller, scale better, and are easier to edit. Screenshots and other
+  raster images must be PNG or JPEG format. The <code>img/</code>
+  directory does <em>not</em> need to have an <code>index.md</code>
+  file.
+</p>
+<h2>Web Resources</h2>
+<p>
+  Files used to generate the HTML version of a lesson are stored in
+  the following directories:
+</p>
+<ul>
+  <li>
+    <code>web/css</code>: CSS style files
+  </li>
+  <li>
+    <code>web/js</code>: Javascript files
+  </li>
+  <li>
+    <code>web/img</code>: images such as logos and buttons
+  </li>
+  <li>
+    <code>_layouts</code>: page layout templates
+  </li>
+  <li>
+    <code>_includes</code>: inclusions in web pages, such as the
+    standard header and footer
+  </li>
+</ul>
+<p>
+  These files will usually not be edited by lesson authors.
+</p>
+<h2>Tools</h2>
+<p>
+  The <code>bin/</code> directory contains a program
+  called <code>check.py</code> that checks that the contents of the
+  lesson conform to the rules above.
+</p>
+<p>
+  The lesson's root directory contains a <code>Makefile</code> with
+  commands to manage lesson content. Its targets are:
+</p>
+<ul>
+  <li>
+    <code>make</code>: without a target, this will print help.
+  </li>
+  <li>
+    <code>make commands</code>: prints the same help.
+  </li>
+  <li>
+    <code>make topic dd-slug</code>: create a new topic file with the
+    given sequence number and slug.
+  </li>
+  <li>
+    <code>make check</code>: run <code>bin/check.py</code> to make sure
+    that everything is formatted properly, and print error messages
+    identifying problems if it's not.
+  </li>
+  <li>
+    <code>make site</code>: build the lesson website locally for
+    previewing. This assumes <code>make check</code> has given the site
+    a clean bill of health, and requires Pandoc.
+  </li>
+  <li>
+    <code>make summary</code>: create a YAML-formatted summary of the
+    lesson, including a list of the topics it includes, the terms it
+    defines, the lesson's software requirements, etc.
+  </li>
+  <li>
+    <code>make clean</code>: tidy up (i.e., delete the locally-built
+    website).
+  </li>
+</ul>
+<p>
+  <strong>Note:</strong> The Makefile should also include targets to
+  turn IPython Notebooks into Markdown and compare the result with the
+  committed Markdown topic files, and do equivalent conversions for
+  other formats.
+</p>
+<p>
+  <strong>Note:</strong> The Makefile <em>should</em> contain targets
+  to re-run code and check the output, but there's no general way to
+  do this (and we're not about to build our own literate programming
+  environment).
+</p>
