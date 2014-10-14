@@ -1,0 +1,126 @@
+---
+layout: blog
+root: ../../..
+author: Raniere Silva
+title: "Yet Another Template for Lessons"
+date: 2014-10-14
+time: "11:50:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  After
+  the <a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">splitting
+  the repository post</a>, Gabriel Devenyi and Greg Wilson wrote some
+  suggestions for how the new lessons repositories should look like
+  (see <a href="{{page.root}}/blog/2014/10/of-templates-and-metadata.html">Gabriel's
+  post</a> about metadata
+  and <a href="{{page.root}}/blog/2014/10/a-new-template-for-lessons.html">Greg's
+  post</a> about overall file structure). From my experience at the
+  Mozilla Science Lab sprint I don't like Gabriel's <code>preq</code>
+  metadata because I don't believe it helps very much. I also don't
+  like Greg's proposal to duplicate some files in every Git
+  repository, so here are some changes that I suggest.
+</p>
+<!-- end excerpt -->
+<h2>Design Choices</h2>
+<p>In addition to Greg's design choices:</p>
+<ul>
+  <li>
+    <em>Avoid the duplication of files across Git repositories</em>.  In
+    Greg's proposal the Git repositories should store CSS and Javascript
+    files needed to properly render the page. We could avoid it.
+  </li>
+  <li>
+    <em>Only automate the actions that users and developers will need to
+      do very often.</em>
+    We <a href="https://github.com/swcarpentry/bc/pull/415">try to
+      automate workshops' home page</a> but we are going to revert it. For
+    that reason I think we should wait until people complain about the
+    lack of some script before we write it.
+  </li>
+</ul>
+<h2>Git Repositories</h2>
+<p>
+  The lesson repositories must have two branches: <code>master</code>
+  and <code>gh-pages</code>. The <code>master</code> branch will store
+  the lessons in Markdown (or any other format, that can be convert to
+  HTML, wanted by the community). The <code>gh-pages</code> branch
+  will store the HTML version of the lesson so that students can view
+  it online.
+</p>
+<p>
+  We had exactly this approach until a few weeks ago
+  in <code>bc</code> repo. Why go back? In <code>bc</code>, we only
+  merge <code>master</code> into <code>gh-pages</code> a few times and
+  I would like to suggest that the topic manintainers do it before
+  the <a href="{{page.root}}/blog/2014/09/sept-2014-lab-meeting-report.html">in-service
+    days proposed at last month meeting</a>.
+</p>
+<p>
+  Also, this approach will avoid the problem of have Markdown and HTML
+  side-by-side since Markdown extensions support by Pandoc aren't
+  supported by Jekyll.
+</p>
+<h2>Overall Layout for the Master Branch</h2>
+<p>
+  Changes to Greg's layout:
+</p>
+<ul>
+  <li>
+    Drop <code>glossary.md</code> in favor of linking words to Wikipedia
+    articles.
+  </li>
+  <li>
+    Drop <code>web/</code> to avoid duplication of files across
+    repositories.  Web resources, such as CSS files, icons, and
+    Javascript, can be provided by a &quot;third-party&quot; server.
+  </li>
+  <li>
+    Drop <code>_layouts/</code> and <code>_includes</code> to avoid
+    duplication of files across repositories.
+    <code>Makefile</code> will download the needed files from a
+    &quot;third-party&quot; server when needed.
+  </li>
+  <li>
+    Drop <code>bin/</code> to avoid duplication of files across
+    repositories and scripts that no one will use.  In case we need some
+    tool for managing lessons it should live in its own repository and
+    we should ask contributors to install it.
+  </li>
+</ul>
+<h2>Software and Data</h2>
+<p>
+  I suggest dropping <code>code/index.md</code>
+  and <code>data/index.md</code> to avoid the work of keep them
+  updated. Contributors can find the &quot;description&quot; of the
+  files inside <code>code/</code> and <code>data/</code> using:
+</p>
+<pre>
+$ grep 'filename.ext' *.md
+</pre>
+<h2>Overall Makefile</h2>
+<p>Changes to Greg's proposal:</p>
+<ul>
+  <li>
+    Drop <code>make topic dd-slug</code> because is easy to copy one of
+    the previous topics and correct the filenames if needed.
+  </li>
+  <li>
+    <code>make check</code> should run <code>swc-lesson-check</code>
+    (that needs to be installed).
+  </li>
+  <li>
+    <code>make site</code> should download the necessary files
+    (e.g. <code>_layouts</code> and <code>_includes</code>) and after
+    that build the lesson website locally for previewing.
+  </li>
+  <li>
+    Drop <code>make summary</code>.
+  </li>
+  <li>
+    <code>make release</code> should update <code>gh-pages</code> based
+    on <code>master</code>. <strong>This should be only used by topic
+      maintainers</strong>.
+  </li>
+</ul>
