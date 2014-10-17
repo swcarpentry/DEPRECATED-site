@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$568faa4d9abd4480baa8881dca33e9ce27b7c8ac3069c2e8f25f6f84adc161e5", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$568faa4d9abd4480baa8881dca33e9ce27b7c8ac3069c2e8f25f6f84adc161e5", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/garcia-gutierrez.leonor.json"
+ }
+}

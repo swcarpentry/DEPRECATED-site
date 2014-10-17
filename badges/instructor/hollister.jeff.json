@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-16", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$466aa59053dba0914720b6569aabbf098915abaf84cbfb7d23ba4637a60b120e", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$466aa59053dba0914720b6569aabbf098915abaf84cbfb7d23ba4637a60b120e", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/hollister.jeff.json"
+ }
+}
