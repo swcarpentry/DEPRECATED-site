@@ -1,0 +1,118 @@
+---
+layout: blog
+root: ../../..
+author: Tommy Guy
+title: "Num Wrongs Plus Plus"
+date: 2014-10-17
+time: "07:00:00"
+category: ["Workshops"]
+---
+<!-- start excerpt -->
+<p>
+  I was teaching Git to a room of roughly 25 students on day 2 of a
+  Software Carpentry workshop and we ran into a problem that feels
+  like a case study on the reason it's hard to move science to safer
+  practices.
+</p>
+<!-- end excerpt -->
+<p>
+  If you've taught Git before, you know that the first thing you do is
+  have everyone open the shell, navigate to a new directory somewhere
+  (remember how to do that from yesterday?) and type <code>git
+  init</code>. A few hands will shoot up, and red sticky notes start
+  to flower. If you are lucky, you have less people in need of help
+  than you have helpers. We weren't so lucky.
+</p>
+<p>
+  Now what? Do you pause the lesson, let everyone get good and
+  comfortable on Facebook while you jump in to help? Do you keep going
+  and trust that the people whose Git isn't working will be able to
+  catch up? I paused the lesson to help out. I've taught Git five or
+  six times and I do not remember a single case of a student getting a
+  late start on Git that was still with me by the first coffee break.
+</p>
+<p>
+  I think if we're honest, we accidently assume that a lot of the
+  problems with installing Git are the learner. Maybe they didn't read
+  the memo about installing it? It happens. Maybe they should have
+  asked for help before I started my lesson? They've only known you
+  could type into the terminal for 24 hours. Maybe we should provide
+  better tools so they know they even have a problem? See previous
+  answer. 
+</p>
+<p>
+  Maybe the reason Git fails to install on a few machines every
+  workshop is because software installation is just so incredibly
+  broken. 
+</p>
+<p>
+  This is the output that our student saw:
+</p>
+<pre>
+user173-85:~ user-name$ git init
+dyld: lazy symbol binding failed: Symbol not found: ___strlcpy_chk
+  Referenced from: /usr/local/git/bin/git
+  Expected in: /usr/lib/libSystem.B.dylib
+
+dyld: Symbol not found: ___strlcpy_chk
+  Referenced from: /usr/local/git/bin/git
+  Expected in: /usr/lib/libSystem.B.dylib
+
+Trace/BPT trap: 5
+</pre>
+<p>
+  Remember that lofty goal about de-mystifying computers so that smart
+  people can use them to do lofty work? It's in danger. 
+</p>
+<p>
+  One of our goals is to teach how to get "unstuck." We search for
+  "git dyld: lazy symbol binding failed: Symbol not found:
+  ___strlcpy_chk". We explain, loud enough for a few more interested
+  neighbors to overhear, that stackoverflow.com is the place to go
+  for this sort of information, and that they should start there.
+</p>
+<p>
+  Stack Overflow tells us to install Xcode. Right! Instructors don't
+  think of things like that because instructors installed that ages
+  ago. We gloss over what Xcode is and why the student needs it while
+  they are navigating to the Mac Store. We shrug when the person in
+  the seat didn't need to install Xcode and his seems to be working
+  fine.
+</p>
+<p>
+  They find Xcode and start installing. I'm a little nervous about
+  what our iffy wireless will think of a 4.4 Gbyte install and whether
+  this will tank the GitHub module coming up in an hour.
+</p>
+<p>
+  Except that Xcode, which is in the store, will not install because
+  this version of OSX is too old. (I believe it was version 10.8.)
+  Instructors don't run into this because even those of us with creaky
+  old machines were set up with programming tools ages ago.
+</p>
+<p>
+  Back to the internet, this time with less confidence. At that point,
+  we were looking through the apple website, explaining why the
+  "probablynotspyware.net" ad on google isn't a good idea, and growing
+  more and more nervous about the amount of time this is taking. The
+  student actually suggested the final fix: "why don't I just run the
+  installation instructions for windows? I have it in parallels."
+  Genius! This install worked as advertised, and the student finished
+  the entire lesson running a GitBash-enabled Windows <code>cmd</code>
+  shell on her Mac. Fortunately, she was able to keep the file systems
+  straight.
+</p>
+<p>
+  So that's the time that we fixed an OSX install issue by using the
+  Windows shell instead. Or as they say in C++:
+</p>
+<pre>
+while(num_wrongs != right) {
+    num_wrongs++;
+}
+</pre>
+<p>
+  Full disclosure: the author works at Microsoft. Software Carpentry
+  takes an intentionally unopinionated view about the OS that our
+  learners use. Our hope is that they learn to use it better.
+</p>
