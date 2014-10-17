@@ -17,7 +17,8 @@ instructor:
 - {name: Joshua Adelman, user: adelman.joshua}
 - {name: Aron Ahmadia, user: ahmadia.a}
 - {name: Joshua Ainsley, user: ainsley.joshua}
-- {name: Russell Alleen-Willlems, user: alleen-willems.russell}
+- {name: Russell Alleen-Willems, user: alleen-willems.russell}
+- {name: Pete Alonzi, user: alonzi.pete}
 - {name: Carlos Anderson, user: anderson.c}
 - {name: Catalina Anghel, user: anghel.catalina}
 - {name: Dhavide Aruliah, user: aruliah.d}
@@ -55,6 +56,7 @@ instructor:
 - {name: Emily Davenport, user: davenport.e}
 - {name: Matt Davis, user: davis.m}
 - {name: Neal Davis, user: davis.neal}
+- {name: Balamurugan Desinghu, user: desinghu.balamurugan}
 - {name: Gabriel A. Devenyi, user: devenyi.gabriel}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Jonah Duckles, user: duckles.jonah}
@@ -71,6 +73,7 @@ instructor:
 - {name: Robert Flight, user: flight.r}
 - {name: Philip Fowler, user: fowler.p}
 - {name: Chris Friedline, user: friedline.chris}
+- {name: Leonor Garcia-Gutierrez, user: garcia-gutierrez.leonor}
 - {name: Julian Garcia, user: garcia.julian}
 - {name: Aaron Garoutte, user: garoutte.aaron}
 - {name: Molly Gibson, user: gibson.molly}
@@ -87,6 +90,7 @@ instructor:
 - {name: Konrad Hinsen, user: hinsen.k}
 - {name: Daniel Hocking, user: hocking.daniel}
 - {name: Chris Holdgraf, user: holdgraf.c}
+- {name: Jeff Hollister, user: hollister.jeff}
 - {name: Katy Huff, user: huff.k}
 - {name: Luiz Irber, user: irber.luiz}
 - {name: Damien Irving, user: irving.d}
@@ -103,12 +107,14 @@ instructor:
 - {name: Steven Koenig, user: koenig.steven}
 - {name: Bernhard Konrad, user: konrad.b}
 - {name: Igor Kozlov, user: kozlov.igor}
+- {name: Paulina Lach, user: lach.paulina}
 - {name: Karin Lagesen, user: lagesen.k}
 - {name: Ian Langmore, user: langmore.i}
 - {name: Jeremiah Lant, user: lant.jeremiah}
 - {name: Chris Lasher, user: lasher.c}
 - {name: Doug Latornell, user: latornell.d}
 - {name: Luke Lee, user: lee.luke}
+- {name: Jacob Levernier, user: levernier.jacob}
 - {name: JC Leyder, user: leyder.jean-christophe}
 - {name: Matthew Lightman, user: lightman.matthew}
 - {name: Johnny Lin, user: lin.johnny}
@@ -180,6 +186,8 @@ instructor:
 - {name: Ethan White, user: white.e}
 - {name: Easton White, user: white.easton}
 - {name: Amanda Whitlock, user: whitlock.a}
+- {name: Mark Wilber, user: wilber.mark}
+- {name: Chandler Wilkerson, user: wilkerson.chandler}
 - {name: Jason Williams, user: williams.jason}
 - {name: Lynne Williams, user: williams.l}
 - {name: Ryan Williams, user: williams.ryan}
