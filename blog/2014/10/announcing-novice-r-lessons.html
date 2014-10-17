@@ -1,0 +1,166 @@
+---
+layout: blog
+root: ../../..
+author: John Blischak
+title: "Presenting the novice R materials and future plans for the SWC R community"
+date: 2014-10-17
+time: "10:00:00"
+category: ["Lessons", "R"]
+---
+<!-- start excerpt -->
+<p>
+  Approximately six months after
+  our <a href="{{page.root}}/blog/2014/04/novice-r-discussion-summary.html">initial
+  meeting</a>, the SWC R community has developed the first set of R lessons for use
+  both in workshops and for self-directed learning from the SWC
+  website. These <a href="{{page.root}}/novice/r/index.html">novice R
+  lessons</a> are a translation of the
+  current <a href="{{page.root}}/novice/python/index.html">novice Python
+  lessons</a>.
+</p>
+<!-- end excerpt -->
+
+<p>
+  Translating these lessons was a big effort. Many thanks are due to both
+  the large contributions made by
+  <a href="https://github.com/sarahsupp">Sarah
+  Supp</a>, <a href="https://github.com/dbarneche">Diego Barneche</a>,
+  and <a href="https://github.com/gavinsimpson">Gavin Simpson</a>, as well as
+  the smaller contributions made by <a href="https://github.com/cboettig">Carl
+  Boettiger</a>, <a href="https://github.com/jainsley">Josh
+  Ainsley</a>, <a href="https://github.com/chendaniely">Daniel
+  Chen</a>, <a href="https://github.com/BernhardKonrad">Bernhard Konrad</a>, and
+  <a href="https://github.com/jhollist">Jeff Hollister</a> (please let me know
+  if I missed your contribution/review).
+</p>
+
+<h3>On language-agnostic lesson sets</h3>
+
+<p>
+  The current set of novice R lessons fulfill the vision described in
+  a <a href="https://gist.github.com/jkitzes/7478566">summary</a> of a meeting
+  back in October 2012:
+  <blockquote> There is a general belief that SWC should be "language agnostic"
+  and primarily teach the computing skills that transcend individual programming
+  languages.  </blockquote>
+  <blockquote>In general, the R-based workshops should reuse as much material as
+  possible from the existing curriculum and contribute language-agnostic
+  improvements and new lessons back to the "main" Python-based lesson
+  set.</blockquote>
+  <a href="https://github.com/braithwaite">Dan Braithwaite</a> and I recently
+  taught these lessons at
+  a <a href="http://jdblischak.github.io/2014-09-18-chicago/">workshop for
+  novice biologists</a>, and it went very well. Even though we weren't able to
+  get through the entire lesson on command-line programs, it was very satisfying
+  to see all the lightbulbs go off as they made the connection between the
+  commands they were running in the shell the day before and the R code they
+  wrote the second day (if you're interested, see
+  this <a href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-September/002149.html">thread</a>
+  for more details on how the workshop went).
+</p>
+
+<p>
+  While focusing on language-agnostic principles enables us to cover lots of big
+  ideas that are the core of Software Carpentry's mission like modular
+  programming and automation, this means sacrificing the discussion of many
+  important R-specific features. This has disappointed some R instructors. The
+  dissenting view can be summarized by some recent posts to
+  the <a href="http://lists.software-carpentry.org/mailman/listinfo/r-discuss_lists.software-carpentry.org">r-discuss
+  mailing list</a>:
+</p>
+
+<p>
+  <a href="https://github.com/eddelbuettel">Dirk Eddelbuettel</a> wrote
+  (<a href="http://lists.software-carpentry.org/pipermail/r-discuss_lists.software-carpentry.org/2014-September/000152.html
+  ">post</a>): <blockquote>Should we not play to R's strength, rather than to
+  another languages's weaknesses?</blockquote>
+  And <a href="https://github.com/gavinsimpson">Gavin Simpson</a> added
+  (<a href="http://lists.software-carpentry.org/pipermail/r-discuss_lists.software-carpentry.org/2014-September/000159.html
+  ">post</a>): <blockquote>We seem to be compromising R and an R-like approach
+  just to maintain compatibility with the python lessons.</blockquote>
+</p>
+
+<p>
+  Thus we have two opposing philosophies. One wants to focus solely on the
+  principles that transcend programming languages; while the other wants to
+  teach the best practices through a more idiomatic approach.
+</p>
+
+<h3>A call for proposals</h3>
+
+<p>
+  My
+  original <a href="http://lists.software-carpentry.org/pipermail/r-discuss_lists.software-carpentry.org/2014-September/000160.html">response</a>
+  to the complaints about the current set of novice R materials was to have
+  another R community meeting to discuss the future development of a new set of
+  lesson materials. However, upon further reflection, I no longer think this is
+  the best course of action. Six months ago my goal was to have a set of novice
+  R lessons that was developed, maintained, and taught by the R community as a
+  whole. The changes since then both in the SWC R community as well as the wider
+  SWC community indicate this sort of unified approach is not feasible.
+</p>
+
+<p>
+  First, while it was an accomplishment to finally have novice R lessons on the
+  SWC website, overall this experiment was not overly successful. The work of
+  translating the materials ended up being done by only a few people, and only a
+  few instructors have actually taught these materials in their
+  workshops. Second, there is now another option for running R-based
+  workshops, <a href="http://datacarpentry.org/">Data Carpentry</a>. Thus, the
+  common debate on how much we should focus on programming best practices versus
+  data analysis skills has been somewhat solved: a Software Carpentry workshop
+  should focus on programming best practices and a Data Carpentry workshop
+  should focus on data anaylsis skills.
+</p>
+
+<p>
+  In the wider SWC community, we are currently in the process of overhauling
+  just about everything. The plan is
+  to <a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">split up the
+  bc repo</a>, which will result in a
+  <a href="{{page.root}}/blog/2014/10/a-new-template-for-workshop-websites.html">new template
+  for workshop websites</a> and a
+  <a href="{{page.root}}/blog/2014/10/a-new-template-for-lessons.html">new template
+  for lesson material</a>. One of the motivations for this effort is that the
+  unified lesson approach has not been working. Instructors want the flexibility
+  to add domain-specific data and introduce topics in an order that makes the
+  most sense to them.
+</p>
+
+<p>
+  So instead of upfront trying to democratically choose a compromised solution
+  for R-based workshops, let's try a more distributed approach. Any SWC R
+  instructor can propose a new set of lessons and recruit other interested
+  instructors to help create them. Once the lessons are finished, they can be
+  submitted for official approval to be taught in Software Carpentry and/or Data
+  Carpentry workshops (this approval process is also under development). With
+  this approach, each set of R lessons will be maintained in proportion to the
+  number of instructors interested in teaching them.
+</p>
+
+<p>
+  If you have an idea for a new set of R lessons, please send your proposal to
+  the <a href="http://lists.software-carpentry.org/mailman/listinfo/r-discuss_lists.software-carpentry.org">r-discuss
+  mailing list</a>. You should include a basic outline of your approach and what
+  you intend to cover. For an example, please check
+  out <a href="https://github.com/sritchie73">Scott Ritchie</a>'s
+  blog <a href="http://resbaz.tumblr.com/post/98891976764/alpha-testing-the-r-bootcamp-materials">post</a>
+  where he outlines his idea for a set of R lessons. In addition to describing
+  your approach, it would be useful to include the answers to the following
+  questions:
+</p>
+
+<ul>
+  <li>How much time will it take to teach the lessons?</li>
+  <li>Are the lessons intended for Software Carpentry, Data Carpentry, or
+  both?</li>
+  <li>How can other instructors help? Do you need others to help create and/or
+  review the lessons?</li>
+  <li>What learners are you targeting? Novice, intermediate, advanced? A
+  specific discipline? </li>
+</ul>
+
+<p>
+  Hopefully this approach will lead to multiple sets of R lessons available for
+  use in our workshops. I look forward to seeing the new proposals!
+</p>
