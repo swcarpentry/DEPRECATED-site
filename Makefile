@@ -145,7 +145,11 @@ install :
 
 ## check        : check consistency of various things.
 check :
-	python bin/check_workshop_info.py config/workshop_urls.yml config/workshops_saved.yml
+	@python bin/check_workshop_info.py config/workshop_urls.yml config/workshops_saved.yml
+
+## missing      : which instructors don't have biographies?
+missing :
+	@python bin/check_missing_instructors.py config/badges_config.yml _includes/people/*.html
 
 ## links        : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
