@@ -32,10 +32,7 @@ category: ["Tooling"]
     There needs to be a validator that authors can run locally before
     submitting changes or new lessons.  (The proposal did mention
     that <code>make check</code> would run <code>bin/check.py</code>,
-    but this point needs to be more prominent.  We also need to decide
-    whether we are going to depend on Make, or whether it would be
-    better just to have a bunch of shell scripts in
-    a <code>tools</code> directory.)
+    but this point needs to be more prominent.
   </li>
   <li>
     Every topic should have at least one challenge, and challenges
@@ -104,18 +101,23 @@ category: ["Tooling"]
     the rules below.
   </li>
   <li>
-    We use Pandoc for Markdown-to-HTML conversion, so we can
-    use <code>{.attribute}</code> syntax for specifying anchors and
-    classes rather than the clunky syntax our current notes use to be
-    compatible with Jekyll.
-  </li>
-  <li>
     We avoid putting HTML inside Markdown: it's ugly to read and
     write, and error-prone to process. Instead, we put things that
     ought to be in &lt;div&gt; blocks, like the learning objectives
     and challenge exercises, in blocks indented with
     <code>&gt;</code>, and do a bit of post-processing to attach
     the right CSS classes to these blocks.
+  </li>
+  <li>
+    Whatever Markdown-to-HTML converter we use must
+    support <code>{.attribute}</code> syntax for specifying anchors
+    and classes rather than the clunky HTML-in-Markdown syntax our
+    current notes have to use to be compatible with Jekyll.
+  </li>
+  <li>
+    Any "extra" metadata (e.g., the human language of the lesson) will
+    go into the YAML header of the lesson's index page rather than
+    into a separate configuration file.
   </li>
 </ul>
 <h2>Justification and Tutorial</h2>
@@ -364,13 +366,22 @@ and possibly including:
 <h2>Reference Guide</h2>
 <p>
   The reference guide is a cheat sheet for learners to print, doodle
-  on, and take away.  The last thing in it must be a Level-2 heading
-  called "Glossary" followed by definitions of key terms (see below);
-  the format of the rest is deliberately unconstrained for now.  Each
-  definition must be formatted as a separate blockquote indented with
-  &gt; signs:
+  on, and take away.  The format of the actual guide is deliberately
+  unconstrained for now, since we'll need to see a few before we can
+  decide how they ought to be laid out (or whether they need to be
+  laid out the same way at all).
+</p>
+<p>
+  The last thing in it must be a Level-2 heading called "Glossary"
+  followed by definitions of key terms Each definition must be
+  formatted as a separate blockquote indented with &gt; signs:
 </p>
 <pre>
+---
+layout: reference
+---
+...commands and examples...
+
 ## Glossary
 
 > **Key Word 1**: the definition
@@ -380,8 +391,11 @@ and possibly including:
 > relevant to the lesson.
 </pre>
 <p>
-  Again, we use blockquotes because Markdown doesn't have a graceful
-  syntax for &lt;div&gt; blocks.
+  Again, we use blockquotes because standard [sic] Markdown doesn't
+  have a graceful syntax for &lt;div&gt; blocks.  If definition lists
+  become part of CommonMark, or if we standardize on Pandoc as our
+  translation engine, we can use definition lists here instead of
+  hacking around with blockquotes.
 </p>
 <h2>Instructor's Guide</h2>
 <p>
