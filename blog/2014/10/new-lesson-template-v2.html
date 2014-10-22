@@ -3,7 +3,7 @@ layout: blog
 root: ../../..
 author: Greg Wilson
 title: "A New Lesson Template, Version 2"
-date: 2014-10-19
+date: 2014-10-22
 time: "12:00:00"
 category: ["Tooling"]
 ---
@@ -59,6 +59,34 @@ category: ["Tooling"]
     instructor's material is consistent with the lesson material.
   </li>
   <li>
+    Every topic should explicitly list the time required to teach it.
+    (We should do this for topics, rather than for whole lessons,
+    because people often don't get through all of the latter, which
+    makes timing reports difficult to interpret.)
+  </li>
+  <li>
+    We need to make it clear that lessons must be CC-BY licensed to
+    permit remixing.
+  </li>
+</ol>
+<p>
+  With all that in mind, here's another cut at the template&mdash;as
+  before, we'd be grateful for comments.  Note that this post mingles
+  description of "what" with explanation of "why"; the final guide for
+  people building lessons will disentangle them to make the former
+  easier to follow.
+</p>
+<p>
+  Note also that Trevor Bekolay has drafted an implementation at
+  <a href="https://github.com/tbekolay/swc-template">https://github.com/tbekolay/swc-template</a>
+  for people who'd like to see what the template would look like in
+  practice.  There's still work to do (see below), but it's a great
+  start.  Thanks to Trevor, the other Trevor, Erik with a 'k', Molly,
+  Emily, Karin, and R&eacute;mi for their feedback.
+</p>
+<h2>To Do</h2>
+<ul>
+  <li>
     Some people suggested getting rid of the <code>web/</code> folder
     and have lessons load CSS, Javascript, and standard images from
     the web.  This would reduce the size of the repository, and help
@@ -67,16 +95,33 @@ category: ["Tooling"]
     their lessons' appearance to change outwith their control.
   </li>
   <li>
-    Every topic should explicitly list the time required to teach it.
-    (We should do this for topics, rather than for whole lessons,
-    because people often don't get through all of the latter, which
-    makes timing reports difficult to interpret.)
+    We need to figure out how example programs will reference data
+    files (i.e., what paths they will use).  See the notes under
+    "Software, Data, and Images" below for full discussion.
   </li>
-</ol>
-<p>
-  With all that in mind, here's another cut at the template&mdash;as
-  before, we'd be grateful for comments.
-</p>
+  <li>
+    Trevor Bekolay writes:
+    <br/>
+
+    I took a stab at implementing a minimal motivation
+    slides. Unfortunately this isn't very clean right now; I just
+    included the &lt;section&gt; &lt;script&gt; tags in the Markdown, which I know
+    we want to avoid. I initially had the slides in a separate
+    Markdown file, which is possible with reveal.js. There are a few
+    weird things with this though, which we may or may not be able to
+    fix, since we're limited in what we can do with Jekyll. Briefly,
+    we can have the <code>slides.html</code> layout do something like
+    this:
+    <pre>
+<div class="slides"><section data-markdown="{{page.path}}" data-separator="^\n\n\n" data-vertical="^\n\n"></section></div>
+    </pre>
+    The only wart with this is that the Markdown file
+    (i.e., <code>page.path</code>) doesn't get copied
+    to <code>_site</code>. I couldn't figure out a way to do it using
+    vanilla Jekyll, but it might be possible. Even if it does get
+    copied, however, we might have to strip out the YAML header.
+  </li>
+</ul>
 <h2>Terms</h2>
 <ul>
   <li>
@@ -156,8 +201,8 @@ category: ["Tooling"]
     and to create small chunks for recording timings.  The cycle we
     expect is:
     <ol>
-      <li>Explain the objectives of this topic.</li>
-      <li>Give the lesson.</li>
+      <li>Explain the topic's objectives.</li>
+      <li>Teach it.</li>
       <li>Do one or more challenges (depending on time).</li>
     </ol>
   </li>
@@ -172,10 +217,13 @@ category: ["Tooling"]
     searching through lessons easier.
   </li>
   <li>
-    Instructor's guide: our collected wisdom.  Once lessons have been
-    reformatted, we will ask everyone who teaches for us to review and
-    update the instructor's guide for each lesson they taught after
-    each workshop.
+    Instructor's guide: our collected wisdom, and solutions to the
+    challenge exercises.  Once lessons have been reformatted, we will
+    ask everyone who teaches for us to review and update the
+    instructor's guide for each lesson they taught after each
+    workshop.  Note that the instructor's guide (including challenge
+    solutions) will be on the web, both because we believe in
+    openness, and because it's going to be publicly readable anyway.
   </li>
   <li>
     Tools: because machines should check formatting rules, not people.
@@ -249,7 +297,7 @@ keywords: ["some", "key terms", "in a list"]
 ---
 Paragraph of introductory material.
 
-> ## Prerequisites {.prereq}
+> ## Prerequisites
 >
 > A short paragraph describing what learners need to know
 > before tackling this lesson.
@@ -273,7 +321,9 @@ Paragraph of introductory material.
     The description of prerequisites is prose for human consumption,
     not a machine-comprehensible list of dependencies. We may
     supplement the former with the latter once we have more experience
-    with this lesson format and know what we actually want to do.
+    with this lesson format and know what we actually want to do.  The
+    block must be titled "Prerequisites" so we can detect it and style
+    it properly.
   </li>
   <li>
     Software installation and configuration instructions
@@ -469,10 +519,12 @@ One or more paragraphs laying out the lesson's legend.
     Gentzkow and Shapiro's
     "<a href="http://faculty.chicagobooth.edu/jesse.shapiro/research/CodeAndData.pdf">Code
     and Data for the Social Sciences: A Practitioner's
-    Guide</a>"). However, it may cause novice learners
-    problems. If <code>code/program.py</code> includes a hard-wired
-    path to a data file, that path must be
-    either <code>datafile.ext</code>
+    Guide</a>").
+  </li>
+  <li>
+    However, it may cause novice learners problems. If
+    <code>code/program.py</code> includes a hard-wired path to a data
+    file, that path must be either <code>datafile.ext</code>
     or <code>data/datafile.ext</code>. The first will only work if the
     program is run with the lesson's root directory as the current
     working directory, while the second will only work if the program
@@ -509,6 +561,10 @@ One or more paragraphs laying out the lesson's legend.
     previewing.  This assumes <code>tools/check</code> has given the
     site a clean bill of health.
   </li>
+  <li>
+    <code>tools/update</code>: run the right Git commands to update
+    shared files (e.g., layout templates).
+  </li>
 </ul>
 <h2>Layout</h2>
 <p>
@@ -526,10 +582,6 @@ One or more paragraphs laying out the lesson's legend.
   <li>
     There is no longer a separate glossary page.  Instead, the
     glossary is part of the reference guide given to learners.
-  </li>
-  <li>
-    We expect to load CSS, Javascript, and standard images from the
-    web instead of locally.
   </li>
   <li>
     The index page no longer lists overall learning objectives, since
