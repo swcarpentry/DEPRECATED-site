@@ -1,0 +1,591 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "A New Lesson Template, Version 2"
+date: 2014-10-22
+time: "12:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  Thanks to everyone for their feedback on
+  <a href="{{page.root}}/blog/2014/10/a-new-template-for-lessons.html">the first draft</a>
+  of our new template for lessons.
+  The major suggestions were:
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>
+    We need to explain how this template supports student experience,
+    quality lesson planning, etc.  It's not clear now how compliance
+    with these Markdown formatting rules will help improve teaching
+    and learning.
+  </li>
+  <li>
+    The template needs to be much simpler.  As Andromeda Yelton said,
+    "It just looks to me like a minefield of ways to get things
+    wrong&mdash;things that have <em>nothing to do with
+    pedagogy</em>..."
+  </li>
+  <li>
+    There needs to be a validator that authors can run locally before
+    submitting changes or new lessons.  (The proposal did mention
+    that <code>make check</code> would run <code>bin/check.py</code>,
+    but this point needs to be more prominent.
+  </li>
+  <li>
+    Every topic should have at least one challenge, and challenges
+    should be explicitly connected to specific learning objectives.
+  </li>
+  <li>
+    We need a clearer explanation of the difference between the
+    reference guide (which is meant to be a cheat sheet for learners
+    to take away) and the instructor's guide (which is meant to be
+    tips and tricks for teaching).  We should also suggest formatting
+    rules for both.
+  </li>
+  <li>
+    The instructor's guide should explicitly present each lesson's
+    "legend", i.e., the story that ties it together which instructors
+    gradually reveal to learners.
+  </li>
+  <li>
+    We need to decide whether the instructor's guide is a separate
+    document, or whether there are call-out sections in each topic for
+    instructors.  The former puts the whole story in one place, and
+    helps updaters to see the whole thing when making changes; the
+    latter puts it in context, and helps updaters check that the
+    instructor's material is consistent with the lesson material.
+  </li>
+  <li>
+    Every topic should explicitly list the time required to teach it.
+    (We should do this for topics, rather than for whole lessons,
+    because people often don't get through all of the latter, which
+    makes timing reports difficult to interpret.)
+  </li>
+  <li>
+    We need to make it clear that lessons must be CC-BY licensed to
+    permit remixing.
+  </li>
+</ol>
+<p>
+  With all that in mind, here's another cut at the template&mdash;as
+  before, we'd be grateful for comments.  Note that this post mingles
+  description of "what" with explanation of "why"; the final guide for
+  people building lessons will disentangle them to make the former
+  easier to follow.
+</p>
+<p>
+  Note also that Trevor Bekolay has drafted an implementation at
+  <a href="https://github.com/tbekolay/swc-template">https://github.com/tbekolay/swc-template</a>
+  for people who'd like to see what the template would look like in
+  practice.  There's still work to do (see below), but it's a great
+  start.  Thanks to Trevor, the other Trevor, Erik with a 'k', Molly,
+  Emily, Karin, R&eacute;mi, and Andromeda for their feedback.
+</p>
+<h2>To Do</h2>
+<ul>
+  <li>
+    Some people suggested getting rid of the <code>web/</code> folder
+    and have lessons load CSS, Javascript, and standard images from
+    the web.  This would reduce the size of the repository, and help
+    ensure consistency, but (a) a lot of people write when they're
+    offline (I'm doing it right now), and (b) people may not want
+    their lessons' appearance to change outwith their control.
+  </li>
+  <li>
+    We need to figure out how example programs will reference data
+    files (i.e., what paths they will use).  See the notes under
+    "Software, Data, and Images" below for full discussion.
+  </li>
+  <li>
+    Trevor Bekolay writes:
+    <br/>
+    I took a stab at implementing a minimal motivation slides.
+    Unfortunately this isn't very clean right now; I just included the
+    &lt;section&gt; and &lt;script&gt; tags in the Markdown, which I know
+    we want to avoid. I initially had the slides in a separate
+    Markdown file, which is possible with reveal.js. There are a few
+    weird things with this though, which we may or may not be able to
+    fix, since we're limited in what we can do with Jekyll. Briefly,
+    we can have the <code>slides.html</code> layout do something like
+    this:
+<pre>&lt;div class="slides"&gt;&lt;section data-markdown="{{page.path}}" data-separator="^\n\n\n" data-vertical="^\n\n"&gt;&lt;/section&gt;&lt;/div&gt;</pre>
+    The only wart with this is that the Markdown file
+    (i.e., <code>page.path</code>) doesn't get copied
+    to <code>_site</code>. I couldn't figure out a way to do it using
+    vanilla Jekyll, but it might be possible. Even if it does get
+    copied, however, we might have to strip out the YAML header.
+  </li>
+</ul>
+<h2>Terms</h2>
+<ul>
+  <li>
+    A <em>lesson</em> is a complete story about some subject, typically
+    taught in 2-4 hours.
+  </li>
+  <li>
+    A <em>topic</em> is a single scene in that story, typically 5-15
+    minutes long.
+  </li>
+  <li>
+    A <em>slug</em> is a short identifier for something, such
+    as <code>filesys</code> (for "file system").
+  </li>
+</ul>
+<h2>Design Choices</h2>
+<ul>
+  <li>
+    We define everything in terms of Markdown. If lesson authors want to
+    use something else for their lessons (e.g., IPython Notebooks), it's
+    up to them to generate and commit Markdown formatted according to
+    the rules below.
+  </li>
+  <li>
+    We avoid putting HTML inside Markdown: it's ugly to read and
+    write, and error-prone to process. Instead, we put things that
+    ought to be in &lt;div&gt; blocks, like the learning objectives
+    and challenge exercises, in blocks indented with
+    <code>&gt;</code>, and do a bit of post-processing to attach
+    the right CSS classes to these blocks.
+  </li>
+  <li>
+    Whatever Markdown-to-HTML converter we use must
+    support <code>{.attribute}</code> syntax for specifying anchors
+    and classes rather than the clunky HTML-in-Markdown syntax our
+    current notes have to use to be compatible with Jekyll.
+  </li>
+  <li>
+    Any "extra" metadata (e.g., the human language of the lesson) will
+    go into the YAML header of the lesson's index page rather than
+    into a separate configuration file.
+  </li>
+</ul>
+<h2>Justification and Tutorial</h2>
+<p>
+  The main Software Carpentry website will contain a one-page tutorial
+  explaining (a) how to create and update lessons and (b) how the
+  various parts of the template support better teaching.  A sketch of
+  the second of these is:
+</p>
+<ul>
+  <li>
+    A standard layout so that:
+    <ol>
+      <li>
+	Lessons have the same look and feel, and can be navigated in
+	predictable ways, even when they are written by different (and
+	multiple) people.
+      </li>
+      <li>
+	Contributors know where to put things when they are extending
+	or modifying lessons.
+      </li>
+      <li>
+	Content can more easily be checked.  For example, we want to
+	make sure that every learning objective is matched by a
+	challenge, and that every challenge corresponds to one or more
+	learning objectives.
+      </li>
+    </ol>
+    In the longer term, a standard format will help us build tools,
+    but the format <em>must</em> be justifiable in terms of short-term
+    gains for instructors and learners.
+  </li>
+  <li>
+    One short page per topic: to show each learning sprint explicitly,
+    and to create small chunks for recording timings.  The cycle we
+    expect is:
+    <ol>
+      <li>Explain the topic's objectives.</li>
+      <li>Teach it.</li>
+      <li>Do one or more challenges (depending on time).</li>
+    </ol>
+  </li>
+  <li>
+    Introductory slides: to give learners a sense of where the next
+    couple or three hours are going to take them.
+  </li>
+  <li>
+    Reference guide: because everybody wants a cheat sheet.  This
+    includes a glossary of terms to help lesson authors think through
+    what they expect learners to be unfamiliar with, and to make
+    searching through lessons easier.
+  </li>
+  <li>
+    Instructor's guide: our collected wisdom, and solutions to the
+    challenge exercises.  Once lessons have been reformatted, we will
+    ask everyone who teaches for us to review and update the
+    instructor's guide for each lesson they taught after each
+    workshop.  Note that the instructor's guide (including challenge
+    solutions) will be on the web, both because we believe in
+    openness, and because it's going to be publicly readable anyway.
+  </li>
+  <li>
+    Tools: because machines should check formatting rules, not people.
+  </li>
+</ul>
+<h2>Overall Layout</h2>
+<p>
+  Each lesson is stored in a directory laid out as described
+  below. That directory is a self-contained Git repository (i.e.,
+  there are no submodules or clever tricks with symbolic links).
+</p>
+<ol>
+  <li>
+    <code>index.md</code>: the home page for the lesson. (See "Home
+    Page" below.)
+  </li>
+  <li>
+    <code>dd-slug.md</code>: the topics in the lesson. <code>dd</code>
+    is a sequence number such as <code>01</code>, <code>02</code>, etc.,
+    and <code>slug</code> is an abbreviated single-word mnemonic for the
+    topic. Thus, <code>03-filesys.md</code> is the third topic in this
+    lesson, and is about the filesystem. (Note that we use hyphens
+    rather than underscores in filenames.) See "Topics" below.
+  </li>
+  <li>
+    <code>motivation.md</code>: slides for a short introductory
+    presentation (three minutes or less) explaining what the lesson is
+    about and why people would want to learn it. See "Introductory
+    Slides" below.
+  </li>
+  <li>
+    <code>reference.md</code>: a cheat sheet summarizing key terms and
+    commands, syntax, etc., that can be printed and given to learners.
+    See "Reference Guide" below.
+  </li>
+  <li>
+    <code>instructors.md</code>: the instructor's guide for the
+    lesson. See "Instructor's Guide" below.
+  </li>
+  <li>
+    <code>code/</code>: a sub-directory containing all code samples. See
+    "Software, Data, and Images" below.
+  </li>
+  <li>
+    <code>data/</code>: a sub-directory containing all data files for
+    this lesson. See "Software, Data, and Images" below.
+  </li>
+  <li>
+    <code>img/</code>: images (including plots) used in the lesson. See
+    "Software, Data, and Images" below.
+  </li>
+  <li>
+    <code>tools/</code>: tools for managing lessons. See "Tools" below.
+  </li>
+  <li>
+    <code>_layouts/</code>: page layout templates. See "Layout" below.
+  </li>
+  <li>
+    <code>_includes/</code>: page inclusions. See "Layout" below.
+  </li>
+</ol>
+<h2>Home Page</h2>
+<p>
+  <code>index.md</code> must be structured as follows:
+</p>
+<pre>
+---
+layout: lesson
+title: Lesson Title
+keywords: ["some", "key terms", "in a list"]
+---
+Paragraph of introductory material.
+
+> ## Prerequisites
+>
+> A short paragraph describing what learners need to know
+> before tackling this lesson.
+
+## Topics
+
+* [Topic Title 1](01-slug.html)
+* [Topic Title 2](02-slug.html)
+
+## Other Resources
+
+* [Introduction](intro.html)
+* [Reference Guide](reference.html)
+* [Instructor's Guide](guide.html)
+</pre>
+<p>
+  <strong>Notes:</strong>
+</p>
+<ul>
+  <li>
+    The description of prerequisites is prose for human consumption,
+    not a machine-comprehensible list of dependencies. We may
+    supplement the former with the latter once we have more experience
+    with this lesson format and know what we actually want to do.  The
+    block must be titled "Prerequisites" so we can detect it and style
+    it properly.
+  </li>
+  <li>
+    Software installation and configuration instructions
+    <em>aren't</em> in the lesson, since they may be shared with other
+    lessons.  They will be stored centrally on the Software Carpentry
+    web site and linked from the lessons that need them.
+  </li>
+</ul>
+<h2>Topics</h2>
+<p>
+  Each topic must be structured as follows:
+</p>
+<pre>
+---
+layout: topic
+title: Topic Title
+minutes: MM
+---
+> ## Learning Objectives {.objectives}
+>
+> * Learning objective 1
+> * Learning objective 2
+
+Paragraphs of text mixed with:
+
+~~~ {.python}
+some code:
+    to be displayed
+~~~
+~~~ {.output}
+output
+from
+program
+~~~
+~~~ {.error}
+error reports from program (if any)
+~~~
+
+and possibly including:
+
+> ## Callout Box {.callout}
+>
+> An aside of some kind.
+
+> ## Challenge Title {.challenge}
+>
+> Description of a single challenge.
+> There may be several challenges.
+</pre>
+<p>
+  <strong>Notes:</strong>
+</p>
+<ol>
+  <li>
+    The "expected time" heading is called minutes to encourage people
+    to create topics that are short (10-15 minutes at most).
+  </li>
+  <li>
+    There are no sub-headings inside a topic other than the ones
+    shown: if a topic needs sub-headings, it should be broken into two
+    or more topics.
+  </li>
+  <li>
+    <em>
+      We need to figure out how to connect challenges back to learning
+      objectives.  Markdown doesn't appear to allow us to
+      add <code>id</code> attributes to list elements, or to create
+      anchors that challenges can refer back to.
+    </em>
+  </li>
+</ol>
+<h2>Introductory Slides</h2>
+<p>
+  Every lesson must include a short slide deck suitable for a short
+  presentation (3 minutes or less) that the instructor can use to
+  explain to learners how knowing the subject will help them. Slides
+  are written in Markdown, and compiled into HTML for use
+  with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.
+</p>
+<p>
+  <strong>Notes:</strong>
+</p>
+<ol>
+  <li>
+    <em>
+      We should provide an example.
+    </em>
+  </li>
+</ol>
+<h2>Reference Guide</h2>
+<p>
+  The reference guide is a cheat sheet for learners to print, doodle
+  on, and take away.  The format of the actual guide is deliberately
+  unconstrained for now, since we'll need to see a few before we can
+  decide how they ought to be laid out (or whether they need to be
+  laid out the same way at all).
+</p>
+<p>
+  The last thing in it must be a Level-2 heading called "Glossary"
+  followed by definitions of key terms Each definition must be
+  formatted as a separate blockquote indented with &gt; signs:
+</p>
+<pre>
+---
+layout: reference
+---
+...commands and examples...
+
+## Glossary
+
+> **Key Word 1**: the definition
+> relevant to the lesson.
+
+> **Key Word 2**: the definition
+> relevant to the lesson.
+</pre>
+<p>
+  Again, we use blockquotes because standard [sic] Markdown doesn't
+  have a graceful syntax for &lt;div&gt; blocks.  If definition lists
+  become part of CommonMark, or if we standardize on Pandoc as our
+  translation engine, we can use definition lists here instead of
+  hacking around with blockquotes.
+</p>
+<h2>Instructor's Guide</h2>
+<p>
+  Many learners will go through the lessons outside of class, so it
+  seems best to keep material for instructors in a separate document,
+  rather than interleaved in the lesson itself.  Its structure is:
+</p>
+<pre>
+---
+title: Instructor's Guide
+---
+## Overall
+
+One or more paragraphs laying out the lesson's legend.
+
+## General Points
+
+* Point
+* Point
+
+## Topic 1
+
+* Point
+* Point
+
+## Topic 2
+
+* Point
+* Point
+</pre>
+<p>
+  <strong>Notes:</strong>
+</p>
+<ol>
+  <li>
+    The topic headings must match the topic titles.  (Yes, we could
+    define these as variables in a configuration file and refer to
+    those variables everywhere, but in this case, repetition will be a
+    lot easier to read, and our validator can check that the titles
+    line up.)
+  </li>
+  <li>
+    The points can be anything: specific ways to introduce ideas,
+    common mistakes learners make and how to get out of them, or
+    anything else.
+  </li>
+</ol>
+<h2>Software, Data, and Images</h2>
+<p>
+  All of the software samples used in the lesson must go in a
+  directory called <code>code/</code>.  Stand-alone data files must go
+  in a directory called <code>data/</code>. Groups of related data
+  files must be put together in a sub-directory of <code>data/</code>
+  with a meaningful (short) name.
+</p>
+<p>
+  Images used in the lessons must go in an <code>img/</code>
+  directory. We strongly prefer SVG for line drawings, since they are
+  smaller, scale better, and are easier to edit. Screenshots and other
+  raster images must be PNG or JPEG format.
+</p>
+<p>
+  <strong>Notes:</strong>
+</p>
+<ol>
+  <li>
+    This mirrors the layout a scientist would use for actual work (see
+    Noble's
+    "<a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424">A
+    Quick Guide to Organizing Computational Biology Projects</a>" or
+    Gentzkow and Shapiro's
+    "<a href="http://faculty.chicagobooth.edu/jesse.shapiro/research/CodeAndData.pdf">Code
+    and Data for the Social Sciences: A Practitioner's
+    Guide</a>").
+  </li>
+  <li>
+    However, it may cause novice learners problems. If
+    <code>code/program.py</code> includes a hard-wired path to a data
+    file, that path must be either <code>datafile.ext</code>
+    or <code>data/datafile.ext</code>. The first will only work if the
+    program is run with the lesson's root directory as the current
+    working directory, while the second will only work if the program
+    is run from within the <code>code/</code> directory. This is a
+    learning opportunity for students working from the command line,
+    but a confusing annoyance inside IDEs and the IPython Notebook
+    (where the tool's current working directory is less obvious). And
+    yes, the right answer is to pass filenames on the command line,
+    but that requires learners to understand how to get command line
+    arguments, which isn't something they'll be ready for in the first
+    hour or two.
+  </li>
+  <li>
+    We have removed the requirement for an index file in
+    the <code>code/</code> and <code>data/</code> directories.
+    It is tempting to require code fragments in topics to have an
+    extra attribute <code>src="code/filename.ext"</code> so that we
+    can prune files that are no longer used as lessons change, but
+    that may be more effort than authors are willing to put in.
+  </li>
+</ol>
+<h2>Tools</h2>
+<p>
+  The <code>tools/</code> directory contains tool to help create and
+  maintain lessons:
+<ul>
+  <li>
+    <code>tools/check</code>: make sure that everything is formatted
+    properly, and print error messages identifying problems if it's
+    not.
+  </li>
+  <li>
+    <code>tools/build</code>: build the lesson website locally for
+    previewing.  This assumes <code>tools/check</code> has given the
+    site a clean bill of health.
+  </li>
+  <li>
+    <code>tools/update</code>: run the right Git commands to update
+    shared files (e.g., layout templates).
+  </li>
+</ul>
+<h2>Layout</h2>
+<p>
+  The template still contains <code>_layouts/</code>
+  and <code>_includes/</code> directories for page layout templates
+  and standard inclusions.  These are needed to support lesson
+  preview.
+</p>
+<h2>Major Changes</h2>
+<ul>
+  <li>
+    We no longer rely on Make.  Instead, the two key tools are scripts
+    in the <code>tools/</code> directory.
+  </li>
+  <li>
+    There is no longer a separate glossary page.  Instead, the
+    glossary is part of the reference guide given to learners.
+  </li>
+  <li>
+    The index page no longer lists overall learning objectives, since
+    learning objectives should all be paired with challenges.
+  </li>
+  <li>
+    Topic pages no longer have key points: anything that would have
+    gone here properly belongs in the reference guide.
+  </li>
+</ul>
