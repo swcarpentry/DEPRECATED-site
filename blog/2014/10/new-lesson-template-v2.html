@@ -111,9 +111,7 @@ category: ["Tooling"]
     fix, since we're limited in what we can do with Jekyll. Briefly,
     we can have the <code>slides.html</code> layout do something like
     this:
-    <pre>
-<div class="slides"><section data-markdown="{{page.path}}" data-separator="^\n\n\n" data-vertical="^\n\n"></section></div>
-    </pre>
+<pre>&lt;div class="slides"&gt;&lt;section data-markdown="{{page.path}}" data-separator="^\n\n\n" data-vertical="^\n\n"&gt;&lt;/section&gt;&lt;/div&gt;</pre>
     The only wart with this is that the Markdown file
     (i.e., <code>page.path</code>) doesn't get copied
     to <code>_site</code>. I couldn't figure out a way to do it using
