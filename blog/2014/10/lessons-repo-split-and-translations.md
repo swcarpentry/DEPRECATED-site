@@ -7,7 +7,7 @@ date: 2014-10-25
 time: "21:00:00"
 category: ["Tooling"]
 ---
-Keeping on the roll of the posts about the [repo split](), [templates](), and [metadata](), Software Carpentry's trajectory appears to reaching the point of needing to consider how to handle translated lessons.
+Keeping on the roll of the posts about the [repo split](http://software-carpentry.org/blog/2014/09/splitting-the-repo.html), [templates](http://software-carpentry.org/blog/2014/10/new-lesson-template-v2.html), and [metadata](http://software-carpentry.org/blog/2014/10/of-templates-and-metadata.html), Software Carpentry's trajectory appears to reaching the point of needing to consider how to handle translated lessons.
 The core Software Carpentry lessons have be translated into a two other languages by bilingual instructors, [Korean](https://github.com/statkclee/xwmooc-sc/tree/gh-pages) produced by Victor KC Lee and [Spanish](https://github.com/franktoffel/swcarpentry-es/tree/master/translations/es) by Francisco Navarro.
 With the upcoming repo split, I think its a good time to examine the various options of how we might handle translations.
 
