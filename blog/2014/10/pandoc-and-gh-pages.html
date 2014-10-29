@@ -1,0 +1,135 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Pandoc and Building Pages"
+date: 2014-10-29
+time: "11:30:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  Long-time readers of this blog and
+  <a href="{{site.mailing_lists}}/pipermail/discuss_lists.software-carpentry.org/">our discussion list</a>
+  will know that I'm unhappy with the choices we have for formatting our lessons.
+  Thanks to <a href="https://twitter.com/kwbroman/status/526776697828671488">a tweet</a>
+  from <a href="http://kbroman.org/">Karl Broman</a>,
+  I may have an answer.
+  It's outlined below,
+  and I'd be grateful for comments on usability and feasibility.
+</p>
+<!-- end excerpt -->
+<p>
+  Here's a summary of the forces we need to balance:
+</p>
+<ol>
+  <li>
+    <em>People should be able to write lessons in Markdown.</em>
+    We choose Markdown rather than LaTeX or HTML because it's easier to read, diff, and merge;
+    we choose it rather than AsciiDoc or reStructuredText (reST) because it's much better known.
+  </li>
+  <li>
+    <em>People should be able to preview their lessons locally before publishing them,</em>
+    both to avoid embarrassment and because many people compose offline.
+  </li>
+  <li>
+    <em>Lessons should be easy to write and read.</em>
+    We shouldn't require people to put div's and other bits of HTML in their Markdown.
+  </li>
+  <li>
+    <em>It should be easy to add machine-comprehensible structure to lessons.</em>
+    We want to be able to build tools to extract lesson titles,
+    count challenge exercises,
+    etc.,
+    all of which requires machine-comprehensible source.
+    This is in tension with the point above:
+    everything we do to make lessons more readable to computers
+    means extra work or less readbility for people.
+  </li>
+  <li>
+    <em>We should use only off-the-shelf tools.</em>
+    We don't want to have to build, document, and maintain custom plugins for formatting tools.
+    We <em>do</em> want to use GitHub's <code>gh-pages</code> magic.
+  </li>
+  <li>
+    <em>The workflow for creating and publishing lessons should be authentic,</em>
+    i.e.,
+    the way people write and publish lessons should be
+    a way they might use to write and publish research papers.
+  </li>
+</ol>
+<p>
+  And here's the proposal:
+</p>
+<ol>
+  <li>
+    We stop relying on Jekyll and start using Pandoc instead.
+  </li>
+  <li>
+    Every lesson is stored in a GitHub repository that has a <code>gh-pages</code> branch.
+    (GitHub will automatically publish the files in that branch as a mini-website.)
+  </li>
+  <li>
+    The root directory of that repository contains:
+    <ul>
+      <li>a <code>README.md</code> file with a one-liner about the lesson's content and authorship;</li>
+      <li>a sub-directory called <code>src</code> that contains the source files for the lesson;</li>
+      <li>the compiled versions of those files; and</li>
+      <li>an empty file called <code>.nojekyll</code> to tell GitHub that we don't want it to run Jekyll.</li>
+    </ul>
+  </li>
+  <li>
+    The <code>src</code> directory contains all the source files for the lesson,
+    and a simple <code>Makefile</code> that uses Pandoc instead of Jekyll to compile those files.
+    Pandoc's output goes in the root directory,
+    i.e.,
+    one level above the <code>src</code> directory,
+    and the Makefile makes sure that other files (CSS, images, etc.) are copied up as well.
+  </li>
+  <li>
+    When an author makes a change,
+    she must build locally,
+    then commit those files to the GitHub repository.
+    Yes,
+    this means that generated files are stored in version control,
+    which is normally regarded as a bad idea.
+    But it does mean we can use Pandoc,
+    which supports a nicer dialect of Markdown than Jekyll on GitHub,
+    and we don't have to worry about compiling files on one branch
+    and committing them to another.
+  </li>
+</ol>
+<p>
+  I've created a <a href="https://github.com/gvwilson/subdir">proof-of-concept repository</a>
+  to show what this might look like in practice.
+  It seems to work pretty well,
+  and I think it satisfies the "authentic workflow" requirement
+  (though I'd be grateful if others could tell me it doesn't).
+  The only usability hiccup I can see is that
+  authors will have to remember to commit the generated files:
+  my usual workflow of <code>git&nbsp;add&nbsp;-A</code>
+  followed by <code>git&nbsp;commit&nbsp;-m</code>
+  only adds files in or below the current working directory,
+  so I would have to <code>cd&nbsp;..</code> up from <code>src</code>
+  to the root directory of their local copy of the repo first.
+</p>
+<p>
+  One variation on this raised by Trevor King is
+  to keep the source files in the root directory of the <code>master</code> branch,
+  and have the lesson maintainer merge changes into the <code>src</code> directory of the <code>gh-pages</code> branch
+  and do the build.
+  This frees authors from having to install the build tools&mdash;only
+  the maintainers need that&mdash;but on balance,
+  I think most people will want to preview before uploading,
+  so the savings will be mostly theoretical.
+</p>
+<p>
+  If you have other thoughts,
+  or can suggest other improvements,
+  please add comments to this post.
+  We'd particularly like to hear from people who aren't Git experts
+  or aren't familiar with HTML templating systems, Makefiles, and the like.
+  Does the workflow described above make sense?
+  If not,
+  what do you think would go wrong where, and why?
+</p>
