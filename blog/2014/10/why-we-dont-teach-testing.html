@@ -1,0 +1,167 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Why We Don't Teach Testing"
+date: 2014-10-29
+time: "11:00:00"
+category: ["Opinion", "Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  If you haven't been following
+  <a href="https://github.com/numerical-mooc/numerical-mooc/wiki">Lorena Barba's course on numerical methods in Python</a>,
+  you should.
+  It's a great example of how to use emerging tools to teach more effectively,
+  and if we ever run Software Carpentry online again,
+  we'll do it her way.
+  Yesterday,
+  though,
+  when she posted <a href="http://nbviewer.ipython.org/github/numerical-mooc/numerical-mooc/blob/master/lessons/03_wave/03_03_aBetterModel.ipynb">this notebook</a>,
+  I tweeted,
+  "Beautiful... but where are the unit tests?"
+  <a href="https://twitter.com/lorenaabarba/status/527149484942585856">The discussion that followed</a>
+  reminded me that I've been meaning to explain
+  why testing is no longer part of the mandatory core of Software Carpentry.
+</p>
+<!-- end excerpt -->
+<p>
+  The problem isn't the concept of unit testing:
+  we can explain that to novices in just a couple of minutes.
+  The problem isn't a lack of accessible unit testing frameworks, either:
+  we can teach people <a href="https://github.com/nose-devs/nose">Nose</a>
+  just as soon as they've learned functions.
+</p>
+<p>
+  The problem is what comes next.
+  What tests do we actually teach them to write?
+  The canonical examples from computer science classes,
+  such as counting substrings,
+  aren't things most scientists would actually do.
+  And the things that <em>are</em> authentic are
+  (a) domain-specific and
+  (b) lurk in the treacherous swamp called "floating point".
+</p>
+<p>
+  For example,
+  suppose you wanted to test the
+  <a href="http://benchmarksgame.alioth.debian.org/u32/program.php?test=nbody&lang=python3&id=1">the Python 3 entry</a>
+  in <a href="http://benchmarksgame.alioth.debian.org/u32/performance.php?test=nbody">the n-body benchmark game</a>.
+  The key function,
+  <code>advance</code>,
+  moves the system forward by a single time step.
+  It would be pretty easy to construct a two-body system
+  with a unit mass at the origin
+  and another mass one AU away,
+  figure out how far each should move in a single day,
+  and check that the function got the right answer,
+  but anything more complicated than that runs into numerical precision issues.
+  At some point,
+  I have to decide whether the actual answer
+  is close enough to the expected answer
+  to count as a pass.
+  The question learners asked us when we taught this in workshops was,
+  "How close is close enough?"
+</p>
+<p>
+  My answer was,
+  "I don't know&mdash;you're the scientist."
+  Their response was,
+  "Well, I don't know either&mdash;you're the computer scientist."
+  Books
+  <a href="http://www.amazon.com/Writing-Scientific-Software-Guide-Style/dp/0521675952/">like</a>
+  <a href="http://www.amazon.com/Accuracy-Reliability-Scientific-Computing-Environments/dp/0898715849/">these</a>
+  aren't much help.
+  Their advice boils down to,
+  "Think carefully about your numerical methods,"
+  but that's like telling a graphic designer to think carefully about the user:
+  a fair response is, "Thanks&mdash;now can you please tell me <em>what</em> to think?"
+</p>
+<p>
+  What I've realized from talking with people
+  like <a href="http://www.rmc.ca/aca/mcs-mi/per/kelly-d-eng.php">Diane Kelly</a>
+  and <a href="http://mcs.open.ac.uk/mp8/">Marian Petre</a>
+  is that scientific computing doesn't have the same sort of cultural norms for error bars
+  that experimental science has.
+  When I rolled balls down an inclined plane
+  to measure the strength of the earth's gravity back in high school,
+  my teacher thought I did (suspiciously) well to have a plus or minus of only 10%.
+  A few years later,
+  using more sophisticated gear and methods in a university engineering class,
+  I wasn't done until my answers were within 1% of each other.
+  The difference between the two was purely a matter of social expectations,
+  and that's true across all science.
+  (As the joke goes,
+  particle physicists worry about significant digits in the mantissa,
+  while astronomers worry about significant digits in the exponent,
+  and economists are happy if they can get the sign right...)
+</p>
+<p>
+  Testing scientific software is complicated by two other factors.
+  The first is that if we knew what the right answer was,
+  we wouldn't be running the program:
+  we would have already published the result and moved on.
+  The response to this is to say,
+  "Sure, but we can test simple cases for which there are known solutions,"
+  but that runs headlong into a second complication
+  (one which bedevils other kinds of software as well).
+  Simple cases frequently don't exercise the same paths through the code as complex ones,
+  so a pass on a simple case may not actually tell us anything about
+  how well the code will perform on a complex case.
+  What's worse,
+  the code that handles complex cases is frequently more complicated than
+  the cose that handles simple cases,
+  which means that results for the latter are doubly uninformative.
+</p>
+<p>
+  The second complication is the breathtaking diversity of scientific code.
+  I simply don't believe that the answer to "is it right enough?"
+  for a clustering algorithm
+  will be the same as&mdash;or even comparable to&mdash;the
+  answer for a fluid dynamics simulation
+  or a program that does population modeling.
+  Scientific research is highly specialized,
+  which means that answers to the problems individual scientists have
+  will be much less generally reusable
+  than those found in banking, web development, and the like.
+</p>
+<p>
+  I believe we can solve these problems,
+  but I also believe that the solutions will primarily be social,
+  not technical.
+  As scientists start asking one another hard questions about one another's software,
+  something equivalent to the <em>p</em>&lt;0.05 convention
+  of the life sciences will emerge.
+  What we can do right now is move past general platitudes
+  and start talking about specifics.
+</p>
+<p>
+  So here's my challenge.
+  I'd like you to write some unit tests for the <code>advance</code> function
+  in <a href="http://benchmarksgame.alioth.debian.org/u32/performance.php?test=nbody">the n-body benchmark game</a>
+  and then share those tests with us.
+  I don't care what language you use (source is available in several),
+  or which unit testing framework you pick.
+  What I want to know is:
+</p>
+<ol>
+  <li>
+    Why did you choose the tests you chose,
+    i.e.,
+    what kinds of errors are those tests probing for?
+  </li>
+  <li>
+    How did you pick your margin of error?
+  </li>
+</ol>
+<p>
+  I will happily send Software Carpentry t-shirts
+  to the first half-dozen people to do this.
+  I will just as happily send t-shirts to people who write unit tests
+  (with similar explanatory gloss)
+  for Lorena's <a href="http://nbviewer.ipython.org/github/numerical-mooc/numerical-mooc/blob/master/lessons/01_phugoid/01_03_PhugoidFullModel.ipynb">full phugoid model</a> notebook.
+  You can see my attempt at something like this
+  (for a case that deliberately didn't involve floating point)
+  <a href="{{page.root}}/v4/invperc/test.html">here</a>;
+  what's yours?
+</p>
