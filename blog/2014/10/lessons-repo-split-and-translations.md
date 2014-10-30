@@ -17,6 +17,7 @@ The first method of handling translations is to introduce a ``translations`` dir
 Under this directory would live translations other than original lesson using the ISO two-letter language code.
 The contents of these directories would be otherwise identical to those of the host lesson.
 This is how the Francisco has implemented his translation, on a fork of the bc repo.
+The [ProGit Book](https://progit.org/translations) intially started out with this implementation.
 
 ## Option 2: Translations live within a separate branch
 
@@ -27,6 +28,9 @@ This would improve the ability to track the master language of the lesson and re
 
 Repositories containing translations could be forked from the main lesson and be maintained separately from the original.
 Changes would have to be merged from upstream and then translated.
+
+There are some examples of this implementation being successfully used, most notably the [ProGit book](https://progit.org/translations) (HT W. Trevor King).
+The forked repos are kept in sync with the upstream master book, and then translation commits are layered on top, for a sense of what that looks like, see [progit-fr](https://github.com/progit/progit2-fr).
 
 ## How official is a translation?
 
