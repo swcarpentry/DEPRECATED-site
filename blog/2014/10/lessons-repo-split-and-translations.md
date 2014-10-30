@@ -20,7 +20,7 @@ This is how the Francisco has implemented his translation, on a fork of the bc r
 The [ProGit Book](https://progit.org/translations) initially started out with this implementation, later moving to Option 3.
 
 One possible drawback to this implementation is that original and translated lessons can drift apart with no indication of where the changes happened.
-Since most instructors will be unilingual, they cannot ``diff`` the content. Since this lesson would live inside the official Software Carpentry structure, it would have a certain endorsement associated with it.
+Since most instructors will be monolingual, they cannot ``diff`` the content. Since this lesson would live inside the official Software Carpentry structure, it would have a certain endorsement associated with it.
 
 ## Option 2: Translations live within a separate branch
 
