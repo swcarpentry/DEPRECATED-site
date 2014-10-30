@@ -17,12 +17,18 @@ The first method of handling translations is to introduce a ``translations`` dir
 Under this directory would live translations other than original lesson using the ISO two-letter language code.
 The contents of these directories would be otherwise identical to those of the host lesson.
 This is how the Francisco has implemented his translation, on a fork of the bc repo.
-The [ProGit Book](https://progit.org/translations) intially started out with this implementation.
+The [ProGit Book](https://progit.org/translations) initially started out with this implementation, later moving to Option 3.
+
+One possible drawback to this implementation is that original and translated lessons can drift apart with no indication of where the changes happened.
+Since most instructors will be unilingual, they cannot ``diff`` the content. Since this lesson would live inside the official Software Carpentry structure, it would have a certain endorsement associated with it.
 
 ## Option 2: Translations live within a separate branch
 
 Branches could be created of the form ``trans-ISOCODE`` or similar naming from the existing lessons.
 This would improve the ability to track the master language of the lesson and rebase changes (which would then need to be translated) as the lesson is updated.
+
+This implementation would resolve the ``diff`` issue in Option 1, allowing comparison of line-by-line changes, even if the content isn't understood.
+These translations, again living within an official repo, would have certain endorsement.
 
 ## Option 3: Translations live within a forked repo
 
@@ -31,6 +37,9 @@ Changes would have to be merged from upstream and then translated.
 
 There are some examples of this implementation being successfully used, most notably the [ProGit book](https://progit.org/translations) (HT W. Trevor King).
 The forked repos are kept in sync with the upstream master book, and then translation commits are layered on top, for a sense of what that looks like, see [progit-fr](https://github.com/progit/progit2-fr).
+
+Forked repos could exist inside or outside the Software Carpentry organization, allowing for both officially endorsed and unofficial translations of lessons.
+If such translation efforts are wildly successful, this method would result in a massive proliferation of repositories, multiplying the increase due to the repo split.
 
 ## How official is a translation?
 
