@@ -1,0 +1,272 @@
+---
+layout: blog
+root: ../../..
+author: Peter Steinbach
+title: "Particle Physicists Pulling Themselves From The Swamp"
+date: 2014-10-30
+time: "12:00:00"
+category: ["Teaching","Experiences"]
+---
+<!-- start excerpt -->
+<p>
+   What does it mean to work on a modern particle physics experiment like ATLAS
+   (<a href="http://en.wikipedia.org/wiki/ATLAS_experiment">wikipedia</a>,
+   <a href="atlas.ch">public</a>)
+   or CMS (<a href="http://en.wikipedia.org/wiki/Compact_Muon_Solenoid">wikipedia</a>,
+   <a href="http://cms.web.cern.ch/">public</a>)
+   at the <a href="http://home.web.cern.ch/topics/large-hadron-collider">Large Hadron Collider</a>
+   in the 21st century?
+   It's fun,
+   it's collaborating with great and interesting people,
+   it's challenging,
+   it's making you enjoy finding things out,
+   it's what I always wanted to do.
+   Also:
+   it is painful,
+   discouraging,
+   and tends to suck the life out of a young mind.
+   Confused?
+   Let's rewind...
+<!-- end excerpt -->
+<p>
+  Five years ago I was a young man entering a field that I knew from textbook excerpts and stories of Nobel prizes.
+  This field centered around a handful of large laboratories worldwide
+  that host some of the most advanced technology mankind has ever build: particle accelerators.
+  Billions are invested to build a machine that accelerates particles onto a near light speed orbit
+  in order to bring them to a high energetic collision.
+  Around these fixed collision points,
+  multi-purpose experiments of the size of a multi-apartment houses record the particles thus produced
+  to reconstruct what happened during the event
+  and obtain deeper knowledge of the underlying physics.
+</p>
+<figure style="text-align: center;">
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/a2itywbwLdk" frameborder="0" allowfullscreen></iframe>
+  <figcaption>YouTube video produced by the ATLAS collaboration explaining what we do, ATLAS Experiment (c) 2014 CERN</figcaption>
+</figure>
+<p>
+  If I say multi-apartment houses,
+  you might imagine that analyzing the data of these experiments is far from trivial.
+  The collaborations running these machines provide physicists with object-oriented frameworks
+  (<a href="http://cms-sw.github.io/index.html">cmssw</a>,
+  <a href="http://proj-gaudi.web.cern.ch/proj-gaudi/">gaudi</a>,
+  <a href="http://atlas-computing.web.cern.ch/atlas-computing/packages/athenaCore/athenaCore.php">athena</a>)
+  of the order of 7-10 kLOC (thousands of lines of code) that facilitate the read-out,
+  simulation,
+  filtering and analysis of this data.
+  Sophisticated <a href="http://root.cern.ch">statistics software</a> is used further down the pipeline
+  to produce publication grade plots,
+  make statistical inferences,
+  and eventually extract knowledge.
+</p>
+<p>
+  Why is it so frustrating then?
+  University curricula for physicists hardly ever contains programming skills,
+  much less conceptual knowledge of object-oriented programming,
+  revision control,
+  software design,
+  parallel computing,
+  and the like.
+  Neither do prep courses in early stages of a PhD.
+  Most of the time,
+  wiki pages allowing copy-and-paste style learning-by-doing that get you going but never explain underlying principles.
+  But I am a scientist:
+  I need to understand what is going on and use my tools to the best of my knowledge to make inferences.
+</p>
+<figure style="text-align: center;">
+  <a href="http://www.atlas.ch/photos/higgs-candidate-events.html">
+    <img src="http://www.atlas.ch/photos/atlas_photos/selected-photos/full-detector/1101010_11-A4-at-144-dpi.jpg" style="max-width: 50%; max-height: 60%">
+  </a>
+  <figcaption>ATLAS experiment open detector, ATLAS Experiment (c) 2014 CERN</figcaption>
+</figure>
+<p>
+  One and a half year into my thesis,
+  I personally was so frustrated of spending hours in front of the computer understanding other people's code,
+  that I was dedicated to change the situation.
+  At the same time,
+  a federal German funding agency initiated a German network for particle physics,
+  the Helmholtz Alliance "Physics at the Terascale",
+  to induce higher scientific throughput just in time with the LHC coming online in 2009.
+  This funding program also contained budgets for training of staff.
+  Motivated by a never-ending and daily struggle to work with object-oriented frameworks
+  that were poorly documented and yet state-of-the-art,
+  I started to inquire about the possibility of organizing a workshop on software design principles.
+  It was my hope that by transferring knowledge from computer science to physics students at the keyboard,
+  we could pull ourselves out of the swamp and finally understand why we program as we do,
+  how we can work effectively with code (both our own and others')
+  and as such be more productive.
+  After all,
+  I chose to be a PhD student to do physics, not fight code!
+</p>
+<figure style="text-align: center;">
+  <a href="http://en.wikipedia.org/wiki/Baron_M%C3%BCnchhausen">
+    <img src="http://upload.wikimedia.org/wikipedia/commons/3/3b/Muenchhausen_Herrfurth_7_500x789.jpg" style="max-width: 40%; max-height: 50%">
+  </a>
+  <figcaption><a href="http://en.wikipedia.org/wiki/Baron_M%C3%BCnchhausen" name="" target="_self">Lord Muenchhausen</a> pulls himself and his horse from the swamp (German tall tale)</figcaption>
+</figure>
+<p>  
+  Due to the support of my supervisor and the motivation of my fellow students and post-doc,
+  we were able to find potent speakers.
+  The only thing left was getting the money in
+  and advertising the idea to principal investigators so they'd send their students around.
+  And I can tell you,
+  there were many PIs not willing to back us.
+  After all,
+  most of the group leaders made their day during the Fortran age in particle physics.
+  So there was a deep cultural canyon between their view of how people should work
+  and what everyone faced in everyday development.
+</p>
+<p>
+  It took a year to setup the <a href="https://indico.desy.de/conferenceDisplay.py?confId=3155">first workshop</a> in 2010
+  that welcomed 25 participants.
+  We started by recapping object-oriented programming,
+  then introduced UML,
+  and finally climbed the hill to discuss design patterns, class-design and package-design principles.
+  The week-long workshop was concluded by a student exercise project that lasted almost an entire day.
+  We also had two keynote speakers from the trenches of the local software industry
+  (which was quite a clash of cultures, but a very insightful experience).
+</p>
+<p>
+  Given today's standards,
+  many of the details of the workshop were not very well thought through, I believe.
+  It was a lot of content for 4.5 days and was not always paired with exercises or the like.
+  But we ingested a lot of cool stuff to feed our curiosity.
+  Finally,
+  someone taught us the fundamental concepts we needed so desperately to know in order to grasp what were doing every single day.
+  This made my (professional) life a lot happier than it was before.
+  And I would even claim,
+  it made me much more productive as a scientist.
+</p>
+<p>
+  Many participants gave us very positive feedback:
+</p>
+<blockquote>
+  <p>
+    This workshop should be on everyone's curriculum in Particle Physics.
+  </p>
+  <div style="text-align: right;"><cite>-- A participant of the 2014 workshop</cite></div>
+</blockquote>
+<p>
+  Since then, I've been lucky enough to organize
+  <a href="http://indico.desy.de/conferenceDisplay.py?confId=4542">another workshop</a>
+  one year later.
+  We again had 25 participants with a keynote by a local software consultancy CEO.
+  Further,
+  I was myself able to deliver the knowledge that I had acquired through the past workshop
+  and give a talk on my own on test-driven development.
+  The following year,
+  the workshop started to travel
+  and was hosted by <a href="http://indico.desy.de/conferenceDisplay.py?confId=6093">DESY</a> in Hamburg.
+  We had more than 50 participants there,
+  which proved to be a challenge.
+  We were used to having a small number of people,
+  which meant we could manage to cover a lot of material by dynamically adapting our speed and depth.
+  But that approach does not scale!
+  So at the end of a tough week,
+  we again received a lot of positive feedback,
+  but we had to admit that 30-35 people is a good size to go with.
+</p>
+<p>
+  During that time,
+  the focus of the workshop changed a bit.
+  We were still covering object-oriented programming,
+  good design practices,
+  and design patterns,
+  but we added refactoring (thanks to an excellent new contributor)
+  because it relates much more with the day-to-day situation students face:
+  sit down and use the code of others.
+  The number of exercises steadily increased,
+  and I believe we are slowly converging to a 1:1 ratio of exercises to lectures.
+  Finally,
+  the scope of the audience became wider.
+  We had to acknowledge that most particle or nuclear physics related sciences
+  also have substantial need for software training.
+  For example in the field of detector construction,
+  both the nuclear and particle physics community commonly use <a href="http://geant4.cern.ch/">GEANT</a>
+  (which is again a object-oriented framework)
+  to set up and run detector simulations in a modular fashion.
+  Participants from these fields repeatedly told us that the sort of training we offer is needed.
+</p>
+<p>
+  This year,
+  the workshop was hosted at <a href="https://indico.desy.de/conferenceDisplay.py?confId=9932">Munich</a>.
+  Triggered by Greg Wilson's PyCon talk,
+  I tried to use some more interactive teaching elements like sticky notes,
+  an etherpad,
+  and live-coding mixed with a lot of pair work (not pair programming yet).
+  I have to say that especially people in this environment,
+  where they feel they lack competence (and because they are physicists ;) ) are a difficult crowd.
+  Sticky notes were not adopted at all or I didn't "motivate" them enough,
+  so I dropped them half-way through the session.
+</p>
+<p>
+  On the other hand,
+  having the etherpad was great success.
+  It allowed me to bring the teaching into the notebook that everyone likes to hide behind.
+  Live coding also worked out extremely well.
+  I used it to teach C++ template meta programming within one entire morning.
+  The topic is quite complicated,
+  but live coding helped me adapt the speed and ensure that everyone can follow and reproduce my demonstration on their own.
+  There was constant feedback by the participants and people helped each other out.
+  To be honest, I was surprised that live coding worked so well with a crowd of 33 students.
+</p>
+<p>
+  Last, I put all my code and slides on GitHub
+  (see the <a href="https://github.com/psteinb/cpp_performance_vs_design">Performance versus Design C++ repository</a>)
+  for the students to share and fork.
+  I have to say that this did not receive the attention by the participants I hoped it would.
+  But that might have technical or usability reasons or simply that particle physics is mostly an ecosphere of it's own,
+  i.e. GitHub and the like are not yet common tools.
+</p>
+<p>
+  To conclude,
+  I think we are well on on the way to establishing a software development focused training curriculum
+  in the particle physics community.
+  Promoted by this blog post,
+  we will start to publish our experiences if possible at conferences and peer-reviewed journals in order to receive feedback,
+  straighten our quality assurance,
+  and bring our experiences and motivation to the attention of more people.
+  We hope our courses can be adapted in other countries or big laboratories
+  or even lead to a mind change of PIs:
+</p>
+<blockquote>
+  <p>
+    The data volumes at LHC are steadily increasing,
+    thus the analyses are becoming more complex and so become the list of systematic uncertainties to be studied.
+    One is forced to write good code if you want to be flexible and fast. 
+  </p>
+  <div style="text-align: right;"><cite>-- German Particle Physics Group Leader from Bonn (translated from German)</cite></div>
+</blockquote>
+<p>
+ Not only that,
+ but the workshop is also being recognized and appreciated by all involved (PIs and students):
+</p>
+<blockquote>
+  <p>
+    I've been sending students to this workshop for many years.
+    Even though many of the students went to the workshop with a let's-see-if-that-will-help attitude,
+    they always came back full of motivation to code and a lot of important insights how to code.
+    After the workshop,
+    they developed a high enthusiasm for well designed code.
+    Thank you very much for organizing the workshop.
+    It is really well done!
+    Keep the level where it is now.
+  </p>
+  <div style="text-align: right;"><cite>-- German Particle Physics Group Leader from Aachen (translated from German)</cite></div>
+</blockquote>
+<p> 
+  Lastly,
+  I would like to thank the individuals that have made the workshop a success over the last years.
+  The core team that back the workshop and are ready to present annually are:
+  Thomas Sch&ouml;rner-Sadenius (DESY Hamburg),
+  Maria Pia Grazia (INFN Genoa),
+  Stefan Kluth (MPI for Physics, Munich)
+  and myself.
+  Apart from these, I'd like to mention past contributors:
+  Thomas Velz (University of Bonn, now industry) was a participant once in the workshop and this year contributed as a teacher!
+  Benedikt Hegner (CERN) and Eckhardt von Toerne (University of Bonn) both made substantial contributions in the past as well.
+  Also,
+  my gratitude goes towards my supervisor at TU Dresden,
+  Michael Kobel,
+  and my colleagues there (most of all Wolfgang Mader)
+  who supported me to organize the workshops locally and motivated me throughout.
+</p>
