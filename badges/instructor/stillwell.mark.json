@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-24", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$ed941eb427b30134a468fe7f74b2306966cbf362cc648e4bee5ab3c6f7987b5a", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$ed941eb427b30134a468fe7f74b2306966cbf362cc648e4bee5ab3c6f7987b5a", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/stillwell.mark.json"
+ }
+}

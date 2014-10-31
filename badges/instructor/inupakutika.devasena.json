@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-10-24", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$2448124813395b1f08240e54990bd6f56a87f96a2b304a34b0909af4b64f0272", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$2448124813395b1f08240e54990bd6f56a87f96a2b304a34b0909af4b64f0272", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/inupakutika.devasena.json"
+ }
+}
