@@ -1,0 +1,226 @@
+---
+layout: blog
+root: ../../..
+author: Daniel Chen
+title: "Revamping the Instructor Survey"
+date: 2014-11-02
+time: "06:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  In September, Greg Wilson wrote a
+  <a href="{{page.root}}/blog/2014/09/building-better-teachers.html">blog post</a>
+  on "building better teachers" that was inspired in part by an 
+  <a href="{{site.github_url}}/bc/issues/689">issue</a>
+  brought up by John Blischak on reporting time spent on lessons.
+  In order for us capture this information,
+  we decided to revamp our post-workshop instructor survey.
+</p>
+<!-- end excerpt -->
+<h2>First Round of Data Collection</h2>
+<p>
+  We began by asking all the instructors who participated in teaching this past
+  summer to report time spent teaching various subjects (Shell, Python, Git, etc) and
+  anything that worked or did not work during the workshop.  A 
+  <a href="{{site.github_url}}/bc/pull/789">pull request</a> provided
+  the first pieces of data for instructors with regards to hours spent
+  on each topic.
+</p>
+<table class="table table-striped">
+  <tr>
+    <th></th>
+    <th>Git</th>
+    <th>Python</th>
+    <th>Shell</th>
+    <th>SQL</th>
+  </tr>
+  <tr>
+    <td>N</td>
+    <td>8</td>
+    <td>5</td>
+    <td>8</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>min</td>
+    <td>1</td>
+    <td>4</td>
+    <td>1.5</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>median</td>
+    <td>2.25</td>
+    <td>4.5</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>mean</td>
+    <td>2.06</td>
+    <td>4.9</td>
+    <td>2.8</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>max</td>
+    <td>3.5</td>
+    <td>6</td>
+    <td>3.5</td>
+    <td>3</td>
+  </tr>
+</table>
+<p>
+  Other than Git, the times were fairly consistent with one another.
+  I say "other than Git", because Damien Irving manages to teach it
+  in one hour by not having students type along.  Rather he has them
+  watch him go through the Git commands.  (There is a
+  <a href="{{page.root}}/blog/2014/10/workshop-recording.html">recording</a>
+  of him doing this for those who would like to see how this works.)
+  Additionally, we only had one workshop that responded that covered all
+  four topics; SQL is usually left out in place of more Python.
+</p>
+<h2>Revamped Survey</h2>
+<p>
+  The individual questions for the survey are at the end of this post.
+  However, there are a few questions for the other instructors to keep
+  in mind while reviewing the survey:
+</p>
+<ul>
+  <li>
+    <strong>What order should the questions be presented in?</strong>
+    Should we ask all the questions pertaining to shell, then all the
+    questions relating to Python, etc., (questions by
+    lesson) <em>or</em> should we have a section for time, deviation
+    from the repo material, etc and have all the topics under each
+    section (lessons by question)?
+  </li>
+  <li>
+    <strong>Is there any other information you think would be useful
+    to track?</strong>  I have added questions about the Software
+    Carpentry Windows installer and Ipython Notebook
+    use/installation/problems&mdash; what else should be there?
+  </li>
+  <li>
+    <strong>Would <em>you</em> take this survey?</strong>  Is it too
+    long? Is the question format clumsy?  Any feedback on the survey
+    design and layout is greatly appreciated.
+  </li>
+  <li>
+    <strong>Are the reference examples for the Likert scale questions
+    well spaced?</strong>  The reason for the reference example is to
+    provide some context for instructors so we can have some
+    standardized set of responses.
+  </li>
+  <li>
+    <strong>How feasible is it to track individual topics in a
+    lesson?</strong>  John mentioned that time spent on an entire
+    lesson (i.e., total time for python) is not that useful when
+    instructors are trying to pace the lesson.  For example, if there
+    is only 30 minutes left for Python, is there enough time to teach
+    the v5 testing material?
+  </li>
+</ul>
+<h2>First Draft of Revamped Survey</h2>
+<p>
+  The live survey can be
+  found <a href="https://docs.google.com/forms/d/1rMuWJ8FrnvOWwHfI8aDVHUxDw0ZvOfCges2k3OliZq8/viewform?usp=send_form">here</a>
+  The static post of the survey is replicated below:
+</p>
+<ol>
+  <li>First name (text box - required)</li>
+  <li>Last name (text box - required)</li>
+  <li>
+    Workshop website (text box - required): this is the web url for the
+    workshop.  It provides a more standard way for us to pull the date and location.
+  </li>
+  <li>Attendees:
+    <ul>
+      <li>What fraction of the attendees were complete beginners (no coding/command line experience at all)</li>
+      <li>What fraction of the attendees were novices (doing copy-and-paste coding without really understanding it)</li>
+      <li>What fraction of the attendees were intermediate (already using the shell and writing multi-page programs)</li>
+      <li>These questions are on a 5 point scale via radio buttons: None, 1/4, 1/2, 3/4, All
+    </ul>
+  </li>
+  <li>Did you use the SWC Installer? (radio button - required): Yes, No, I was not aware there was one, Other (text box)</li>
+  <li>Any comments about the SWC installer? (text box - optional)</li>
+  <li>
+    What topics did you teach and how long did it take (in hours)? (matrix of radio buttons - required)
+    On the Y-axis are the lessons (Shell, Git, Python, etc...) the X-axis has time in hours (1, 1.5, 2, ..., 7.5, NA)
+  </li>
+  <li>If you taught 'other' please describe what you taught and how long it took (e.g., "SVN (3.5); SPSS (3); SAS(2.5)")</li>
+  <li>Material:
+    <ul>
+      <li>How much of the SWC material did you use for Shell?</li>
+      <li>How much of the SWC material did you use for Git?</li>
+      <li>How much of the SWC material did you use for Python?</li>
+      <li>How much of the SWC material did you use for R</li>
+      <li>How much of the SWC material did you use for Matlab</li>
+      <li>How much of the SWC material did you use for Mercurial?</li>
+      <li>How much of the SWC material did you use for Make?</li>
+      <li>there are on a 6-point likert scale 0 - 7
+	<ol>
+          <li>0 - I wrote all my material from scratch</li>
+          <li>1 - I used some SWC material as well as material I've written myself</li>
+          <li>2 - I used about 50/50 SWC material and my own material</li>
+          <li>3 - Minor tweaks to order and/or example problems</li>
+          <li>4 - I taught SWC material verbatim</li>
+          <li>5 - I taught SWC material verbatim + more topics</li>
+	</ol>
+      </li>
+    </ul>
+  </li>
+  <li>What other SWC material did you teach (text box - optional)</li>
+  <li>What Shell material was covered? (check boxes - select all that apply)
+    <ul>
+      <li>files and directories</li>
+      <li>creating things</li>
+      <li>pipes and filters</li>
+      <li>scripting</li>
+      <li>finding things</li>
+      <li>other (text box)</li>
+    </ul>
+  </li>
+  <li>What Python material was covered (check boxes - select all that apply)
+    <ul>
+      <li>variables and assignment</li>
+      <li>functions</li>
+      <li>loops</li>
+      <li>conditionals</li>
+      <li>NumPy</li>
+      <li>Pandas</li>
+      <li>defensive programming</li>
+      <li>the command line</li>
+      <li>other (text box)</li>
+    </ul>
+  </li>
+  <li>What Git material was covered?
+    <ul>
+      <li>recording history</li>
+      <li>push and pull</li>
+      <li>merging conflicts</li>
+      <li>branching</li>
+      <li>licensing and open source</li>
+      <li>other (text box)</li>
+    </ul>
+  </li>
+  <li>What SQL material was covered?
+    <ul>
+      <li>selecting</li>
+      <li>soring and removing duplicates</li>
+      <li>filtering</li>
+      <li>calculating new values</li>
+      <li>nulls</li>
+      <li>aggregation</li>
+      <li>join</li>
+      <li>updating and deleting</li>
+      <li>using in programs</li>
+      <li>other (text box)</li>
+    </ul>
+  </li>
+  <li>Any other comments regarding the material and/or adherence to the material? (text box - optional)</li>
+  <li>Any problems with the Git installation? (text box - optional): this question is mainly targeted to Git issues on a mac</li>
+  <li>Any problems with the IPython notebook? (text box - optional): targeted to why the ipython notebook and/or kernel was restarted</li>
+  <li>Anything else? (text box - optional): for anything else that the survey missed and/or comments about the survey itself</li>
+</ol>
