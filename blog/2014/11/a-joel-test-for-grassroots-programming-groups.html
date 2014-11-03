@@ -30,48 +30,138 @@ category: ["Teaching"]
   <li>Do you do hallway usability testing? </li>
 </ol>
 <p>
-  It's completely unscientific,
+  It was completely unscientific,
   but it was also very useful and influential
   (and was in fact one of the inspirations for our
   <a href="http://www.plosbiology.org/article/info%3Adoi%2F10.1371%2Fjournal.pbio.1001745">"Best Practices for Scientific Computing"</a>
   paper).
   In that spirit,
-  I would like to present a 'Joel Test' for estimating the maturity of
+  I would like to present something similar for estimating the maturity of
   a grassroots "learn to program" project like ours.
   This list is obviously biased toward Software Carpentry,
   so I'd appreciate fixes to make it more general.
-  Here are the questions,
-  with some explanatory gloss:
+  In place of the original test's 12 questions,
+  I have 16:
+</p>
+<blockquote>
+  <div align="center">
+    How Mature Is Your Training Program?
+  </div>
+  <ol>
+    <li>Are all of your lessons searchable?</li>
+    <li>Does each lesson solve a problem your learners believe they have?</li>
+    <li>Are you teaching principles that will still be relevant in five years?</li>
+    <li>Do your instructors regularly update your lessons in a publicly-accessible version control repository?</li>
+    <li>Do your instructors record and share their pedagogical content knowledge?</li>
+    <li>Is there a coherent narrative running through all your lessons?</li>
+    <li>Are lessons presented in short, digestible pieces with clear objectives at the start and practice exercises at the end?</li>
+    <li>Do you code live when teaching?</li>
+    <li>Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</li>
+    <li>Do you have real-time feedback in your classroom?</li>
+    <li>Do you check learners' current knowledge and skills before teaching?</li>
+    <li>Do you check what learners got out of the workshop weeks or months later?</li>
+    <li>Do you have a code of conduct that everyone is familiar with and that is actually enforced?</li>
+    <li>Do you recruit potential new instructors from your workshops?</li>
+    <li>Do you teach your instructors how to teach, and do they give each other feedback on teaching?</li>
+    <li>Are new instructors mentored by more experienced peers?</li>
+  </ol>
+</blockquote>
+<p>
+  The thing about this quiz is that it's easy to give a quick yes or no to each question.
+  (You can even give yourself half marks if your score would otherwise be uncomfortably low,
+  which is what I do below for Software Carpentry.)
+  I think any score over 50% is pretty good;
+  I also think that a lot of software skills programs fall well below that,
+  regardless of whether they are grassroots groups,
+  corporate training,
+  or traditional academic courses.
 </p>
 <dl>
   <dt>1. Are all of your lessons searchable?</dt>
   <dd>
     <p>
-      FIXME: Can Google see the lesson content?  (Can't see into Flash, video, etc.)
+      Search engines can't read the text embedded in images, videos, and Flash animations,
+      and users can't copy and paste such text,
+      so anything presented that way is essentially invisible to the web.
+      PDFs are also often difficult,
+      especially if what they contain is graphically rich.
+      In order to help learners find what they need when they need it,
+      in their own order and on their own time,
+      lessons should be stored in a web-friendly format like HTML.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+      (Note that our Version 4 lessons would only get 0.5 on this,
+      because most of the example code is only present in the PNG images exported from PowerPoint,
+      and not in the accompanying narration.)
     </p>
   </dd>
   <dt>2. Does each lesson solve a problem your learners believe they have?</dt>
   <dd>
     <p>
-      FIXME: because if they don't, they won't stick.
+      People learn best when they're intrinsically motivated,
+      and intrinsic motivation is more likely when they can see
+      how the things they are learning will help them do things
+      they currently want to do.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
     </p>
   </dd>
-  <dt>3. Are you teaching principles that will still be relevant in five years?</dt>
+  <dt>3. Are you teaching deep ideas that will still be relevant in five years?</dt>
   <dd>
     <p>
-      FIXME: because specific tools come and go, but principles remain.  (Note: bait and switch is OK: offer today's specifics, smuggle in big ideas.)
+      Specific tools come and go, but deeper principles remain.
+      More importantly,
+      without an understanding of the principles embodied in particular tools and techniques,
+      learners will be reduced to cargo cult programming:
+      they won't be able to fix things that go wrong,
+      and they're unlikely to be able to extrapolate from what they know
+      to come up with new solutions to their specific problems.
+    </p>
+    <p>
+      And yes,
+      this goal is in direct tension with the preceding one.
+      Learners want specific, concrete skills to meet next Thursday's deadline;
+      we want them to understand the "why" behind those skills.
+      I think Software Carpentry's curriculum does a good job of smuggling big ideas into lessons
+      by showing learners specific tools (e.g., pipes in the shell)
+      and then explicitly saying what those tools are examples of.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
     </p>
   </dd>
   <dt>4. Do your instructors regularly update your lessons in a publicly-accessible version control repository?</dt>
   <dd>
     <p>
-      FIXME: open is more sustainable and yields better lessons.
+      I now believe that getting people to collaborate openly on lessons
+      in the way they collaborate on Wikipedia articles and open source software
+      may well be Software Carpentry's greatest long-term contribution.
+      More prosaically,
+      if instructors (and learners, and passers-by) aren't able to update lessons easily,
+      your training is critically dependent on a small number of authors,
+      and will probably wither when real life drags those authors (or that single author) away.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
     </p>
   </dd>
   <dt>5. Do your instructors record and share their pedagogical content knowledge?</dt>
   <dd>
     <p>
-      FIXME: write down what examples illustrate points well, what problems learners have and how to fix them, how long lessons take, etc.
+      Pedagogical content knowledge (PCK) is what lies between
+      the domain-specific knowledge that's being taught
+      and the general principles of good educational practice.
+      It's the examples that illustrate ideas particularly well,
+      the instructors' collective understanding of what's likely to go wrong in particular lessons and how to fix it,
+      how long those lessons take,
+      and so on.
+      
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Our instructor's guide only captures a fraction of what we know, and isn't updated regularly.)
     </p>
   </dd>
   <dt>6. Is there a coherent narrative running through all your lessons?</dt>
@@ -79,11 +169,19 @@ category: ["Teaching"]
     <p>
       FIXME: versus a jumble of useful but hard-to-connect facts.
     </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Unlike Data Carpentry, we don't use a running example throughout our lessons.)
+    </p>
   </dd>
   <dt>7. Are lessons presented in short, digestible pieces with clear objectives at the start and practice exercises at the end?</dt>
   <dd>
     <p>
       FIXME: i.e., good lesson design.
+    </p>
+    <p>
+      Software Carpentry's score: 0.5.
+      (Our lessons are short and digestible, but our objectives are muddled and the practice exercises are uneven.)
     </p>
   </dd>
   <dt>8. Do you code live when teaching?</dt>
@@ -91,11 +189,18 @@ category: ["Teaching"]
     <p>
       FIXME: which really means, do you go at your learners' pace and can *you* follow *them*?
     </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
   </dd>
   <dt>9. Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</dt>
   <dd>
     <p>
       FIXME: i.e., have you addressed the biggest demotivator, which is "I can't even get started."
+    </p>
+    <p>
+      Software Carpentry's score: 0.5.
+      (We get full marks for instructions, but only part marks for instructors knowing how to debug things that go wrong.)
     </p>
   </dd>
   <dt>10. Do you have real-time feedback in your classroom?</dt>
@@ -103,11 +208,18 @@ category: ["Teaching"]
     <p>
       FIXME: clickers, sticky notes, etherpad, whatever - are you responding to your learners?
     </p>
+    <p>
+      Software Carpentry's score: 1.
+      (Sticky notes and Etherpad for the win!)
+    </p>
   </dd>
   <dt>11. Do you check learners' current knowledge and skills before teaching?</dt>
   <dd>
     <p>
       FIXME: do you know who you're actually teaching before you start?
+    </p>
+    <p>
+      Software Carpentry's score: 1.
     </p>
   </dd>
   <dt>12. Do you check what learners got out of the workshop weeks or months later?</dt>
@@ -115,11 +227,18 @@ category: ["Teaching"]
     <p>
       FIXME: do you keep track of what sticks so that you can change and improve your teaching?
     </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Our lack of long-term post-workshop assessment is our biggest failing.)
+    </p>
   </dd>
   <dt>13. Do you have a code of conduct that everyone is familiar with and that is actually enforced?</dt>
   <dd>
     <p>
       FIXME: are your classrooms *really* open to everyone?
+    </p>
+    <p>
+      Software Carpentry's score: 1.
     </p>
   </dd>
   <dt>14. Do you recruit potential new instructors from your workshops?</dt>
@@ -127,11 +246,18 @@ category: ["Teaching"]
     <p>
       FIXME: long-term sustainability.
     </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
   </dd>
   <dt>15. Do you teach your instructors how to teach, and do they give each other feedback on teaching?</dt>
   <dd>
     <p>
       FIXME: are your instructors singing from the same songbook and helping each other improve?
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (We don't yet have any systematic mentoring in place.)
     </p>
   </dd>
   <dt>16. Are new instructors mentored by more experienced peers?</dt>
@@ -139,120 +265,18 @@ category: ["Teaching"]
     <p>
       FIXME: learning
     </p>
+    <p>
+      Software Carpentry's score: 0.5.
+      (Our training doesn't cover the pedagogical content knowledge of our lessons, and we're not systematic about peer feedback.)
+    </p>
   </dd>
 </dl>
 <p>
-  Here's how I think Software Carpentry is doing:
-</p>
-<table class="table table-striped">
-  <tr>
-    <td class="text-right">1.</td>
-    <td>Searchable lessons</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">2.</td>
-    <td>Lesson solve learners' problem</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">3.</td>
-    <td>Teaching principles</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">4.</td>
-    <td>Instructors update lessons in a public repository</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">5.</td>
-    <td>Instructors share PCK</td>
-    <td class="text-right">0</td>
-    <td>Our instructor's guide only captures a fraction of what we know, and isn't updated regularly.</td>
-  </tr>
-  <tr>
-    <td class="text-right">6.</td>
-    <td>Coherent narrative</td>
-    <td class="text-right">0</td>
-    <td>Unlike Data Carpentry, we don't use a running example throughout our lessons.</td>
-  </tr>
-  <tr>
-    <td class="text-right">7.</td>
-    <td>Presentation with objectives and exercises</td>
-    <td class="text-right">0.5</td>
-    <td>Ours exist, but are disjointed and incomplete.</td>
-  </tr>
-  <tr>
-    <td class="text-right">8.</td>
-    <td>Code live</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">9.</td>
-    <td>Setup instructions</td>
-    <td class="text-right">0.5</td>
-    <td>Full marks for instructions, but only part marks for instructors knowing how to debug things that go wrong.</td>
-  </tr>
-  <tr>
-    <td class="text-right">10.</td>
-    <td>Real-time feedback</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">11.</td>
-    <td>Check learners beforehand</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">12.</td>
-    <td>Follow-up evaluation</td>
-    <td class="text-right">0</td>
-    <td>Our lack of post-workshop assessment is our biggest weakness.</td>
-  </tr>
-  <tr>
-    <td class="text-right">13.</td>
-    <td>Code of conduct</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">14.</td>
-    <td>Recruit new instructors</td>
-    <td class="text-right">1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="text-right">15.</td>
-    <td>Mentor instructors</td>
-    <td class="text-right">0</td>
-    <td>We don't have any systematic mentoring in place.</td>
-  </tr>
-  <tr>
-    <td class="text-right">16.</td>
-    <td>Instructor training and feedback</td>
-    <td class="text-right">0.5</td>
-    <td>Our training doesn't cover the PCK of our lessons, and we're not systematic about peer feedback.</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><strong>Total</strong></td>
-    <td class="text-right"><strong>10.5</strong></td>
-    <td></td>
-  </tr>
-</table>
-<p>
-  10.5 out of 16 would be a 'C' at most schools,
+  Our total score is 10.5 out of 16.
+  That would be a 'C' at most schools,
   so we clearly have a lot of work to do.
   Once the Software Carpentry Foundation is properly launched,
-  I hope we'll be able to turn our attention to the places where we fall short.
+  I hope to turn our attention to the places where we fall short.
 </p>
 <p>
   The real aim of this rubric,
