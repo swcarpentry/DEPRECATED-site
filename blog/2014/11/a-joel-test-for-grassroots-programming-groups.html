@@ -41,7 +41,7 @@ category: ["Teaching"]
   This list is obviously biased toward Software Carpentry,
   so I'd appreciate fixes to make it more general.
   In place of the original test's 12 questions,
-  I have 16:
+  I have 15:
 </p>
 <blockquote>
   <div align="center">
@@ -63,7 +63,6 @@ category: ["Teaching"]
     <li>Do you have a code of conduct that everyone is familiar with and that is actually enforced?</li>
     <li>Do you recruit potential new instructors from your workshops?</li>
     <li>Do you teach your instructors how to teach, and do they give each other feedback on teaching?</li>
-    <li>Are new instructors mentored by more experienced peers?</li>
   </ol>
 </blockquote>
 <p>
@@ -154,30 +153,34 @@ category: ["Teaching"]
       the domain-specific knowledge that's being taught
       and the general principles of good educational practice.
       It's the examples that illustrate ideas particularly well,
-      the instructors' collective understanding of what's likely to go wrong in particular lessons and how to fix it,
-      how long those lessons take,
-      and so on.
-      
+      how long lessons take,
+      the instructors' collective understanding of what's likely to go wrong in those lessons and how to fix it,
+      and so on&mdash;in short,
+      the collective wisdom of a specific teaching community.
     </p>
     <p>
       Software Carpentry's score: 0.
       (Our instructor's guide only captures a fraction of what we know, and isn't updated regularly.)
     </p>
   </dd>
-  <dt>6. Is there a coherent narrative running through all your lessons?</dt>
+  <dt>6. Is there a coherent narrative running through each lesson?</dt>
   <dd>
     <p>
-      FIXME: versus a jumble of useful but hard-to-connect facts.
+      Humans are story-telling animals:
+      we listen more closely,
+      and learn better,
+      when we're presented with a plot rather than a mere collection of facts.
+      Good lessons should therefore contain a story that builds toward a useful conclusion.
     </p>
     <p>
       Software Carpentry's score: 0.
       (Unlike Data Carpentry, we don't use a running example throughout our lessons.)
     </p>
   </dd>
-  <dt>7. Are lessons presented in short, digestible pieces with clear objectives at the start and practice exercises at the end?</dt>
+  <dt>7. Are lessons presented in short, digestible pieces with clear objectives at the start and formative assessment exercises at the end?</dt>
   <dd>
     <p>
-      FIXME: i.e., good lesson design.
+      This question is basically asking, "Are the lessons well designed?"
     </p>
     <p>
       Software Carpentry's score: 0.5.
@@ -187,7 +190,16 @@ category: ["Teaching"]
   <dt>8. Do you code live when teaching?</dt>
   <dd>
     <p>
-      FIXME: which really means, do you go at your learners' pace and can *you* follow *them*?
+      We've all had the misfortune to watch an instructor whip through slides faster than the audience could possibly follow.
+      Live coding helps prevent that,
+      but it also allows instructors to go off the beaten track and follow learners' questions in unexpected directions.
+      More importantly,
+      it allows learners to see instructors diagnose and fix mistakes
+      (something which is rarely if ever shown in static slides).
+      And most importantly of all,
+      seeing instructors make mistakes gives learners permission to make mistakes of their own:
+      if the teacher is fouling this up,
+      it must OK for the newbie to as well.
     </p>
     <p>
       Software Carpentry's score: 1.
@@ -196,7 +208,7 @@ category: ["Teaching"]
   <dt>9. Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</dt>
   <dd>
     <p>
-      FIXME: i.e., have you addressed the biggest demotivator, which is "I can't even get started."
+      "I can't even get started" is perhaps the biggest demotivator a class faces.
     </p>
     <p>
       Software Carpentry's score: 0.5.
@@ -206,7 +218,14 @@ category: ["Teaching"]
   <dt>10. Do you have real-time feedback in your classroom?</dt>
   <dd>
     <p>
-      FIXME: clickers, sticky notes, etherpad, whatever - are you responding to your learners?
+      Watching recorded videos is actually a pretty poor way for novices to learn.
+      The only reason most people don't realize it is that
+      many of the live lectures they've attended aren't any better.
+      The whole point of a live performance is that the performer
+      (in this case, the teacher)
+      can respond to her audience,
+      but in order for her to do that,
+      there must be some way for her to get feedback while she's teaching.
     </p>
     <p>
       Software Carpentry's score: 1.
@@ -216,7 +235,14 @@ category: ["Teaching"]
   <dt>11. Do you check learners' current knowledge and skills before teaching?</dt>
   <dd>
     <p>
-      FIXME: do you know who you're actually teaching before you start?
+      This question is similar to the previous one, but on a different timescale:
+      rather than feedback in real time as you're teaching,
+      do you gather feedback <em>before</em> the class starts
+      so that you can tune your content and pace to your actual learners?
+      Laying out pre-requisites doesn't achieve this:
+      people will mis-estimate their own knowledge,
+      or sign up for something far too simple or far too advanced
+      just because it's the only training on offer.
     </p>
     <p>
       Software Carpentry's score: 1.
@@ -225,7 +251,11 @@ category: ["Teaching"]
   <dt>12. Do you check what learners got out of the workshop weeks or months later?</dt>
   <dd>
     <p>
-      FIXME: do you keep track of what sticks so that you can change and improve your teaching?
+      Asking people immediately after a class what they learned doesn't tell you what's going to stick,
+      and there's no point teaching things that don't
+      (if only because there's always something else you could try to teach instead).
+      A good training course also gathers long-term feedback to tune the way it's teaching,
+      particularly if different instructors or different offerings approach a topic in different ways.
     </p>
     <p>
       Software Carpentry's score: 0.
@@ -235,45 +265,60 @@ category: ["Teaching"]
   <dt>13. Do you have a code of conduct that everyone is familiar with and that is actually enforced?</dt>
   <dd>
     <p>
-      FIXME: are your classrooms *really* open to everyone?
+      Isaiah Berlin famously distinguished between negative liberty (the absence of constraints)
+      and positive liberty (the possession of the power and resources needed to fulfill one's desires).
+      Similarly,
+      there's a different between negative openness
+      (the absence of a rule saying "you can't take part in this")
+      and positive openness
+      (a sincere effort to make everyone feel welcome and help them take part).
+      A code of conduct isn't the only way to achieve the latter,
+      but there has to be something stronger than "nobody said you couldn't" in place
+      if you truly want all kinds of learners.
     </p>
     <p>
       Software Carpentry's score: 1.
     </p>
   </dd>
-  <dt>14. Do you recruit potential new instructors from your workshops?</dt>
+  <dt>14. Do you continually recruit new instructors?</dt>
   <dd>
     <p>
-      FIXME: long-term sustainability.
+      Everybody gets tired eventually,
+      or is sidetracked by other events in their lives.
+      In order for your training program to last longer than one person's heroic efforts,
+      the instructor pool must steadily be replenished.
     </p>
     <p>
       Software Carpentry's score: 1.
+      (Most of our instructors are alumni of past workshops.)
     </p>
   </dd>
   <dt>15. Do you teach your instructors how to teach, and do they give each other feedback on teaching?</dt>
   <dd>
     <p>
-      FIXME: are your instructors singing from the same songbook and helping each other improve?
-    </p>
-    <p>
-      Software Carpentry's score: 0.
-      (We don't yet have any systematic mentoring in place.)
-    </p>
-  </dd>
-  <dt>16. Are new instructors mentored by more experienced peers?</dt>
-  <dd>
-    <p>
-      FIXME: learning
+      People can teach themselves how to program;
+      projects like Software Carpentry exist because it's easier to learn with guidance.
+      Similarly,
+      people can learn how to teach on their own,
+      but it's easier (and faster, and more reliable) if someone is there
+      to point the way.
+      Having some kind of training for instructors also helps ensure that
+      they're all singing from the same songbook,
+      i.e.,
+      that there's some level of agreement on what and how they're going to teach,
+      and therefore fewer collisions between approach and direction in class.
     </p>
     <p>
       Software Carpentry's score: 0.5.
-      (Our training doesn't cover the pedagogical content knowledge of our lessons, and we're not systematic about peer feedback.)
+      (Our instructor training is pretty good,
+      but there's a disconnect between what we do in it and what people actually teach.
+      We also don't yet have any systematic mentoring in place.)
     </p>
   </dd>
 </dl>
 <p>
-  Our total score is 10.5 out of 16.
-  That would be a 'C' at most schools,
+  Our total score is 10.5 out of 15.
+  That's just barely a 'B-' at most schools,
   so we clearly have a lot of work to do.
   Once the Software Carpentry Foundation is properly launched,
   I hope to turn our attention to the places where we fall short.
