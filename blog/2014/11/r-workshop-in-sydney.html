@@ -1,0 +1,138 @@
+---
+layout: blog
+root: ../../..
+author: Diego Barneche
+title: "An R Workshop at the University of Sydney"
+date: 2014-11-04
+time: "09:30:00"
+category: ["Workshops", "University of Sydney"]
+---
+<!-- start excerpt -->
+<p>
+  Last week we ran an R-based SWC bootcamp at University of
+  Sydney. The primary target audience encompassed grad students from
+  the Department of Psychology who had little to no experience in
+  programming. While some had previous limited experience with
+  programming languages (e.g. MATLAB or R), most of them had been
+  exposed only to statistical software such as SPSS.
+</p>
+<!-- end excerpt -->
+<p>
+  The audience was beginners, mostly from the Department of
+  Psychology.  The instructors were Dan Warren (a post-doc in
+  Biological Sciences at Macquarie University) and Diego Barneche (a
+  PhD student at the same university), and our host was Prof. Alex
+  Holcombe (Dept. of Psychology, University of
+  Sydney).  <a href="http://dbarneche.github.io/2014-10-31-USyd/lessons/">The
+  material we covered</a> included:
+</p>
+<p>
+  <em>Day 1</em> Basics of R programming, including data types,
+  subsetting and vectorized operations; functions in R; How to
+  structure and organize projects; control flow (if/else, for and
+  while loops, apply family in R, and the
+  package <a href="http://plyr.had.co.nz/">plyr</a>).
+</p>
+<p>
+  <em>Day 2</em> The Unix shell; version control in Git; exercises on
+  GitHub; reproducibility, including an example with the
+  package <a href="http://yihui.name/knitr/">knitr</a>.
+</p>
+<p>
+  Most of the content was well managed within the
+  original <a href="dbarneche.github.io/2014-10-31-USyd/">schedule</a>. We
+  used <a href="http://www.rstudio.com/">RStudio</a> because it is a
+  great user-friendly interface for beginners. Also, we provided them
+  with
+  a <a href="https://github.com/dbarneche/2014-10-31-USyd/tree/gh-pages/data/lessons.zip">.zip
+  file</a> at the beginning of the bootcamp. This file contained a
+  folder for each lesson, where an .RProj file with initial scripts
+  and data was already provided. This approach confers nice advantages
+  as each lesson already serves as an example of self-contained
+  project, every student is standardized in terms of initial material
+  and we avoid problem with full vs. relative paths.
+</p>
+<p>
+  On the first day (Friday), we had 28 students. The room had two
+  screen projectors available. One had RStudio opened 100% of the
+  time, and the other contained Etherpad or some webpage used as an
+  example to illustrate a case. On the second day (Saturday), we had
+  only 15 students, but we had to move to a different room with one
+  projector, so it was a bit annoying to switch between applications
+  and/or tabs (e.g. from RStudio and Etherpad) and adjust screen
+  resolutions when Dan and I had to swap our laptops.
+</p>
+<p>
+  <em>Diego:</em>
+  I suspect that the reason why we had a considerable drop-out from
+  day 1 to 2 involved a combination of three things: (1) because it
+  was Saturday; (2) because many students couldn't keep up with the
+  pace on the first day; and (3) because they didn't have to pay for
+  the course, so it wouldn't be a big deal to drop at a late
+  notice. In my perception cause (2) was the major one, and I finally
+  realized how hard it is to teach novices how to program. Maybe I
+  spent too much time on the basics, including a bunch of examples on
+  data structures in R. Although some people would rather drop some of
+  the basics, I feel like without a basic foundation of data
+  structures, R learners won't have the tools to teach themselves in
+  the future and speed up their learning experience.
+</p>
+<p>
+  I wonder if a three-day bootcamp is something to be reconsidered
+  when it comes to novices. I do understand that people's (both
+  instructors and students) availability is a major issue here, but I
+  feel sometimes frustrated that we need to cover too much in a short
+  amount of time. For instance, beginners have many questions
+  regarding functions, and the topic itself is worth an entire
+  afternoon (at least) of coverage. In such an ideal scenario, I would
+  have chosen to cover basics and project set up during the morning of
+  the first day, and then spent the entire afternoon teaching
+  functions. Second day would be dedicated to control flow in the
+  first half and shell in the second. And the final day dedicated to
+  git, exercises on GitHub (including branching, push/pull, merging
+  conflicts and pull requests) and reproducibility.
+</p>
+<p>
+  In any case, the audience was great in general, and many students
+  took great advantage of the course. The git lessons were really
+  nice, and students seemed to have fun with push/pull exercises and
+  merging conflicts using GitHub. After having participated in 4
+  bootcamps this year where shell was not the primary language, I
+  wonder how much we need it. I'm not entirely sure that students are
+  immediately convinced it is a great tool to operate a computer
+  (though I use shell on a regular basis for my own work). Maybe part
+  of it relates to all the unpredicted bugs on Windows machines - this
+  can always be super annoying, or even its relatively reduced
+  functionality on Windows. Maybe part of it relates to the fact that
+  we don't have much time to cover it, so things like for loops,
+  functions (covered in R anyway) and pipelining, which are the
+  coolest topics in shell in my opinion, have to be put aside.
+</p>
+<p>
+  <em>Dan:</em> When teaching functions, I really tried to use a lot
+  of simple in-class exercises, and I feel like that was helpful. I
+  think in the future I'm going to work towards including even more
+  exercises, as I feel like it gives both the students and the teacher
+  a moment to calibrate their retention and understanding of the
+  material.
+</p>
+<p>
+  I feel like everyone followed along with the shell exercises, but
+  after the session I was asked by more than one student why they
+  should bother to learn this. I feel like we came up with a couple of
+  decent answers for them, but it really made me think; R is by its
+  nature going to be of interest to a lot of scientists who are
+  specifically interested in analysis, but who are not interested in
+  becoming super-elite programmers. I've never sat in on one of the
+  Software Carpentry Python courses, but I wonder if it's generally
+  easier for them to motivate students to get into the shell and
+  version control. Whether that's true or not, it really did emphasise
+  for me that motivation is one of the key starting points for
+  learning, and that imparting motivation is essential to good
+  teaching. Something to think about for next time!
+</p>
+<p>
+  Please leave your comments below, we'd really appreciate some
+  general feedback from everyone who has (and hasn't) been on a
+  similar situation.
+</p>
