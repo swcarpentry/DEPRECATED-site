@@ -39,7 +39,7 @@ category: ["Teaching"]
   I would like to present something similar for estimating the maturity of
   a grassroots "learn to program" project like ours.
   In place of the original test's 12 questions,
-  I have 15:
+  I have 16:
 </p>
 <blockquote>
   <div align="center">
@@ -55,12 +55,13 @@ category: ["Teaching"]
     <li>Are lessons presented in short, digestible pieces with clear objectives at the start and practice exercises at the end?</li>
     <li>Do you code live when teaching?</li>
     <li>Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</li>
-    <li>Do you have real-time feedback in your classroom?</li>
     <li>Do you check learners' current knowledge and skills before teaching?</li>
+    <li>Do you have real-time feedback in your classroom?</li>
     <li>Do you check what learners got out of the workshop weeks or months later?</li>
-    <li>Do you have a code of conduct that everyone is familiar with and that is actually enforced?</li>
+    <li>Do you have a standard for conduct that everyone is familiar with and that is actually enforced?</li>
     <li>Do you recruit potential new instructors from your workshops?</li>
-    <li>Do you teach your instructors how to teach, and do they give each other feedback on teaching?</li>
+    <li>Do you teach your instructors how to teach?</li>
+    <li>Do you provide explicit next steps for learners?</li>
   </ol>
 </blockquote>
 <p>
@@ -213,7 +214,23 @@ category: ["Teaching"]
       (We get full marks for instructions, but only part marks for instructors knowing how to debug things that go wrong.)
     </p>
   </dd>
-  <dt>10. Do you have real-time feedback in your classroom?</dt>
+  <dt>10. Do you check learners' current knowledge and skills before teaching?</dt>
+  <dd>
+    <p>
+      This question is similar to the previous one, but on a different timescale:
+      rather than feedback in real time as you're teaching,
+      do you gather feedback <em>before</em> the class starts
+      so that you can tune your content and pace to your actual learners?
+      Laying out pre-requisites doesn't achieve this:
+      people will mis-estimate their own knowledge,
+      or sign up for something far too simple or far too advanced
+      just because it's the only training on offer.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>11. Do you have real-time feedback in your classroom?</dt>
   <dd>
     <p>
       Watching recorded videos is actually a pretty poor way for novices to learn.
@@ -230,22 +247,6 @@ category: ["Teaching"]
       (Sticky notes and Etherpad for the win!)
     </p>
   </dd>
-  <dt>11. Do you check learners' current knowledge and skills before teaching?</dt>
-  <dd>
-    <p>
-      This question is similar to the previous one, but on a different timescale:
-      rather than feedback in real time as you're teaching,
-      do you gather feedback <em>before</em> the class starts
-      so that you can tune your content and pace to your actual learners?
-      Laying out pre-requisites doesn't achieve this:
-      people will mis-estimate their own knowledge,
-      or sign up for something far too simple or far too advanced
-      just because it's the only training on offer.
-    </p>
-    <p>
-      Software Carpentry's score: 1.
-    </p>
-  </dd>
   <dt>12. Do you check what learners got out of the workshop weeks or months later?</dt>
   <dd>
     <p>
@@ -260,7 +261,7 @@ category: ["Teaching"]
       (Our lack of long-term post-workshop assessment is our biggest failing.)
     </p>
   </dd>
-  <dt>13. Do you have a code of conduct that everyone is familiar with and that is actually enforced?</dt>
+  <dt>13. Do you have a standard for conduct that everyone is familiar with and that is actually enforced?</dt>
   <dd>
     <p>
       Isaiah Berlin famously distinguished between negative liberty (the absence of constraints)
@@ -270,8 +271,11 @@ category: ["Teaching"]
       (the absence of a rule saying "you can't take part in this")
       and positive openness
       (a sincere effort to make everyone feel welcome and help them take part).
-      A code of conduct isn't the only way to achieve the latter,
-      but there has to be something stronger than "nobody said you couldn't" in place
+      A <a href="{{page.root}}/conduct.html">code of conduct</a> isn't
+      the only way to achieve the latter&mdash;Hacker School has
+      their <a href="https://www.hackerschool.com/manual">User's Manual</a>,
+      and Ascend has its <a href="https://github.com/mozilla/ascendproject/blob/gh-pages/course_materials/policies/_posts/2014-09-08-class-agreements.md">class agreement</a>&mdash;but
+      there has to be something in place
       if you truly want all kinds of learners.
     </p>
     <p>
@@ -291,7 +295,7 @@ category: ["Teaching"]
       (Most of our instructors are alumni of past workshops.)
     </p>
   </dd>
-  <dt>15. Do you teach your instructors how to teach, and do they give each other feedback on teaching?</dt>
+  <dt>15. Do you teach your instructors how to teach?</dt>
   <dd>
     <p>
       People can teach themselves how to program;
@@ -307,17 +311,41 @@ category: ["Teaching"]
       and therefore fewer collisions between approach and direction in class.
     </p>
     <p>
-      Software Carpentry's score: 0.5.
-      (Our instructor training is pretty good,
-      but there's a disconnect between what we do in it and what people actually teach.
-      We also don't yet have any systematic mentoring in place.)
+      But to ensure positive openness,
+      instructor training must go beyond the lessons.
+      Instructors need to know that they shouldn't take over the keyboard when working with novices,
+      that they have to actively give everyone a chance to speak,
+      to respect learners' cultural norms
+      (swearing, for example, is almost unnoticed now by some people, but still quite offensive to others),
+      and not to belittle the difficulties learners face by saying things like,
+      "Oh, that's easy, you just..."
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>16. Do you provide explicit next steps for learners?</dt>
+  <dd>
+    <p>
+      The end of class shouldn't be the end of learning.
+      Instructors should tell learners where to go to find out more,
+      and should connect them with everything from mailing lists and bulletin boards
+      to networking events,
+      potential employers,
+      and internships.
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Some instructors may point learners at other resources or other classes,
+      but we don't do anything systematically.)
     </p>
   </dd>
 </dl>
 <p>
-  Our total score is 10.5 out of 15.
-  That's just barely a 'B-' at most schools,
-  so we clearly have a lot of work to do.
+  Our total score is 11 out of 15.
+  That's a 'B' at most schools,
+  so while I think we're doing well,
+  we clearly also have room to improve.
   Once the Software Carpentry Foundation is properly launched,
   I hope to turn our attention to the places where we fall short.
 </p>
