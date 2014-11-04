@@ -1,0 +1,366 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "A 'Joel Test' for Grassroots Programming Groups"
+date: 2014-11-04
+time: "07:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  Back during the first dot-com bubble,
+  Joel Spolsky an article titled
+  <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">"The Joel Test: 12 Steps to Better Code"</a>
+  that listed 12 questions you can ask to estimate the maturity of a software development team:
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>Do you use source control?</li>
+  <li>Can you make a build in one step?</li>
+  <li>Do you make daily builds?</li>
+  <li>Do you have a bug database?</li>
+  <li>Do you fix bugs before writing new code?</li>
+  <li>Do you have an up-to-date schedule?</li>
+  <li>Do you have a spec?</li>
+  <li>Do programmers have quiet working conditions?</li>
+  <li>Do you use the best tools money can buy?</li>
+  <li>Do you have testers?</li>
+  <li>Do new candidates write code during their interview?</li>
+  <li>Do you do hallway usability testing? </li>
+</ol>
+<p>
+  It was completely unscientific,
+  but it was also very useful and influential
+  (and was in fact one of the inspirations for our
+  <a href="http://www.plosbiology.org/article/info%3Adoi%2F10.1371%2Fjournal.pbio.1001745">"Best Practices for Scientific Computing"</a>
+  paper).
+  In that spirit,
+  I would like to present something similar for estimating the maturity of
+  a grassroots "learn to program" project like ours.
+  In place of the original test's 12 questions,
+  I have 16:
+</p>
+<blockquote>
+  <div align="center">
+    How Mature Is Your Training Program?
+  </div>
+  <ol>
+    <li>Are all of your lessons searchable?</li>
+    <li>Does each lesson solve a problem your learners believe they have?</li>
+    <li>Are you teaching principles that will still be relevant in five years?</li>
+    <li>Do your instructors regularly update your lessons in a publicly-accessible version control repository?</li>
+    <li>Do your instructors record and share their pedagogical content knowledge?</li>
+    <li>Is there a coherent narrative running through all your lessons?</li>
+    <li>Are lessons presented in short, digestible pieces with clear objectives at the start and practice exercises at the end?</li>
+    <li>Do you code live when teaching?</li>
+    <li>Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</li>
+    <li>Do you check learners' current knowledge and skills before teaching?</li>
+    <li>Do you have real-time feedback in your classroom?</li>
+    <li>Do you check what learners got out of the workshop weeks or months later?</li>
+    <li>Do you have a standard for conduct that everyone is familiar with and that is actually enforced?</li>
+    <li>Do you recruit potential new instructors from your workshops?</li>
+    <li>Do you teach your instructors how to teach?</li>
+    <li>Do you provide explicit next steps for learners?</li>
+  </ol>
+</blockquote>
+<p>
+  The thing about this quiz is that it's easy to give a quick yes or no to each question.
+  (You can even give yourself half marks if your score would otherwise be uncomfortably low,
+  which is what I do below for Software Carpentry.)
+  I think any score over 50% is pretty good;
+  I also think that a lot of software skills programs fall well below that,
+  regardless of whether they are grassroots groups,
+  corporate training,
+  or traditional academic courses.
+</p>
+<dl>
+  <dt>1. Are all of your lessons searchable?</dt>
+  <dd>
+    <p>
+      Search engines can't read the text embedded in images, videos, and Flash animations,
+      and users can't copy and paste such text,
+      so anything presented that way is essentially invisible to the web.
+      PDFs are also often difficult,
+      especially if what they contain is graphically rich.
+      In order to help learners find what they need when they need it,
+      in their own order and on their own time,
+      lessons should be stored in a web-friendly format like HTML.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+      (Note that our Version 4 lessons would only get 0.5 on this,
+      because most of the example code is only present in the PNG images exported from PowerPoint,
+      and not in the accompanying narration.)
+    </p>
+  </dd>
+  <dt>2. Does each lesson solve a problem your learners believe they have?</dt>
+  <dd>
+    <p>
+      People learn best when they're intrinsically motivated,
+      and intrinsic motivation is more likely when they can see
+      how the things they are learning will help them do things
+      they currently want to do.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>3. Are you teaching deep ideas that will still be relevant in five years?</dt>
+  <dd>
+    <p>
+      Specific tools come and go, but deeper principles remain.
+      More importantly,
+      without an understanding of the principles embodied in particular tools and techniques,
+      learners will be reduced to cargo cult programming:
+      they won't be able to fix things that go wrong,
+      and they're unlikely to be able to extrapolate from what they know
+      to come up with new solutions to their specific problems.
+    </p>
+    <p>
+      And yes,
+      this goal is in direct tension with the preceding one.
+      Learners want specific, concrete skills to meet next Thursday's deadline;
+      we want them to understand the "why" behind those skills.
+      I think Software Carpentry's curriculum does a good job of smuggling big ideas into lessons
+      by showing learners specific tools (e.g., pipes in the shell)
+      and then explicitly saying what those tools are examples of.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>4. Do your instructors regularly update your lessons in a publicly-accessible version control repository?</dt>
+  <dd>
+    <p>
+      I now believe that getting people to collaborate openly on lessons
+      in the way they collaborate on Wikipedia articles and open source software
+      may well be Software Carpentry's greatest long-term contribution.
+      More prosaically,
+      if instructors (and learners, and passers-by) aren't able to update lessons easily,
+      your training is critically dependent on a small number of authors,
+      and will probably wither when real life drags those authors (or that single author) away.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>5. Do your instructors record and share their pedagogical content knowledge?</dt>
+  <dd>
+    <p>
+      Pedagogical content knowledge (PCK) is what lies between
+      the domain-specific knowledge that's being taught
+      and the general principles of good educational practice.
+      It's the examples that illustrate ideas particularly well,
+      how long lessons take,
+      the instructors' collective understanding of what's likely to go wrong in those lessons and how to fix it,
+      and so on&mdash;in short,
+      the collective wisdom of a specific teaching community.
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Our instructor's guide only captures a fraction of what we know, and isn't updated regularly.)
+    </p>
+  </dd>
+  <dt>6. Is there a coherent narrative running through each lesson?</dt>
+  <dd>
+    <p>
+      Humans are story-telling animals:
+      we listen more closely,
+      and learn better,
+      when we're presented with a plot rather than a mere collection of facts.
+      Good lessons should therefore contain a story that builds toward a useful conclusion.
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Unlike Data Carpentry, we don't use a running example throughout our lessons.)
+    </p>
+  </dd>
+  <dt>7. Are lessons presented in short, digestible pieces with clear objectives at the start and formative assessment exercises at the end?</dt>
+  <dd>
+    <p>
+      This question is basically asking, "Are the lessons well designed?"
+    </p>
+    <p>
+      Software Carpentry's score: 0.5.
+      (Our lessons are short and digestible, but our objectives are muddled and the practice exercises are uneven.)
+    </p>
+  </dd>
+  <dt>8. Do you code live when teaching?</dt>
+  <dd>
+    <p>
+      We've all had the misfortune to watch an instructor whip through slides faster than the audience could possibly follow.
+      Live coding helps prevent that,
+      but it also allows instructors to go off the beaten track and follow learners' questions in unexpected directions.
+      More importantly,
+      it allows learners to see instructors diagnose and fix mistakes
+      (something which is rarely if ever shown in static slides).
+      And most importantly of all,
+      seeing instructors make mistakes gives learners permission to make mistakes of their own:
+      if the teacher is fouling this up,
+      it must OK for the newbie to as well.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>9. Do your setup instructions work for most learners, and do instructors know how to fix things when they don't?</dt>
+  <dd>
+    <p>
+      "I can't even get started" is perhaps the biggest demotivator a class faces.
+    </p>
+    <p>
+      Software Carpentry's score: 0.5.
+      (We get full marks for instructions, but only part marks for instructors knowing how to debug things that go wrong.)
+    </p>
+  </dd>
+  <dt>10. Do you check learners' current knowledge and skills before teaching?</dt>
+  <dd>
+    <p>
+      This question is similar to the previous one, but on a different timescale:
+      rather than feedback in real time as you're teaching,
+      do you gather feedback <em>before</em> the class starts
+      so that you can tune your content and pace to your actual learners?
+      Laying out pre-requisites doesn't achieve this:
+      people will mis-estimate their own knowledge,
+      or sign up for something far too simple or far too advanced
+      just because it's the only training on offer.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>11. Do you have real-time feedback in your classroom?</dt>
+  <dd>
+    <p>
+      Watching recorded videos is actually a pretty poor way for novices to learn.
+      The only reason most people don't realize it is that
+      many of the live lectures they've attended aren't any better.
+      The whole point of a live performance is that the performer
+      (in this case, the teacher)
+      can respond to her audience,
+      but in order for her to do that,
+      there must be some way for her to get feedback while she's teaching.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+      (Sticky notes and Etherpad for the win!)
+    </p>
+  </dd>
+  <dt>12. Do you check what learners got out of the workshop weeks or months later?</dt>
+  <dd>
+    <p>
+      Asking people immediately after a class what they learned doesn't tell you what's going to stick,
+      and there's no point teaching things that don't
+      (if only because there's always something else you could try to teach instead).
+      A good training course also gathers long-term feedback to tune the way it's teaching,
+      particularly if different instructors or different offerings approach a topic in different ways.
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Our lack of long-term post-workshop assessment is our biggest failing.)
+    </p>
+  </dd>
+  <dt>13. Do you have a standard for conduct that everyone is familiar with and that is actually enforced?</dt>
+  <dd>
+    <p>
+      Isaiah Berlin famously distinguished between negative liberty (the absence of constraints)
+      and positive liberty (the possession of the power and resources needed to fulfill one's desires).
+      Similarly,
+      there's a different between negative openness
+      (the absence of a rule saying "you can't take part in this")
+      and positive openness
+      (a sincere effort to make everyone feel welcome and help them take part).
+      A <a href="{{page.root}}/conduct.html">code of conduct</a> isn't
+      the only way to achieve the latter&mdash;Hacker School has
+      their <a href="https://www.hackerschool.com/manual">User's Manual</a>,
+      and Ascend has its <a href="https://github.com/mozilla/ascendproject/blob/gh-pages/course_materials/policies/_posts/2014-09-08-class-agreements.md">class agreement</a>&mdash;but
+      there has to be something in place
+      if you truly want all kinds of learners.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>14. Do you continually recruit new instructors?</dt>
+  <dd>
+    <p>
+      Everybody gets tired eventually,
+      or is sidetracked by other events in their lives.
+      In order for your training program to last longer than one person's heroic efforts,
+      the instructor pool must steadily be replenished.
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+      (Most of our instructors are alumni of past workshops.)
+    </p>
+  </dd>
+  <dt>15. Do you teach your instructors how to teach?</dt>
+  <dd>
+    <p>
+      People can teach themselves how to program;
+      projects like Software Carpentry exist because it's easier to learn with guidance.
+      Similarly,
+      people can learn how to teach on their own,
+      but it's easier (and faster, and more reliable) if someone is there
+      to point the way.
+      Having some kind of training for instructors also helps ensure that
+      they're all singing from the same songbook,
+      i.e.,
+      that there's some level of agreement on what and how they're going to teach,
+      and therefore fewer collisions between approach and direction in class.
+    </p>
+    <p>
+      But to ensure positive openness,
+      instructor training must go beyond the lessons.
+      Instructors need to know that they shouldn't take over the keyboard when working with novices,
+      that they have to actively give everyone a chance to speak,
+      to respect learners' cultural norms
+      (swearing, for example, is almost unnoticed now by some people, but still quite offensive to others),
+      and not to belittle the difficulties learners face by saying things like,
+      "Oh, that's easy, you just..."
+    </p>
+    <p>
+      Software Carpentry's score: 1.
+    </p>
+  </dd>
+  <dt>16. Do you provide explicit next steps for learners?</dt>
+  <dd>
+    <p>
+      The end of class shouldn't be the end of learning.
+      Instructors should tell learners where to go to find out more,
+      and should connect them with everything from mailing lists and bulletin boards
+      to networking events,
+      potential employers,
+      and internships.
+    </p>
+    <p>
+      Software Carpentry's score: 0.
+      (Some instructors may point learners at other resources or other classes,
+      but we don't do anything systematically.)
+    </p>
+  </dd>
+</dl>
+<p>
+  Our total score is 11 out of 15.
+  That's a 'B' at most schools,
+  so while I think we're doing well,
+  we clearly also have room to improve.
+  Once the Software Carpentry Foundation is properly launched,
+  I hope to turn our attention to the places where we fall short.
+</p>
+<p>
+  The real aim of this rubric,
+  though,
+  is to help us compare what we're doing to other efforts
+  so that we can learn from them and vice versa.
+  This list is obviously biased toward Software Carpentry,
+  so if there are things you do that you think are valuable,
+  but which don't show up in the questions above,
+  please let us know.
+  Equally,
+  if there are questions that you think shouldn't be included
+  because they're too specific to our model and audience,
+  or not actually important to helping volunteers deliver high-quality training,
+  please let us know that too.
+</p>
