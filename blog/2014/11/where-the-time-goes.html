@@ -1,0 +1,141 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Amdahl's Law and Software Carpentry"
+date: 2014-11-05
+time: "12:00:00"
+category: ["Operations"]
+---
+<!-- start excerpt -->
+<p>
+  Amdahl's Law says that the speedup you can get by parallelizing a computation
+  is limited by how much of the computational can't be sped up.
+  For example,
+  if 10% of a program's run time is inherently sequential,
+  then even if you have an infinite number of processors,
+  you can't speed it up more than 10 times.
+</p>
+<p>
+  It's becoming clear that the same is true of organizations like Software Carpentry.
+  We now have almost 200 certified instructors;
+  working in pairs,
+  and each teaching only once a year,
+  that's already enough to run two workshops a week,
+  and we're training more all the time.
+  But someone has to train them,
+  and match them with workshops,
+  and design new templates for lessons,
+  and talk to potential sponsors,
+  and those central activities are now the biggest constraint on what we can accomplish.
+</p>
+<!-- end excerpt -->
+<p>
+  To give you some idea of the scale of those activities,
+  here's what a typical week looks like
+  here at Software Carpentry Central:
+</p>
+<table class="table table-striped">
+  <tr>
+    <th>Activity</th>
+    <th>Hours</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>Instructor training</td>
+    <td>8.0</td>
+    <td>Real-time contact hours, demo teaching, and email</td>
+  </tr>
+  <tr>
+    <td>Coordinating workshops</td>
+    <td>3.0</td>
+    <td>Arliss and Giacomo do the bulk of the work, but there are always a few things left over</td>
+  </tr>
+  <tr>
+    <td>Record keeping</td>
+    <td>2.5</td>
+    <td>Managing our database of who taught/learned where, who's signed up for instructor training, etc.</td>
+  </tr>
+  <tr>
+    <td>Board discussions</td>
+    <td>11.0</td>
+    <td>Drawing up by-laws, hammering out a funding model, etc.</td>
+  </tr>
+  <tr>
+    <td>Reviewing pull requests</td>
+    <td>2.5</td>
+    <td>Should be a <em>lot</em> more</td>
+  </tr>
+  <tr>
+    <td>Writing/reviewing grant proposals</td>
+    <td>5.5</td>
+    <td>Some for us, some for partners</td>
+  </tr>
+  <tr>
+    <td>Discussions with potential partners and funders</td>
+    <td>6.0</td>
+    <td>Some live, some by email</td>
+  </tr>
+  <tr>
+    <td>Other email</td>
+    <td>10.0</td>
+    <td>Questions about teaching, managing assessment, extracting Git history, etc.</td>
+  </tr>
+  <tr>
+    <td>Research projects</td>
+    <td>2.0</td>
+    <td>The code review study, the language comparison study, etc.</td>
+  </tr>
+  <tr>
+    <td>Writing and revising blog posts</td>
+    <td>4.0</td>
+    <td>Like this one</td>
+  </tr>
+  <tr>
+    <td>Technical support</td>
+    <td>2.0</td>
+    <td>Git issues, mailing list issues, web site issues, etc.</td>
+  </tr>
+  <tr>
+    <td>Writing letters of reference</td>
+    <td>1.0</td>
+    <td>Saying nice things about our instructors is the least I can do to thank them</td>
+  </tr>
+</table>
+<p>
+  That's 57.5 hours
+  in a week that <em>doesn't</em> include any travel or teaching,
+  and in which I didn't contribute to extracting history from our existing lesson repository,
+  building a tool to check that new lessons conform to our style guide,
+  follow up on Raniere's experiments with a better build system for lessons,
+  complete the ethics training needed for the language comparison study,
+  help Gabriel figure out how we're going to handle translations of our lessons,
+  and&mdash;but you get the point.
+  Things that are vital
+  to the long-term health and growth of Software Carpentry
+  aren't being done,
+  and can't be done until there are more staff.
+</p>
+<p>
+  (And no, "get volunteers from the community to do it" isn't a solution.
+  Many of these activities are administrative,
+  have long lead times,
+  and require sustained attention over a period of months.
+  Our volunteers are doing a great job of delivering and refining lessons,
+  but it's not realistic to expect them to talk to NSERC on our behalf.)
+</p>
+<p>
+  Our "host pays costs" model will allow workshops to scale indefinitely,
+  but coordination at the center needs to increase as well,
+  even if not proportionately.
+  We therefore need to raise money not only to pay my salary,
+  but also to hire at least one more full-time person to share the load.
+  We also need to partner with more institutions who can provide staff time
+  for coordinating workshops
+  in the way that Arliss and Giacomo have been doing.
+  While individual donations will help,
+  and are very welcome (there's a link at the bottom of this page),
+  it's vital that we build institutional ties as well.
+  If your organization would be interested in helping us help scientists,
+  please <a href="mailto:{{site.board_inquiries}}">give us a shout</a>.
+</p>
