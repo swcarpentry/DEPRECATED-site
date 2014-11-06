@@ -80,8 +80,8 @@ all : commands
 ## commands     : show all commands.
 # Note the double '##' in the line above: this is what's matched to produce
 # the list of commands.
-commands :
-	@grep -E '^##' Makefile | sed -e 's/## //g'
+commands : Makefile
+	@sed -n 's/^## //p' $<
 
 ## authors      : list all blog post authors.
 authors :
