@@ -10,19 +10,28 @@ category: ["Workshops", "University of Toronto"]
 <!-- start excerpt -->
 <p>
   Last week we ran a Python-based SWC workshop at the University of
-  Toronto's Gerstein Science Information Centre.  (who were our audience?)
+  Toronto's <a href="">Gerstein Science Information Centre</a>. The advertised audience
+was graduate students, post-docs and other researchers in science, engineering and medicine at the University of Toronto.
 </p>
 <!-- end excerpt -->
 <p>
-
-The workshop had about 25 (check?) learners. Most were grad students or postdocs
-in biomedical sciences (again, check). About three-quarters had some programming experience
-with about half of those having some Python; maybe half had seen the command line.
+The workshop had about 20 learners. Most were grad students or postdocs
+in life sciences. The pre-workshop assessment
+said that about three-quarters of learners had some programming experience
+with about half of those having some Python; maybe half of the total
+had some familiarity with the command line.
 Almost none had experience with version control or SQL. 
-The instructors were P. Barmby, G. Wilson, F. Xu, T. Guignard), helpers
-  (S. Rahmani, L. Johnston, D. Neilsen). Our hosts were Erica Lenton
-and Michael ??.
+The instructors were P. Barmby, G. Wilson, and T. Guignard, helpers were
+S. Rahmani, L. Johnston, D. Neilsen, T. Wright, and X. Fei.
+Our host was Erica Lenton.
+</p>
+
 <p>
+Nearly everyone had done the software installation prior to the workshop (!),
+and not too many problems were reported.  The laptops in use
+were roughly 50% Mac, 40% Windows, 10% Linux.
+A handful of learners ran into the Mac Git problem, on which more below.
+</p>
 
 <p>
 The physical layout of the room was not quite ideal: the projector was pretty 
@@ -41,14 +50,80 @@ and conversations with the helper couldn't be kept quiet enough to not disturb
 others.
 </p>
 
+<a href="http://swcarpentry.github.io/2014-10-30-utoronto/lessons/">The
+  material we covered</a> included: shell (P. Barmby), Git (G. Wilson), Python (P. Barmby and F. Xu), and SQL
+(T. Guignard).</p>
 <p>
-Nearly everyone had done the software installation prior to the workshop (!),
-and not too many problems were reported.  A rough guess is that the laptops in use
-were 50-45-5 Mac-Windows-Linux (?) A handful of learners ran into the Mac Git problem,
-on which more below.
+<i>Pauline:</i>Most of the material in the beginner shell lessons was covered the first morning.
+I found the pace a bit rushed and I would have liked more time for the students to 
+work on their own - I think the lessons contain too much material to really be covered
+in 3 hours. Topics I skipped over or felt I didn't explain very well
+included "spaces in filenames" and "redirecting input".
+I didn't feel that I made very good use of the sticky note
+system in the bash session, although I did try something else: I made the
+questions at the end of the lessons into multiple-choice questions where they weren't
+already, and asked the learners to vote on them with coloured cards (link).
+I think this would have been useful except that the available projection screen
+real estate was so small that the questions were unreadable!
 </p>
 
-<a href="http://swcarpentry.github.io/2014-10-30-utoronto/lessons/">The
-  material we covered</a> included:
-</p>
 <p>
+At the morning break, we put a tar file containing the "Nelle" file/directory structure
+and a PDF file with the multiple-choice questions on Dropbox, and links to these
+in the Etherpad. Learners were able to grab these and found them helpful in following along
+for the remainder of the bash session. Feedback from the morning session
+included the request to have these files available earlier, and to have an outline
+of topics available before the session started, plus requests to go slower!
+</p>
+
+<p>
+The afternoon Git session went very smoothly. Greg took the learners through making
+a repository and adding a remote on GitHub, the change/add/commit/push cycle, forking an existing 
+repository and adding the upstream remote, submitting pull requests, and 
+managing conflicts. As mentioned above, a few students ran into the problem with Git not 
+working on their Macs, for which the most obvious (but not-so-practical) fix is to 
+download Xcode and recompile <a
+href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-October/002315.html">here</a>
+is a link to the e-mail list thread on this topic.
+<i>Greg:</i> ANYTHING TO ADD HERE?
+</p>
+
+<i>Pauline:</i>
+The second morning's Python session could have gone more smoothly. I used the
+IPython console in Spyder, rather than the IPython notebook for this, in part because
+I thought that the notebook would result in me moving too quickly and in part
+because I've been having problems with notebooks scrolling very slowly on my machine.
+I suggested to students that they should clone the workshop repo in order to
+get the CSV and other files we'd be working with, and so that they could follow along
+in the notebooks; or they could also just download specific files from
+the repo (which, of course, doesn't actually work).
+Not everyone was able to clone the repo (bandwidth), and in retrospect it would have
+been better to put a handful of files in a separate repository or elsewhere,
+so that everyone could follow along. We did end up copying one small program directly
+to the etherpad so learners could play with it and modify it, but this is obviously
+not an ideal solution.
+</p>
+
+<p> Because getting going in the morning consumed 
+quite a bit of time, the actual lesson started late and felt quite rushed. 
+Again, I think it would have been beneficial for learners to spend more time working
+on their own -- especially given that we had quite a few helpers so
+they could have gotten one-to-one assistance.
+I covered numpy, functions, and loops before the morning break, with loops, conditionals,
+and command-line scripts afterward, then Xu Fei took over with defensive programming.
+<i>Xu</i>: YOUR THOUGHTS HERE.
+
+<p>
+Learner feedback emphasized many of the same things as from the bash session: need
+to have files in advance, wanted more time to practice, lesson was too
+fast. Many learners recognized defensive programming as a concept that
+they had not encountered before but would find helpful.
+</p>
+
+<p>
+<i>Tom:</i> The second afternoon's SQL session [TBD].
+</p>
+
+<p>
+SUMMARY HERE
+</p>
