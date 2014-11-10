@@ -3624,3 +3624,20 @@
   url: http://douglatornell.github.io/2014-09-25-ubc/
   user: douglatornell
   venue: University of British Columbia
+- address: iDigBio at University of Florida, Gainesville, FL
+  contact: data-carpentry@software-carpentry.org
+  country: United-States
+  enddate: 2014-09-30
+  helper: [Dan Stoner, Deborah Paul, Pam Soltis, Derek Masaki, Shari Ellis, Kevin Love, Juliet Pulliam, Tommy Tang, Bernardo Santos, Jonathan Foox]
+  humandate: Sep 29-30, 2014
+  humantime: 8:30 am - 5:30 pm
+  instructor: [Francois Michonneau, Tracy Teal, Matt Collins, Katja Seltmann]
+  latlng: 42.723303,-84.479780
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-29-iDigBio
+  startdate: 2014-09-29
+  url: http://datacarpentry.github.io/2014-09-29-iDigBio/
+  user: datacarpentry
+  venue: University of Florida
