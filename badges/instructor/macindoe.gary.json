@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-11-11", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$16ead325c5d48390837c03ace3329cd35a74dd9da6da6639483b0535de6ca0c6", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$16ead325c5d48390837c03ace3329cd35a74dd9da6da6639483b0535de6ca0c6", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/macindoe.gary.json"
+ }
+}
