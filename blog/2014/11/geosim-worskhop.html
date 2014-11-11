@@ -1,0 +1,110 @@
+---
+layout: blog
+root: ../../..
+author: Tiziano Zito
+title: "Workshop at GeoSim (Potsdam)"
+date: 2014-11-11
+time: "13:00:00"
+category: ["Workshops", "GeoSim"]
+---
+<!-- start excerpt -->
+<p>
+  I had never taught a Software Carpentry workshop before (though I
+  have taught an <a href="http://python.g-node.org">Advanced
+  Scientific Programming in Python</a> many times), so when the hosts
+  for this one asked if I would be willing to do a full-week workshop,
+  I said they were crazy ;) They convinced me to do it, but I said in
+  that case I could only do that if I can recycle the materials I use
+  for our summer school.  They agreed, and I managed to convince a
+  buddy in Berlin to help me with tutoring.
+</p>
+<!-- end excerpt -->
+<p>
+  There were 28 students from Geophysics with a very diverse
+  background in programming. Most did not know Python and several had
+  only ever used Windows with GUIs. Given that, I soon figured out
+  that the classic lecture-plus-exercises paradigm wasn't going to
+  work, so I switched to a completely live-coding based approach. I
+  would talk about tests while writing them for my own project, I
+  would talk about Git while using it on my own paper, and so
+  on. Based on the feedback we got at the end, it worked well.
+</p>
+<p>
+  But in retrospect I know that I won't do something like that again:
+  it was me non-stop performing from 9:00 in the morning to 6:30 in
+  the afternoon, getting questions that made me question my own
+  knowledge of Python (see below), improvising a live session on
+  Python with MPI on clusters (of which I have zero experience) and
+  resorted to teaching them how do you go about looking for libraries
+  and docs in the SciPy ecosystem. The feedback from the students was
+  very positive, though, so it was a learning experience on both
+  sides.
+</p>
+<p>
+  Footnote: I was explaining the difference between passing by-value
+  and by-reference and Python approach to this issue as compared to
+  Matlab and to functional languages, But then someone came up with
+  this example:
+</p>
+<pre>
+>>> def mult1(x):
+...     x = x*2
+...     return x
+... 
+>>> def mult2(x):
+...     x = [x*2]*2
+...     return x
+... 
+>>> y = mult1([1, 2, 3])
+>>> z = mult2([1, 2, 3])
+>>> print y
+[1, 2, 3, 1, 2, 3]
+>>> y[2] = 10
+>>> print y
+[1, 2, 10, 1, 2, 3]
+>>> print z
+[[1, 2, 3, 1, 2, 3], [1, 2, 3, 1, 2, 3]]
+>>> z[0][2] = 10
+>>> print z
+[[1, 2, 10, 1, 2, 3], [1, 2, 10, 1, 2, 3]]
+</pre>
+<p>
+  I told to the students that in the case of <code>mult1</code> the
+  return value bound to the name <code>y</code> has no "memory" of the
+  fact that it has been created by concatenating two lists, so when
+  you set <code>y[2]</code> the result is what you would expect. And
+  then the student came up with the function <code>mult2</code> and
+  told me that it seems like in this case the return value bound
+  to <code>z</code> is actually "remembering" that it came from
+  concatenating two lists, as seen when you try to
+  set <code>z[0][2]</code> and then you get also <code>z[1][2]</code>
+  changed.  A colleague told me he would interpret the results this
+  way:
+</p>
+<pre>
+z >>>>>>>> [ . , . ]
+             v   v
+             v   v
+             v   v
+             >>>>>>>>>>> [1, 2, 3, 4, 5, 6]
+</pre>
+<p>
+  <code>z</code> does not remember that it came from two lists. If it
+  did, then setting <code>z[0][2]</code> would also
+  change <code>z[0][5]</code>, but it doesn't.  But
+  <code>z[0]</code> and <code>z[1]</code> point to the same object.
+</p>
+<p>
+  I also don't think that mutability is important here. (It influences
+  what operations can be performed, but not the identity of objects).
+</p>
+<pre>
+>>> a = mult2((1,2,3))
+>>> a
+[(1, 2, 3, 1, 2, 3), (1, 2, 3, 1, 2, 3)]
+>>> a[0] is a[1]
+True
+</pre>
+<p>
+  If anyone has a better explanation, please do share.
+</p>
