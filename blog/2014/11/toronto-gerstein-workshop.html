@@ -22,7 +22,7 @@ with about half of those having some Python; maybe half of the total
 had some familiarity with the command line.
 Almost none had experience with version control or SQL. 
 The instructors were P. Barmby, G. Wilson, and T. Guignard, helpers were
-S. Rahmani, L. Johnston, D. Neilsen, T. Wright, and X. Fei.
+S. Rahmani, L. Johnston, D. Nielsen, T. Wright, and F. Xu.
 Our host was Erica Lenton.
 </p>
 
@@ -47,7 +47,11 @@ Another issue with the room was that the desks were fairly close together: for
 cases where a learner would have been best-served by working with a helper rather
 than following the lesson, it wasn't really practical for them to move elsewhere,
 and conversations with the helper couldn't be kept quiet enough to not disturb
-others.
+others. WiFi was OK but not great, moreso on the first day. D. Nielsen
+noted that ''it appears some learners didn't feel comfortable putting
+up a "help" sticky note. Helpers need to
+scan the classroom and look at learner screens to spot those who may be struggling.''
+
 </p>
 
 <a href="http://swcarpentry.github.io/2014-10-30-utoronto/lessons/">The
@@ -71,7 +75,9 @@ real estate was so small that the questions were unreadable!
 At the morning break, we put a tar file containing the "Nelle" file/directory structure
 and a PDF file with the multiple-choice questions on Dropbox, and links to these
 in the Etherpad. Learners were able to grab these and found them helpful in following along
-for the remainder of the bash session. Feedback from the morning session
+for the remainder of the bash session.
+There was a slight hiccup here where the Dropbox file took a while to sync, so not everyone had access to the tar file right away.
+Feedback from the morning session
 included the request to have these files available earlier, and to have an outline
 of topics available before the session started, plus requests to go slower!
 </p>
@@ -85,6 +91,11 @@ working on their Macs, for which the most obvious (but not-so-practical) fix is 
 download Xcode and recompile <a
 href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-October/002315.html">here</a>
 is a link to the e-mail list thread on this topic.
+Helpers noticed that a few learners were playing with the GitHub GUI, which confused them a bit and caused some
+issues when someone was trying to create a pull request.
+Maybe mentioning the existence of the GUI but suggesting that learners
+not use it while learning the command-line tool would be a good thing
+to do in future. Several of us liked Greg's drawing of how pull requests work. Do we have an image of that online?
 <i>Greg:</i> ANYTHING TO ADD HERE?
 </p>
 
@@ -92,9 +103,16 @@ is a link to the e-mail list thread on this topic.
 The second morning's Python session could have gone more smoothly. I used the
 IPython console in Spyder, rather than the IPython notebook for this, in part because
 I thought that the notebook would result in me moving too quickly and in part
-because I've been having problems with notebooks scrolling very slowly on my machine.
-I suggested to students that they should clone the workshop repo in order to
-get the CSV and other files we'd be working with, and so that they could follow along
+because I've been having problems with notebooks scrolling very slowly
+on my machine.
+Learners in the back still had trouble reading the text (can't zoom in much because we would lose the view of the whole page that way).
+At the break F. Xu suggested we might try screen sharing services like
+join.me, but in addition to the WiFi bandwidth Greg had other
+concerns, so we didn't do this.
+
+
+I suggested to students that they should clone the workshop repo in
+order to get the CSV and other files we'd be working with, and so that they could follow along
 in the notebooks; or they could also just download specific files from
 the repo (which, of course, you can't do directly from the GitHub
 website; we could have done it with <a href="http://rawgit.com">rawgit.com</a> if I had thought of that!).
@@ -103,16 +121,33 @@ been better to put a handful of files in a separate repository or elsewhere,
 so that everyone could follow along. We did end up copying one small program directly
 to the etherpad so learners could play with it and modify it, but this is obviously
 not an ideal solution.
+[<i>F. Xu</i>:  Did we have a checklist for Python learners? I don't remember if we
+did, but it could have helped avoiding this issue.
+Just an idea: can we use the end of the Git lesson from the previous day to copy the material for
+Python or anything else for the second day? That way they get to practice and avoid delays.]
 </p>
 
 <p> Because getting going in the morning consumed 
-quite a bit of time, the actual lesson started late and felt quite rushed. 
-Again, I think it would have been beneficial for learners to spend more time working
+quite a bit of time, the actual lesson started late and felt quite
+rushed. F. Xu notes that the Python lesson seems pretty linear, so
+when learners get lost first they have to spend time on catching up,
+or they get lost even more.
+He felt that frequent coding exercises like the Unix lecture weould
+have been helpful. Many people were also confused by the syntax, as we
+didn't deliberately explain it at the beginning; a syntax cheat sheet
+would have been helpful.
+I think it would have been beneficial for learners to spend more time working
 on their own -- especially given that we had quite a few helpers so
 they could have gotten one-to-one assistance.
 I covered numpy, functions, and loops before the morning break, with loops, conditionals,
 and command-line scripts afterward, then Xu Fei took over with defensive programming.
-<i>Xu</i>: YOUR THOUGHTS HERE.
+<i>Fei</i>: I spent less than 30 min on my part. I think the pace was
+okay, but I could have explained better if I had more experience with
+it. Partially
+because I wasn't familiar with the code examples given in the lessons
+(except the first one).
+I'd totally go through the lessons first by myself before teaching
+</p>
 
 <p>
 Learner feedback emphasized many of the same things as from the bash session: need
@@ -129,7 +164,7 @@ wrongfully surmised that JOIN ON was still different than JOIN WHERE - apparentl
 this session went well. Feedback from students and Tom indicated that the pace was about right. I was concerned that the
 challenges I had prepared were going to be too simplistic and slow down the process too much but it turned out OK I think. From
 the survey, it transpired that the vast majority of students had no experience with SQL, so a slow pace was what they needed.
-Helpers reported getting less requests for help during that session.</p>
+Helpers reported getting fewer requests for help during that session.</p>
 
 <p>
 I tried sticking to the lesson material as close as possible, knowing that I could not cover everything. I choose to focus on
@@ -151,6 +186,24 @@ identifying that they had downloaded the sample database in a different director
 Unfortunately, running sqlite3 survey.db if the survey.db file is not there does not return an error, it creates an empty database,
 which caused some confusion. In retrospect, Tom's approach of having the students download the sql file instead and then loading
 it in a new database is probably better.</p>
+
+<p>
+<i>Fei</i>:
+I think the students were well-prepared in terms of installation and
+downloading (thanks to the first page Thomas had prepared).
+Students were motivated throughout the session from what I remembered,
+and some were even excited to create their own database
+during the break! I think it was very well explained and the number of exercises were just right.
+I think many people wished to have the relational model diagram
+displayed somewhere so that they can constantly
+refer to it when querying. Personally I find it helpful to have it on
+a separate screen (or blackboard),
+or even saved as a file for them to download. Also, I am not sure why
+in the course example, the same
+field is named differently in different tables. I understand that in the real world data are messy, but for beginners, it adds an unnecessary cognitive load (maybe that's why they are asking for the diagram frequently). 
+For my own practice when creating databases, I keep the field name consistent across different tables. 
+</p>
+
 
 <p>
 Greg's live coding session?
