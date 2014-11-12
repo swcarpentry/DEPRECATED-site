@@ -95,7 +95,18 @@ Helpers noticed that a few learners were playing with the GitHub GUI, which conf
 issues when someone was trying to create a pull request.
 Maybe mentioning the existence of the GUI but suggesting that learners
 not use it while learning the command-line tool would be a good thing
-to do in future. Several of us liked Greg's drawing of how pull requests work. Do we have an image of that online?
+to do in future. Several of us liked Greg's drawing of how pull
+requests work. Do we have an image of that online?
+<i>Luke:</i>
+This is more of a thought then nothing else, but I wonder just how
+useful learning about GitHub and collaborating
+via GitHub is, especially considering how much time it takes. I know
+in my own experience and my own department,
+collaboration on projects doesn't happen too often as everyone's
+research is so diverse. Using Github as a
+backup is a good idea though. Has teaching branching ever been done
+before?
+That is something I see people within medical/health science use more often.
 <i>Greg:</i> ANYTHING TO ADD HERE?
 </p>
 
@@ -121,11 +132,21 @@ been better to put a handful of files in a separate repository or elsewhere,
 so that everyone could follow along. We did end up copying one small program directly
 to the etherpad so learners could play with it and modify it, but this is obviously
 not an ideal solution.
-[<i>F. Xu</i>:  Did we have a checklist for Python learners? I don't remember if we
+<p>
+<i>Fei:</i>:  Did we have a checklist for Python learners? I don't remember if we
 did, but it could have helped avoiding this issue.
 Just an idea: can we use the end of the Git lesson from the previous day to copy the material for
 Python or anything else for the second day? That way they get to practice and avoid delays.]
+<i>Luke:<i>As the Python lesson is one of the most useful for the
+participants to follow along I think pausing the
+lesson to go over the download process would have helped, as a helper
+I felt I was scrambling to reach everyone with problems at this
+point. With the git session we knew that some people were going to encounter problems.
+As a general solution I think we should take 10 minutes at the start of each session to ensure
+everyone is up and running. Perhaps a simple script could be written to ensure datafiles are available.
+if [ ! -f inflamation.csv ]; then wget http://files.software-carpentry.org/inflammation.zip; fi
 </p>
+
 
 <p> Because getting going in the morning consumed 
 quite a bit of time, the actual lesson started late and felt quite
@@ -202,7 +223,10 @@ or even saved as a file for them to download. Also, I am not sure why
 in the course example, the same
 field is named differently in different tables. I understand that in the real world data are messy, but for beginners, it adds an unnecessary cognitive load (maybe that's why they are asking for the diagram frequently). 
 For my own practice when creating databases, I keep the field name consistent across different tables. 
+<i>Luke:</i>
+The SQL lesson was very well recieved, the pacing seemed about right to me with plenty of challenge breaks. I think the progressive nature of the challenges is one think that makes this lesson well received. Unfortunately creating tables and modifying data was not covered. I know this is deliberately left until the end of the lesson but when time doesn't allow proper coverage I think it needs to be mentioned, even just mentioning "Other SQL commands exist to create tables and insert and delete data." would give participants who need this functionality somewhere to start.
 </p>
+
 
 
 <p>
@@ -210,5 +234,11 @@ Greg's live coding session?
 </p>
 
 <p>
-SUMMARY HERE
+<i>Pauline</i>: The big lesson I took from this (my first attempt at
+teaching bash and Python) is the need to be better-prepared on the
+learner side. Most of my prep time was focused on making sure *I*
+understood the content, pacing and structure, but if I had spent a few
+more minutes thinking about what the learners were going to do, I
+would have had files ready for them, saving everyone some
+frustration. Next time!
 </p>
