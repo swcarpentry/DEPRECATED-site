@@ -122,7 +122,38 @@ they had not encountered before but would find helpful.
 </p>
 
 <p>
-<i>Tom:</i> The second afternoon's SQL session [TBD].
+<i>Thomas:</i>The second afternoon's SQL session was my very first time teaching an entire session, and it felt great! 
+I was glad to have Tom Wright, who is a seasoned SQL teacher, in the room as a backup, to help students get along
+and to provide the all-too-needed visual confirmation that I wasn't saying too many wrong things (he did correct me when I
+wrongfully surmised that JOIN ON was still different than JOIN WHERE - apparently not anymore). Beginner's luck aside, I think
+this session went well. Feedback from students and Tom indicated that the pace was about right. I was concerned that the
+challenges I had prepared were going to be too simplistic and slow down the process too much but it turned out OK I think. From
+the survey, it transpired that the vast majority of students had no experience with SQL, so a slow pace was what they needed.
+Helpers reported getting less requests for help during that session.</p>
+
+<p>
+I tried sticking to the lesson material as close as possible, knowing that I could not cover everything. I choose to focus on
+SELECTing content and not CREATE table nor INSERT data, based on what I had seen in previous workshops. Maybe that was a mistake,
+especially since Greg did use table modification statements in his concluding live coding session, and it would have helped if
+I had at least mentioned that those statements exist, as Tom later suggested. I also left out SELECT DISTINCT because I had kept
+it as a topic to be addressed together with GROUP BY clauses, which I had meant to address only if there was enough time. Again,
+this was unfortunate because Greg did use those statements. For the last 40 minutes of the session, I asked the students if they 
+preferred hearing about more statements (in case I would have talked about GROUP BY clauses) or doing one more, Hallowe'en-themed
+challenge. By way of stickies, they chose the extra challenge (which was a rather half-baked attempt to bring zombies in the
+existing sample data; I don't think I was very convincing, but they seemed to enjoy the challenge nevertheless). Tom suggested I
+let the students work on the assignment during the last break. We then decided with Greg to shorten that last break a bit so that
+we could finish earlier - a good idea on a festive day like this.
+</p>
+
+<p>On the technical side, we had to my knowledge very few sqlite-related issues. Students had little trouble getting sqlite to run,
+a bit more downloading the sample database and correctly loading it in their instance of sqlite. Some students still had trouble
+identifying that they had downloaded the sample database in a different directory than the one they were running sqlite in.
+Unfortunately, running sqlite3 survey.db if the survey.db file is not there does not return an error, it creates an empty database,
+which caused some confusion. In retrospect, Tom's approach of having the students download the sql file instead and then loading
+it in a new database is probably better.</p>
+
+<p>
+Greg's live coding session?
 </p>
 
 <p>
