@@ -1,0 +1,126 @@
+---
+layout: blog
+root: ../../..
+author: Stephen Turner
+title: "Workshop at the University of Virginia"
+date: 2014-11-11
+time: "12:45:00"
+category: ["Workshops", "University of Virginia"]
+---
+<!-- start excerpt -->
+<p>
+  We pulled off our day-long data analysis bootcamp with hardly a
+  hiccup yesterday. The schedule looked something like this:
+</p>
+<table class="table table-striped">
+  <tr><td>AM pt 1:</td><td>intro to AWS &amp; intro to Unix Shell</td></tr>
+  <tr><td>AM pt 2:</td><td>data analysis in Unix: alignment, quantitation of RNA-seq data</td></tr>
+  <tr><td>PM pt 1:</td><td>intro to R</td></tr>
+  <tr><td>PM pt 2:</td><td>data analysis in R: QC, differential expression, etc.</td></tr>
+</table>
+<!-- end excerpt -->
+<p>
+  I got a grant from Amazon to give all the students in the class a
+  $100 voucher to use AWS. We only used about $1 during the
+  course. Luckily everyone registered and tested their AWS credentials
+  prior to class, and we had everyone successfully connected to their
+  own AWS instance using an image that I created specifically for this
+  course. I had nightmares that half the class would show up
+  unprepared and we'd lose everyone in the first half hour. This was a
+  huge relief that this worked so well.
+</p>
+<p>
+  AM part 1: Jessica did an excellent job with the intro to Unix shell
+  session. This used material that we adapted from some SWC and some
+  Data Carpentry material, but adapted to the data we were actually
+  using in AM part 2. Adapted material was attributed as appropriate.
+</p>
+<p>
+  AM part 2: this was a little bit rushed, but I know some things to
+  fix next time.
+</p>
+<p>
+  PM part 1: I used material I created before SWC started working on R
+  material. I've used this material in the past, and I think it works
+  reasonably well, at least judging from the feedback we've gotten
+  before. But personally I'm becoming less and less happy with it for
+  various reasons, and I may consider adapting some of the SWC or data
+  carpentry R material once these communities decide where they're
+  going with them.
+</p>
+<p>
+  PM part 2: this was also mostly material I had used in the past
+  which has worked well. I started this material about a year ago, and
+  during last spring's Mozilla sprint, Rob Beagrie worked with me to
+  whip some of this into shape for an SWC capstone project in
+  bioinformatics. (I think the PR is still outstanding.) I intend on
+  submitting a PR to data carpentry with this material, and perhaps
+  back to SWC once the repos are split and we start talking about
+  domain-specific capstone examples once more.
+</p>
+<p>
+  There was one particular part of this lesson which generated some
+  confusion: where the column header metadata from one dataset had to
+  match the row header metadata from another dataset, so that the data
+  and metadata could be linked into a single object. When I run this
+  lesson again I'd like to look at other ways of doing this kind of
+  analysis to avoid having to go into this. It's an important concept,
+  but I couldn't do it justice in the amount of time I had.
+</p>
+<p>
+  A few lessons learned/reinforced:
+</p>
+<ol>
+  <li>
+    We had a class of &gt;20 (also, a pretty good gender balance). It
+    would have been literally impossible to do this effectively
+    without two instructors. The pacing in the morning intro to UNIX
+    was as good as could be expected, but several folks would have
+    gotten left behind right from the beginning without someone
+    walking around helping folks individually. Likewise with the
+    afternoon - Jessica saved me a few times where someone would have
+    gotten completely lost from the beginning, yet I didn't have time
+    to help them out individually myself. In the future with a course
+    like this we really need two instructors <em>and</em> a TA that's
+    familiar with everything we're doing, to do this effectively.
+  </li>
+  <li>
+    Cough drops: I started helping people set up at 7:30am, and didn't
+    finish until 5:30pm. Again, Jessica saved the day with Ricola
+    lozenges at about 2pm.
+  </li>
+  <li>
+    I think things went well, but I might like to limit our scope for
+    something like this again. We had folks in the room who were
+    experts with R, others who were showing me things at the UNIX
+    shell that even I didn't know, and yet others who had never typed
+    anything into a terminal before. It's difficult to have this broad
+    of a distribution in the same classroom.
+  </li>
+  <li>
+    As much as I would have liked to have everyone set up software on
+    their own machine, this was impossible to do for AM part 2. We
+    needed to run software that only runs on Linux machines, and we
+    needed &gt;8GB RAM to do it. Most folks don't have this available
+    on their laptop. Thankfully we got AWS working for everyone, but
+    it took lots of e-mail reminders and careful handholding prior to
+    the course to make sure this worked successfully. I'm relatively
+    new to AWS myself, and would benefit from attending some kind of
+    AWS training, or even better, shadowing a more experienced
+    instructor who regularly uses AWS for things like this.
+  </li>
+</ol>
+<p>
+  Links to the compiled course materials are here, and sources
+  accessible on GitHub via the usual routine:
+</p>
+<ol>
+  <li><a href="http://bioconnector.github.io/workshops/lessons/rnaseq-1day/">http://bioconnector.github.io/workshops/lessons/rnaseq-1day/</a></li>
+  <li><a href="http://bioconnector.github.io/workshops/lessons/shell/01-intro-unix-shell/">http://bioconnector.github.io/workshops/lessons/shell/01-intro-unix-shell/</a></li>
+  <li><a href="http://bioconnector.github.io/workshops/lessons/rnaseq-1day/01-alignment-counting/">http://bioconnector.github.io/workshops/lessons/rnaseq-1day/01-alignment-counting/</a></li>
+  <li><a href="http://bioconnector.github.io/workshops/lessons/intro-r-lifesci/01-intro-r/">http://bioconnector.github.io/workshops/lessons/intro-r-lifesci/01-intro-r/</a></li>
+  <li><a href="http://bioconnector.github.io/workshops/lessons/rnaseq-1day/03-differential-expression/">http://bioconnector.github.io/workshops/lessons/rnaseq-1day/03-differential-expression/</a></li>
+</ol>
+<p>
+  <img src="./university-of-virginia.jpg" alt="Jessica Bonnie teaching at the University of Virginia" />
+</p>
