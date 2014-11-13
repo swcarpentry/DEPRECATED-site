@@ -110,6 +110,7 @@ That is something I see people within medical/health science use more often.
 <i>Greg:</i> ANYTHING TO ADD HERE?
 </p>
 
+<p>
 <i>Pauline:</i>
 The second morning's Python session could have gone more smoothly. I used the
 IPython console in Spyder, rather than the IPython notebook for this, in part because
@@ -120,8 +121,9 @@ Learners in the back still had trouble reading the text (can't zoom in much beca
 At the break F. Xu suggested we might try screen sharing services like
 join.me, but in addition to the WiFi bandwidth Greg had other
 concerns, so we didn't do this.
+</p>
 
-
+<p>
 I suggested to students that they should clone the workshop repo in
 order to get the CSV and other files we'd be working with, and so that they could follow along
 in the notebooks; or they could also just download specific files from
@@ -132,19 +134,22 @@ been better to put a handful of files in a separate repository or elsewhere,
 so that everyone could follow along. We did end up copying one small program directly
 to the etherpad so learners could play with it and modify it, but this is obviously
 not an ideal solution.
+</p>
+
 <p>
 <i>Fei:</i>:  Did we have a checklist for Python learners? I don't remember if we
 did, but it could have helped avoiding this issue.
 Just an idea: can we use the end of the Git lesson from the previous day to copy the material for
 Python or anything else for the second day? That way they get to practice and avoid delays.]
-<i>Luke:<i>As the Python lesson is one of the most useful for the
+<i>Luke:</i>As the Python lesson is one of the most useful for the
 participants to follow along I think pausing the
 lesson to go over the download process would have helped, as a helper
 I felt I was scrambling to reach everyone with problems at this
 point. With the git session we knew that some people were going to encounter problems.
 As a general solution I think we should take 10 minutes at the start of each session to ensure
 everyone is up and running. Perhaps a simple script could be written to ensure datafiles are available.
-if [ ! -f inflamation.csv ]; then wget http://files.software-carpentry.org/inflammation.zip; fi
+if [ ! -f inflamation.csv ]; then wget
+http://files.software-carpentry.org/inflammation.zip; fi
 </p>
 
 
