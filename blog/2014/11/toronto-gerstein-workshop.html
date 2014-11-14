@@ -3,249 +3,269 @@ layout: blog
 root: ../../..
 author: Pauline Barmby
 title: "Workshop Summary: Gerstein Science Information Centre, University of Toronto"
-date: 2014-11-08
+date: 2014-11-14
 time: "09:30:00"
 category: ["Workshops", "University of Toronto"]
 ---
 <!-- start excerpt -->
 <p>
   Last week we ran a Python-based SWC workshop at the University of
-  Toronto's <a href="http://gerstein.library.utoronto.ca/">Gerstein Science Information Centre</a>. The advertised audience
-was graduate students, post-docs and other researchers in science, engineering and medicine at the University of Toronto.
+  Toronto's <a href="http://gerstein.library.utoronto.ca/">Gerstein
+  Science Information Centre</a>.  The advertised audience was
+  graduate students, post-docs and other researchers in science,
+  engineering and medicine at the University of Toronto.
+</p>
+<p>
+  The workshop had about 20 learners. Most were grad students or
+  postdocs in life sciences. The pre-workshop assessment said that
+  about three-quarters of learners had some programming experience
+  with about half of those having some Python; maybe half of the total
+  had some familiarity with the command line.  Almost none had
+  experience with version control or SQL.  The instructors were
+  Pauline Barmby, Greg Wilson, and Thomas Guignard; helpers were Sahar
+  Rahmani, Luke Johnston, Daiva Nielsen, Tom Wright, and Fei Xu.  Our
+  host was Erica Lenton.
 </p>
 <!-- end excerpt -->
 <p>
-The workshop had about 20 learners. Most were grad students or postdocs
-in life sciences. The pre-workshop assessment
-said that about three-quarters of learners had some programming experience
-with about half of those having some Python; maybe half of the total
-had some familiarity with the command line.
-Almost none had experience with version control or SQL. 
-The instructors were P. Barmby, G. Wilson, and T. Guignard, helpers were
-S. Rahmani, L. Johnston, D. Nielsen, T. Wright, and F. Xu.
-Our host was Erica Lenton.
-</p>
-
-<p>
-Nearly everyone had done the software installation prior to the workshop (!),
-and not too many problems were reported.  The laptops in use
-were roughly 50% Mac, 40% Windows, 10% Linux.
-A handful of learners ran into the Mac Git problem, on which more below.
-</p>
-
-<p>
-The physical layout of the room was not quite ideal: the projector was pretty 
-close to the screen and so the projected area on the screen was quite small.
-This meant that we had to use quite large fonts so that people at the back of the
-room could see, and only a few lines at a time could be visible in a terminal window. 
-The screen was also not centred in the room, which meant
-that people in the front row sometimes couldn't see it around the instructor,
-and there was a pillar in the room which didn't help visibility either.
-The learners were pretty patient with this, but more than for most workshops
-they really needed to have material on their own machines to be able to follow along.
-Another issue with the room was that the desks were fairly close together: for
-cases where a learner would have been best-served by working with a helper rather
-than following the lesson, it wasn't really practical for them to move elsewhere,
-and conversations with the helper couldn't be kept quiet enough to not disturb
-others. WiFi was OK but not great, moreso on the first day. D. Nielsen
-noted that ''it appears some learners didn't feel comfortable putting
-up a "help" sticky note. Helpers need to
-scan the classroom and look at learner screens to spot those who may be struggling.''
-
-</p>
-
-<a href="http://swcarpentry.github.io/2014-10-30-utoronto/lessons/">The
-  material we covered</a> included: shell (P. Barmby), Git (G. Wilson), Python (P. Barmby and F. Xu), and SQL
-(T. Guignard).</p>
-<p>
-<i>Pauline:</i>Most of the material in the beginner shell lessons was covered the first morning.
-I found the pace a bit rushed and I would have liked more time for the students to 
-work on their own - I think the lessons contain too much material to really be covered
-in 3 hours. Topics I skipped over or felt I didn't explain very well
-included "spaces in filenames" and "redirecting input".
-I didn't feel that I made very good use of the sticky note
-system in the bash session, although I did try something else: I made the
-questions at the end of the lessons into multiple-choice questions where they weren't
-already, and asked the learners to vote on them with coloured cards (link).
-I think this would have been useful except that the available projection screen
-real estate was so small that the questions were unreadable!
-</p>
-
-<p>
-At the morning break, we put a tar file containing the "Nelle" file/directory structure
-and a PDF file with the multiple-choice questions on Dropbox, and links to these
-in the Etherpad. Learners were able to grab these and found them helpful in following along
-for the remainder of the bash session.
-There was a slight hiccup here where the Dropbox file took a while to sync, so not everyone had access to the tar file right away.
-Feedback from the morning session
-included the request to have these files available earlier, and to have an outline
-of topics available before the session started, plus requests to go slower!
-</p>
-
-<p>
-The afternoon Git session went very smoothly. Greg took the learners through making
-a repository and adding a remote on GitHub, the change/add/commit/push cycle, forking an existing 
-repository and adding the upstream remote, submitting pull requests, and 
-managing conflicts. As mentioned above, a few students ran into the problem with Git not 
-working on their Macs, for which the most obvious (but not-so-practical) fix is to 
-download Xcode and recompile <a
-href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-October/002315.html">here</a>
-is a link to the e-mail list thread on this topic.
-Helpers noticed that a few learners were playing with the GitHub GUI, which confused them a bit and caused some
-issues when someone was trying to create a pull request.
-Maybe mentioning the existence of the GUI but suggesting that learners
-not use it while learning the command-line tool would be a good thing
-to do in future. Several of us liked Greg's drawing of how pull
-requests work. Do we have an image of that online?
-<i>Luke:</i>
-This is more of a thought then nothing else, but I wonder just how
-useful learning about GitHub and collaborating
-via GitHub is, especially considering how much time it takes. I know
-in my own experience and my own department,
-collaboration on projects doesn't happen too often as everyone's
-research is so diverse. Using Github as a
-backup is a good idea though. Has teaching branching ever been done
-before?
-That is something I see people within medical/health science use more often.
-<i>Greg:</i> ANYTHING TO ADD HERE?
-</p>
-
-<p>
-<i>Pauline:</i>
-The second morning's Python session could have gone more smoothly. I used the
-IPython console in Spyder, rather than the IPython notebook for this, in part because
-I thought that the notebook would result in me moving too quickly and in part
-because I've been having problems with notebooks scrolling very slowly
-on my machine.
-Learners in the back still had trouble reading the text (can't zoom in much because we would lose the view of the whole page that way).
-At the break F. Xu suggested we might try screen sharing services like
-join.me, but in addition to the WiFi bandwidth Greg had other
-concerns, so we didn't do this.
-</p>
-
-<p>
-I suggested to students that they should clone the workshop repo in
-order to get the CSV and other files we'd be working with, and so that they could follow along
-in the notebooks; or they could also just download specific files from
-the repo (which, of course, you can't do directly from the GitHub
-website; we could have done it with <a href="http://rawgit.com">rawgit.com</a> if I had thought of that!).
-Not everyone was able to clone the repo (bandwidth), and in retrospect it would have
-been better to put a handful of files in a separate repository or elsewhere,
-so that everyone could follow along. We did end up copying one small program directly
-to the etherpad so learners could play with it and modify it, but this is obviously
-not an ideal solution.
-</p>
-
-<p>
-<i>Fei:</i>:  Did we have a checklist for Python learners? I don't remember if we
-did, but it could have helped avoiding this issue.
-Just an idea: can we use the end of the Git lesson from the previous day to copy the material for
-Python or anything else for the second day? That way they get to practice and avoid delays.
+  Nearly everyone had done the software installation prior to the
+  workshop (!), and not too many problems were reported.  The laptops
+  in use were roughly 50% Mac, 40% Windows, 10% Linux.  A handful of
+  learners ran into the Mac Git problem, on which more below.
 </p>
 <p>
-<i>Luke:</i>As the Python lesson is one of the most useful for the
-participants to follow along I think pausing the
-lesson to go over the download process would have helped, as a helper
-I felt I was scrambling to reach everyone with problems at this
-point. With the git session we knew that some people were going to encounter problems.
-As a general solution I think we should take 10 minutes at the start of each session to ensure
-everyone is up and running. Perhaps a simple script could be written to ensure datafiles are available.
-if [ ! -f inflamation.csv ]; then wget
-http://files.software-carpentry.org/inflammation.zip; fi
+  The physical layout of the room was not quite ideal: the projector
+  was pretty close to the screen and so the projected area on the
+  screen was quite small.  This meant that we had to use quite large
+  fonts so that people at the back of the room could see, and only a
+  few lines at a time could be visible in a terminal window.  The
+  screen was also not centred in the room, which meant that people in
+  the front row sometimes couldn't see it around the instructor, and
+  there was a pillar in the room which didn't help visibility either.
+  The learners were pretty patient with this, but more than for most
+  workshops they really needed to have material on their own machines
+  to be able to follow along.  Another issue with the room was that
+  the desks were fairly close together: for cases where a learner
+  would have been best-served by working with a helper rather than
+  following the lesson, it wasn't really practical for them to move
+  elsewhere, and conversations with the helper couldn't be kept quiet
+  enough to not disturb others. WiFi was OK but not great, moreso on
+  the first day. D. Nielsen noted that, "it appears some learners
+  didn't feel comfortable putting up a 'help' sticky note. Helpers
+  need to scan the classroom and look at learner screens to spot those
+  who may be struggling."
 </p>
-
-
-<p> Because getting going in the morning consumed 
-quite a bit of time, the actual lesson started late and felt quite
-rushed. F. Xu notes that the Python lesson seems pretty linear, so
-when learners get lost first they have to spend time on catching up,
-or they get lost even more.
-He felt that frequent coding exercises like the Unix lecture weould
-have been helpful. Many people were also confused by the syntax, as we
-didn't deliberately explain it at the beginning; a syntax cheat sheet
-would have been helpful.
-I think it would have been beneficial for learners to spend more time working
-on their own -- especially given that we had quite a few helpers so
-they could have gotten one-to-one assistance.
-I covered numpy, functions, and loops before the morning break, with loops, conditionals,
-and command-line scripts afterward, then Xu Fei took over with defensive programming.
-<i>Fei</i>: I spent less than 30 min on my part. I think the pace was
-okay, but I could have explained better if I had more experience with
-it. Partially
-because I wasn't familiar with the code examples given in the lessons
-(except the first one).
-I'd totally go through the lessons first by myself before teaching.
+  <a href="http://swcarpentry.github.io/2014-10-30-utoronto/lessons/">The
+  material we covered</a> included: shell (Barmby), Git (Wilson),
+  Python (Barmby and Xu), and SQL (Guignard).</p>
+<p>
+  <em>Pauline:</em>Most of the material in the beginner shell lessons
+  was covered the first morning.  I found the pace a bit rushed and I
+  would have liked more time for the students to work on their own - I
+  think the lessons contain too much material to really be covered in
+  3 hours. Topics I skipped over or felt I didn't explain very well
+  included "spaces in filenames" and "redirecting input".  I didn't
+  feel that I made very good use of the sticky note system in the bash
+  session, although I did try something else: I made the questions at
+  the end of the lessons into multiple-choice questions where they
+  weren't already, and asked the learners to vote on them with
+  coloured cards (link).  I think this would have been useful except
+  that the available projection screen real estate was so small that
+  the questions were unreadable!
 </p>
-
 <p>
-Learner feedback emphasized many of the same things as from the bash session: need
-to have files in advance, wanted more time to practice, lesson was too
-fast. Many learners recognized defensive programming as a concept that
-they had not encountered before but would find helpful.
+  At the morning break, we put a tar file containing the "Nelle"
+  file/directory structure and a PDF file with the multiple-choice
+  questions on Dropbox, and links to these in the Etherpad. Learners
+  were able to grab these and found them helpful in following along
+  for the remainder of the bash session.  There was a slight hiccup
+  here where the Dropbox file took a while to sync, so not everyone
+  had access to the tar file right away.  Feedback from the morning
+  session included the request to have these files available earlier,
+  and to have an outline of topics available before the session
+  started, plus requests to go slower!
 </p>
-
 <p>
-<i>Thomas:</i>The second afternoon's SQL session was my very first time teaching an entire session, and it felt great! 
-I was glad to have Tom Wright, who is a seasoned SQL teacher, in the room as a backup, to help students get along
-and to provide the all-too-needed visual confirmation that I wasn't saying too many wrong things (he did correct me when I
-wrongfully surmised that JOIN ON was still different than JOIN WHERE - apparently not anymore). Beginner's luck aside, I think
-this session went well. Feedback from students and Tom indicated that the pace was about right. I was concerned that the
-challenges I had prepared were going to be too simplistic and slow down the process too much but it turned out OK I think. From
-the survey, it transpired that the vast majority of students had no experience with SQL, so a slow pace was what they needed.
-Helpers reported getting fewer requests for help during that session.</p>
-
-<p>
-I tried sticking to the lesson material as close as possible, knowing that I could not cover everything. I choose to focus on
-SELECTing content and not CREATE table nor INSERT data, based on what I had seen in previous workshops. Maybe that was a mistake,
-especially since Greg did use table modification statements in his concluding live coding session, and it would have helped if
-I had at least mentioned that those statements exist, as Tom later suggested. I also left out SELECT DISTINCT because I had kept
-it as a topic to be addressed together with GROUP BY clauses, which I had meant to address only if there was enough time. Again,
-this was unfortunate because Greg did use those statements. For the last 40 minutes of the session, I asked the students if they 
-preferred hearing about more statements (in case I would have talked about GROUP BY clauses) or doing one more, Hallowe'en-themed
-challenge. By way of stickies, they chose the extra challenge (which was a rather half-baked attempt to bring zombies in the
-existing sample data; I don't think I was very convincing, but they seemed to enjoy the challenge nevertheless). Tom suggested I
-let the students work on the assignment during the last break. We then decided with Greg to shorten that last break a bit so that
-we could finish earlier - a good idea on a festive day like this.
+  The afternoon Git session went very smoothly. Greg took the learners through making
+  a repository and adding a remote on GitHub, the change/add/commit/push cycle, forking an existing 
+  repository and adding the upstream remote, submitting pull requests, and 
+  managing conflicts. As mentioned above, a few students ran into the problem with Git not 
+  working on their Macs, for which the most obvious (but not-so-practical) fix is to 
+  download Xcode and recompile
+  <a href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-October/002315.html">here</a>
+  is a link to the e-mail list thread on this topic.  Helpers noticed
+  that a few learners were playing with the GitHub GUI, which confused
+  them a bit and caused some issues when someone was trying to create
+  a pull request.  Maybe mentioning the existence of the GUI but
+  suggesting that learners not use it while learning the command-line
+  tool would be a good thing to do in future. Several of us liked
+  Greg's drawing of how pull requests work. Do we have an image of
+  that online?
 </p>
-
-<p>On the technical side, we had to my knowledge very few sqlite-related issues. Students had little trouble getting sqlite to run,
-a bit more downloading the sample database and correctly loading it in their instance of sqlite. Some students still had trouble
-identifying that they had downloaded the sample database in a different directory than the one they were running sqlite in.
-Unfortunately, running sqlite3 survey.db if the survey.db file is not there does not return an error, it creates an empty database,
-which caused some confusion. In retrospect, Tom's approach of having the students download the sql file instead and then loading
-it in a new database is probably better.</p>
-
 <p>
-<i>Fei</i>:
-I think the students were well-prepared in terms of installation and
-downloading (thanks to the first page Thomas had prepared).
-Students were motivated throughout the session from what I remembered,
-and some were even excited to create their own database
-during the break! I think it was very well explained and the number of exercises were just right.
-I think many people wished to have the relational model diagram
-displayed somewhere so that they can constantly
-refer to it when querying. Personally I find it helpful to have it on
-a separate screen (or blackboard),
-or even saved as a file for them to download. Also, I am not sure why
-in the course example, the same
-field is named differently in different tables. I understand that in the real world data are messy, but for beginners, it adds an unnecessary cognitive load (maybe that's why they are asking for the diagram frequently). 
-For my own practice when creating databases, I keep the field name consistent across different tables. 
-<i>Luke:</i>
-The SQL lesson was very well recieved, the pacing seemed about right to me with plenty of challenge breaks. I think the progressive nature of the challenges is one think that makes this lesson well received. Unfortunately creating tables and modifying data was not covered. I know this is deliberately left until the end of the lesson but when time doesn't allow proper coverage I think it needs to be mentioned, even just mentioning "Other SQL commands exist to create tables and insert and delete data." would give participants who need this functionality somewhere to start.
+  <em>Luke:</em> I wonder just how useful learning about GitHub and
+  collaborating via GitHub is, especially considering how much time it
+  takes. I know in my own experience and my own department,
+  collaboration on projects doesn't happen too often as everyone's
+  research is so diverse. Using Github as a backup is a good idea
+  though. Has teaching branching ever been done before?  That is
+  something I see people within medical/health science use more often.
 </p>
-
-
-
 <p>
-Greg's live coding session?
+  <em>Pauline:</em> The second morning's Python session could have gone
+  more smoothly. I used the IPython console in Spyder, rather than the
+  IPython notebook for this, in part because I thought that the
+  notebook would result in me moving too quickly and in part because
+  I've been having problems with notebooks scrolling very slowly on my
+  machine.  Learners in the back still had trouble reading the text
+  (can't zoom in much because we would lose the view of the whole page
+  that way).  At the break F. Xu suggested we might try screen sharing
+  services like join.me, but in addition to the WiFi bandwidth Greg
+  had other concerns, so we didn't do this.
 </p>
-
 <p>
-<i>Pauline</i>: The big lesson I took from this (my first attempt at
-teaching bash and Python) is the need to be better-prepared on the
-learner side. Most of my prep time was focused on making sure *I*
-understood the content, pacing and structure, but if I had spent a few
-more minutes thinking about what the learners were going to do, I
-would have had files ready for them, saving everyone some
-frustration. Next time!
+  I suggested to students that they should clone the workshop repo in
+  order to get the CSV and other files we'd be working with, and so
+  that they could follow along in the notebooks; or they could also
+  just download specific files from the repo (which, of course, you
+  can't do directly from the GitHub website; we could have done it
+  with <a href="http://rawgit.com">rawgit.com</a> if I had thought of
+  that!).  Not everyone was able to clone the repo (bandwidth), and in
+  retrospect it would have been better to put a handful of files in a
+  separate repository or elsewhere, so that everyone could follow
+  along. We did end up copying one small program directly to the
+  etherpad so learners could play with it and modify it, but this is
+  obviously not an ideal solution.
+</p>
+<p>
+  <em>Luke:</em>As the Python lesson is one of the most useful for the
+  participants to follow along I think pausing the lesson to go over
+  the download process would have helped, as a helper I felt I was
+  scrambling to reach everyone with problems at this point. With the
+  git session we knew that some people were going to encounter
+  problems.  As a general solution I think we should take 10 minutes
+  at the start of each session to ensure everyone is up and
+  running. Perhaps a simple script could be written to ensure
+  datafiles are available.
+</p>
+<p>
+  Because getting going in the morning consumed quite a bit of time,
+  the actual lesson started late and felt quite rushed. F. Xu notes
+  that the Python lesson seems pretty linear, so when learners get
+  lost first they have to spend time on catching up, or they get lost
+  even more.  He felt that frequent coding exercises like the Unix
+  lecture weould have been helpful. Many people were also confused by
+  the syntax, as we didn't deliberately explain it at the beginning; a
+  syntax cheat sheet would have been helpful.  I think it would have
+  been beneficial for learners to spend more time working on their
+  own&mdash;especially given that we had quite a few helpers so they
+  could have gotten one-to-one assistance.  I covered numpy,
+  functions, and loops before the morning break, with loops,
+  conditionals, and command-line scripts afterward, then Xu Fei took
+  over with defensive programming.
+</p>
+<p>
+  <em>Fei</em>: I spent less than 30 min on my part. I think the pace
+  was okay, but I could have explained better if I had more experience
+  with it. Partially because I wasn't familiar with the code examples
+  given in the lessons (except the first one).  I'd totally go through
+  the lessons first by myself before teaching.
+</p>
+<p>
+  Learner feedback emphasized many of the same things as from the bash
+  session: need to have files in advance, wanted more time to
+  practice, lesson was too fast. Many learners recognized defensive
+  programming as a concept that they had not encountered before but
+  would find helpful.
+</p>
+<p>
+  <em>Thomas:</em>The second afternoon's SQL session was my very first
+  time teaching an entire session, and it felt great!  I was glad to
+  have Tom Wright, who is a seasoned SQL teacher, in the room as a
+  backup, to help students get along and to provide the all-too-needed
+  visual confirmation that I wasn't saying too many wrong things (he
+  did correct me when I wrongfully surmised that JOIN ON was still
+  different than JOIN WHERE - apparently not anymore). Beginner's luck
+  aside, I think this session went well. Feedback from students and
+  Tom indicated that the pace was about right. I was concerned that
+  the challenges I had prepared were going to be too simplistic and
+  slow down the process too much but it turned out OK I think. From
+  the survey, it transpired that the vast majority of students had no
+  experience with SQL, so a slow pace was what they needed.  Helpers
+  reported getting fewer requests for help during that session.
+</p>
+<p>
+  I tried sticking to the lesson material as close as possible,
+  knowing that I could not cover everything. I choose to focus on
+  SELECTing content and not CREATE table nor INSERT data, based on
+  what I had seen in previous workshops. Maybe that was a mistake,
+  especially since Greg did use table modification statements in his
+  concluding live coding session, and it would have helped if I had at
+  least mentioned that those statements exist, as Tom later
+  suggested. I also left out SELECT DISTINCT because I had kept it as
+  a topic to be addressed together with GROUP BY clauses, which I had
+  meant to address only if there was enough time. Again, this was
+  unfortunate because Greg did use those statements. For the last 40
+  minutes of the session, I asked the students if they preferred
+  hearing about more statements (in case I would have talked about
+  GROUP BY clauses) or doing one more, Hallowe'en-themed challenge. By
+  way of stickies, they chose the extra challenge (which was a rather
+  half-baked attempt to bring zombies in the existing sample data; I
+  don't think I was very convincing, but they seemed to enjoy the
+  challenge nevertheless). Tom suggested I let the students work on
+  the assignment during the last break. We then decided with Greg to
+  shorten that last break a bit so that we could finish earlier - a
+  good idea on a festive day like this.
+</p>
+<p>
+  On the technical side, we had to my knowledge very few
+  SQLite-related issues. Students had little trouble getting SQLite to
+  run, a bit more downloading the sample database and correctly
+  loading it in their instance of SQLite. Some students still had
+  trouble identifying that they had downloaded the sample database in
+  a different directory than the one they were running SQLite in.
+  Unfortunately, running sqlite3 survey.db if the survey.db file is
+  not there does not return an error, it creates an empty database,
+  which caused some confusion. In retrospect, Tom's approach of having
+  the students download the sql file instead and then loading it in a
+  new database is probably better.
+</p>
+<p>
+  <em>Fei</em>: I think the students were well-prepared in terms of
+  installation and downloading (thanks to the first page Thomas had
+  prepared).  Students were motivated throughout the session from what
+  I remembered, and some were even excited to create their own
+  database during the break! I think it was very well explained and
+  the number of exercises were just right.  I think many people wished
+  to have the relational model diagram displayed somewhere so that
+  they can constantly refer to it when querying. Personally I find it
+  helpful to have it on a separate screen (or blackboard), or even
+  saved as a file for them to download. Also, I am not sure why in the
+  course example, the same field is named differently in different
+  tables. I understand that in the real world data are messy, but for
+  beginners, it adds an unnecessary cognitive load (maybe that's why
+  they are asking for the diagram frequently).  For my own practice
+  when creating databases, I keep the field name consistent across
+  different tables.
+</p>
+<p>
+  <em>Luke:</em> The SQL lesson was very well recieved, the pacing
+  seemed about right to me with plenty of challenge breaks. I think
+  the progressive nature of the challenges is one think that makes
+  this lesson well received. Unfortunately creating tables and
+  modifying data was not covered. I know this is deliberately left
+  until the end of the lesson but when time doesn't allow proper
+  coverage I think it needs to be mentioned, even just mentioning
+  "Other SQL commands exist to create tables and insert and delete
+  data." would give participants who need this functionality somewhere
+  to start.
+</p>
+<p>
+  <em>Pauline</em>: The big lesson I took from this (my first attempt at
+  teaching bash and Python) is the need to be better-prepared on the
+  learner side. Most of my prep time was focused on making sure I
+  understood the content, pacing and structure, but if I had spent a
+  few more minutes thinking about what the learners were going to do,
+  I would have had files ready for them, saving everyone some
+  frustration. Next time!
 </p>
