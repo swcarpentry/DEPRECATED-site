@@ -44,3 +44,8 @@ If such translation efforts are wildly successful, this method would result in a
 ## How official is a translation?
 
 Integrating the translations into the lesson repository, either as Option 1 or Option 2, lends a certain endorsement of the quality and completeness of the translation. This may impose a burden on the lesson maintainers to either translate themselves (in the case where they have the ability) or attempt to seek out translators to maintain existing material. Barring that, they will have to decide when the core lesson has diverged too much from a translation, and "depreciate" the material.
+
+## Handing translations on the site
+Beyond storing translated lessons and keeping them in sync, we may want to render the lessons on the main Software Carpentry lite. The existing lessons are rendered on the site under the path ``v5/novice/lesson``. The existing pathing can be slightly modified to add the ISOCODE for the translation as ``v6/ISOCODE/novice/lesson``. The lesson titles and descriptions will also need a custom page generated in the native language at ``v6/ISOCODE/`` so that they're appropriately indexed by Google.
+
+One last thing to consider is the detection of ``Accept-Language`` header sent by user's browser, and perhaps using that to reocmmend translated lessons if they navigate to the core lessons, this could bring larger awareness and usage to the translations, which is key to attracting more multi-lingual contributors.
