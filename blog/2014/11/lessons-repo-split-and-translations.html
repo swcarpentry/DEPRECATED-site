@@ -2,50 +2,115 @@
 layout: blog
 root: ../../..
 author: Gabriel A. Devenyi
-title: "Lessons, the repository split, and translations"
+title: "Lessons, the Repository Split, and Translations"
 date: 2014-11-15
 time: "13:00:00"
-category: ["Tooling"]
+category: ["Tooling", "Translations"]
 ---
-Keeping on the roll of the posts about the [repo split]({{page.root}}/blog/2014/09/splitting-the-repo.html), [templates]({{page.root}}/blog/2014/10/new-lesson-template-v2.html), and [metadata]({{page.root}}/blog/2014/10/of-templates-and-metadata.html), Software Carpentry now needs to consider how to handle translated lessons.
-The core Software Carpentry lessons have be translated by bilingual instructors into [Korean](https://github.com/statkclee/xwmooc-sc/tree/gh-pages) produced by Victor KC Lee (and friends) and [Spanish](https://github.com/franktoffel/swcarpentry-es/tree/master/translations/es) by Francisco Navarro (and friends).
-With the upcoming repo split, I think its a good time to examine the various options of how we might handle translations generally.
-
-## Option 1: Translations live within the lesson repo
-
-The first method of handling translations is to introduce a ``translations`` directory to the existing lesson templates.
-Under this directory would live translations other than original lesson using the ISO two-letter language code.
-The contents of these directories would be otherwise identical to those of the host lesson.
-This is how the Francisco has implemented his translation, on a fork of the bc repo.
-The [ProGit Book](https://progit.org/translations) initially started out with this implementation, later moving to Option 3.
-
-One possible drawback to this implementation is that original and translated lessons can drift apart with no indication of where the changes happened.
-Since most instructors will be monolingual, they cannot ``diff`` the content. Since this lesson would live inside the official Software Carpentry structure, it would have a certain endorsement associated with it.
-
-## Option 2: Translations live within a separate branch
-
-Branches could be created of the form ``trans-ISOCODE`` or similar naming from the existing lessons.
-This would improve the ability to track the master language of the lesson and rebase changes (which would then need to be translated) as the lesson is updated.
-
-This implementation would resolve the ``diff`` issue in Option 1, allowing comparison of line-by-line changes, even if the content isn't understood.
-These translations, again living within an official repo, would have certain endorsement.
-
-## Option 3: Translations live within a forked repo
-
-Repositories containing translations could be forked from the main lesson and be maintained separately from the original.
-Changes would have to be merged from upstream and then translated.
-
-There are some examples of this implementation being successfully used, most notably the [ProGit book](https://progit.org/translations) (HT W. Trevor King).
-The forked repos are kept in sync with the upstream master book, and then translation commits are layered on top, for a sense of what that looks like, see [progit-fr](https://github.com/progit/progit2-fr).
-
-Forked repos could exist inside or outside the Software Carpentry organization, allowing for both officially endorsed and unofficial translations of lessons.
-If such translation efforts are wildly successful, this method would result in a massive proliferation of repositories, multiplying the increase due to the repo split.
-
-## How official is a translation?
-
-Integrating the translations into the lesson repository, either as Option 1 or Option 2, lends a certain endorsement of the quality and completeness of the translation. This may impose a burden on the lesson maintainers to either translate themselves (in the case where they have the ability) or attempt to seek out translators to maintain existing material. Barring that, they will have to decide when the core lesson has diverged too much from a translation, and "depreciate" the material.
-
-## Handing translations on the site
-Beyond storing translated lessons and keeping them in sync, we may want to render the lessons on the main Software Carpentry lite. The existing lessons are rendered on the site under the path ``v5/novice/lesson``. The existing pathing can be slightly modified to add the ISOCODE for the translation as ``v6/ISOCODE/novice/lesson``. The lesson titles and descriptions will also need a custom page generated in the native language at ``v6/ISOCODE/`` so that they're appropriately indexed by Google.
-
-One last thing to consider is the detection of ``Accept-Language`` header sent by user's browser, and perhaps using that to reocmmend translated lessons if they navigate to the core lessons, this could bring larger awareness and usage to the translations, which is key to attracting more multi-lingual contributors.
+<!-- start excerpt -->
+<p>
+  Keeping on the roll of the posts about the
+  <a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">repo
+  split</a>,
+  <a href="{{page.root}}/blog/2014/10/new-lesson-template-v2.html">templates</a>,
+  and <a href="{{page.root}}/blog/2014/10/of-templates-and-metadata.html">metadata</a>,
+  Software Carpentry now needs to consider how to handle translated
+  lessons. The core Software Carpentry lessons have be translated by
+  bilingual instructors into
+  <a href="https://github.com/statkclee/xwmooc-sc/tree/gh-pages">Korean</a>
+  produced by Victor KC Lee (and friends)
+  and <a href="https://github.com/franktoffel/swcarpentry-es/tree/master/translations/es">Spanish</a>
+  by Francisco Navarro (and friends).
+  With the upcoming repo split, I
+  think its a good time to examine the various options of how we might
+  handle translations generally.
+</p>
+<!-- end excerpt -->
+<h2>Option 1: Translations Live Within the Lesson Repo</h2>
+<p>
+  The first method of handling translations is to introduce
+  a <code>translations</code> directory to the existing lesson
+  templates. Under this directory would live translations other than
+  original lesson using the ISO two-letter language code. The contents
+  of these directories would be otherwise identical to those of the
+  host lesson. This is how the Francisco has implemented his
+  translation, on a fork of the <code>bc</code>
+  repo. The <a href="https://progit.org/translations">ProGit Book</a>
+  initially started out with this implementation, later moving to
+  Option 3.
+</p>
+<p>
+  One possible drawback to this implementation is that original and
+  translated lessons can drift apart with no indication of where the
+  changes happened. Since most instructors will be monolingual, they
+  cannot <code>diff</code> the content. Since this lesson would live
+  inside the official Software Carpentry structure, it would have a
+  certain endorsement associated with it.
+</p>
+<h2>Option 2: Translations Live Within a Separate Branch</h2>
+<p>
+  Branches could be created of the form <code>trans-ISOCODE</code> or
+  similar naming from the existing lessons. This would improve the
+  ability to track the master language of the lesson and rebase
+  changes (which would then need to be translated) as the lesson is
+  updated.
+</p>
+<p>
+  This implementation would resolve the <code>diff</code> issue in
+  Option 1, allowing comparison of line-by-line changes, even if the
+  content isn't understood. These translations, again living within an
+  official repo, would have certain endorsement.
+</p>
+<h2>Option 3: Translations Live Within a Forked Repo</h2>
+<p>
+  Repositories containing translations could be forked from the main
+  lesson and be maintained separately from the original. Changes would
+  have to be merged from upstream and then translated.
+</p>
+<p>
+  There are some examples of this implementation being successfully
+  used, most notably
+  the <a href="https://progit.org/translations">ProGit book</a>
+  (thanks to W. Trevor King for the pointer). The forked repos are
+  kept in sync with the upstream master book, and then translation
+  commits are layered on top, for a sense of what that looks like,
+  see <a href="https://github.com/progit/progit2-fr">progit-fr</a>.
+</p>
+<p>
+  Forked repos could exist inside or outside the Software Carpentry
+  organization, allowing for both officially endorsed and unofficial
+  translations of lessons. If such translation efforts are wildly
+  successful, this method would result in a massive proliferation of
+  repositories, multiplying the increase due to the repo split.
+</p>
+<h2>How Official is a Translation?</h2>
+<p>
+  Integrating the translations into the lesson repository, either as
+  Option 1 or Option 2, lends a certain endorsement of the quality and
+  completeness of the translation. This may impose a burden on the
+  lesson maintainers to either translate themselves (in the case where
+  they have the ability) or attempt to seek out translators to
+  maintain existing material. Barring that, they will have to decide
+  when the core lesson has diverged too much from a translation, and
+  "depreciate" the material.
+</p>
+<h2>Handing Translations on the Site</h2>
+<p>
+  Beyond storing translated lessons and keeping them in sync, we may
+  want to render the lessons on the main Software Carpentry lite. The
+  existing lessons are rendered on the site under the
+  path <code>v5/novice/lesson</code>. The existing pathing can be
+  slightly modified to add the ISOCODE for the translation
+  as <code>v6/ISOCODE/novice/lesson</code>. The lesson titles and
+  descriptions will also need a custom page generated in the native
+  language at <code>v6/ISOCODE/</code> so that they're appropriately
+  indexed by Google.
+</p>
+<p>
+  One last thing to consider is the detection
+  of <code>Accept-Language</code> header sent by user's browser, and
+  perhaps using that to reocmmend translated lessons if they navigate
+  to the core lessons, this could bring larger awareness and usage to
+  the translations, which is key to attracting more multi-lingual
+  contributors.
+</p>
