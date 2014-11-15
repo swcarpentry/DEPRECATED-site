@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
 Create workshop-feed.xml for RSS feed for Software Carpentry 
-boot camps.
+workshops.
 '''
 
 import datetime
@@ -19,13 +19,13 @@ from util import load_info
 #----------------------------------------
 
 def main():
-    '''Main driver for boot camp feed regeneration.'''
+    '''Main driver for workshop feed regeneration.'''
 
     options, args = parse_args()
     config = load_info(os.curdir)
     config['site'] = options.site
 
-    workshops = get_future_boot_camps(config['workshops'])
+    workshops = get_future_workshops(config['workshops'])
     build_workshop_rss(config,
                        os.path.join(options.output, 'workshop-feed.xml'),
                        workshops)
@@ -67,7 +67,7 @@ def build_workshop_rss(config, filename, workshops):
         sys.exit(1)
 
     # Create RSS feed.
-    rss = ContentEncodedRSS2(title='Software Carpentry boot camps',
+    rss = ContentEncodedRSS2(title='Software Carpentry workshops',
                              description='Helping researchers do more, in less time, with less pain',
                              lastBuildDate=datetime.datetime.utcnow(),
                              link=site,
@@ -77,9 +77,9 @@ def build_workshop_rss(config, filename, workshops):
     with open(filename, 'w') as writer:
         rss.write_xml(writer)
 
-def get_future_boot_camps(workshops):
+def get_future_workshops(workshops):
     '''
-    Create a list of boot camps that are in the future and return these
+    Create a list of workshops that are in the future and return these
     in reverse chronological order.
     '''
     publish_date = datetime.datetime.now().date()
@@ -98,7 +98,7 @@ def get_guid(site, workshop):
 def get_country(site, workshop):
     '''
     Create 'country' category in domain 
-    http://software-carpentry.org/locations with boot camp's country
+    http://software-carpentry.org/locations with workshop's country
     as value.
     '''
     return Category(workshop['country'], 
@@ -106,7 +106,7 @@ def get_country(site, workshop):
 
 def get_description(workshop):
     '''
-    Create description string with boot camp date, address (if known)
+    Create description string with workshop date, address (if known)
     and instructors (if known).
     '''
     address = ''
@@ -115,7 +115,7 @@ def get_description(workshop):
     instructors = ''
     if workshop.get('instructor'):
         instructors = u'led by {0}'.format(u','.join(workshop['instructor']))
-    return u'A boot camp will be held on {0} {1} {2}'.format(
+    return u'A workshop will be held on {0} {1} {2}'.format(
         workshop['humandate'], address, instructors)
 
 #----------------------------------------

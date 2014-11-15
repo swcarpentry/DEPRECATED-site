@@ -45,7 +45,7 @@ def parse_args():
 
 class ICalendarWriter(object):
     '''
-    iCalendar generator for boot camps.
+    iCalendar generator for workshops.
     The format is defined in RFC 5545: http://tools.ietf.org/html/rfc5545
     '''
 
@@ -53,7 +53,7 @@ class ICalendarWriter(object):
         lines = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
-            'PRODID:-//Software Carpentry/Boot Camps//NONSGML v1.0//EN',
+            'PRODID:-//Software Carpentry/Workshops//NONSGML v1.0//EN',
         ]
         for bc in config['workshops']:
             lines.extend(self.workshop(config['site'], config['timestamp'], bc))
@@ -69,7 +69,7 @@ class ICalendarWriter(object):
                                urlparse(site).netloc or 'software-carpentry.org')
         if 'enddate' in info:
             end = info['enddate']
-        else:  # one day boot camp?
+        else:  # one day workshop?
             end = info['startdate']
         end += datetime.timedelta(1)  # non-inclusive end date
         lines = [
