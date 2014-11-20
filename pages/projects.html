@@ -1,0 +1,14 @@
+---
+layout: base
+root: ..
+title: Projects
+nocomments: 1
+---
+<div class="row-fluid">
+{% for project in site.projects %}
+  <div class="span6" style="padding-bottom:15px">{% include {{project}} %}</div>
+{% cycle '', '</div>' %}
+{% cycle '', '<div class="row-fluid">' %}	
+{% endfor %}
+</div>
+	
