@@ -33,6 +33,7 @@ instructor:
 - {name: Nichole Bennett, user: bennett.n}
 - {name: Miguel Bernabeu, user: bernabeu.miguel}
 - {name: John Blischak, user: blischak.j}
+- {name: Jessica Bonnie, user: bonnie.jessica}
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Erik Bray, user: bray.e}
 - {name: C. Titus Brown, user: brown.ct}
@@ -51,6 +52,7 @@ instructor:
 - {name: Luis Pedro Coelho, user: coelho.luis}
 - {name: John Corless, user: corless.john}
 - {name: Stefano Cozzini, user: cozzini.s}
+- {name: Karen Cranston, user: cranston.k}
 - {name: Stephen Crouch, user: crouch.s}
 - {name: Michael Crusoe, user: crusoe.michael}
 - {name: Emily Davenport, user: davenport.e}
@@ -76,8 +78,10 @@ instructor:
 - {name: Leonor Garcia-Gutierrez, user: garcia-gutierrez.leonor}
 - {name: Julian Garcia, user: garcia.julian}
 - {name: Aaron Garoutte, user: garoutte.aaron}
+- {name: Laurent Gatto, user: gatto.laurent}
 - {name: Molly Gibson, user: gibson.molly}
 - {name: Ivan Gonzalez, user: gonzalez.ivan}
+- {name: Alistair Grant, user: grant.alistair}
 - {name: Julia Gustavsen, user: gustavsen.j}
 - {name: Tommy Guy, user: guy.t}
 - {name: Steve Haddock, user: haddock.s}
@@ -121,6 +125,8 @@ instructor:
 - {name: Elijah Lowe, user: lowe.elijah}
 - {name: Yuxi Luo, user: luo.yuxi}
 - {name: Cam Macdonell, user: macdonell.cam}
+- {name: Gary Macindoe, user: macindoe.gary}
+- {name: Dan MacLean, user: maclean.dan}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Sheldon McKay, user: mckay.sheldon}
 - {name: Jessica McKellar, user: mckellar.j}
@@ -145,6 +151,7 @@ instructor:
 - {name: David Perez-Suarez, user: perez-suarez.david}
 - {name: Fernando Perez, user: perez.f}
 - {name: Stefan Pfenninger, user: pfenninger.s}
+- {name: Tom Pollard, user: pollard.tom}
 - {name: Likit Preeyanon, user: preeyanon.likit}
 - {name: Francoise Provencher, user: provencher.francoise}
 - {name: Karthik Ram, user: ram.k}
@@ -182,6 +189,8 @@ instructor:
 - {name: Bogdan Vera, user: vera.b}
 - {name: Alex Viana, user: viana.a}
 - {name: Jens von der Linden, user: vonderlinden.jens}
+- {name: Andrew Walker, user: walker.andrew}
+- {name: Dan Warren, user: warren.dan}
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
 - {name: Easton White, user: white.easton}
@@ -198,6 +207,7 @@ instructor:
 - {name: Thomas Wright, user: wright.thomas}
 - {name: Fan Yang, user: yang.fan}
 - {name: Naupaka Zimmerman, user: zimmerman.naupaka}
+- {name: Tiziano Zito, user: zito.t}
 - {name: Andrea Zonca, user: zonca.andrea}
 organizer:
 - {name: Jorge Aranda, user: aranda.j}
