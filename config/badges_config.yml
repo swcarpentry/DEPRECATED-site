@@ -27,6 +27,8 @@ instructor:
 - {name: Piotr Banaszkiewicz, user: banaszkiewicz.piotr}
 - {name: Pauline Barmby, user: barmby.pauline}
 - {name: Diego Barneche, user: barneche.diego}
+- {name: Kathryn Barrett, user: barrett.kathryn}
+- {name: Dana Bauer, user: bauer.dana}
 - {name: Philipp Bayer, user: bayer.p}
 - {name: Robert Beagrie, user: beagrie.robert}
 - {name: Trevor Bekolay, user: bekolay.trevor}
@@ -38,6 +40,7 @@ instructor:
 - {name: Erik Bray, user: bray.e}
 - {name: C. Titus Brown, user: brown.ct}
 - {name: Jennifer Bryan, user: bryan.j}
+- {name: Scott Burns, user: burns.scott}
 - {name: Abigail Cabunoc, user: cabunoc.abigail}
 - {name: Rosangela Canino-Koning, user: canino-koning.r}
 - {name: Chris Cannam, user: cannam.c}
@@ -51,16 +54,19 @@ instructor:
 - {name: Neil Chue Hong, user: chue-hong.n}
 - {name: Luis Pedro Coelho, user: coelho.luis}
 - {name: John Corless, user: corless.john}
+- {name: Marianne Corvellec, user: corvellec.marianne}
 - {name: Stefano Cozzini, user: cozzini.s}
 - {name: Karen Cranston, user: cranston.k}
 - {name: Stephen Crouch, user: crouch.s}
 - {name: Michael Crusoe, user: crusoe.michael}
 - {name: Emily Davenport, user: davenport.e}
+- {name: Rob Davey, user: davey.rob}
 - {name: Matt Davis, user: davis.m}
 - {name: Neal Davis, user: davis.neal}
 - {name: Balamurugan Desinghu, user: desinghu.balamurugan}
 - {name: Gabriel A. Devenyi, user: devenyi.gabriel}
 - {name: Ross Dickson, user: dickson.r}
+- {name: Matthew Dimmock, user: dimmock.matt}
 - {name: Jonah Duckles, user: duckles.jonah}
 - {name: Jonathan Dursi, user: dursi.j}
 - {name: Justin Ely, user: ely.j}
@@ -74,6 +80,7 @@ instructor:
 - {name: Rich FitzJohn, user: fitzjohn.rich}
 - {name: Robert Flight, user: flight.r}
 - {name: Philip Fowler, user: fowler.p}
+- {name: Jonathan Frederic, user: frederic.jonathan}
 - {name: Chris Friedline, user: friedline.chris}
 - {name: Leonor Garcia-Gutierrez, user: garcia-gutierrez.leonor}
 - {name: Julian Garcia, user: garcia.julian}
@@ -96,6 +103,7 @@ instructor:
 - {name: Chris Holdgraf, user: holdgraf.c}
 - {name: Jeff Hollister, user: hollister.jeff}
 - {name: Katy Huff, user: huff.k}
+- {name: Devasena Inupakutika, user: inupakutika.devasena}
 - {name: Luiz Irber, user: irber.luiz}
 - {name: Damien Irving, user: irving.d}
 - {name: Paul Ivanov, user: ivanov.p}
@@ -142,6 +150,7 @@ instructor:
 - {name: R. David Murray, user: murray.david}
 - {name: Lex Nederbragt, user: nederbragt.l}
 - {name: Brenna O'Brien, user: obrien.brenna}
+- {name: Alan O'Cais, user: ocais.alan}
 - {name: Randy Olson, user: olson.r}
 - {name: Jeramia Ory, user: ory.j}
 - {name: Geoff Oxberry, user: oxberry.g}
@@ -165,14 +174,18 @@ instructor:
 - {name: Jorden Schossau, user: schossau.j}
 - {name: Anthony Scopatz, user: scopatz.a}
 - {name: Michael Selik, user: selik.m}
+- {name: Neem Serra, user: serra.neem}
 - {name: Jeffrey Shelton, user: shelton.j}
 - {name: Leigh Sheneman, user: sheneman.leigh}
+- {name: Yu-Ching Shih, user: shih.yu-ching}
 - {name: Raniere Silva, user: silva.raniere}
 - {name: Rachel Slaybaugh, user: slaybaugh.rachel}
 - {name: Clare Sloggett, user: sloggett.clare}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
 - {name: Margaret Staton, user: staton.margaret}
+- {name: Mark Stillwell, user: stillwell.mark}
+- {name: Jonathan Strootman, user: strootman.jonathan}
 - {name: Shoaib Sufi, user: sufi.s}
 - {name: Sarah Supp, user: supp.s}
 - {name: 'Svaksha ', user: svaksha}
