@@ -1,7 +1,7 @@
 {
  "badge": "http://software-carpentry.org/badges/class/instructor.json", 
  "image": "http://software-carpentry.org/img/badges/instructor.png", 
- "issuedOn": "2014-10-24", 
+ "issuedOn": "2014-11-20", 
  "recipient": {
   "hashed": true, 
   "identity": "sha256$d0c50b2bf8fbaccfd1d64afec978ef3ecd432a7604f714366e6316f295b9850e", 
@@ -11,6 +11,6 @@
  "uid": "sha256$d0c50b2bf8fbaccfd1d64afec978ef3ecd432a7604f714366e6316f295b9850e", 
  "verify": {
   "type": "hosted", 
-  "url": "http://software-carpentry.org/badges/instructor/bauer.data.json"
+  "url": "http://software-carpentry.org/badges/instructor/bauer.dana.json"
  }
 }
