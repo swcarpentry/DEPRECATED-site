@@ -37,7 +37,7 @@ and the Version 4 lesson materials add another 300 MBytes.
 Building
 --------
 
-Building the web site requires: 
+Building the web site requires:
 
 *   [Jekyll](http://jekyllrb.com/), used to compile templated HTML pages
 *   [Python](http://python.org/), used for pre- and post-processing
@@ -56,6 +56,8 @@ we use Python because most of our volunteers speak it.
     This must be done before building the web site.
 *   Type `make site` to build everything in `_site` for testing.
     (Depending on your machine, this takes about 10-15 seconds.)
+*   Type `make clean` before re-doing `make site`,
+    to prepare the environment to build again.
 
 We try to use the same MarkDown interpreters as GitHub does for
 consistency.  On OS X, we suggest you use a recent Ruby to get access
@@ -63,7 +65,7 @@ to these.  If you don't have Homebrew or MacPorts installed, here's a
 quick recipe to get started using HomeBrew.
 
 ~~~
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install ruby
 gem install jekyll
 gem install RedCloth
@@ -93,7 +95,7 @@ To add another GitHub-hosted workshop to this web site,
 simply add a line to `config/workshop_urls.yml`.
 Please keep these ordered by date.
 
-Blogging 
+Blogging
 --------
 
 To create a new blog post:
@@ -162,7 +164,7 @@ Available Commands
 *   `install`: build into installation directory on server.
 *   `links`: check links.
 *   `sterile`: *really* clean up.
-*   `site`: build locally into _site directory for checking.   
+*   `site`: build locally into _site directory for checking.
 *   `valid`: check validity of HTML.
 
 The Details
@@ -201,7 +203,7 @@ To bake the badge we use `bin/badgebakery.py` which was provided by the Open Bad
 To validate a badge:
 
 *   Build this repository.
-*   Setup a local copy of 
+*   Setup a local copy of
     [Open Badges Validator](https://github.com/mozilla/openbadges-validator-service.git).
 *   Setup a virtual server that responde to http://software-carpentry.org with the
     content of `_site`.
