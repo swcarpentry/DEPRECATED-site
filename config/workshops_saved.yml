@@ -3641,3 +3641,298 @@
   url: http://datacarpentry.github.io/2014-09-29-iDigBio/
   user: datacarpentry
   venue: University of Florida
+- address: Life Sciences C-Wing, Room 180/182
+  contact: eric.d.johnson@asu.edu
+  country: United-States
+  enddate: 2014-09-28
+  eventbrite: '13072962583'
+  helper: [To Be Determined]
+  humandate: Sep 27-28, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Naupaka Zimmerman, Jonathan Strootman]
+  latlng: 33.419982, -111.934157
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-27-asu
+  startdate: 2014-09-27
+  url: http://naupaka.github.io/2014-09-27-asu/
+  user: naupaka
+  venue: Arizona State University
+- address: Biomedical and Physical Sciences Building 567 Wilson Road Room 1441 East
+    Lansing, MI 48824 (Seminar Room)
+  contact: jory@msu.edu
+  country: United-States
+  enddate: 2014-10-01
+  eventbrite: 13109602173
+  helper: ['Emily Dolson, Josh Nahum, Eric Bruger']
+  humandate: Sep 30 Oct 1, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jory Schossau, Leigh Sheneman, Luiz Irber]
+  latlng: 42.724324, -84.476082
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-09-30-msu
+  startdate: 2014-09-30
+  url: http://joryschossau.github.io/2014-09-30-msu/
+  user: joryschossau
+  venue: Michigan State University
+- <!-- eventbrite: 12933361031 -->
+  address: Innovation Center (Room 105), 2719 E. 10th St., Bloomington, IN
+  contact: igonzalez@mailaps.org
+  country: United-States
+  enddate: 2014-10-07
+  helper: [Badi' Abdul-Wahid, Kevin Bohan, Eric Holk, DongInn Kim]
+  humandate: Oct 6-7, 2014
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Ivan Gonzalez, Jeremiah Lant]
+  latlng: 39.171706,-86.499819
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-10-06-indiana
+  startdate: 2014-10-06
+  url: http://iglpdc.github.io/2014-10-06-indiana/
+  user: iglpdc
+  venue: Indiana University
+- address: 102 Rightmire Hall, 1060 Carmack Rd, Columbus, OH 43210
+  contact: sheldon.mckay@gmail.com
+  country: United-States
+  enddate: 2014-10-07
+  helper: [Jeffrey Campbell, Joy-El Talbot, Eric Mukundi, Wilberforce Ouma]
+  humandate: Oct 6-7, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, Trevor Bekolay]
+  latlng: 40.003486, -83.037452
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-10-06-osu
+  startdate: 2014-10-06
+  url: http://mckays630.github.io/2014-10-06-osu/
+  user: mckays630
+  venue: Ohio State University
+- address: Rooms 368/374, Rotman School of Management, 105 St. George Street, Toronto,
+    Ontario
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-10-07
+  eventbrite: '13023831631'
+  helper: [Catalina Anghel, Samantha Clark, Thomas Guignard, Tom Wright, Lee Zamparo]
+  humandate: Oct 6-7, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Gabriel Devenyi, Tommy Guy, Jeramia Ory, Elizabeth
+      Patitsas, Greg Wilson]
+  latlng: 43.665263,-79.39862
+  layout: bootcamp
+  lessons: [Python, SQL, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-10-06-rotman
+  startdate: 2014-10-06
+  url: http://swcarpentry.github.io/2014-10-06-rotman/
+  user: swcarpentry
+  venue: University of Toronto
+- address: Sloane Physics Lab, Room 43, 217 Prospect Street, New Haven, CT 06511
+  contact: rbsi.yale@gmail.com
+  country: United-States
+  enddate: 2014-10-12
+  eventbrite: 13155403165
+  helper: [Jieming Chen, Wendell Smith, Tomomi Sunayama, Manuel Mai, Dan Guest]
+  humandate: Oct 11-12, 2014
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Camille Avestruz, Matthew Lightman]
+  latlng: 41.3181294,-72.9237981
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-10-11-yale
+  startdate: 2014-10-11
+  url: http://mattphotonman.github.io/2014-10-11-yale/
+  user: mattphotonman
+  venue: Yale University
+- address: HBH 227; 6100 Main St. Houston, TX 77204
+  contact: rcsg@rice.edu
+  country: United-States
+  enddate: 2014-10-14
+  eventbrite: 13095572209
+  helper: [Joseph Ghobrial, Erik Engquist]
+  humandate: Oct 13-14, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [April Wright, Chandler Wilkerson, Scott Talafuse]
+  latlng: 29.719960, -95.400902
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-10-13-rice
+  startdate: 2014-10-13
+  url: http://chwilk.github.io/2014-10-13-rice/
+  user: chwilk
+  venue: Rice University
+- address: Gerstein Library, 9 King's College Circle, Toronto, Ontario
+  contact: gvwilson@software-carpentry.org
+  country: Canada
+  enddate: 2014-10-31
+  eventbrite: 13047803331
+  helper: [Xu Fei, Luke Johnston, Daiva Nielsen, Sahar Rahmani, Tom Wright]
+  humandate: Oct 30-31, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Pauline Barmby, Thomas Guignard, Greg Wilson]
+  latlng: 43.662152,-79.394085
+  layout: bootcamp
+  lessons: [Python, SQL, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-10-30-utoronto
+  startdate: 2014-10-30
+  url: http://swcarpentry.github.io/2014-10-30-utoronto/
+  user: swcarpentry
+  venue: University of Toronto
+- address: Law School Seminar Room 444 (upstairs from the Law School Bar)
+  contact: diego.barneche@mq.edu.au
+  country: Australia
+  enddate: 2014-11-01
+  helper: [Sarah McIntyre, Steson Lo]
+  hostcontact: alex.holcombe@sydney.edu.au
+  humandate: Oct 31-Nov 1, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Diego Barneche, Philipp Bayer, Dan Warren]
+  instructorcontact: diego.barneche@mq.edu.au
+  latlng: -33.887526,151.190262
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-10-31-USyd
+  startdate: 2014-10-31
+  url: http://dbarneche.github.io/2014-10-31-USyd/
+  user: dbarneche
+  venue: University of Sydney
+- address: James L. Allen Center, 2169 Campus Drive, Evanston, IL 60208-2800
+  contact: edd@debian.org
+  country: United-States
+  enddate: 2014-11-01
+  helper: [' ']
+  humandate: Oct 31 - Nov 1, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Karthik Ram, Ramnath Vaidyanathan, Dirk Eddelbuettel]
+  latlng: 42.056459,-87.675267
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-10-31-nw
+  startdate: 2014-10-31
+  url: http://karthik.github.io/2014-10-31-nw/
+  user: karthik
+  venue: Northwestern University
+- address: Faculté de médecine vétérinaire de l'Université de Montréal, St-Hyacinthe,
+    QC
+  contact: denis.haine@umontreal.ca
+  country: Canada
+  enddate: 2014-11-07
+  helper: []
+  humandate: Nov 6-7, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [John D. Blischak, Denis Haine, Marianne Corvellec, Gabriel Devenyi]
+  latlng: 45.619605,-72.963607
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-11-06-fmv
+  startdate: 2014-11-06
+  url: http://dhaine.github.io/2014-11-06-fmv/
+  user: dhaine
+  venue: GREZOSP
+- address: Winterthurerstrasse 190
+  contact: admin@software-carpentry.org
+  country: Switzerland
+  enddate: 2014-11-07
+  helper: [Frank Pennekamp, Peter Fields, Jelena Aleksic]
+  humandate: Nov 6-7, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Laurent Gatto, Robert Stojnic]
+  latlng: 47.396018,8.5524058
+  layout: workshop
+  lessons: [R, Git, bash]
+  registration: restricted
+  root: .
+  slug: 2014-11-06-UZH
+  startdate: 2014-11-06
+  url: http://lgatto.github.io/2014-11-06-UZH/
+  user: lgatto
+  venue: Institute of Molecular Life Sciences, University of Zurich
+- address: 60 Garden Street, Cambridge, MA 02138
+  contact: iglpdc+harvard@gmail.com
+  country: United-States
+  enddate: 2014-11-08
+  helper: [Christopher Erdmann, Bob Freeman, Jean Roth, Peter Williams]
+  humandate: Nov 7-8, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Daniel Chen, Ivan Gonzalez]
+  latlng: 42.382136, -71.127843
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-11-07-harvard
+  startdate: 2014-11-07
+  url: http://iglpdc.github.io/2014-11-07-harvard/
+  user: iglpdc
+  venue: Research Computing & Harvard-Smithsonian Center for Astrophysics, Harvard
+    University
+- address: 29 Grafton Street, Manchester, M13 9WU
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-11-14
+  helper: ['Andy Brass, Mike Cornell']
+  humandate: Nov 10-14, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Aleksandra Pawlik, Aleksandra Nenadic]
+  latlng: 53.463651,-2.227592
+  layout: workshop
+  lessons: [Python, Git, Bash, VM]
+  registration: restricted
+  root: .
+  slug: 2014-11-10-manchester
+  startdate: 2014-11-10
+  url: http://anenadic.github.io/2014-11-10-manchester/
+  user: anenadic
+  venue: The Nowgen Centre, University of Manchester
+- address: EMBL Heidelberg
+  contact: admin@software-carpentry.org
+  country: Germany
+  enddate: 2014-11-14
+  helper: []
+  humandate: Nov 12-14, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Luis Pedro Coelho]
+  latlng: 49.38485,8.71074
+  layout: redirect
+  lessons: [Python, Git, Bash]
+  redirect: http://www.embl.de/training/events/2014/SWC14-01/index.html
+  registration: open
+  root: .
+  slug: 2014-11-12-embl
+  startdate: 2014-11-12
+  url: http://swcarpentry.github.io/2014-11-12-embl/
+  user: swcarpentry
+  venue: European Molecular Biology Laboratory
+- address: 1340 Pickering Parkway, Pickering, ON
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2014-09-10
+  helper: ['']
+  humandate: Dec 09-10, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Jeramia Ory]
+  latlng: 43.833260, -79.086158
+  layout: workshop
+  lessons: [R, SQL, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-12-09-mpac
+  startdate: 2014-12-09
+  url: http://dhavide.github.io/2014-12-09-mpac/
+  user: dhavide
+  venue: Municipal Property Assessment Corporation
