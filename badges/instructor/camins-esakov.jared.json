@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-11-27", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$86165ab90358321fa7f7268f6f4fa495d083eef8e4b5f3d4595fd1e94575b6fc", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$86165ab90358321fa7f7268f6f4fa495d083eef8e4b5f3d4595fd1e94575b6fc", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/camins-esakov.jared.json"
+ }
+}

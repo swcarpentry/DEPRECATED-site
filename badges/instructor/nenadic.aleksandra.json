@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-11-27", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$0542aa5418bf83760ab98a3a0e2acb834c10385f7ed7fb9e3e4a62a7c586223b", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$0542aa5418bf83760ab98a3a0e2acb834c10385f7ed7fb9e3e4a62a7c586223b", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/nenadic.aleksandra.json"
+ }
+}
