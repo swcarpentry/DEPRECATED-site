@@ -3918,21 +3918,3 @@
   url: http://swcarpentry.github.io/2014-11-12-embl/
   user: swcarpentry
   venue: European Molecular Biology Laboratory
-- address: 1340 Pickering Parkway, Pickering, ON
-  contact: admin@software-carpentry.org
-  country: Canada
-  enddate: 2014-09-10
-  helper: ['']
-  humandate: Dec 09-10, 2014
-  humantime: 9:00 am - 4:30 pm
-  instructor: [Dhavide Aruliah, Jeramia Ory]
-  latlng: 43.833260, -79.086158
-  layout: workshop
-  lessons: [R, SQL, Bash]
-  registration: restricted
-  root: .
-  slug: 2014-12-09-mpac
-  startdate: 2014-12-09
-  url: http://dhavide.github.io/2014-12-09-mpac/
-  user: dhavide
-  venue: Municipal Property Assessment Corporation
