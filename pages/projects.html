@@ -4,11 +4,87 @@ root: ..
 title: Projects
 nocomments: 1
 ---
+<h2>Our Projects</h2>
+<p>
+  Software Carpentry is an open project.
+  Like all such projects,
+  it needs your help to grow:
+</p>
+
+<div class="row-fluid ">
+  <div class="span6">
+    <ul>
+      <li>
+        <p>
+          Our lessons are currently being extracted from
+          <a href="https://github.com/swcarpentry/bc">this repository</a>
+          and put into repositories of their own.
+          We hope to finish this work by the end of December 2014,
+          after which it should be much easier for you contribute improvements.
+        </p>
+      </li>
+      <li>
+        <p>
+          While you're waiting,
+          you can help improve
+          the templates for our <a href="https://github.com/swcarpentry/workshop-template">workshop websites</a>
+          and <a href="https://github.com/swcarpentry/lesson-template">new lessons</a>.
+          We would be particularly grateful for help building a validation tool for lessons
+          to help check that everything is in the right format&mdash;please see
+          the <a href="https://github.com/swcarpentry/lesson-template/issues">issues</a>
+          and <a href="https://github.com/swcarpentry/lesson-template/pulls">pull requests</a>
+          for details.
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="http://github.com/jiffyclub/ipythonblocks">ipythonblocks</a>
+          and
+          <a href="http://github.com/synesthesiam/novice">skimage.novice</a>
+          are allowing us adopt a media-first approach to teaching programming in Python.
+          Enhancements to either of these are very welcome.
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class="span6">
+    <ul>
+      <li>
+        <p>
+          We have started building
+          <a href="https://github.com/swcarpentry/amy">a web-based tool for managing workshops</a>,
+          which we hope will relieve
+          <a href="{{page.root}}/2014/12/plans-for-2015-workshop-organization.html">our biggest bottleneck</a>.
+          If you can program in Python and are familiar with Django,
+          we would be very grateful for your help.
+        </p>
+      </li>
+      <li>
+        <p>
+          Several of our team are experimenting with a pure HTML replacement for screencasts
+          called <a href="https://github.com/twitwi/bcast-experiments">Browsercast</a>.
+          We'd like to use it in our lessons,
+          but we think it has much wider application.
+        </p>
+      </li>
+      <li>
+        <p>
+          A groups of students have built
+          <a href="http://nbdiff.org/">a diff-and-merge tool for the IPython Notebook</a>.
+          Polishing this would help everyone in the IPython community,
+          not just us.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2>Our Members' Projects</h2>
 <div class="row-fluid">
 {% for project in site.projects %}
   <div class="span6" style="padding-bottom:15px">{% include {{project}} %}</div>
 {% cycle '', '</div>' %}
-{% cycle '', '<div class="row-fluid">' %}	
+{% cycle '', '<div class="row-fluid">' %}       
 {% endfor %}
 </div>
-	
+        
