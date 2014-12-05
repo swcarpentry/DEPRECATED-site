@@ -1,7 +1,7 @@
 ---
 layout: blog
 root: ../../..
-author: Raniere Silva
+author: "Raniere Silva and Andy Boughton"
 title: "Announcing Lesson Validator"
 date: 2014-12-05
 time: "18:00:00"
@@ -42,9 +42,9 @@ category: ["Tools"]
   The validator currently performs the following checks on all templates:
 <ul>
   <li>All expected YAML document headers must be present, and contain the correct
-    type of data (<code>minutes: MM</code> must be numeric).</li>
+    type of data (e.g. the argument for <code>minutes</code> must be numeric).</li>
   <li>All headings required by the template must be present, and in the correct order</li>
-  <li>All document headings must be level 2. (<code>## Heading</code>)</li>
+  <li>All document headings must be level 2 (i.e. <code>## Heading</code>).</li>
   <li>If the template is not free-form, then only the headings specified should be present.</li>
   <li>Links to external assets (html pages or images) must be valid</li>
 </ul>
@@ -61,8 +61,8 @@ category: ["Tools"]
 <h3>What you can do</h3>
 <p>
   <ul>
-    <li>Summarize the changes at the specifications.</li>
-    <li>Test the validator on a folder full of markdown files from the command line: <pre><code>$ tools/check pages/</code></pre>.
+    <li>Summarize the changes to the specifications (see below).</li>
+    <li>Test the validator on a folder full of markdown files from the command line: <pre><code>$ tools/check pages/</code></pre>
       Let us know if the validator is too restrictive for your lessons, or if it misses a common problem.</li>
     <li>Report suggestions and bugs at
       <a href="https://github.com/swcarpentry/lesson-template/issues">GitHub</a></li>
