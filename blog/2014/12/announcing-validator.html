@@ -9,23 +9,77 @@ category: ["Tools"]
 ---
 <!-- start excerpt -->
 <p>
-  Thanks the awesome work of
-  <a href="https://github.com/abought">Andy Boughton</a>
-  we now have a validator to check if our lessons, more or less, follow
-  <a href="/blog/2014/10/new-lesson-template-v2.html">the template we proposed</a>.
-  Continue reading to know what the validator does,
-  the improves that we still need to do and how you can help.
+  Thanks to the work of
+  <a href="https://github.com/abought">Andy Boughton</a> and
+  <a href="https://github.com/r-gaia-cs">Raniere Silva</a>,
+  we now have a validator that determines whether new lessons fit 
+  <a href="/blog/2014/10/new-lesson-template-v2.html">the proposed lesson template</a>.
+  This is an initial version: continue reading to learn what it does, where there is room for improvement, and how you can help.
 </p>
 <!-- end excerpt -->
-<h3>Lesson Template Specification</h3>
+
+<h3>Current State</h3>
 <p>
-  During last month, Greg Wilson ported to the new template some of Software
-  Carpentry's lessons as
-  <a href="blog/2014/12/plans-for-2015-lessons.html">he announced a few days ago</a>.
-  From this work small changes was made at
-  <a href="blog/2014/10/new-lesson-template-v2.html">the specification</a>
-  that is already cover by the validator but still need to be sumarize. For
-  exemple, at topic files authors should use
+  The validator uses
+  <a href="https://pypi.python.org/pypi/CommonMark">Python CommonMark parser</a>
+  to create a
+  <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract syntax tree</a>
+  from a Markdown file. This allows our code to focus on
+  validating templates, rather than re-implementing a parser that can handle
+  variations in Markdown.
+</p>
+<p>
+  Because each template has slightly different needs, the validator is
+  implemented using an object-oriented approach that allows individual tests
+  to be customized or re-used as needed. Each template validator class is a
+  child of <code>MarkdownValidator</code>- so to understand how the validator works for
+  <code>pages/LICENSE.md</code>, you just need to look at the special methods in
+  <code>LicensePageValidator</code>, and whatever code is inherited or
+  used from the parent class <code>MarkdownValidator</code>.
+</p>
+<h4>What validation is performed</h4>
+<p>
+  The validator currently performs the following checks on all templates:
+<ul>
+  <li>All expected YAML document headers must be present, and contain the correct
+    type of data (<code>minutes: MM</code> must be numeric).</li>
+  <li>All headings required by the template must be present, and in the correct order</li>
+  <li>All document headings must be level 2. (<code>## Heading</code>)</li>
+  <li>If the template is not free-form, then only the headings specified should be present.</li>
+  <li>Links to external assets (html pages or images) must be valid</li>
+</ul>
+
+  Additional checks are performed on certain templates as needed:
+<ul>
+  <li>Special blocks (such as Prerequisites and Learning Objectives)
+    must have the correct structure and contents.</li>
+  <li>The glossary in <code>pages/reference.md</code> must be formatted correctly.</li>
+  <li>The <code>pages/LICENSE.md</code> file must not be changed.</li>
+</ul>
+</p>
+
+<h3>What you can do</h3>
+<p>
+  <ul>
+    <li>Summarize the changes at the specifications.</li>
+    <li>Test the validator on a folder full of markdown files from the command line: <pre><code>$ tools/check pages/</code></pre>.
+      Let us know if the validator is too restrictive for your lessons, or if it misses a common problem.</li>
+    <li>Report suggestions and bugs at
+      <a href="https://github.com/swcarpentry/lesson-template/issues">GitHub</a></li>
+    <li>Send pull requests to improve the code.</li>
+  </ul>
+</p>
+<h4>Lesson Template Specification</h4>
+<p>
+  Several of the Software Carpentry lessons have
+  <a href="blog/2014/12/plans-for-2015-lessons.html">recently</a> been ported
+  to the new template. As we apply the template to lessons,
+  the <a href="blog/2014/10/new-lesson-template-v2.html">original template specification</a>
+  has continued to evolve. The validator reflects these new changes, but the
+  blog post documenting the template should be updated to match
+  the <a href="https://github.com/swcarpentry/lesson-template">current github repository</a>.
+
+  For example, authors no longer need to specify CSS styles in topic files: we now write
   <pre><code>&gt; ## Learning Objectives
 &gt;
 &gt; * Learning objective 1
@@ -35,41 +89,4 @@ category: ["Tools"]
 &gt;
 &gt; * Learning objective 1
 &gt; * Learning objective 2</code></pre>
-</p>
-<h3>Current State</h3>
-<p>
-  The validator uses
-  <a href="https://pypi.python.org/pypi/CommonMark">Python CommonMark parser</a>
-  to create a
-  <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract syntax tree</a>
-  for every Markdown file at <code>pages</code> directory
-  that our script uses to validate the files.
-</p>
-<p>
-  Andy choosed to use a Object Oriented approach for the script that add a
-  little of complexity to it but makes it more reusable. For every type of file
-  the validator has a class that is a children of <code>MarkdownValidator</code>
-  so if you need to change how the validator works for
-  <code>pages/LICENSE.md</code> you just need to look at the classes
-  <code>LicensePageValidator</code> and <code>MarkdownValidator</code>.
-</p>
-<p>The validator checks for:
-<ul>
-  <li>valid YAML header,</li>
-  <li>correct heading level,</li>
-  <li>correct block structures (e.g. prerequisites),</li>
-  <li>required sections,</li>
-  <li>valid links,</li>
-  <li>valid glossary entries.</li>
-</ul>
-</p>
-<h3>What you can do</h3>
-<p>
-  <ul>
-    <li>Summarize the changes at the specifications.</li>
-    <li>Test the validator with <pre><code>$ tools/check pages</code></pre></li>
-    <li>Report suggestions and bugs at
-      <a href="https://github.com/swcarpentry/lesson-template/issues">GitHub</a></li>
-    <li>Send pull request to issues related to it.</li>
-  </ul>
 </p>
