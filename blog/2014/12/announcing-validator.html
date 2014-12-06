@@ -1,0 +1,128 @@
+---
+layout: blog
+root: ../../..
+author: "Raniere Silva and Andy Boughton"
+title: "Announcing the Lesson Validator"
+date: 2014-12-05
+time: "16:00:00"
+category: ["Tools"]
+---
+<!-- start excerpt -->
+<p>
+  Thanks to the work of
+  <a href="https://github.com/abought">Andy Boughton</a> and
+  <a href="https://github.com/r-gaia-cs">Raniere Silva</a>,
+  we now have a validator that determines whether lessons fit 
+  <a href="https://github.com/swcarpentry/lesson-template/">the new lesson template</a>.
+  This post explains what it does,
+  where there is room for improvement,
+  and how you can help.
+</p>
+<!-- end excerpt -->
+<h2>Current State</h2>
+<p>
+  The validator uses
+  Python's <a href="https://pypi.python.org/pypi/CommonMark">CommonMark parser</a>
+  to create an
+  <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract syntax tree</a>
+  from a Markdown file.
+  This allows our code to focus on validating templates,
+  rather than re-implementing a parser that can handle variations in Markdown.
+</p>
+<p>
+  Because each template has slightly different needs,
+  the validator is implemented using an object-oriented approach
+  that allows individual tests to be customized or re-used as needed.
+  Each template validator class is a child of <code>MarkdownValidator</code>,
+  so to understand how the validator works for <code>pages/LICENSE.md</code>,
+  you just need to look at the special methods in <code>LicensePageValidator</code>,
+  and whatever code is inherited or used from the parent class <code>MarkdownValidator</code>.
+</p>
+<h2>What Validation is Performed</h2>
+<p>
+  The validator currently performs the following checks on all templates:
+</p>
+<ul>
+  <li>
+    All expected YAML document headers must be present
+    and contain the correct type of data
+    (e.g. the argument for <code>minutes</code> must be numeric).
+  </li>
+  <li>
+    All headings required by the template must be present, and in the correct order.
+  </li>
+  <li>
+    All document headings must be level 2 (i.e. <code>## Heading</code>).
+  </li>
+  <li>
+    If the template is not free-form, then only the headings specified should be present.
+  </li>
+  <li>
+    Links to external assets (html pages or images) must be valid.
+  </li>
+</ul>
+<p>
+  Additional checks are performed on certain templates as needed:
+</p>
+<ul>
+  <li>
+    Special blocks (such as Prerequisites and Learning Objectives)
+    must have the correct structure and contents.
+  </li>
+  <li>
+    The glossary in <code>pages/reference.md</code> must be formatted correctly.
+  </li>
+  <li>
+    The <code>pages/LICENSE.md</code> file must not be changed.
+  </li>
+</ul>
+<h2>How You Can Help</h2>
+<ul>
+  <li>
+    Summarize the changes to the specifications (see below).
+  </li>
+  <li>
+    Test the validator on a folder full of markdown files from the command line:
+    <code>$ tools/check pages/</code>.
+    Let us know if the validator is too restrictive for your lessons,
+    or if it misses a common problem.
+  </li>
+  <li>
+    Report suggestions and bugs
+    <a href="https://github.com/swcarpentry/lesson-template/issues">on GitHub</a>.
+  </li>
+  <li>
+    Send pull requests to improve the code.
+  </li>
+</ul>
+<h2>Lesson Template Specification</h2>
+<p>
+  Several of the core Software Carpentry lessons
+  <a href="blog/2014/12/plans-for-2015-lessons.html">have recently been ported</a>
+  to the new template.
+  As we apply the template to lessons,
+  the original template specification has continued to evolve&mdash;see
+  <a href="https://github.com/swcarpentry/lesson-template">the lesson template's repository</a>
+  for the latest description.
+  The validator reflects these changes.
+</p>
+<p>
+  For example,
+  authors no longer need to specify CSS styles in topic files,
+  so we can write:
+</p>
+<pre>
+&gt; ## Learning Objectives
+&gt;
+&gt; * Learning objective 1
+&gt; * Learning objective 2
+</pre>
+<p>
+  instead of:
+</p>
+<pre>
+&gt; ## Learning Objectives {.objectives}
+&gt;
+&gt; * Learning objective 1
+&gt; * Learning objective 2
+</pre>
