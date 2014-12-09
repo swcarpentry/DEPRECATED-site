@@ -1,0 +1,84 @@
+---
+layout: blog
+root: ../../..
+author: "Greg Wilson"
+title: "Templates: We Live, We Learn"
+date: 2014-12-09
+time: "06:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  We have partially converted four of our core lessons to
+  <a href="https://github.com/swcarpentry/lesson-template">the new lesson template</a>,
+  and are making a few tweaks as a result.
+  The most important of these is to move the source files for a lesson's web pages
+  out of a <code>pages</code> sub-directory
+  and into the root directory,
+  so that (for example)
+  the first topic in a lesson will be <code>./01-intro.md</code>
+  rather than <code>./pages/01-intro.md</code>.
+</p>
+<p>
+  Doing this means that the Markdown source files will be in the same directory
+  as the HTML pages compiled from them.
+  That's generally considered a bad thing,
+  since (a) it makes it harder for people to tell source files from generated files
+  and (b) the chances of accidentally deleting source files
+  when you just meant to delete generated files goes up significantly.
+  We think it's the right choice in this case because:
+</p>
+<!-- end excerpt -->
+<ol>
+  <li>
+    <p>
+      Some lesson source is executable,
+      such as R Markdown files or IPython Notebooks.
+      If we put those in a sub-directory called <code>pages</code>,
+      they have to refer to external data files and images as
+      <code>../data/datafile.csv</code> and <code>../img/image.png</code>.
+      When we compile them to create HTML pages in the root directory,
+      though,
+      those paths need to change,
+      which adds a post-processing step we'd rather not have to build and maintain.
+    </p>
+  </li>
+  <li>
+    <p>
+      Novice contributors find the flatter structure with unchanging file paths
+      easier to understand,
+      in part because it more closely mirrors the way a researcher
+      would lay out one of her papers.
+    </p>
+  </li>
+</ol>
+<p>
+  A pull request to make this change is under review right now;
+  we hope to merge it later today,
+  and then patch the partially-translated lessons to match by the end of the week.
+  I hope this will be the last big change to the template;
+  if nothing else,
+  the past few weeks have illustrated two core rules of engineering:
+</p>
+<ol>
+  <li>
+    <p>
+      <em>There's no such thing as right and wrong: there's only better and worse.</em>
+      Putting generated files in the same directory as source files is generally a bad idea,
+      but in this case,
+      the pros outweigh the cons.
+    </p>
+  </li>
+  <li>
+    <p>
+      <em>The only way to tell if something works is to build it.</em>
+      We have a lot of experience writing lessons,
+      and put a lot of thought into the new templates.
+      We still made the wrong call on this aspect of layout,
+      but I don't feel bad about that:
+      if we get 90% of things right,
+      90% of the time,
+      we're doing pretty well.
+    </p>
+  </li>
+</ol>
