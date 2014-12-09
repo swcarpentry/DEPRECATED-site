@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-08", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$22d82b36d05fcac85a98c4a5c0fd030ea28f46b114c915de4e4a9f40ab322b88", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$22d82b36d05fcac85a98c4a5c0fd030ea28f46b114c915de4e4a9f40ab322b88", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/smith.daniel.json"
+ }
+}
