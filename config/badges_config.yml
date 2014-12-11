@@ -49,6 +49,7 @@ instructor:
 - {name: Jared Camins-Esakov, user: camins-esakov.jared}
 - {name: Rosangela Canino-Koning, user: canino-koning.r}
 - {name: Chris Cannam, user: cannam.c}
+- {name: Greg Caporaso, user: caporaso.greg}
 - {name: Timothy Cerino, user: cerino.t}
 - {name: Scott Chamberlain, user: chamberlain.s}
 - {name: Cliburn Chan, user: chan.cliburn}
@@ -101,6 +102,7 @@ instructor:
 - {name: Gerard Gorman, user: gorman.gerard}
 - {name: John Gosset, user: gosset.john}
 - {name: Alistair Grant, user: grant.alistair}
+- {name: Jonathan Gross, user: gross.jonathan}
 - {name: Thomas Guignard, user: guignard.thomas}
 - {name: Jiarong Guo, user: guo.jiarong}
 - {name: Julia Gustavsen, user: gustavsen.j}
@@ -211,6 +213,7 @@ instructor:
 - {name: Daniel Smith, user: smith.daniel}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
+- {name: Ashwin Trikuta Srinath, user: srinath.ashwin}
 - {name: Margaret Staton, user: staton.margaret}
 - {name: Mark Stillwell, user: stillwell.mark}
 - {name: Jonathan Strootman, user: strootman.jonathan}
@@ -256,12 +259,14 @@ instructor:
 - {name: Andrea Zonca, user: zonca.andrea}
 organizer:
 - {name: Jorge Aranda, user: aranda.j}
+- {name: Clair Barrass, user: barrass.clair}
 - {name: Casey Bergman, user: bergman.c}
 - {name: Bruce Berriman, user: berriman.b}
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Onno Broekmans, user: broekmans.o}
 - {name: Amy Brown, user: brown.amy}
 - {name: C. Titus Brown, user: brown.ct}
+- {name: Simon Burbidge, user: burbidge.simon}
 - {name: Alex Chartier, user: chartier.a}
 - {name: Shreyas Cholia, user: cholia.s}
 - {name: Stefano Cozzini, user: cozzini.s}
@@ -292,6 +297,7 @@ organizer:
 - {name: Ian Mitchell, user: mitchell.i}
 - {name: Jason Montojo, user: montojo.j}
 - {name: Lex Nederbragt, user: nederbragt.l}
+- {name: Miguel Oliveira, user: oliveira.miguel}
 - {name: Randy Olson, user: olson.r}
 - {name: Chris Paciorek, user: paciorek.c}
 - {name: Konrad Paszkiewicz, user: paszkiewicz.konrad}
