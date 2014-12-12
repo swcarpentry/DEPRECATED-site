@@ -106,13 +106,6 @@ archive_verb :
 ## cache        : collect workshop information from GitHub and store in local cache.
 cache :
 	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
-	@python bin/get_workshop_info.py -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
-	    -o ./_workshop_cache.yml
-
-## cache_verb   : collect workshop information from GitHub and store in local cache (verbose).
-cache_verb :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
 	@python bin/get_workshop_info.py -v -t \
 	    -i $(CONFIG_DIR)/workshop_urls.yml \
 	    -o ./_workshop_cache.yml

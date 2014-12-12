@@ -59,6 +59,7 @@ instructor:
 - {name: Adina Chuang Howe, user: chuang-howe.a}
 - {name: Neil Chue Hong, user: chue-hong.n}
 - {name: Luis Pedro Coelho, user: coelho.luis}
+- {name: Ruth Collings, user: collings.ruth}
 - {name: John Corless, user: corless.john}
 - {name: Marianne Corvellec, user: corvellec.marianne}
 - {name: Logan Cox, user: cox.logan}
@@ -113,6 +114,7 @@ instructor:
 - {name: Jessica Hamrick, user: hamrick.jessica}
 - {name: Michael Hansen, user: hansen.m}
 - {name: Ted Hart, user: hart.t}
+- {name: Ian Henry, user: henry.ian}
 - {name: Joshua Herr, user: herr.joshua}
 - {name: Kate Hertweck, user: hertweck.kate}
 - {name: James Hetherington, user: hetherington.james}
@@ -138,6 +140,7 @@ instructor:
 - {name: Justin Kitzes, user: kitzes.j}
 - {name: Christina Koch, user: koch.christina}
 - {name: Steven Koenig, user: koenig.steven}
+- {name: Alexander Koeppel, user: koeppel.alexander}
 - {name: Bernhard Konrad, user: konrad.b}
 - {name: Igor Kozlov, user: kozlov.igor}
 - {name: Paulina Lach, user: lach.paulina}
@@ -149,6 +152,7 @@ instructor:
 - {name: Jeremiah Lant, user: lant.jeremiah}
 - {name: Chris Lasher, user: lasher.c}
 - {name: Doug Latornell, user: latornell.d}
+- {name: Kate Lee, user: lee.kate}
 - {name: Luke Lee, user: lee.luke}
 - {name: Jacob Levernier, user: levernier.jacob}
 - {name: JC Leyder, user: leyder.jean-christophe}
@@ -201,6 +205,7 @@ instructor:
 - {name: Ariel Rokem, user: rokem.a}
 - {name: Billy Rowell, user: rowell.bill}
 - {name: Dale Russell, user: russell.dale}
+- {name: Maneesha Sane, user: sane.maneesha}
 - {name: Martin Schilling, user: schilling.martin}
 - {name: Jorden Schossau, user: schossau.j}
 - {name: Anthony Scopatz, user: scopatz.a}
@@ -256,6 +261,7 @@ instructor:
 - {name: April Wright, user: wright.april}
 - {name: Thomas Wright, user: wright.thomas}
 - {name: Fan Yang, user: yang.fan}
+- {name: Qingpeng Zhang, user: zhang.qp}
 - {name: Naupaka Zimmerman, user: zimmerman.naupaka}
 - {name: Tiziano Zito, user: zito.t}
 - {name: Andrea Zonca, user: zonca.andrea}
