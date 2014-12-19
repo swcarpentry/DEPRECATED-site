@@ -1,14 +1,14 @@
 {
  "badge": "http://software-carpentry.org/badges/class/instructor.json", 
  "image": "http://software-carpentry.org/img/badges/instructor.png", 
- "issuedOn": "2014-11-22", 
+ "issuedOn": "2014-12-18", 
  "recipient": {
   "hashed": true, 
-  "identity": "sha256$630d2965098e3ec532611337d5a0b89a2a7913f96a12b276f26fc945ce91cbae", 
+  "identity": "sha256$36e67a99a6913dbba38c53b4bbfb9c499f83ffff2f6c1dacf318b9df54043412", 
   "salt": "software-carpentry", 
   "type": "email"
  }, 
- "uid": "sha256$630d2965098e3ec532611337d5a0b89a2a7913f96a12b276f26fc945ce91cbae", 
+ "uid": "sha256$36e67a99a6913dbba38c53b4bbfb9c499f83ffff2f6c1dacf318b9df54043412", 
  "verify": {
   "type": "hosted", 
   "url": "http://software-carpentry.org/badges/instructor/strootman.jonathan.json"
