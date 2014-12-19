@@ -1,0 +1,193 @@
+---
+layout: blog
+root: ../../..
+author: "Greg Wilson"
+title: "All I Want for Christmas is a Pull Request..."
+date: 2014-12-18
+time: "06:00:00"
+category: ["Lessons"]
+---
+<!-- start excerpt -->
+<p>
+  As <a href="{{page.root}}/blog/2014/10/new-lesson-template-v2.html">we said back in October</a>,
+  we're splitting the <a href="{{site.github_url}}/bc">existing lesson repository</a>
+  into smaller and more manageable pieces.
+  To do that,
+  we have defined
+  <a href="{{site.github_url}}/lesson-template">a new template for lessons</a>,
+  and have been extracting the history of the existing material from the current repository.
+  (We wanted to get the entire history of each lesson
+  so that people would receive credit for the work they've done.)
+  The second step has taken longer than planned,
+  but we now have all of the core novice lessons in repositories of their own:
+</p>
+<!-- end excerpt -->
+<table class="table table-striped">
+  <tr>
+    <th>Repository</th>
+    <th>Title/website</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/shell-novice">shell-novice</a></td>
+    <td><a href="{{site.github_io_url}}/shell-novice">Introduction to the Unix shell.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/git-novice">git-novice</a></td>
+    <td><a href="{{site.github_io_url}}/git-novice">Introduction to Git.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/hg-novice">hg-novice</a></td>
+    <td><a href="{{site.github_io_url}}/hg-novice">Introduction to Mercurial.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/sql-novice-survey">sql-novice-survey</a></td>
+    <td><a href="{{site.github_io_url}}/sql-novice-survey">Introduction to SQL using Antarctic survey data.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/python-novice-inflammation">python-novice-inflammation</a></td>
+    <td><a href="{{site.github_io_url}}/python-novice-inflammation">Introduction to Python using inflammation data.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/r-novice-inflammation">r-novice-inflammation</a></td>
+    <td><a href="{{site.github_io_url}}/r-novice-inflammation">Introduction to R using inflammation data.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/matlab-novice-inflammation">matlab-novice-inflammation</a></td>
+    <td><a href="{{site.github_io_url}}/matlab-novice-inflammation">Introduction to MATLAB using inflammation data.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/capstone-novice-spreadsheet-biblio">capstone-novice-spreadsheet-biblio</a></td>
+    <td><a href="{{site.github_io_url}}/capstone-novice-spreadsheet-biblio">A short capstone that gets a bibliography out of a spreadsheet and into a more usable form.</a></td>
+    <td>beta</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/instructor-training">instructor-training</a></td>
+    <td><a href="{{site.github_io_url}}/instructor-training">Software Carpentry instructor training course.</a></td>
+    <td>alpha</td>
+  </tr>
+  <tr>
+    <td><a href="{{site.github_url}}/python-novice-turtles">python-novice-turtles</a></td>
+    <td><a href="{{site.github_io_url}}/python-novice-turtles">Introduction to Python using turtle graphics.</a></td>
+    <td>alpha</td>
+  </tr>
+</table>
+<p>
+  There's still a lot to be done:
+</p>
+<ul>
+  <li>
+    <p>
+      The CSS used to style the new template <a href="{{site.github_url}}/lesson-template/issues/64">needs a major overhaul</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      The <a href="{{site.github_url}}/lesson-template/blob/gh-pages/tools/check">validation tool</a>
+      used to check the format of lessons against the new template needs more work.
+    </p>
+  </li>
+  <li>
+    <p>
+      The challenge exercises all need titles
+      (right now, most are titled "FIXME").
+    </p>
+  </li>
+  <li>
+    <p>
+      We need a 3-minute motivational slide deck for each lesson.
+      (See <a href="http://third-bit.com/browsercast/">this page</a> for
+      a preview of the tool we're going to use to record these.)
+    </p>
+  </li>
+  <li>
+    <p>
+      Glossary entries need to be brought over from
+      <a href="{{site.github_url}}/bc/blob/gh-pages/gloss.md">the old repository</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      The <a href="{{site.github_url}}/bc/tree/gh-pages/intermediate">intermediate lessons</a>
+      need to be extracted from the old repository
+      and merged with the new lesson template.
+    </p>
+  </li>
+  <li>
+    <p>
+      Learning objectives for each lesson need to be rewritten to be more concrete.
+    </p>
+  </li>
+  <li>
+    <p>
+      Data files in
+      <a href="{{site.github_url}}/instructor-training">the nvoice R lesson</a>
+      need to be
+      <a href="{{site.github_url}}/r-novice-inflammation/issues/1">moved into the <code>data</code> sub-directory</a>
+      and paths in the source updated accordingly.
+    </p>
+  </li>
+  <li>
+    <p>
+      The <a href="{{site.github_url}}/shell-novice/pulls">outstanding pull requests</a>
+      against the <code>master</code> branch of the shell lesson need to be merged or discarded
+      so that we can close that branch and start doing everything against <code>gh-pages</code>.
+    </p>
+  </li>
+  <li>
+    <p>
+      The "images" produced by <a href="http://ipythonblocks.org/">ipythonblocks</a>
+      in <a href="{{site.github_url}}/python-novice-inflammation">the novice Python lesson</a>
+      need to be regenerated as PNGs (rather than as HTML tables),
+      saved,
+      and linked in.
+    </p>
+  </li>
+  <li>
+    <p>
+      ...and a hundred and one other things,
+      because lessons are like theses:
+      they're never done,
+      they're just delivered.
+    </p>
+  </li>
+</ul>
+<p>
+  One thing you'll notice is that we're now using Markdown for everything
+  instead of IPython Notebooks.
+  We still <em>teach</em> with notebooks when we're in front of a class,
+  but our contributors have found diffing and merging them difficult enough
+  that we're switching back to plain old text for the notes
+  until something like <a href="http://nbdiff.org/">nbdiff</a> is ready for prime time.
+</p>
+<p>
+  Another thing you might notice is a new capstone lesson
+  showing people how to use the shell, Python, SQL, and Git
+  to extract authors' names from a bibliography stored in a spreadsheet
+  and answer questions like, "Who has co-authored papers with whom?"
+  This lesson is meant to be useful in its own right,
+  but also to serve as an example for others of its kind.
+  If you have something short and accessible that you'd like to share,
+  please <a href="mailto:{{site.contact}}">let us know</a>:
+  we'd be happy to work with you to bring it to a wider audience.
+</p>
+<p>
+  What we need most, though, is polish:
+  all of the points listed above need to be addressed
+  before we can put these lessons on the website
+  instead of the ones stored in the old repository.
+  If you have 15 minutes,
+  please dive into one of these lessons,
+  proof-read one section,
+  and file some issues.
+  Or better yet,
+  send us a pull request that fixes something&mdash;anything at all&mdash;so that
+  we can hit the ground running in 2015.
+</p>
