@@ -14,6 +14,9 @@ SRC_ROOT = $(wildcard ./*.html)
 # Source files in 'pages' directory.
 SRC_PAGES = $(wildcard pages/*.html)
 
+# Source files in 'scf' directory.
+SRC_SCF = $(wildcard scf/*.html)
+
 # Source files in 'bib' directory.
 SRC_BIB = $(wildcard bib/*.html)
 
@@ -48,6 +51,7 @@ SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 SRC_HTML = \
     $(SRC_ROOT) \
     $(SRC_PAGES) \
+    $(SRC_SCF) \
     $(SRC_BIB) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
