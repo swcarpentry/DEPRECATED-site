@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$984c70691386d9bd1a5ac060c52a44e99ed20c2f5fb1a930584cb7941f2a42ac", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$984c70691386d9bd1a5ac060c52a44e99ed20c2f5fb1a930584cb7941f2a42ac", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/hinchliff.cody.json"
+ }
+}

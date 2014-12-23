@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8add3203c1c46d1071b6dbe6367a8ba4d63315ce7525be2266270945c7283abc", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8add3203c1c46d1071b6dbe6367a8ba4d63315ce7525be2266270945c7283abc", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/perignon.mariela.json"
+ }
+}

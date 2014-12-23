@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e3f8dffac2fae6dbdb13c36ee064f8f720d2e5bf0925c1ef9563da38b7ae7c98", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e3f8dffac2fae6dbdb13c36ee064f8f720d2e5bf0925c1ef9563da38b7ae7c98", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/noga.klemens.json"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$4026436082679ed107af8c4d918838cef1cf9d5ea3918241718ed4d0f9c9e607", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$4026436082679ed107af8c4d918838cef1cf9d5ea3918241718ed4d0f9c9e607", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/aiello-lammens.matthew.json"
+ }
+}
