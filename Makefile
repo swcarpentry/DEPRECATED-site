@@ -24,12 +24,8 @@ SRC_BIB = $(wildcard bib/*.html)
 # that our preprocessor doesn't try to harvest data from it.
 SRC_BLOG = $(wildcard ./blog/????/??/*.html)
 
-# Source files of archived workshop pages (used for extracting
-# metadata for building the calendar page).
-SRC_WORKSHOP_PAGES = $(wildcard ./workshops/????-??-*/index.html)
-
 # All workshop source files.
-SRC_WORKSHOP = $(SRC_WORKSHOP_PAGES) $(wildcard ./workshops/*.html)
+SRC_WORKSHOP = $(wildcard ./workshops/*.html)
 
 # Source files for badge pages.
 SRC_BADGES = $(wildcard ./badges/*.html)
@@ -105,6 +101,7 @@ cache :
 	@python bin/get_workshop_info.py -v -t \
 	    -i $(CONFIG_DIR)/workshop_urls.yml \
 	    -o ./_workshop_cache.yml
+	@python bin/make-dashboard.py > ./_dashboard_cache.yml
 
 ## biblio       : make HTML and PDF of bibliography.
 # Have to cd into 'bib' because bib2xhtml expects the .bst file in
@@ -193,5 +190,5 @@ $(OUT)/index.html : _config.yml $(SRC_HTML)
 	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
-_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_WORKSHOP_PAGES)
+_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG)
 	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)

@@ -1,0 +1,40 @@
+---
+layout: base
+root: ..
+title: Dashboard
+nocomments: 1
+---
+{% for record in site.dashboard.records %}
+
+  <h2><a href="{{record.url}}">{{record.ident}}</a></h2>
+  <h3>{{record.description}}</h3>
+
+  <h3>Issues</h3>
+  {% if record.issues %}
+  <table class="table table-striped">
+    {% for i in record.issues %}
+    <tr>
+      <td><a href="{{i.url}}">{{i.number}}</a></td>
+      <td>{{i.title}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>No issues.</p>
+  {% endif %}
+
+  <h3>Pulls</h3>
+  {% if record.pulls %}
+  <table class="table table-striped">
+    {% for p in record.pulls %}
+    <tr>
+      <td><a href="{{p.url}}">{{p.number}}</a></td>
+      <td>{{p.title}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>No pulls.</p>
+  {% endif %}
+
+{% endfor %}
