@@ -22,32 +22,34 @@ controls = (
     ('swcarpentry/site', 'Software Carpentry website'),
 )
 
-g = Github()
+assert len(sys.argv) == 3, 'Usage: make-dashboard.py token-file output-file'
+token_file = sys.argv[1]
+output_file = sys.argv[2]
+
+with open(token_file, 'r') as reader:
+    token = reader.read().strip()
+
+g = Github(token)
 all_records = []
 dashboard = {
     'records' : all_records,
     'num_repos' : 0,
-    'num_issues' : 0,
-    'num_pulls' : 0
+    'num_issues' : 0
 }
 for (ident, description) in controls:
+    print '+', ident
     dashboard['num_repos'] += 1
     r = g.get_repo(ident)
     record = {'ident' : ident,
               'description' : description,
-              'url' : r.html_url,
-              'issues' : [],
-              'pulls' : []}
+              'url' : str(r.html_url),
+              'issues' : []}
     all_records.append(record)
     for i in r.get_issues(state='open'):
         record['issues'].append({'number' : i.number,
-                                 'title' : i.title,
-                                 'url' : i.html_url})
+                                 'title' : str(i.title),
+                                 'url' : str(i.html_url)})
         dashboard['num_issues'] += 1
-    for p in r.get_pulls(state='open'):
-        record['pulls'].append({'number' : p.number,
-                                'title' : p.title,
-                                'url' : p.html_url})
-        dashboard['num_pulls'] += 1
 
-yaml.dump(dashboard, sys.stdout, encoding='utf-8', allow_unicode=True)
+with open(output_file, 'w') as writer:
+    yaml.dump(dashboard, writer, encoding='utf-8', allow_unicode=True)

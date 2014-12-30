@@ -20,6 +20,7 @@ from util import CONFIG_YML, \
                  BADGES_YML, \
                  WORKSHOP_URLS_YML, \
                  WORKSHOP_CACHE, \
+                 DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \
                  harvest_metadata, \
                  load_info
@@ -56,8 +57,8 @@ def main():
     # information are available, and report an error if they're not.
     # Do this early to avoid wasting time; store in local variable
     # until other workshop info is loaded and available for merging.
-    cached_workshop_info = load_cached_info(os.curdir, WORKSHOP_CACHE)
-    cached_dashboard_info = load_cached_info(os.curdir, DASHBOARD_CACHE)
+    cached_workshop_info = load_cached_info(os.curdir, WORKSHOP_CACHE, 'workshop cache')
+    cached_dashboard_info = load_cached_info(os.curdir, DASHBOARD_CACHE, 'dashboard cache')
 
     # Load other information.
     config = load_info(options.config_dir, STANDARD_YML)
