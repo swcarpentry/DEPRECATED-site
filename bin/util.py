@@ -25,6 +25,9 @@ WORKSHOP_URLS_YML = 'workshop_urls.yml'
 # File containing cached information about workshops.
 WORKSHOP_CACHE = '_workshop_cache.yml'
 
+# File containing cached information about issues and pull requests.
+DASHBOARD_CACHE = '_dashboard_cache.yml'
+
 # Patterns used to extract content and excerpts from compiled blog
 # entries.  Using regular expressions is a hack, but is *much* simpler
 # than trying to parse and un-parse the not-quite HTML.

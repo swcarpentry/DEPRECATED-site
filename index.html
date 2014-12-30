@@ -93,7 +93,6 @@ nocomments: 1
             </td>
           </tr>
         {% endfor %}
-
           <tr><td>
             <a class="pull-right" href="workshops/index.html#future">...see all</a><br />
             <div align="center">
@@ -101,9 +100,15 @@ nocomments: 1
               <p><em><a href="{{page.root}}/workshops/previous.html">See where we've been!</a></em></p>
             </div>
           </td></tr>
-
-
         </table>
+
+	<div align="center">
+	  <h4>Work in Progress</h4>
+	  <p>
+	    {{site.dashboard.num_issues}} issues in {{site.dashboard.num_repos}} repositories.
+	  </p>
+	  <p><em><a href="{{page.root}}/pages/dashboard.html">See dashboard</a></em></p>
+	</div>
 
         <a class="twitter-timeline" href="https://twitter.com/swcarpentry" data-widget-id="410241789077909504">Tweets by @swcarpentry</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
