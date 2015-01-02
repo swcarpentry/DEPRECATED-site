@@ -10,12 +10,13 @@ nocomments: 1
 
   <h4><a href="{{record.url}}">{{record.description}}</a></h4>
 
-  {% if record.issues %}
+  {% if record.issues.size > 0 %}
   <table class="table table-striped">
     {% for i in record.issues %}
     <tr>
-      <td width="10%"><a href="{{i.url}}">{{i.number}}</a></td>
-      <td width="90%">{{i.title}}</td>
+      <td width="5%"><a href="{{i.url}}">{{i.number}}</a></td>
+      <td width="10%">{{i.updated}}</td>
+      <td width="85%">{{i.title}}</td>
     </tr>
     {% endfor %}
   </table>

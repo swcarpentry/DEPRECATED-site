@@ -49,8 +49,10 @@ for (ident, description) in controls:
     for i in r.get_issues(state='open'):
         record['issues'].append({'number' : i.number,
                                  'title' : str(i.title),
-                                 'url' : str(i.html_url)})
+                                 'url' : str(i.html_url),
+                                 'updated' : i.updated_at.strftime('%Y-%m-%d')})
         dashboard['num_issues'] += 1
+    record['issues'].sort(lambda x, y: - cmp(x['updated'], y['updated']))
 
 with open(output_file, 'w') as writer:
     yaml.dump(dashboard, writer, encoding='utf-8', allow_unicode=True)
