@@ -3918,3 +3918,224 @@
   url: http://swcarpentry.github.io/2014-11-12-embl/
   user: swcarpentry
   venue: European Molecular Biology Laboratory
+- address: Charles Thackrah Building, University of Leeds, Leeds, LS2 9JT
+  contact: a.walker@leeds.ac.uk
+  country: United-Kingdom
+  enddate: 2014-11-26
+  helper: [Aaron O'Leary, Peter Willetts, Marlene Mengoni, Jo Leng]
+  humandate: Nov 24-26, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Martin Callaghan, Devasena Inupakutika, Andrew Walker]
+  latlng: 53.8070,-1.5607
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-11-24-leeds
+  startdate: 2014-11-24
+  url: http://andreww.github.io/2014-11-24-leeds/
+  user: andreww
+  venue: NERC / University of Leeds
+- address: Atlas 1-2 Room, Kilburn Building, Oxford Road, M13 9PL Manchester
+  contact: data-carpentry@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-11-28
+  eventbrite: 13760815971
+  helper: ['Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer']
+  humandate: Nov 27-28, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Aleksandra Pawlik, Shoaib Sufi, Alejandra Gonzalez-Beltran]
+  latlng: 53.467293, -2.233876
+  layout: bootcamp2
+  registration: open
+  root: .
+  slug: 2014-11-27-elixiruk-manchester
+  startdate: 2014-11-27
+  url: http://apawlik.github.io/2014-11-27-elixiruk-manchester/
+  user: apawlik
+  venue: University of Manchester
+- address: TS 3B and TS 3C, Snape Building, Upper Campus
+  contact: admin@software-carpentry.org
+  country: South-Africa
+  enddate: 2014-11-28
+  helper: [Dane Kennedy (CSIR), Hein de Jager (UCT), Ashley Rustin (UCT), David Matten
+      (SU), Armin Deffur (UCT), Anelda van der Walt (UCT), Warren Jacobus (UWC), Chris
+      Mitsengu (UCT), Gustavo Salazar (UCT), Jon Ambler (UCT), Benjamin Hugo (UCT),
+    Jon Zwart (UCT), Adrianna Pinska (UCT), Timothy Povall (UCT)]
+  humandate: Nov 27-28, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: ['Jonah Duckles (University of Oklahoma, USA)', 'James Hetherington
+      (University College London, UK)', '', 'David Merand (University of the Witwatersrand,
+      South Africa)']
+  latlng: -33.9574965,18.4622421
+  layout: bootcamp
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-11-27-uct
+  startdate: 2014-11-27
+  url: http://jduckles.github.io/2014-11-27-uct/
+  user: jduckles
+  venue: University of Cape Town
+- address: Room 3217, James Clerk Maxwell Building, Peter Guthrie Tait Road, Edinburgh,
+    EH9 3FD
+  contact: support@archer.ac.uk
+  country: United-Kingdom
+  enddate: 2014-12-04
+  helper: [Emmanouil Farsarakis, Leighton Pritchard, Peter Cock]
+  humandate: Dec 3-4, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Mike Jackson, Arno Proeme, Mario Antonioletti, Alistair Grant]
+  latlng: 55.921628,-3.174155
+  layout: workshop
+  lessons: [Git, Python, VM]
+  registration: open
+  root: .
+  slug: 2014-12-03-edinburgh
+  startdate: 2014-12-03
+  url: http://hpcarcher.github.io/2014-12-03-edinburgh/
+  user: hpcarcher
+  venue: The University of Edinburgh
+- address: ul. Kawiory 21, 30-055 Kraków
+  contact: admin-uk@software-carpentry.org
+  country: Poland
+  enddate: 2014-12-07
+  eventbrite: 14426226231
+  helper: ['Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak']
+  humandate: 6-7 Dec 2014
+  humantime: 9:30  - 17:30
+  instructor: [Paulina Lach, Aleksandra Pawlik]
+  latlng: 50.0677112,19.9124284
+  layout: workshop
+  lessons: [Python, SQL, Git, Bash]
+  registration: open
+  root: .
+  slug: 2014-12-06-wise-krakow
+  startdate: 2014-12-06
+  url: http://apawlik.github.io/2014-12-06-wise-krakow/
+  user: apawlik
+  venue: Women in Science and Engineering
+- address: Theatre 2, Alan Gilbert
+  contact: scottcr@unimelb.edu.au
+  country: Australia
+  enddate: 2014-12-09
+  etherpad: https://etherpad.mozilla.org/2014-12-08-combine-r
+  helper: [Andrew Lonsdale, Harriet Dashnow, Timothy Rice, Noel Faux, Simon Gladman,
+    Pip Griffin, Alistair Walsh]
+  humandate: Dec 8-9, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Scott Ritchie, Damien Irving]
+  latlng: -37.800138,144.959285
+  layout: workshop
+  root: .
+  slug: 2014-12-08-combine-r
+  startdate: 2014-12-08
+  url: http://resbaz.github.io/2014-12-08-combine-r/
+  user: resbaz
+  venue: University of Melbourne
+- address: Room 240, Searle Chemistry Lab, 5735 S. Ellis Ave, Chicago, IL 60637
+  contact: balamurugan@uchicago.edu
+  country: United-States
+  enddate: 2014-12-17
+  helper: [Anna Olson]
+  humandate: Dec 15-17, 2014
+  humantime: 8:30 am - 4:30 pm (Day 1), 8.30 am - 4.30 pm (Day 2), 8.30 am - 11.00
+    am (Day 3)
+  instructor: ['Bala Desinghu, Suchandra Thapa, David Champion, Lincoln Bryant, Rob
+      Gardner']
+  latlng: 41.790743, -87.601077
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-12-15-UChicago
+  startdate: 2014-12-15
+  url: http://SWC-OSG-Workshop.github.io/2014-12-15-UChicago/
+  user: SWC-OSG-Workshop
+  venue: University of Chicago
+- Registration: restricted
+  address: SPL Rm. 48, Sloane Physics Laboratory, 217 Prospect St, New Haven, CT
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2014-12-19
+  helper: [Camille Avestruz, Tomomi Sunayama, Nick Sawyer, Jieming Chen, Luis Vargas]
+  humandate: Dec. 18-19, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Dhavide Aruliah, Robert Till]
+  latlng: 41.317623, -72.923169
+  layout: workshop
+  lessons: [Matlab, SQL, Bash]
+  root: .
+  slug: 2014-12-18-yale
+  startdate: 2014-12-18
+  url: http://dhavide.github.io/2014-12-18-yale/
+  user: dhavide
+  venue: Yale University
+- address: 3rd floor Training Room, 7 Sir Winston Churchill Square
+  contact: vvarga@epl.ca
+  country: Canada
+  enddate: 2014-12-16
+  helper: [Cody Moorhouse, Katie Thompson]
+  humandate: Dec 15 & 16 2014
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Cam MacDonell, Vicky Varga]
+  latlng: 53.5430628,-113.4897479
+  layout: workshop
+  lessons: [Python, SQL, Bash]
+  registration: restricted
+  root: .
+  slug: 12-14-epl
+  startdate: 2014-12-15
+  url: http://vixvarga.github.io/12-14-epl/
+  user: vixvarga
+  venue: Edmonton Public Library
+- address: Auditório do BEG, CCB. Entrada para o campus fica na esquina entre a Rua
+    Professor Lauro Caldeira de Andrara e a Rua João Pio Duarte Silva - entrada do
+    bairro Córrego Grande). Nos prédios do CCB (MIP), procure o segundo bloco, andar
+    térreo, corredor da direita, última sala do corredor
+  contact: diego.barneche@mq.edu.au
+  country: Brazil
+  enddate: 2014-12-12
+  etherpad: https://etherpad.mozilla.org/SWC-UFSC
+  helper: ['']
+  humandate: Dez 11-12, 2014
+  humantime: 8:00 am - 5:30 pm
+  instructor: [Diego Barneche, Raniere Silva]
+  latlng: -27.59803,-48.51514
+  layout: workshop
+  root: .
+  slug: 2014-12-11-ufsc
+  startdate: 2014-12-11
+  url: http://dbarneche.github.io/2014-12-11-ufsc/
+  user: dbarneche
+  venue: Universidade Federal de Santa Catarina
+- address: Lab 323, Kelvin Building, G12 8SU
+  contact: alistair.grant@ed.ac.uk
+  country: United-Kingdom
+  enddate: 2014-12-12
+  helper: [Paul Mullen, Sean Leavey, Gavin Kirby]
+  humandate: Dec 11-12, 2014
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Alistair Grant, Norman Gray]
+  latlng: 55.871709,-4.291651
+  layout: workshop
+  root: .
+  slug: 2014-12-11-ugsupa
+  startdate: 2014-12-11
+  url: http://supa-uk.github.io/2014-12-11-ugsupa/
+  user: supa-uk
+  venue: University of Glasgow
+- address: 1 Cyclotron Road, Berkeley, CA
+  contact: nlucido@lbl.gov
+  country: United-States
+  enddate: 2014-12-17
+  helper: [Sam Penrose]
+  humandate: Dec 16-17, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jens von der Linden, Andrea Zonca, Chris Holdgraf]
+  latlng: 37.8706976,-122.30098
+  layout: workshop
+  root: .
+  slug: 2014-12-16-lbl
+  startdate: 2014-12-16
+  url: http://zonca.github.io/2014-12-16-lbl/
+  user: zonca
+  venue: Lawrence Berkeley National Lab
