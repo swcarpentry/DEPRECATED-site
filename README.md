@@ -110,7 +110,7 @@ If you'd like to submit your post as a pull request, then:
 7.  `git push origin master` will push it to your clone on GitHub
     (assuming you've added your fork on GitHub as a remote called `origin`).
 
-8.  Go to GitHub and issue a pull request from your clone to `swcarpentry/website`,
+8.  Go to GitHub and issue a pull request from your clone to `swcarpentry/site`,
     then assign it to `gvwilson` for proof-reading.
 
 Adding a Workshop
