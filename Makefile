@@ -61,10 +61,10 @@ SRC_HTML = \
 CONFIG_DIR = ./config
 SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
-# All files generated during the build process that are removed by
-# 'make clean'.  This does *not* include the _workshop_cache.yml file:
-# use 'make sterile' to get rid of that.
-GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
+# All files generated for the build process.
+GENERATED = \
+	./_dashboard_cache.yml \
+	./_workshop_cache.yml
 
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
@@ -96,11 +96,15 @@ archive :
 	    --archive $(CONFIG_DIR)/workshops_saved.yml
 
 ## cache        : collect workshop information from GitHub and store in local cache.
-cache :
+cache : $(GENERATED)
+
+./_workshop_cache.yml :
 	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
 	@python bin/get_workshop_info.py -v -t \
 	    -i $(CONFIG_DIR)/workshop_urls.yml \
 	    -o ./_workshop_cache.yml
+
+./_dashboard_cache.yml :
 	@python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
 
 ## biblio       : make HTML and PDF of bibliography.
@@ -151,14 +155,12 @@ valid :
 ## clean        : clean up.
 clean :
 	@rm -rf \
+	_config.yml \
 	$(GENERATED) \
 	_site \
 	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
+	_includes/recent_blog_posts.html \
 	$$(find . -name '*~' -print)
-
-## sterile      : *really* clean up.
-sterile : clean
-	rm -f ./_workshop_cache.yml ./_dashboard_cache.yml
 
 #-------------------------------------------------------------------------------
 
@@ -190,5 +192,5 @@ $(OUT)/index.html : _config.yml $(SRC_HTML)
 	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
-_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG)
+_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(GENERATED)
 	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)
