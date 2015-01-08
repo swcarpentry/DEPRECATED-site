@@ -59,6 +59,7 @@ def process(cnx):
                                      'updated' : i.updated_at.strftime('%Y-%m-%d')})
             dashboard['num_issues'] += 1
         record['issues'].sort(lambda x, y: - cmp(x['updated'], y['updated']))
+    return dashboard
 
 def main():
     '''Main driver.'''
