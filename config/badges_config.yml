@@ -61,6 +61,7 @@ instructor:
 - {name: Shreyas Cholia, user: cholia.s}
 - {name: Adina Chuang Howe, user: chuang-howe.a}
 - {name: Neil Chue Hong, user: chue-hong.n}
+- {name: Sophie Clayton, user: clayton.sophie}
 - {name: Luis Pedro Coelho, user: coelho.luis}
 - {name: Ruth Collings, user: collings.ruth}
 - {name: John Corless, user: corless.john}
@@ -201,7 +202,7 @@ instructor:
 - {name: Randy Olson, user: olson.r}
 - {name: Jeramia Ory, user: ory.j}
 - {name: Geoff Oxberry, user: oxberry.g}
-- {name: Kirill Palamartchouk, user: palamartchouk.k}
+- {name: Kirill Palamartchouk, user: palamartchouk.kirill}
 - {name: Aleksandra Pawlik, user: pawlik.a}
 - {name: John Pearson, user: pearson.john}
 - {name: Jason Pell, user: pell.j}
@@ -212,6 +213,7 @@ instructor:
 - {name: Timothee Poisot, user: poisot.t}
 - {name: Tom Pollard, user: pollard.tom}
 - {name: Likit Preeyanon, user: preeyanon.likit}
+- {name: Leighton Pritchard, user: pritchard.leighton}
 - {name: Francoise Provencher, user: provencher.francoise}
 - {name: Karthik Ram, user: ram.k}
 - {name: Saravanan Ramalingam, user: ramalingam.saravanan}
@@ -242,6 +244,7 @@ instructor:
 - {name: Daniel Smith, user: smith.daniel}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
+- {name: Nancy Soontiens, user: soontiens.nancy}
 - {name: Ashwin Trikuta Srinath, user: srinath.ashwin}
 - {name: Margaret Staton, user: staton.margaret}
 - {name: Peter Steinbach, user: steinbach.peter}
@@ -254,10 +257,12 @@ instructor:
 - {name: Bradley Taber-Thomas, user: taber-thomas.bradley}
 - {name: Scott Talafuse, user: talafuse.scott}
 - {name: Leszek Tarkowski, user: tarkowski.leszek}
+- {name: Rachael Tatman, user: tatman.rachael}
 - {name: Tracy Teal, user: teal.t}
 - {name: Matt Terry, user: terry.m}
 - {name: Andrew Teucher, user: teucher.andrew}
 - {name: Robert Till, user: till.robert}
+- {name: Tiffany Timbers, user: timbers.tiffany}
 - {name: Will Trimble, user: trimble.will}
 - {name: Stephen Turner, user: turner.s}
 - {name: Olav Vahtras, user: vahtras.olav}
@@ -273,6 +278,7 @@ instructor:
 - {name: Ben Waugh, user: waugh.b}
 - {name: Ethan White, user: white.e}
 - {name: Easton White, user: white.easton}
+- {name: Samuel White, user: white.samuel}
 - {name: Amanda Whitlock, user: whitlock.a}
 - {name: Asela Wijeratne, user: wijeratne.asela}
 - {name: Mark Wilber, user: wilber.mark}
