@@ -4082,7 +4082,7 @@
   lessons: [Python, SQL, Bash]
   registration: restricted
   root: .
-  slug: 12-14-epl
+  slug: 2014-12-14-epl
   startdate: 2014-12-15
   url: http://vixvarga.github.io/12-14-epl/
   user: vixvarga
@@ -4139,3 +4139,182 @@
   url: http://zonca.github.io/2014-12-16-lbl/
   user: zonca
   venue: Lawrence Berkeley National Lab
+- address: New York City
+  contact: gvwilson@software-carpentry.org
+  country: United-States
+  enddate: 2014-06-07
+  helper: [Jared Camins-Esakov, Yu-Ching Shih, Shawn Averkamp, Paul Beaudoin, Mauricio
+      Giraldo, Matt Miller, David Riordan]
+  humandate: Aug 6-7, 2014
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Cam Macdonell, Greg Wilson, Tim Cerino, Jason Williams]
+  latlng: 40.751901,-73.981692
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2014-08-06-nypl
+  startdate: 2014-06-06
+  url: http://swcarpentry.github.io/2014-08-06-nypl/
+  user: swcarpentry
+  venue: New York Public Library
+- address: Foresight Centre, 1 Brownlow Street, Liverpool, L69 3GL
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2014-11-18
+  helper: [Bert Overduin, Christiane Hertz-Fowler]
+  humandate: Nov 17-18, 2014
+  humantime: 9:45 am - 4:00 pm
+  instructor: [Kwasi Kwakwa, Marios Isaakidis]
+  latlng: 53.4087914,2.9723748
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2014-11-17-liverpool
+  startdate: 2014-11-17
+  url: http://kkwakwa.github.io/2014-11-17-liverpool/
+  user: kkwakwa
+  venue: University Of Liverpool
+- address: Room 609, Seattle Convention Center, Seattle WA
+  contact: kabostroem@ucdavis.edu
+  country: United-States
+  enddate: 2015-01-04
+  helper: [Pauline Barmby, Sophie Clayton, Jens von der Linden]
+  humandate: Jan 3-4, 2015
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Azalee Bostroem, Erik Bray, Matt Davis, Phil Rosenfield]
+  latlng: 47.6117,-122.3325
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: open
+  root: .
+  slug: 2015-01-03-aas
+  startdate: 2015-01-03
+  url: http://abostroem.github.io/2015-01-03-aas/
+  user: abostroem
+  venue: American Astronomical Society 225th Meeting
+- address: Mathematics Building, Room 135, UC Boulder
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2015-01-06
+  eventbrite: 14752447969
+  humandate: Jan 5-6, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Christina Koch, Mariela Perignon, Rachel Slaybaugh, Leah Wasser]
+  latlng: 40.00796,-105.264317
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2015-01-05-wise-cuboulder
+  startdate: 2015-01-05
+  url: http://christinalk.github.io/2015-01-05-wise-cuboulder/
+  user: christinalk
+  venue: Women in Science and Engineering, University of Colorado
+- address: North Campus Research Complex, Building 10 Room G064 and the South Atrium,
+    2800 Plymouth Road, Ann Arbor, MI
+  contact: admin@software-carpentry.org
+  country: United-States
+  enddate: 2015-01-06
+  helper: [Alyxandria Schubert, Iris Holmes, Marian Schmidt, Michelle Berry]
+  humandate: Jan 5-6, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sarah Supp, Kara Woo, Christie Bahlai, Dana Bauer]
+  latlng: 42.29932560385452,-83.70677590370178
+  layout: workshop
+  lessons: [R, SQL, Git, Bash, VM]
+  registration: restricted
+  root: .
+  slug: 2015-01-05-wise-umich
+  startdate: 2015-01-05
+  url: http://danabauer.github.io/2015-01-05-wise-umich/
+  user: danabauer
+  venue: Women in Science and Engineering, University of Michigan
+- address: 3100 Marine Street, Boulder, CO 80309
+  contact: aron@ahmadia.net
+  country: United-States
+  enddate: 2015-01-09
+  humandate: Jan 7-9, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Aron Ahmadia, Chris Kees]
+  latlng: 40.013294, -105.251890
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-01-07-instaar
+  startdate: 2015-01-07
+  url: http://geocarpentry.github.io/2015-01-07-instaar/
+  user: geocarpentry
+  venue: Institute of Arctic and Alpine Research (INSTAAR), Room 620
+- address: null
+  contact: imunoz@sesync.org
+  country: United-States
+  enddate: 2015-01-09
+  helper: [Sean Davis]
+  humandate: Jan 8-9, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ian Munoz, Daniel Chen]
+  latlng: 39.00281, -77.10444
+  layout: workshop
+  lessons: [R, Python, SQL, Git, Bash, VM]
+  registration: restricted
+  root: .
+  slug: 2015-01-08-NIH
+  startdate: 2015-01-08
+  url: http://ianamunoz.github.io/2015-01-08-NIH/
+  user: ianamunoz
+  venue: National Institutes of Health Library
+- address: 1050 Massachusetts Ave., Cambridge,  2nd floor Conference Room
+  contact: tjc.swc@gmail.com
+  country: United-States
+  enddate: 2015-01-09
+  helper: [Matthew Lamberti]
+  humandate: Jan 8-9, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Tim Cerino, Ivan Gonzalez]
+  latlng: 42.369970, -71.113038
+  layout: workshop
+  lessons: [Python, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2015-01-08-nber
+  startdate: 2015-01-08
+  url: http://Koltrane.github.io/2015-01-08-nber/
+  user: Koltrane
+  venue: National Bureau of Economic Research
+- address: Avery Hall, room 119
+  contact: sheldon.mckay@gmail.com
+  country: United-States
+  enddate: 2015-01-09
+  etherpad: https://etherpad.mozilla.org/2015-01-08-unl
+  helper: [Derek Weitzel, Emelie Harstad, Jingchao Zhang, Adam Caprez, Natasha Pavlovijk,
+    O. William McClung]
+  humandate: Jan 8-9, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Sheldon McKay, Daniel Smith]
+  latlng: 40.819348, -96.704387
+  layout: workshop
+  root: .
+  slug: 2015-01-08-unl
+  startdate: 2015-01-08
+  url: http://mckays630.github.io/2015-01-08-unl/
+  user: mckays630
+  venue: University of Nebraska-Lincoln
+- address: ERC 1058, UOIT, 2000 Simcoe St N, Oshawa, ON
+  contact: admin@software-carpentry.org
+  country: Canada
+  enddate: 2015-01-09
+  helper: ['Jessica Cervi, Kevin Green']
+  humandate: Jan 8-9, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Catalina Anghel, Dhavide Aruliah, Thomas Wright]
+  latlng: 43.945879, -78.896292
+  layout: workshop
+  lessons: [Python, SQL, Git, Bash]
+  registration: open
+  root: .
+  slug: 2015-01-08-uoit
+  startdate: 2015-01-08
+  url: http://dhavide.github.io/2015-01-08-uoit/
+  user: dhavide
+  venue: University of Ontario Institute of Technology
