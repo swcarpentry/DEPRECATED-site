@@ -1,0 +1,107 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Orwell, Dickens, and How We'll Know We're Done"
+date: 2015-01-17
+time: "14:30:00"
+category: ["Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  I started working on
+  a <a href="{{site.github_url}}/capstone-novice-spreadsheet-biblio">short capstone example</a>
+  last month
+  to show learners how to get a badly-formatted reference list out of an Excel spreadsheet
+  and into a relational database
+  so that it would be easy to answer questions like, "Who has co-authored papers with whom?"
+  I'd like to work up another capstone as well,
+  but there's a problem:
+  I can't actually do it myself
+  for reasons that are both technical and political.
+</p>
+<!-- end excerpt -->
+<p>
+  The problem is easy to state:
+  given a bibliography (like <a href="{{page.root}}/bib/software-carpentry.bib">this one</a>),
+  find all papers published in the last N years that <em>aren't</em> in the bibliography
+  but which reference items that are.
+  The use case is someone wanting to find out what's been done in some area
+  after they've been away from it for a while,
+  and from a computer science point of view,
+  the solution is easy:
+</p>
+<ol>
+  <li>
+    Get the DOIs of all the papers in the bibliography.
+  </li>
+  <li>
+    Look up all papers whose references include one or more of those DOIs.
+  </li>
+  <li>
+    Subtract everything published after 2010 (or whatever the "since" year is).
+  </li>
+</ol>
+<p>
+  A third of the bibliography entries don't have DOIs,
+  so the set of known DOIs built in step 1 will be incomplete.
+  That's not fatal in this case,
+  since anything that references one entry in the bibliography
+  will probably also reference others.
+</p>
+<p>
+  The real problem is step number two&mdash;the one where the problem stops being technical
+  and starts being political.
+  I haven't been able to find any publicly available service
+  that lets me search for papers whose references include one or more DOIs.
+  "Publicly available" is important here:
+  I live outside the Great Paywall of Academia;
+  many of the tools that most scientists can use are blocked both for me
+  and for many of our learners
+  (particularly those in developing countries).
+  I could solve that problem by wrangling a courtesy appointment at some university or other,
+  but that would feel like cheating,
+  because it would only solve the problem for <em>me</em>.
+</p>
+<p>
+  All of which brings us to 
+  <a href="http://orwell.ru/library/reviews/dickens/english/e_chd">George Orwell's essay on Charles Dickens</a>.
+  In it,
+  Orwell said that while Dickens saw the sins of Victorian society very clearly,
+  he never allowed himself to see that those sins were part and parcel of how that society was organized.
+  The protagonists in Dickens' novels might be saved individually&mdash;an unexpected inheritance,
+  a fortunate encounter with a pious benefactor,
+  and the like&mdash;but such solutions leave the equally deserving people standing to their left and right
+  still mired in muck.
+  Equally,
+  having friends who are still in academia mail me PDFs of papers doesn't help my neighbors,
+  much less allow me to build a tool that would let me find researchers
+  I should be talking to.
+</p>
+<p>
+  In 2013,
+  I said that <a href="{{page.root}}/blog/2013/05/what-does-victory-look-like.html">we would know we had won</a>
+  when scientists stopped submitting, publishing, and downloading papers,
+  and started forking and merging projects instead.
+  I now realize that goal was incomplete;
+  what I should have said was:
+</p>
+<blockquote>
+    Scientists won't submit, publish, and download papers.
+    <br/>
+    They will fork and merge projects
+    <br/>
+    <em>that everyone has equal access to.</em>
+</blockquote>
+<p>
+  Friends sending me PDFs of papers won't bring that world closer,
+  any more than giving one child a hot meal and a pair of shoes would have ended poverty in Dickens' London.
+  Teaching scientists the skills they need to build the program I outlined will,
+  but even that won't be enough.
+  What we really need is for scientists to use what we're teaching to change the practice of science,
+  so that anyone who wants to can write and run such tools.
+  As Emma Lazarus said:
+</p>
+<blockquote>
+  Until we are all free, we are none of us free.
+</blockquote>
