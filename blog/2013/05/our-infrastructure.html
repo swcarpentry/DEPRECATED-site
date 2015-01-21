@@ -23,9 +23,9 @@ category: ["Tooling"]
   <li>
     Our web pages and blog posts are <a href="http://jinja.pocoo.org/">Jinja2</a> templates
     stored in three GitHub repositories:
-    one for the <a href="https://github.com/swcarpentry/website">main web site</a>,
-    one for the <a href="https://github.com/swcarpentry/lessons_4_0">Version 4</a> videos and slides,
-    and one for the <a href="https://github.com/swcarpentry/lessons_3_0">Version 3</a> notes.
+    one for the <a href="{{site.github_url}}/website">main web site</a>,
+    one for the <a href="{{site.github_url}}/lessons_4_0">Version 4</a> videos and slides,
+    and one for the <a href="{{site.github_url}}/lessons_3_0">Version 3</a> notes.
     (We split material between repositories
     because we didn't want people to have to download the earlier versions
     in order to write a blog post&mdash;they're fairly large.
@@ -89,11 +89,11 @@ category: ["Tooling"]
   </li>
   <li>
     Which reminds me that there are three other repos as well.
-    <a href="https://github.com/swcarpentry/assets">assets</a>
+    <a href="{{site.github_url}}/assets">assets</a>
     stores all the "extra" public files that don't go into the web site,
     such as the vector source for our logo
     and the LaTeX and Markdown versions of our papers.
-    <a href="https://github.com/swcarpentry/guide">guide</a>
+    <a href="{{site.github_url}}/guide">guide</a>
     holds the source for
     the <a href="http://guide.software-carpentry.org">instructors' guide</a>
     that was supposed to be finished five months ago.
@@ -101,7 +101,7 @@ category: ["Tooling"]
     it is written in HTML with Jinja2 templates
     and compiled using a little Python script.
     Finally,
-    <a href="https://github.com/swcarpentry/boot-camps">boot-camps</a>
+    <a href="{{site.github_url}}/boot-camps">boot-camps</a>
     holds actual teaching materials,
     plus the web pages that instructors create for their bootcamps.
     This repo is a mess right now,
@@ -138,7 +138,7 @@ category: ["Tooling"]
     <td>
       <ol>
         <li>
-          Create a new branch in your clone of the GitHub <a href="https://github.com/swcarpentry/website">website</a> repo.
+          Create a new branch in your clone of the GitHub <a href="{{site.github_url}}/website">website</a> repo.
         </li>
         <li>
           Write the post as an HTML file with a bit of Jinja2 boilerplate.
@@ -173,7 +173,7 @@ category: ["Tooling"]
           and add the appropriate people to it.
         </li>
         <li>
-          Create a new branch in your clone of the GitHub <a href="https://github.com/swcarpentry/website">website</a> repo,
+          Create a new branch in your clone of the GitHub <a href="{{site.github_url}}/website">website</a> repo,
           add an HTML page for the bootcamp,
           send us a pull request,
           and recompile the site on the server once it's merged
@@ -186,7 +186,7 @@ category: ["Tooling"]
           (We forget to do this sometimes.)
         </li>
         <li>
-          Create a new branch in the <a href="https://github.com/swcarpentry/boot-camps">boot-camps</a> repo
+          Create a new branch in the <a href="{{site.github_url}}/boot-camps">boot-camps</a> repo
           to hold teaching materials.
         </li>
         <li>
