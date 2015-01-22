@@ -119,8 +119,10 @@ instructor:
 - {name: Jonathan Guyer, user: guyer.jonathan}
 - {name: Steve Haddock, user: haddock.s}
 - {name: Denis Haine, user: haine.denis}
+- {name: Christopher Hamm, user: hamm.christopher}
 - {name: Jessica Hamrick, user: hamrick.jessica}
 - {name: Michael Hansen, user: hansen.m}
+- {name: Rayna Harris, user: harris.rayna}
 - {name: Anthony Harrison, user: harrison.anthony}
 - {name: Ted Hart, user: hart.t}
 - {name: Ian Hawke, user: hawke.ian}
@@ -182,6 +184,7 @@ instructor:
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Maria McKinley, user: mckinley.maria}
 - {name: Emily Jane McTavish, user: mctavish.ej}
+- {name: Jeremy Metz, user: metz.jeremy}
 - {name: Lauren Michael, user: michael.lauren}
 - {name: Simon Michnowicz, user: michnowicz.s}
 - {name: Francois Michonneau, user: michonneau.francois}
@@ -215,6 +218,7 @@ instructor:
 - {name: Likit Preeyanon, user: preeyanon.likit}
 - {name: Leighton Pritchard, user: pritchard.leighton}
 - {name: Francoise Provencher, user: provencher.francoise}
+- {name: Sean Pue, user: pue.s}
 - {name: Karthik Ram, user: ram.k}
 - {name: Saravanan Ramalingam, user: ramalingam.saravanan}
 - {name: Janet Riley, user: riley.janet}
@@ -264,6 +268,7 @@ instructor:
 - {name: Robert Till, user: till.robert}
 - {name: Tiffany Timbers, user: timbers.tiffany}
 - {name: Will Trimble, user: trimble.will}
+- {name: Daniel Turek, user: turek.daniel}
 - {name: Stephen Turner, user: turner.s}
 - {name: Olav Vahtras, user: vahtras.olav}
 - {name: Roman Valls Guimera, user: valls-guimera.roman}

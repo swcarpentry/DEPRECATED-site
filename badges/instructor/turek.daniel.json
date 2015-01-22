@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-01-21", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$5b75b1fc6d51042f9735a1c8567daae05700169339a6cd92a8f018adaa868aaa", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$5b75b1fc6d51042f9735a1c8567daae05700169339a6cd92a8f018adaa868aaa", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/turek.daniel.json"
+ }
+}
