@@ -33,9 +33,6 @@ SRC_BADGES = $(wildcard ./badges/*.html)
 # Source files for checklists.
 SRC_CHECKLISTS = ./workshops/checklists/*.html
 
-# Source files for Version 4 lessons.
-SRC_V4 = $(wildcard ./v4/index.html) $(wildcard ./v4/*/*.html)
-
 # Source files for layouts.
 SRC_LAYOUT = $(wildcard ./_layouts/*.html)
 
@@ -192,5 +189,5 @@ $(OUT)/index.html : _config.yml $(SRC_HTML)
 	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
-_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(GENERATED)
+_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_INCLUDES) $(GENERATED)
 	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)
