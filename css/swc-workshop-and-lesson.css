@@ -1,6 +1,10 @@
-body.workshop {
+body.workshop, body.lesson {
 	background-color: #BEC3C6;
 	margin: 20px 0;
+}
+
+.container-full-width {
+	max-width: none;
 }
 
 .card {
