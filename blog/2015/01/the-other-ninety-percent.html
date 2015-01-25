@@ -9,18 +9,67 @@ category: ["Teaching", "Opinion", "Community"]
 ---
 <!-- start excerpt -->
 <p>
-  We don't know how much our learners actually start using after a workshop.
-  We have some insight thanks to <a href="http://arxiv.org/abs/1407.6220">Jory Schossau's work</a>,
-  but we also know that a lot of people don't know where to go next after they finish with us.
-  Most professional programmers turn to <a href="http://stackoverflow.com/">Stack Overflow</a>,
-  but it's not novice-friendly:
-  many first encounters consist of some variation on,
-  "<a href="https://en.wiktionary.org/wiki/RTFM">RTFM</a>, noob,"
-  particularly when the questioner isn't really sure what they're asking.
+  Ninety percent or more of learning a skill takes place outside formal lessons
+  as people try things out for themselves
+  and turn attention into habit.
+  This works best if a mentor is on hand to answer questions and provide feedback,
+  but our workshop format doesn't lend itself to that:
+  in most cases,
+  our instructors are back on a plane (or back in their own lab)
+  as soon as they're done teaching,
+  so our learners have to make sense of what they've just been shown on their own.
+  Based on follow-up discussions and <a href="http://arxiv.org/abs/1407.6220">Jory Schossau's work</a>,
+  here are things they stumble over in order of increasing pain:
 </p>
 <!-- end excerpt -->
+<ol>
+  <li>
+    <p>
+      Straightforward <em>technical issues</em>,
+      such as not being able to get software to install.
+      This isn't usually a problem for the packages we use in the workshops themselves,
+      but comes up frequently when they try to add domain-specific tools on their own.
+    </p>
+  </li>
+  <li>
+    <p>
+      Less straightforward <em>political issues</em>,
+      such as getting permission to put things on a public software forge like GitHub,
+      or getting the university to set something up internally.
+      This appears to be less of a problem than it was five years ago,
+      but that could be classification bias,
+      i.e.,
+      I could mistakenly be putting people who don't use GitHub because they're not allowed
+      in the same box as people who don't use Git because
+      <a href="http://people.csail.mit.edu/sperezde/onward13.pdf">it's intrinsically confusing</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Not having <em>somewhere to go for help</em> after the workshop is over.
+      Broadly speaking,
+      our learners need help with things that are specific to their science like,
+      "How do I interpret the output of this genome assembler?"
+      and with generic software development issues like,
+      "How do I recover an old file with Git?"
+      We can't help with the first
+      (though we hope we're creating a community of people who can and will).
+      Sites like <a href="http://stackoverflow.com">Stack Overflow</a> only partly solve the second:
+      many of our learners don't yet know enough to phrase their question correctly,
+      and wouldn't recognize the right answer if they saw one.
+      (SO can also be very unwelcoming:
+      naive questions are likely to be answered with some variation on
+      "<a href="https://en.wiktionary.org/wiki/RTFM">RTFM</a>, noob,"
+      and if being thick-skinned is a prerequisite for getting help somewhere,
+      that "somewhere" isn't really helpful.
+      Cf. <a href="http://www.curiousefficiency.org/posts/2015/01/abuse-is-not-ok.html">Nick Coghlan's piece on abusing contributors</a>,
+      neatly summarized by <a href="https://twitter.com/nslater/status/558342559010127872">Noah Slater</a>.)
+    </p>
+  </li>
+</ol>
 <p>
-  We've tried a few kinds of follow-up in the past, but:
+  We've tried creating a place of our own for our learners to go after workshops,
+  but:
 </p>
 <ul>
   <li>
@@ -42,13 +91,13 @@ category: ["Teaching", "Opinion", "Community"]
   </li>
   <li>
     <p>
-      <em>IRC</em> isn't something non-nerds are ever likely to adopt
+      <em>IRC</em> simply isn't going to catch on among non-nerds
       (something we re-discovered during last summer's sprint).
     </p>
   </li>
 </ul>
 <p>
-  All of this should be read sceptically,
+  These failures should be interpreted sceptically,
   though,
   because we were a lot smaller two years ago than we are today.
   People will participate in a group when other people participate;
@@ -60,73 +109,10 @@ category: ["Teaching", "Opinion", "Community"]
   we may finally have the critical mass we need to sustain something.
 </p>
 <p>
-  But we need to be careful about what the "something" is.
-  Broadly speaking,
-  our learners need two things:
-</p>
-<ol>
-  <li>
-    <p>
-      Help with generic software development issues like,
-      "How do I recover an old file with Git?"
-    </p>
-  </li>
-  <li>
-    <p>
-      Help with things that are specific to their science like,
-      "How do I get this tool to display my phylogenetic tree properly?"
-    </p>
-  </li>
-</ol>
-<p>
-  The first is what Stack Overflow is for,
-  but again,
-  it's only theoretically accessible to novices:
-  many of our learners don't know how to phrase their question,
-  wouldn't recognize a correct answer if they saw one,
-  and have to have thick skins to persist in the face of SO's all-too-frequent rudeness.
-  (Cf. <a href="http://www.curiousefficiency.org/posts/2015/01/abuse-is-not-ok.html">Nick Coghlan's piece on abusing contributors</a>,
-  neatly summarized by <a href="https://twitter.com/nslater/status/558342559010127872">Noah Slater</a>.)
-</p>
-<p>
-  I don't know how much we'll be able to help with the second issue in the short run,
-  but in the long run I hope our contribution will be to increase the number of people
-  who are willing and able to offer technical support.
-  To get us from here to there,
-  I'd like to explore two new ways of helping workshop alumni implement the ideas we've shown them.
-  They will all require effort from our volunteers,
-  but again,
-  we have a lot more of those than we used to.
-  In no particular order:
-</p>
-<ol>
-  <li>
-    <p>
-      <em>Mixed-mode teaching</em>,
-      with an instructor coming in via video conferencing
-      and helpers in the room with learners.
-      We've tried this a couple of times with good results;
-      wider use would not only eliminates travel time and costs
-      (both of which will help us reach more places),
-      but also allow us to teach workshops in more digestible ways,
-      such as several half-days instead of two full days.
-      This will hopefully also allow more follow-up:
-      if we cut out travel time,
-      instructors might be able to do more teaching with the same number of hours.
-    </p>
-  </li>
-  <li>
-    <p>
-      <em>Live demos</em>,
-      in which instructors webcast as they live-code their way through a short problem.
-      The idea here is to show learners what "done" looks like,
-      and along the way to teach them things they don't even know to ask for
-      (as in, "Cool, I didn't know RStudio could do that").
-    </p>
-  </li>
-</ol>
-<p>
-  If there are other ideas that you'd like to implement,
-  please comment below:
-  we'd be happy to experiment.
+  We'd appreciate comments on other ways people stumble after workshops
+  so that we can try to figure out what to try next.
+  What did you find difficult after your first encounter with us
+  (or with programming for science in general)?
+  What have you seen learners struggle with,
+  and what do you think would have helped them most?
 </p>
