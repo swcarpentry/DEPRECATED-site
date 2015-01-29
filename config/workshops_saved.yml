@@ -4304,7 +4304,7 @@
   contact: admin@software-carpentry.org
   country: Canada
   enddate: 2015-01-09
-  helper: ['Jessica Cervi, Kevin Green']
+  helper: [Jessica Cervi, Kevin Green]
   humandate: Jan 8-9, 2015
   humantime: 9:00 am - 4:30 pm
   instructor: [Catalina Anghel, Dhavide Aruliah, Thomas Wright]
@@ -4318,3 +4318,21 @@
   url: http://dhavide.github.io/2015-01-08-uoit/
   user: dhavide
   venue: University of Ontario Institute of Technology
+- address: 3, Mokdongjungang-ro 13na-gil, Yangcheon-gu, Seoul, South Korea
+  contact: admin@software-carpentry.org
+  country: South-Korea
+  enddate: 2015-01-09
+  helper: [Jungsu Han]
+  humandate: Feb 25-26, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Kwangchun Lee]
+  latlng: 37.5461345,126.8806653
+  layout: workshop
+  lessons: [Python, SQL, Git, Bash]
+  registration: open
+  root: .
+  slug: 2015-02-25-seoul
+  startdate: 2015-02-25
+  url: http://statkclee.github.io/2015-02-25-seoul
+  user: statkclee
+  venue: Korea Radio Promotion Association
