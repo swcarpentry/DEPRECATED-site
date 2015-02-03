@@ -18,6 +18,7 @@ instructor:
 - {name: Aron Ahmadia, user: ahmadia.a}
 - {name: Matthew Aiello-Lammens, user: aiello-lammens.matthew}
 - {name: Joshua Ainsley, user: ainsley.joshua}
+- {name: Harriet Alexander, user: alexander.harriet}
 - {name: Russell Alleen-Willems, user: alleen-willems.russell}
 - {name: James Allen, user: allen.james}
 - {name: Pete Alonzi, user: alonzi.pete}
@@ -89,13 +90,13 @@ instructor:
 - {name: Richard Enbody, user: enbody.r}
 - {name: Aaron Erlich, user: erlich.aaron}
 - {name: Daniel Falster, user: falster.daniel}
+- {name: Emmanouil-Ioannis Farsarakis, user: farsarakis.emmanouil-ioannis}
 - {name: Xu Fei, user: fei.xu}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Jordan Fish, user: fish.jordan}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
 - {name: Robert Flight, user: flight.r}
 - {name: John Fonner, user: fonner.john}
-- {name: Philip Fowler, user: fowler.p}
 - {name: Philip Fowler, user: fowler.philip}
 - {name: Jonathan Frederic, user: frederic.jonathan}
 - {name: Chris Friedline, user: friedline.chris}
@@ -190,11 +191,14 @@ instructor:
 - {name: Francois Michonneau, user: michonneau.francois}
 - {name: Brian Miles, user: miles.brian}
 - {name: Bill Mills, user: mills.b}
+- {name: Meeta Mistry, user: mistry.meeta}
 - {name: Ian Mitchell, user: mitchell.i}
+- {name: Jason Moore, user: moore.jason}
 - {name: Ben Morris, user: morris.b}
 - {name: Erika Mudrak, user: mudrak.erika}
 - {name: Ian Munoz, user: munoz.ian}
 - {name: R. David Murray, user: murray.david}
+- {name: Hani Nakhoul, user: nakhoul.hani}
 - {name: Lex Nederbragt, user: nederbragt.l}
 - {name: Aleksandra Nenadic, user: nenadic.aleksandra}
 - {name: Jens Hedegaard Nielsen, user: nielsen.jens}
@@ -250,6 +254,7 @@ instructor:
 - {name: Mike Smorul, user: smorul.mike}
 - {name: Nancy Soontiens, user: soontiens.nancy}
 - {name: Ashwin Trikuta Srinath, user: srinath.ashwin}
+- {name: Daniel Standage, user: standage.daniel}
 - {name: Margaret Staton, user: staton.margaret}
 - {name: Peter Steinbach, user: steinbach.peter}
 - {name: Mark Stillwell, user: stillwell.mark}
@@ -270,6 +275,7 @@ instructor:
 - {name: Will Trimble, user: trimble.will}
 - {name: Daniel Turek, user: turek.daniel}
 - {name: Stephen Turner, user: turner.s}
+- {name: Daniela Ushizima, user: ushizima.daniela}
 - {name: Olav Vahtras, user: vahtras.olav}
 - {name: Roman Valls Guimera, user: valls-guimera.roman}
 - {name: Vicky Varga, user: varga.vicky}
@@ -277,6 +283,7 @@ instructor:
 - {name: Bogdan Vera, user: vera.b}
 - {name: Alex Viana, user: viana.a}
 - {name: Jens von der Linden, user: vonderlinden.jens}
+- {name: Leanne Wake, user: wake.leanne}
 - {name: Andrew Walker, user: walker.andrew}
 - {name: Dan Warren, user: warren.dan}
 - {name: Leah Wasser, user: wasser.leah}
@@ -319,7 +326,7 @@ organizer:
 - {name: Jonah Duckles, user: duckles.jonah}
 - {name: Dan Ellis, user: ellis.dan}
 - {name: Valerie Evans, user: evans.valerie}
-- {name: Philip Fowler, user: fowler.p}
+- {name: Philip Fowler, user: fowler.philip}
 - {name: Elise Glen, user: glen.e}
 - {name: Carole Goble, user: goble.c}
 - {name: Chris Gray, user: gray.c}
