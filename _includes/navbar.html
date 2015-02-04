@@ -1,20 +1,20 @@
 <span id="github-ribbon"><a href="{{site.github_url}}/bc">Fork me on GitHub</a></span>
 
 
-<nav class="navbar-nav navbar-static-top center-block" id="swc-navbar">
-    <div class="container">
 
-      <!-- for mobile display -->
+<nav class="navbar navbar-nav navbar-static-top" id="swc-navbar">
+  <div class="container-fluid">
+  <!-- for mobile display -->
       <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         <a href="{{page.root}}/index.html" id="nav-logo" class="nav-brand pull-left"></a>
-        </button>
+         <button type="button" class="btn btn-default btn-lg navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+         </button>
+	 <a href="{{page.root}}/index.html" class="navbar-brand">
+	   <img alt="Software Carpentry logo" src="img/software-carpentry-banner.png">
+	 </a>
        </div>
 
-      <div class="collapse navbar-collapse col-md-10 pull-right">
+      <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li id="nav-workshops">
             <a href="{{page.root}}/workshops/index.html">Workshops</a>
@@ -37,11 +37,13 @@
           <li id="nav-about">
             <a href="{{page.root}}/pages/index.html">More...</a>
           </li>
-          <form class="navbar-right" role="search" method="get" action="http://www.google.com/search">
-            <input type="hidden" name="sitesearch" value="{{site.site}}" />
-            <input name="q" type="text" class="form-control" placeholder="Search" id="swc-navbar-search" />
+          <form class="navbar-form navbar-right" role="search" method="get" action="http://www.google.com/search">
+	    <div class="form-group">
+              <input type="hidden" name="sitesearch" value="{{site.site}}" />
+              <input name="q" type="text" class="form-control"  placeholder="Search" id="swc-navbar-search" />
+	    </div>
           </form>
         </ul>
       </div>
-    </div>
+  </div>
 </nav>
