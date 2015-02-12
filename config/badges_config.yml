@@ -90,7 +90,7 @@ instructor:
 - {name: Richard Enbody, user: enbody.r}
 - {name: Aaron Erlich, user: erlich.aaron}
 - {name: Daniel Falster, user: falster.daniel}
-- {name: Emmanouil-Ioannis Farsarakis, user: farsarakis.emmanouil-ioannis}
+- {name: Emmanouil Farsarakis, user: farsarakis.emmanouil}
 - {name: Xu Fei, user: fei.xu}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Jordan Fish, user: fish.jordan}
@@ -148,6 +148,7 @@ instructor:
 - {name: Zbigniew Jedrzejewski-Szmek, user: jedrzejewski-szmek.zbigniew}
 - {name: David Jones, user: jones.d}
 - {name: David Jones, user: jones.dm}
+- {name: Martin Jones, user: jones.martin}
 - {name: Jessica Kerr, user: kerr.j}
 - {name: Jan Kim, user: kim.jan}
 - {name: W. Trevor King, user: king.wt}
