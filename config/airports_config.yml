@@ -11,7 +11,7 @@
 - {airport: Bangalore, count: 1, latlng: '12.949722,77.668056'}
 - {airport: 'Nashville, TN', count: 1, latlng: '36.131312,-86.66945'}
 - {airport: Brisbane, count: 1, latlng: '-27.384167,153.1175'}
-- {airport: 'Boston, MA', count: 2, latlng: '42.364167,-71.005'}
+- {airport: 'Boston, MA', count: 4, latlng: '42.364167,-71.005'}
 - {airport: Bristol, count: 1, latlng: '51.3825,-2.718889'}
 - {airport: 'Baltimore, MD', count: 3, latlng: '39.175278,-76.668333'}
 - {airport: Paris Charles de Gaulle, count: 1, latlng: '49.012778,2.55'}
@@ -30,7 +30,7 @@
 - {airport: 'Detroit, MI', count: 8, latlng: '42.212222,-83.353333'}
 - {airport: Dublin, count: 1, latlng: '53.421111,-6.27'}
 - {airport: Dusseldorf, count: 1, latlng: '51.289444,6.766667'}
-- {airport: Edinburgh, count: 5, latlng: '55.95,-3.3725'}
+- {airport: Edinburgh, count: 6, latlng: '55.95,-3.3725'}
 - {airport: 'Eugene, OR', count: 1, latlng: '38.175662,-85.736923'}
 - {airport: 'Newark, NJ', count: 2, latlng: '40.692222,-74.168611'}
 - {airport: Exeter, count: 1, latlng: '50.734444,-3.413889'}
@@ -39,16 +39,16 @@
 - {airport: 'Spokane, WA', count: 1, latlng: '47.619722,-117.533611'}
 - {airport: 'Washington Dulles, DC', count: 2, latlng: '38.944444,-77.455556'}
 - {airport: 'Houston, TX', count: 4, latlng: '29.980278,-95.339722'}
-- {airport: 'Indianapolis, IN', count: 3, latlng: '39.717222,-86.294167'}
+- {airport: 'Indianapolis, IN', count: 4, latlng: '39.717222,-86.294167'}
 - {airport: 'Ithaca, NY', count: 1, latlng: '42.491,-76.459'}
 - {airport: 'New York JFK, NY', count: 5, latlng: '40.639722,-73.778889'}
-- {airport: Krakow, count: 4, latlng: '50.0775,19.784722'}
+- {airport: Krakow, count: 5, latlng: '50.0775,19.784722'}
 - {airport: 'Lansing, MI', count: 11, latlng: '42.778611,-84.587222'}
 - {airport: 'Los Angeles, CA', count: 1, latlng: '33.9415889,-118.40853'}
 - {airport: Leeds, count: 1, latlng: '53.865833,-1.660556'}
 - {airport: London City, count: 1, latlng: '51.505,0.054167'}
 - {airport: 'New York La Guardia, NY', count: 7, latlng: '40.777222,-73.8725'}
-- {airport: London Heathrow, count: 18, latlng: '51.4775,-0.461389'}
+- {airport: London Heathrow, count: 19, latlng: '51.4775,-0.461389'}
 - {airport: Luton, count: 1, latlng: '51.874444,-0.368333'}
 - {airport: Lyon Saint Exupery, count: 1, latlng: '45.726111,5.090833'}
 - {airport: Madrid, count: 1, latlng: '40.472222,-3.560833'}
@@ -63,7 +63,7 @@
 - {airport: 'Minneapolis St Paul, MN', count: 1, latlng: '44.880278,-93.216667'}
 - {airport: 'New Orleans, LA', count: 1, latlng: '29.993333,-90.257778'}
 - {airport: Munich, count: 1, latlng: '48.353611,11.785833'}
-- {airport: Newcastle, count: 2, latlng: '55.0375,-1.691667'}
+- {airport: Newcastle, count: 3, latlng: '55.0375,-1.691667'}
 - {airport: Norwich, count: 1, latlng: '52.675833,1.282778'}
 - {airport: 'Oakland, CA', count: 10, latlng: '37.721111,-122.220556'}
 - {airport: Okinawa Naha, count: 1, latlng: '26.195556,127.645833'}
@@ -80,12 +80,12 @@
 - {airport: 'San Luis Obispo, CA', count: 1, latlng: '35.236944,-120.641944'}
 - {airport: 'State College, PA', count: 1, latlng: '40.855881,-77.843841'}
 - {airport: 'Louisville, KY', count: 1, latlng: '38.175662,-85.736923'}
-- {airport: 'Seattle, WA', count: 12, latlng: '47.448889,-122.309167'}
-- {airport: 'San Francisco, CA', count: 8, latlng: '37.618889,-122.374722'}
+- {airport: 'Seattle, WA', count: 13, latlng: '47.448889,-122.309167'}
+- {airport: 'San Francisco, CA', count: 9, latlng: '37.618889,-122.374722'}
 - {airport: Singapore, count: 1, latlng: '1.355556,103.987222'}
 - {airport: 'San Jose, CA', count: 1, latlng: '37.361667,-121.928889'}
 - {airport: 'Salt Lake City, UT', count: 2, latlng: '40.788333,-111.9775'}
-- {airport: 'Sacramento, CA', count: 2, latlng: '38.695278,-121.590556'}
+- {airport: 'Sacramento, CA', count: 3, latlng: '38.695278,-121.590556'}
 - {airport: 'John Wayne (Orange County), CA', count: 1, latlng: '33.675556,-117.868056'}
 - {airport: Southampton, count: 2, latlng: '50.95,-1.356667'}
 - {airport: 'St. Louis, MO', count: 3, latlng: '38.7475,-90.359722'}
