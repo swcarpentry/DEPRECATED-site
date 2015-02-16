@@ -1,0 +1,173 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Two (Possible) Rules"
+date: 2015-02-16
+time: "08:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  It's been quite a year for Software Carpentry instructor training:
+  we had <a href="{{page.root}}/blog/2015/01/instructor-training-at-uc-davis.html">a great session at UC Davis</a>
+  (see also <a href="http://neuro.plos.org/2015/02/12/effective-teaching-tips-from-a-train-the-trainers-workshop/">this excellent post</a>
+  from Rayna Harris)
+  and another at
+  <a href="http://melbourne.resbaz.edu.au/post/110950818524/software-carpentry-set-to-explode-in-aus-nz">the Research Bazaar kickoff</a>
+  in Melbourne.
+  We've also started
+  <a href="{{site.github_io_url}}/training-course/submissions/round-12/index.html">the twelfth round of online instructor training</a>
+  with 75 participants,
+  making it our largest yet.
+</p>
+<p>
+  All of this has led to
+  <a href="{{page.root}}/blog/2015/02/weekly-update-2015-02-b13.html#stats-2015-02-13">a flurry of activity</a>
+  in our GitHub repositories.
+  The comments and pull requests are very welcome,
+  but we need to keep three things in mind:
+</p>
+<ol>
+  <li>
+    <p>
+      We already have more material than we can cover in two days.
+    </p>
+  </li>
+  <li>
+    <p>
+      We are not our learners.
+    </p>
+  </li>
+  <li>
+    <p>
+      No lesson survives its first presentation intact.
+    </p>
+  </li>
+</ol>
+<!-- end excerpt -->
+<p>
+  The first point is the most difficult.
+  Everyone can think of things we ought to teach;
+  the hard part is agreeing on <em>what to take out</em> to make room for those additions.
+  For example,
+  I really want to include dictionaries in our basic Python tutorial,
+  but I'm damned if I can figure out what it's greater than,
+  i.e.,
+  what to drop to free up the half hour it takes for people to learn
+  what they and how they work.
+</p>
+<p>
+  The common response when I say that (as I have several times in the last few days)
+  is, "Half an hour?  It only takes a minute!"
+  And that brings us to the second point:
+  we are not our learners.
+  The people who are most likely to offer contributions to lessons
+  are the ones who are most confident in their computing skills.
+  That does not necessarily imply they are the most competent,
+  but it does (usually) mean that they already understand these ideas,
+  and therefore under-estimate how hard they are for newcomers.
+  In particular,
+  they under-estimate how often "little" things will go wrong in incomprehensible ways.
+  and how hard they are to fix without a working mental model of how all this stuff works.
+</p>
+<p>
+  For example,
+  the first exercise for this round of instructor training was
+  to submit a short biography
+  as a pull request to <a href="{{site.github_io_url}}/training-course/">our GitHub-hosted blog</a>.
+  After his was merged,
+  one trainee got this error message from Jekyll
+  (the page translation tool GitHub uses):
+</p>
+<pre>
+Liquid Exception: comparison of Jekyll::Document with Jekyll::Document failed in _layouts/roundindex.html
+jekyll 2.4.0 | Error:  comparison of Jekyll::Document with Jekyll::Document failed
+</pre>
+<p>
+  That's it&mdash;no file name, much less a line number.
+  Here's the header of the offending file:
+</p>
+<pre>
+---
+date: 20150201
+round: Round 12
+title: About Some Body
+author: Some Body
+permalink: /2015/02/some-body/
+tags:
+  - Biography
+---
+Some Body is a theological engineer working at...
+</pre>
+<p>
+  The problem is the date:
+  it has to be hyphenated as <code>2015-02-01</code>,
+  but good luck figuring that out from the error message.
+  Another trainee's post didn't produce any error message all&mdash;it just
+  didn't show up in the blog.
+  Her header looked like this:
+</p>
+<pre>
+---
+date: 2015-02-10
+round: Round 12
+title: About Somebody Else
+author: Somebody Else
+permalink: /2015/02/somebody-else/
+tags:
+  - Biography
+  ---
+Hi!  I'm Somebody Else, and...
+</pre>
+<p>
+  It took me about five minutes to notice that the "---" closing the header is indented,
+  which means that Jekyll decides the page is all header and no body
+  and throws it away.
+</p>
+<p>
+  My point here isn't to complain about Jekyll
+  (although c'mon&mdash;not even a file name?).
+  My point is that what we're trying to teach is hard,
+  the <a href="https://en.wikipedia.org/wiki/No_Silver_Bullet">accidental complexity</a> imposed by lousy tools makes it harder,
+  and it's all too easy for people who've climbed a hill to forget how steep it was and say,
+  "But [Topic X] will only take a couple of minutes."
+</p>
+<p>
+  Which brings us to the third point:
+  no lesson survives its first presentation intact.
+  Over the past four months,
+  several instructors have used material of their own in workshops.
+  Sometimes it's gone well;
+  sometimes, though, it hasn't,
+  and when it hasn't,
+  it's usually been because it was just too much to digest.
+</p>
+<p>
+  My <a href="{{page.root}}/blog/2015/02/nouns-and-verbs.html">previous musings on teaching</a>
+  didn't end with anything actionable,
+  so this one should.
+  I'd like to propose that:
+</p>
+<ol>
+  <li>
+    <p>
+      Every time someone suggests a substantial addition to one of our lessons,
+      we have to figure out what's going to be removed to make room for it.
+    </p>
+  </li>
+  <li>
+    <p>
+      Every time someone wants to teach their own material in a workshop,
+      they have to post it for review at least a week before they use it
+      so that other instrutors can give them feedback.
+    </p>
+  </li>
+</ol>
+<p>
+  I don't want either rule to scare people off or strangle progress,
+  but I also think that as more instructors and other potential contributors join us,
+  we need some guidelines around lesson development.
+  I'd be grateful for comments on whether these ideas are (a) good and (b) workable,
+  particularly from new contributors (and people who aren't yet contributors at all).
+</p>
