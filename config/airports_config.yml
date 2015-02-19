@@ -1,89 +1,111 @@
+- {airport: 'Albuquerque, NM', count: 1, latlng: '35.048665,-106.616704'}
 - {airport: Auckland, count: 1, latlng: '-37.008056,174.791667'}
-- {airport: Austin, count: 2, latlng: '30.194444,-97.669722'}
-- {airport: Hartford Connecticut, count: 2, latlng: '41.938889,-72.683056'}
-- {airport: Birmingham Alabama, count: 1, latlng: '33.562778,-86.753333'}
-- {airport: Suvarnabhumi Bangkok, count: 1, latlng: '13.6925,100.75'}
+- {airport: 'Ames, IA', count: 1, latlng: '41.99194,-93.62167'}
+- {airport: Stockholm, count: 3, latlng: '59.651944,17.918611'}
+- {airport: 'Atlanta, GA', count: 3, latlng: '33.640278,-84.426944'}
+- {airport: 'Austin, TX', count: 3, latlng: '30.194444,-97.669722'}
+- {airport: Barcelona, count: 1, latlng: '41.296944,2.078333'}
+- {airport: 'Hartford, CT', count: 2, latlng: '41.938889,-72.683056'}
+- {airport: Birmingham, count: 2, latlng: '52.453611,-1.747778'}
+- {airport: Bangkok, count: 1, latlng: '13.6925,100.75'}
 - {airport: Bangalore, count: 1, latlng: '12.949722,77.668056'}
-- {airport: Nashville, count: 1, latlng: '36.131312,-86.66945'}
+- {airport: 'Nashville, TN', count: 1, latlng: '36.131312,-86.66945'}
 - {airport: Brisbane, count: 1, latlng: '-27.384167,153.1175'}
-- {airport: Boston Logan, count: 2, latlng: '42.364167,-71.005'}
+- {airport: 'Boston, MA', count: 4, latlng: '42.364167,-71.005'}
 - {airport: Bristol, count: 1, latlng: '51.3825,-2.718889'}
-- {airport: Baltimore Washington, count: 3, latlng: '39.175278,-76.668333'}
+- {airport: 'Baltimore, MD', count: 3, latlng: '39.175278,-76.668333'}
 - {airport: Paris Charles de Gaulle, count: 1, latlng: '49.012778,2.55'}
-- {airport: Charlottesville, count: 1, latlng: '38.139643,-78.452342'}
-- {airport: Charleston, count: 1, latlng: '32.898611,-80.040278'}
-- {airport: Urbana-Champaign, count: 1, latlng: '40.039167,-88.278056'}
+- {airport: 'Charlottesville, VA', count: 6, latlng: '38.139643,-78.452342'}
+- {airport: 'Charleston, SC', count: 1, latlng: '32.898611,-80.040278'}
+- {airport: 'Cleveland, OH', count: 1, latlng: '41.411667,-81.849722'}
+- {airport: 'Urbana-Champaign, IL', count: 2, latlng: '40.039167,-88.278056'}
 - {airport: Copenhagen Kastrup, count: 1, latlng: '55.617778,12.655833'}
 - {airport: Cape Town, count: 2, latlng: '-33.964722,18.601667'}
-- {airport: Ronald Reagan Washington, count: 4, latlng: '38.851944,-77.0375'}
-- {airport: Denver, count: 1, latlng: '39.858333,-104.666944'}
-- {airport: Dallas Fort Worth, count: 1, latlng: '32.896389,-97.0375'}
+- {airport: 'Ronald Reagan Washington, DC', count: 6, latlng: '38.851944,-77.0375'}
+- {airport: 'Denver, CO', count: 3, latlng: '39.858333,-104.666944'}
+- {airport: 'Dallas-Fort Worth, TX', count: 2, latlng: '32.896389,-97.0375'}
 - {airport: Dundee, count: 1, latlng: '56.4525,-3.025833'}
-- {airport: Des Moines, count: 2, latlng: '41.533889,-93.6625'}
-- {airport: Detroit, count: 3, latlng: '42.212222,-83.353333'}
+- {airport: Dresden, count: 2, latlng: '51.1325,13.766944'}
+- {airport: 'Des Moines, IA', count: 1, latlng: '41.533889,-93.6625'}
+- {airport: 'Detroit, MI', count: 8, latlng: '42.212222,-83.353333'}
 - {airport: Dublin, count: 1, latlng: '53.421111,-6.27'}
-- {airport: Edinburgh, count: 3, latlng: '55.95,-3.3725'}
-- {airport: Eugene Oregon, count: 1, latlng: '38.175662,-85.736923'}
-- {airport: Newark, count: 1, latlng: '40.692222,-74.168611'}
+- {airport: Dusseldorf, count: 1, latlng: '51.289444,6.766667'}
+- {airport: Edinburgh, count: 6, latlng: '55.95,-3.3725'}
+- {airport: 'Eugene, OR', count: 1, latlng: '38.175662,-85.736923'}
+- {airport: 'Newark, NJ', count: 2, latlng: '40.692222,-74.168611'}
+- {airport: Exeter, count: 1, latlng: '50.734444,-3.413889'}
+- {airport: 'Flagstaff, AZ', count: 1, latlng: '35.13778,-111.67167'}
 - {airport: Frankfurt, count: 2, latlng: '50.026389,8.543056'}
-- {airport: Washington Dulles, count: 1, latlng: '38.944444,-77.455556'}
-- {airport: Houston, count: 2, latlng: '29.980278,-95.339722'}
-- {airport: Indianapolis, count: 3, latlng: '39.717222,-86.294167'}
-- {airport: Ithaca Tompkins Regional Airport, count: 1, latlng: '42.491,-76.459'}
-- {airport: New York JFK, count: 3, latlng: '40.639722,-73.778889'}
-- {airport: Krakow, count: 2, latlng: '50.0775,19.784722'}
-- {airport: Lansing, count: 11, latlng: '42.778611,-84.587222'}
-- {airport: Los Angeles, count: 1, latlng: '33.9415889,-118.40853'}
+- {airport: 'Spokane, WA', count: 1, latlng: '47.619722,-117.533611'}
+- {airport: 'Washington Dulles, DC', count: 2, latlng: '38.944444,-77.455556'}
+- {airport: 'Houston, TX', count: 4, latlng: '29.980278,-95.339722'}
+- {airport: 'Indianapolis, IN', count: 4, latlng: '39.717222,-86.294167'}
+- {airport: 'Ithaca, NY', count: 1, latlng: '42.491,-76.459'}
+- {airport: 'New York JFK, NY', count: 5, latlng: '40.639722,-73.778889'}
+- {airport: Krakow, count: 5, latlng: '50.0775,19.784722'}
+- {airport: 'Lansing, MI', count: 11, latlng: '42.778611,-84.587222'}
+- {airport: 'Los Angeles, CA', count: 1, latlng: '33.9415889,-118.40853'}
+- {airport: Leeds, count: 1, latlng: '53.865833,-1.660556'}
 - {airport: London City, count: 1, latlng: '51.505,0.054167'}
-- {airport: New York La Guardia, count: 6, latlng: '40.777222,-73.8725'}
-- {airport: London Heathrow, count: 12, latlng: '51.4775,-0.461389'}
+- {airport: 'New York La Guardia, NY', count: 7, latlng: '40.777222,-73.8725'}
+- {airport: London Heathrow, count: 19, latlng: '51.4775,-0.461389'}
+- {airport: Luton, count: 1, latlng: '51.874444,-0.368333'}
 - {airport: Lyon Saint Exupery, count: 1, latlng: '45.726111,5.090833'}
 - {airport: Madrid, count: 1, latlng: '40.472222,-3.560833'}
-- {airport: Manchester, count: 3, latlng: '53.353611,-2.274722'}
-- {airport: Kansas City, count: 1, latlng: '39.2975,-94.713889'}
-- {airport: Harrisburg, count: 1, latlng: '40.193333,-76.763333'}
-- {airport: Chicago Midway, count: 3, latlng: '41.785833,-87.752222'}
-- {airport: Melbourne, count: 3, latlng: '-37.673333,144.843333'}
+- {airport: Manchester, count: 6, latlng: '53.353611,-2.274722'}
+- {airport: 'Kansas City, KS', count: 2, latlng: '39.2975,-94.713889'}
+- {airport: 'Orlando, FL', count: 1, latlng: '28.428889,-81.315833'}
+- {airport: 'Harrisburg, PA', count: 1, latlng: '40.193333,-76.763333'}
+- {airport: 'Chicago Midway, IL', count: 3, latlng: '41.785833,-87.752222'}
+- {airport: Melbourne, count: 6, latlng: '-37.673333,144.843333'}
 - {airport: 'Manchester, New Hampshire', count: 1, latlng: '42.92786,-71.43844'}
-- {airport: Madison Dane County, count: 4, latlng: '43.139722,-89.3375'}
-- {airport: New Orleans, count: 1, latlng: '29.993333,-90.257778'}
+- {airport: 'Madison, WI', count: 4, latlng: '43.139722,-89.3375'}
+- {airport: 'Minneapolis St Paul, MN', count: 1, latlng: '44.880278,-93.216667'}
+- {airport: 'New Orleans, LA', count: 1, latlng: '29.993333,-90.257778'}
 - {airport: Munich, count: 1, latlng: '48.353611,11.785833'}
-- {airport: Newcastle, count: 1, latlng: '55.0375,-1.691667'}
+- {airport: Newcastle, count: 3, latlng: '55.0375,-1.691667'}
 - {airport: Norwich, count: 1, latlng: '52.675833,1.282778'}
-- {airport: Oakland, count: 9, latlng: '37.721111,-122.220556'}
+- {airport: 'Oakland, CA', count: 10, latlng: '37.721111,-122.220556'}
 - {airport: Okinawa Naha, count: 1, latlng: '26.195556,127.645833'}
-- {airport: Oklahoma City, count: 1, latlng: '35.393056,-97.600556'}
+- {airport: Oklahoma City, count: 3, latlng: '35.393056,-97.600556'}
 - {airport: Paris Orly, count: 2, latlng: '48.725278,2.359444'}
 - {airport: Oslo Gardermoen, count: 2, latlng: '60.193889,11.100278'}
-- {airport: Portland, count: 1, latlng: '45.588611,-122.5975'}
-- {airport: Pittsburgh, count: 1, latlng: '40.491389,-80.232778'}
+- {airport: 'Portland, OR', count: 1, latlng: '45.588611,-122.5975'}
+- {airport: 'Philadelphia, PA', count: 2, latlng: '39.871944,-75.241111'}
+- {airport: 'Pittsburgh, PA', count: 1, latlng: '40.491389,-80.232778'}
 - {airport: 'Providence, RI', count: 1, latlng: '41.723889,-71.428056'}
-- {airport: Raleigh Durham, count: 3, latlng: '35.8775,-78.787222'}
-- {airport: Richmond, count: 1, latlng: '37.505,-77.319444'}
-- {airport: San Diego, count: 1, latlng: '32.733333,-117.189444'}
+- {airport: 'Raleigh Durham, NC', count: 5, latlng: '35.8775,-78.787222'}
+- {airport: 'Richmond, VA', count: 1, latlng: '37.505,-77.319444'}
+- {airport: 'San Diego, SC', count: 1, latlng: '32.733333,-117.189444'}
 - {airport: 'San Luis Obispo, CA', count: 1, latlng: '35.236944,-120.641944'}
-- {airport: State College, count: 1, latlng: '40.855881,-77.843841'}
-- {airport: Louisville, count: 1, latlng: '38.175662,-85.736923'}
-- {airport: Seattle Tacoma, count: 8, latlng: '47.448889,-122.309167'}
-- {airport: San Francisco, count: 7, latlng: '37.618889,-122.374722'}
+- {airport: 'State College, PA', count: 1, latlng: '40.855881,-77.843841'}
+- {airport: 'Louisville, KY', count: 1, latlng: '38.175662,-85.736923'}
+- {airport: 'Seattle, WA', count: 13, latlng: '47.448889,-122.309167'}
+- {airport: 'San Francisco, CA', count: 9, latlng: '37.618889,-122.374722'}
 - {airport: Singapore, count: 1, latlng: '1.355556,103.987222'}
-- {airport: San Jose, count: 1, latlng: '37.361667,-121.928889'}
-- {airport: Salt Lake City, count: 2, latlng: '40.788333,-111.9775'}
-- {airport: John Wayne (Orange County), count: 1, latlng: '33.675556,-117.868056'}
+- {airport: 'San Jose, CA', count: 1, latlng: '37.361667,-121.928889'}
+- {airport: 'Salt Lake City, UT', count: 2, latlng: '40.788333,-111.9775'}
+- {airport: 'Sacramento, CA', count: 3, latlng: '38.695278,-121.590556'}
+- {airport: 'John Wayne (Orange County), CA', count: 1, latlng: '33.675556,-117.868056'}
 - {airport: Southampton, count: 2, latlng: '50.95,-1.356667'}
-- {airport: St. Louis, count: 2, latlng: '38.7475,-90.359722'}
-- {airport: Sydney, count: 3, latlng: '-33.946111,151.177222'}
-- {airport: Syracuse NY, count: 1, latlng: '38.175662,-85.736923'}
+- {airport: 'St. Louis, MO', count: 3, latlng: '38.7475,-90.359722'}
+- {airport: Stansted, count: 3, latlng: '51.885,0.235'}
+- {airport: Sydney, count: 4, latlng: '-33.946111,151.177222'}
+- {airport: 'Syracuse, NY', count: 1, latlng: '38.175662,-85.736923'}
 - {airport: Tel Aviv, count: 1, latlng: '32.009444,34.876667'}
 - {airport: Trieste, count: 1, latlng: '45.827778,13.466389'}
-- {airport: Tucson, count: 1, latlng: '32.116111,-110.941389'}
-- {airport: Knoxville, count: 1, latlng: '35.81,-84.0'}
+- {airport: 'Tucson, AZ', count: 2, latlng: '32.116111,-110.941389'}
+- {airport: 'Knoxville, TN', count: 1, latlng: '35.81,-84.0'}
 - {airport: Viracopos, count: 1, latlng: '-23.008056,-47.134444'}
-- {airport: Edmonton, count: 1, latlng: '53.309722,-113.579722'}
+- {airport: Edmonton, count: 2, latlng: '53.309722,-113.579722'}
 - {airport: Halifax, count: 1, latlng: '44.880833,-63.508611'}
-- {airport: Montreal, count: 6, latlng: '45.468056,-73.741389'}
-- {airport: Vancouver, count: 9, latlng: '49.195,-123.181944'}
+- {airport: Ottawa, count: 2, latlng: '45.3225,-75.669167'}
+- {airport: Quebec City, count: 1, latlng: '46.788333,-71.3975'}
+- {airport: Saint John, count: 1, latlng: '45.329142,-65.890355'}
+- {airport: Montreal, count: 9, latlng: '45.468056,-73.741389'}
+- {airport: Vancouver, count: 12, latlng: '49.195,-123.181944'}
 - {airport: 'London, Ontario', count: 1, latlng: '43.035556,-81.153889'}
 - {airport: Victoria, count: 2, latlng: '48.646944,-123.425833'}
-- {airport: Toronto, count: 8, latlng: '43.677222,-79.630556'}
+- {airport: Toronto, count: 14, latlng: '43.677222,-79.630556'}
 - {airport: Zhongchuan, count: 1, latlng: '36.516667,103.621667'}
+- {airport: 'Masset, BC', count: 1, latlng: '54.027972,-132.126291'}

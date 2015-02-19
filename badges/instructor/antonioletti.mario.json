@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e411dd84bb91c14ada53ae08fe15448d0758ac04368d609f0e543a50efd4f6c9", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e411dd84bb91c14ada53ae08fe15448d0758ac04368d609f0e543a50efd4f6c9", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/antonioletti.mario.json"
+ }
+}

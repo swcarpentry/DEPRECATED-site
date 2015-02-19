@@ -23,7 +23,8 @@ nocomments: 1
   </p>
   <p>
     <em>
-      All workshop participants are required to abide by our <a href="{{page.root}}/conduct.html">code of conduct</a>
+      All workshop participants are required to abide by our
+      <a href="{{page.root}}/conduct.html">code of conduct</a>
       to ensure that all attendees to have an enjoyable and fulfilling experience.
     </em>
   </p>
@@ -56,9 +57,6 @@ nocomments: 1
         <tr>
           <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
           <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
-          <td class="registration">
-            {% if workshop.registration %}{{workshop.registration}}{% endif %}
-          </td>
           <td class="date">{{workshop.humandate}}</td>
         </tr>
       {% endif %}

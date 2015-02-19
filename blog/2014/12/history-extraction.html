@@ -1,0 +1,96 @@
+---
+layout: blog
+root: ../../..
+author: Aaron O'Leary
+title: "Guidelines for Extracting History"
+date: 2014-12-15
+time: "06:30:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  As discussed <a href="plans-for-2015-lessons.html">previously</a>,
+  we are currently extracting individual lessons from the
+  <a href="{{site.github_url}}/bc"><code>bc</code></a>
+  repository to make them more modular, which will ease use,
+  contribution, and maintenance.  This post presents some guidelines
+  for extracting individual lessons and how to contribute to lessons
+  in the meantime.
+</p>
+<!-- end excerpt -->
+<p>
+  Individual lessons are currently in folders in
+  the <a href="{{site.github_url}}/bc"><code>bc</code></a>
+  repository, e.g. <code>novice/python</code>. The aim of history
+  extraction is to take the content and history of an individual
+  lesson and move it to a new repository specifically for that lesson.
+  We want to preserve history in order to recognise past
+  contributions: just copying and pasting the files would lose this.
+</p>
+<p>
+  Using the novice Python lesson as an example:
+</p>
+<ol>
+  <li>
+    <p>
+      One person takes ownership of the history extraction for a
+      specific lesson and creates an issue
+      in <a href="{{site.github_url}}/bc">the <code>bc</code>
+      repository</a> with the labels <code>Extract History</code>,
+      <code>novice</code>, <code>Python</code> and a title like
+      "Extract history of novice Python lesson".  Progress regarding
+      the history extraction is then tracked in that issue
+      (<a href="{{site.github_url}}/bc/issues/877">example</a>).
+      An overview of all of the current extractions can be seen using
+      the <a href="{{site.github_url}}/bc/labels/Extract%20History">Extract
+      History</a> label.
+    </p>
+  </li>
+  <li>
+    <p>
+      That person creates a personal repository,
+      e.g. <a href="https://github.com/aaren/swc-novice-python">aaren/swc-novice-python</a>
+      where the history extraction takes place.  The exact process
+      used for extracting the history varies a little by
+      lesson. Inspiration can be found in the
+      <a href="{{site.github_url}}/bc/labels/Extract%20History">Extract
+      History issues</a>, for example
+      the <a href="{{site.github_url}}/bc/issues/877">novice
+      python issue</a> or
+      the <a href="https://github.com/wking/swc-modular-shell/issues/3">shell
+      extraction</a>.  Briefly, that person needs to use <code>git
+      filter-branch</code> to extract the history of the lesson,
+      paying attention to path changes if the file was ever moved from
+      one place to another, and extract the history of the cheat sheet
+      stored in the <code>novice/ref</code> directory.
+    </p>
+  </li>
+  <li>
+    <p>
+      At this point the <code>novice/python</code> lesson
+      in <a href="{{site.github_url}}/bc">bc</a> is
+      frozen. All new issues and Pull Requests should be made against
+      the new repository (linked in the issue).
+    </p>
+  </li>
+  <li>
+    <p>
+      When the history extraction is completed, the new issues and
+      pull-requests can be reviewed. When all are dealt with, the
+      lesson is frozen again and transitioned to fit the
+      new <a href="{{site.github_url}}/lesson-template">lesson
+      template</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Following the transition to the lesson template, the lesson is
+      live and is in a permanent new home.  That will probably be under the
+      <a href="{{site.github_url}}">{{site.github_url}}</a>
+      account for our core lessons, but could well be under someone
+      else's account, for the same reason that people can host
+      workshop websites under their own accounts if they choose: to
+      support truly open collaboration.
+    </p>
+  </li>
+</ol>

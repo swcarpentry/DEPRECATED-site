@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$daefe1eddd25dc1bd4f4fa2a9e5cfec8a5b4dc8a4f295b496cc945559fa5f043", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$daefe1eddd25dc1bd4f4fa2a9e5cfec8a5b4dc8a4f295b496cc945559fa5f043", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/steinbach.peter.json"
+ }
+}

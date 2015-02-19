@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-12-08", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$35c09e7df535c87676617faab90c76db7be43c1fe3792a8fd77fba0adb336957", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$35c09e7df535c87676617faab90c76db7be43c1fe3792a8fd77fba0adb336957", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/jedrzejewski-szmek.zbigniew.json"
+ }
+}

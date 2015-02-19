@@ -1,0 +1,86 @@
+---
+layout: blog
+root: ../../..
+author: Mike Jackson
+title: "Software Carpentry Returns to Edinburgh"
+date: 2014-12-08
+time: "10:30:00"
+category: ["Workshops", "University of Edinburgh"]
+---
+<!-- start excerpt -->
+<p>Last week, EPCC's <a href="http://www.archer.ac.uk">ARCHER</a> training team ran another <a href="http://hpcarcher.github.io/2014-12-03-edinburgh/">Software Carpentry workshop</a> here in Edinburgh, on 3rd and 4th of December. The workshop provided attendees with an introduction to version control and Git, building programs with Python, automating tasks with Make, and how (and how much) to test programs. These were set within the context of best practices for scientific computing.</p>
+<!-- end excerpt -->
+<p>My colleagues Mario Antonioletti, Alistair Grant and Arno Proeme joined me as co-instructors. EPCC's Emmanouil Farsarakis, and Leighton Pritchard and Peter Cock from <a href="http://www.hutton.ac.uk/">The James Hutton Institute</a> in Dundee were helpers. All had attended the Software Carpentry Instructor Training at <a href="http://www.tgac.ac.uk/home/">TGAC</a> back in October.</p>
+<p>We had 38 attendees, mostly from Edinburgh and Heriot-Watt, including a group from the EPSRC <a href="http://cm-dtc.supa.ac.uk/">Centre for Doctoral Training in Condensed Matter Physics</a>. Other attendees came from institutions across the UK including Belfast, Birmingham, Bristol, Dublin, Durham Leeds, Oxford, St. Andrews and Strathclyde, the Royal College of Surgeons and the Roslin Institute.</p>
+
+<h2>Software Difficulties</h2>
+<p>
+There were a number of software difficulties we encountered:
+</p>
+<ul>
+<li>
+Multiple Python distributions in Windows (e.g. different flavours of Python 2, or Python and Python 3). These were sorted by editing the attendees' paths.
+</li>
+<li>
+matplotlib import error when non-ASCII characters are present in the user's current working directory or user name. This is a <a href="https://github.com/matplotlib/matplotlib/issues/3516/">known issue</a> One solution is to re-install Anaconda in another location without non-ASCII characters in the directory path but the attendee did not have permissions to do this. They logged into a machine into their home institution and did the sessions using this.
+</li>
+<li>
+"Permission Denied" when running ls from within ipython arose for one attendee. It was unclear why this arose since pwd ran fine and directory permissions were valid. The attendee just used ls from outwith ipython.
+</li>
+<li>
+Running ipython under GitBash on Windows 8 sometimes crashed. It is unclear why.
+</li>
+<li>
+BSome attendees had BitBucket accounts and public/private keys already set up. This caused issues when using git:// URLs when cloning repositories it expected to find a local copy of the public key. Using https:// URLs when cloning avoided this issue.
+</li>
+</ul>
+<h2>Experiences</h2>
+<p>
+We gathered feedback (via sticky notes) after each session and you can view these as a <a href="https://github.com/hpcarcher/2014-12-03-edinburgh/blob/gh-pages/archer/stickynotes.md">MarkDown file</a> in the workshop's GitHub repository. We also collected information using a post-workshop questionnaire, and a selection of the attendees' comments is as follows:
+</p>
+<table class="table table-striped">
+ <thead>
+  <tr>
+   <th>Good points</th>
+   <th>Bad points</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>The range of topics was well thought out and very useful for my research.</td>
+   <td>When tasks were given to be completed, there was no extra material to be covered if you completed the task quickly. It would also be useful to have these extra examples to work on after the course.</td>
+  </tr>
+  <tr>
+   <td>Version control is really important, good idea to use [it] and for documents too.</td>
+   <td>There was a lot of dead space in the program  coffee breaks and lunch were too long.</td>
+  </tr>
+  <tr>
+   <td>IPython seems super useful and I didn't know about it before.</td>
+  </tr>
+  <tr>
+   <td>Previously thought that make was used only for compiling Fortran codes.</td>
+   <td>I think some areas needed more exercises for us to do to ensure we knew what was going on.</td>
+  </tr>
+  <tr>
+   <td>I didn't know there were ways to test code without putting annoying print statements all over the place and messing up structure.</td>
+   <td>Testing used programs that I didn't really understand so found it hard to know exactly what the tests were meant to do.</td>
+  </tr>
+  <tr>
+   <td>Great working with other people to solve the problems posed.</td>
+   <td>I would have appreciated more explanation of the purpose of the example code, since I often found myself mindlessly copying it down without being certain what was going on</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+   <td>Interactive! Makes it easier / more fun to learn.</td>
+   <td>2-days time span is short...didn't get time to practice what I learnt.</td>
+  </tr>
+  <tr>
+   <td>Refreshing ideas about programming which is particularly useful for the majority of people, particularly myself, who have no formal programming training and, thus, are riddled with terrible habits in coding.</td>
+   <td>High diversity lead to some people struggling and some waiting around</td>
+  </td>
+ </tbody>
+</table>
+
+<h2>Into 2015...</h2>
+<p>Our workshop was in collaboration with EPCC's <a href="http://www.prace-project.eu/PRACE-Advanced-Training-Centres">PRACE Advanced Training Centre</a> (PATC), and <a href="http://software-carpentry.org/">Software Carpentry</a>, a <a href="http://mozillascience.org/">Mozilla Science Lab</a> initiative. ARCHER's training team plans more Software Carpentry workshops throughout 2015 - keep your eyes on ARCHER's <a href="http://www.archer.ac.uk/training">upcoming courses</a> for more information.</p>

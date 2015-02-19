@@ -20,6 +20,7 @@ from util import CONFIG_YML, \
                  BADGES_YML, \
                  WORKSHOP_URLS_YML, \
                  WORKSHOP_CACHE, \
+                 DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \
                  harvest_metadata, \
                  load_info
@@ -52,11 +53,12 @@ def main():
     # Get the standard stuff.
     options, args = parse_args()
 
-    # Check that a cached workshop information file is available, and
-    # report an error if it's not.  Do this early to avoid wasting
-    # time; store in local variable until other workshop info is
-    # loaded and available for merging.
-    cached_workshop_info = load_cached_workshop_info(os.curdir, WORKSHOP_CACHE)
+    # Check that cached workshop information and cached dashboard
+    # information are available, and report an error if they're not.
+    # Do this early to avoid wasting time; store in local variable
+    # until other workshop info is loaded and available for merging.
+    cached_workshop_info = load_cached_info(os.curdir, WORKSHOP_CACHE, 'workshop cache')
+    cached_dashboard_info = load_cached_info(os.curdir, DASHBOARD_CACHE, 'dashboard cache')
 
     # Load other information.
     config = load_info(options.config_dir, STANDARD_YML)
@@ -70,8 +72,11 @@ def main():
         'today'           : options.today
     })
 
+    # People and projects.
     config['people'] = map(lambda x: os.path.relpath(x, '_includes'), 
-	sorted(glob.glob('_includes/people/*.html')))
+                           sorted(glob.glob('_includes/people/*.html')))
+    config['projects'] = map(lambda x: os.path.relpath(x, '_includes'), 
+                             sorted(glob.glob('_includes/projects/*.html')))
 
     # Cache the window size.
     recent_length = config['recent_length']
@@ -108,6 +113,9 @@ def main():
     cached_workshop_info.sort(lambda x, y: cmp(x['slug'], y['slug']))
     config['workshops'] = cached_workshop_info
 
+    # Cached dashboard info is already in the right order.
+    config['dashboard'] = cached_dashboard_info
+
     # Select those that'll be displayed on the home page.  Use a loop instead of
     # a list comprehension to get better error reporting.
     upcoming = []
@@ -142,13 +150,12 @@ def parse_args():
 
 #----------------------------------------
 
-def load_cached_workshop_info(folder, filename):
-    '''Load cached workshop info if available, fail if not.'''
+def load_cached_info(folder, filename, message):
+    '''Load cached info if available, fail if not.'''
     path = os.path.join(folder, filename)
     if not os.path.isfile(path):
-        print >> sys.stderr, 'Workshop information cache "{0}" does not exist.'.format(path)
+        print >> sys.stderr, '{0} file "{1}" does not exist.'.format(message, path)
         print >> sys.stderr, 'Please use "make cache" before building site,'
-        print >> sys.stderr, 'Or run "bin/get_workshop_info" to regenerate it.'
         sys.exit(1)
     return load_info(folder, filename)
 

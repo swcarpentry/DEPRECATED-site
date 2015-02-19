@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2014-11-27", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$1d9cad4e10b71c519840ec4a497e9c616521db2a774a23c109f3956ecd0802b8", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$1d9cad4e10b71c519840ec4a497e9c616521db2a774a23c109f3956ecd0802b8", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/gorman.gerard.json"
+ }
+}

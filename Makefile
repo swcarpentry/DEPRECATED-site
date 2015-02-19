@@ -14,6 +14,9 @@ SRC_ROOT = $(wildcard ./*.html)
 # Source files in 'pages' directory.
 SRC_PAGES = $(wildcard pages/*.html)
 
+# Source files in 'scf' directory.
+SRC_SCF = $(wildcard scf/*.html)
+
 # Source files in 'bib' directory.
 SRC_BIB = $(wildcard bib/*.html)
 
@@ -21,21 +24,14 @@ SRC_BIB = $(wildcard bib/*.html)
 # that our preprocessor doesn't try to harvest data from it.
 SRC_BLOG = $(wildcard ./blog/????/??/*.html)
 
-# Source files of archived workshop pages (used for extracting
-# metadata for building the calendar page).
-SRC_WORKSHOP_PAGES = $(wildcard ./workshops/????-??-*/index.html)
-
 # All workshop source files.
-SRC_WORKSHOP = $(SRC_WORKSHOP_PAGES) $(wildcard ./workshops/*.html)
+SRC_WORKSHOP = $(wildcard ./workshops/*.html)
 
 # Source files for badge pages.
 SRC_BADGES = $(wildcard ./badges/*.html)
 
 # Source files for checklists.
 SRC_CHECKLISTS = ./workshops/checklists/*.html
-
-# Source files for Version 4 lessons.
-SRC_V4 = $(wildcard ./v4/index.html) $(wildcard ./v4/*/*.html)
 
 # Source files for layouts.
 SRC_LAYOUT = $(wildcard ./_layouts/*.html)
@@ -48,6 +44,7 @@ SRC_INCLUDES = $(wildcard ./_includes/*.html) $(wildcard ./_includes/*/*.html)
 SRC_HTML = \
     $(SRC_ROOT) \
     $(SRC_PAGES) \
+    $(SRC_SCF) \
     $(SRC_BIB) \
     ./blog/index.html $(SRC_BLOG) \
     $(SRC_CHECKLISTS) \
@@ -61,10 +58,10 @@ SRC_HTML = \
 CONFIG_DIR = ./config
 SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
-# All files generated during the build process that are removed by
-# 'make clean'.  This does *not* include the _workshop_cache.yml file:
-# use 'make sterile' to get rid of that.
-GENERATED = ./_config.yml ./_includes/recent_blog_posts.html
+# All files generated for the build process.
+GENERATED = \
+	./_dashboard_cache.yml \
+	./_workshop_cache.yml
 
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
@@ -90,32 +87,22 @@ authors :
 ## archive      : collect and archive workshop information from GitHub and store in local cache.
 archive :
 	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
-	@python bin/get_workshop_info.py -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
-	    -o ./_workshop_cache.yml \
-	    --archive $(CONFIG_DIR)/workshops_saved.yml
-
-## archive_verb : collect and archive workshop information from GitHub and store in local cache (verbose).
-archive_verb :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
 	@python bin/get_workshop_info.py -v -t \
 	    -i $(CONFIG_DIR)/workshop_urls.yml \
 	    -o ./_workshop_cache.yml \
 	    --archive $(CONFIG_DIR)/workshops_saved.yml
 
 ## cache        : collect workshop information from GitHub and store in local cache.
-cache :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
-	@python bin/get_workshop_info.py -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
-	    -o ./_workshop_cache.yml
+cache : $(GENERATED)
 
-## cache_verb   : collect workshop information from GitHub and store in local cache (verbose).
-cache_verb :
+./_workshop_cache.yml :
 	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
 	@python bin/get_workshop_info.py -v -t \
 	    -i $(CONFIG_DIR)/workshop_urls.yml \
 	    -o ./_workshop_cache.yml
+
+./_dashboard_cache.yml :
+	@python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
 
 ## biblio       : make HTML and PDF of bibliography.
 # Have to cd into 'bib' because bib2xhtml expects the .bst file in
@@ -165,14 +152,12 @@ valid :
 ## clean        : clean up.
 clean :
 	@rm -rf \
+	_config.yml \
 	$(GENERATED) \
 	_site \
 	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
+	_includes/recent_blog_posts.html \
 	$$(find . -name '*~' -print)
-
-## sterile      : *really* clean up.
-sterile : clean
-	rm -f ./_workshop_cache.yml
 
 #-------------------------------------------------------------------------------
 
@@ -204,5 +189,5 @@ $(OUT)/index.html : _config.yml $(SRC_HTML)
 	jekyll build -d $(OUT)
 
 # Make the Jekyll configuration file by adding harvested information to a fixed starting point.
-_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_WORKSHOP_PAGES)
+_config.yml : ./bin/preprocess.py $(SRC_CONFIG) $(SRC_BLOG) $(SRC_INCLUDES) $(GENERATED)
 	python ./bin/preprocess.py -c ./config -o $(OUT) -s $(SITE)

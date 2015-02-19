@@ -1,0 +1,277 @@
+---
+layout: blog
+root: ../../..
+author: Andrew Walker
+title: "An Advanced Short Course in Leeds"
+date: 2014-12-04
+time: "15:05:00"
+category: ["Bootcamps", "University of Leeds"]
+---
+<!-- start excerpt -->
+<p>
+  Helped by Aaron O'Leary, Peter Willetts, Marlene 
+  Mengoni and Jo Leng, Martin Callaghan, Devasena Inupakutika 
+  and I recently delivered a modified Software Carpentry 
+  workshop at the University of Leeds. Aimed at environmental 
+  scientists from across the UK and funded by NERC, the course 
+  included an extra day where small groups got to develop tools 
+  for environmental data analysis. 
+</p>
+<!-- end excerpt -->
+<h2>Training for Graduate Students</h2>
+<p>
+  The funding landscape for graduate students in science in 
+  the UK has changed. Most of our gaggle of <a href="http://www.rcuk.ac.uk/">research councils</a> now 
+  provide funding to universities to train coherent groups 
+  of PhD students. These students can be working on related 
+  research projects in an area where a particular national 
+  training need has been identified (creating doctoral training 
+  centres such as the <a href="http://www.maths.leeds.ac.uk/postgraduate-research/how-to-apply/project-opportunities/fluid-dynamics-dtc.html">DTC in fluid dynamics</a> in Leeds) or undertaking a 
+  broader range of projects where supervision and generic 
+  training is provided by a consortium of university departments 
+  working with other organisations in the private and public 
+  sectors (forming doctoral training partnerships such as the 
+  <a href="http://www.nercdtp.leeds.ac.uk/">Leeds-York DTP</a>).
+</p>
+<p>
+  Although a late starter in this process, the Natural Environment 
+  Research Council (<a href="http://www.nerc.ac.uk/">NERC</a>) has embraced the approach 
+  and now funds most of its doctoral training via these two routes. 
+  NERC now pays closer attention to the training needs of graduate 
+  students in the environmental sciences, for example by asking 
+  employers about <a href="http://www.nerc.ac.uk/skills/postgrad/policy/skillsreview/">skill gaps</a> and encouraging 
+  universities to fill these. 
+</p>
+<p>
+  The usual way for research councils to encourage universities 
+  to do anything is by providing an opportunity for academics to 
+  compete for funding. NERC's <a href="http://www.nerc.ac.uk/funding/available/postgrad/advanced/atsc/">Advanced Training Short Course</a> scheme offers funding 
+  specifically to address identified skills gaps. These include 
+  "scientific computing in environmental sciences" and 
+  "data processing in environmental sciences", so 
+  Software Carpentry is clearly needed for the UK's environmental 
+  scientists. In May this year and working with Neil Chue Hong 
+  at the <a href="http://www.software.ac.uk">Software Sustainability Institute</a> we applied for for 
+  funding under this scheme. The application is <a 
+  href="http://figshare.com/articles/ATSC_application_to_NERC/1206320">available online</a> but, in essence, we asked for funding 
+  to:
+</p>
+<ul>
+  <li>Create modified Software Carpentry lessons targeted at 
+    NERC students and including additional material on, for 
+    example, handling geospatial data and accessing such data 
+    from online repositories.</li>
+  <li>Run two three-day workshops based on the Software Carpentry 
+    model to deliver this material to NERC students from around 
+    the UK. The third day of these workshops was added to allow 
+    small groups of students to work together to practice their 
+    skills and begin to develop software that may be useful for 
+    their research projects. </li>
+  <li>Offer the modifications back to Software Carpentry, so 
+    that they could be used again to train further environmental 
+    scientists in the UK and elsewhere.</li>
+  </ul>
+<p>
+  We have now delivered the <a href="http://andreww.github.io/2014-11-24-leeds/">first of these workshops</a> and describe some of the successes 
+  and difficulties below.
+</p>
+<h2>Software Difficulties</h2>
+<p>
+  As is traditional (and probably inevitable) we discovered a 
+  handful challenges with software installation on diverse laptops 
+  <a 
+  href="{{page.root}}/faq.html#bring-what-to-workshop">brought to the workshop</a>. Despite these by 9:30 
+  day 1 everybody had a working installation.
+</p>
+<p>
+  The most notable new problem was a Windows machine where the 
+  username contained a non-ascii character. This almost works 
+  out of the box. However, accents in the directory name for 
+  the homespace propagate into python strings used to to find 
+  configuration files (e.g. when matplotlib is imported, or an 
+  iPython notebook server is started). This problem will probably 
+  go away when we move to python 3, but in the interim the best 
+  solution we found was to create a new user account (without 
+  accents in the username) and install everything there. It 
+  would be good to know if a better solution to this exists.
+</p>
+<p>
+  A second problem with software cropped up unexpectedly over 
+  lunch on the first day. Our <a href="https://etherpad.mozilla.org/SWC-Leeds-NERC-Nov2014">etherpad</a>,
+  which was being 
+  used for collaborative note taking and to ease the distribution 
+  of long strings (URLs and the like) failed, getting itself into 
+  a state of permanently "loading...". Marlene eventually 
+  managed to cajole the old information (in somewhat corrupted 
+  form) out of the ether and we moved over to an alternative 
+  <a href="https://etherpad.mozilla.org/UtREnyD7KE">pad</a>. 
+  The lesson for other workshops may be to 
+  download text copies of the etherpad fairly frequently to 
+  allow a quick recovery.
+</p>
+<p>
+  The third noteable little challenge only emerged when we 
+  started looking at environmental data stored in netCDF files. 
+  For two people data could not be read despite having the 
+  netcdf4 module installed and successfully imported. This 
+  turned out to be a problem with the underlying library installed 
+  by Anaconda on 32 bit Ubuntu systems. The solution (discovered 
+  by Aaron) is to install an alternative version using:
+</p>
+<pre>
+ $ conda remove netcdf4
+ $ sudo apt-get build-dep python-netcdf4
+ $ sudo apt-get install libhdf5-serial-dev
+ $ pip install netcdf4
+</pre>
+<h2>Programming Success?</h2>
+<p>
+  Most of day three (apart from a short recap in the 
+  morning and wrap up and feedback session at the end 
+  of the day) was taken up by a mini data analysis 
+  hackathon where small groups worked to create software 
+  to solve problems conceived by the participants. This 
+  seemed to be remarkably successful with each group 
+  producing a working tool written in python that had 
+  been developed collaboratively using Git and with at 
+  least some documentation and error handling. We ended 
+  up with:
+</p>
+<ul>
+  <li>A tool to download and map historic earthquake data 
+    for a region from the USGS data service (<a 
+						href="https://github.com/georgetaylor3152/SAFIRE">GitHub</a>).
+  </li>
+  <li>A flight miles calculator that converts airport codes 
+    to locations, calculates the great circle distance between 
+    the airports, and plots this on a map (<a href="https://github.com/callaghanmt/phd-flight-tracker.git">GitHub</a>).
+  </li>
+  <li>An iPython notebook that scrapes a website to determine when 
+    a particular satellite will next be overhead
+    (<a href="https://github.com/SophMC/satellite_tracking">GitHub</a>).
+  </li>
+  <li>Some fairly complex object oriented code to fit a range of 
+    equations of state to pressure - volume data for Earth materials
+    (<a href="https://github.com/gracecox/EoSeval">GitHub</a>).
+  </li>
+  <li>An iPython notebook to examine the geographical distribution 
+    of the genetics of bacteria using an online database (<a href="https://github.com/CyanoEvo/global_G-C_map">GitHub</a>).
+  </li>
+  <li>A data gridder for shallow geophysical surveys allowing 
+    scattered data sets to be imported into ArcGIS (<a href="https://github.com/skiingfox/Group_Project">GitHub</a>).
+  </li>
+</ul>
+<p>
+  All the groups managed to demonstrate and talk about their project 
+  in a wrap up session at the end of the day. I was amazed. Not only 
+  were twenty PhD students exposed to a new programming language, 
+  their first version control system, and concepts such as 
+  defensive programming and testing in only two days. They were able 
+  to demonstrate that they had learned to use their new skills by 
+  undertaking collaborative programming project dealing with real 
+  data from the environmental sciences and get something working in 
+  only five hours.
+</p>
+<h2>Going Forward</h2>
+<p>
+  We will be giving the course again in January and we collected 
+  feedback during and after the workshop to help us improve for 
+  the next iteration. The biggest trends in feedback across the 
+  course were "Git is hard" and "the IPython 
+  notebook is great". More detailed feedback from the end 
+  of the workshop included:
+</p>
+<table class="table table-striped">
+  <tr>
+    <th>Good points</th>
+    <th>Places to improve</th></tr>
+  <tr>
+    <td>the helpers</td>
+    <td>needed a general overview for Git, also pictures</td>
+  </tr>
+  <tr>
+    <td>practical session on day three</td>
+    <td>lost track of defensive programming</td>
+  </tr>
+  <tr>
+    <td>Git was taught and then used it in practice the next day</td>
+    <td>sometimes hard to read text (colours of text difficult)</td>
+  </tr>
+  <tr>
+    <td>iPython notebooks! good to type as we are going along</td>
+    <td>difficult to keep up when following along with terminal 
+      lessons (esp when writing files)</td>
+  </tr>
+  <tr>
+    <td>the hands on approach</td>
+    <td>could do with a Git/GitHub workflow model</td>
+  </tr>
+  <tr>
+    <td>working through whole examples end to end 
+      (in particular basemap)</td>
+    <td>got lost with Git</td>
+  </tr>
+  <tr>
+    <td>the pre course information - install instructions, 
+      install tests</td>
+    <td>we weren't introduced to dealing with [general] external 
+      files from python until near the end or in the practical part</td>
+  </tr>
+  <tr>
+    <td>the number and variety of helpers</td>
+    <td>much more engaged when doing practical examples 
+      (problem solving) rather than typing what someone 
+      else was typing</td>
+  </tr>
+  <tr>
+    <td>forced to do something for a whole day rather than 
+      listening and following</td>
+    <td>needed more stuff on shell scripting with regard to 
+      automating a process using a pipeline</td>
+  </tr>
+  <tr>
+    <td>good number of people. excellent ratio of 
+      helpers / students</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>good to rotate people between tables each day</td>
+    <td></td>
+  </tr>
+</table>
+<p>
+  Overall, I think we probably spent a little too much time on 
+  basic shell at the start of day 1 (which most people had seen 
+  before) and should have planned to spend more time with Git 
+  (perhaps breaking the single two hour slot into two lessons, 
+  each with their own exercises). We will try to improve next 
+  time, but need to remember that the previous experience of 
+  the next group could be significantly different. We should also
+  make sure that when we teach using the terminal, the text is 
+  large and clear (what is clear on a projector is different to
+  what is clear on laptop display) and make more reference to 
+  some of the useful online help for git. For example, we did not
+  show
+  <a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">this</a>
+or make very much reference to the <a href="https://try.github.io/levels/1/challenges/1">online tutorial</a>.
+</p>
+<p>
+  NERC have just announced details of next year's ATSC 
+  scheme. Scientific computing is still on the list of key 
+  skills to be provided and we are starting to discuss a new 
+  application for funding. A major objective must be to attempt 
+  to embed this kind of training into the training experienced by of 
+  most of NERC's PhD students. Key to this would be to 
+  work with several of the institutions that host large doctoral 
+  training partnerships and seek to leave sufficient instructors 
+  and helpers in NERC's research community so that the DTPs 
+  will run their own training in the future. This may imply that we
+  need to find and train more instructors.
+</p>
+<p>
+  We are looking forward to our <a href="http://andreww.github.io/2015-01-14-leeds/">second workshop</a>
+  in 
+  January. We will report on the modified material once we have given 
+  it another go, when we will need to work out the best way to make 
+  this widely available.
+</p>

@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-02-03", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$5174c59350a296f4c5318c8f74904ce6c8690b90ebe1efe2be51f6cacf5d0373", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$5174c59350a296f4c5318c8f74904ce6c8690b90ebe1efe2be51f6cacf5d0373", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/farsarakis.emmanouil-ioannis.json"
+ }
+}
