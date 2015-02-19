@@ -11,8 +11,8 @@ nocomments: 1
   it needs your help to grow:
 </p>
 
-<div class="row-fluid ">
-  <div class="span6">
+<div class="row">
+  <div class="col-sm-6">
     <ul>
       <li>
         <p>
@@ -49,7 +49,7 @@ nocomments: 1
       </li>
     </ul>
   </div>
-  <div class="span6">
+  <div class="col-sm-6">
     <ul>
       <li>
         <p>
@@ -81,11 +81,10 @@ nocomments: 1
 </div>
 
 <h2>Our Members' Projects</h2>
-<div class="row-fluid">
+<div class="row">
 {% for project in site.projects %}
-  <div class="span6" style="padding-bottom:15px">{% include {{project}} %}</div>
+  <div class="col-sm-6" style="padding-bottom:15px">{% include {{project}} %}</div>
 {% cycle '', '</div>' %}
-{% cycle '', '<div class="row-fluid">' %}       
+{% cycle '', '<div class="row">' %}
 {% endfor %}
 </div>
-        
