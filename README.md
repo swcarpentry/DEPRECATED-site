@@ -140,6 +140,8 @@ For More Advanced Users
 
 2.  Run Jekyll to build the web site.
 
+    **Note: You must have Jekyll 2.5 or later.**
+
 3.  Run `bin/make_rss_feed.py` to generate the RSS feed file `feed.xml`.
 
 4.  Run `bin/make_calendar.py` to generate the ICal calendar file `workshops.ics`.
