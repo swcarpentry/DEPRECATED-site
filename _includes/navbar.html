@@ -1,45 +1,48 @@
-<nav class="navbar navbar-nav navbar-static-top" id="swc-navbar">
-  <div class="container-fluid">
-  <!-- for mobile display -->
-      <div class="navbar-header">
-         <button type="button" class="btn btn-default btn-lg navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-         </button>
-	 <a href="{{page.root}}/index.html" class="navbar-brand">
-	   <img alt="Software Carpentry logo" src="{{page.root}}/img/software-carpentry-banner.png">
-	 </a>
-       </div>
 
-      <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li id="nav-workshops">
-            <a href="{{page.root}}/workshops/index.html">Workshops</a>
-          </li>
-          <li id="nav-lessons">
-            <a href="{{page.root}}/lessons.html">Lessons</a>
-          </li>
-          <li id="nav-blog">
-            <a href="{{page.root}}/blog/index.html">Blog</a>
-          </li>
-          <li id="nav-scf">
-            <a href="{{page.root}}/scf/index.html">Foundation</a>
-          </li>
-          <li id="nav-join">
-            <a href="{{page.root}}/pages/join.html">Join</a>
-          </li>
-          <li id="nav-faq">
-            <a href="{{page.root}}/faq.html">FAQ</a>
-          </li>
-          <li id="nav-about">
-            <a href="{{page.root}}/pages/index.html">More...</a>
-          </li>
-          <form class="navbar-form navbar-right" role="search" method="get" action="http://www.google.com/search">
-	    <div class="form-group">
-              <input type="hidden" name="sitesearch" value="{{site.site}}" />
-              <input name="q" type="text" class="form-control"  placeholder="Search" id="swc-navbar-search" />
-	    </div>
-          </form>
-        </ul>
-      </div>
-  </div>
+<nav class="navbar navbar-default navbar-static-top" id="swc-navbar">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="{{page.root}}/index.html" class="navbar-brand">
+	    <img alt="Software Carpentry logo" src="{{page.root}}/img/software-carpentry-banner.png">
+	  </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+	    <li id="nav-workshops">
+	      <a href="{{page.root}}/workshops/index.html">Workshops</a>
+	    </li>
+	    <li id="nav-lessons">
+	      <a href="{{page.root}}/lessons.html">Lessons</a>
+	    </li>
+	    <li id="nav-blog">
+	      <a href="{{page.root}}/blog/index.html">Blog</a>
+	    </li>
+	    <li id="nav-scf">
+	      <a href="{{page.root}}/scf/index.html">Foundation</a>
+	    </li>
+	    <li id="nav-join">
+	      <a href="{{page.root}}/pages/join.html">Join</a>
+	    </li>
+	    <li id="nav-faq">
+	      <a href="{{page.root}}/faq.html">FAQ</a>
+	    </li>
+	    <li id="nav-about">
+	      <a href="{{page.root}}/pages/index.html">More...</a>
+	    </li>
+	    <form class="navbar-form navbar-right" role="search" method="get" action="http://www.google.com/search">
+	      <div class="form-group">
+		<input type="hidden" name="sitesearch" value="{{site.site}}" />
+		<input name="q" type="text" class="form-control"  placeholder="Search" id="swc-navbar-search" />
+	      </div>
+	    </form>
+	  </ul>
+	</div>
+      </div><!--/.nav-collapse -->
 </nav>
