@@ -63,7 +63,7 @@ The commands used to rebuild the website are stored in `Makefile`.
     to see what your changes will look like.
 
 
-**Note: You must have Jekyll 2.5 or later.** If you had an older version
+**Note: You must have Jekyll 2.5 or later.** If you have an older version
 installed, you can update it with:
 
 ~~~
