@@ -17,7 +17,6 @@ CONTROLS = (
     ('swcarpentry/slideshows', 'Software Carpentry presentations'),
     ('swcarpentry/capstone-novice-spreadsheet-biblio', 'From Excel to a database via Python'),
     ('swcarpentry/instructor-training', 'What instructors need to know'),
-    ('swcarpentry/python-novice-turtles', 'Python for non-programmers using Turtles'),
     ('swcarpentry/amy', 'Workshop administration tool'),
     ('swcarpentry/site', 'Software Carpentry website'),
 )
