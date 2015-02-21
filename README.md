@@ -62,6 +62,14 @@ The commands used to rebuild the website are stored in `Makefile`.
     and other pages in `_site`
     to see what your changes will look like.
 
+
+**Note: You must have Jekyll 2.5 or later.** If you have an older version
+installed, you can update it with:
+
+~~~
+gem update
+~~~
+
 Note: Disqus comments will *not* load properly,
 since you'll be on your machine rather than our server.
 
@@ -139,8 +147,6 @@ For More Advanced Users
     and combines it with static configuration information.
 
 2.  Run Jekyll to build the web site.
-
-    **Note: You must have Jekyll 2.5 or later.**
 
 3.  Run `bin/make_rss_feed.py` to generate the RSS feed file `feed.xml`.
 
