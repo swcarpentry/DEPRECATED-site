@@ -5,9 +5,10 @@ Create feed.xml for Software Carpentry blog.
 
 import os
 import datetime
-from PyRSS2Gen import RSS2, RSSItem
 from optparse import OptionParser
-from util import CONFIG_YML, STANDARD_YML, P_BLOG_CONTENT, P_BLOG_EXCERPT, load_info
+from util import CONFIG_YML, STANDARD_YML, P_BLOG_CONTENT, P_BLOG_EXCERPT, \
+                 load_info, ContentEncodedRSS2, ContentEncodedRSSItem
+
 #----------------------------------------
 
 def main():
@@ -101,47 +102,6 @@ def get_blog_content_excerpt(config, filename):
             excerpt = temp.group(1)
 
         return content, excerpt
-
-#----------------------------------------
-
-class ContentEncodedRSS2(RSS2):
-    '''Represent an RSS2 feed with content-encoded items.'''
-
-    def __init__(self, **kwargs):
-        RSS2.__init__(self, **kwargs)
-        self.rss_attrs['xmlns:content']='http://purl.org/rss/1.0/modules/content/'
-        self.rss_attrs['xmlns:dc']='http://purl.org/dc/elements/1.1/'
-
-#----------------------------------------
-
-class ContentEncodedRSSItem(RSSItem):
-    '''Represent a single item in an RSS2 feed with content encoding.'''
-
-    def __init__(self, **kwargs):
-        self.dc = 'http://purl.org/dc/elements/1.1/'
-        self.content = kwargs.get('content', None)
-        if 'content' in kwargs:
-            del kwargs['content']
-        self.creator = kwargs.get('creator', None)
-        if 'creator' in kwargs:
-            del kwargs['creator']
-        RSSItem.__init__(self, **kwargs)
-
-    def publish_extensions(self, handler):
-        if self.creator:
-          handler.startElement('dc:creator', {})
-          handler.characters(self.creator)
-          handler.endElement('dc:creator')
-        if self.content:
-            if hasattr(handler, '_out'):
-                writer = handler._out.write
-            elif hasattr(handler, '_write'):
-                writer = handler._write
-            else:
-                assert False, \
-                       'XML handler does not have _out or _write'
-            writer('<%(e)s><![CDATA[%(c)s]]></%(e)s>' %
-                   { 'e':'content:encoded', 'c':unicode(self.content)})
 
 #----------------------------------------
 
