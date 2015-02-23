@@ -20,21 +20,30 @@ END_DATE = '2015-02-11-00'   #format yyyy-mm-dd-hh
 
 OUTPUT_EVENT_FILE = '/tmp/swcarpenter.json'
 OUTPUT_STATS_FILE = 'stats.yml'
+OUTPUT_HTML_FILE = 'stats.html'
 
-CONTROLS = (
-    ('swcarpentry/shell-novice'),
-    ('swcarpentry/git-novice'),
-    ('swcarpentry/hg-novice'),
-    ('swcarpentry/sql-novice-survey'),
-    ('swcarpentry/python-novice-inflammation'),
-    ('swcarpentry/r-novice-inflammation'),
-    ('swcarpentry/matlab-novice-inflammation'),
-    ('swcarpentry/slideshows'),
-    ('swcarpentry/capstone-novice-spreadsheet-biblio'),
-    ('swcarpentry/instructor-training'),
-    ('swcarpentry/amy'),
-    ('swcarpentry/site')
-)
+REPOSITORIES = [
+    'swcarpentry/shell-novice',
+    'swcarpentry/git-novice',
+    'swcarpentry/hg-novice',
+    'swcarpentry/sql-novice-survey',
+    'swcarpentry/python-novice-inflammation',
+    'swcarpentry/r-novice-inflammation',
+    'swcarpentry/matlab-novice-inflammation',
+    'swcarpentry/slideshows',
+    'swcarpentry/instructor-training',
+    'swcarpentry/amy',
+    'swcarpentry/site'
+]
+
+EVENTS = [
+    'IssueOpened',
+    'IssueClosed',
+    'IssueComment',
+    'PullRequestOpened',
+    'PullRequestClosed',
+    'PullRequestComment'
+]
 
 
 def serialize_events(output_file, content):
@@ -45,6 +54,19 @@ def serialize_stats(stats):
     with open(OUTPUT_STATS_FILE, 'w+') as f:
         yaml.dump(stats, f, encoding='utf-8', allow_unicode=True)
 
+
+def tablify_stats(stats):
+    with open(OUTPUT_HTML_FILE, 'w') as f:
+        print >> f, '<table class="table table-striped">'
+        print >> f, '<tr><th>Project</th><th colspan="3">Issues</th><th colspan="3">Pull Requests</th></tr>'
+        print >> f, '<tr><th></th><th>Opened</th><th>Closed</th><th>Comments</th><th>Opened</th><th>Closed</th><th>Comments</th></tr>'
+        for r in REPOSITORIES:
+            print >> f, '<tr><td>{0}</td>'.format(r.replace('swcarpentry/','')),
+            for e in EVENTS:
+                val = stats.get(r, {e:''}).get(e, '')
+                print >> f, '<td>{0}</td>'.format(val),
+            print >> f, '</tr>'
+        print >> f, '</table>'
 
 def get_githubarchive_format(date):
     d = datetime.datetime.strptime(date, "%Y-%m-%d-%H")
@@ -81,8 +103,8 @@ def get_data_from_date_to_date(starting_date, ending_date):
 
                             if repository is not None:
                                 name = repository.get("name")
-                                #look for you repository events
-                                if name in CONTROLS:
+                                #look for your repository events
+                                if name in REPOSITORIES:
                                     #serialize the events into the event file
                                     serialize_events(event_file, line_decoded)
                             else:
@@ -189,7 +211,8 @@ def get_repo_stats():
         info = process_event(event_type, event)
         update_stats(stats, repo_name, info)
     event_file.close()
-    serialize_stats(stats)
+    #serialize_stats(stats)
+    tablify_stats(stats)
     return
 
 
