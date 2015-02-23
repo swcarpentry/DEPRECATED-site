@@ -78,7 +78,7 @@ nocomments: 1
 
 <section class="content">
   <div class="container">
-    <div class="row ">
+    <div class="row">
       <div class="col-md-8">
         {% include recent_blog_posts.html %}
         <h5><a href="{{page.root}}/blog/index.html">Blog Archives &rArr;</a></h5>
@@ -86,10 +86,16 @@ nocomments: 1
 	<br/>
 	<hr/>
 	<br/>
-	<p>
-	  Please also visit our sibling organization:
-	</p>
-	<a href="http://datacarpentry.org"><img src="{{page.root}}/img/orgs/data-carpentry.png" alt="Data Carpentry" /></a>
+	<div class="row">
+	  <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-3">
+	    <p>
+	      Please also visit our sibling organization:
+	    </p>
+	    <a href="http://datacarpentry.org">
+	      <img src="{{page.root}}/img/orgs/data-carpentry.png" alt="Data Carpentry" class="img-responsive"/>
+	    </a>
+	  </div>
+	</div>
       </div>
 
       <div class="col-md-4">
