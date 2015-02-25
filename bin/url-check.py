@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+'''Check the index.html data of a workshop given its URL.'''
+
 import sys
 import re
-from get_workshop_info import fetch, check_info
+from workshops import fetch, check_info
 
-assert len(sys.argv) == 2, 'Usage: check_workshop.py url'
+assert len(sys.argv) == 2, 'Usage: url-check.py url'
 url = sys.argv[1]
 
 m = re.match(r'^https?://(.+)\.github\.io/([^/]+)/?$', url)
