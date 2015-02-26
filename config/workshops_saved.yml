@@ -4336,3 +4336,349 @@
   url: http://statkclee.github.io/2015-02-25-seoul
   user: statkclee
   venue: Korea Radio Promotion Association
+- address: Trottier Building, McGill University, 3630 rue University
+  contact: ikozlov@physics.mcgill.ca
+  country: Canada
+  enddate: 2015-01-11
+  helper: [Patricia Campbell]
+  humandate: Jan 10-11, 2015
+  humantime: 8:00 am - 4:00 pm
+  instructor: [Gabriel Devenyi, Denis Haine, Marianne Corvellec, João Felipe Santos,
+    Igor Kozlov]
+  latlng: 45.50738,-73.57908
+  layout: workshop
+  lessons: [Bash, Git, Python, SQL]
+  registration: restricted
+  root: .
+  slug: 2015-01-10-mcgill
+  startdate: 2015-01-10
+  url: http://igor-kozlov.github.io/2015-01-10-mcgill/
+  user: igor-kozlov
+  venue: McGill University
+- address: Sonntag Pavilion, St. Joseph's Hospital. 350 West Thomas Rd, Phoenix, AZ
+    85013
+  contact: sammankin@gmail.com
+  country: United-States
+  enddate: 2015-01-11
+  eventbrite: 14945139314
+  helper: [To be determined]
+  humandate: Jan 10-11, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Naupaka Zimmerman, Jonathan Strootman]
+  latlng: 33.480726,-112.079483
+  layout: workshop
+  lessons: [R, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2015-01-10-st_josephs
+  startdate: 2015-01-10
+  url: http://naupaka.github.io/2015-01-10-st_josephs/
+  user: naupaka
+  venue: St. Joseph’s Hospital and Medical Center in Phoenix
+- address: Stanley Hall Room 044, 801 National Road West, Richmond, IN 47374
+  contact: jeremiahlant@gmail.com
+  country: United-States
+  enddate: 2015-01-12
+  helper: [Michael Lerner, Charlie Peck, Demian Riccardi]
+  humandate: Jan 11-12, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jeremiah Lant, Jonah Duckles]
+  latlng: 39.823910, -84.913179
+  layout: workshop
+  lessons: [Python, Bash, Git, SQL]
+  registration: restricted
+  root: .
+  slug: 2015-01-11-earlham
+  startdate: 2015-01-11
+  url: http://jlant.github.io/2015-01-11-earlham/
+  user: jlant
+  venue: Earlham College
+- address: Wellcome Trust for Human Genetics, Roosevelt Drive, Oxford, OX3 7BN
+  contact: jane.charlesworth@ndm.ox.ac.uk
+  country: United-Kingdom
+  enddate: 2015-01-14
+  eventbrite: 14958184332
+  helper: [Tom Smith, Mike Morgan, Jane Charlesworth]
+  humandate: Jan 13-14, 2015
+  humantime: 9:30 am - 4:30 pm
+  instructor: [Philip Fowler, Kwasi Kwakwa]
+  latlng: 51.752110,-1.215238
+  layout: workshop
+  lessons: [Python, Git, Shell, SQL]
+  registration: restricted
+  root: .
+  slug: 2015-01-13-oxford
+  startdate: 2015-01-13
+  url: http://philipwfowler.github.io/2015-01-13-oxford/
+  user: philipwfowler
+  venue: Oxford University
+- address: School of Earth and Environment, University of Leeds, Leeds, LS2 9JT
+  contact: a.walker@leeds.ac.uk
+  country: United-Kingdom
+  enddate: 2015-01-16
+  helper: [Jo Leng, Grace Cox]
+  humandate: Jan 14-16, 2015
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Martin Callaghan, Aleksandra Pawlik, Andrew Walker, Aaron O'Leary,
+    Peter Willetts]
+  latlng: 53.8057,-1.5557
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-01-14-leeds
+  startdate: 2015-01-14
+  url: http://andreww.github.io/2015-01-14-leeds/
+  user: andreww
+  venue: NERC / University of Leeds
+- address: Atmospheric Oceanic and Planetary Physics Department, Dobson Room, Atmospheric
+    Physics Building, Sherrington Road, Oxford
+  contact: jamesallen0108@gmail.com
+  country: United-Kingdom
+  enddate: 2015-01-15
+  helper: [Edward Doddridge, Russell Jones]
+  humandate: Jan 14-15, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [James Allen, Jens Nielsen]
+  latlng: 51.759155,-1.25596
+  layout: workshop
+  root: .
+  slug: 2015-01-14-oxford
+  startdate: 2015-01-14
+  url: http://jpallen.github.io/2015-01-14-oxford/
+  user: jpallen
+  venue: University of Oxford
+- address: WRF Data Science Studio, Physics/Astronomy Tower (6th Floor), University
+    of Washington, Seattle, WA
+  contact: bmarwick@uw.edu
+  country: United-States
+  enddate: 2015-01-16
+  eventbrite: 14655221161
+  helper: [Esther Le Grezause, Tania Melo]
+  humandate: Jan 15-16, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Russell Alleen-Willems, Becca Blakewood, Tracy Fuentes, Emilia Gan,
+    Chungho Kim, Ana Malagon, Maria Mckinley, Dominik Moritz, Ben Marwick, Marina
+      Oganyan, Jaclyn Saunders, Peter Schmiedeskamp, Thomas Sibley, Rachael Tatman,
+    Tiffany Timbers, Sam White, Earle Wilson]
+  latlng: 47.653371,-122.3118098
+  layout: workshop
+  lessons: [R, Python, SQL, Git, Bash]
+  registration: open
+  root: .
+  slug: 2015-01-15-uw
+  startdate: 2015-01-15
+  url: http://sophieclayton.github.io/2015-01-15-uw/
+  user: sophieclayton
+  venue: University of Washington
+- address: Mann Library, Room B30A, 237 Mann Drive, Ithaca, NY
+  assistants: [Jay Barry (CSCU), Lynn Johnson (CSCU), Francoise Vermeylen (CSCU)]
+  contact: mudrak@cornell.edu
+  country: United-States
+  enddate: 2015-01-16
+  eventbrite: 14893607180
+  humandate: Jan 15-16, 2015
+  humantime: 9:00 am - 5 pm
+  instructor: [Erika Mudrak (CSCU), Jeramia Ory (Kings College), Emily Davenport (Cornell
+      University)]
+  latlng: 42.448938, -76.476148
+  layout: bootcamp
+  raw: raw.github.com/emudrak/2015-01-15-cornell/gh-pages
+  registration: restricted
+  root: .
+  slug: 2015-01-15-cornell
+  startdate: 2015-01-15
+  url: http://emudrak.github.io/2015-01-15-cornell/
+  user: emudrak
+  venue: Cornell University Research Community
+- address: 2119 Hornbake South, College Park, MD
+  contact: msmorul@sesync.org
+  country: United-States
+  enddate: 2015-01-16
+  eventbrite: https://www.eventbrite.com/e/umd-data-carpentry-tickets-14847664765
+  helper: [Donal Heidenblad, Andrea Wiggins, Susan Winters]
+  humandate: Jan 15-16, 2015
+  humantime: 9:00 am - 5 pm
+  instructor: [Ian Munoz, Mike Smorul]
+  latlng: 38.988202,-76.941699
+  layout: bootcamp
+  raw: raw.github.com/sesync-ci/2015-01-15-umd/gh-pages
+  registration: open
+  root: .
+  slug: 2015-01-15-umd
+  sponsors: SESYNC and Maryland's iSchool
+  startdate: 2015-01-15
+  url: http://sesync-ci.github.io/2015-01-15-umd/
+  user: sesync-ci
+  venue: University of Maryland
+- address: Louisiana Cancer Research Center, 1700 Tulane Avenue, First Floor Auditorium,
+    New Orleans, LA 70112
+  contact: cogrady@tulane.edu
+  country: United-States
+  enddate: 2015-01-27
+  eventbrite: 14944695988
+  helper: [John Caskey, Nick Maggio, Hani Nakhoul, Tina O'Grady, Joon Ro, Travis White]
+  humandate: Jan 26 - 27, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Naupaka Zimmerman, Nichole Bennett]
+  latlng: 29.936756,-90.122193
+  layout: workshop
+  lessons: [R, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2015-01-26-tulane
+  startdate: 2015-01-26
+  url: http://naupaka.github.io/2015-01-26-tulane/
+  user: naupaka
+  venue: Tulane University
+- address: EOSM 105 (6339 Stores Road)
+  contact: bill@mozillafoundation.org
+  country: Canada
+  enddate: 2015-01-30
+  etherpad: https://etherpad.mozilla.org/SWC-EOS-UBC-jan2015
+  eventbrite: 15222248154
+  helper: [Karina Musalem]
+  humandate: Jan 27-30, 2015
+  humantime: 9:00 am - 12:30 pm
+  instructor: [Bill Mills, Tiffany Timbers]
+  language: en
+  latlng: 49.26, -123.25
+  layout: workshop
+  root: .
+  slug: 2015-01-27-ubc
+  startdate: 2015-01-27
+  url: http://billmills.github.io/2015-01-27-ubc/
+  user: billmills
+  venue: University of British Columbia
+- address: Biomedical and Physical Sciences Building, East Lansing, Michigan, 48824
+  contact: joshua.r.herr@gmail.com
+  country: United-States
+  enddate: 2015-01-29
+  eventbrite: null
+  helper: [TBA]
+  humandate: Jan 27-29, 2015
+  humantime: 8:30 am - 12:00 pm
+  instructor: [Joshua R. Herr, Luiz Irber, Jiarong Guo, Aaron Garoutte]
+  latlng: 42.724058, -84.476158
+  layout: workshop
+  lessons: [Shell, Python, Git]
+  redirect: null
+  registration: restricted
+  root: .
+  slug: 2015-01-27-msu_icer
+  startdate: 2015-01-27
+  url: http://jrherr.github.io/2015-01-27-msu_icer/
+  user: jrherr
+  venue: iCER / HPCC / BEACON at Michigan State University,
+- address: Teaching and Visualization Lab, 4th floor, James B Hunt Jr Library, 1070
+    Partners Way, Raleigh, NC
+  contact: mlfritz@ncsu.edu
+  country: United-States
+  enddate: 2015-01-30
+  etherpad: https://etherpad.mozilla.org/2015-01-29-ncsu
+  eventbrite: 15186513270
+  helper: [Christian Gunning, Daniel Rotroff, Megan Fritz]
+  humandate: Jan 29-30, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Karen Cranston, Darren Boss]
+  language: en
+  latlng: 35.769, -78.676
+  layout: workshop
+  root: .
+  slug: 2015-01-29-ncsu
+  startdate: 2015-01-29
+  url: http://kcranston.github.io/2015-01-29-ncsu/
+  user: kcranston
+  venue: North Carolina State University
+- address: Multi-media Room, Peter Gilgan Centre for Research and Learning, 686 Bay
+    Street, Toronto, Ontario, M5G 0A4
+  contact: thomas.wright@sickkids.ca
+  country: Canada
+  enddate: 2015-01-30
+  etherpad: https://etherpad.mozilla.org/2015-01-29-sickkids
+  eventbrite: '14777984349'
+  helper: [Xu Fei, Luke Johnston, Daiva Nielsen, Sahar Rahmani, James Iveniuk]
+  humandate: Jan 29-30, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Tom Wright, Greg Wilson, Elizabeth Patitsas]
+  latlng: 43.65,-79.38
+  layout: workshop
+  root: .
+  slug: 2015-01-29-sickkids
+  startdate: 2015-01-29
+  url: http://tomwright01.github.io/2015-01-29-sickkids/
+  user: tomwright01
+  venue: The Hospital For Sick Children
+- address: NCSA 1030, 1205 W Clark St, Urbana, IL
+  contact: training@cse.illinois.edu
+  country: United-States
+  enddate: 2015-01-30
+  etherpad: https://etherpad.mozilla.org/OR1ObWDaah
+  eventbrite: 10121948019
+  helper: []
+  humandate: Jan 29-30, 2015
+  humantime: 9:00 am - 4:45 pm
+  instructor: [Neal Davis, Ivan Gonzalez, David LeBauer, Matthew Turk]
+  latlng: 40.093692, -88.237606
+  layout: workshop
+  root: .
+  slug: 2015-01-29-uiuc
+  startdate: 2015-01-29
+  url: http://uiuc-cse.github.io/2015-01-29-uiuc/
+  user: uiuc-cse
+  venue: University of Illinois
+- address: Social Science-256
+  contact: jgoodall@albany.edu
+  country: United-States
+  enddate: 2015-02-01
+  etherpad: http://etherpad.wikimedia.org/p/ualbany
+  eventbrite: null
+  helper: [Chris Kotfila, Alex Jurkat]
+  humandate: Jan 31 - Feb 01, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jeramia Ory, Thomas Guignard]
+  language: en
+  latlng: 42.687679, -73.826551
+  layout: workshop
+  root: .
+  slug: 2015-01-31-ualbany
+  startdate: 2015-01-31
+  url: http://drlabratory.github.io/2015-01-31-ualbany/
+  user: drlabratory
+  venue: University at Albany, SUNY
+- address: Room C24 in the Sackville St Building, Sackville Street, Manchester
+  contact: admin-uk@software-carpentry.org
+  country: United-Kingdom
+  enddate: 2015-02-04
+  humandate: February 03 - 04, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Kate Lee, Mario Antonioletti, Aleksandra Pawlik]
+  latlng: 53.4773,-2.2374
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-02-03-CDT-reg-medicine
+  startdate: 2015-02-03
+  url: http://apawlik.github.io/2015-02-03-CDT-reg-medicine/
+  user: apawlik
+  venue: EPSRC & MRC Centre for Doctoral Training in Regenerative Medicine, University
+    of Manchester
+- address: iSchool Faculty of Information, Robarts Library, St. George Campus, University
+    of Toronto
+  contact: ais.ischool@utoronto.ca
+  country: Canada
+  enddate: 2015-02-06
+  etherpad: https://etherpad.mozilla.org/2015-02-05-toronto
+  eventbrite: 15377815460
+  helper: [Amy Brown, James Iveniuk, Kristina Mitova, Kim Pham, Kathy Chung, Brigitte
+      Mueller]
+  humandate: Feb 05-06, 2015
+  humantime: 8:30 am - 4:00 pm
+  instructor: [Tom Wright, Thomas Guignard, Greg Wilson]
+  latlng: 43.664928,-79.399387
+  layout: workshop
+  root: .
+  slug: 2015-02-05-toronto
+  startdate: 2015-02-05
+  url: http://swcarpentry.github.io/2015-02-05-toronto/
+  user: swcarpentry
+  venue: University of Toronto iSchool

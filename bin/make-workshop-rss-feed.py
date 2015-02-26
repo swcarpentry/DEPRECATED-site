@@ -9,7 +9,7 @@ import os
 import sys
 from optparse import OptionParser
 from PyRSS2Gen import Category, Guid
-from make_rss_feed import ContentEncodedRSS2, ContentEncodedRSSItem
+from util import ContentEncodedRSS2, ContentEncodedRSSItem
 try:  # Python 3
     from urllib.parse import urlparse
 except ImportError:  # Python 2

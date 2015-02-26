@@ -6,6 +6,7 @@ Utilities for site regeneration.
 import os
 import re
 import yaml
+from PyRSS2Gen import RSS2, RSSItem
 
 # Standard name for metadata files.
 CONFIG_YML = '_config.yml'
@@ -55,3 +56,45 @@ def load_info(folder, filename=CONFIG_YML):
            'No info file found in folder "{0}"'.format(folder)
     with open(path, 'r') as reader:
         return yaml.load(reader)
+
+#----------------------------------------
+
+class ContentEncodedRSS2(RSS2):
+    '''Represent an RSS2 feed with content-encoded items.'''
+
+    def __init__(self, **kwargs):
+        RSS2.__init__(self, **kwargs)
+        self.rss_attrs['xmlns:content']='http://purl.org/rss/1.0/modules/content/'
+        self.rss_attrs['xmlns:dc']='http://purl.org/dc/elements/1.1/'
+
+#----------------------------------------
+
+class ContentEncodedRSSItem(RSSItem):
+    '''Represent a single item in an RSS2 feed with content encoding.'''
+
+    def __init__(self, **kwargs):
+        self.dc = 'http://purl.org/dc/elements/1.1/'
+        self.content = kwargs.get('content', None)
+        if 'content' in kwargs:
+            del kwargs['content']
+        self.creator = kwargs.get('creator', None)
+        if 'creator' in kwargs:
+            del kwargs['creator']
+        RSSItem.__init__(self, **kwargs)
+
+    def publish_extensions(self, handler):
+        if self.creator:
+          handler.startElement('dc:creator', {})
+          handler.characters(self.creator)
+          handler.endElement('dc:creator')
+        if self.content:
+            if hasattr(handler, '_out'):
+                writer = handler._out.write
+            elif hasattr(handler, '_write'):
+                writer = handler._write
+            else:
+                assert False, \
+                       'XML handler does not have _out or _write'
+            writer('<%(e)s><![CDATA[%(c)s]]></%(e)s>' %
+                   { 'e':'content:encoded', 'c':unicode(self.content)})
+
