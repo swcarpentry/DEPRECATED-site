@@ -64,82 +64,25 @@ category: ["Teaching"]
   That does not necessarily imply they are the most competent,
   but it does (usually) mean that they already understand these ideas,
   and therefore under-estimate how hard they are for newcomers.
+</p>
+<p>
   In particular,
-  they under-estimate how often "little" things will go wrong in incomprehensible ways.
+  new instructors often under-estimate how often "little" things will go wrong in incomprehensible ways.
   and how hard they are to fix without a working mental model of how all this stuff works.
-</p>
-<p>
-  For example,
-  the first exercise for this round of instructor training was
-  to submit a short biography
-  as a pull request to <a href="{{site.github_io_url}}/training-course/">our GitHub-hosted blog</a>.
-  After his was merged,
-  one trainee got this error message from Jekyll
-  (the page translation tool GitHub uses):
-</p>
-<pre>
-Liquid Exception: comparison of Jekyll::Document with Jekyll::Document failed in _layouts/roundindex.html
-jekyll 2.4.0 | Error:  comparison of Jekyll::Document with Jekyll::Document failed
-</pre>
-<p>
-  That's it&mdash;no file name, much less a line number.
-  Here's the header of the offending file:
-</p>
-<pre>
----
-date: 20150201
-round: Round 12
-title: About Some Body
-author: Some Body
-permalink: /2015/02/some-body/
-tags:
-  - Biography
----
-Some Body is a theological engineer working at...
-</pre>
-<p>
-  The problem is the date:
-  it has to be hyphenated as <code>2015-02-01</code>,
-  but good luck figuring that out from the error message.
-  Another trainee's post didn't produce any error message all&mdash;it just
-  didn't show up in the blog.
-  Her header looked like this:
-</p>
-<pre>
----
-date: 2015-02-10
-round: Round 12
-title: About Somebody Else
-author: Somebody Else
-permalink: /2015/02/somebody-else/
-tags:
-  - Biography
-  ---
-Hi!  I'm Somebody Else, and...
-</pre>
-<p>
-  It took me about five minutes to notice that the "---" closing the header is indented,
-  which means that Jekyll decides the page is all header and no body
-  and throws it away.
-</p>
-<p>
-  My point here isn't to complain about Jekyll
-  (although c'mon&mdash;not even a file name?).
-  My point is that what we're trying to teach is genuinely hard.
+  What we're trying to teach is intrinsically complex.
   The <a href="https://en.wikipedia.org/wiki/No_Silver_Bullet">accidental complexity</a> imposed by lousy tools makes it harder,
   and it's all too easy for people who've climbed a hill to forget how steep it was.
 </p>
 <p>
-  The reverse is true of lessons.
-  Something I made up last night is hard to tell apart from
-  a lesson that's been used and patched a double dozen times,
-  so it's hard for someone who hasn't watched the latter evolve understand how it's better.
-  This is partly our fault:
-  we aren't capturing <em>our</em> learning in our instructors' guides after each workshop,
-  so newcomers can't easily see the "why" behind the "what".
-  As a result,
-  some new instructors decide to use their own material in workshops,
-  which has gone poorly at least as often as it has gone well.
+  The reverse is true of lessons:
+  it's easy for someone who <em>hasn't</em> climbed a hill to underestimate how hard a slog it will be.
+  In particular,
+  a lesson that's been used and patched a double dozen times
+  can appear no different from one I made up last night,
+  especially since we're still doing a poor job of capturing our in-class experiences
+  in our instructors' guides.
+  One consequence of this is new instructors using their own untested material in workshops,
+  which has gone poorly more often than it has gone well.
 </p>
 <p>
   My <a href="{{page.root}}/blog/2015/02/nouns-and-verbs.html">previous musings on teaching</a>
@@ -156,30 +99,39 @@ Hi!  I'm Somebody Else, and...
 <ol>
   <li>
     <p>
-      Every time someone suggests a substantial addition to one of our lessons,
+      Every time someone suggests adding a new topic to one of our lessons,
       they have to tell us what they would remove to make room for it.
       That doesn't mean something <em>will</em> be removed,
       but I think it will help clarify discussion about teaching priorities.
+      (This rule wouldn't apply to adding new exercises, instructors' notes,
+      or anything else that doesn't increase the length of the lesson.)
     </p>
   </li>
   <li>
     <p>
-      Instructors should be required to teach our standard lesson on a topic at least once,
-      and preferably twice,
-      before using their own material on the subject in a workshop.
+      Instructors should be required to teach our standard lesson on a topic
+      at least a couple of times
+      before replacing its content with material of their own.
+      Minor adjustments to fit particular learners and personal teaching styles are always OK&mdash;the
+      whole point of teaching live instead of using recorded video is to allow this.
+      So is adding extra material for particular audiences,
+      provided the core material hasn't been rushed through,
+      but wholesale replacement should wait until the instructor understands
+      why the stuff they're replacing looks the way it does.
     </p>
   </li>
 </ol>
 <p>
-  I don't want these rules to scare people off or stifle innovation&mdash;some
-  of the things instructors have been trying have worked well,
-  and definitely should be incorporated into the main lesson.
+  I don't want these rules to scare people off or stifle innovation:
+  after all,
+  if people never try new things,
+  our lessons will never get better.
   However,
   as more instructors and other potential contributors join us,
   we need better guidelines around lesson development.
   Voting on changes at each lab meeting proved unworkable;
   having <a href="{{page.root}}/lessons.html#maintainers">topic maintainers</a> is working much better,
-  but they and our contributors would both like more structure.
+  and the 
   I'd be grateful for feedback on whether these ideas are (a) good and (b) workable&mdash;please
   add them as comments on this blog post,
   and I'll summarize next week.
