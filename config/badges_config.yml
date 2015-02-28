@@ -31,6 +31,7 @@ instructor:
 - {name: Piotr Banaszkiewicz, user: banaszkiewicz.piotr}
 - {name: Pauline Barmby, user: barmby.pauline}
 - {name: Diego Barneche, user: barneche.diego}
+- {name: Ewan Barr, user: barr.ewan}
 - {name: Kathryn Barrett, user: barrett.kathryn}
 - {name: Radovan Bast, user: bast.radovan}
 - {name: Dana Bauer, user: bauer.dana}
@@ -67,6 +68,7 @@ instructor:
 - {name: Ruth Collings, user: collings.ruth}
 - {name: John Corless, user: corless.john}
 - {name: Marianne Corvellec, user: corvellec.marianne}
+- {name: Thomas Coudrat, user: coudrat.thomas}
 - {name: Logan Cox, user: cox.logan}
 - {name: Stefano Cozzini, user: cozzini.s}
 - {name: Karen Cranston, user: cranston.k}
@@ -152,11 +154,13 @@ instructor:
 - {name: Jessica Kerr, user: kerr.j}
 - {name: Jan Kim, user: kim.jan}
 - {name: W. Trevor King, user: king.wt}
+- {name: Isabell Kiral-Kornek, user: kiral-kornek.isabell}
 - {name: Ted Kirkpatrick, user: kirkpatrick.ted}
 - {name: Justin Kitzes, user: kitzes.j}
 - {name: Christina Koch, user: koch.christina}
 - {name: Steven Koenig, user: koenig.steven}
 - {name: Alexander Koeppel, user: koeppel.alexander}
+- {name: Scott Kolbe, user: kolbe.scott}
 - {name: Bernhard Konrad, user: konrad.b}
 - {name: Igor Kozlov, user: kozlov.igor}
 - {name: Paulina Lach, user: lach.paulina}
@@ -175,11 +179,13 @@ instructor:
 - {name: JC Leyder, user: leyder.jean-christophe}
 - {name: Matthew Lightman, user: lightman.matthew}
 - {name: Johnny Lin, user: lin.johnny}
+- {name: Andrew Lonsdale, user: lonsdale.andrew}
 - {name: Elijah Lowe, user: lowe.elijah}
 - {name: Yuxi Luo, user: luo.yuxi}
 - {name: Cam Macdonell, user: macdonell.cam}
 - {name: Gary Macindoe, user: macindoe.gary}
 - {name: Dan MacLean, user: maclean.dan}
+- {name: Paula Martinez, user: martinez.paula}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Catherine McGoveran, user: mcgoveran.catherine}
 - {name: Sheldon McKay, user: mckay.sheldon}
@@ -226,6 +232,7 @@ instructor:
 - {name: Sean Pue, user: pue.s}
 - {name: Karthik Ram, user: ram.k}
 - {name: Saravanan Ramalingam, user: ramalingam.saravanan}
+- {name: Tom Remenyi, user: remenyi.tom}
 - {name: Janet Riley, user: riley.janet}
 - {name: David Rio, user: rio.david}
 - {name: Scott Ritchie, user: ritchie.scott}
@@ -248,6 +255,7 @@ instructor:
 - {name: Yu-Ching Shih, user: shih.yu-ching}
 - {name: Raniere Silva, user: silva.raniere}
 - {name: Sarah Simpkin, user: simpkin.sarah}
+- {name: Jack Simpson, user: simpson.jack}
 - {name: Rachel Slaybaugh, user: slaybaugh.rachel}
 - {name: Clare Sloggett, user: sloggett.clare}
 - {name: Daniel Smith, user: smith.daniel}
@@ -261,6 +269,7 @@ instructor:
 - {name: Mark Stillwell, user: stillwell.mark}
 - {name: Jonathan Strootman, user: strootman.jonathan}
 - {name: Shoaib Sufi, user: sufi.s}
+- {name: Mike Sumner, user: sumner.mike}
 - {name: Sarah Supp, user: supp.s}
 - {name: 'Svaksha ', user: svaksha}
 - {name: Gayathri Swaminathan, user: swaminathan.gayathri}
@@ -271,6 +280,7 @@ instructor:
 - {name: Tracy Teal, user: teal.t}
 - {name: Matt Terry, user: terry.m}
 - {name: Andrew Teucher, user: teucher.andrew}
+- {name: Ian Thomas, user: thomas.ian}
 - {name: Robert Till, user: till.robert}
 - {name: Tiffany Timbers, user: timbers.tiffany}
 - {name: Will Trimble, user: trimble.will}
@@ -286,6 +296,7 @@ instructor:
 - {name: Jens von der Linden, user: vonderlinden.jens}
 - {name: Leanne Wake, user: wake.leanne}
 - {name: Andrew Walker, user: walker.andrew}
+- {name: Alistair Walsh, user: walsh.alistair}
 - {name: Dan Warren, user: warren.dan}
 - {name: Leah Wasser, user: wasser.leah}
 - {name: Ben Waugh, user: waugh.b}
