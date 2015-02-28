@@ -12,16 +12,16 @@ from PyRSS2Gen import RSS2, RSSItem
 CONFIG_YML = '_config.yml'
 
 # Template for metadata (in config directory).
-STANDARD_YML = 'standard_config.yml'
+STANDARD_YML = 'standard.yml'
 
 # Configuration file generated from admin database with badging information (in config directory).
-BADGES_YML = 'badges_config.yml'
+BADGES_YML = 'badges.yml'
 
 # File generated from admin database with instructor airport locations (in config directory).
-AIRPORTS_YML = 'airports_config.yml'
+AIRPORTS_YML = 'airports.yml'
 
 # File containing URLs for workshop repositories (in config directory).
-WORKSHOP_URLS_YML = 'workshop_urls.yml'
+WORKSHOPS_YML = 'workshops.yml'
 
 # File containing cached information about workshops.
 WORKSHOP_CACHE = '_workshop_cache.yml'

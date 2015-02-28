@@ -18,7 +18,7 @@ from util import CONFIG_YML, \
                  STANDARD_YML, \
                  AIRPORTS_YML, \
                  BADGES_YML, \
-                 WORKSHOP_URLS_YML, \
+                 WORKSHOPS_YML, \
                  WORKSHOP_CACHE, \
                  DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \

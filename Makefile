@@ -90,7 +90,7 @@ install :
 
 ## check        : check consistency of various things.
 check :
-	@python bin/check-workshops.py config/workshop_urls.yml config/workshops_saved.yml
+	@python bin/check-workshops.py config/workshops.yml config/archived.yml
 
 ## clean        : clean up.
 clean :
@@ -110,19 +110,19 @@ dev :
 
 ## archive      : collect and archive workshop information from GitHub and store in local cache.
 archive :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
+	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
 	@python bin/workshops.py -v -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
+	    -i $(CONFIG_DIR)/workshops.yml \
 	    -o ./_workshop_cache.yml \
-	    --archive $(CONFIG_DIR)/workshops_saved.yml
+	    --archive $(CONFIG_DIR)/archived.yml
 
 ## cache        : collect workshop information from GitHub and store in local cache.
 cache : $(GENERATED)
 
 ./_workshop_cache.yml :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
+	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
 	@python bin/workshops.py -v -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
+	    -i $(CONFIG_DIR)/workshops.yml \
 	    -o ./_workshop_cache.yml
 
 ./_dashboard_cache.yml :
@@ -158,7 +158,7 @@ urls :
 
 ## missing      : which instructors don't have biographies?
 missing :
-	@python bin/check-missing-instructors.py config/badges_config.yml _includes/people/*.html
+	@python bin/check-missing-instructors.py config/badges.yml _includes/people/*.html
 
 ## links        : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
