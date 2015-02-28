@@ -12,7 +12,7 @@ nocomments: 1
 
 <body onload="SWC.maps.instructors()">
 
-<div class="row-fluid" style="text-align:center; padding-bottom:15px">
+<div class="row" style="text-align:center; padding-bottom:15px">
   <img src="{{page.root}}/img/flags/32/Australia.png" alt="Australia" />
   <img src="{{page.root}}/img/flags/32/Brazil.png" alt="Brazil" />
   <img src="{{page.root}}/img/flags/32/Canada.png" alt="Canada" />
@@ -35,11 +35,10 @@ nocomments: 1
   <img src="{{page.root}}/img/flags/32/United-States.png" alt="United States" />
 </div>
 
-<div class="row-fluid">
+<div class="row">
 {% for person in site.people %}
-  <div class="span6" style="padding-bottom:15px">{% include {{person}} %}</div>
+  <div class="col-sm-6" style="padding-bottom:15px">{% include {{person}} %}</div>
 {% cycle '', '</div>' %}
-{% cycle '', '<div class="row-fluid">' %}	
+{% cycle '', '<div class="row">' %}
 {% endfor %}
 </div>
-	
