@@ -22,11 +22,13 @@ instructor:
 - {name: Russell Alleen-Willems, user: alleen-willems.russell}
 - {name: James Allen, user: allen.james}
 - {name: Pete Alonzi, user: alonzi.pete}
+- {name: Areej Alsheikh-Hussain, user: alsheikh-hussain.areej}
 - {name: Carlos Anderson, user: anderson.c}
 - {name: Catalina Anghel, user: anghel.catalina}
 - {name: Mario Antonioletti, user: antonioletti.mario}
 - {name: Dhavide Aruliah, user: aruliah.d}
 - {name: Camille Avestruz, user: avestruz.camille}
+- {name: Sung Bae, user: bae.sung}
 - {name: Christie Bahlai, user: bahlai.christie}
 - {name: Piotr Banaszkiewicz, user: banaszkiewicz.piotr}
 - {name: Pauline Barmby, user: barmby.pauline}
@@ -72,13 +74,16 @@ instructor:
 - {name: Logan Cox, user: cox.logan}
 - {name: Stefano Cozzini, user: cozzini.s}
 - {name: Karen Cranston, user: cranston.k}
+- {name: Nicholas Crouch, user: crouch.nicholas}
 - {name: Stephen Crouch, user: crouch.s}
 - {name: Michael Crusoe, user: crusoe.michael}
 - {name: Maciej Czuchry, user: czuchry.maciej}
+- {name: Harriet Dashnow, user: dashnow.harriet}
 - {name: Emily Davenport, user: davenport.e}
 - {name: Rob Davey, user: davey.rob}
 - {name: Matt Davis, user: davis.m}
 - {name: Neal Davis, user: davis.neal}
+- {name: Raffaella Demichelis, user: demichelis.raffaella}
 - {name: Balamurugan Desinghu, user: desinghu.balamurugan}
 - {name: Gabriel A. Devenyi, user: devenyi.gabriel}
 - {name: Ross Dickson, user: dickson.r}
@@ -114,6 +119,7 @@ instructor:
 - {name: Gerard Gorman, user: gorman.gerard}
 - {name: John Gosset, user: gosset.john}
 - {name: Alistair Grant, user: grant.alistair}
+- {name: Pip Griffin, user: griffin.pip}
 - {name: Jonathan Gross, user: gross.jonathan}
 - {name: Thomas Guignard, user: guignard.thomas}
 - {name: Jiarong Guo, user: guo.jiarong}
@@ -151,6 +157,7 @@ instructor:
 - {name: David Jones, user: jones.d}
 - {name: David Jones, user: jones.dm}
 - {name: Martin Jones, user: jones.martin}
+- {name: Nick Jones, user: jones.nick}
 - {name: Jessica Kerr, user: kerr.j}
 - {name: Jan Kim, user: kim.jan}
 - {name: W. Trevor King, user: king.wt}
@@ -185,6 +192,7 @@ instructor:
 - {name: Cam Macdonell, user: macdonell.cam}
 - {name: Gary Macindoe, user: macindoe.gary}
 - {name: Dan MacLean, user: maclean.dan}
+- {name: Joshua Madin, user: madin.j}
 - {name: Paula Martinez, user: martinez.paula}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Catherine McGoveran, user: mcgoveran.catherine}
@@ -198,6 +206,7 @@ instructor:
 - {name: Francois Michonneau, user: michonneau.francois}
 - {name: Brian Miles, user: miles.brian}
 - {name: Bill Mills, user: mills.b}
+- {name: Amanda Miotto, user: miotto.amanda}
 - {name: Meeta Mistry, user: mistry.meeta}
 - {name: Ian Mitchell, user: mitchell.i}
 - {name: Jason Moore, user: moore.jason}
@@ -241,6 +250,7 @@ instructor:
 - {name: Rosario Robinson, user: robinson.rosario}
 - {name: Ariel Rokem, user: rokem.a}
 - {name: Billy Rowell, user: rowell.bill}
+- {name: John Rugis, user: rugis.john}
 - {name: Dale Russell, user: russell.dale}
 - {name: Maneesha Sane, user: sane.maneesha}
 - {name: Martin Schilling, user: schilling.martin}

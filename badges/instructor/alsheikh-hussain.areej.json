@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-02", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$e4ba07f827c704fafcc0964ec17ad981dec75a3ba85d290005a8de845ccf834e", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$e4ba07f827c704fafcc0964ec17ad981dec75a3ba85d290005a8de845ccf834e", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/alsheikh-hussain.areej.json"
+ }
+}
