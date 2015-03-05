@@ -90,7 +90,7 @@ install :
 
 ## check        : check consistency of various things.
 check :
-	@python bin/check-workshops.py config/workshops.yml config/archived.yml
+	python bin/check-workshops.py config/workshops.yml config/archived.yml
 
 ## clean        : clean up.
 clean :
@@ -111,7 +111,7 @@ dev :
 ## archive      : collect and archive workshop information from GitHub and store in local cache.
 archive :
 	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
-	@python bin/workshops.py -v -t \
+	python bin/workshops.py -v -t \
 	    -i $(CONFIG_DIR)/workshops.yml \
 	    -o ./_workshop_cache.yml \
 	    --archive $(CONFIG_DIR)/archived.yml
@@ -121,12 +121,12 @@ cache : $(GENERATED)
 
 ./_workshop_cache.yml :
 	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
-	@python bin/workshops.py -v -t \
+	python bin/workshops.py -v -t \
 	    -i $(CONFIG_DIR)/workshops.yml \
 	    -o ./_workshop_cache.yml
 
 ./_dashboard_cache.yml :
-	@python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
+	python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
 
 ## ----------------------------------------
 
@@ -134,8 +134,8 @@ cache : $(GENERATED)
 # Have to cd into 'bib' because bib2xhtml expects the .bst file in
 # the same directory as the .bib file.
 biblio : bib/${SWC_BIB}.tex bib/software-carpentry.bib
-	@cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
-	@cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
+	cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
+	cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
 
 ## authors      : list all blog post authors.
 authors :
