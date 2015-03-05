@@ -1,0 +1,147 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Wrong Is Useful: Lessons as Packages"
+date: 2015-02-27
+time: "11:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<blockquote>
+  "What would Greg do? [pause] OK, now that we've ruled that out..."
+  <br/>
+  &mdash; overheard
+</blockquote>
+<p>
+  I wrote <a href="{{page.root}}/blog/2014/07/using-a-package-manager-for-lessons-and-papers.html">a post last July</a>
+  about using <a href="https://en.wikipedia.org/wiki/Package_manager">package managers</a>
+  like RPM, Homebrew, and Conda to track dependencies between lessons,
+  so that a student could say something like <code>conda install unit_testing</code>
+  and get a lesson on unit testing,
+  along with the code, sample data, and other lessons it depends on.
+  I also mused that it could help make research more reproducible:
+  after all,
+  a paper is just a lesson on something that's never been taught before.
+</p>
+<!-- end excerpt -->
+<p>
+  This idea isn't new.
+  Konrad Hinsen <a href="https://khinsen.wordpress.com/2012/04/10/unifying-version-control-and-dependency-management-for-reproducible-research/">wrote</a>
+  <a href="https://khinsen.wordpress.com/2012/05/14/the-nix-package-manager-in-computational-science/">about</a>
+  using package management for reproducibility back in 2012,
+  and <a href="https://khinsen.wordpress.com/2013/08/14/platforms-for-reproducible-research/">later</a>
+  about why he decided to go a different route.
+  W. Trevor King has <a href="http://blog.tremily.us/posts/Package_management/">written</a> about it as well,
+  while R&eacute;mi Emonet and Raniere Silva built
+  <a href="https://github.com/twitwi/lesson-manager">a small prototype</a> last summer.
+</p>
+<p>
+  I'm still not sure whether this is a good idea,
+  and since I've always done what passes for my best thinking when I've got something to fix
+  rather than a blank sheet of paper,
+  I've thrown together <a href="https://github.com/swcarpentry/installable-lesson-demo-01">a really small demo</a>.
+  I'm sure it's wrongheaded in many ways,
+  but I hope it will help focus discussion by giving people something specific to correct.
+  If you'd like to kick its tires:
+</p>
+<ol>
+  <li>
+    <p>
+      Make sure you have Python 2.* installed.
+    </p>
+  </li>
+  <li>
+    <p>
+      Clone <a href="https://github.com/swcarpentry/installable-lesson-demo-01">this GitHub repository</a>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Run <code>make</code> on its own to get a list of available commands.
+    </p>
+  </li>
+  <li>
+    <p>
+      Run <code>make create</code> to create a distribution file <code>dist/something-0.0.1.tar.gz</code>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Run <code>make install</code> to install that package in your Python distribution.
+      You may wish to create a virtual environment before doing this
+      so as not to pollute your Python distribution.
+      However,
+      <code>make install</code> writes a list of installed files to <code>installed-files.txt</code>,
+      so you can <code>make uninstall</code> to delete them all.
+    </p>
+  </li>
+  <li>
+    <p>
+      Once the lesson is installed,
+      <code>lesson view something</code> will open it in your browser.
+      This emulates a learner viewing the lesson locally.
+    </p>
+  </li>
+  <li>
+    <p>
+      <code>mkdir /tmp/stuff</code> (or some other temporary directory)
+      and then <code>lesson files something /tmp/stuff</code>
+      will copy the lesson's code and data into <code>/tmp/stuff</code>.
+      This emulates a learner getting the sample code and data files for the lesson.
+    </p>
+  </li>
+</ol>
+<p>
+  Behind the scenes,
+  installation uses a standard Python <code>setup.py</code> script
+  to create a <code>lessons</code> sub-directory in your Python distribution
+  and then copy the lesson material under there.
+  It also installs a script called <code>lesson</code> in
+  your Python distribution's <code>bin</code> sub-directory.
+  A real system would separate these:
+  people would only install <code>lesson</code> once,
+  and each particular lesson would then be packaged and installed separately.
+</p>
+<p>
+  This little demo doesn't specify any dependencies,
+  so it doesn't install any supporting tools or prerequisite lessons.
+  That would be straightforward to add,
+  but that's another way of saying,
+  "We don't need to think about it right now."
+  What we <em>do</em> need to think about is:
+  how to handle lessons for R, the shell, GitHub, and so on,
+  and whether Python's packaging tools are the right platform for this.
+  I'm pretty sure the answer to the second question is "no",
+  but alternatives are either OS-specific,
+  require more effort at first encounter than most lesson authors will be willing to invest,
+  or both.
+</p>
+<p>
+  The long-term goal of this work is to create something like
+  <a href="http://cran.r-project.org/">CRAN</a>,
+  <a href="http://www.cpan.org/">CPAN</a>,
+  or <a href="https://pypi.python.org/pypi">PyPI</a>
+  for lessons.
+  Like those archives,
+  it would require people to package their lesson in a particular way.
+  Once they'd done that,
+  though,
+  their work would be easier to find and use.
+  And as I said at the outset,
+  if we can make this work for lessons,
+  there's no reason we can't make it work for papers.
+  (I for one would have been grateful if I could have run
+  <code>pip install doi://arxiv.org/1111.1111</code>
+  to get a local, runnable copy of the paper I'm supposed to be reviewing right now.)
+</p>
+<p>
+  Packaging and distribution is a headache and a nightmare
+  and one of practical computing's greatest unsolved problems,
+  but if we want to work through someone's lesson,
+  or reproduce and extend a colleague's research,
+  we have to get the raw material installed <em>somehow</em>.
+  Today's packaging systems pay much less attention to docs than they do to code;
+  I think that making the former a first-class citizen would be an interesting experiment,
+  and I'd be grateful if you could comment on this post to tell me what you think.
+</p>

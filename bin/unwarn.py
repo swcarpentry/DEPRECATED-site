@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+'''Used to remove entity warnings when checking validity of HTML.'''
 
 import sys
 while True:

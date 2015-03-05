@@ -17,7 +17,6 @@ CONTROLS = (
     ('swcarpentry/slideshows', 'Software Carpentry presentations'),
     ('swcarpentry/capstone-novice-spreadsheet-biblio', 'From Excel to a database via Python'),
     ('swcarpentry/instructor-training', 'What instructors need to know'),
-    ('swcarpentry/python-novice-turtles', 'Python for non-programmers using Turtles'),
     ('swcarpentry/amy', 'Workshop administration tool'),
     ('swcarpentry/site', 'Software Carpentry website'),
 )
@@ -53,12 +52,16 @@ def process(cnx):
                   'issues' : []}
         all_records.append(record)
         for i in r.get_issues(state='open'):
-            record['issues'].append({'number' : i.number,
-                                     'title' : str(i.title),
-                                     'url' : str(i.html_url),
-                                     'updated' : i.updated_at.strftime('%Y-%m-%d')})
+            try:
+                record['issues'].append({'number' : i.number,
+                                         'title' : str(i.title),
+                                         'url' : str(i.html_url),
+                                         'updated' : i.updated_at.strftime('%Y-%m-%d')})
+            except Exception, e:
+                print >> sys.stderr, 'failed with', i.number, i.title, i.html_url, i.updated_at
             dashboard['num_issues'] += 1
         record['issues'].sort(lambda x, y: - cmp(x['updated'], y['updated']))
+    return dashboard
 
 def main():
     '''Main driver.'''

@@ -1,0 +1,58 @@
+---
+layout: blog
+root: ../../..
+author: Daniel Chen
+title: "Cookie Cutter"
+date: 2015-02-10
+time: "06:00:00"
+category: ["Reproducibility", "Tools"]
+---
+<!-- start excerpt -->
+<p>
+  I was first introduced to William Stafford Noble's paper
+  "<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">A Quick Guide to Organizing Computational Biology Projects</a>"
+  when Ivan Gonzalez and I taught Harvard last November.  Noble describes
+  how scientists in Computational Biology should set up their
+  project folders so code, results, outputs, figures, and papers are
+  all in easily understandable locations.  He also writes about how
+  one should run experiments (using driver scripts) to make workflows
+  reproducible, readable, and understandable to others (and your
+  future self).
+</p>
+<!-- end excerpt -->
+<p>
+  I recently reorganized a project I was working on to follow Nobe's
+  folder structure, and when I started a new computational project, I
+  realized I would have to create the same folder structure again.
+  Since, we're in the business of not repeating ourselves, I created
+  <a href="https://github.com/chendaniely/computational-project-cookie-cutter">a
+  short Bash script</a> that implements the basic folder structure
+  outlined by Noble.  When I brought up the project to our discussion
+  board, Pat Schloss chimed in
+  with <a href="https://github.com/Reproducible-Science-Curriculum/rr-init">a
+  similar project</a> based on the same motivational paper, and my
+  project even got a pull request!
+</p>
+<p>
+  "Cookie cutter" projects are
+  <a href="https://github.com/audreyr/cookiecutter">quite</a>
+  <a href="http://projecttemplate.net/">common</a> &mdash;
+  essentially, they are pre-built templates for project that follow some kind of
+  convention for folder structures and basic boilerplate.
+</p>
+<p>
+  For Software Carpentry, it serves as a way for us to teach our
+  attendees some
+  <a href='http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745'>best practices</a>
+  while showing them the importance of reproducibility and scripts.
+  It also allows a low barrier of entry to actually set up a project
+  folder structure, since re-organizing folders when a project is
+  fully developed will most likely not happen.
+</p>
+<p>
+  If you use cookie cutter project templates of some kind,
+  we'd like to hear about them:
+  please add pointers to
+  <a href="{{site.github_url}}/site/issues/806">this GitHub issue</a>
+  or <a href="mailto:gvwilson@software-carpentry.org">mail us</a> directly.
+</p>

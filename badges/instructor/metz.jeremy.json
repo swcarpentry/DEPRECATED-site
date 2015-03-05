@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-01-21", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$b0fc33aea81414bf65a36b666c218be955e6d807a52da700ec48fd356067e2cb", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$b0fc33aea81414bf65a36b666c218be955e6d807a52da700ec48fd356067e2cb", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/metz.jeremy.json"
+ }
+}

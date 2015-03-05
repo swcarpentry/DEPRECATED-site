@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-01", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$998033ab539cf8301dbe0de53f1613bcee0014b911c373f3af9625f03edbba8f", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$998033ab539cf8301dbe0de53f1613bcee0014b911c373f3af9625f03edbba8f", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/stanton-cook.mitchell.json"
+ }
+}

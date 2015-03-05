@@ -62,6 +62,14 @@ The commands used to rebuild the website are stored in `Makefile`.
     and other pages in `_site`
     to see what your changes will look like.
 
+
+**Note: You must have Jekyll 2.5 or later.** If you have an older version
+installed, you can update it with:
+
+~~~
+gem update
+~~~
+
 Note: Disqus comments will *not* load properly,
 since you'll be on your machine rather than our server.
 
@@ -98,7 +106,7 @@ If you'd like to submit your post as a pull request, then:
         to mark a paragraph or two at the start
         as the excerpt to show in feed readers.
     *   If you need to refer to our email address, it is `{{page.contact}}`.
-    *   If you need to another post, or something else on the site, use `{{page.root}}/path/to/file`.
+    *   If you need to refer to another post, or something else on the site, use `{{page.root}}/path/to/file`.
 
 5.  Please add any images your blog post needs to the same blog/YYYY/MM directory as the post itself.
     Please use lower-case names without special characters for image files.
@@ -110,7 +118,7 @@ If you'd like to submit your post as a pull request, then:
 7.  `git push origin master` will push it to your clone on GitHub
     (assuming you've added your fork on GitHub as a remote called `origin`).
 
-8.  Go to GitHub and issue a pull request from your clone to `swcarpentry/website`,
+8.  Go to GitHub and issue a pull request from your clone to `swcarpentry/site`,
     then assign it to `gvwilson` for proof-reading.
 
 Adding a Workshop

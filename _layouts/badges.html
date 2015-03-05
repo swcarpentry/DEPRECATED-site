@@ -8,19 +8,24 @@
     <title>Software Carpentry{% if page.title %}: {{page.title}}{% endif %}</title>
   </head>
   <body>
-    {% include navbar.html %}
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span10 offset1">
-          {% if page.title %}
+    {% include github-ribbon.html %}
+    <header class="header">
+      {% include navbar.html %}
+    </header>
+    {% if page.title %}
+    <section id="title" class="content">
+        <div class="container">
             <h1 class="title">{{page.title}}</h1>
-          {% endif %}
-          {{content}}
-          {% include disqus.html %}
-          {% include footer.html %}
         </div>
+    </section>
+    {% endif %}
+    <section class="content">
+      <div class="container">
+          {{content}}
       </div>
-    </div>
+    </section>
+    {% include disqus.html %}
+    {% include footer.html %}
 
     <!-- attach actions -->
     <script src="http://beta.openbadges.org/issuer.js"></script>

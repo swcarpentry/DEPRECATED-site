@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-02-03", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$a696c58da43edba7e68e31a8ed9ee4abae07c5b4e8f6644a950affc4c0a8660b", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$a696c58da43edba7e68e31a8ed9ee4abae07c5b4e8f6644a950affc4c0a8660b", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/ushizima.daniela.json"
+ }
+}

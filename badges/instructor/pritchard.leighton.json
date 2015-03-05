@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-01-12", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$382f3c6662c9c95796f5798eebd0882d66a2f7c12a177be47baa43aa5cd220b3", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$382f3c6662c9c95796f5798eebd0882d66a2f7c12a177be47baa43aa5cd220b3", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/pritchard.leighton.json"
+ }
+}
