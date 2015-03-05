@@ -1,6 +1,6 @@
 """
 Download information about workshops from GitHub.
-Usage: get_workshop_info [-i input_file] [-o output_file] [-t]
+Usage: workshops.py [-i input_file] [-o output_file] [-t]
 -i: optional input filename (default sys.stdin)
 -o: optional output filename (default sys.stdout)
 -t: tolerate errors (default False)
@@ -178,6 +178,12 @@ def should_be_archived(record):
     else:
         checkdate = record['startdate']
     return (datetime.date.today() - checkdate) > datetime.timedelta(ARCHIVE_WINDOW)
+
+def convert_url(url):
+    m = re.match(r'^https?://(.+)\.github\.io/([^/]+)/?$', url)
+    if m:
+        url = 'https://github.com/{0}/{1}'.format(m.group(1), m.group(2))
+    return url
 
 if __name__ == '__main__':
     main(sys.argv[1:])
