@@ -1,5 +1,5 @@
 - {airport: 'Albuquerque, NM', count: 1, latlng: '35.048665,-106.616704'}
-- {airport: Auckland, count: 2, latlng: '-37.008056,174.791667'}
+- {airport: Auckland, count: 4, latlng: '-37.008056,174.791667'}
 - {airport: 'Ames, IA', count: 1, latlng: '41.99194,-93.62167'}
 - {airport: Stockholm, count: 3, latlng: '59.651944,17.918611'}
 - {airport: 'Atlanta, GA', count: 3, latlng: '33.640278,-84.426944'}
@@ -58,7 +58,7 @@
 - {airport: 'Orlando, FL', count: 1, latlng: '28.428889,-81.315833'}
 - {airport: 'Harrisburg, PA', count: 1, latlng: '40.193333,-76.763333'}
 - {airport: 'Chicago Midway, IL', count: 3, latlng: '41.785833,-87.752222'}
-- {airport: Melbourne, count: 11, latlng: '-37.673333,144.843333'}
+- {airport: Melbourne, count: 13, latlng: '-37.673333,144.843333'}
 - {airport: 'Manchester, New Hampshire', count: 1, latlng: '42.92786,-71.43844'}
 - {airport: 'Madison, WI', count: 4, latlng: '43.139722,-89.3375'}
 - {airport: 'Minneapolis St Paul, MN', count: 1, latlng: '44.880278,-93.216667'}
@@ -88,10 +88,10 @@
 - {airport: 'Salt Lake City, UT', count: 2, latlng: '40.788333,-111.9775'}
 - {airport: 'Sacramento, CA', count: 3, latlng: '38.695278,-121.590556'}
 - {airport: 'John Wayne (Orange County), CA', count: 1, latlng: '33.675556,-117.868056'}
-- {airport: Southampton, count: 2, latlng: '50.95,-1.356667'}
+- {airport: Southampton, count: 3, latlng: '50.95,-1.356667'}
 - {airport: 'St. Louis, MO', count: 3, latlng: '38.7475,-90.359722'}
 - {airport: Stansted, count: 3, latlng: '51.885,0.235'}
-- {airport: Sydney, count: 4, latlng: '-33.946111,151.177222'}
+- {airport: Sydney, count: 5, latlng: '-33.946111,151.177222'}
 - {airport: 'Syracuse, NY', count: 1, latlng: '38.175662,-85.736923'}
 - {airport: Tel Aviv, count: 1, latlng: '32.009444,34.876667'}
 - {airport: Trieste, count: 1, latlng: '45.827778,13.466389'}
@@ -104,7 +104,7 @@
 - {airport: Quebec City, count: 1, latlng: '46.788333,-71.3975'}
 - {airport: Saint John, count: 1, latlng: '45.329142,-65.890355'}
 - {airport: Montreal, count: 9, latlng: '45.468056,-73.741389'}
-- {airport: Vancouver, count: 12, latlng: '49.195,-123.181944'}
+- {airport: Vancouver, count: 13, latlng: '49.195,-123.181944'}
 - {airport: 'London, Ontario', count: 1, latlng: '43.035556,-81.153889'}
 - {airport: Victoria, count: 2, latlng: '48.646944,-123.425833'}
 - {airport: Toronto, count: 14, latlng: '43.677222,-79.630556'}
