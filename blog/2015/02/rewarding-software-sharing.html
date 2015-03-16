@@ -1,0 +1,225 @@
+---
+layout: blog
+root: ../../..
+author: Chris Bogart
+title: "Rewarding Software Sharing by Mapping Scientific Software"
+date: 2015-02-07
+time: "10:30:00"
+category: ["Research"]
+---
+<!-- start excerpt -->
+<p>
+  Sharing software you write with other scientists can magnify the impact of
+  your research, but there can be a surprising amount of sometimes thankless
+  extra work involved.  I work with a group at Carnegie Mellon's Institute for
+  Software Research who have been asking scientists what that extra work is, and
+  what motivates them to do it&mdash;despite a sometimes uncertain link between that
+  extra work and the ways many of them are evaluated in their jobs.  We're
+  looking at ways of measuring and mapping software and its impacts, in order
+  to help scientists demonstrate the positive impact that
+  their work on shared software has on science. We're running an experiment
+  that you can help with.
+</p>
+<!-- end excerpt -->
+<p>
+  Uploading some code you've written onto a public repository like
+  GitHub is easy, but it may invite some unexpected costs down the
+  road<sup><a href="#fn1">1</a></sup>.  If you didn't
+  document every last assumption you've made, every command-line
+  option, every rationale for, for example, you're going to get
+  questions about it.  If it's buggy, you'll be asked to fix it.  If
+  it doesn't perform a Frobnitz analysis, someone will ask you to add
+  it.
+</p>
+<p>
+  You may struggle a bit to make time for that extra work.  Tenure
+  committees and grant reviewers may care more about how many papers
+  you've published than how many tests you've written or users you've
+  supported, even though that support may indirectly be enabling a
+  great deal of valuable research.  So if you don't want to skimp on
+  software support, you might need to explicitly write that
+  maintenance into your grants, your job description, or hire people
+  to help. To do justify all this, you'd have to make a case that that
+  work is really advancing science and not just keeping an old pet
+  project on life support.
+</p>
+<p>
+  Unfortunately it turns out to be fairly difficult to know what
+  scientific impact a particular piece of open source software is
+  really making.  You can collect download statistics, but it's hard
+  to know how much usage a download represents, if any.  You can try
+  to count citations in published papers that mention your software,
+  but this task is daunting and unreliable: publications do not always
+  mention all the software they use. For example I spot checked ten
+  papers listed by researchers as justification for supercomputer
+  time, to look for citations or mentions of a library they all
+  used: <a href="http://www.fftw.org/">FFTW</a>, a popular fast
+  Fourier transform library.  Only one mentioned the package, and only
+  because the particulars of the algorithm were relevant to their
+  research.  FFTW seems to be a real workhorse of scientific computing
+  across many fields, but its citations don't reflect its apparently
+  broad impact.
+  Furthermore, <a href="http://james.howison.name/publications.html#cyberinfrastructure">James
+  Howison</a> at the University of Texas has found<sup><a href="#fn2">2</a></sup>
+  that even when scientific software is mentioned in papers, "only 37%
+  of mentions involve formal citations, and only 28% provide any
+  version information".
+</p>
+<p>
+  The citation problem can't be completely laid at the feet of paper
+  authors, however; practices and expectations differ by field, and it
+  would be unwieldy to mention every library used by every program in
+  one's workflow.
+</p>
+<p>
+  So how can we get better information about scientific impact into
+  the hands of scientific software authors? Two possible places for
+  improvment are: how publications require, collect, and promulgate
+  usage information, and how scientists' actual usage can be measured
+  in the first place.
+</p>
+<p>
+  From the perspective of the publications, there's a social/technical
+  question of agreeing on appropriate citation practices for software,
+  and technical ways of making that metadata usable and searchable.
+  Several different groups of researchers have been pursuing this.
+  Some software authors and repositories, such as R packages listed
+  on <a href="http://www.bioconductor.org">Bioconductor</a>, quote
+  specific citations that they ask people to use.  Some journals are
+  requesting software to be submitted along with papers, and archiving
+  that software.
+  <a href="https://impactstory.org">ImpactStory</a> has plans to mine
+  publication repositories for software references<sup><a href="#fn3">3</a></sup>,
+  and organizations like <a href="https://www.synapse.org/#">Sage
+  Synapse</a>, the <a href="https://osf.io">Open Science
+  Framework</a>, and <a href="www.myexperiment.org">MyExperiment</a>
+  are offering ways of storing a paper's software along with data in
+  order to make research more replicable.
+</p>
+<p>
+  From the perspective of the scientist actually trying to get work
+  done, there's the problem of keeping track of all the software one
+  is making use of, and getting that information both to the
+  publishers of our papers, as well as back to the authors of the
+  software, who desperately need evidence that it's being used.
+  That's the part of the problem our group at Carnegie Mellon and UT
+  Austin (<a href="http://herbsleb.org">Jim
+  Herbsleb</a>, <a href="http://james.howison.name/">James
+  Howison</a>, and <a href="http://chris.bogarthome.net/">myself</a>)
+  have been working on.
+</p>
+<p>
+  We are building a tool for monitoring actual usage of scientific
+  software "in the wild", and we're looking for volunteers willing to
+  let us capture your usage data (an anonymous list of packages you
+  used in each session).  We're asking for users of the R language who
+  are willing to install our scimapClient package, which collects
+  anonymous information about which packages you used.  The data is
+  fed into an online repository,
+  <a href="http://scisoft-net-map.isri.cmu.edu">http://scisoft-net-map.isri.cmu.edu</a>,
+  where you can browse the growing data set.
+</p>
+<p>
+  We're just beginning to collect R data now, but we've examined
+  analogous data an easier-to-collect source: scientific software run
+  on a supercomputer.  Folks at the Texas Advanced Computing Center
+  (TACC) have let us analyze a year's worth worth of
+  data<sup><a href="#fn4">4</a></sup>, which you can explore
+  on an alternate version of our website
+  at <a href="http://scisoft-net-map.isri.cmu.edu:7777">http://scisoft-net-map.isri.cmu.edu:7777</a>.
+</p>
+<p>
+  For example, in the supercomputer data, there's a dynamically loaded
+  C++ library called Boost, which was loaded by a few different
+  packages people used. We can see how often it was used over time,
+  and what it was used with:
+<p>
+  <img src="boost-usage.png" alt="Boost Usage" />
+</p>
+<p>
+  The big line chart shows usage of <code>boost</code> over time; a boost
+  developer might use it to watch for trends, and compare usage
+  against complementary or competing packages.
+</p>
+<p>
+  The (inset) graph visualization uses size to represent number of
+  jobs in which packages were used, and orange pie wedges to show the
+  proportion of those jobs that used <code>boost</code>.  In this
+  case, three packages: desmond, mpi, and gromacs, all
+  used <code>boost</code>.  Gromacs, a molecular dynamics package, has
+  a version of boost statically compiled in which isn't visible in our
+  dataset, but it optionally
+  <a href="http://www.gromacs.org/Documentation/Installation_Instructions">lets users link to this dynamic library</a>
+  for better performance in some scenarios.  That occasional use of an
+  external library is what we're seeing here.  A gromacs maintainer
+  might use a visualization like the inset graph above to hypothesize
+  that users were seldom taking advantage of this option, at least in
+  the context of TACC.
+</p>
+<p>
+  We believe there's great potential for this kind of analytical
+  toolset, akin to what supercomputer operations centers use, but
+  applied to the broader ecosystem of open software distributed across
+  the laptops and desktops of the world's scientists.  If you're an R
+  user who'd like to be a part of that, you can
+  visit <a href="http://scisoft-net-map.isri.cmu.edu/static/html/installR.html">our
+  website</a> and follow the instructions to instrument your own R
+  installation.
+</p>
+<p>
+  <strong>References</strong>
+</p>
+<ol>
+  <li id="fn1">
+    Trainer, E., Chaihirunkarn, C., Kalyanasundaram, A., Herbsleb,
+    J.D.  (2015): "From Personal Tool to Community Resource: What's
+    the Extra Work and Who Will Do It?" In Proceedings of the 2015 ACM
+    Conference on Computer-supported Cooperative Work &amp; Social
+    Computing (CSCW 2015, Vancouver, Canada), to appear.
+  </li>
+  <li id="fn2">
+    Howison, J., and Bullard, J. (Under review). The visibility of
+    software in the scientific literature: how do scientists mention
+    software and how effective are those citations? Working paper
+    submitted to Journal of the Association for Information Science
+    and Technology.
+    <a href="https://github.com/jameshowison/softcite/blob/master/paper/HowisonBullard-SoftwareCitation-WorkingPaper.pdf?raw=true">PDF</a>
+  </li>
+  <li id="fn3">
+    Priem, J. and Piwowar, H. Toward a comprehensive impact report for
+    every software project. figshare, 2013, 790651.
+    <a href="http://dx.doi.org/10.6084/m9.figshare.790651">ref</a> 
+  </li>
+  <li id="fn4">
+    Mclay, R. and Cazes, J. Characterizing the Workload on Production
+    HPC Clusters. (Working Paper) Texas Advanced Computing Center,
+    2012.
+  </li>
+</ol>
+<hr/>
+<div style="font-style: italic">
+  <p>
+    Addendum:
+    Andy Terrel pointed out on Twitter that after so many words on the topic,
+    I didn't actually cite the software that was used to collect this data.
+    Here are the main things we used:
+  </p>
+  <ul>
+    <li>
+      The TACC supercomputer data was collected with Lariat:
+      <a href="https://github.com/TACC/lariat">https://github.com/TACC/lariat</a>
+    </li>
+    <li>
+      The dynamically linked libraries were managed with a package called Lmod:
+      <a href="https://github.com/TACC/Lmod">https://github.com/TACC/Lmod</a>
+    </li>
+    <li>
+      The R package you can install to contribute your package usage data is here:
+      <a href="https://github.com/cbogart/scimapClient">https://github.com/cbogart/scimapClient</a>
+    </li>
+    <li>
+      And the source code for the website that collects and displays that data is here:
+      <a href="https://github.com/cbogart/scisoft-net-map">https://github.com/cbogart/scisoft-net-map</a>
+    </li>
+  </ul>
+</div>

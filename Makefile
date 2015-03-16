@@ -80,51 +80,9 @@ all : commands
 commands : Makefile
 	@sed -n 's/^## //p' $<
 
-## authors      : list all blog post authors.
-authors :
-	@python bin/list_blog_authors.py $(SRC_BLOG) | cut -d : -f 1
-
-## archive      : collect and archive workshop information from GitHub and store in local cache.
-archive :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
-	@python bin/get_workshop_info.py -v -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
-	    -o ./_workshop_cache.yml \
-	    --archive $(CONFIG_DIR)/workshops_saved.yml
-
-## cache        : collect workshop information from GitHub and store in local cache.
-cache : $(GENERATED)
-
-./_workshop_cache.yml :
-	cp $(CONFIG_DIR)/workshops_saved.yml ./_workshop_cache.yml
-	@python bin/get_workshop_info.py -v -t \
-	    -i $(CONFIG_DIR)/workshop_urls.yml \
-	    -o ./_workshop_cache.yml
-
-./_dashboard_cache.yml :
-	@python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
-
-## biblio       : make HTML and PDF of bibliography.
-# Have to cd into 'bib' because bib2xhtml expects the .bst file in
-# the same directory as the .bib file.
-biblio : bib/${SWC_BIB}.tex bib/software-carpentry.bib
-	@cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
-	@cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
-
-## categories   : list all blog category names.
-categories :
-	@python bin/list_blog_categories.py $(SRC_BLOG) | cut -d : -f 1
-
-categories_n :
-	@python bin/list_blog_categories.py -n $(SRC_BLOG)
-
 ## site         : build locally into _site directory for checking.
 site :
 	make SITE=$(PWD)/_site OUT=$(PWD)/_site build
-
-## dev          : build into development directory on server.
-dev :
-	make SITE=$(DEV_URL) OUT=$(DEV_DIR) build
 
 ## install      : build into installation directory on server.
 install :
@@ -132,11 +90,75 @@ install :
 
 ## check        : check consistency of various things.
 check :
-	@python bin/check_workshop_info.py config/workshop_urls.yml config/workshops_saved.yml
+	python bin/check-workshops.py config/workshops.yml config/archived.yml
+
+## clean        : clean up.
+clean :
+	@rm -rf \
+	_config.yml \
+	$(GENERATED) \
+	_site \
+	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
+	_includes/recent_blog_posts.html \
+	$$(find . -name '*~' -print)
+
+## dev          : build into development directory on server.
+dev :
+	make SITE=$(DEV_URL) OUT=$(DEV_DIR) build
+
+## ----------------------------------------
+
+## archive      : collect and archive workshop information from GitHub and store in local cache.
+archive :
+	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
+	python bin/workshops.py -v -t \
+	    -i $(CONFIG_DIR)/workshops.yml \
+	    -o ./_workshop_cache.yml \
+	    --archive $(CONFIG_DIR)/archived.yml
+
+## cache        : collect workshop information from GitHub and store in local cache.
+cache : $(GENERATED)
+
+./_workshop_cache.yml :
+	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
+	python bin/workshops.py -v -t \
+	    -i $(CONFIG_DIR)/workshops.yml \
+	    -o ./_workshop_cache.yml
+
+./_dashboard_cache.yml :
+	python bin/make-dashboard.py ./git-token.txt ./_dashboard_cache.yml
+
+## ----------------------------------------
+
+## biblio       : make HTML and PDF of bibliography.
+# Have to cd into 'bib' because bib2xhtml expects the .bst file in
+# the same directory as the .bib file.
+biblio : bib/${SWC_BIB}.tex bib/software-carpentry.bib
+	cd bib && pdflatex $(SWC_BIB) && bibtex $(SWC_BIB) && pdflatex $(SWC_BIB)
+	cd bib && ../bin/bib2xhtml software-carpentry.bib ./bib.html && dos2unix ./bib.html
+
+## authors      : list all blog post authors.
+authors :
+	@python bin/list-authors.py $(SRC_BLOG) | cut -d : -f 1
+
+## categories   : list all blog category names.
+categories :
+	@python bin/list-categories.py $(SRC_BLOG) | cut -d : -f 1
+
+categories_n :
+	@python bin/list-categories.py -n $(SRC_BLOG)
+
+## instructors  : list instructors from cached workshop info.
+instructors :
+	@python bin/list-instructors.py
+
+## urls         : list workshop URLs from cached workshop info.
+urls :
+	@python bin/list-urls.py
 
 ## missing      : which instructors don't have biographies?
 missing :
-	@python bin/check_missing_instructors.py config/badges_config.yml _includes/people/*.html
+	@python bin/check-missing-instructors.py config/badges.yml _includes/people/*.html
 
 ## links        : check links.
 #  Depends on linklint, an HTML link-checking module from http://www.linklint.org/,
@@ -149,16 +171,6 @@ links :
 valid :
 	xmllint --noout $$(find _site -name '*.html' -print) 2>&1 | python bin/unwarn.py
 
-## clean        : clean up.
-clean :
-	@rm -rf \
-	_config.yml \
-	$(GENERATED) \
-	_site \
-	bib/*.aux bib/*.bbl bib/*.blg bib/*.log \
-	_includes/recent_blog_posts.html \
-	$$(find . -name '*~' -print)
-
 #-------------------------------------------------------------------------------
 
 # build : compile site into $(OUT) with $(SITE) as Software Carpentry base URL
@@ -170,19 +182,19 @@ $(OUT)/.htaccess : ./_htaccess
 	cp $< $@
 
 # Make the workshop calendar file.
-$(OUT)/workshops.ics : ./bin/make_calendar.py $(OUT)/index.html
+$(OUT)/workshops.ics : ./bin/make-calendar.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/make_calendar.py -o $(OUT) -s $(SITE)
+	python ./bin/make-calendar.py -o $(OUT) -s $(SITE)
 
 # Make the blog RSS feed file.
-$(OUT)/feed.xml : ./bin/make_rss_feed.py $(OUT)/index.html
+$(OUT)/feed.xml : ./bin/make-rss-feed.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/make_rss_feed.py -o $(OUT) -s $(SITE)
+	python ./bin/make-rss-feed.py -o $(OUT) -s $(SITE)
 
 # Make the workshop RSS feed file.
-$(OUT)/workshop-feed.xml : ./bin/make_workshop_rss_feed.py $(OUT)/index.html
+$(OUT)/workshop-feed.xml : ./bin/make-workshop-rss-feed.py $(OUT)/index.html
 	@mkdir -p $$(dirname $@)
-	python ./bin/make_workshop_rss_feed.py -o $(OUT) -s $(SITE)
+	python ./bin/make-workshop-rss-feed.py -o $(OUT) -s $(SITE)
 
 # Make the site pages (including blog posts).
 $(OUT)/index.html : _config.yml $(SRC_HTML)

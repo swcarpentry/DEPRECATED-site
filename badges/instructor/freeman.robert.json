@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-12", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$9cb1f9bfb8657cb6b30c898233987d3c564c1443cfe39563d2cccbc2e898e8eb", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$9cb1f9bfb8657cb6b30c898233987d3c564c1443cfe39563d2cccbc2e898e8eb", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/freeman.robert.json"
+ }
+}

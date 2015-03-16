@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-11", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$fd6b8815cd95bc9ac4db9124636ce24cf3669e0ff832f17c6fad09208325065c", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$fd6b8815cd95bc9ac4db9124636ce24cf3669e0ff832f17c6fad09208325065c", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/ramos-musalem.ana-karina.json"
+ }
+}
