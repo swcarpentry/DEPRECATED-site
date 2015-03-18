@@ -3678,8 +3678,7 @@
   url: http://joryschossau.github.io/2014-09-30-msu/
   user: joryschossau
   venue: Michigan State University
-- <!-- eventbrite: 12933361031 -->
-  address: Innovation Center (Room 105), 2719 E. 10th St., Bloomington, IN
+- address: Innovation Center (Room 105), 2719 E. 10th St., Bloomington, IN
   contact: igonzalez@mailaps.org
   country: United-States
   enddate: 2014-10-07
@@ -4494,7 +4493,7 @@
   contact: msmorul@sesync.org
   country: United-States
   enddate: 2015-01-16
-  eventbrite: https://www.eventbrite.com/e/umd-data-carpentry-tickets-14847664765
+  eventbrite: 14847664765
   helper: [Donal Heidenblad, Andrea Wiggins, Susan Winters]
   humandate: Jan 15-16, 2015
   humantime: 9:00 am - 5 pm
