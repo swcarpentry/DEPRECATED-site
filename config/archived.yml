@@ -4681,3 +4681,284 @@
   url: http://swcarpentry.github.io/2015-02-05-toronto/
   user: swcarpentry
   venue: University of Toronto iSchool
+- address: 3rd Floor Teaching Lab, Wisconsin Institutes for Discovery, 330 N Orchard
+    St, Madison, WI
+  contact: lmichael@wisc.edu
+  country: United-States
+  enddate: 2015-01-16
+  eventbrite: '14908200830'
+  helper: [Michelle Craft, Brent Hueth, Christina Koch, Daijiang Li, Andy Pohl, Anthony
+      Scopatz, Sarah Stevens, Katie Zaman]
+  humandate: Jan 13-16, 2015
+  humantime: 8:30 am - 1:00 pm
+  instructor: [Matt Gidden, Steve Goldstein, Lauren Michael, Danielle Nielsen, Cliff
+      Rodgers, Paul Wilson]
+  latlng: 43.074974,-89.406738
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-01-13-wisc
+  startdate: 2015-01-13
+  url: http://uw-madison-aci.github.io/2015-01-13-wisc/
+  user: uw-madison-aci
+  venue: University of Wisconsin-Madison
+- address: West Electronic Classroom, 53442 Charles Young Rsrch Lbry, Los Angeles,
+    CA
+  contact: someone@somewhere.org
+  country: United-States
+  enddate: 2015-02-15
+  etherpad: https://etherpad.mozilla.org/2015-02-14-ucla
+  eventbrite: null
+  helper: [Sean Chen-Jins, Matthew DeCoste, Michael Lefkowitz, Karianne Muckle, Long
+      Nguyen, Austin Pineda, Ann Zeng]
+  humandate: Feb 14-15, 2015
+  humantime: 9:30am-4:45pm (Sat.), 1:30-8:30pm (Sun.)
+  instructor: [Andrea Zonca, John Gosset, Kie Zuraw]
+  language: en
+  latlng: 34.074971,-118.441438
+  layout: workshop
+  root: .
+  slug: 2015-02-14-ucla
+  startdate: 2015-02-14
+  url: http://qjcg.github.io/2015-02-14-ucla/
+  user: qjcg
+  venue: University of California, Los Angeles (UCLA)
+- address: Room 103, Old Metallurgy Building
+  contact: isa.kiral@gmail.com
+  country: Australia
+  enddate: 2015-02-17
+  etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-matlab
+  helper: [Bryan Paton, Kerry Halupka, Andrew Boyd, Gregory Bass]
+  humandate: Feb 16-17, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Isabell Kiral-Kornek, Scott Kolbe, Bill Mills]
+  latlng: -37.799243, 144.964422
+  layout: workshop
+  root: .
+  slug: 2015-02-16-resbaz-matlab
+  startdate: 2015-02-16
+  url: http://resbaz.github.io/2015-02-16-resbaz-matlab/
+  user: resbaz
+  venue: University of Melbourne
+- address: North Theatre (Room 239), Old Arts Building
+  contact: irving.damien@gmail.com
+  country: Australia
+  enddate: 2015-02-17
+  etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-python
+  helper: [Thomas Coudrat, Sam Hames, Michael Imelfort, Robert Johnson, John Rugis,
+    Alistair Walsh, Constantine Zakkaroff, Errol Lloyd, Sung Bae]
+  humandate: Feb 16-17, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Damien Irving]
+  latlng: -37.799243, 144.964422
+  layout: workshop
+  root: .
+  slug: 2015-02-16-resbaz-python
+  startdate: 2015-02-16
+  url: http://resbaz.github.io/2015-02-16-resbaz-python/
+  user: resbaz
+  venue: University of Melbourne
+- address: Room 202, Old Metallurgy Building
+  contact: scottcr@unimelb.edu.au
+  country: Australia
+  enddate: 2015-02-17
+  etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-r
+  helper: [Areej Alsheikh-Hussain, Noel Faux, Pip Griffin, Andrew Lonsdale, Jack Simpson,
+    Mike Sumner]
+  humandate: Feb 16-17, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Scott Ritchie]
+  latlng: -37.799243, 144.964422
+  layout: workshop
+  root: .
+  slug: 2015-02-16-resbaz-r
+  startdate: 2015-02-16
+  url: http://resbaz.github.io/2015-02-16-resbaz-r/
+  user: resbaz
+  venue: University of Melbourne
+- address: Manuel Pacheco Integrated Learning Center Room 119, 1500 E University Blvd,
+    Tucson, AZ 85719
+  contact: naupaka@gmail.com
+  country: United-States
+  enddate: 2015-02-22
+  eventbrite: 15013479722
+  helper: [Blake Joyce, Joshua D. Lioi, John McMullin, Andre Mercer, Uwe Hilgert]
+  humandate: Feb 21-22, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Naupaka Zimmerman, Jonathan Strootman]
+  latlng: 32.231892,-110.949373
+  layout: workshop
+  lessons: [R, Git, Bash]
+  registration: restricted
+  root: .
+  slug: 2015-02-21-iplant
+  startdate: 2015-02-21
+  url: http://naupaka.github.io/2015-02-21-iplant/
+  user: naupaka
+  venue: iPlant Collaborative, University of Arizona
+- address: Donald Bren Hall (DBH) 6011, UC Irvine, Irvine, CA 92697
+  contact: msadri@uci.edu
+  country: United-States
+  enddate: 2015-02-22
+  etherpad: https://etherpad.mozilla.org/2015-02-21-uci
+  helper: [Mehdi Sadri, Sepehr Akhavan, Laleh Beni, 'Jihyun Park ', Brian Vegetabile,
+    Homer Strong]
+  humandate: Feb 21-22, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Andrea Zonca, Jason Moore]
+  language: en
+  latlng: 33.64326,-117.84192
+  layout: workshop
+  root: .
+  slug: 2015-02-21-uci
+  startdate: 2015-02-21
+  url: http://moorepants.github.io/2015-02-21-uci/
+  user: moorepants
+  venue: UCI Data Science Initiative
+- address: Auditorium Maximum, ul. Krupnicza 33, Kraków
+  contact: klemens.noga@cyfronet.pl, leszek.tarkowski@gmail.com
+  country: Poland
+  enddate: 2015-02-22
+  etherpad: https://etherpad.mozilla.org/2015-02-21-Krakow
+  eventbrite: 15742501245
+  helper: [Iwona Grelowska, Marcin Klimek, Jakub Kruczek, Tomasz Jonak]
+  humandate: Feb 21-22, 2015
+  humantime: 9:30 - 17:30
+  instructor: [Paulina Lach, Leszek Tarkowski, Piotr Banaszkiewicz, Klemens Noga]
+  language: pl
+  latlng: 50.062828,19.925101
+  layout: workshop
+  root: .
+  slug: 2015-02-21-Krakow
+  startdate: 2015-02-21
+  url: http://klemensnoga.github.io/2015-02-21-Krakow/
+  user: klemensnoga
+  venue: Jagiellonian University
+- address: University of Canterbury
+  contact: angela.armstrong@canterbury.ac.nz
+  country: New-Zealand
+  enddate: 2015-02-24
+  etherpad: https://etherpad.mozilla.org/swc-canterbury
+  eventbrite: 15447963274
+  helper: [Constantine Zakkaroff, Tom Kelly]
+  humandate: Feb 23-24, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sung Bae, John Rugis, Bill Mills]
+  latlng: -43.523736, 172.582784
+  layout: workshop
+  root: .
+  slug: 2015-02-23-canterbury
+  startdate: 2015-02-23
+  url: http://sungeunbae.github.io/2015-02-23-canterbury/
+  user: sungeunbae
+  venue: NeSI - Canterbury Region Workshop
+- address: Auckland University of Technology
+  contact: events@NeSI.org.nz
+  country: New-Zealand
+  enddate: 2015-02-27
+  etherpad: http://etherpad.mozilla.org/2015-02-26-auckland
+  eventbrite: 15447838902
+  helper: [Sina Masoud-Ansari, Bart Verleye, Nick Young]
+  humandate: Feb 26-27, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [John Rugis, Sung Bae, Bill Mills]
+  language: en
+  latlng: -36.853432, 174.765495
+  layout: workshop
+  root: .
+  slug: 2015-02-26-auckland
+  startdate: 2015-02-26
+  url: http://jrugis.github.io/2015-02-26-auckland/
+  user: jrugis
+  venue: NeSI - Auckland Region Workshop
+- address: Science Library, Moltke Moes Road 35, 0851 Oslo
+  contact: karin.lagesen@medisin.uio.no
+  country: Norway
+  enddate: 2015-02-27
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-02-26-Oslo
+  helper: [Hugues Fontenelle, Anne Claire Fouilloux, Ibrahim Hujaleh, Arvind YM Sundaram]
+  humandate: Feb 26-27, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Karin Lagesen, Lex Nederbragt]
+  latlng: 59.94, 10.723
+  layout: workshop
+  root: .
+  slug: 2015-02-26-Oslo
+  startdate: 2015-02-26
+  url: http://karinlag.github.io/2015-02-26-Oslo/
+  user: karinlag
+  venue: University of Oslo
+- address: Barre Hall room B106, 120 McGinty Ct, Clemson, SC 29634
+  contact: galen@clemson.edu
+  country: United-States
+  enddate: 2015-03-03
+  etherpad: https://etherpad.mozilla.org/M5WGMaRyQt
+  eventbrite: null
+  helper: [(we're looking for volunteers - please let us know if you can help!)]
+  humandate: Mar 02-03, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Galen Collier, Marcin Ziolkowski, Ashwin Srinath]
+  language: en
+  latlng: 34.674915,-82.835256
+  layout: workshop
+  root: .
+  slug: 2015-03-02-clemson
+  startdate: 2015-03-02
+  url: http://ashwinsrnth.github.io/2015-03-02-clemson/
+  user: ashwinsrnth
+  venue: Clemson University
+- address: ICTC, 535 W Michigan, Indianapolis, IN 46202
+  contact: balamurugan@uchicago.edu
+  country: United-States
+  enddate: 2015-03-06
+  helper: ['Chris Pipes, Elizabeth Prout']
+  humandate: Mar 03-06, 2015
+  humantime: 8:30 am - 5:30 pm
+  instructor: [Mats Rynge, Emelie Harstad, Bala Desinghu, David Champion, Suchandra
+      Thapa, Rob Quick]
+  latlng: 39.773931,-86.167524
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-03-03-iupui
+  startdate: 2015-03-03
+  url: http://swc-osg-workshop.github.io/2015-03-03-iupui/
+  user: swc-osg-workshop
+  venue: IUPUI
+- address: Multipurpose Room 101, Michael Smith Labs
+  contact: nsoontie@eos.ubc.ca
+  country: Canada
+  enddate: 2015-03-06
+  etherpad: https://etherpad.mozilla.org/2015-03-05-ubc
+  helper: [Gloria Li, Julia Gustavsen]
+  humandate: Mar 5-6, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jenny Bryan, Karina Ramos Musalem, Nancy Soontiens, Daisie Huang, Tiffany
+      Timbers]
+  language: en
+  latlng: 49.264, -123.25
+  layout: workshop
+  root: .
+  slug: 2015-03-05-ubc
+  startdate: 2015-03-05
+  url: http://nsoontie.github.io/2015-03-05-ubc/
+  user: nsoontie
+  venue: University of British Columbia - Faculty of Science
+- address: 7 World Trade Center, 250 Greenwich Street, 40th floor, New York, NY 10007-2157
+  contact: yfortis@nyas.org
+  country: United-States
+  enddate: 2015-03-07
+  eventbrite: null
+  helper: null
+  humandate: Mar 6-7, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, Jason Williams, Daniel Chen, Matthew Aiello-Lammens]
+  language: en
+  latlng: 40.713806, -74.012106
+  layout: workshop
+  root: .
+  slug: 2015-03-06-nyas
+  startdate: 2015-03-06
+  url: http://mckays630.github.io/2015-03-06-nyas/
+  user: mckays630
+  venue: New York Academy of Sciences
