@@ -21,7 +21,7 @@ GITHUB_URL_RE = re.compile(r'^https?://github\.com/([^/]+)/([^/]+)')
 
 REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 
-LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
+LATLNG_RE = re.compile(r'\s*[+-]?\d+(\.\d*)?,\s*[+-]?\d+(\.\d*)?\s*')
 
 ARCHIVE_WINDOW = 3
 
