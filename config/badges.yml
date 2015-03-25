@@ -42,10 +42,12 @@ instructor:
 - {name: Trevor Bekolay, user: bekolay.trevor}
 - {name: Nichole Bennett, user: bennett.n}
 - {name: Miguel Bernabeu, user: bernabeu.miguel}
+- {name: Mik Black, user: black.mik}
 - {name: Lukas Blakk, user: blakk.lukas}
 - {name: John Blischak, user: blischak.j}
 - {name: Carl Boettiger, user: boettiger.carl}
 - {name: Jessica Bonnie, user: bonnie.jessica}
+- {name: James Boocock, user: boocock.james}
 - {name: Darren Boss, user: boss.darren}
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Erik Bray, user: bray.e}
@@ -60,6 +62,7 @@ instructor:
 - {name: Timothy Cerino, user: cerino.t}
 - {name: Scott Chamberlain, user: chamberlain.s}
 - {name: Cliburn Chan, user: chan.cliburn}
+- {name: Amanda Charbonneau, user: charbonneau.amanda}
 - {name: Daniel Chen, user: chen.daniel}
 - {name: Chelsea Chisholm, user: chisholm.chelsea}
 - {name: Shreyas Cholia, user: cholia.s}
@@ -88,6 +91,7 @@ instructor:
 - {name: Gabriel A. Devenyi, user: devenyi.gabriel}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Matthew Dimmock, user: dimmock.matt}
+- {name: Kimberly Doyle, user: doyle.kimberly}
 - {name: Jonah Duckles, user: duckles.jonah}
 - {name: Martin Durant, user: durant.martin}
 - {name: Jonathan Dursi, user: dursi.j}
@@ -124,6 +128,7 @@ instructor:
 - {name: Jonathan Gross, user: gross.jonathan}
 - {name: Thomas Guignard, user: guignard.thomas}
 - {name: Jiarong Guo, user: guo.jiarong}
+- {name: Prashant Gupta, user: gupta.prashant}
 - {name: Julia Gustavsen, user: gustavsen.j}
 - {name: Tommy Guy, user: guy.t}
 - {name: Jonathan Guyer, user: guyer.jonathan}
@@ -163,6 +168,7 @@ instructor:
 - {name: David Jones, user: jones.dm}
 - {name: Martin Jones, user: jones.martin}
 - {name: Nick Jones, user: jones.nick}
+- {name: Tom Kelly, user: kelly.tom}
 - {name: Jessica Kerr, user: kerr.j}
 - {name: Jan Kim, user: kim.jan}
 - {name: W. Trevor King, user: king.wt}
@@ -314,6 +320,7 @@ instructor:
 - {name: Will Trimble, user: trimble.will}
 - {name: Daniel Turek, user: turek.daniel}
 - {name: Stephen Turner, user: turner.s}
+- {name: Fiona Tweedie, user: tweedie.fiona}
 - {name: Daniela Ushizima, user: ushizima.daniela}
 - {name: Olav Vahtras, user: vahtras.olav}
 - {name: Roman Valls Guimera, user: valls-guimera.roman}
