@@ -66,7 +66,6 @@ def main():
     config['badges'] = load_info(options.config_dir, BADGES_YML)
     config['airports'] = load_info(options.config_dir, AIRPORTS_YML)
     config['flags'] = load_info(options.config_dir, FLAGS_YML)
-    print >> sys.stderr, config['flags']
     config.update({
         'month_names'     : MONTHS,
         'months'          : sorted(MONTHS.keys()),
