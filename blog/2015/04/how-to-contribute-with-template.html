@@ -8,7 +8,7 @@ time: "22:00:00"
 category: ["How to"]
 ---
 <!-- start excerpt -->
-<p><a href="../../2014/09/splitting-the-repo.html">At the end of last year</a> we split out lessons to have one Git repository per topic that we teach. To ensure that all lessons have the same look we create <a href="https://github.com/swcarpentry/lesson-template/">one template for our lessons</a>. During the first quarter of this year we found that have two living branches at the same remote Git repository is confusing for many people and to address this we now have the core files of our template <a href="https://github.com/swcarpentry/lesson-template/pull/219">in one repository</a> and the example of how it looks at <a href="https://github.com/swcarpentry/lesson-example">another repository</a>. Because create a pull request to our lesson template could be not clear for someone starting with Git I wrote this how-to.</p>
+<p><a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">At the end of last year</a> we split out lessons to have one Git repository per topic that we teach. To ensure that all lessons have the same look we create <a href="{{site.github_url}}lesson-template/">one template for our lessons</a>. If you want to create a new lesson from scratch we already have a <a href="{{site.github_io_url}}/slideshows/creating-lesson/index.html">nice step-by-step guide</a> but what about if you want to contribute to the template itself? In this post I will explain how I wrote my pull request for our template.</p>
 <!-- end excerpt -->
 <h2 id="setup">Setup</h2>
 <p>I start cloning our example</p>
@@ -83,7 +83,7 @@ $ git commit -m &#39;Update HTML&#39;
 [example-centering-image 1ebf8c3] Update HTML
  1 file changed, 2 insertions(+), 1 deletion(-)</code></pre>
 <h2 id="copying-the-change-to-template">Copying the change to template</h2>
-<p>If you attend a Software Carpentry workshop you should be confortable with what you see until now. What I need to do is copy my change at <code>Makefile</code> to <a href="https://github.com/swcarpentry/lesson-template">template</a> using <code>git cherry-pick</code>. If you are trying to remember it from our workshop, don't panic because we don't teach it but you will discovery that it is very simple to use.</p>
+<p>If you attend a Software Carpentry workshop you should be confortable with what you see until now. What I need to do is copy my change at <code>Makefile</code> to <a href="{{site.github_url}}/lesson-template">template</a> using <code>git cherry-pick</code>. If you are trying to remember it from our workshop, don't panic because we don't teach it but you will discovery that it is very simple to use.</p>
 <p>Before anything else I need to know the ID of the commit I want to copy, the one where I changed <code>Makefile</code>.</p>
 <pre><code>$ git log --oneline -3
 1ebf8c3 Update HTML
@@ -104,9 +104,9 @@ cf25427 Merge pull request #218 from wking/trailing-newlines</code></pre>
 <p>The commit ID change but this is OK and is desired. Now I can upload my changes</p>
 <pre><code>$ git push origin example-centering-image
 $ git push template template-centering-image</code></pre>
-<p>And <a href="https://github.com/swcarpentry/lesson-template">create a pull request</a>, <a href="https://github.com/swcarpentry/lesson-template/pull/219">like this one</a>.</p>
+<p>And <a href="{{site.github_url}}/lesson-template">create a pull request</a>, <a href="{{site.github_url}}/lesson-template/pull/219">like this one</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Once the pull request was created our contributors <a href="https://github.com/swcarpentry/lesson-template/pull/219#issuecomment-89671094">will review it</a> and eventually merge it. From time to time we will propagate the change at our template to our lessons.</p>
-<p>If your changes are at the CSS that we use you <strong>must</strong> copy our changes to <a href="https://github.com/swcarpentry/styles/">this repository</a> instead of <code>template</code>.</p>
+<p>Once the pull request was created our contributors <a href="{{site.github_url}}/lesson-template/pull/219#issuecomment-89671094">will review it</a> and eventually merge it. From time to time we will propagate the change at our template to our lessons.</p>
+<p>If your changes are at the CSS that we use you <strong>must</strong> copy our changes to <a href="{{site.github_url}}/styles/">this repository</a> instead of <code>template</code>.</p>
 <p>As always, in case of troubles with Git you can contact us and one of your Git gurus will get back to you for help.</p>
 <p>P.S.: I take this opportunity to thanks for the help of <a href="https://github.com/fmichonneau">Francois Michonneau</a>, <a href="https://github.com/jpallen">James Allen</a> and <a href="https://github.com/pbanaszkiewicz">Piotr Banaszkiewicz</a> to improve our CSS.</p>
