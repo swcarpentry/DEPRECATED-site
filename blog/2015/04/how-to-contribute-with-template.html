@@ -12,21 +12,21 @@ category: ["How to"]
 <!-- end excerpt -->
 <h2 id="setup">Setup</h2>
 <p>I start cloning our example</p>
-<pre><code>$ git clone -b gh-pages git@github.com:r-gaia-cs/lesson-example.git</code></pre>
+<pre><code>$ git clone -b gh-pages https://github.com/r-gaia-cs/lesson-example.git</code></pre>
 <p>and add some remote repositories</p>
 <pre><code>$ cd lesson-example
-$ git remote add upstream git@github.com:swcarpentry/lesson-example.git
-$ git remote add template git@github.com:r-gaia-cs/swc-lesson-template.git
-$ git remote add template-upstream git@github.com:swcarpentry/lesson-template.git
+$ git remote add upstream https://github.com/swcarpentry/lesson-example.git
+$ git remote add template https://github.com/r-gaia-cs/swc-lesson-template.git
+$ git remote add template-upstream https://github.com/swcarpentry/lesson-template.git
 $ git remote -v
-origin  git@github.com:r-gaia-cs/swc-lesson-example.git (fetch)
-origin  git@github.com:r-gaia-cs/swc-lesson-example.git (push)
-template        git@github.com:r-gaia-cs/swc-lesson-template.git (fetch)
-template        git@github.com:r-gaia-cs/swc-lesson-template.git (push)
-template-upstream       git@github.com:swcarpentry/lesson-template.git (fetch)
-template-upstream       git@github.com:swcarpentry/lesson-template.git (push)
-upstream        git@github.com:swcarpentry/lesson-example.git (fetch)
-upstream        git@github.com:swcarpentry/lesson-example.git (push)</code></pre>
+origin  https://github.com/r-gaia-cs/swc-lesson-example.git (fetch)
+origin  https://github.com/r-gaia-cs/swc-lesson-example.git (push)
+template        https://github.com/r-gaia-cs/swc-lesson-template.git (fetch)
+template        https://github.com/r-gaia-cs/swc-lesson-template.git (push)
+template-upstream       https://github.com/swcarpentry/lesson-template.git (fetch)
+template-upstream       https://github.com/swcarpentry/lesson-template.git (push)
+upstream        https://github.com/swcarpentry/lesson-example.git (fetch)
+upstream        https://github.com/swcarpentry/lesson-example.git (push)</code></pre>
 <p>I use our example because it is easy to debug but if you want you use <code>origin</code> as your fork of the lessons you are working and <code>upstream</code> as the repository under Software Carpentry username that you are working is totally OK.</p>
 <h2 id="preparation">Preparation</h2>
 <p>Every time before I start to hack the template I update my local copy using</p>
