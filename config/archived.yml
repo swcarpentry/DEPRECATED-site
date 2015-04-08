@@ -4961,3 +4961,190 @@
   url: http://mckays630.github.io/2015-03-06-nyas/
   user: mckays630
   venue: New York Academy of Sciences
+- address: Merrill-Cazier Library - Room 101, 3000 Old Main Hill, Logan, Utah, 84322
+  contact: ethan.white@usu.edu
+  country: United-States
+  enddate: 2015-03-17
+  etherpad: https://etherpad.mozilla.org/usu-march-2007
+  eventbrite: 15652074777
+  helper: [Morgan Ernest, Allen Hurlbert, Paul Wolf, Erica Christensen, Sarah Reehl,
+    David Harris, Andrew Kleinhesselink]
+  humandate: Mar 16-17, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Greg Wilson, Ethan White]
+  language: en
+  latlng: 41.742222, -111.809444
+  layout: workshop
+  root: .
+  slug: 2015-03-16-utahstate
+  startdate: 2015-03-16
+  url: http://weecology.github.io/2015-03-16-utahstate/
+  user: weecology
+  venue: Utah State University
+- address: Espoo, Finland
+  contact: data-carpentry@software-carpentry.org
+  country: Finland
+  enddate: 2015-03-19
+  eventbrite: 15497017998
+  helper: [Mateusz Kuzak, Philip Lijnzaad, Diana Marek, Damiano Piovesan, Andrea Manconi,
+    Ari-Matti Saren, Gonçalo Antunes]
+  humandate: Mar 18-19, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [François Michonneau, Aleksandra Pawlik]
+  latlnang: 60.178127,24.832749
+  layout: bootcamp2
+  registration: open
+  root: .
+  slug: 2015-03-18-csc-espoo
+  startdate: 2015-03-18
+  url: http://apawlik.github.io/2015-03-18-csc-espoo/
+  user: apawlik
+  venue: CSC - IT Center for Science
+- address: Science and Engineering Building, Room 607, 850 W. Dickson Street, Fayetteville,
+    AR 72701
+  contact: jeremiahlant@gmail.com
+  country: United-States
+  enddate: 2015-03-20
+  etherpad: https://etherpad.mozilla.org/MUGMFF1vUB
+  helper: [Auriel Fournier]
+  humandate: March 19-20, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jeremiah Lant, Isabelle Laforest-Lapointe]
+  language: en
+  latlng: 36.066991, -94.172340
+  layout: workshop
+  root: .
+  slug: 2015-03-19-arkansas
+  startdate: 2015-03-19
+  url: http://jlant.github.io/2015-03-19-arkansas/
+  user: jlant
+  venue: University of Arkansas
+- address: Engineering 6 room 4022, 200 University Ave, Waterloo
+  contact: nmabukhdeir@uwaterloo.ca
+  country: Canada
+  enddate: 2015-03-22
+  helper: [WatPy, SHARCNET]
+  humandate: March 21-22, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Nasser M Abukhdeir, Pawel Pomorski, Albert O'Connor]
+  latlng: 43.473269, -80.538639
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-03-21-uwaterloo
+  startdate: 2015-03-21
+  url: http://amjoconn.github.io/2015-03-21-uwaterloo/
+  user: amjoconn
+  venue: University of Waterloo
+- address: 260 Longwood Ave, Boston, MA 02115 (Toteson Medical Education Center, room
+    130)
+  contact: hbctraining@hsph.harvard.edu
+  country: United-States
+  enddate: 2015-03-24
+  etherpad: https://etherpad.mozilla.org/2015-03-23-hsph
+  helper: [Radhika Khetani, Mary Piper]
+  humandate: Mar 23-24, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Ivan Gonzalez, Meeta Mistry]
+  language: en
+  latlng: 42.337341, -71.104202
+  layout: workshop
+  root: .
+  slug: 2015-03-23-hsph
+  startdate: 2015-03-23
+  url: http://iglpdc.github.io/2015-03-23-hsph/
+  user: iglpdc
+  venue: Havard School of Public Health
+- address: Bizzell Library HCLC Classroom
+  contact: lmc@ou.edu
+  country: United-States
+  enddate: 2015-03-25
+  etherpad: https://etherpad.mozilla.org/2015-03-24-ou
+  eventbrite: 15640161143
+  helper: [Mark Laufersweiler, Mark Stacy]
+  humandate: Mar 24-25, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jonah Duckles, Logan Cox]
+  language: English
+  latlng: 35.208275, -97.445848
+  layout: workshop
+  root: .
+  slug: 2015-03-24-ou
+  startdate: 2015-03-24
+  url: http://oulibraries.github.io/2015-03-24-ou/
+  user: oulibraries
+  venue: University of Oklahoma Libraries
+- address: Faculty of Medical Technology, Mahidol University, 999 Phutthamonthon 4
+    Rd. Salaya Phutthamonthon District Nakorn Pathom 73170
+  contact: likit.pre@mahidol.edu
+  country: Thailand
+  enddate: 2015-03-27
+  helper: [Saw Simeon Brown, Dr.Kakanand Srungboonmee, Dr.Napat Songtawee]
+  humandate: Mar 26-27, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Likit Preeyanon]
+  language: en
+  latlng: 13.798551, 100.322991
+  layout: workshop
+  root: .
+  slug: 2015-03-26-mahidol
+  startdate: 2015-03-26
+  url: http://likit.github.io/2015-03-26-mahidol/
+  user: likit
+  venue: Mahidol University
+- address: Coral Gables, FL
+  contact: francois.michonneau@gmail.com
+  country: USA
+  enddate: 2015-03-19
+  eventbrite: null
+  helper: [Xu Fei]
+  humandate: Mar 30-31, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [John Gosset, François Michonneau]
+  latlnang: 25.7179436,-80.2781784
+  layout: bootcamp2
+  registration: open
+  root: .
+  slug: 2015-03-30-umiami
+  startdate: 2015-03-18
+  url: http://fmichonneau.github.io/2015-03-30-umiami/
+  user: fmichonneau
+  venue: University of Miami
+- address: Weill Auditorium (C-200), 1300 York Ave, New York, NY 10065.
+  contact: iglpdc+wcmc@gmail.com
+  country: United-States
+  enddate: 2015-04-02
+  etherpad: https://etherpad.mozilla.org/2015-04-01-wcmc
+  helper: [Daina R. Bouquin, Friederike Duendar, Michael LeVine, Luce Skrabanek, Paul
+      Zumbo]
+  humandate: Apr 1-2, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Daniel Chen, Ivan Gonzalez, Sheldon McKay, Jennifer Shelton]
+  language: en
+  latlng: 40.764865,-73.953015
+  layout: workshop
+  root: .
+  slug: 2015-04-01-wcmc
+  startdate: 2015-04-01
+  url: http://iglpdc.github.io/2015-04-01-wcmc/
+  user: iglpdc
+  venue: Weill Cornell Medical College
+- address: Holiday Inn,1350 South Dixie Highway,Coral Gables,FL 33146
+  contact: SKhuri@med.miami.edu
+  country: United-States
+  enddate: 2015-04-03
+  etherpad: https://etherpad.mozilla.org/2015-04-02-umiami
+  eventbrite: null
+  helper: []
+  humandate: Apr 2-3, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Matthew Collins, Ming Tang, Ashwin Trikuta Srinath, Xu Fei]
+  language: en
+  latlng: 25.7179436,-80.2781784
+  layout: workshop
+  root: .
+  slug: 2015-04-02-umiami
+  startdate: 2015-04-02
+  url: http://xuf12.github.io/2015-04-02-umiami/
+  user: xuf12
+  venue: University of Miami
