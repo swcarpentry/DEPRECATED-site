@@ -7,7 +7,5 @@
 .DS_Store
 _site
 _config.yml
-_dashboard_cache.yml
-_workshop_cache.yml
 _includes/recent_blog_posts.html
 git-token.txt
