@@ -76,7 +76,7 @@ records:
 - description: Python for non-programmers
   ident: swcarpentry/python-novice-inflammation
   issues:
-  - {number: 61, title: Drop 'import ... as ...' syntax, updated: '2015-04-10', url: 'https://github.com/swcarpentry/python-novice-inflammation/pull/61'}
+  - {number: 61, title: Drop 'import ... as ...' syntax, updated: '2015-04-11', url: 'https://github.com/swcarpentry/python-novice-inflammation/pull/61'}
   - {number: 47, title: Add subsection on nose and unittest, updated: '2015-04-10',
     url: 'https://github.com/swcarpentry/python-novice-inflammation/pull/47'}
   - {number: 60, title: 'Add link to data files?', updated: '2015-04-09', url: 'https://github.com/swcarpentry/python-novice-inflammation/issues/60'}
@@ -238,7 +238,7 @@ records:
 - description: Software Carpentry website
   ident: swcarpentry/site
   issues:
-  - {number: 916, title: Add blog post of how contribute to template, updated: '2015-04-10',
+  - {number: 916, title: Add blog post of how contribute to template, updated: '2015-04-11',
     url: 'https://github.com/swcarpentry/site/pull/916'}
   - {number: 917, title: 'Should we move discussion of open science/licensing/hosting
       to a new repo?', updated: '2015-04-08', url: 'https://github.com/swcarpentry/site/issues/917'}
