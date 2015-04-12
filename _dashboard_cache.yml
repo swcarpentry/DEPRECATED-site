@@ -1,4 +1,4 @@
-num_issues: 151
+num_issues: 160
 num_repos: 12
 records:
 - description: Introduction to the Unix shell
@@ -49,16 +49,35 @@ records:
   url: https://github.com/swcarpentry/git-novice
 - description: Introduction to Mercurial
   ident: swcarpentry/hg-novice
-  issues:
-  - {number: 4, title: Update from core 2015 03 02, updated: '2015-03-03', url: 'https://github.com/swcarpentry/hg-novice/pull/4'}
+  issues: []
   url: https://github.com/swcarpentry/hg-novice
 - description: Introduction to SQL
   ident: swcarpentry/sql-novice-survey
   issues:
+  - {number: 70, title: Fix some case changes that slipped through the first pass
+      at uppercasing, updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/70'}
+  - {number: 69, title: '09-create.md: Link to SQLite docs for CREATE and DROP TABLE',
+    updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/69'}
+  - {number: 68, title: 'x09-create.md: Change ''queries'' -> ''statements'' for create,
+      insert, etc.', updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/68'}
+  - {number: 67, title: '08-hygiene.md: Remove "if it''s in a certain form"', updated: '2015-04-11',
+    url: 'https://github.com/swcarpentry/sql-novice-survey/pull/67'}
+  - {number: 66, title: '07-join.md: Add blank line after "Who has been where?" header',
+    updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/66'}
+  - {number: 65, title: '07-join.md: Link to SQLite''s rowid docs', updated: '2015-04-11',
+    url: 'https://github.com/swcarpentry/sql-novice-survey/pull/65'}
+  - {number: 64, title: Change primary key from 'ident' to 'id', updated: '2015-04-11',
+    url: 'https://github.com/swcarpentry/sql-novice-survey/pull/64'}
+  - {number: 63, title: '01-select.md: Fix ''semi-colon'' -> ''semicolon''', updated: '2015-04-11',
+    url: 'https://github.com/swcarpentry/sql-novice-survey/pull/63'}
+  - {number: 62, title: '07-join.md: Don''t explain distinction between WHERE and
+      ON', updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/62'}
+  - {number: 61, title: '07-join.md: Drop the atomic learning objective', updated: '2015-04-11',
+    url: 'https://github.com/swcarpentry/sql-novice-survey/pull/61'}
+  - {number: 55, title: Shift focus from complex query construction to schema design,
+    updated: '2015-04-11', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/55'}
   - {number: 60, title: update on 1 challenge and replaced a reading value to null,
     updated: '2015-04-08', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/60'}
-  - {number: 55, title: Shift focus from complex query construction to schema design,
-    updated: '2015-04-08', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/55'}
   - {number: 57, title: 'Update 2 challenges (or adding null values)?', updated: '2015-04-05',
     url: 'https://github.com/swcarpentry/sql-novice-survey/issues/57'}
   - {number: 15, title: Corrections to NULL chapter, updated: '2015-03-26', url: 'https://github.com/swcarpentry/sql-novice-survey/pull/15'}
@@ -149,6 +168,7 @@ records:
 - description: Workshop administration tool
   ident: swcarpentry/amy
   issues:
+  - {number: 233, title: Autocomplete form fields, updated: '2015-04-11', url: 'https://github.com/swcarpentry/amy/issues/233'}
   - {number: 229, title: Capability to merge duplicate person entries, updated: '2015-04-07',
     url: 'https://github.com/swcarpentry/amy/pull/229'}
   - {number: 243, title: Upgrade to Django 1.8, updated: '2015-04-06', url: 'https://github.com/swcarpentry/amy/pull/243'}
@@ -171,7 +191,6 @@ records:
     updated: '2015-03-22', url: 'https://github.com/swcarpentry/amy/issues/51'}
   - {number: 20, title: Event details page should include links to assessment forms,
     updated: '2015-03-22', url: 'https://github.com/swcarpentry/amy/issues/20'}
-  - {number: 233, title: Autocomplete form fields, updated: '2015-03-20', url: 'https://github.com/swcarpentry/amy/issues/233'}
   - {number: 225, title: Updated test_util.py, updated: '2015-03-12', url: 'https://github.com/swcarpentry/amy/pull/225'}
   - {number: 224, title: 'Idea: "events with no instructors" on the main page', updated: '2015-03-09',
     url: 'https://github.com/swcarpentry/amy/issues/224'}
@@ -238,12 +257,15 @@ records:
 - description: Software Carpentry website
   ident: swcarpentry/site
   issues:
-  - {number: 916, title: Add blog post of how contribute to template, updated: '2015-04-11',
+  - {number: 928, title: Badge metadata isn't provided, updated: '2015-04-12', url: 'https://github.com/swcarpentry/site/issues/928'}
+  - {number: 926, title: added myself (Jan T. Kim) to people, updated: '2015-04-12',
+    url: 'https://github.com/swcarpentry/site/pull/926'}
+  - {number: 920, title: Scf 4 first meeting minutes blog, updated: '2015-04-12',
+    url: 'https://github.com/swcarpentry/site/pull/920'}
+  - {number: 916, title: Add blog post of how contribute to template, updated: '2015-04-12',
     url: 'https://github.com/swcarpentry/site/pull/916'}
   - {number: 917, title: 'Should we move discussion of open science/licensing/hosting
       to a new repo?', updated: '2015-04-08', url: 'https://github.com/swcarpentry/site/issues/917'}
-  - {number: 920, title: Scf 4 first meeting minutes blog, updated: '2015-04-07',
-    url: 'https://github.com/swcarpentry/site/pull/920'}
   - {number: 919, title: Add a workshop notification form for internally-organized
       workshops, updated: '2015-04-06', url: 'https://github.com/swcarpentry/site/issues/919'}
   - {number: 915, title: Add our LinkedIn group to this website, updated: '2015-04-03',
@@ -258,8 +280,6 @@ records:
     url: 'https://github.com/swcarpentry/site/issues/909'}
   - {number: 907, title: 'New blog post: Getting to Know Matt Davis', updated: '2015-03-30',
     url: 'https://github.com/swcarpentry/site/pull/907'}
-  - {number: 898, title: Use bootstrap to format badge pages and add img-responsive
-      on site, updated: '2015-03-24', url: 'https://github.com/swcarpentry/site/pull/898'}
   - {number: 896, title: Disqus comments isn't working when using HTTPS, updated: '2015-03-23',
     url: 'https://github.com/swcarpentry/site/issues/896'}
   - {number: 894, title: Workshop request form need description for self-organized
@@ -275,8 +295,6 @@ records:
     url: 'https://github.com/swcarpentry/site/issues/797'}
   - {number: 806, title: 'What project templates (or "cookie cutters") do you use?',
     updated: '2015-02-25', url: 'https://github.com/swcarpentry/site/issues/806'}
-  - {number: 752, title: Footer not visible at small screens, updated: '2015-02-24',
-    url: 'https://github.com/swcarpentry/site/issues/752'}
   - {number: 837, title: 'If Jekyll 2.5 is required, should the Gemfile.lock say so?',
     updated: '2015-02-21', url: 'https://github.com/swcarpentry/site/issues/837'}
   - {number: 629, title: Filter site posts by author, updated: '2015-02-09', url: 'https://github.com/swcarpentry/site/issues/629'}
