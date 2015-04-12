@@ -1,4 +1,4 @@
-num_issues: 160
+num_issues: 158
 num_repos: 12
 records:
 - description: Introduction to the Unix shell
@@ -258,8 +258,6 @@ records:
   ident: swcarpentry/site
   issues:
   - {number: 928, title: Badge metadata isn't provided, updated: '2015-04-12', url: 'https://github.com/swcarpentry/site/issues/928'}
-  - {number: 926, title: added myself (Jan T. Kim) to people, updated: '2015-04-12',
-    url: 'https://github.com/swcarpentry/site/pull/926'}
   - {number: 920, title: Scf 4 first meeting minutes blog, updated: '2015-04-12',
     url: 'https://github.com/swcarpentry/site/pull/920'}
   - {number: 916, title: Add blog post of how contribute to template, updated: '2015-04-12',
@@ -284,8 +282,6 @@ records:
     url: 'https://github.com/swcarpentry/site/issues/896'}
   - {number: 894, title: Workshop request form need description for self-organized
       workshop, updated: '2015-03-22', url: 'https://github.com/swcarpentry/site/issues/894'}
-  - {number: 885, title: added "why call students learners" to faq, updated: '2015-03-17',
-    url: 'https://github.com/swcarpentry/site/pull/885'}
   - {number: 870, title: Linking to non-standard lessons, updated: '2015-03-10', url: 'https://github.com/swcarpentry/site/issues/870'}
   - {number: 864, title: Specified what self-organised workshop is, updated: '2015-03-05',
     url: 'https://github.com/swcarpentry/site/pull/864'}
