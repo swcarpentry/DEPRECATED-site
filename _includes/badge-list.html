@@ -1,13 +1,18 @@
-<div class="badges-section">
-  <div class="media">
-    <img class="media-object pull-left" 
-	 src="{{page.root}}/img/badges/{{badge_slug}}.png" 
+
+<div class="container">
+  <div class="row">
+     <div class="col-xs-2">
+        <img class="media-object pull-left"
+	 src="{{page.root}}/img/badges/{{badge_slug}}.png"
 	 alt="Software Carpentry '{{badge_name}}' Badge" />
-    <div class="media-body">
-      <h2 id="{{badge_slug}}" class="badge-title">{{badge_reason}}</h2>
-    </div>
+     </div>
+     <div class="clearfix visible-xs-block"></div>
+     <div class="col-xs-10">
+        <h2 id="{{badge_slug}}" class="badge-title">{{badge_reason}}</h2>
+     </div>
   </div>
 </div>
+
 <div style="clear:both; bottom-margin:30px;">
   <ul>
     {% for badge in site.badges[badge_slug] %}
