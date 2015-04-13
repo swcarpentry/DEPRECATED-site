@@ -2,19 +2,19 @@
 layout: blog
 root: ../../..
 author: Raniere Silva
-title: "How to send pull request to lesson template"
-date: 2015-04-04
-time: "22:00:00"
-category: ["How-to"]
+title: "How to Send a Pull Request to the Lesson Template"
+date: 2015-04-13
+time: "09:00:00"
+category: ["Tooling"]
 ---
 <!-- start excerpt -->
-<p><a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">At the end of last year</a> we split out lessons to have one Git repository per topic that we teach. To ensure that all lessons have the same look we create <a href="{{site.github_url}}lesson-template/">one template for our lessons</a>. If you want to create a new lesson from scratch we already have a <a href="{{site.github_io_url}}/slideshows/creating-lesson/index.html">nice step-by-step guide</a> but what about if you want to contribute to the template itself? In this post I will explain how I wrote my pull request for our template.</p>
+<p><a href="{{page.root}}/blog/2014/09/splitting-the-repo.html">At the end of last year</a> we split out lessons to have one Git repository per topic that we teach. To ensure that all lessons have the same look we use <a href="{{site.github_url}}lesson-template/">one template for our lessons</a>. If you want to create a new lesson from scratch we already have a <a href="{{site.github_io_url}}/slideshows/creating-lesson/index.html">nice step-by-step guide</a> but what about if you want to contribute to the template itself? In this post I will explain how I wrote my pull request for our template.</p>
 <!-- end excerpt -->
 <h2 id="setup">Setup</h2>
-<p>I start cloning our example</p>
-<pre><code>$ git clone -b gh-pages https://github.com/swcarpentry/lesson-example.git</code></pre>
-<p>and add some remote repositories</p>
-<pre><code>$ cd lesson-example
+<p>I start by cloning our example:</p>
+<pre>$ git clone -b gh-pages https://github.com/swcarpentry/lesson-example.git</pre>
+<p>and add some remote repositories:</p>
+<pre>$ cd lesson-example
 $ git remote add template https://github.com/r-gaia-cs/swc-lesson-template.git
 $ git remote add template-upstream https://github.com/swcarpentry/lesson-template.git
 $ git remote -v
@@ -23,18 +23,18 @@ origin  hhttps://github.com/swcarpentry/lesson-example.git (push)
 template        https://github.com/r-gaia-cs/swc-lesson-template.git (fetch)
 template        https://github.com/r-gaia-cs/swc-lesson-template.git (push)
 template-upstream       https://github.com/swcarpentry/lesson-template.git (fetch)
-template-upstream       https://github.com/swcarpentry/lesson-template.git (push)</code></pre>
+template-upstream       https://github.com/swcarpentry/lesson-template.git (push)</pre>
 <p>I use our example because it is easy to debug but if you want to use <code>origin</code> as your fork of the lessons you are working is totally OK.</p>
 <h2 id="preparation">Preparation</h2>
-<p>Every time before I start to hack the template I update my local copy using</p>
-<pre><code>$ git fetch origin
+<p>Every time before I start to hack the template I update my local copy using:</p>
+<pre>$ git fetch origin
 $ git fetch template
-$ git fetch template-upstream</code></pre>
-<p>Once my local copy is updated I create a feature branch, <strong>starting from the last commit on <code>lesson-example</code></strong>, where I will work.</p>
-<p>$ git checkout -b example-centering-image origin/gh-pages</p>
+$ git fetch template-upstream</pre>
+<p>Once my local copy is updated I create a feature branch, <em>starting from the last commit on <code>lesson-example</code></em>, where I will work:</p>
+<pre>$ git checkout -b example-centering-image origin/gh-pages</pre>
 <h2 id="hacking">Hacking</h2>
-<p>For this how-to, suppose that I want to add the class <code>img-responsive</code> to every <code>img</code> elements of our lessons. One <strong>quickly and dirty</strong> way to do that is change <code>Makefile</code> with</p>
-<pre><code>$ git diff
+<p>For this how-to, suppose that I want to add the class <code>img-responsive</code> to every <code>img</code> elements of our lessons. One <em>quickly and dirty</em> way to do that is change <code>Makefile</code> with:</p>
+<pre>$ git diff
 diff --git a/Makefile b/Makefile
 index 4d38850..ff49ca9 100644
 --- a/Makefile
@@ -43,16 +43,16 @@ index 4d38850..ff49ca9 100644
         --filter=tools/filters/id4glossary.py \
         $(INCLUDES) \
         -o $@ $&lt;
-+       sed -i &#39;s/^&lt;img /&lt;img class=&quot;img-responsive&quot; /g&#39; $@
++       sed -i "s/^&lt;img /&lt;img class=&quot;img-responsive&quot; /g" $@
 
  # Pattern to convert R Markdown to Markdown.
- %.md: %.Rmd $(R_CHUNK_OPTS)</code></pre>
+ %.md: %.Rmd $(R_CHUNK_OPTS)</pre>
 <p>To avoid losing my work, I save it in the staging area:</p>
-<pre><code>$ git add -u</code></pre>
+<pre>$ git add -u</pre>
 <p>Now I compile the HTML files:</p>
-<pre><code>$ make -B preview</code></pre>
-<p>And verify the changes.</p>
-<pre><code>$ git diff
+<pre>$ make -B preview</pre>
+<p>and verify the changes.</p>
+<pre>$ git diff
 diff --git a/01-one.html b/01-one.html
 index 7622e55..1fc0d45 100644
 --- a/01-one.html
@@ -61,44 +61,44 @@ index 7622e55..1fc0d45 100644
  &lt;/div&gt;
  &lt;p&gt;or an image from the &lt;code&gt;figs&lt;/code&gt; directory:&lt;/p&gt;
  &lt;div class=&quot;figure&quot;&gt;
--&lt;img src=&quot;fig/example.svg&quot; title=&quot;this is the image&amp;#39;s alt text&quot; alt=&quot;this is the image&amp;#39;s title&quot; /&gt;&lt;p class=&quot;caption&quot;&gt;this is the image&#39;s title&lt;/p&gt;
+-&lt;img src=&quot;fig/example.svg&quot; title=&quot;this is the image&amp;#39;s alt text&quot; alt=&quot;this is the image&amp;#39;s title&quot; /&gt;&lt;p class=&quot;caption&quot;&gt;this is the image"s title&lt;/p&gt;
 +&lt;img class=&quot;img-responsive&quot; src=&quot;fig/example.svg&quot; title=&quot;this is the image&amp;#39;s alt text&quot; alt=&quot;this is the image&amp;#39;s title&quot; /&gt;
-+&lt;p class=&quot;caption&quot;&gt;this is the image&#39;s title&lt;/p&gt;
++&lt;p class=&quot;caption&quot;&gt;this is the image"s title&lt;/p&gt;
  &lt;/div&gt;
  &lt;div id=&quot;challenge-title&quot; class=&quot;challenge panel panel-success&quot;&gt;
- &lt;div class=&quot;panel-heading&quot;&gt;</code></pre>
-<p>This is exactly what I want. Great!!! I can now commit my changes.</p>
-<pre><code>$ git commit -m &#39;Add img-responsive class to img&#39;
+ &lt;div class=&quot;panel-heading&quot;&gt;</pre>
+<p>This is exactly what I want, so I can now commit my changes:</p>
+<pre>$ git commit -m "Add img-responsive class to img"
 [example-centering-image a9cc86d] Add img-responsive class to img
- 1 file changed, 1 insertion(+)</code></pre>
+ 1 file changed, 1 insertion(+)</pre>
 <p>I will also save the change to the HTML file.</p>
-<pre><code>$ git add -u
-$ git commit -m &#39;Update HTML&#39;
+<pre>$ git add -u
+$ git commit -m "Update HTML"
 [example-centering-image 1ebf8c3] Update HTML
- 1 file changed, 2 insertions(+), 1 deletion(-)</code></pre>
+ 1 file changed, 2 insertions(+), 1 deletion(-)</pre>
 <h2 id="copying-the-change-to-template">Copying the change to template</h2>
 <p>If you have taken the Git lesson at a Software Carpentry workshop, you should be comfortable with what you see until now. What I need to do is copy my change at <code>Makefile</code> to <a href="https://github.com/swcarpentry/lesson-template">template</a> using <code>git cherry-pick</code>. If you are trying to remember it from our workshop, don't panic because we don't teach it but you will discover that it is very simple to use.</p>
 <p>Before anything else I need to know the ID of the commit I want to copy, the one where I changed <code>Makefile</code>.</p>
-<pre><code>$ git log --oneline -3
+<pre>$ git log --oneline -3
 1ebf8c3 Update HTML
 a9cc86d Add img-responsive class to img
-5426365 Merge pull request #1 from gvwilson/updating-docs</code></pre>
-<p>The commit that I want is <code>a9cc86d</code>. I will save the ID for a moment until I create a new branch starting from the template (<strong>instead of the example</strong>):</p>
-<pre><code>$ git checkout -b template-centering-image template-upstream/gh-pages</code></pre>
-<p>Now I can <strong>copy</strong> my changes from <code>a9cc86d</code> into the current branch and create a new commit, and for that I use</p>
-<pre><code>$ git cherry-pick a9cc86d
+5426365 Merge pull request #1 from gvwilson/updating-docs</pre>
+<p>The commit that I want is <code>a9cc86d</code>. I will save the ID for a moment until I create a new branch starting from the template (<em>instead of the example</em>):</p>
+<pre>$ git checkout -b template-centering-image template-upstream/gh-pages</pre>
+<p>Now I can <em>copy</em> my changes from <code>a9cc86d</code> into the current branch and create a new commit, and for that I use</p>
+<pre>$ git cherry-pick a9cc86d
 [template-centering-image 2004c4f] Add img-responsive class to img
  Date: Sat Apr 4 18:19:26 2015 -0300
- 1 file changed, 1 insertion(+)</code></pre>
+ 1 file changed, 1 insertion(+)</pre>
 <p>I can check that the commit was copied</p>
-<pre><code>$ git log --oneline -2
+<pre>$ git log --oneline -2
 2004c4f Add img-responsive class to img
-cf25427 Merge pull request #218 from wking/trailing-newlines</code></pre>
+cf25427 Merge pull request #218 from wking/trailing-newlines</pre>
 <p>The commit ID change but this is OK and is desired. Now I can upload my changes</p>
-<pre><code>$ git push template template-centering-image</code></pre>
+<pre>$ git push template template-centering-image</pre>
 <p>And <a href="https://github.com/swcarpentry/lesson-template">create a pull request</a>, <a href="https://github.com/swcarpentry/lesson-template/pull/219">like this one</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Once the pull request was created our contributors <a href="https://github.com/swcarpentry/lesson-template/pull/219#issuecomment-89671094">will review it</a> and eventually merge it. From time to time we will propagate the change at our template to our lessons.</p>
-<p>If your changes are in the CSS that we use you <strong>must</strong> copy your changes to <a href="https://github.com/swcarpentry/styles/">this repository</a> instead of <code>template</code>.</p>
-<p>As always, in case of troubles with Git you can contact us and one of our Git gurus will get back to you for help.</p>
-<p>P.S.: I take this opportunity to thanks for the help of <a href="https://github.com/fmichonneau">Francois Michonneau</a>, <a href="https://github.com/jpallen">James Allen</a> and <a href="https://github.com/pbanaszkiewicz">Piotr Banaszkiewicz</a> to improve our CSS.</p>
+<p>Once the pull request was created our contributors <a href="https://github.com/swcarpentry/lesson-template/pull/219#issuecomment-89671094">will review it</a> and eventually merge it. From time to time we will propagate the change at our template to our lessons.
+If your changes are in the CSS that we use you <em>must</em> copy your changes to <a href="https://github.com/swcarpentry/styles/">this repository</a> instead of <code>template</code>.
+As always, in case of troubles with Git you can contact us and one of our Git gurus will get back to you for help.</p>
+<p><em>Thanks for the help of <a href="https://github.com/fmichonneau">Fran&ccedil;ois Michonneau</a>, <a href="https://github.com/jpallen">James Allen</a> and <a href="https://github.com/pbanaszkiewicz">Piotr Banaszkiewicz</a> to improve our CSS.</em></p>
