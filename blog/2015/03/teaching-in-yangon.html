@@ -1,0 +1,146 @@
+---
+layout: blog
+root: ../../..
+author: Ben Marwick
+title: "Teaching in Yangon"
+date: 2015-03-25
+time: "08:00:00"
+category: ["Workshops", "University of Yangon"]
+---
+<!-- start excerpt -->
+<p>
+  On Sat 7 March I spent a full day teaching a Software Carpentry workshop
+  at the University of Yangon with 23 archaeologists from the Department
+  of Archaeology. The workshop is part of a training component of an
+  archaeological research project funded by the Australian Research
+  Council, the University of Washington and the University of Wollongong.
+  The group included graduate students, tutors and lecturers. Archaeology
+  in Myanmar has a strong art history flavour, partly due to its British
+  colonial heritage (where archaeology and art history are often paired,
+  compared to the where US archaeology is usually a sub-field of
+  anthropology) but mostly due to the country's extreme isolation from the
+  rest of the world, where archaeology has taken a scientific turn in
+  recent decades. This isolation takes several forms: travel restrictions
+  that make it difficult for locals to travel overseas, and until
+  recently, for foreigners to visit; small library budgets that make it
+  difficult for university libraries to keep their collections and
+  subscriptions current; and slow and unreliable internet connectivity
+  make browsing the web, watching videos, and downloading files a lengthy,
+  uncertain and frustrating process. All of this meant that the group's
+  familiarity with using computers for research was lower than what might
+  be expected from a Western audience, and so we adapted the SWC materials
+  to accommodate this. We knew we wouldn't get through as much as a
+  typical workshop, but we had the advantage of everyone starting at an
+  equivalent skill level, so the sticky notes all went up and down at much
+  the same time and we had a pleasant and relaxed atmosphere.
+</p>
+<!-- end excerpt -->
+<p>
+  <img src="{{page.root}}/blog/2015/03/burma-01.jpg" alt="Class in Yangon" class="responsive" />
+</p>
+<p>
+  The first major adaptation was evident right at the start: software
+  installation. We had half a dozen USB sticks with the workshop files
+  and R, RStudio, and Rtools installers on them, and circulated these
+  around the room to get the everyone's laptop equipped for the
+  workshop. This took about 30 minutes and was combined with the
+  "Files and Directories" lesson (though we didn't actually use the
+  shell, just discussed and diagrammed the concepts). As it turned
+  out, all the laptops were running on Windows, so there was no need
+  for OSX installers for R, etc. or Xcode. We were unable to install R
+  on two laptops, so we discussed pair programming and rearranged some
+  seating. Much of the morning was spent on the first part of
+  <a href="{{site.github_io_url}}/r-novice-inflammation/">the SWC R lesson</a>,
+  getting used to the command line interface. We also took inspiration
+  from the
+  <a href=" https://github.com/datacarpentry/datacarpentry/blob/master/lessons/R/00-before-we-start.Rmd">Data Carpentry lessons on R</a>,
+  which are a very nice orientation for people unfamiliar with research
+  software in general. Since the csv format was unfamiliar (the SWC R
+  lesson starts with reading in a csv file), we also spent some time on
+  the difference between closed proprietary file formats such as xls and
+  open file formats such as csv. Opening a file of each type in a basic
+  text editor was a nice stark demonstration of the difference (an
+  activity I got from
+  <a href="http://cierareports.org/blog/2013/10/18/rCourse2013/">Ciera Martinez</a>).
+  We didn't follow the lesson verbatim - I used the built-in iris
+  dataset but changed the names in the data to make it a fake
+  archaeological dataset.  My hope was that one less element of
+  cognitive overhead would make it easier for them to deal with the
+  radical novelty of the read-eval-print loop of working with the R
+  prompt.
+</p>
+<p>
+  After lunch we moved to packages, R markdown, plotting and reproducible
+  research. While the concepts of packages and libraries in R was only
+  mildly confusing (I counted that as a successful result), our main
+  challenge was getting them installed in a timely fashion. I wanted to
+  use ggplot2, knitr and rmarkdown and under normal conditions would could
+  get these from the internet with <code>install.packages()</code>. Knowing that any
+  kind of internet bandwidth during this workshop was a bit of a roll of
+  the dice, I needed a simple method of installing these packages and
+  their dependencies (ie. those listed in in the 'imports' field of the
+  package description) that would work without any internet connection. I
+  could have just made a note of all the dependencies and manually
+  downloaded their source files, but I wanted a more general solution that
+  would scale up nicely, if say I wanted to 10-20 packages to install
+  offline. After
+  <a href="http://stackoverflow.com/questions/28885349/offline-installation-of-a-list-of-packages-getting-dependencies-in-order">asking around</a>
+  I was recommended the
+  <a href="https://github.com/RevolutionAnalytics/miniCRAN">miniCRAN</a> package
+  (thanks <a href="https://github.com/andrie">Andrie</a>!) and used it to prepare a
+  local package repository. Using miniCRAN, I got the source files of the
+  packages, rather than binaries, so I didn't need to binaries for
+  multiple operating systems (though, as I noted above, everyone was using
+  Windows in this group). miniCRAN also took care of identifying and
+  downloading all the package dependencies, which saved a lot of bother. I
+  put this local repository onto my USB sticks and had everyone copy it
+  from the USB sticks when they were getting the installers and other
+  files at the start of the day. This was a great success, with most
+  people installing the packages very quickly and easily. Only two
+  students had some kind of difficulty, they worked around it by
+  connecting to the internet and getting the packages online, eventually.
+  Had the entire class attempted to get the packages in the usual way,
+  from an online CRAN mirror, we'd probably still be there waiting for the
+  downloads to finish. Although there are no doubt other solutions, I
+  highly recommend local repositories with miniCRAN to anyone going in to
+  a similar situation of needing to use contributed packages with limited
+  (or no) internet access.
+</p>
+<p>
+  For the afternoon session we switched from working at the R prompt to
+  working in a R Markdown file, and talked about keeping a record of our
+  record by saving it in a script file. For most of the afternoon we
+  continued with live-coding and running code line-by-line from the R
+  Markdown file, exploring the basic plot types with ggplot2 (and _not_
+  qplot). Much of this was very simple and off-script from the Software
+  Carpentry core R lesson (though in preparing I drew from some excellent
+  SWC R lesson material online elsewhere by Jenny Bryan, Scott Ritchie and
+  others). The main point was to explore different ways to visualize the
+  data and learn how to interpret plots. We wrote a simple function to
+  demonstrate how to repeat custom operations. We ended the day with a
+  very dramatic exercise to knit the R Markdown document into a MS Word
+  document. After explaining the advantage of having code and text
+  contained in the same document, we all counted down together, then
+  simultaneously clicked on the 'knit' button in RStudio on our laptops,
+  and marveled at the creation of a Word document with text, code and plots.
+</p>
+<p>
+  For a group with limited numerical and computational fluency, the day's
+  activities was a tremendous climb up a steep learning curve. However,
+  everyone enjoyed the experience and left with a favourable impression of
+  scientific computing. It will probably take some more formal training
+  before anyone in this group is routinely using R for their research.
+  However, I think the workshop was a success communicating the basics of
+  computing at the command line, using a programming language for data
+  analysis and visualization, and some basic open science principles. We
+  might ask what the point is of teaching scientific computing to a group
+  that are so distant from the usual SWC audiences. I would say that the
+  point is if we want this way of doing research -- reproducible
+  transparent workflows using open source programming languages -- to
+  become ubiquitous and normal, then we should embrace every opportunity
+  to teach and raise awareness of it, especially among groups that are
+  unlikely to hear about it from within their research community.
+</p>
+<p>
+  <img src="{{page.root}}/blog/2015/03/burma-03.jpg" alt="Class Photo in Yangon" class="responsive" />
+</p>

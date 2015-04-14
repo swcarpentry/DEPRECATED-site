@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-12", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$088046f5001377e1275d1ce4e0ad0c95e54697ef53cc88c5dd41373ed48dcfe0", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$088046f5001377e1275d1ce4e0ad0c95e54697ef53cc88c5dd41373ed48dcfe0", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/rhodes.adelaide.json"
+ }
+}
