@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-02-28", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$1c1c2b970193605cb3a9d5ab4568441f444f13f3bf27750e7d6475ffdd0908cf", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$1c1c2b970193605cb3a9d5ab4568441f444f13f3bf27750e7d6475ffdd0908cf", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/kiral-kornek.isabell.json"
+ }
+}
