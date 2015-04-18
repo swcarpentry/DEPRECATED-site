@@ -1,0 +1,218 @@
+We just finished<sup>*</sup> a workshop at the American Astronomical Society. I was lucky
+to recruit 3 instructors (in addition to myself) - Matt Davis, Erik Bray, and
+Phil Rosenfield. We also had Pauline Barmby volunteer as a helper (and on the fly instructor).
+While I wrote this blog post, you will see comments inserted by the instructors.
+
+# Pre-Workshop Meetings
+
+We started meeting at the beginning of October.  Our first meeting was attended
+by only instructors. Despite a laughable number of technical difficulties we
+were able to decide on our curriculum, schedule, and who was teaching what. We
+held two other shorter meetings which included helpers to work out logistics
+and answer any questions (mostly mine). It was really nice to see everyone's
+face prior to the meeting. Additionally, we decided to meet the night before
+the workshop for a little more face time. I also set up an etherpad that held
+notes from all of the meetings. I found this very useful - other instructors
+and helpers can comment if they did.
+
+I asked all helpers if they would like to teach a 15 minutes sections. This is
+something I like to do at every workshop I lead. It gives helpers a chance to
+teach (if they are not familiar with it) and to get a sense of what it is like
+to be in front of the class: how fast to go, where do students get lost, what
+is it like to explain concepts. With a 15 minute piece of instruction time -
+even if the lesson is a disaster (which none of ours were) the workshop is
+relatively unaffected.
+
+I included the helpers and instructors on all correspondence prior to the
+workshop so that they knew the information that was given to the students on
+the first day and also to give them a window into the lead instructor's duties
+prior to the workshop.
+
+# Workshop Set-up
+
+We decided to use the set-up test script from
+[here](http://swcarpentry.github.io/workshop-template/setup/index.html).  I
+modified the first test script to test for specific versions of numpy, scipy,
+matplotlib, and astropy.  I emailed the modified scripts to students prior to
+the lesson and a link to the instructions for running them. We were able to
+head off many installation issues. [I think this workshop had some of the
+fewest installation problems I've seen. --Erik]
+
+We also had a number of students show up early the first day for installation
+help.  It is possible that having the installation script alerted people to
+when they did not have a correct installation. A number of students who ran the
+scripts downloaded them from the instructions rather than from my email. As a
+result they installed a number of unnecessary packages. These students
+encountered issues installing EasyMercurial and mayavi. Trevor King and I are
+currently working on an issue to comment out the packages we don't regularly
+teach in the default installation script. We had a lot of custom installations
+which often led to small differences and errors during the lessons (especially
+in Python).  We also had a request from a student to modify the installation
+test script to handle dev versions.
+
+I also sent students the Etherpad link prior to the workshop. At Erik's
+suggestion I created a short link to both the course website and etherpad -
+this worked really well. [Is this mentioned in any of the workshop setup
+instructions?  I think it should be, if not. --Erik]
+
+At my last workshop I received a number of comments regarding using Nano as the
+text editor.  Specifically students wanted to know why we asked everyone to
+download Nano, used Nano, and then told them that they should probably use
+something else. As a result we had everyone download Sublime Text in addition
+to Nano. We still used Nano for the teaching git. Students seemed happy to know that
+they had Sublime Text and I saw many students opening and using it although we never
+formally used it in our lessons. Although we didn't try to link it to the command line,
+ we encountered no installation issue.
+[I have a certain fondness for nano, but when we rely on it I do worry that it
+gives the impression to shell beginners that this is what they have to do if
+they want to edit files at the command-line.  Not sure what to do about that.
+--Erik]
+
+We left 3 hours at the end of the day as flex time. We thought our schedule may
+be ambitious and wanted to leave time to either finish the lessons or allow the
+audience to ask questions.  This wound up being a good call.
+
+# Teaching
+
+During each lesson I assign a different person to take notes on the etherpad
+and answer any questions that arise. I try to make sure a different person is
+doing this each lesson.  View our etherpad
+[here](https://abostroem.etherpad.mozilla.org/2015-01-03-aas).
+[I've had mixed success with etherpad use
+in workshops.  I think this one was sort of in the middle but overall it was
+very good to have.  People seemed to appreciate the notes in there, and it
+was also useful as a shared copy/paste.  A few people asked good questions in
+the etherpad but not as many as I like to see. --Erik]
+
+## Day 1
+
+On day 1 Matt Davis taught the shell in the morning. Astronomers generally have
+experience in the shell and as a result after a brief survey of the room Matt
+was able to start the shell at lesson 5 on loops. Even those students less
+familiar with the shell were able to follow along.
+
+Erik spent most of the rest of the day teaching Python. This group was mostly
+made up of people who had programmed before in another language and some who
+knew Python already. As a result Erik used his own lesson for teaching. This
+went slower than anticipated and we didn't cover moving from the notebook to
+command line scripts by the end of the lesson. Over dinner that night we
+discussed how we were going to adjust the schedule of the next day to account
+for this. We decided to give Pauline a chance to instruct and she worked on the
+end of the lesson that Erik was planning on covering and presented that on day
+2.
+
+At my last 2 workshops we've decided to teach code review instead of testing. I
+believe that while many students walk away from our testing unit without
+knowing how to apply the testing to their work, code review is a valuable tool
+that can prevent mistakes and help build a community at the student's home
+institution. It is also very easy to implement and can easily be taught in 45
+minutes to an hour. Matt mocked up a [terribly written
+code](https://github.com/abostroem/2015-01-03-aas/blob/gh-pages/novice/code-review/data_processor.py)
+and we asked students to look at it in groups.  We then went through each group
+and asked for a comment. I really enjoyed this section and thought it present a
+nice opportunity for students to implement the best coding practices they had
+just learned and for us to discuss it with them using a real example.  It's
+also a nice way to finish off the day, by providing learners with an active
+experience that's not incredibly mentally-taxing.
+
+We asked for good and bad stickies at the end of the day and reviewed them over
+dinner.
+
+## Day 2
+
+We started day 2 with Git. I don't like to teach git entirely from the command
+line. Instead I like to present what we are doing and the command on slides -
+going back to the command line to do an example of what I've just told students
+and then putting up a slide with a challenge problem on it. I used slides.com
+to create an HTML5 slide show that I could version control, send students links
+to, and present to the class. My presentations can be viewed here: [local
+git](http://slides.com/abostroem/local_version_control), [remote
+git](http://slides.com/abostroem/collaborating_using_git).  Overall this
+strategy worked well. I followed the SWC lessons pretty closely for local git,
+although I left out the discussion of the gitignore file.  I started out
+following the remote git lesson - having each student create a remote
+repository.  However, to give them a sense of actually collaborating I had each
+person find a pair and assign one person to be Dracula and one person to be
+Wolfman. Wolfman then cloned Dracula's repository and I led them through a
+series of exercises where they first just pulled, modified, and pushed without
+the other person making any changes.  Next they both modified but without
+conflicts. Finally they modified the same line and resolved conflicts. The
+whole Git lesson went much faster than I anticipated (I expected at least 3
+hours and finished in 2.5).
+
+Next Pauline presented her Python lesson. This involved walking through steps
+1-4 of Erik's ['simcluster'
+notebook](http://nbviewer.ipython.org/github/abostroem/2015-01-03-aas/blob/gh-pages/intermediate/python-simcluster/simulated.ipynb)
+which shows how to run python code from the command line, how to parse
+command-line arguments using argparse, and how to break code up into functions.
+This went relatively smoothly, although Pauline suspects it might have been a
+bit too fast for everyone to follow.
+
+In the afternoon Phil presented a [short introduction to of
+matplotlib](http://nbviewer.ipython.org/github/abostroem/2015-01-03-aas/blob/gh-pages/intermediate/matplotlib/Plotting%20with%20matplotlib.ipynb)
+and Erik showed the learners around
+[AstroPy](http://nbviewer.ipython.org/github/abostroem/2015-01-03-aas/blob/gh-pages/intermediate/astropy/Introduction_to_Astropy.ipynb).
+Most of the Python we did on day 2 was presented in a show-and-tell manner
+where students executed pre-written code rather than typed it themselves. This
+was an effective way to show them what is available. While this is good for
+future reference, I worry that we may be giving them more information than they
+can digest in a day.
+
+One of the most consistent bits of feedback we got was that people really like
+doing group exercises like the code review exercise on day 1. Our Python
+lessons had little in the way of exercises, especially on day 2, but with these
+workshops there is always a balancing act between having exercises and trying
+to cover lots of material.  (I'd like to experiment with multiple choice
+questions and peer instructions as a way to intersperse quick group discussions
+in workshops. -MD)
+
+Overall - this workshop went very smoothly - no major issues. Thanks to all the
+instructors and helpers!
+
+## N.B. Instructor Interaction
+
+A number of events have culminated in me thinking about interacting with my
+fellow instructors in front of the class.
+
+* I raised my hand a few times during Erik's Python lesson on day 1 and when called on asked if he wanted to
+explain something in a little more detail. I stayed at the back of the room while speaking. At different times
+Erik chose to either explain, say that was beyond the scope of the lesson, or that we would come back to it
+later.
+
+* We had a sticky note on the first day saying: "Erik should have listened to Azalee". I worried that
+my interruptions had been disrespectful to Erik in the eyes of the students and possibly reduced
+his effectiveness as an instructor. [I didn't feel that way, but I still need to work on my
+engangement with the room in general--it's hard to read them at my current level. --Erik]
+
+* In the Train the Trainers event at UC Davis Greg said that you should not interrupt fellow instructors
+as it splits the focus of students (which is already split between the instructor and the screen).
+
+* There was a discussion of this at our SWC workshop debriefing. Here Greg also mentioned that if
+you are going to interrupt you can walk towards the front of the classroom to signal that you want to say
+something and at that point the focus is less split.
+
+I believe my take away from all of this is the following:
+
+* Most instructor to instructor interaction in front of the class is good (this is not scientific
+just anecdotal). It can draw the instructor's attention to something they left out or add information
+that benefits the class.
+
+* It is really important how this interaction comes about. You should never speak over your fellow
+instructor. I think ideally you can slowly walk towards the front with your hand up and hang on the
+sidelines until the instructor at the front of the room acknowledges you. This keeps the control
+of the lesson in the hands of the instructor who is leading the lesson.
+
+* Interruptions should be used sparingly. They should only clarify material never complicate it.
+If at all possible you should phrase your information in such a way that the instructor who is leading
+the discussion can explain it to the class. This allows the instructor to maintain the focus of the
+class and can continue to demonstrate their knowledge of the material that they are teaching.
+
+* This should be discussed before the workshop. Instructors should ask each other - are you
+ok with a interruption and how can I let you know that I have something to add?
+
+* Discussion beforehand also opens the door to an instructor saying - please don't interrupt - or to say - let me
+see how it goes - I will let you know if it's not working.
+
+<sup>*<sup> This was written in January, its taken me a while to post it.
+
+
