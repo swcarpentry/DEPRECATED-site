@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-04-20", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f12c0ef2030a6421be6951fb139e19c394600dbc51ad462ff11bd170af1e5094", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f12c0ef2030a6421be6951fb139e19c394600dbc51ad462ff11bd170af1e5094", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/harstad.emelie.json"
+ }
+}

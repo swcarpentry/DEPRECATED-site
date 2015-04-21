@@ -103,6 +103,7 @@ instructor:
 - {name: Daniel Falster, user: falster.daniel}
 - {name: Emmanouil Farsarakis, user: farsarakis.emmanouil}
 - {name: Xu Fei, user: fei.xu}
+- {name: Angus Ferguson, user: ferguson.angus}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Jordan Fish, user: fish.jordan}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
@@ -119,6 +120,7 @@ instructor:
 - {name: Aaron Garoutte, user: garoutte.aaron}
 - {name: Chris Gates, user: gates.chris}
 - {name: Laurent Gatto, user: gatto.laurent}
+- {name: Noushin Ghaffari, user: ghaffari.noushin}
 - {name: Molly Gibson, user: gibson.molly}
 - {name: Ivan Gonzalez, user: gonzalez.ivan}
 - {name: Gerard Gorman, user: gorman.gerard}
@@ -137,9 +139,11 @@ instructor:
 - {name: Sam Hames, user: hames.sam}
 - {name: Christopher Hamm, user: hamm.christopher}
 - {name: Jessica Hamrick, user: hamrick.jessica}
+- {name: Nicholas Hannah, user: hannah.nicholas}
 - {name: Michael Hansen, user: hansen.m}
 - {name: Rayna Harris, user: harris.rayna}
 - {name: Anthony Harrison, user: harrison.anthony}
+- {name: Emelie Harstad, user: harstad.emelie}
 - {name: Ted Hart, user: hart.t}
 - {name: Ian Hawke, user: hawke.ian}
 - {name: Fabian Held, user: held.fabian}
@@ -157,6 +161,7 @@ instructor:
 - {name: Richard Hosking, user: hosking.richard}
 - {name: Daisie Huang, user: huang.daisie}
 - {name: Katy Huff, user: huff.k}
+- {name: Fatma Imamoglu, user: imamoglu.fatma}
 - {name: Devasena Inupakutika, user: inupakutika.devasena}
 - {name: Luiz Irber, user: irber.luiz}
 - {name: Damien Irving, user: irving.d}
@@ -164,6 +169,7 @@ instructor:
 - {name: Mike Jackson, user: jackson.m}
 - {name: Christian Jacobs, user: jacobs.christian}
 - {name: Zbigniew Jedrzejewski-Szmek, user: jedrzejewski-szmek.zbigniew}
+- {name: Ben Johnson, user: johnson.ben}
 - {name: David Jones, user: jones.d}
 - {name: David Jones, user: jones.dm}
 - {name: Martin Jones, user: jones.martin}
@@ -273,6 +279,7 @@ instructor:
 - {name: Billy Rowell, user: rowell.bill}
 - {name: John Rugis, user: rugis.john}
 - {name: Dale Russell, user: russell.dale}
+- {name: Ramesh Sampath, user: sampath.ramesh}
 - {name: Maneesha Sane, user: sane.maneesha}
 - {name: Martin Schilling, user: schilling.martin}
 - {name: Jorden Schossau, user: schossau.j}
@@ -291,6 +298,7 @@ instructor:
 - {name: Jack Simpson, user: simpson.jack}
 - {name: Rachel Slaybaugh, user: slaybaugh.rachel}
 - {name: Clare Sloggett, user: sloggett.clare}
+- {name: Luc Small, user: small.luc}
 - {name: Daniel Smith, user: smith.daniel}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
@@ -347,11 +355,14 @@ instructor:
 - {name: Lynne Williams, user: williams.l}
 - {name: Ryan Williams, user: williams.ryan}
 - {name: Greg Wilson, user: wilson.g}
+- {name: Donald Winston, user: winston.donald}
+- {name: Jared Winton, user: winton.jared}
 - {name: Kara Woo, user: woo.kara}
 - {name: Christopher Woods, user: woods.c}
 - {name: April Wright, user: wright.april}
 - {name: Thomas Wright, user: wright.thomas}
 - {name: Fan Yang, user: yang.fan}
+- {name: Constantine Zakkaroff, user: zakkaroff.constantine}
 - {name: Qingpeng Zhang, user: zhang.qp}
 - {name: Naupaka Zimmerman, user: zimmerman.naupaka}
 - {name: Tiziano Zito, user: zito.t}
