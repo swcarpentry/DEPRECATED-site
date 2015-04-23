@@ -1,0 +1,147 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "The Paradox of Learning Objects"
+date: 2015-04-22
+time: "09:00:00"
+category: ["Opinion", "Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  <a href="http://sclt.science.ubc.ca/warcode">Warren Code</a>
+  recently forwarded <a href="http://opencontent.org/blog/archives/3854">this post</a>
+  by <a href="http://www.davidwiley.org/">David Wiley</a>,
+  a serial innovator in open education and educational reform.
+  In it,
+  he recapitulates the history of "learning objects"
+  and the paradox at the core of the idea of remixing and reusing teaching material.
+  Since Software Carpentry is (sort of) trying to do exactly that,
+  I think everyone who's currently teaching for us or helping us meet our
+  <a href="{{page.root}}/blog/2015/04/publishing-our-lessons.html">first publication deadline</a>
+  should look it over.
+</p>
+<!-- end excerpt -->
+<p>
+  In a nutshell,
+  Wiley's Reusability Paradox is that
+  "the amount of internal context of any learning object is directly correlated with its educational efficacy,
+  while that same amount of internal context is inversely correlated with the number of aggregations the learning object fits into."
+  More simply,
+  teaching materials are most <em>reusable</em> when they are as generic as possible,
+  but most <em>effective</em> when they are customized for a particular audience in a particular context,
+  so, "the pedagogical effectiveness of a learning object and its potential for reuse are completely at odds with one another."
+  As Wiley says:
+</p>
+<blockquote>
+  <p>
+    The Reusability Paradox typically leads designers of learning objects to attempt to "strike a balance" between effectiveness and reusability.
+    This generally results in materials that are neither particularly effective NOR particularly reusable across contexts.
+    No one wants to trade efficacy for reusability (or for lower cost, or for anything else &mdash;
+    as the recent Babson survey <a href="http://opencontent.org/blog/archives/3619">showed</a>,
+    faculty want proven efficacy more than anything else).
+    And yet we do this all the time without really realizing it.
+    Instead of targeting a specific audience and a specific context,
+    almost all teaching materials adopt their own version of Wikipedia's
+    <a href="http://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view">Neutral Point of View</a>.
+    Educational materials &mdash; and learning objects specifically &mdash; try to be just generic enough so as to not be offensive to anyone.
+    They lack what Giant Robot Dinosaur calls
+    a <a href="http://avc.com/2011/09/minimum-viable-personality/">Minimum Viable Personality</a>.
+  </p>
+  <p>
+    For example,
+    take teaching materials about the Ruby programming language.
+    Here are the first three results that come up for me after searching for Ruby tutorials &mdash;
+    <a href="https://www.ruby-lang.org/en/documentation/quickstart/">Ruby in 20 Minutes</a>,
+    <a href="http://rubylearning.com/satishtalim/first_ruby_program.html">My First Ruby Program</a>,
+    and <a href="http://www.tutorialspoint.com/ruby/ruby_quick_guide.htm">Ruby Quick Reference Guide</a>.
+    They're each so bland and generic as to be almost indistinguishable from each other.
+    Contrast these resources with <a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-4.html">Why's Poignant Guide to Ruby</a>.
+    You can actually distinguish this resource from the others.
+    It was obviously written with a specific audience in mind &mdash; and they love it.
+    But the internal context created in Why's Poignant Guide &mdash; the cartoon foxes, Blix the cat, etc. &mdash;
+    are SIMULTANEOUSLY what makes it awesome for a specific audience and what prevents it from being reused more broadly.
+  </p>
+</blockquote>
+<p>
+  Wiley's solution is open licensing:
+</p>
+<blockquote>
+  <p>
+    The <a href="http://www.br-ie.org/pub/index.php/rbie/article/view/1022">way to escape from the Reusability Paradox</a>
+    is simply by using an open license.
+    If I publish my educational materials using an open license,
+    I can produce something deeply contextualized and highly effective for my local context
+    AND give you permission to revise and remix it until it is equally effective to reuse in your own local context.
+    Poof!
+    The paradox disappears.
+    I've produced something with a strong internal context which you have permission to make fit into other external contexts.
+  </p>
+</blockquote>
+<p>
+  Respectfully,
+  I think this is simplistic.
+  Learning someone else's material well enough to revise and remix it takes time&mdash;so much time,
+  in many cases,
+  that it's more efficient for any particular teacher to create their own lesson.
+</p>
+<p>
+  But the same is true of software,
+  and the similarity between the two
+  is what led us to the model that Software Carpentry uses.
+  The first is that <em>formative review works better than summative review</em>.
+  Giving people feedback on their code when they're "done"
+  <a href="{{page.root}}/blog/2015/04/quality-is-free-getting-there-isnt.html">doesn't work as well</a>
+  as reviewing small changes incrementally as they're written.
+  Equally,
+  picking up someone else's learning object when it's "done" isn't going to work as well as
+  helping to shape it while it's being written.
+</p>
+<p>
+  That leads to the second realization:
+  <em>the tool shapes the hand</em>.
+  We shouldn't go off into our own separate corners to decide what to teach,
+  then cobble together bits and pieces of lessons to teach it.
+  Instead,
+  we should
+  <a href="{{page.root}}/blog/2014/09/building-better-teachers.html">talk to each other</a>
+  and
+  <a href="{{page.root}}/blog/2014/09/further-thoughts-on-better-teachers.html">learn from each other</a>
+  in order to figure out what's worth teaching,
+  as well as how best to teach it.
+  One of the key benefits of code review is that it spreads understanding around;
+  the discussions going on in <a href="{{page.root}}/lessons.html">our lesson repositories</a>
+  are (I hope) helping instructors understand each other's thinking
+  and the reasons why our lessons cover what they do in the order they do.
+</p>
+<p>
+  Another insight from Wiley's article is that
+  <em>small is easier to remix than large</em>.
+  Programmers have known this for decades:
+  small single-purpose functions that can be combined in lots of ways
+  are much more reusable than monolithic blocks of code that do a thousand things,
+  most of which you don't actually want.
+  Software Carpentry is now moving this way,
+  e.g.,
+  by breaking our lessons into many smaller pieces.
+  (I now say that if you want to put an exercise in the middle of a topic,
+  you should break the topic in half.
+  I think this is analogous to the programming heuristic that says,
+  "If you want to return values from the middle of a function,
+  what you really have is two functions,"
+  but on the other hand,
+  maybe I'm just looking for analogies...)
+</p>
+<p>
+  Overall,
+  I think that Wiley nails the shortcomings of naive learning objects,
+  but his discussion of reusability misses the mark when it comes to
+  the practice that has made open source software possible: <em>merging</em>.
+  Taking what you've done and incorporating it into my lesson is useful,
+  but offering you my changes to improve the original is more useful still.
+  Open source software wouldn't exist without that,
+  and as I've <a href="{{page.root}}/blog/2011/12/fork-merge-and-share.html">argued before</a>,
+  I don't think truly open educational resources will take off
+  until pull requests on lessons become the new normal.
+  I hope Software Carpentry's experiments with that will help make it a reality a little bit sooner.
+</p>

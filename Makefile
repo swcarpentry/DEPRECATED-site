@@ -119,7 +119,7 @@ archive :
 ## cache        : collect workshop information from GitHub and store in local cache.
 cache : $(GENERATED)
 
-./_workshop_cache.yml :
+./_workshop_cache.yml : config/workshops.yml
 	cp $(CONFIG_DIR)/archived.yml ./_workshop_cache.yml
 	python bin/workshops.py -v -t \
 	    -i $(CONFIG_DIR)/workshops.yml \
