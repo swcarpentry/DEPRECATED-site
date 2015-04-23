@@ -23,6 +23,9 @@ AIRPORTS_YML = 'airports.yml'
 # File containing URLs for workshop repositories (in config directory).
 WORKSHOPS_YML = 'workshops.yml'
 
+# File containing names of countries for flags.
+FLAGS_YML = 'flags.yml'
+
 # File containing cached information about workshops.
 WORKSHOP_CACHE = '_workshop_cache.yml'
 
