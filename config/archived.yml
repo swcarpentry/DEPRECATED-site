@@ -3664,7 +3664,7 @@
   country: United-States
   enddate: 2014-10-01
   eventbrite: 13109602173
-  helper: ['Emily Dolson, Josh Nahum, Eric Bruger']
+  helper: [Emily Dolson, Josh Nahum, Eric Bruger]
   humandate: Sep 30 Oct 1, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Jory Schossau, Leigh Sheneman, Luiz Irber]
@@ -3811,7 +3811,7 @@
   contact: edd@debian.org
   country: United-States
   enddate: 2014-11-01
-  helper: [' ']
+  helper: []
   humandate: Oct 31 - Nov 1, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Karthik Ram, Ramnath Vaidyanathan, Dirk Eddelbuettel]
@@ -3883,7 +3883,7 @@
   contact: admin-uk@software-carpentry.org
   country: United-Kingdom
   enddate: 2014-11-14
-  helper: ['Andy Brass, Mike Cornell']
+  helper: [Andy Brass, Mike Cornell]
   humandate: Nov 10-14, 2014
   humantime: 9:00 am - 5:00 pm
   instructor: [Aleksandra Pawlik, Aleksandra Nenadic]
@@ -3938,7 +3938,7 @@
   country: United-Kingdom
   enddate: 2014-11-28
   eventbrite: 13760815971
-  helper: ['Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer']
+  helper: [Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer]
   humandate: Nov 27-28, 2014
   humantime: 9:00 am - 5:00 pm
   instructor: [Aleksandra Pawlik, Shoaib Sufi, Alejandra Gonzalez-Beltran]
@@ -3955,15 +3955,13 @@
   contact: admin@software-carpentry.org
   country: South-Africa
   enddate: 2014-11-28
-  helper: [Dane Kennedy (CSIR), Hein de Jager (UCT), Ashley Rustin (UCT), David Matten
-      (SU), Armin Deffur (UCT), Anelda van der Walt (UCT), Warren Jacobus (UWC), Chris
-      Mitsengu (UCT), Gustavo Salazar (UCT), Jon Ambler (UCT), Benjamin Hugo (UCT),
-    Jon Zwart (UCT), Adrianna Pinska (UCT), Timothy Povall (UCT)]
+  helper: [Dane Kennedy, Hein de Jager, Ashley Rustin, David Matten,
+      Armin Deffur, Anelda van der Walt, Warren Jacobus, Chris
+      Mitsengu, Gustavo Salazar, Jon Ambler, Benjamin Hugo,
+      Jon Zwart, Adrianna Pinska, Timothy Povall]
   humandate: Nov 27-28, 2014
   humantime: 9:00 am - 5:00 pm
-  instructor: ['Jonah Duckles (University of Oklahoma, USA)', 'James Hetherington
-      (University College London, UK)', '', 'David Merand (University of the Witwatersrand,
-      South Africa)']
+  instructor: [Jonah Duckles, James Hetherington, David Merand]
   latlng: -33.9574965,18.4622421
   layout: bootcamp
   lessons: [Python, Git, Bash]
@@ -3998,7 +3996,7 @@
   country: Poland
   enddate: 2014-12-07
   eventbrite: 14426226231
-  helper: ['Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak']
+  helper: [Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak]
   humandate: 6-7 Dec 2014
   humantime: 9:30  - 17:30
   instructor: [Paulina Lach, Aleksandra Pawlik]
@@ -4038,8 +4036,7 @@
   humandate: Dec 15-17, 2014
   humantime: 8:30 am - 4:30 pm (Day 1), 8.30 am - 4.30 pm (Day 2), 8.30 am - 11.00
     am (Day 3)
-  instructor: ['Bala Desinghu, Suchandra Thapa, David Champion, Lincoln Bryant, Rob
-      Gardner']
+  instructor: [Bala Desinghu, Suchandra Thapa, David Champion, Lincoln Bryant, Rob Gardner]
   latlng: 41.790743, -87.601077
   layout: bootcamp
   registration: restricted
@@ -4093,7 +4090,7 @@
   country: Brazil
   enddate: 2014-12-12
   etherpad: https://etherpad.mozilla.org/SWC-UFSC
-  helper: ['']
+  helper: []
   humandate: Dez 11-12, 2014
   humantime: 8:00 am - 5:30 pm
   instructor: [Diego Barneche, Raniere Silva]
@@ -4910,7 +4907,7 @@
   contact: balamurugan@uchicago.edu
   country: United-States
   enddate: 2015-03-06
-  helper: ['Chris Pipes, Elizabeth Prout']
+  helper: [Chris Pipes, Elizabeth Prout]
   humandate: Mar 03-06, 2015
   humantime: 8:30 am - 5:30 pm
   instructor: [Mats Rynge, Emelie Harstad, Bala Desinghu, David Champion, Suchandra
