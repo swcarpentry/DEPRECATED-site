@@ -52,11 +52,11 @@ nocomments: 1
           <div class="col-sm-4">
 	    <h4>Get Involved</h4>
             <p>
-	      You can <a href="{{page.root}}/workshops/request.html">host a workshop</a>,
+	      You can <a href="{{page.root}}/workshops/request.html">request a workshop</a>,
+	      <a href="{{page.root}}/workshops/operations.html">host one</a>,
 	      <a href="{{page.root}}/pages/register.html">become an instructor</a>,
 	      <a href="{{page.root}}/scf/membership.html">support us</a>,
 	      help <a href="{{page.root}}/pages/dashboard.html">improve our lessons</a>,
-	      join <a href="{{page.root}}/pages/projects.html">our members' projects</a>,
 	      or
               <a href="{{page.root}}/pages/join.html">join the discussion</a>.
             </p>
@@ -116,6 +116,10 @@ nocomments: 1
 
 	    <hr/>
 
+            <h4><a href="{{page.root}}/workshops/request.html">Request a Workshop...</a></h4>
+
+	    <hr/>
+
             <h4><a href="{{page.root}}/workshops/index.html#future">Upcoming Workshops</a></h4>
             <table class="table table-hover">
               {% for workshop in site.workshops_upcoming %}
@@ -128,13 +132,20 @@ nocomments: 1
                 </td>
               </tr>
               {% endfor %}
-              <tr><td>
-                  <a class="pull-right" href="workshops/index.html#future">...see all</a><br />
-                  <div align="center">
-                    <h4><a href="{{page.root}}/workshops/request.html">Request a Workshop</a></h4>
-                    <p><em><a href="{{page.root}}/workshops/index.html">Learn more...</a></em></p>
-                  </div>
-              </td></tr>
+              <tr>
+		<td align="center">
+		  <em>
+                    <a href="workshops/index.html#future">See all upcoming workshops...</a>
+		  </em>
+		</td>
+	      </tr>
+	      <tr>
+		<td align="center">
+		  <em>
+                    <a href="{{page.root}}/workshops/index.html">Learn more...</a>
+		  </em>
+		</td>
+	      </tr>
             </table>
 
             <h4>Partners</h4>
