@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-05", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$7bf7a441563b3d75d7e1cdc1cb34194d2ce3ff22f7d6dd139b44ed616a2b5861", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$7bf7a441563b3d75d7e1cdc1cb34194d2ce3ff22f7d6dd139b44ed616a2b5861", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/daigle.remi.json"
+ }
+}
