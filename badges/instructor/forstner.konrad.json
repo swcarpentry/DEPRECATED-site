@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-05", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$959e2688ce6c771df51e9cb18b16843a48ebf8e0926bcd3f974f34dae4ae5e81", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$959e2688ce6c771df51e9cb18b16843a48ebf8e0926bcd3f974f34dae4ae5e81", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/forstner.konrad.json"
+ }
+}
