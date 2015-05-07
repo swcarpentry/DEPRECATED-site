@@ -4,984 +4,912 @@ root: ..
 title: "Operations Guide: How to Run a Workshop"
 ---
 <p>
-  The Software Carpentry Workshop Operations Guide includes
+  This guide includes
   checklists for each role involved in running a workshop,
   and a long-form description of the story of a workshop.
   The description explains how workshops work,
   and the checklists explain how each role
   contributes to a successful workshop.
-  The checklists will also be useful
-  to people who have taken on each role.
 </p>
 
-<div id="checklists">
-  <h2>Checklists</h2>
+<p id="checklists"><strong>Checklists</strong></p>
+<ul>
+  <li><a href="{{page.root}}/workshops/checklists/host.html">Host</a></li>
+  <li><a href="{{page.root}}/workshops/checklists/admin.html">Admin</a></li>
+  <li><a href="{{page.root}}/workshops/checklists/lead_instructor.html">Lead Instructor</a></li>
+  <li><a href="{{page.root}}/workshops/checklists/instructors.html">Instructors</a></li>
+  <li><a href="{{page.root}}/workshops/checklists/helpers.html">Helpers</a></li>
+  <li><a href="{{page.root}}/workshops/checklists/accessibility.html">Accessibility</a></li>
+</ul>
+
+<div align="center">
+  <p>
+    For instructions on setting up a website for a workshop,
+    please see the <a href="{{site.github_url}}/workshop-template">workshop template home page</a>
+    or <a href="{{site.github_url}}/slideshows/creating-website/index.html">this slideshow</a>.
+  </p>
+</div>
+
+<h2 id="story">The Story of a Workshop</h2>
+
+<p>
+  A workshop is a set of intensive hands-on lessons
+  in which scientists learn software skills
+  through short tutorials and practical exercises.
+  A typical workshop runs over two days with 20-50 attendees and
+  two or three instructors per room,
+  and one helper for every 10 attendees.
+  The members of a workshop team are:
+</p>
+
+<ul>
+  <li>
+    The <a href="{{page.root}}/workshops/checklists/host.html">host</a>,
+    who is the principal local contact for the workshop.
+  </li>
+  <li>
+    The <a href="{{page.root}}/workshops/checklists/instructors.html">instructors</a>,
+    who present the tutorials and lead the practical exercises.
+  </li>
+  <li>
+    The <a href="{{page.root}}/workshops/checklists/lead_instructor.html">lead instructor</a>,
+    who is in charge of deciding what will be taught by whom
+    and ensuring the teaching aspects of the workshop go smoothly.
+  </li>
+  <li>
+    <a href="{{page.root}}/workshops/checklists/helpers.html">Helpers</a>,
+    who provide assistance during practical sessions,
+    update and answer questions on the workshop Etherpad,
+    and help with various practical matters.
+  </li>
+  <li>
+    The <a href="{{page.root}}/workshops/checklists/admin.html">Software Carpentry administrator</a>
+    advises and helps the host with workshop organization,
+    matches hosts with instructors,
+    sets up registration and assessments,
+    etc.
+  </li>
+  <li>
+    Learners come to the workshop to learn.
+  </li>
+</ul>
+
+<p>
+  Note that:
+</p>
+
+<ul>
+  <li>
+    One person may have several roles in a workshop;
+    for example,
+    it's common for the host to also be a learner.
+  </li>
+  <li>
+    We require hosts, instructors, and learners to adhere to our
+    <a href="{{page.root}}/conduct.html">code of conduct</a>.
+  </li>
+</ul>
+
+<div class="well" id="workshop-definition">
+  <h4>What Makes a Workshop a <em>Software Carpentry</em> Workshop?</h4>
+  <p>
+    As <a href="{{page.root}}/faq.html#who-can-run-a-workshop">explained in our FAQ</a>,
+    anyone can use our materials and run a workshop.
+    However,
+    you must have our explicit prior permission
+    to use our name and logo
+    (which are <a href="{{page.root}}/faq.html#trademark">trademarked</a>).
+    We normally require that the lead instructor be certified by Software Carpentry,
+    and that the training covers our <a href="{{page.root}}/faq.html#core-topics">core topics</a>.
+  </p>
+</div>
+
+<h2 id="early-planning">Early Planning</h2>
+
+<p>
+  Before the workshop organization begins,
+  the host has to consider the answers
+  to a series of questions.
+  At some point in this decision-making process,
+  the host will contact
+  Software Carpentry admin to initiate
+  workshop planning.
+</p>
+
+<h3 id="who-for">Who Is the Workshop For?</h3>
+<p>
+  The host must think about the intended audience for the workshop.
+  Will it be restricted to a specific lab, university, or company?
+  Will it target people in a particular discipline
+  (or range of related disciplines),
+  or will it be open to all?
+</p>
+
+<h3 id="host-who">Open or Closed? Public or Private?</h3>
+<p>
+  A closed workshop can be more easily restricted to a specific audience,
+  which allows the instructors
+  to tailor material to that field.
+  In addition,
+  attendees are more likely to know one another,
+  which in our experience means they're less inhibited about asking
+  questions
+  and are more likely to help each other during practical sessions.
+</p>
+<p>
+  On the other hand,
+  it may be harder to find enough people to fill a workshop if you
+  restrict enrollment,
+  and if your funding comes from the university or company level,
+  it may be politically difficult to turn people away.
+</p>
+<p>
+  Having said that, there are a number of reasons why you
+  might consider allowing
+  external personnel to come to your workshop:
+</p>
+<ul>
+  <li>
+    Others can see how a workshop is run and decide
+    whether they want to run one too,
+    which contributes to the growth and sustainability
+    of Software Carpentry.
+  </li>
+  <li>
+    Attendees are given the opportunity to network and build relationships
+    with researchers from elsewhere within your institution or community,
+    or foster cross-disciplinary collaboration.
+  </li>
+  <li>
+    Your profile is raised within your institution
+    or community as one experienced in hosting workshops
+    which means others may seek your advice when they come to run theirs.
+  </li>
+</ul>
+
+<h3 id="host-numbers">How Many Learners?</h3>
+<p>
+  Workshops work best with rooms of between 15 and 40 learners. Above
+  that, they become more like a lecture and the hands-on workshop feeling
+  is lost. If you are expecting significantly more than 40 registrants,
+  consider hosting a multi-room workshop.
+</p>
+<p>
+  Multi-room workshops can work very well because they allow us to
+  stream learners into groups according to their computing experience.
+  The disadvantage, of course, is that you have to book multiple rooms
+  and recruit more instructors and helpers.
+</p>
+
+<h3 id="cost">What About Cost?</h3>
+<p>
+  The host needs to think about the cost of running a workshop and
+  where the money might come from, and apply for funding if necessary.
+</p>
+
+<p>
+  Our instructors are volunteers,
+  and do not need to be paid for their time,
+  but workshop hosts are expected to cover their
+  travel and accommodation costs.
+  (As much as possible,
+  we try to match instructors to nearby sites in order to reduce costs.)
+</p>
+<p>
+  We charge an administration fee to cover costs such as instructor training,
+  curriculum development,
+  and so on.
+  As of December 2014,
+  this is US$1250 for the first workshop at any site in a year,
+  and US$750 for each subsequent workshop at that site in the same year.
+  Please see <a href="{{page.root}}/scf/workshops.html">Workshop Fees and Operations</a>
+  or <a href="mailto:{{site.contact}}">mail us</a> for details.
+  Please note:
+</p>
+<ol>
+  <li>
+    Member organizations' administration fees are handled differently&mdash;please see
+    <a href="{{page.root}}/scf/membership.html">Organizational Membership</a>
+    for details.
+  </li>
+  <li>
+    Groups that are doing setup and administration for workshops themselves
+    are not expected to pay this fee
+    (but must still abide by
+    <a href="{{page.root}}/faq.html#trademark">these rules</a>
+    if they wish to use the Software Carpentry name and logo).
+  </li>
+  <li>
+    Software Carpentry strives to be a global project and support a diverse set of organizations;
+    any potential host that wishes to offer a workshop that would aid these goals
+    is urged to contact the SCF to discuss waivers and other arrangements.
+  </li>
+</ol>
+
+<div class="well" id="host-funding">
+  <h4 id="fulfillment">Fulfillment</h4>
+  <p>
+    The Software Carpentry Foundation is able to accept payment of administrative fees
+    through <a href="{{site.paypal_url}}">PayPal</a>
+    or by check or wire transfer to NumFOCUS.
+    Please <a href="mailto:{{site.contact}}">contact us</a> to request an invoice
+    as soon as the workshop's date and instructors have been confirmed.
+  </p>
+</div>
+
+<div class="well" id="host-funding">
+  <h4>Possible Funding Sources</h4>
+  <p>
+    Some possible sources of funding are:
+  </p>
   <ul>
-    <li><a href="{{page.root}}/workshops/checklists/host.html">Host</a></li>
-    <li><a href="{{page.root}}/workshops/checklists/admin.html">Admin</a></li>
-    <li><a href="{{page.root}}/workshops/checklists/lead_instructor.html">Lead Instructor</a></li>
-    <li><a href="{{page.root}}/workshops/checklists/instructors.html">Instructors</a></li>
-    <li><a href="{{page.root}}/workshops/checklists/helpers.html">Helpers</a></li>
-   <li><a href="{{page.root}}/workshops/checklists/accessibility.html">Accessibility</a></li>
+    <li>
+      "Miscellaneous" funds
+      (e.g., a few thousand dollars in a faculty member's grant).
+      This is by far the most common case.
+    </li>
+    <li>
+      Training budgets at the lab, department, or institutional level.
+    </li>
+    <li>
+      Workshop budgets set aside as part of conferences.
+    </li>
+    <li>
+      Charging for registration (typically $20-$40).
+      This also reduces the number of no-shows from 20-25% to about 5%.
+    </li>
+  </ul>
+  More recommendations for funding workshops can be found <a href="{{page.root}}/blog/2015/03/funding-workshops.html">here</a>.
+</div>
+
+<div class="well" id="host-reducing-costs">
+  <h4>How to Reduce Costs</h4>
+  <p>
+    The host can consider these
+    ways to reduce the costs of running a workshop:
+  </p>
+  <ul>
+    <li>
+      Find out if there are others in your
+      institution or community who are willing to help with instructor
+      travel expenses, room bookings and other costs. They may be willing
+      to share costs if their researchers can attend your workshop&hellip;
+    </li>
+    <li>
+      &hellip;or just go all-out and agree to run one jointly.
+    </li>
+    <li>
+      Use local instructors and helpers (by local we mean from within your
+      institution, region or country) who will have lower travel costs.
+    </li>
+    <li>
+      Co-locate with conferences or workshops being run by your
+      institution or within your community.
+    </li>
   </ul>
 </div>
 
-<div id="story">
-  <h2>The Story of a Workshop</h2>
-
+<div id="host-charge">
+  <h3>Should the Workshop Be Free to Learners?</h3>
   <p>
-    A Software Carpentry workshop is an intensive hands-on workshop
-    at which scientists learn software skills
-    through short tutorials and practical exercises.
-    A typical workshop runs over two days with 20-50 attendees and
-    two or three instructors per room,
-    and one helper for every 10 attendees.
-    The members of a workshop team are:
+    The host and admin also need to decide whether the workshop is free or not.
+    On the one hand, we want workshops to be as accessible as possible.
+    On the other hand,
+    charging $20-$40 for registration cuts the number of no-shows from 20-25% to 5% or less.
+    Note that:
   </p>
-
   <ul>
     <li>
-      The <a href="{{page.root}}/workshops/checklists/host.html">host</a>,
-      the principal local contact for the workshop.
-    </li>
-    <li>
-      The <a href="{{page.root}}/workshops/checklists/instructors.html">instructors</a>, who
-      present the tutorials and lead the practical exercises.
-    </li>
-    <li>
-      The <a href="{{page.root}}/workshops/checklists/lead_instructor.html">lead instructor</a>,
-      is in charge of deciding what will be taught by whom
-      and ensuring the teaching aspects of the workshop go smoothly.
-      Software Carpentry admin decides which instructor will be
-      the lead instructor.
-    </li>
-    <li>
-      <a href="{{page.root}}/workshops/checklists/helpers.html">Helpers</a>
-      provide assistance during practical sessions,
-      update and answer questions on the workshop Etherpad,
-      and help with various practical matters.
-    </li>
-    <li>
-      <a href="{{page.root}}/workshops/checklists/admin.html">Software Carpentry admin</a>
-      advises and helps the host with workshop organization,
-      matches hosts with instructors,
-      sets up registration and assessments,
+      If the host decides to charge for registration and keep the revenue
+      to defray the cost of catering and other expenses,
+      we will still manage registration
+      so that we can see how it's going,
+      release people from the waiting list,
+      access registrant information,
       etc.
     </li>
     <li>
-      Learners come to the workshop to learn.
+      Be aware that
+      as soon as you charge anything at all&mdash;even
+      a refundable deposit&mdash;some
+      venues will charge for use of the space.
+    </li>
+    <li>
+      Refundable deposits are great in theory,
+      but are an administrative nightmare in practice.
     </li>
   </ul>
+</div>
 
+<h3 id="host-when">When Should the Workshop Be?</h3>
+<p>
+  Many factors determine when to hold a workshop.
+  The first is obviously the availability of instructors:
+  admin will help with this.
+</p>
+<p>
+  If the workshop will be at a university,
+  the start of term works better than the end of term
+  (when people are tired, and busy with final assignments and exams),
+  and the start of the second (or subsequent) term
+  works better for graduate students
+  than the start of first term.
+  (The start of an academic year is busy anyway,
+  and by their second term most students have
+  a better idea of their research problem's programming needs.)
+  In our experience mid-term breaks and reading weeks
+  do <em>not</em> work well:
+  workshops held then usually have high no-show rates.
+</p>
+<p>
+  Workshops can also be scheduled immediately before or after a conference
+  (or run as a tutorial within a conference).
+  In this case,
+  the conference organizers must be involved early and often.
+</p>
+
+<h3 id="host-followup">Should There Be Follow-Up Sessions?</h3>
+<p>
+  The host will decide <em>before</em> the workshop
+  what kind of follow-up they're going to offer (if any).
+  Some groups run weekly lunch-and-learn sessions
+  for a couple of months after a workshop
+  to help people put what they've learned into action.
+  Other groups set up mailing lists,
+  and we've tried running online tutorials.
+  Whatever they decide to do,
+  figuring it out in advance means that they can
+  tell learners about it at least a couple of times.
+</p>
+
+<h2 id="initial-organization">Initial Organization</h2>
+
+<h3 id="host-instructors">Instructors</h3>
+<p>
+  A workshop room of approximately 40 people needs at least two
+  instructors, and a third is a good idea, because:
+</p>
+<ul>
+  <li>
+    It's too much to ask a single person to talk for eight hours a day for two days.
+  </li>
+  <li>
+    Attendees will be more engaged if they hear from more than one person.
+  </li>
+  <li>
+    Having two or three instructors reduces the risk of having to cancel
+    because of illness,
+    travel mishaps,
+    etc.
+  </li>
+</ul>
+<p>
+  Instructors must be recruited <em>before</em> advertising the workshop or opening up registration.
+  At least one instructor must be certified by Software Carpentry
+  in order for the workshop to use our name and logo.
+  The other instructors should have prior teaching experience,
+  be taking the <a href="{{page.root}}/faq.html#how-become-instructor">instructor training</a>,
+  or have helped with at least one previous workshop.
+</p>
+
+<h3 id="admin-list">Mailing List</h3>
+<p>
+  Once the workshop has a full roster of instructors,
+  admin will set up a mailing list for the organizer, instructors,
+  and helpers
+  so they can discuss audience, content, schedule, dinner plans, etc.
+  (This is optional&mdash;some workshop teams prefer to
+  email back and forth without a mailing list.)
+</p>
+
+<h3 id="host-registration">Registration</h3>
+<p>
+  Software Carpentry admin can set up an Eventbrite registration page
+  on our Eventbrite account,
+  but some sites do use their own system:
+  for example,
+  workshops being run in conjunction with conferences
+  may use the conference registration system.
+</p>
+<p>
+  If admin sets up an Eventbrite page, we can give the host
+  adminstrator permission so they can send messages to registrants,
+  download the registrant list, manage the waiting list, etc.
+</p>
+
+<div class="well" id="eventbrite">
+  <h4>Setting Up Eventbrite</h4>
   <p>
-    Note that:
+    If the host would like Software Carpentry to run registration through
+    Eventbrite, we'll need the following information:</p>
+  <ul>
+    <li>how many people will be registering</li>
+    <li>how much to charge for <a href="#host-charge">registration</a>, if anything</li>
+    <li>whether the registration page should be public or private</li>
+  </ul>
+  <p>
+    Eventbrite events can be public, which means they appear on Google
+    and in listings, or private, which means they can only be seen by
+    people who have the link. We can also add a password to protect
+    the registration page further.
   </p>
+</div>
 
+<h3 id="book-room">The Workshop Venue</h3>
+<p>
+  It's the host's job to identify and
+  book a suitable room (or rooms)
+  for the workshop.
+</p>
+
+<div class="well" id="host-venue">
+  <h4>Characteristics of a Good Workshop Venue</h4>
+  <p>
+    You'll need a room with:
+  </p>
   <ul>
     <li>
-      One person may have several roles in a workshop;
-      for example,
-      it's common for the host to also be a learner.
+      <strong>Front-facing tables</strong>
+      so that attendees can watch an instructor and use their laptop at the same time.
+      (Typing on a laptop for two days in theater-style seating can cause back strain.)
     </li>
     <li>
-      We require hosts, instructors, and learners to adhere to our
-      <a href="{{page.root}}/conduct.html">code of conduct</a>.
+      <strong>High-speed WiFi or network access</strong>
+      that can withstand everyone using it at the same time.
+    </li>
+    <li>
+      <strong>Power outlets</strong>
+      for all the computers.
+      This often involves extension cords;
+      make sure they're taped down.
+    </li>
+    <li>
+      <strong>Space for mingling</strong>
+      without squeezing between chairs and tripping over cables.
+      This is <em>essential</em>:
+      if helpers cannot reach learners who are having problems quickly and easily,
+      those learners will fall further and further behind as the day goes on.
+      Again,
+      theater-style lecture rooms are not recommended
+      as their banked floors and fixed seating makes it very difficult for helpers to mingle.
+    </li>
+    <li>
+      <strong>A microphone</strong>
+      if the room is large or has poor acoustics,
+      or if the workshop will be recorded.
+    </li>
+    <li>
+      <strong>Disabled access.</strong>
+      (Make sure the washrooms are accessible as well.)
+    </li>
+    <li>
+      <strong>Air-conditioning,</strong>
+      because all those computers (and attendees) will generate a lot of heat.
+    </li>
+    <li>
+      <strong>Space to serve coffee and snacks</strong>,
+      because learning is hungry work.
     </li>
   </ul>
-
-  <div class="well" id="workshop_definition">
-    <h4>What makes a workshop a <em>Software Carpentry</em> workshop?</h4>
-    <p>
-      As <a href="{{page.root}}/faq.html#who-can-run-a-workshop">explained in our FAQ</a>,
-      anyone can use our materials and run a workshop.
-      However,
-      you must have our explicit prior permission
-      to use our name and logo
-      (which are <a href="{{page.root}}/faq.html#trademark">trademarked</a>).
-      We normally require that the lead instructor be certified by Software Carpentry,
-      and that the training covers our <a href="{{page.root}}/faq.html#core-topics">core topics</a>.
-    </p>
-  </div>
-
 </div>
 
-<div id="early-planning">
-  <h2>Early Planning</h2>
+<h3 id="admin-webpage">Workshop Webpage</h3>
+<p>
+  The lead instructor and other instructors
+  are responsible for creating the workshop's home page on GitHub.
+  (The <a href="{{site.github_url}}/workshop-template">README on the template page</a>
+  explains how to do this.)
+  The webpage should have
+  instructions for attendees,
+  including the workshop dates, the location,
+  a link to the registration page, and so on.
+  The host should make sure this page also includes
+  local travel information,
+  parking instructions,
+  and whatever other information is needed.
+  After the workshop topic list and schedule are finalized,
+  they will be posted to the webpage too.
+</p>
+<p>
+  Software Carpentry admin will check that the workshop is
+  showing up properly on
+  the <a href="{{page.root}}/workshops/index.html">list of upcoming workshops</a>.
+</p>
 
+<h3 id="publicity">Publicity</h3>
+<p>
+  Once the webpage is set up,
+  the host will start spreading the word about the workshop
+  using our <a href="{{page.root}}/workshops/sample_ad.html">example text</a>
+  or something more creative.
+  The host can tweet and blog about the event,
+  and send emails to departmental mailing lists,
+  discipline-specific mailing lists,
+  specific people (e.g., lab directors or principal investigators),
+  and anyone else who may be interested.
+</p>
+<p>
+  Software Carpentry admin is happy
+  to promote the host's blog articles and tweets.
+  We'll tweet and blog about the event, too.
+</p>
+
+<h3 id="host-catering">Catering</h3>
+<p>
+  If it's in the workshop budget,
+  the host will provide coffee and snacks.
+  Doing so cuts the time per coffee break to 10-15 minutes
+  from 20-25 minutes.
+  If this isn't possible,
+  the host should identify somewhere nearby where
+  attendees can get refreshments,
+  and the schedule should include longer coffee breaks.
+</p>
+<p>
+  If snacks will be provided,
+  try to allow for allergies and other dietary restrictions.
+</p>
+
+<h3 id="admin-assessment">The Pre-Workshop Assessment</h3>
+<p>
+  A few days before the workshop begins,
+  learners will be asked to complete a
+  <a href="{{page.root}}/workshops/assess/index.html">pre-workshop skills assessment</a>, usually as a Google form.
+  The responses to the assessment will help the instructors
+  tailor the workshop material to the group's needs.
+</p>
+
+<h3 id="admin-travel">Travel Arrangements and Reimbursement</h3>
+<p>
+  If there is someone at the host institution who usually handles travel
+  arrangements, admin or the host will connect them
+  with instructors as soon as possible.
+</p>
+<p>
+  The host should also make sure it's clear who's paying for what
+  and how people will be reimbursed
+  <em>before</em> anyone buys plane tickets.
+  The hosting site must reimburse instructors directly&mdash;Software
+  Carpentry cannot route payments.
+</p>
+<p>
+  Instructors should not be shy about asking admin
+  or the host about how to be reimbursed if they're not sure.
+</p>
+
+<h2 id="pulling-it-together">Pulling It Together</h2>
+
+<p>
+  Once the initial conversations and setup are done,
+  it's time to move forward with the nitty-gritty details
+  of running a workshop.
+</p>
+
+<h3 id="curriculum">Curriculum and Schedule</h3>
+<p>
+  The lead instructor, other instructors and host
+  will decide what content
+  will be covered in the workshop.
+  The lead instructor will put together
+  a schedule of topics
+  and assign an instructor to
+  each topic.
+</p>
+
+<h3 id="equipment">Equipment</h3>
+<p>
+  In addition to booking a room and catering,
+  the host is responsible for providing an assortment of equipment
+  and supplies for the workshop.
+  The host should check that the following equipment and information is
+  available <em>and working</em>:
+</p>
+<ul>
+  <li>
+    A projector (and a spare if you can find one, or a spare bulb if you
+    can't).
+  </li>
+  <li>
+    A Mac VGA adapter if anyone is presenting with a Mac.
+  </li>
+  <li>
+    Extension cords and power bars if necessary.
+  </li>
+  <li>
+    Two different colors of sticky notes for use as flags and for
+    feedback. You'll need enough for each learner to have four of each color
+    per day.
+    The two colors should be very distict and preferably clearly
+    recognizable as "good" and "bad"&mdash;red and green work well
+    (but be conscious of color vision deficiencies).
+  </li>
+  <li>
+    Guest usernames and passwords for everyone.
+  </li>
+  <li>
+    If possible, a couple of spare computers with the required software
+    already installed, in case someone can't get access to the network,
+    forgets their machine, has hardware problems, etc.
+  </li>
+  <li>
+    A handful of USB sticks with installers on them
+    just in case there are network problems.
+  </li>
+  <li>
+    Photo release forms (if required).
+  </li>
+  <li>
+    Name badges or stickers for instructors, helpers, and attendees.
+  </li>
+</ul>
+
+<h3 id="host-helpers">Helpers</h3>
+<p>
+  Helpers keep workshops flowing smoothly by assisting learners
+  who are having trouble with exercises.  It's the host's responsibility
+  to recruit local helpers.
+  There should be at least one helper for every ten attendees.
+</p>
+<p>
+  Most of our helpers are scientists who have either gone through a
+  previous workshop,
+  or learned most of what we teach on our own.
+  Hosts usually recruit them from the hosting institution
+  and nearby institutions.
+</p>
+<p>
+  Usually, workshops don't cover helpers' travel or accommodation expenses.
+  Taking the whole team out to dinner the day before the workshop starts
+  is a nice way to thank everyone and give them a chance to get acquainted.
+</p>
+
+<h3 id="waiting-list">Waiting List</h3>
+<p>
+  If registration fills up, potential learners can add themselves to the
+  waiting list (if the workshop is using Eventbrite). A week or two before
+  the camp, the host or admin should contact the registered learners
+  and confirm that they'll be attending. If anyone cancels and opens
+  up a spot, admin or the host should offer that spot to someone
+  on the waiting list.
+</p>
+
+<div class="well" id="waitlist-mgmt">
+  <h4>Waiting List Management in Eventbrite</h4>
   <p>
-    Before the workshop organization begins,
-    the host has to consider the answers
-    to a series of questions.
-    At some point in this decision-making process,
-    the host will contact
-    Software Carpentry admin to initiate
-    workshop planning.
+    Either the host or Software Carpentry admin
+    can manage the waiting list.
+    There are a couple of tricks to managing Eventbrite
+    waiting lists:
   </p>
-
-  <div id="who-for">
-    <h3>Who is the workshop for?</h3>
-    <p>
-      The host must think about the intended audience for the workshop.
-      Will it be restricted to a specific lab, university, or company?
-      Will it target people in a particular discipline
-      (or range of related disciplines),
-      or will it be open to all?
-    </p>
-  </div>
-
-  <div id="host_who">
-    <h3>Open or closed? Public or private?</h3>
-    <p>
-      A closed workshop can be more easily restricted to a specific audience,
-      which allows the instructors
-      to tailor material to that field.
-      In addition,
-      attendees are more likely to know one another,
-      which in our experience means they're less inhibited about asking
-      questions
-      and are more likely to help each other during practical sessions.
-    </p>
-    <p>
-      On the other hand,
-      it may be harder to find enough people to fill a workshop if you
-      restrict enrollment,
-      and if your funding comes from the university or company level,
-      it may be politically difficult to turn people away.
-    </p>
-    <p>
-      Having said that, there are a number of reasons why you
-      might consider allowing
-      external personnel to come to your workshop:
-    </p>
-    <ul>
-      <li>
-	Others can see how a workshop is run and decide
-	whether they want to run one too,
-	which contributes to the growth and sustainability
-	of Software Carpentry.
-      </li>
-      <li>
-	Attendees are given the opportunity to network and build relationships
-	with researchers from elsewhere within your institution or community,
-	or foster cross-disciplinary collaboration.
-      </li>
-      <li>
-	Your profile is raised within your institution
-	or community as one experienced in hosting workshops
-	which means others may seek your advice when they come to run theirs.
-      </li>
-    </ul>
-  </div>
-
-  <div id="host_numbers">
-    <h3>How many learners?</h3>
-    <p>
-      Workshops work best with rooms of between 15 and 40 learners. Above
-      that, they become more like a lecture and the hands-on workshop feeling
-      is lost. If you are expecting significantly more than 40 registrants,
-      consider hosting a multi-room workshop.
-    </p>
-    <p>
-      Multi-room workshops can work very well because they allow us to
-      stream learners into groups according to their computing experience.
-      The disadvantage, of course, is that you have to book multiple rooms
-      and recruit more instructors and helpers.
-    </p>
-  </div>
-
-  <h3>What about cost?</h3>
-  <p>
-    The host needs to think about the cost of running a workshop and
-    where the money might come from, and apply for funding if necessary.
-  </p>
-
-  <div class="well" id="host_cost">
-    <h4>The cost of running a workshop</h4>
-    <p>
-      Our instructors are volunteers,
-      and do not need to be paid for their time,
-      but workshop hosts are expected to cover their
-      travel and accommodation costs.
-      (As much as possible,
-      we try to match instructors to nearby sites in order to reduce costs.)
-    </p>
-    <p>
-      We charge an administration fee to cover costs such as instructor training,
-      curriculum development,
-      and so on.
-      As of December 2014,
-      this is US$1250 for the first workshop at any site in a year,
-      and US$750 for each subsequent workshop at that site in the same year.
-      Please see <a href="{{page.root}}/scf/workshops.html">Workshop Fees and Operations</a>
-      or <a href="mailto:{{site.contact}}">mail us</a> for details.
-      Please note:
-    </p>
-    <ol>
-      <li>
-	Member organizations' administration fees are handled differently&mdash;please see
-	<a href="{{page.root}}/scf/membership.html">Organizational Membership</a>
-	for details.
-      </li>
-      <li>
-	Groups that are doing setup and administration for workshops themselves
-	are not expected to pay this fee
-	(but must still abide by
-	<a href="{{page.root}}/faq.html#trademark">these rules</a>
-	if they wish to use the Software Carpentry name and logo).
-      </li>
-      <li>
-	Software Carpentry strives to be a global project and support a diverse set of organizations;
-	any potential host that wishes to offer a workshop that would aid these goals
-	is urged to contact the SCF to discuss waivers and other arrangements.
-      </li>
-    </ol>
-  </div>
-
-  <div class="well" id="host_funding">
-    <h4 id="fulfillment">Fulfillment</h4>
-    <p>
-      The Software Carpentry Foundation is able to accept payment of administrative fees
-      through <a href="{{site.paypal_url}}">PayPal</a>
-      or by check or wire transfer to NumFOCUS.
-      Please <a href="mailto:{{site.contact}}">contact us</a> to request an invoice
-      as soon as the workshop's date and instructors have been confirmed.
-    </p>
-  </div>
-
-  <div class="well" id="host_funding">
-    <h4>Possible funding sources</h4>
-    <p>
-      Some possible sources of funding are:
-    </p>
-    <ul>
-      <li>
-	"Miscellaneous" funds
-	(e.g., a few thousand dollars in a faculty member's grant).
-	This is by far the most common case.
-      </li>
-      <li>
-	Training budgets at the lab, department, or institutional level.
-      </li>
-      <li>
-	Workshop budgets set aside as part of conferences.
-      </li>
-      <li>
-	Charging for registration (typically $20-$40).
-	This also reduces the number of no-shows from 20-25% to about 5%.
-      </li>
-    </ul>
-    More recommendations for funding workshops can be found <a href="{{page.root}}/blog/2015/03/funding-workshops.html">here</a>.
-  </div>
-
-  <div class="well" id="host_reducing_costs">
-    <h4>How to reduce costs</h4>
-    <p>
-      The host can consider these
-      ways to reduce the costs of running a workshop:
-    </p>
-    <ul>
-      <li>
-	Find out if there are others in your
-	institution or community who are willing to help with instructor
-	travel expenses, room bookings and other costs. They may be willing
-	to share costs if their researchers can attend your workshop&hellip;
-      </li>
-      <li>
-	&hellip;or just go all-out and agree to run one jointly.
-      </li>
-      <li>
-	Use local instructors and helpers (by local we mean from within your
-	institution, region or country) who will have lower travel costs.
-      </li>
-      <li>
-	Co-locate with conferences or workshops being run by your
-	institution or within your community.
-      </li>
-    </ul>
-  </div>
-
-  <div id="host_charge">
-    <h3>Should the workshop be free to learners?</h3>
-    <p>
-      The host and admin also need to decide whether the workshop is free or not.
-      On the one hand, we want workshops to be as accessible as possible.
-      On the other hand,
-      charging $20-$40 for registration cuts the number of no-shows from 20-25% to 5% or less.
-      Note that:
-    </p>
-    <ul>
-      <li>
-	If the host decides to charge for registration and keep the revenue
-	to defray the cost of catering and other expenses,
-	we will still manage registration
-	so that we can see how it's going,
-	release people from the waiting list,
-	access registrant information,
-	etc.
-      </li>
-      <li>
-	Be aware that
-	as soon as you charge anything at all&mdash;even
-	a refundable deposit&mdash;some
-	venues will charge for use of the space.
-      </li>
-      <li>
-	Refundable deposits are great in theory,
-	but are an administrative nightmare in practice.
-      </li>
-    </ul>
-  </div>
-
-  <div id="host_when">
-    <h3>When should the workshop be?</h3>
-    <p>
-      Many factors determine when to hold a workshop.
-      The first is obviously the availability of instructors:
-      admin will help with this.
-    </p>
-    <p>
-      If the workshop will be at a university,
-      the start of term works better than the end of term
-      (when people are tired, and busy with final assignments and exams),
-      and the start of the second (or subsequent) term
-      works better for graduate students
-      than the start of first term.
-      (The start of an academic year is busy anyway,
-      and by their second term most students have
-      a better idea of their research problem's programming needs.)
-      In our experience mid-term breaks and reading weeks
-      do <em>not</em> work well:
-      workshops held then usually have high no-show rates.
-    </p>
-    <p>
-      Workshops can also be scheduled immediately before or after a conference
-      (or run as a tutorial within a conference).
-      In this case,
-      the conference organizers must be involved early and often.
-    </p>
-  </div>
-
-  <div id="host_followup">
-    <h3>Should there be follow-up sessions?</h3>
-    <p>
-      The host will decide <em>before</em> the workshop
-      what kind of follow-up they're going to offer (if any).
-      Some groups run weekly lunch-and-learn sessions
-      for a couple of months after a workshop
-      to help people put what they've learned into action.
-      Other groups set up mailing lists,
-      and we've tried running online tutorials.
-      Whatever they decide to do,
-      figuring it out in advance means that they can
-      tell learners about it at least a couple of times.
-    </p>
-  </div>
-
+  <ul>
+    <li>
+      You have to manually release people&mdash;Eventbrite doesn't
+      automatically detect that a space has opened up
+      and release a ticket.
+    </li>
+    <li>
+      You release tickets by selecting the person's entry on the
+      waiting list and clicking "Release Tickets".
+      When you release a ticket to someone their name is moved to
+      the top of the list and they are sent email letting them know
+      they have a day to register. If they don't register within 24 hours,
+      the offer times out and the host or admin must
+      manually rerelease that ticket.
+    </li>
+    <li>
+      Once the waiting list is activated people cannot register outright,
+      even if
+      there are spaces available;
+      they must add their name to the waiting list
+      and have a ticket released to them.
+    </li>
+  </ul>
 </div>
 
-<div id="initial-organization">
-  <h2>Initial Organization</h2>
+<h3 id="photo-release">Photo Release</h3>
+<p>
+  If the workshop will be photographed, recorded, or broadcast,
+  the host will let learners know by posting on the workshop's website.
+  Institutions may require the host to obtain a signed photo release
+  from each person if pictures are being taken;
+  the host is responsible for finding out if a release is required,
+  and printing out enough copies.
+</p>
 
-  <div id="host_instructors">
-    <h3>Instructors</h3>
-    <p>
-      A workshop room of approximately 40 people needs at least two
-      instructors, and a third is a good idea, because:
-    </p>
-    <ul>
-      <li>
-	It's too much to ask a single person to talk for eight hours a day for two days.
-      </li>
-      <li>
-	Attendees will be more engaged if they hear from more than one person.
-      </li>
-      <li>
-	Having two or three instructors reduces the risk of having to cancel
-	because of illness,
-	travel mishaps,
-	etc.
-      </li>
-    </ul>
-    <p>
-      Instructors must be recruited <em>before</em> advertising the workshop or opening up registration.
-      At least one instructor must be certified by Software Carpentry
-      in order for the workshop to use our name and logo.
-      The other instructors should have prior teaching experience,
-      be taking the <a href="{{page.root}}/faq.html#how-become-instructor">instructor training</a>,
-      or have helped with at least one previous workshop.
-    </p>
-  </div>
 
-  <div id="admin_list">
-    <h3>Mailing list</h3>
-    <p>
-      Once the workshop has a full roster of instructors,
-      admin will set up a mailing list for the organizer, instructors,
-      and helpers
-      so they can discuss audience, content, schedule, dinner plans, etc.
-      (This is optional&mdash;some workshop teams prefer to
-      email back and forth without a mailing list.)
-    </p>
-  </div>
+<h2 id="on-the-day">The Day of the Workshop</h2>
 
-  <div id="host_registration">
-    <h3>Registration</h3>
-    <p>
-      Software Carpentry admin can set up an Eventbrite registration page
-      on our Eventbrite account,
-      but some sites do use their own system:
-      for example,
-      workshops being run in conjunction with conferences
-      may use the conference registration system.
-    </p>
-    <p>
-      If admin sets up an Eventbrite page, we can give the host
-      adminstrator permission so they can send messages to registrants,
-      download the registrant list, manage the waiting list, etc.
-    </p>
-  </div>
+<h3>Introductions</h4>
+<p>
+  The host will introduce the instructors and helpers by name, 
+  and remind the learners that everyone teaching/helping 
+  is volunteering their time, 
+  to help set learners expectations.
+  The host will talk about why the workshop is being held 
+  and the desired outcome.  
+  They'll also let everyone know where to get coffee,
+  whether they can bring drinks and snacks 
+  into the workshop room,
+  and where the bathrooms are.
+  The host will also remind learners of the 
+  <a href="{{page.root}}/conduct.html">code of conduct</a>.
+</p>
 
-  <div class="well" id="eventbrite">
-    <h4>Setting up Eventbrite</h4>
-    <p>
-      If the host would like Software Carpentry to run registration through
-      Eventbrite, we'll need the following information:</p>
-    <ul>
-      <li>how many people will be registering</li>
-      <li>how much to charge for <a href="#host_charge">registration</a>, if anything</li>
-      <li>whether the registration page should be public or private</li>
-    </ul>
-    <p>
-      Eventbrite events can be public, which means they appear on Google
-      and in listings, or private, which means they can only be seen by
-      people who have the link. We can also add a password to protect
-      the registration page further.
-    </p>
-  </div>
+<h3 id="sign-in">Sign-in Sheet and Sticky Notes</h3>
+<p>
+  Before the workshop instruction begins,
+  the host will hand out
+  sign-in sheets and two different-colored sticky notes
+  to each learner.
+  The sign-in sheets help us keep track of
+  how many learners we are reaching,
+  and how successful our efforts to reduce no-shows are.
+  The sticky notes let the learners communicate
+  with instructors and helpers,
+  both during the tutorials and exercises,
+  and when giving feedback afterwards.
+</p>
 
-  <div id="book_room">
-    <h3>The workshop venue</h3>
-    <p>
-      It's the host's job to identify and
-      book a suitable room (or rooms)
-      for the workshop.
-    </p>
-  </div>
-
-  <div class="well" id="host_venue">
-    <h4>Characteristics of a good workshop venue</h4>
-    <p>
-      You'll need a room with:
-    </p>
-    <ul>
-      <li>
-	<strong>Front-facing tables</strong>
-	so that attendees can watch an instructor and use their laptop at the same time.
-	(Typing on a laptop for two days in theater-style seating can cause back strain.)
-      </li>
-      <li>
-	<strong>High-speed WiFi or network access</strong>
-	that can withstand everyone using it at the same time.
-      </li>
-      <li>
-	<strong>Power outlets</strong>
-	for all the computers.
-	This often involves extension cords;
-	make sure they're taped down.
-      </li>
-      <li>
-	<strong>Space for mingling</strong>
-	without squeezing between chairs and tripping over cables.
-	This is <em>essential</em>:
-	if helpers cannot reach learners who are having problems quickly and easily,
-	those learners will fall further and further behind as the day goes on.
-	Again,
-	theater-style lecture rooms are not recommended
-	as their banked floors and fixed seating makes it very difficult for helpers to mingle.
-      </li>
-      <li>
-	<strong>A microphone</strong>
-	if the room is large or has poor acoustics,
-	or if the workshop will be recorded.
-      </li>
-      <li>
-	<strong>Disabled access.</strong>
-	(Make sure the washrooms are accessible as well.)
-      </li>
-      <li>
-	<strong>Air-conditioning,</strong>
-	because all those computers (and attendees) will generate a lot of heat.
-      </li>
-      <li>
-	<strong>Space to serve coffee and snacks</strong>,
-	because learning is hungry work.
-      </li>
-    </ul>
-  </div>
-
-  <div id="admin_webpage">
-    <h3>Workshop webpage</h3>
-    <p>
-      The lead instructor and other instructors
-      are responsible for creating the workshop's home page on GitHub.
-      (The <a href="{{site.github_url}}/bc">README on the template page</a>
-      explains how to do this.)
-      The webpage should have
-      instructions for attendees,
-      including the workshop dates, the location,
-      a link to the registration page, and so on.
-      The host should make sure this page also includes
-      local travel information,
-      parking instructions,
-      and whatever other information is needed.
-      After the workshop topic list and schedule are finalized,
-      they will be posted to the webpage too.
-    </p>
-    <p>
-      Software Carpentry admin will check that the workshop is
-      showing up properly on
-      the <a href="{{page.root}}/workshops/index.html">list of upcoming workshops</a>.
-    </p>
-  </div>
-
-  <div id="publicity">
-    <h3>Publicity</h3>
-    <p>
-      Once the webpage is set up,
-      the host will start spreading the word about the workshop
-      using our <a href="{{page.root}}/workshops/sample_ad.html">example
-	text</a> or something more creative.
-      The host can
-      tweet and blog about the event,
-      and send emails to departmental mailing lists,
-      discipline-specific mailing lists,
-      specific people (e.g., lab directors or principal investigators),
-      and anyone else who may be interested.
-    </p>
-    <p>
-      Software Carpentry admin is happy
-      to promote the host's blog articles and tweets.
-      We'll tweet and blog about the event, too.
-    </p>
-  </div>
-
-  <div id="host_catering">
-    <h3>Catering</h3>
-    <p>
-      If it's in the workshop budget,
-      the host will provide coffee and snacks.
-      Doing so cuts the time per coffee break to 10-15 minutes
-      from 20-25 minutes.
-      If this isn't possible,
-      the host should identify somewhere nearby where
-      attendees can get refreshments,
-      and the schedule should include longer coffee breaks.
-    </p>
-    <p>
-      If snacks will be provided,
-      try to allow for allergies and other dietary restrictions.
-    </p>
-  </div>
-
-  <div id="admin_assessment">
-    <h3>The pre-workshop assessment</h3>
-    <p>
-      A few days before the workshop begins,
-      learners will be asked to complete a
-      <a href="{{page.root}}/workshops/assess/index.html">pre-workshop skills assessment</a>, usually as a Google form.
-      The responses to the assessment will help the instructors
-      tailor the workshop material to the group's needs.
-    </p>
-  </div>
-
-  <div id="admin_travel">
-    <h3>Travel arrangements and reimbursement</h3>
-    <p>
-      If there is someone at the host institution who usually handles travel
-      arrangements, admin or the host will connect them
-      with instructors as soon as possible.
-    </p>
-    <p>
-      The host should also make sure it's clear who's paying for what
-      and how people will be reimbursed
-      <em>before</em> anyone buys plane tickets.
-      The hosting site must reimburse instructors directly&mdash;Software
-      Carpentry cannot route payments.
-    </p>
-    <p>
-      Instructors should not be shy about asking admin
-      or the host about how to be reimbursed if they're not sure.
-    </p>
-  </div>
-
+<div class="well" id="feedback">
+  <h4>Feedback, or "What Are the Sticky Notes For?"</h4>
+  <ul>
+    <li>
+      During demonstrations, learners post a red sticky note
+      on their laptop
+      to indicate that they have a question or need help.
+    </li>
+    <li>
+      During exercises, learners post a red sticky note
+      at the start of the exercise and switch to
+      a green one when they finish, so the instructor can
+      clearly see when everyone is ready to continue,
+      and helpers can see who needs support.
+    </li>
+    <li>
+      Just before each break,
+      the instructor will ask learners to write down
+      one good point
+      (something they learned or enjoyed)
+      on their green sticky
+      and one bad one
+      (something that they still don't understand
+      or that is bothering them)
+      on their red sticky.
+      It only takes a couple of minutes for the instructors
+      to sort through these,
+      and it tells them whether they're
+      going too fast or too slow,
+      what they need to review after the break,
+      etc.
+      (If possible, someone will mail the sticky notes to
+      Software Carpentry admin
+      after the workshop
+      so we can look for patterns.)
+    </li>
+    <li>
+      At the very end of the workshop,
+      the host or lead instructor can ask learners to
+      give one good point or one bad one
+      about the entire workshop.
+      This can be done on the sticky notes, the Etherpad, or
+      through a Google form.
+      (This feedback will also be sent to Software Carpentry admin.)
+    </li>
+  </ul>
 </div>
 
-<div id="pulling-it-together">
+<h3 id="flow">Workshop Flow</h3>
+<p>
+  Once the workshop starts in earnest, the day will alternate between
+  the instructor describing and demonstrating concepts and tools,
+  and the learners
+  completing short exercises. Sometimes the learners will type along
+  as the instructor demonstrates. Learners are encouraged to work
+  in pairs and groups, and to mix up their groups over the course of
+  the workshop.
+</p>
+<p>
+  The instructor will ask lots of questions and encourage the learners
+  to ask questions too. No more than ten or fifteen minutes will go by
+  without the instructor engaging the learners or asking them to
+  complete an exercise.
+</p>
+<p>
+  Helpers walk around the room looking out for learners who are
+  confused or stuck with an exercise, or who have gotten behind the
+  flow of the demonstration.
+</p>
+<p>
+  Meanwhile, there is an Etherpad open where all the learners and
+  helpers are invited to take notes, post links and examples, and
+  ask and answer questions. (This is a great opportunity for learners
+  and helpers who aren't so gregarious to participate more
+  fully in the workshop.)
+</p>
 
-  <h2>Pulling It Together</h2>
+<h3 id="post-assessment">Post-Workshop Assessment</h3>
+<p>
+  Before the workshop ends, the host or an instructor will direct
+  the learners to a <a href="{{page.root}}/workshops/assess/index.html">post-workshop assessment</a>. This is very much like
+  the pre-workshop assessment, and helps us establish
+  how well our workshops
+  actually work.
+</p>
+<p>
+  Note that we match the pre- and post-workshop assessments answers
+  using email addresses, so learners should use the same address when
+  answering both surveys.
+</p>
+<p>
+  We have plans to ultimately send a third assessment a few months
+  after the workshop, to see how well and how long learners'
+  new knowledge and skills stick around.
+</p>
 
-  <p>
-    Once the initial conversations and setup are done,
-    it's time to move forward with the nitty-gritty details
-    of running a workshop.
-  </p>
+<h3 id="parting-words">Parting Words</h3>
+<p>
+  At the end of the workshop, the host or an instructor
+  will give the learners some
+  final pieces of information:
+</p>
+<ul>
+  <li>
+    how to get more help with the things they have learned;
+  </li>
+  <li>
+    how to get involved with Software Carpentry
+    by <a href="{{page.root}}/pages/training.html">hosting or teaching a workshop</a>,
+    <a href="{{page.root}}/pages/join.html">joining our discussions</a>,
+    or helping us <a href="{{page.root}}/pages/projects.html">create material</a>;
+    and
+  </li>
+  <li>
+    how to participate in any follow-up sessions the host is planning.
+  </li>
+</ul>
 
-  <div id="curriculum">
-    <h3>Curriculum and Schedule</h3>
-    <p>
-      The lead instructor, other instructors and host
-      will decide what content
-      will be covered in the workshop.
-      The lead instructor will put together
-      a schedule of topics
-      and assign an instructor to
-      each topic.
-    </p>
-  </div>
+<h2 id="after">After the Workshop</h2>
 
-  <div id="equipment">
-    <h3>Equipment</h3>
-    <p>
-      In addition to booking a room and catering,
-      the host is responsible for providing an assortment of equipment
-      and supplies for the workshop.
-      The host should check that the following equipment and information is
-      available <em>and working</em>:
-    </p>
-    <ul class="checklist">
-      <li>
-	A projector (and a spare if you can find one, or a spare bulb if you
-	can't).
-      </li>
-      <li>
-	A Mac VGA adapter if anyone is presenting with a Mac.
-      </li>
-      <li>
-	Extension cords and power bars if necessary.
-      </li>
-      <li>
-	Two different colors of sticky notes for use as flags and for
-	feedback. You'll need enough for each learner to have four of each color
-	per day.
-	The two colors should be very distict and preferably clearly
-	recognizable as "good" and "bad"&mdash;red and green work well
-	(but be conscious of color vision deficiencies).
-      </li>
-      <li>
-	Guest usernames and passwords for everyone.
-      </li>
-      <li>
-	If possible, a couple of spare computers with the required software
-	already installed, in case someone can't get access to the network,
-	forgets their machine, has hardware problems, etc.
-      </li>
-      <li>
-	A handful of USB sticks with installers on them
-	just in case there are network problems.
-      </li>
-      <li>
-	Photo release forms (if required).
-      </li>
-      <li>
-	Name badges or stickers for instructors, helpers, and attendees.
-      </li>
-    </ul>
-  </div>
+<h3 id="host-report">Report Back</h3>
+<p>
+  Once the workshop is over,
+  the host will send the following information
+  to Software Carpentry admin:
+</p>
+<ul>
+  <li>
+    the number of attendees
+  </li>
+  <li>names and email addresses of attendees, for our internal database
+    and so we can invite them to join our announcements mailing list
+  </li>
+</ul>
+<p>
+  The host will also let admin know how the workshop went.
+  Was it the right content?
+  The right pace?
+  Did it seem well organized
+  or were there things we could improve?
+  What did you hear from learners afterward,
+  and would you like us to visit you again?
+</p>
+<p>
+  We're also happy to hear from the instructors, helpers,
+  and learners with comments
+  and suggestions.
+</p>
 
-  <div id="host_helpers">
-    <h3>Helpers</h3>
-    <p>
-      Helpers keep workshops flowing smoothly by assisting learners
-      who are having trouble with exercises.  It's the host's responsibility
-      to recruit local helpers.
-      There should be at least one helper for every ten attendees.
-    </p>
-    <p>
-      Most of our helpers are scientists who have either gone through a
-      previous workshop,
-      or learned most of what we teach on our own.
-      Hosts usually recruit them from the hosting institution
-      and nearby institutions.
-    </p>
-    <p>
-      Usually, workshops don't cover helpers' travel or accommodation expenses.
-      Taking the whole team out to dinner the day before the workshop starts
-      is a nice way to thank everyone and give them a chance to get acquainted.
-    </p>
-  </div>
-
-  <div id="waiting_list">
-    <h3>Waiting list</h3>
-    <p>
-      If registration fills up, potential learners can add themselves to the
-      waiting list (if the workshop is using Eventbrite). A week or two before
-      the camp, the host or admin should contact the registered learners
-      and confirm that they'll be attending. If anyone cancels and opens
-      up a spot, admin or the host should offer that spot to someone
-      on the waiting list.
-    </p>
-  </div>
-
-  <div class="well" id="waitlist_mgmt">
-    <h4>Waiting list management in Eventbrite</h4>
-    <p>
-      Either the host or Software Carpentry admin
-      can manage the waiting list.
-      There are a couple of tricks to managing Eventbrite
-      waiting lists:
-    </p>
-    <ul>
-      <li>
-	You have to manually release people&mdash;Eventbrite doesn't
-	automatically detect that a space has opened up
-	and release a ticket.
-      </li>
-      <li>
-	You release tickets by selecting the person's entry on the
-	waiting list and clicking "Release Tickets".
-	When you release a ticket to someone their name is moved to
-	the top of the list and they are sent email letting them know
-	they have a day to register. If they don't register within 24 hours,
-	the offer times out and the host or admin must
-	manually rerelease that ticket.
-      </li>
-      <li>
-	Once the waiting list is activated people cannot register outright,
-	even if
-	there are spaces available;
-	they must add their name to the waiting list
-	and have a ticket released to them.
-      </li>
-    </ul>
-  </div>
-
-  <div id="photo_release">
-    <h3>Photo release</h3>
-    <p>
-      If the workshop will be photographed, recorded, or broadcast,
-      the host will let learners know by posting on the workshop's website.
-      Institutions may require the host to obtain a signed photo release
-      from each person if pictures are being taken;
-      the host is responsible for finding out if a release is required,
-      and printing out enough copies.
-    </p>
-  </div>
-
-</div>
-
-<div id="on-the-day">
-
-  <h2>The Day of the Workshop</h2>
-
-  <h4>Introductions</h4>
-  <p>
-    The host will introduce the instructors and helpers by name, 
-    and remind the learners that everyone teaching/helping 
-    is volunteering their time, 
-    to help set learners expectations.
-    The host will talk about why the workshop is being held 
-    and the desired outcome.  
-    They'll also let everyone know where to get coffee,
-    whether they can bring drinks and snacks 
-    into the workshop room,
-    and where the bathrooms are.
-    The host will also remind learners of the 
-    <a href="{{page.root}}/conduct.html">code of conduct</a>.
-  </p>
-
-  <div id="sign_in">
-    <h3>Sign-in sheet and stickies</h3>
-    <p>
-      Before the workshop instruction begins,
-      the host will hand out
-      sign-in sheets and two different-colored sticky notes
-      to each learner.
-      The sign-in sheets help us keep track of
-      how many learners we are reaching,
-      and how successful our efforts to reduce no-shows are.
-      The sticky notes let the learners communicate
-      with instructors and helpers,
-      both during the tutorials and exercises,
-      and when giving feedback afterwards.
-    </p>
-  </div>
-
-  <div class="well" id="feedback">
-    <h4>Feedback, or "What are the sticky notes for?"</h4>
-    <ul>
-      <li>
-	During demonstrations, learners post a red sticky note
-	on their laptop
-	to indicate that they have a question or need help.
-      </li>
-      <li>
-	During exercises, learners post a red sticky note
-	at the start of the exercise and switch to
-	a green one when they finish, so the instructor can
-	clearly see when everyone is ready to continue,
-	and helpers can see who needs support.
-      </li>
-      <li>
-	Just before each break,
-	the instructor will ask learners to write down
-	one good point
-	(something they learned or enjoyed)
-	on their green sticky
-	and one bad one
-	(something that they still don't understand
-	or that is bothering them)
-	on their red sticky.
-	It only takes a couple of minutes for the instructors
-	to sort through these,
-	and it tells them whether they're
-	going too fast or too slow,
-	what they need to review after the break,
-	etc.
-	(If possible, someone will mail the sticky notes to
-	Software Carpentry admin
-	after the workshop
-	so we can look for patterns.)
-      </li>
-      <li>
-	At the very end of the workshop,
-	the host or lead instructor can ask learners to
-	give one good point or one bad one
-	about the entire workshop.
-	This can be done on the sticky notes, the Etherpad, or
-	through a Google form.
-	(This feedback will also be sent to Software Carpentry admin.)
-      </li>
-    </ul>
-  </div>
-
-  <div id="flow">
-    <h3>Workshop flow</h3>
-    <p>
-      Once the workshop starts in earnest, the day will alternate between
-      the instructor describing and demonstrating concepts and tools,
-      and the learners
-      completing short exercises. Sometimes the learners will type along
-      as the instructor demonstrates. Learners are encouraged to work
-      in pairs and groups, and to mix up their groups over the course of
-      the workshop.
-    </p>
-    <p>
-      The instructor will ask lots of questions and encourage the learners
-      to ask questions too. No more than ten or fifteen minutes will go by
-      without the instructor engaging the learners or asking them to
-      complete an exercise.
-    </p>
-    <p>
-      Helpers walk around the room looking out for learners who are
-      confused or stuck with an exercise, or who have gotten behind the
-      flow of the demonstration.
-    </p>
-    <p>
-      Meanwhile, there is an Etherpad open where all the learners and
-      helpers are invited to take notes, post links and examples, and
-      ask and answer questions. (This is a great opportunity for learners
-      and helpers who aren't so gregarious to participate more
-      fully in the workshop.)
-    </p>
-  </div>
-
-  <div id="post_assessment">
-    <h3>Post-workshop assessment</h3>
-    <p>
-      Before the workshop ends, the host or an instructor will direct
-      the learners to a <a href="{{page.root}}/workshops/assess/index.html">post-workshop assessment</a>. This is very much like
-      the pre-workshop assessment, and helps us establish
-      how well our workshops
-      actually work.
-    </p>
-    <p>
-      Note that we match the pre- and post-workshop assessments answers
-      using email addresses, so learners should use the same address when
-      answering both surveys.
-    </p>
-    <p>
-      We have plans to ultimately send a third assessment a few months
-      after the workshop, to see how well and how long learners'
-      new knowledge and skills stick around.
-    </p>
-  </div>
-
-  <div id="parting_words">
-    <h3>Parting words</h3>
-    <p>
-      At the end of the workshop, the host or an instructor
-      will give the learners some
-      final pieces of information:
-    </p>
-    <ul>
-      <li>
-	how to get more help with the things they have learned;
-      </li>
-      <li>
-	how to get involved with Software Carpentry
-	by <a href="{{page.root}}/pages/training.html">hosting or teaching a workshop</a>,
-	<a href="{{page.root}}/pages/join.html">joining our discussions</a>,
-	or helping us <a href="{{page.root}}/pages/projects.html">create material</a>;
-	and
-      </li>
-      <li>
-	how to participate in any follow-up sessions the host is planning.
-      </li>
-    </ul>
-  </div>
-
-</div>
-
-<div id="after">
-
-  <h2>After the Workshop</h2>
-
-  <div id="host_report">
-    <h3>Report back</h3>
-    <p>
-      Once the workshop is over,
-      the host will send the following information
-      to Software Carpentry admin:
-    </p>
-    <ul>
-      <li>
-	the number of attendees
-      </li>
-      <li>names and email addresses of attendees, for our internal database
-	and so we can invite them to join our announcements mailing list
-      </li>
-    </ul>
-    <p>
-      The host will also let admin know how the workshop went.
-      Was it the right content?
-      The right pace?
-      Did it seem well organized
-      or were there things we could improve?
-      What did you hear from learners afterward,
-      and would you like us to visit you again?
-    </p>
-    <p>
-      We're also happy to hear from the instructors, helpers,
-      and learners with comments
-      and suggestions.
-    </p>
-  </div>
-
-  <div id="blog_post">
-    <h3>Blog posts</h3>
-    <p>
-      Our goal at Software Carpentry
-      is to have at least one blog post
-      from each workshop,
-      whether it's written by the host,
-      an instructor,
-      a helper
-      or a learner.
-      So if you've been involved in a workshop
-      and you'd like to write a blog post,
-      or if you have written one on your blog,
-      let us know so we can post it or link to it.
-    </p>
-  </div>
-
-</div>
+<h3 id="blog-post">Blog Posts</h3>
+<p>
+  Our goal at Software Carpentry
+  is to have at least one blog post
+  from each workshop,
+  whether it's written by the host,
+  an instructor,
+  a helper
+  or a learner.
+  So if you've been involved in a workshop
+  and you'd like to write a blog post,
+  or if you have written one on your blog,
+  let us know so we can post it or link to it.
+</p>

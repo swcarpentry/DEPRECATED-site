@@ -3664,7 +3664,7 @@
   country: United-States
   enddate: 2014-10-01
   eventbrite: 13109602173
-  helper: ['Emily Dolson, Josh Nahum, Eric Bruger']
+  helper: [Emily Dolson, Josh Nahum, Eric Bruger]
   humandate: Sep 30 Oct 1, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Jory Schossau, Leigh Sheneman, Luiz Irber]
@@ -3811,7 +3811,7 @@
   contact: edd@debian.org
   country: United-States
   enddate: 2014-11-01
-  helper: [' ']
+  helper: []
   humandate: Oct 31 - Nov 1, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Karthik Ram, Ramnath Vaidyanathan, Dirk Eddelbuettel]
@@ -3883,7 +3883,7 @@
   contact: admin-uk@software-carpentry.org
   country: United-Kingdom
   enddate: 2014-11-14
-  helper: ['Andy Brass, Mike Cornell']
+  helper: [Andy Brass, Mike Cornell]
   humandate: Nov 10-14, 2014
   humantime: 9:00 am - 5:00 pm
   instructor: [Aleksandra Pawlik, Aleksandra Nenadic]
@@ -3938,7 +3938,7 @@
   country: United-Kingdom
   enddate: 2014-11-28
   eventbrite: 13760815971
-  helper: ['Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer']
+  helper: [Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer]
   humandate: Nov 27-28, 2014
   humantime: 9:00 am - 5:00 pm
   instructor: [Aleksandra Pawlik, Shoaib Sufi, Alejandra Gonzalez-Beltran]
@@ -3955,15 +3955,13 @@
   contact: admin@software-carpentry.org
   country: South-Africa
   enddate: 2014-11-28
-  helper: [Dane Kennedy (CSIR), Hein de Jager (UCT), Ashley Rustin (UCT), David Matten
-      (SU), Armin Deffur (UCT), Anelda van der Walt (UCT), Warren Jacobus (UWC), Chris
-      Mitsengu (UCT), Gustavo Salazar (UCT), Jon Ambler (UCT), Benjamin Hugo (UCT),
-    Jon Zwart (UCT), Adrianna Pinska (UCT), Timothy Povall (UCT)]
+  helper: [Dane Kennedy, Hein de Jager, Ashley Rustin, David Matten,
+      Armin Deffur, Anelda van der Walt, Warren Jacobus, Chris
+      Mitsengu, Gustavo Salazar, Jon Ambler, Benjamin Hugo,
+      Jon Zwart, Adrianna Pinska, Timothy Povall]
   humandate: Nov 27-28, 2014
   humantime: 9:00 am - 5:00 pm
-  instructor: ['Jonah Duckles (University of Oklahoma, USA)', 'James Hetherington
-      (University College London, UK)', '', 'David Merand (University of the Witwatersrand,
-      South Africa)']
+  instructor: [Jonah Duckles, James Hetherington, David Merand]
   latlng: -33.9574965,18.4622421
   layout: bootcamp
   lessons: [Python, Git, Bash]
@@ -3998,7 +3996,7 @@
   country: Poland
   enddate: 2014-12-07
   eventbrite: 14426226231
-  helper: ['Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak']
+  helper: [Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak]
   humandate: 6-7 Dec 2014
   humantime: 9:30  - 17:30
   instructor: [Paulina Lach, Aleksandra Pawlik]
@@ -4038,8 +4036,7 @@
   humandate: Dec 15-17, 2014
   humantime: 8:30 am - 4:30 pm (Day 1), 8.30 am - 4.30 pm (Day 2), 8.30 am - 11.00
     am (Day 3)
-  instructor: ['Bala Desinghu, Suchandra Thapa, David Champion, Lincoln Bryant, Rob
-      Gardner']
+  instructor: [Bala Desinghu, Suchandra Thapa, David Champion, Lincoln Bryant, Rob Gardner]
   latlng: 41.790743, -87.601077
   layout: bootcamp
   registration: restricted
@@ -4093,7 +4090,7 @@
   country: Brazil
   enddate: 2014-12-12
   etherpad: https://etherpad.mozilla.org/SWC-UFSC
-  helper: ['']
+  helper: []
   humandate: Dez 11-12, 2014
   humantime: 8:00 am - 5:30 pm
   instructor: [Diego Barneche, Raniere Silva]
@@ -4910,7 +4907,7 @@
   contact: balamurugan@uchicago.edu
   country: United-States
   enddate: 2015-03-06
-  helper: ['Chris Pipes, Elizabeth Prout']
+  helper: [Chris Pipes, Elizabeth Prout]
   humandate: Mar 03-06, 2015
   humantime: 8:30 am - 5:30 pm
   instructor: [Mats Rynge, Emelie Harstad, Bala Desinghu, David Champion, Suchandra
@@ -5148,3 +5145,212 @@
   url: http://xuf12.github.io/2015-04-02-umiami/
   user: xuf12
   venue: University of Miami
+- address: Theatrette 3, Alan Gilbert Building, 161 Barry Street, Carlton VIC 3053
+  contact: melbourne@combine.org.au
+  country: Australia
+  enddate: 2015-04-10
+  etherpad: https://etherpad.mozilla.org/SWC-Unimelb-Biosciences
+  helper: [Stuart Lee, Lukas Weber, Simon Gladman, Finley Roberts, Clare Sloggett]
+  humandate: Apr 8-10, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Andrew Lonsdale, Harriet Dashnow, Tim Rice, Thomas Coudrat, Pip Griffin,
+    Noel Faux, Alistair Walsh, Kian Ho]
+  language: en
+  latlng: -37.800265,144.959805
+  layout: workshop
+  root: .
+  slug: 2015-04-08-SWC-UniMelb-Biosciences
+  startdate: 2015-04-08
+  url: http://COMBINE-Australia.github.io/2015-04-08-SWC-UniMelb-Biosciences/
+  user: COMBINE-Australia
+  venue: University of Melbourne
+- address: WRF Data Science Studio, Physics/Astronomy Tower (6th Floor), University
+    of Washington, Seattle, WA
+  contact: bmarwick@uw.edu
+  country: United-States
+  enddate: 2015-04-10
+  etherpad: null
+  eventbrite: 15561681408
+  helper: [David Darwin, Ravi Gandham, Ana Malagon, Adam Richie-Halford, Sam White]
+  humandate: Apr 09-10, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Russell Alleen-Willems, Regina Carns, Sophie Clayton, Emilia Gan, Andrew
+      Gartland, Esther Le Grézause, Trevor King, Ben Marwick, Marina Oganyan, Jaclyn
+      Saunders, Peter Schmiedeskamp, Thomas Sibley, Rachael Tatman]
+  language: en
+  latlng: 47.653371,-122.3118098
+  layout: workshop
+  registration: open
+  root: .
+  slug: 2015-04-09-UW
+  startdate: 2015-04-09
+  url: http://efran.github.io/2015-04-09-UW/
+  user: efran
+  venue: University of Washington - Seattle
+- address: 19 T.W. Alexander Drive, Research Triangle Park, NC 27709-4006
+  contact: aron@ahmadia.net
+  country: United-States
+  enddate: 2015-03-15
+  etherpad: https://etherpad.mozilla.org/2015-04-13-samsi
+  humandate: Apr 13-15, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Aron Ahmadia, Matthew Farthing, Kelly Hondula, Chris Kees, David LeBauer,
+    Naupaka Zimmerman]
+  language: en
+  latlng: 35.922, -78.869
+  layout: workshop
+  root: .
+  slug: 2015-04-13-samsi
+  startdate: 2015-03-13
+  url: http://geocarpentry.github.io/2015-04-13-samsi/
+  user: geocarpentry
+  venue: Statistical and Applied Mathematical Sciences Institute
+- address: 3450 Mitchell Lane Boulder, Colorado 80301
+  contact: ddvento@ucar.edu
+  country: United-States
+  enddate: 2015-04-17
+  etherpad: https://etherpad.mozilla.org/2015-04-15-ncar
+  helper: [TBD]
+  humandate: April 15-17, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jonah Duckles, Chris Hamm]
+  language: en
+  latlng: 40.0372680,-105.2415180
+  layout: workshop
+  root: .
+  slug: 2015-04-15-ncar
+  startdate: 2015-04-15
+  url: http://ouinformatics.github.io/2015-04-15-ncar/
+  user: ouinformatics
+  venue: NCAR Foothills Lab - 1022 Large Auditorium
+- address: Imperial College London, ICT Training Room, 204 Central Library Sherfield
+    Building, Exhibition Road, South Kensington, London, SW7 2AZ
+  contact: support@archer.ac.uk
+  country: United-Kingdom
+  enddate: 2015-04-17
+  helper: [Iain Emsley]
+  humandate: Apr 16-17, 2015
+  instructor: [Emmanouil (Manos) Farsarakis, Mario Antonioletti, Mark Stillwell]
+  latlng: 51.4988,-0.174877
+  layout: workshop
+  lessons: [Git, Python, VM]
+  registration: open
+  root: .
+  slug: 2015-04-16-imperial
+  startdate: 2015-04-16
+  url: http://hpcarcher.github.io/2015-04-16-imperial/
+  user: hpcarcher
+  venue: Imperial College London
+- address: Charlottesville, Virginia
+  contact: lpa2a@virginia.edu
+  country: United-States
+  enddate: 2015-04-17
+  etherpad: https://etherpad.mozilla.org/2015-04-16-uvalib
+  eventbrite: null
+  helper: [Yun Tai, Eric Rochester]
+  humandate: Apr 16-17, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Pete Alonzi, Clay Ford, Sherry Lake]
+  language: en
+  latlng: 38.033289, -78.507724
+  layout: workshop
+  root: .
+  slug: 2015-04-16-uvalib
+  startdate: 2015-04-16
+  url: http://alonzi.github.io/2015-04-16-uvalib/
+  user: alonzi
+  venue: University of Virginia
+- address: 555 Clark B03, Evanston Campus
+  contact: edd@debian.org
+  country: United-States
+  enddate: 2015-04-18
+  etherpad: https://etherpad.mozilla.org/2015-04-17-nw
+  eventbrite: 15851126145
+  helper: [Andrei Jirnyi, Kejia Hu, Pradeep Sivakumar]
+  humandate: Apr 17-18, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [John Blischak, Dirk Eddelbuettel, Jackie Milhans]
+  language: en
+  latlng: 42.056459, -87.675267
+  layout: workshop
+  root: .
+  slug: 2015-04-17-nw
+  startdate: 2015-04-17
+  url: http://jdblischak.github.io/2015-04-17-nw/
+  user: jdblischak
+  venue: Northwestern University
+- address: 1007 SSMS
+  contact: mqwilber@gmail.com
+  country: United-States
+  enddate: 2015-04-18
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-04-17-ucsb
+  eventbrite: 16227272208
+  helper: [Max Castorani, Ana Elisa Garcia]
+  humandate: Apr 17-18, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Mark Wilber, Tom Bell, Umi Hoshijima, Tom Smith, Louise Stevenson]
+  language: en
+  latlng: 34.415274, -119.849467
+  layout: workshop
+  root: .
+  slug: 2015-04-17-ucsb
+  startdate: 2015-04-17
+  url: http://mqwilber.github.io/2015-04-17-ucsb/
+  user: mqwilber
+  venue: University of California, Santa Barbara
+- address: 800 S Cady Mall, Tempe, AZ 85281
+  contact: hilgert@email.arizona.edu
+  country: United-States
+  enddate: 2015-04-19
+  etherpad: https://etherpad.mozilla.org/nbtmp2fn8p
+  eventbrite: 16322303449
+  helper: [Tara Furstenau, David Winter, Ryan Middleton]
+  humandate: Apr 18-19, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Gabriel Devenyi, Rachel Schwartz]
+  language: en
+  latlng: 33.4215146,-111.9353292
+  layout: workshop
+  root: .
+  slug: 2015-04-18-ASU
+  startdate: 2015-04-18
+  url: http://rachelss.github.io/2015-04-18-ASU/
+  user: rachelss
+  venue: Arizona State University WGHL481, 4th floor
+- address: Library Building, 6th Floor Atrium, 702 Planetarium Pl., Arlington, TX
+  contact: dcard@uta.edu
+  country: United-States
+  enddate: 2015-04-19
+  etherpad: https://etherpad.mozilla.org/2015-04-18-UT-Arlington
+  eventbrite: 16099736746
+  helper: [Richard Adams, Heath Blackmon, Daren Card]
+  humandate: April 18-19, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Naupaka Zimmerman, Nichole Bennett, Rayna Harris, Kate Hertweck]
+  language: en
+  latlng: 32.729710, -97.112928
+  layout: workshop
+  root: .
+  slug: 2015-04-18-UT-Arlington
+  startdate: 2015-04-18
+  url: http://naupaka.github.io/2015-04-18-UT-Arlington/
+  user: naupaka
+  venue: University of Texas at Arlington
+- address: Peter Kiewit Institute (PKI) Room 158 / 1110 S. 67th St., Omaha, NE 68182
+  contact: eharstad@unl.edu
+  country: United-States
+  enddate: 2015-04-23
+  etherpad: https://etherpad.mozilla.org/2015-04-22-UNO
+  helper: [Derek Weitzel, Jingchao Zhang, Natasha Pavlovikj, Chris Cox, Mako Furukawa]
+  humandate: Apr 22-23, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Emelie Harstad, Adam Caprez]
+  language: en
+  latlng: 41.247088, -96.016867
+  layout: workshop
+  root: .
+  slug: 2015-04-22-UNO
+  startdate: 2015-04-22
+  url: http://eharstad.github.io/2015-04-22-UNO/
+  user: eharstad
+  venue: University of Nebraska - Omaha

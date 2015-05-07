@@ -8,7 +8,7 @@ nocomments: 1
 
 <div style="text-align: center; margin-bottom: 15px">
   {% for flag in site.flags.workshops %}
-    <img src="{{page.root}}/img/flags/32/{{flag}}.png" alt="{{flag|replace:'-',' '}}" />
+    <img src="{{page.root}}/img/flags/32/{{flag}}.png" title="{{flag | replace: '-',' '}}" alt="{{flag | replace: '-',' '}}" />
   {% endfor %}
 </div>
 
@@ -16,7 +16,7 @@ nocomments: 1
   {% for workshop in site.workshops reversed %}
     {% if workshop.startdate < site.today %}
       <tr>
-        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" title="{{workshop.country | replace: '-', ' '}}" alt="{{workshop.country | replace: '-', ' '}}" /></td>
         <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
         <td class="date">{{workshop.humandate}}</td>
       </tr>

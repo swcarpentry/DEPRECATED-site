@@ -149,12 +149,12 @@ categories_n :
 	@python bin/list-categories.py -n $(SRC_BLOG)
 
 ## instructors  : list instructors from cached workshop info.
-instructors :
-	@python bin/list-instructors.py
+instructors : _workshop_cache.yml
+	@python bin/list-instructors.py < _workshop_cache.yml
 
 ## urls         : list workshop URLs from cached workshop info.
-urls :
-	@python bin/list-urls.py
+urls : _workshop_cache.yml
+	@python bin/list-urls.py < _workshop_cache.yml
 
 ## missing      : which instructors don't have biographies?
 missing :
