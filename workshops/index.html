@@ -72,7 +72,7 @@ nocomments: 1
     {% for workshop in site.workshops %}
       {% if workshop.startdate >= site.today %}
         <tr>
-          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" title="{{workshop.country | replace: '-', ' '}}" alt="{{workshop.country | replace: '-', ' '}}" /></td>
           <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
           <td class="date">{{workshop.humandate}}</td>
         </tr>
