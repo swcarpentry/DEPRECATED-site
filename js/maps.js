@@ -5,57 +5,8 @@ var SWC = SWC || {};
 SWC.maps = (function() {
   var maps = {};
 
-  function MarkerPin(color) {
-      var pin = new google.maps.MarkerImage(
-        "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
-        new google.maps.Size(21, 34),
-        new google.maps.Point(0,0),
-        new google.maps.Point(10, 34)
-      );
-      return pin;
-  }
-
-  function MarkerPinCluster(url, sizeX, sizeY) {
-      var pin = new google.maps.MarkerImage(
-        url,
-        new google.maps.Size(sizeX,sizeY),
-        new google.maps.Point(0,0),
-        new google.maps.Point(10,34)
-      );
-      return pin;
-  }
-
-  function set_info_window(map, marker, info_window, content) {
-      google.maps.event.addListener(marker, 'click', function () {
-        info_window.setContent(content);
-        info_window.open(map, marker);
-      });
-  }
-
-  function enableScrollwheel(map) {
-      if(map) map.setOptions({ scrollwheel: true });
-  }
-
-  function disableScrollwheel(map) {
-      if(map) map.setOptions({ scrollwheel: false });
-  }
-
-  function toggle_marker_visibility(marker) {
-      if (marker.getVisible()) {
-        marker.setVisible(false);
-      } else {
-        marker.setVisible(true);
-      }
-  }
-
-  function toggle_markers_mc_visibility(markers, mc) {
-      markers.forEach(toggle_marker_visibility);
-      if (markers[0].visible) {
-        mc.setMap(markers[0].getMap());
-      }
-      else {
-        mc.setMap(null);
-      }
+  function toggleScrollwheel(map, enabled) {
+      if(map) map.setOptions({ scrollwheel: enabled });
   }
 
   function add_cluster_event_listeners(clusterer, map, info_window) {
@@ -76,7 +27,7 @@ SWC.maps = (function() {
         info_window.open(map);
         // when the info window has a scroll bar, we want the mouse scroll wheel
         //   to scroll in the info window, NOT zoom the map.  Disable map zoom.
-        disableScrollwheel(map);
+        toggleScrollwheel(map, false);
       });
       // zooming changes our clusters completely.  The info window is no longer
       //  accurate.  Close it.  Make people pick a new cluster or marker.
@@ -85,7 +36,7 @@ SWC.maps = (function() {
       });
       // when the info window is closed, restore mousewheel zoom on the map
       google.maps.event.addListener(info_window, 'closeclick', function(){
-      enableScrollwheel(map);
+      toggleScrollwheel(map, true);
       });
   };
 
@@ -96,26 +47,30 @@ SWC.maps = (function() {
         center: new google.maps.LatLng(25,8),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       },
-      info_window   = new google.maps.InfoWindow({}),
-      map           = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      var markers = [];
       // Go over all the upcoming camps and create pins in the map
       {% for workshop in site.workshops %}
         {% if workshop.latlng and workshop.startdate >= site.today %}
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng({{workshop.latlng}}),
             map: map,
-            title: "{{workshop.venue}}, {{workshop.humandate}}",
-            //icon: openPin,
-            visible: true,
+              title: "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
+                  "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>",
+            visible: false  // marker not shown directly, just clustered
           });
-          var info_string = "<div class=\"info-window\">" +
-          "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
-          "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>" +
-          "</div>";
-          set_info_window(map, marker, info_window, info_string);
+          markers.push(marker)
         {% endif %}
       {% endfor %}
+      var mcOptions = {
+        zoomOnClick: false,
+        maxZoom: null,
+        gridSize: 25,
+        minimumClusterSize: 1
+      }
+      var mc = new MarkerClusterer(map, markers, mcOptions);
+      info_window = new google.maps.InfoWindow();
+      add_cluster_event_listeners(mc, map, info_window);
   }
 
   maps.previous = function() {
@@ -126,7 +81,6 @@ SWC.maps = (function() {
       },
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
       var markers = [];
-      var info_window = new google.maps.InfoWindow();
       // Go over all the previous camps and create pins in the map
       {% for workshop in site.workshops reversed %}
         {% if workshop.latlng and workshop.startdate < site.today %}
@@ -135,8 +89,7 @@ SWC.maps = (function() {
             map: map,
             title: "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
             "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>",
-            //icon: openPin,
-            visible: true,
+            visible: false  // marker not shown directly, just clustered
           });
           markers.push(marker); // For clustering
         {% endif %}
@@ -149,6 +102,7 @@ SWC.maps = (function() {
         minimumClusterSize: 1
       }
       var mc = new MarkerClusterer(map, markers, mcOptions);
+      info_window = new google.maps.InfoWindow();
       add_cluster_event_listeners(mc, map, info_window);
   }
 
