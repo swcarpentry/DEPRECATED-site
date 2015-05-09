@@ -367,6 +367,36 @@ instructor:
 - {name: Naupaka Zimmerman, user: zimmerman.naupaka}
 - {name: Tiziano Zito, user: zito.t}
 - {name: Andrea Zonca, user: zonca.andrea}
+member:
+- {name: Joshua Adelman, user: adelman.joshua}
+- {name: Jorge Aranda, user: aranda.j}
+- {name: Piotr Banaszkiewicz, user: banaszkiewicz.piotr}
+- {name: Andrew Boughton, user: boughton.andrew}
+- {name: Amy Brown, user: brown.amy}
+- {name: Cliburn Chan, user: chan.cliburn}
+- {name: Neil Chue Hong, user: chue-hong.n}
+- {name: Warren Code, user: code.w}
+- {name: Arliss Collins, user: collins.arliss}
+- {name: Dirk Eddelbuettel, user: eddelbuettel.dirk}
+- {name: Remi Emonet, user: emonet.remi}
+- {name: Carole Goble, user: goble.c}
+- {name: Luiz Irber, user: irber.luiz}
+- {name: W. Trevor King, user: king.wt}
+- {name: Isabell Kiral-Kornek, user: kiral-kornek.isabell}
+- {name: Kwangchun Lee, user: lee.kwangchun}
+- {name: Cindee Madison, user: madison.cindee}
+- {name: Giacomo Peru, user: peru.giacomo}
+- {name: Marian Petre, user: petre.m}
+- {name: Jon Pipitone, user: pipitone.j}
+- {name: Mark Plumbley, user: plumbley.m}
+- {name: David Rio, user: rio.david}
+- {name: Ashwin Trikuta Srinath, user: srinath.ashwin}
+- {name: Adam Stone, user: stone.a}
+- {name: Kaitlin Thaney, user: thaney.kaitlin}
+- {name: Ramnath Vaidyanathan, user: vaidyanathan.ramnath}
+- {name: Jason Williams, user: williams.jason}
+- {name: Carol Willing, user: willing.carol}
+- {name: Paul Wilson, user: wilson.p}
 organizer:
 - {name: Jorge Aranda, user: aranda.j}
 - {name: Clair Barrass, user: barrass.clair}
