@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-03-09", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f497bf7f451ecba2196a43285aa4be6a75fd70b71da4b4fcfc8ad5dc6d8ed728", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f497bf7f451ecba2196a43285aa4be6a75fd70b71da4b4fcfc8ad5dc6d8ed728", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/masoud-ansari.sina.json"
+ }
+}

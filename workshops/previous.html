@@ -7,37 +7,16 @@ nocomments: 1
 <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto; margin-bottom: 15px"></div>
 
 <div style="text-align: center; margin-bottom: 15px">
-  <img src="{{page.root}}/img/flags/32/Australia.png" alt="Australia" />
-  <img src="{{page.root}}/img/flags/32/Brazil.png" alt="Brazil" />
-  <img src="{{page.root}}/img/flags/32/Canada.png" alt="Canada" />
-  <img src="{{page.root}}/img/flags/32/China.png" alt="China" />
-  <img src="{{page.root}}/img/flags/32/Cyprus.png" alt="Cyprus" />
-  <img src="{{page.root}}/img/flags/32/Denmark.png" alt="Denmark" />
-  <img src="{{page.root}}/img/flags/32/France.png" alt="France" />
-  <img src="{{page.root}}/img/flags/32/Germany.png" alt="Germany" />
-  <img src="{{page.root}}/img/flags/32/Ghana.png" alt="Italy" />
-  <img src="{{page.root}}/img/flags/32/Italy.png" alt="Italy" />
-  <img src="{{page.root}}/img/flags/32/Jordan.png" alt="Jordan" />
-  <img src="{{page.root}}/img/flags/32/Lebanon.png" alt="Lebanon" />
-  <img src="{{page.root}}/img/flags/32/Netherlands.png" alt="Netherlands" />
-  <img src="{{page.root}}/img/flags/32/New-Zealand.png" alt="New Zealand" />
-  <img src="{{page.root}}/img/flags/32/Norway.png" alt="Norway" />
-  <img src="{{page.root}}/img/flags/32/Poland.png" alt="Poland" />
-  <img src="{{page.root}}/img/flags/32/Saudi-Arabia.png" alt="Saudi Arabia" />
-  <img src="{{page.root}}/img/flags/32/South-Africa.png" alt="South Africa" />
-  <img src="{{page.root}}/img/flags/32/South-Korea.png" alt="South Korea" />
-  <img src="{{page.root}}/img/flags/32/Spain.png" alt="Spain" />
-  <img src="{{page.root}}/img/flags/32/Sweden.png" alt="Sweden" />
-  <img src="{{page.root}}/img/flags/32/Switzerland.png" alt="Switzerland" />
-  <img src="{{page.root}}/img/flags/32/United-Kingdom.png" alt="United Kingdom" />
-  <img src="{{page.root}}/img/flags/32/United-States.png" alt="United States" />
+  {% for flag in site.flags.workshops %}
+    <img src="{{page.root}}/img/flags/32/{{flag}}.png" title="{{flag | replace: '-',' '}}" alt="{{flag | replace: '-',' '}}" />
+  {% endfor %}
 </div>
 
 <table class="table table-striped workshops">
   {% for workshop in site.workshops reversed %}
     {% if workshop.startdate < site.today %}
       <tr>
-        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+        <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" title="{{workshop.country | replace: '-', ' '}}" alt="{{workshop.country | replace: '-', ' '}}" /></td>
         <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
         <td class="date">{{workshop.humandate}}</td>
       </tr>

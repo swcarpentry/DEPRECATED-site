@@ -42,10 +42,12 @@ instructor:
 - {name: Trevor Bekolay, user: bekolay.trevor}
 - {name: Nichole Bennett, user: bennett.n}
 - {name: Miguel Bernabeu, user: bernabeu.miguel}
+- {name: Mik Black, user: black.mik}
 - {name: Lukas Blakk, user: blakk.lukas}
 - {name: John Blischak, user: blischak.j}
 - {name: Carl Boettiger, user: boettiger.carl}
 - {name: Jessica Bonnie, user: bonnie.jessica}
+- {name: James Boocock, user: boocock.james}
 - {name: Darren Boss, user: boss.darren}
 - {name: Azalee Bostroem, user: bostroem.a}
 - {name: Erik Bray, user: bray.e}
@@ -60,6 +62,7 @@ instructor:
 - {name: Timothy Cerino, user: cerino.t}
 - {name: Scott Chamberlain, user: chamberlain.s}
 - {name: Cliburn Chan, user: chan.cliburn}
+- {name: Amanda Charbonneau, user: charbonneau.amanda}
 - {name: Daniel Chen, user: chen.daniel}
 - {name: Chelsea Chisholm, user: chisholm.chelsea}
 - {name: Shreyas Cholia, user: cholia.s}
@@ -88,6 +91,7 @@ instructor:
 - {name: Gabriel A. Devenyi, user: devenyi.gabriel}
 - {name: Ross Dickson, user: dickson.r}
 - {name: Matthew Dimmock, user: dimmock.matt}
+- {name: Kimberly Doyle, user: doyle.kimberly}
 - {name: Jonah Duckles, user: duckles.jonah}
 - {name: Martin Durant, user: durant.martin}
 - {name: Jonathan Dursi, user: dursi.j}
@@ -99,6 +103,7 @@ instructor:
 - {name: Daniel Falster, user: falster.daniel}
 - {name: Emmanouil Farsarakis, user: farsarakis.emmanouil}
 - {name: Xu Fei, user: fei.xu}
+- {name: Angus Ferguson, user: ferguson.angus}
 - {name: Luis Figueira, user: figueira.l}
 - {name: Jordan Fish, user: fish.jordan}
 - {name: Rich FitzJohn, user: fitzjohn.rich}
@@ -106,6 +111,7 @@ instructor:
 - {name: John Fonner, user: fonner.john}
 - {name: Philip Fowler, user: fowler.philip}
 - {name: Jonathan Frederic, user: frederic.jonathan}
+- {name: Robert Freeman, user: freeman.robert}
 - {name: Chris Friedline, user: friedline.chris}
 - {name: Zhuo Fu, user: fu.zhuo}
 - {name: Emilia Gan, user: gan.emilia}
@@ -114,6 +120,7 @@ instructor:
 - {name: Aaron Garoutte, user: garoutte.aaron}
 - {name: Chris Gates, user: gates.chris}
 - {name: Laurent Gatto, user: gatto.laurent}
+- {name: Noushin Ghaffari, user: ghaffari.noushin}
 - {name: Molly Gibson, user: gibson.molly}
 - {name: Ivan Gonzalez, user: gonzalez.ivan}
 - {name: Gerard Gorman, user: gorman.gerard}
@@ -123,18 +130,23 @@ instructor:
 - {name: Jonathan Gross, user: gross.jonathan}
 - {name: Thomas Guignard, user: guignard.thomas}
 - {name: Jiarong Guo, user: guo.jiarong}
+- {name: Prashant Gupta, user: gupta.prashant}
 - {name: Julia Gustavsen, user: gustavsen.j}
 - {name: Tommy Guy, user: guy.t}
 - {name: Jonathan Guyer, user: guyer.jonathan}
 - {name: Steve Haddock, user: haddock.s}
 - {name: Denis Haine, user: haine.denis}
+- {name: Sam Hames, user: hames.sam}
 - {name: Christopher Hamm, user: hamm.christopher}
 - {name: Jessica Hamrick, user: hamrick.jessica}
+- {name: Nicholas Hannah, user: hannah.nicholas}
 - {name: Michael Hansen, user: hansen.m}
 - {name: Rayna Harris, user: harris.rayna}
 - {name: Anthony Harrison, user: harrison.anthony}
+- {name: Emelie Harstad, user: harstad.emelie}
 - {name: Ted Hart, user: hart.t}
 - {name: Ian Hawke, user: hawke.ian}
+- {name: Fabian Held, user: held.fabian}
 - {name: Ian Henry, user: henry.ian}
 - {name: Joshua Herr, user: herr.joshua}
 - {name: Kate Hertweck, user: hertweck.kate}
@@ -143,10 +155,13 @@ instructor:
 - {name: Cody Hinchliff, user: hinchliff.cody}
 - {name: Konrad Hinsen, user: hinsen.k}
 - {name: Daniel Hocking, user: hocking.daniel}
+- {name: Amy Hodge, user: hodge.amy}
 - {name: Chris Holdgraf, user: holdgraf.c}
 - {name: Jeff Hollister, user: hollister.jeff}
+- {name: Richard Hosking, user: hosking.richard}
 - {name: Daisie Huang, user: huang.daisie}
 - {name: Katy Huff, user: huff.k}
+- {name: Fatma Imamoglu, user: imamoglu.fatma}
 - {name: Devasena Inupakutika, user: inupakutika.devasena}
 - {name: Luiz Irber, user: irber.luiz}
 - {name: Damien Irving, user: irving.d}
@@ -154,10 +169,12 @@ instructor:
 - {name: Mike Jackson, user: jackson.m}
 - {name: Christian Jacobs, user: jacobs.christian}
 - {name: Zbigniew Jedrzejewski-Szmek, user: jedrzejewski-szmek.zbigniew}
+- {name: Ben Johnson, user: johnson.ben}
 - {name: David Jones, user: jones.d}
 - {name: David Jones, user: jones.dm}
 - {name: Martin Jones, user: jones.martin}
 - {name: Nick Jones, user: jones.nick}
+- {name: Tom Kelly, user: kelly.tom}
 - {name: Jessica Kerr, user: kerr.j}
 - {name: Jan Kim, user: kim.jan}
 - {name: W. Trevor King, user: king.wt}
@@ -193,12 +210,16 @@ instructor:
 - {name: Gary Macindoe, user: macindoe.gary}
 - {name: Dan MacLean, user: maclean.dan}
 - {name: Joshua Madin, user: madin.j}
+- {name: Tamer Mansour, user: mansour.tamer}
 - {name: Paula Martinez, user: martinez.paula}
+- {name: Sina Masoud-Ansari, user: masoud-ansari.sina}
+- {name: Daniel McDonald, user: mcdonald.daniel}
 - {name: Steve McGough, user: mcgough.s}
 - {name: Catherine McGoveran, user: mcgoveran.catherine}
 - {name: Sheldon McKay, user: mckay.sheldon}
 - {name: Jessica McKellar, user: mckellar.j}
 - {name: Maria McKinley, user: mckinley.maria}
+- {name: Cameron McLean, user: mclean.cameron}
 - {name: Emily Jane McTavish, user: mctavish.ej}
 - {name: Jeremy Metz, user: metz.jeremy}
 - {name: Lauren Michael, user: michael.lauren}
@@ -226,6 +247,7 @@ instructor:
 - {name: Jeramia Ory, user: ory.j}
 - {name: Geoff Oxberry, user: oxberry.g}
 - {name: Kirill Palamartchouk, user: palamartchouk.kirill}
+- {name: Martin Paulo, user: paulo.martin}
 - {name: Aleksandra Pawlik, user: pawlik.a}
 - {name: John Pearson, user: pearson.john}
 - {name: Jason Pell, user: pell.j}
@@ -241,25 +263,32 @@ instructor:
 - {name: Sean Pue, user: pue.s}
 - {name: Karthik Ram, user: ram.k}
 - {name: Saravanan Ramalingam, user: ramalingam.saravanan}
+- {name: Ana Karina Ramos Musalem, user: ramos-musalem.ana-karina}
 - {name: Tom Remenyi, user: remenyi.tom}
+- {name: Adelaide Rhodes, user: rhodes.adelaide}
+- {name: Timothy Rice, user: rice.timothy}
 - {name: Janet Riley, user: riley.janet}
 - {name: David Rio, user: rio.david}
 - {name: Scott Ritchie, user: ritchie.scott}
 - {name: James Robinson, user: robinson.james}
 - {name: Natalie Robinson, user: robinson.natalie}
 - {name: Rosario Robinson, user: robinson.rosario}
+- {name: Andrew Rohl, user: rohl.andrew}
 - {name: Ariel Rokem, user: rokem.a}
 - {name: Noam Ross, user: ross.noam}
 - {name: Billy Rowell, user: rowell.bill}
 - {name: John Rugis, user: rugis.john}
 - {name: Dale Russell, user: russell.dale}
+- {name: Ramesh Sampath, user: sampath.ramesh}
 - {name: Maneesha Sane, user: sane.maneesha}
 - {name: Martin Schilling, user: schilling.martin}
 - {name: Jorden Schossau, user: schossau.j}
+- {name: Rachel Schwartz, user: schwartz.rachel}
 - {name: Anthony Scopatz, user: scopatz.a}
 - {name: Michael Selik, user: selik.m}
 - {name: Neem Serra, user: serra.neem}
 - {name: Brent Shambaugh, user: shambaugh.brent}
+- {name: Genevieve Shattow, user: shattow.genevieve}
 - {name: Jeffrey Shelton, user: shelton.j}
 - {name: Jennifer Shelton, user: shelton.jennifer}
 - {name: Leigh Sheneman, user: sheneman.leigh}
@@ -269,6 +298,7 @@ instructor:
 - {name: Jack Simpson, user: simpson.jack}
 - {name: Rachel Slaybaugh, user: slaybaugh.rachel}
 - {name: Clare Sloggett, user: sloggett.clare}
+- {name: Luc Small, user: small.luc}
 - {name: Daniel Smith, user: smith.daniel}
 - {name: Joshua Smith, user: smith.j}
 - {name: Mike Smorul, user: smorul.mike}
@@ -288,6 +318,7 @@ instructor:
 - {name: Bradley Taber-Thomas, user: taber-thomas.bradley}
 - {name: Scott Talafuse, user: talafuse.scott}
 - {name: Leszek Tarkowski, user: tarkowski.leszek}
+- {name: Becca Tarvin, user: tarvin.becca}
 - {name: Rachael Tatman, user: tatman.rachael}
 - {name: Tracy Teal, user: teal.t}
 - {name: Matt Terry, user: terry.m}
@@ -298,6 +329,7 @@ instructor:
 - {name: Will Trimble, user: trimble.will}
 - {name: Daniel Turek, user: turek.daniel}
 - {name: Stephen Turner, user: turner.s}
+- {name: Fiona Tweedie, user: tweedie.fiona}
 - {name: Daniela Ushizima, user: ushizima.daniela}
 - {name: Olav Vahtras, user: vahtras.olav}
 - {name: Roman Valls Guimera, user: valls-guimera.roman}
@@ -323,15 +355,48 @@ instructor:
 - {name: Lynne Williams, user: williams.l}
 - {name: Ryan Williams, user: williams.ryan}
 - {name: Greg Wilson, user: wilson.g}
+- {name: Donald Winston, user: winston.donald}
+- {name: Jared Winton, user: winton.jared}
 - {name: Kara Woo, user: woo.kara}
 - {name: Christopher Woods, user: woods.c}
 - {name: April Wright, user: wright.april}
 - {name: Thomas Wright, user: wright.thomas}
 - {name: Fan Yang, user: yang.fan}
+- {name: Constantine Zakkaroff, user: zakkaroff.constantine}
 - {name: Qingpeng Zhang, user: zhang.qp}
 - {name: Naupaka Zimmerman, user: zimmerman.naupaka}
 - {name: Tiziano Zito, user: zito.t}
 - {name: Andrea Zonca, user: zonca.andrea}
+member:
+- {name: Joshua Adelman, user: adelman.joshua}
+- {name: Jorge Aranda, user: aranda.j}
+- {name: Piotr Banaszkiewicz, user: banaszkiewicz.piotr}
+- {name: Andrew Boughton, user: boughton.andrew}
+- {name: Amy Brown, user: brown.amy}
+- {name: Cliburn Chan, user: chan.cliburn}
+- {name: Neil Chue Hong, user: chue-hong.n}
+- {name: Warren Code, user: code.w}
+- {name: Arliss Collins, user: collins.arliss}
+- {name: Dirk Eddelbuettel, user: eddelbuettel.dirk}
+- {name: Remi Emonet, user: emonet.remi}
+- {name: Carole Goble, user: goble.c}
+- {name: Luiz Irber, user: irber.luiz}
+- {name: W. Trevor King, user: king.wt}
+- {name: Isabell Kiral-Kornek, user: kiral-kornek.isabell}
+- {name: Kwangchun Lee, user: lee.kwangchun}
+- {name: Cindee Madison, user: madison.cindee}
+- {name: Giacomo Peru, user: peru.giacomo}
+- {name: Marian Petre, user: petre.m}
+- {name: Jon Pipitone, user: pipitone.j}
+- {name: Mark Plumbley, user: plumbley.m}
+- {name: David Rio, user: rio.david}
+- {name: Ashwin Trikuta Srinath, user: srinath.ashwin}
+- {name: Adam Stone, user: stone.a}
+- {name: Kaitlin Thaney, user: thaney.kaitlin}
+- {name: Ramnath Vaidyanathan, user: vaidyanathan.ramnath}
+- {name: Jason Williams, user: williams.jason}
+- {name: Carol Willing, user: willing.carol}
+- {name: Paul Wilson, user: wilson.p}
 organizer:
 - {name: Jorge Aranda, user: aranda.j}
 - {name: Clair Barrass, user: barrass.clair}

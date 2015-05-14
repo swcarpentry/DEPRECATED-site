@@ -19,6 +19,7 @@ from util import CONFIG_YML, \
                  AIRPORTS_YML, \
                  BADGES_YML, \
                  WORKSHOPS_YML, \
+                 FLAGS_YML, \
                  WORKSHOP_CACHE, \
                  DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \
@@ -64,6 +65,7 @@ def main():
     config = load_info(options.config_dir, STANDARD_YML)
     config['badges'] = load_info(options.config_dir, BADGES_YML)
     config['airports'] = load_info(options.config_dir, AIRPORTS_YML)
+    config['flags'] = load_info(options.config_dir, FLAGS_YML)
     config.update({
         'month_names'     : MONTHS,
         'months'          : sorted(MONTHS.keys()),

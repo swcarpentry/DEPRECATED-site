@@ -4,50 +4,66 @@ root: ..
 title: Workshops
 nocomments: 1
 ---
-<div id="about">
-  <p>
-    A workshop is an on-site workshop,
-    typically two days long,
-    that covers the core skills needed to be productive in a small research team:
-  </p>
-  <ul>
-    <li>the Unix shell (and how to automate repetitive tasks);</li>
-    <li>Python or R (and how to grow a program in a modular, testable way);</li>
-    <li>Git and GitHub (and how to track and share work efficiently); and</li>
-    <li>SQL (and the difference between structured and unstructured data).</li>
-  </ul>
-  <p>
-    Short tutorials alternate with hands-on practical exercises;
-    learners work on their own laptops using either native software or a virtual machine,
-    so that they have a working environment when the workshop is done.
-  </p>
-  <p>
-    <em>
-      All workshop participants are required to abide by our
-      <a href="{{page.root}}/conduct.html">code of conduct</a>
-      to ensure that all attendees to have an enjoyable and fulfilling experience.
-    </em>
-  </p>
-  <ul>
-    <li>
-      Want to know more?
-      See our <a href="{{page.root}}/faq.html">FAQ</a>.
-    </li>
-    <li>
-      Want to run one?
-      See our <a href="{{page.root}}/workshops/operations.html">operations guide</a>
-      or <a href="{{page.root}}/workshops/checklists/index.html">checklists</a>.
-    </li>
-    <li>
-      Want us to teach one where you are?
-      Please <a href="{{page.root}}/workshops/request.html">fill in this form</a>
-      or <a href="mailto:{{site.contact}}">mail us</a>.
-    </li>
-  </ul>
-
-  <div align="center">
-    <p><em><a href="./previous.html">See where we've been!</a></em></p>
+<div id="about" class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>
+	A Software Carpentry workshop is hands-on two-day event
+	that covers the core skills needed to be productive in a small research team.
+	Short tutorials alternate with practical exercises,
+	and all instruction is done via live coding.
+	<em>
+	  All workshop participants are required to abide by our
+	  <a href="{{page.root}}/conduct.html">code of conduct</a>
+	  to ensure that all attendees to have an enjoyable and fulfilling experience.
+	</em>
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <p id="assessment">
+	To help us improve our instruction,
+	we have prepared
+	a <a href="{{page.root}}/workshops/assess/pre-learner.html">pre-assessment questionnaire for learners</a>
+	that can be used to ensure instruction is at the right level,
+	a <a href="{{page.root}}/workshops/assess/post-learner.html">post-assessment questionnaire for learners</a>
+	to help us determine how well the workshop went,
+	and
+	a <a href="{{page.root}}/workshops/assess/post-instructor.html">post-assessment questionnaire for instructors</a>
+	for calibration.
+	Please contact us if you are organizing a workshop
+	for help delivering and evaluating
+	<a href="{{page.root}}/workshops/assess/index.html">these questionnaires</a>.
+      </p>
+    </div>
   </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" align="center">
+      <h4>Want to Know More?</h4>
+      <p>
+	See our <a href="{{page.root}}/faq.html">FAQ</a>.
+      </p>
+    </div>
+    <div class="col-sm-4" align="center">
+      <h4>Want to Run a Workshop?</h4>
+      <p>
+	See our <a href="{{page.root}}/workshops/operations.html">operations guide</a>
+	and <a href="{{page.root}}/workshops/checklists/index.html">checklists</a>.
+      </p>
+    </div>
+    <div class="col-sm-4" align="center">
+      <h4>Want Us to Teach Where You Are?</h4>
+      <p>
+	Please <a href="{{page.root}}/workshops/request.html">fill in this form</a>
+	or <a href="mailto:{{site.contact}}">mail us</a>.
+      </p>
+    </div>
+  </div>
+</div>
+<div align="center">
+  <h4><a href="./previous.html">See where we've been!</a></h4>
 </div>
 
 <div id="future">
@@ -56,7 +72,7 @@ nocomments: 1
     {% for workshop in site.workshops %}
       {% if workshop.startdate >= site.today %}
         <tr>
-          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" /></td>
+          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" title="{{workshop.country | replace: '-', ' '}}" alt="{{workshop.country | replace: '-', ' '}}" /></td>
           <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
           <td class="date">{{workshop.humandate}}</td>
         </tr>
@@ -66,33 +82,10 @@ nocomments: 1
 
   <div id="map_canvas" style="width: 98%; height: 500px; margin-left:auto; margin-right: auto; margin-bottom: 15px"></div>
 
-  <div id="calendar">
-    <iframe src="https://www.google.com/calendar/embed?title=Boot%20Camps&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=efjc2eea4qegtctcrg6kc0nrba9i0rbg%40import.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York"
-            style=" border-width:0 "
-            width="98%"
-            height="500"
-            frameborder="0"
-            scrolling="no"></iframe>
+  <div id="calendar" align="center">
+    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showCalendars=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=h7t394o5uodii4a18vr8vh6mv0ga4cdq%40import.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="400" frameborder="0" scrolling="no"></iframe>
     <p style="text-align: right; margin-top: 5px;margin-bottom: 5px;">
       <a class="label swc-blue-bg" style="margin-right: 10px" href="http://software-carpentry.org/workshops.ics">Calendar Feed</a>
     </p>
   </div>
-</div>
-
-<div id="assessment">
-  <h2>Assessment</h2>
-  <p>
-    To help us improve our instruction,
-    we have prepared
-    a <a href="{{page.root}}/workshops/assess/pre-learner.html">pre-assessment questionnaire for learners</a>
-    that can be used to ensure instruction is at the right level,
-    a <a href="{{page.root}}/workshops/assess/post-learner.html">post-assessment questionnaire for learners</a>
-    to help us determine how well the workshop went,
-    and
-    a <a href="{{page.root}}/workshops/assess/post-instructor.html">post-assessment questionnaire for instructors</a>
-    for calibration.
-    Please contact us if you are organizing a workshop
-    for help delivering and evaluating
-    <a href="{{page.root}}/workshops/assess/index.html">these questionnaires</a>.
-  </p>
 </div>

@@ -8,7 +8,7 @@ def main():
     workshops = yaml.load(sys.stdin)
     for b in workshops:
         for i in b['instructor']:
-            print "%s,'%s'" % (b['slug'], i)
+            print(b['slug'], i)
 
 if __name__ == '__main__':
     main()

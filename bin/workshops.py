@@ -21,7 +21,7 @@ GITHUB_URL_RE = re.compile(r'^https?://github\.com/([^/]+)/([^/]+)')
 
 REQUIRED_KEYS = set('country humandate startdate url venue'.split())
 
-LATLNG_RE = re.compile(r'\s*-?\d+(\.\d*)?,\s*-?\d+(\.\d*)?\s*')
+LATLNG_RE = re.compile(r'\s*[+-]?\d+(\.\d*)?,\s*[+-]?\d+(\.\d*)?\s*')
 
 ARCHIVE_WINDOW = 3
 
@@ -95,11 +95,11 @@ def process(all_urls, verbose):
         info['url'] = GITHUB_IO_TEMPLATE.format(info['user'], info['slug'])
         if check_info(url, info):
             if verbose:
-                print '+', url
+                print('+ {0}'.format(url))
             results.append(info)
         else:
             if verbose:
-                print '!', url
+                print('!'.format(url))
             faulty.append(url)
     return results, faulty
 
