@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-14", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$ca32f4fbf5381cefd569e6e91bbaefe8300dfc7f3667d9aa21f76c24facbe393", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$ca32f4fbf5381cefd569e6e91bbaefe8300dfc7f3667d9aa21f76c24facbe393", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/cornwell.will.json"
+ }
+}

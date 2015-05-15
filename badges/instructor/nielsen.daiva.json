@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-14", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$21cd68af99195cbdcb8466a2012e1dfb19d1a3b435b2e174439cfc77c1b2a5bc", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$21cd68af99195cbdcb8466a2012e1dfb19d1a3b435b2e174439cfc77c1b2a5bc", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/nielsen.daiva.json"
+ }
+}

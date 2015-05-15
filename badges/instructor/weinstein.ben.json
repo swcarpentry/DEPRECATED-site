@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-14", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$babbb41ff16ba29d865cb9ca4ae08e33ad8113e93a4eb4d98c8d618c5c8aed86", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$babbb41ff16ba29d865cb9ca4ae08e33ad8113e93a4eb4d98c8d618c5c8aed86", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/weinstein.ben.json"
+ }
+}
