@@ -14,10 +14,6 @@ END_URL = '.json.gz'
 
 timeout_threshold = 5
 
-# Select a start and end dates to collect your repository events are collected
-START_DATE = '2015-02-07-23' #format yyyy-mm-dd-hh
-END_DATE = '2015-02-11-00'   #format yyyy-mm-dd-hh
-
 OUTPUT_EVENT_FILE = '/tmp/swcarpenter.json'
 OUTPUT_STATS_FILE = 'stats.yml'
 OUTPUT_HTML_FILE = 'stats.html'
