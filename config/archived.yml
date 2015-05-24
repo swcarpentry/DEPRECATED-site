@@ -5354,3 +5354,212 @@
   url: http://eharstad.github.io/2015-04-22-UNO/
   user: eharstad
   venue: University of Nebraska - Omaha
+- address: Quality Inn Paradise Creek, SE 1400 Bishop Blvd rooms PC2/PC3, Pullman,
+    WA 99163
+  contact: null
+  country: United-States
+  enddate: 2015-04-28
+  etherpad: https://etherpad.mozilla.org/2015-04-27-wsu
+  eventbrite: 15876801942
+  helper: [Matt Pennell, Ben Weinstein, Daniel Caetano, Matt Pruett]
+  humandate: Apr 27-28, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Karl Broman, Kara Woo]
+  language: en
+  latlng: 46.720855, -117.164118
+  layout: workshop
+  root: .
+  slug: 2015-04-27-wsu
+  startdate: 2015-04-27
+  url: http://karawoo.github.io/2015-04-27-wsu/
+  user: karawoo
+  venue: Washington State University
+- address: 경기도 성남시 분당구 대왕판교로 645번길 12 판교공공지원센터 7층
+  contact: i@xwmooc.net
+  country: South-Korea
+  enddate: 2015-04-30
+  etherpad: https://etherpad.mozilla.org/2015-04-29-pangyo
+  eventbrite: 16512562519
+  helper: [서덕래]
+  humandate: Apr 29-30, 2015
+  humantime: 9:30 am - 5:30 pm
+  instructor: [이광춘]
+  language: kr
+  latlng: 37.399494,127.10379920000003
+  layout: workshop
+  root: .
+  slug: 2015-04-29-pangyo
+  startdate: 2015-04-29
+  url: http://statkclee.github.io/2015-04-29-pangyo/
+  user: statkclee
+  venue: 경기콘텐츠코리아랩 (Content Korea Lab Gyeonggi)
+- address: 8888 University Drive, Burnaby, BC, V5A 1S6
+  contact: tiffany.timbers@gmail.com
+  country: Canada
+  enddate: 2015-05-01
+  etherpad: https://etherpad.mozilla.org/2015-04-30-SFU
+  eventbrite: 16238071509
+  helper: [Remi Daigle, Bruno Grande, Catrina Loucks, Karina Musalem, Kwangjin Park,
+    Nancy Soontiens]
+  humandate: Apr 30-May 1, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Daisie Huang, Doug Latornell, Andrew MacDonald, Bill Mills, Evan Morien,
+    James Robinson, Tiffany Timbers, Thea Van Rossum]
+  language: en
+  latlng: 49.280019, -122.922205
+  layout: workshop
+  root: .
+  slug: 2015-04-30-SFU
+  startdate: 2015-04-30
+  url: http://ttimbers.github.io/2015-04-30-SFU/
+  user: ttimbers
+  venue: Simon Fraser University
+- address: Greenwood Theatre and Richard Newton Rooms, Electrical and Electronic Engineering
+    (Building 193)
+  contact: isa.kiral@gmail.com
+  country: Australia
+  enddate: 2015-05-08
+  etherpad: http://etherpad.mozilla.org/2015-05-04-matlab
+  eventbrite: 16293048948
+  helper: [Aliza Wajih, Anita Ponsaing, Amy Parker Watson, Philippa Karoly, Amy McKernan]
+  humandate: May 04-08, 2015
+  humantime: 1:00 pm - 5:00 pm
+  instructor: [Isabell Kiral-Kornek, Kerry Halupka]
+  language: en
+  latlng: -37.799243, 144.964422
+  layout: workshop
+  root: .
+  slug: 2015-05-04-matlab
+  startdate: 2015-05-04
+  url: http://resbaz.github.io/2015-05-04-matlab/
+  user: resbaz
+  venue: University of Melbourne
+- address: Rooms 50B-4205, 70-191, and 54-130B, LBL
+  contact: gvwilson@software-carpentry.org
+  country: United-States
+  enddate: 2015-05-07
+  etherpad: https://etherpad.mozilla.org/swc-lbl-2015-05
+  helper: [Michael Jennings, Krishna Muriki, Allison Ngo]
+  humandate: May 4-7, 2015
+  humantime: 08:45 - 12:00
+  instructor: [Dani Ushizima, Donny Winston, Greg Wilson]
+  language: en
+  latlng: 37.8759281, -122.2500418
+  layout: workshop
+  root: .
+  slug: 2015-05-04-lbl
+  startdate: 2015-05-04
+  url: http://swcarpentry.github.io/2015-05-04-lbl/
+  user: swcarpentry
+  venue: Lawrence Berkeley Lab
+- address: AMDC Building (Boardroom 206), Swinburne Hawthorn Campus.
+  contact: akarick@swin.edu.au
+  country: Australia
+  enddate: 2015-05-05
+  etherpad: null
+  eventbrite: null
+  helper: [Pablo Rosado, Vivek Krishnan, Antonio Bibiano, Fabian Jankowski, Arna Karick]
+  humandate: May 4-5, 2015
+  humantime: 9:30 am - 5:00 pm
+  instructor: [Ewan Barr, Genevieve Shattow]
+  language: en
+  latlng: -37.821771,145.038931
+  layout: workshop
+  root: .
+  slug: 2015-05-04-swinpython
+  startdate: 2015-05-04
+  url: http://drarnakarick.github.io/2015-05-04-swinpython/
+  user: drarnakarick
+  venue: Swinburne University of Technology
+- address: 140 7th Avenue S, MSL119, St. Petersburg, FL  33701
+  contact: sheldon.mckay@gmail.com
+  country: United-States
+  enddate: 2015-05-05
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-05-04-usfcms
+  humandate: May 4-5, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, Leigh Sheneman, Matthew Colins]
+  language: en
+  latlng: 27.760992, -82.632576
+  layout: workshop
+  root: .
+  slug: 2015-05-04-usfcms
+  startdate: 2015-05-04
+  url: http://mckays630.github.io/2015-05-04-usfcms/
+  user: mckays630
+  venue: University of South Florida - College of Marine Science, KRC 3120
+- address: Dane Smith Hall, Room 128
+  contact: dthanson@unm.edu
+  country: United-States
+  enddate: 2015-05-12
+  etherpad: https://etherpad.mozilla.org/2015-05-11-unm
+  eventbrite: 16561729579
+  helper: null
+  humandate: May 11-12, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jonathan Gross, Christina Koch]
+  language: en
+  latlng: 35.086180, -106.623286
+  layout: workshop
+  root: .
+  slug: 2015-05-11-unm
+  startdate: 2015-05-11
+  url: http://christinalk.github.io/2015-05-11-unm/
+  user: christinalk
+  venue: University of New Mexico
+- address: Room 150, Physics and Astronomy Building, 1151 Richmond St., London Ontario
+  contact: pbarmby@uwo.ca
+  country: Canada
+  enddate: 2015-05-13
+  etherpad: https://etherpad.mozilla.org/2015-05-11-westernu
+  eventbrite: 16526138124
+  helper: [Aycha Tammour, Dimuthu Hemachandra, Laura Lenkic]
+  humandate: May 11-13, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Pauline Barmby, Xu Fei, Sahar Rahmani, Paul Gribble, Greg Wilson]
+  language: en
+  latlng: 43.009747,-81.272473
+  layout: workshop
+  root: .
+  slug: 2015-05-11-westernu
+  startdate: 2015-05-11
+  url: http://pbarmby.github.io/2015-05-11-westernu/
+  user: pbarmby
+  venue: Western University
+- address: 72 E Concord St Boston, MA 02118
+  contact: dgibson@bu.edu
+  country: United-States
+  enddate: 2015-05-13
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-05-12-BUSM
+  eventbrite: 16416350747
+  helper: [Brian Teague]
+  humandate: May 12-13, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Marianne Corvellec, Daniel Chen]
+  language: en
+  latlng: 42.336267,-71.072344
+  layout: workshop
+  root: .
+  slug: 2015-05-12-BUSM
+  startdate: 2015-05-12
+  url: http://chendaniely.github.io/2015-05-12-BUSM/
+  user: chendaniely
+  venue: Boston University School of Medicine
+- address: Den Bosch, 37 Victoria Street, Stellenbosch
+  contact: anelda@talarify.co.za
+  country: South-Africa
+  enddate: 2015-05-15
+  etherpad: https://etherpad.mozilla.org/vPC5h63b7A
+  helper: [Raïssa Philibert, Beatrix Coetzee, Rachelle Bester, Maia Lesosky]
+  humandate: May 14-15, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Laurent Gatto (remote), David Merand, Anelda van der Walt]
+  language: en
+  latlng: -33.9339861,18.8669428
+  layout: workshop
+  root: .
+  slug: 2015-05-14-Stellenbosch
+  startdate: 2015-05-14
+  url: http://lgatto.github.io/2015-05-14-Stellenbosch/
+  user: lgatto
+  venue: Stellenbosch University
