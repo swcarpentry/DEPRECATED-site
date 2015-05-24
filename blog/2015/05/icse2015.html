@@ -1,0 +1,640 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "ICSE 2015"
+date: 2015-05-25
+time: "18:00:00"
+category: ["Research"]
+---
+<!-- start excerpt -->
+<p>
+  Back when I was still trying to do science myself,
+  my field of study was software engineering.
+  The International Conference on Software Engineering is the big gathering for researchers in that area,
+  and <a href="http://2015.icse-conferences.org/">this year's</a> has just wrapped up.
+  Thanks to <a href="https://gist.github.com/mhoye/99b10089cb53a038c942">this Gist</a>
+  from <a href="http://exple.tive.org/blarg/">Mike Hoye</a>,
+  I was able to browse the papers presented at ICSE and co-located workshops
+  (like him, I'm outside the Great Paywall of Academia),
+  and I've included titles and abstracts below
+  from the ones I think readers of this blog might enjoy.
+  They're only a fraction of what was presented,
+  and I freely admit the sample is biased toward the things I understand and find interesting,
+  but I hope they'll convince you that
+  people are doing solid empirical studies in software engineering,
+  and producing insights that we can and should act on.
+</p>
+<p>
+  Note: just over half of these papers (13 of 24) had an easily-findable version online.
+  I'm not going to do the experiment,
+  but I confidently predict that those 13 will be more widely read,
+  and more influential,
+  than the other 11.
+</p>
+<!-- end excerpt -->
+<dl>
+
+  <dt>Lavall&eacute;e and Robillard: <a href="http://www.upedu.org/papers/ICSE2015_OrganizationalFactors/LavalleeRobillard_ICSE2015_WhyGoodDevelopersWriteBadCode.pdf">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></dt>
+  <dd>
+    <p>
+      How can organizational factors such as structure and culture
+      have an impact on the working conditions of developers?  This
+      study is based on ten months of observation of an in-house
+      software development project within a large telecommunications
+      company.  The observation was conducted during mandatory weekly
+      status meetings, where technical and managerial issues were
+      raised and discussed.  Preliminary results show that many
+      decisions made under the pressure of certain organizational
+      factors negatively affected software quality. This paper
+      describes cases depicting the complexity of organizational
+      factors and reports on ten issues that have had a negative
+      impact on quality, followed by suggested avenues for corrective
+      action.
+    </p>
+  </dd>
+
+  <dt>Chowdhury and Hindle: Mining StackOverflow to Filter out Off-topic IRC Discussion</dt>
+  <dd>
+    <p>
+      Internet Relay Chat (IRC) is a commonly used
+      tool by OpenSource developers. Developers use IRC channels
+      to discuss programming related problems, but much of the
+      discussion is irrelevant and off-topic. Essentially if we treat IRC
+      discussions like email messages, and apply spam filtering, we can
+      try to filter out the spam (the off-topic discussions) from the ham
+      (the programming discussions). Yet we need labelled data that
+      unfortunately takes time to curate.
+    </p>
+    <p>
+      To avoid costly curration in order to filter out off-topic
+      discussions, we need positive and negative data-sources. On-
+      line discussion forums, such as StackOverflow, are very effective
+      for solving programming problems. By engaging in open-data,
+      StackOverflow data becomes a powerful source of labelled text
+      regarding programming. This work shows that we can train
+      classifiers using StackOverflow posts as positive examples of
+      on-topic programming discussion. YouTube video comments,
+      notorious for their lack of quality, serve as training set of off-
+      topic discussion. By exploiting these datasets, accurate classifiers
+      can be built, tested and evaluated that require very little effort
+      for end-users to deploy and exploit.
+    </p>
+  </dd>
+
+  <dt>Labuschagne and Holmes: <a href="https://cs.uwaterloo.ca/~rtholmes/papers/msr_2015_labuschagne.pdf">Do Onboarding Programs Work?</a></dt>
+  <dd>
+    <p>
+      Open source software systems rely on community source code
+      contributions to fix bugs and develop new features.
+      Unfortunately, it is often difficult to become an effective
+      contributor on open-source projects due to the complexity of the
+      tools required to develop and test new patches and the challenge
+      of breaking into an already-formed social organization.  To help
+      new contributors learn their development practices, OSS projects
+      have created onboarding programs that, for example, identify
+      easy 'first bugs' and mentor new developers' contributions.
+      However, we found that developers who join an organization
+      through these programs are half as likely to transition into
+      long-term community members than developers who do not use these
+      programs. Measuring the impact of these programs is important,
+      as coordinating and staffing onboarding projects is
+      expensive. This paper examines onboarding programs employed by
+      Mozilla and demonstrates that they are not as effective at
+      transitioning new developers into long-term contributors as
+      might be hoped, although developers who do succeed through these
+      programs find them valuable.
+    </p>
+  </dd>
+
+  <dt>Bosu, Greiler, and Bird: Characteristics of Useful Code Reviews: An Empirical Study at Microsoft</dt>
+  <dd>
+    <p>
+      Over the past decade, both open source and commercial software
+      projects have adopted contemporary peer code review practices as
+      a quality control mechanism. Prior research has shown that
+      developers spend a large amount of time and effort performing
+      code reviews. Therefore, identifying factors that lead to useful
+      code reviews can benefit projects by increasing code review
+      effectiveness and quality. In a three-stage mixed research
+      study, we qualitatively investigated what aspects of code
+      reviews make them useful to developers, used our findings to
+      build and verify a classification model that can distinguish
+      between useful and not useful code review feedback, and finally
+      we used this classifier to classify review comments enabling us
+      to empirically investigate factors that lead to more effective
+      code review feedback.
+    </p>
+    <p>
+      In total, we analyzed 1.5 millions review comments from five
+      Microsoft projects and uncovered many factors that affect the
+      usefulness of review feedback. For example, we found that the
+      proportion of useful comments made by a reviewer increases
+      dramatically in the first year that he or she is at Microsoft
+      but tends to plateau afterwards. In contrast, we found that the
+      more files that are in a change, the lower the proportion of
+      comments in the code review that will be of value to the author
+      of the change. Based on our findings, we provide recommendations
+      for practitioners to improve effectiveness of code reviews.
+    </p>
+  </dd>
+
+  <dt>Jbara and Feitelson: <a href="http://www.cs.huji.ac.il/~feit/papers/RegEye15ICPC.pdf">How Programmers Read Regular Code: A Controlled Experiment Using Eye Tracking</a></dt>
+  <dd>
+    <p>
+      Regular code, which includes repetitions of the same basic
+      pattern, has been shown to have an effect on code comprehension:
+      a regular function can be just as easy to comprehend as an
+      irregular one with the same functionality, despite being longer
+      and including more control constructs. It has been speculated
+      that this effect is due to leveraging the understanding of the
+      first instances to ease the understanding of repeated instances
+      of the pattern. To verify and quantify this effect, we use eye
+      tracking to measure the time and effort spent reading and
+      understanding regular code. The results are that time and effort
+      invested in the initial code segments are indeed much larger
+      than those spent on the later ones, and the decay in effort can
+      be modeled by an exponential or cubic model. This shows that
+      syntactic code complexity metrics (such as LOC and MCC) need to
+      be made context-sensitive, e.g. by giving reduced weight to
+      repeated segments according to their place in the sequence.
+    </p>
+  </dd>
+
+  <dt>Beller, Zaidman, and Karpov: <a href="http://www.st.ewi.tudelft.nl/~mbeller/publications/2015_beller_zaidman_karpov_the_last_line_effect_preprint.pdf">The Last Line Effect</a></dt>
+  <dd>
+    <p>
+      Micro-clones are tiny duplicated pieces of code; they typically
+      comprise only a few statements or lines. In this paper, we
+      expose the "last line effect," the phenomenon that the last line
+      or statement in a micro-clone is much more likely to contain an
+      error than the previous lines or statements. We do this by
+      analyzing 208 open source projects and reporting on 202 faulty
+      micro-clones.
+    </p>
+    <p>
+      <em>
+	From the body of the paper: In total, our findings confirm the
+	presence of a strong last line and last statement effect,
+	accepting both RQ1 and RQ2.  We assume the effect to be caused
+	by and large through copy- and-pasting code, and that
+	developers have a psychological tendency to think changes of
+	similar code blocks are finished earlier than they really
+	are. This way, they miss one critical last modification.
+      </em>
+    </p>
+  </dd>
+
+  <dt>Martin, Cordy, Adams, and Antoniol: Make It Simple &ndash; An Empirical Analysis of GNU Make Feature Use in Open Source Projects</dt>
+  <dd>
+    <p>
+      Make is one of the oldest build technologies and is still widely
+      used today, whether by manually writing Makefiles, or by
+      generating them using tools like Autotools and CMake.  Despite
+      its conceptual simplicity, modern Make implementations such as
+      GNU Make have become very complex languages, featuring
+      functions, macros, lazy variable assignments and (in GNU Make
+      4.0) the Guile embedded scripting language. Since we are
+      interested in understanding how widespread such complex language
+      features are, this paper studies the use of Make features in
+      almost 20,000 Makefiles, comprised of over 8.4 million lines,
+      from more than 350 different open source projects. We look at
+      the popularity of features and the difference between
+      hand-written Makefiles and those generated using various
+      tools. We find that generated Makefiles use only a core set of
+      features and that more advanced features (such as function
+      calls) are used very little, and almost exclusively in
+      hand-written Makefiles.
+    </p>
+  </dd>
+
+  <dt>MacLeod, Storey, and Bergen: Code, Camera, Action: How Software Developers Document and Share Program Knowledge Using YouTube</dt>
+  <dd>
+    <p>
+      Creating documentation is a challenging task in software
+      engineering and most techniques involve the laborious and
+      sometimes tedious job of writing text. This paper explores an
+      alternative to traditional text-based documentation, the
+      screencast, which captures a developer's screen while they
+      narrate how a program or software tool works.  We conducted a
+      study to investigate how developers produce and share
+      developer-focused screencasts using the YouTube social
+      platform. First, we identified and analyzed a set of development
+      screencasts to determine how developers have adapted to the
+      medium to meet the demands of development-related documentation
+      needs. We also explored the techniques and strategies used for
+      sharing software knowledge.  Second, we interviewed screencast
+      producers to understand their motivations for creating
+      screencasts, and to uncover the perceived benefits and
+      challenges in producing code-focused videos.  Our findings
+      reveal that video is a useful medium for communicating program
+      knowledge between developers, and that developers build their
+      online personas and reputation by sharing videos through social
+      channels.
+    </p>
+    <p>
+      <em>
+	See <a href="https://dspace.library.uvic.ca:8443/bitstream/handle/1828/6107/MacLeod_Laura_MSc_2015.pdf?sequence=1&isAllowed=y">this link</a> for the first author's MSc thesis.
+      </em>
+    </p>
+  </dd>
+
+  <dt>Lubick, Barik, and Murphy-Hill: <a href="http://static.barik.net/barik/publications/chase2015/icse-chase-15.pdf">Can Social Screencasting Help Developers Learn New Tools?</a></dt>
+  <dd>
+    <p>
+      An effective way to learn about software development tools is by
+      directly observing peers' workflows.  However, these tool
+      knowledge transfer events happen infrequently because developers
+      must be both colocated and available. We explore an online
+      social screencasting system that removes the dependencies of
+      colocation and availability while maintaining the beneficial
+      tool knowledge transfer of peer observation .  Our results from
+      a formative study indicate these online observations happen more
+      frequently than in-person observations, but their effects are
+      only temporary.  We conclude that while peer observation
+      facilitates online knowledge transfer, it is not the only
+      component &ndash; other social factors may be involved.
+    </p>
+  </dd>
+
+  <dt>Agrawal, Amreen, and Mockus: Commit Quality in Five High Performance Computing Projects</dt>
+  <dd>
+    <p>
+      High Performance Computing (HPC) has a long history of software
+      development but relatively little is known about the approaches
+      this community uses to create and maintain software. To close
+      this gap we study the practices of using version control tools
+      in five HPC production projects. We also contrast these
+      practices to practices used in three distinct non-HPC open
+      source projects. We first obtain version history of the projects
+      from SVN, Mercurial, and Git. We then clean and process the data
+      and use published material to construct three measures of code
+      commit quality: the fraction of unique commit comments, their
+      size, and the number of files per commit. Our results indicate
+      relatively high but declining commit quality, and relatively
+      large commits in HPC projects. We expect this work to highlight
+      the differences among different software engineering domains and
+      may lead to ideas suggesting good practices of using software
+      tools in these domains.
+    </p>
+  </dd>
+
+  <dt>Wang, Janjusic, Iversen, Thornton, Karssovski, Wu, and Xu: A Scientific Function Test Framework for Modular Environmental Model Development: Application to the Community Land Model</dt>
+  <dd>
+    <p>
+      As environmental models have become more complicated, we need
+      new tools to analyze and validate these models and to facilitate
+      collaboration among field scientists, observation dataset
+      providers, environmental system modelers, and computer
+      scientists.  Modular design and function test of environmental
+      models have gained attention recently within the Biological and
+      Environmental Research Program of the U.S. Department of Energy.
+      In this paper, we will present our methods and software tools 1)
+      to analyze environmental software and 2) to generate modules for
+      scientific function testing of environmental models.  We have
+      applied these methods to the Community Land Model with three
+      typical scenarios: 1) benchmark case function validation, 2)
+      observation- constraint function validation, and 3) a virtual
+      root module generation for root function investigation and
+      evaluation. We believe that our strategies and experience in
+      scientific function test framework can be beneficial to many
+      other research programs that adapt integrated environmental
+      modeling methodology.
+    </p>
+  </dd>
+
+  <dt>Hata, Todo, Onoue, and Matsumoto: Characteristics of Sustainable OSS Projects: A Theoretical and Empirical Study</dt>
+  <dd>
+    <p>
+      How can we attract developers?  What can we do to incentivize
+      developers to write code?  We started the study by introducing
+      the population pyramid visualization to software development
+      communities, called software population pyramids, and found a
+      typical pattern in shapes. This pattern comes from the
+      differences in attracting coding contributors and discussion
+      contributors. To understand the causes of the differences, we
+      then build game-theoretical models of the contribution
+      situation. Based on these results, we again analyzed the
+      projects empirically to support the outcome of the models, and
+      found empirical evidence.  The answers to the initial questions
+      are clear.  To incentivize developers to code, the projects
+      should prepare documents, or the projects or third parties
+      should hire developers, and these are what sustainable projects
+      in GitHub did in reality.  In addition, making innovations to
+      reduce the writing costs can also have an impact in attracting
+      coding contributors.
+    </p>
+  </dd>
+
+  <dt>Kanij, Merkel, and Grundy: <a href="http://www.ict.swin.edu.au/personal/jgrundy/papers/chase2015.pdf">An Empirical Investigation of Personality Traits of Software Testers</a></dt>
+  <dd>
+    <p>
+      Software testing is the process of an execution-based
+      investigation of some aspects of the software's quality.  The
+      efficiency of the process depends on the methods and
+      technologies used, but crucially also on the human testers.
+      Software testers typically attempt to anticipate and expose ways
+      software may be defective, a fundamentally different task set to
+      those of other software development practitioners.  This raises
+      the question of whether the personality of software testers may
+      be different to other people involved in software development.
+      To test this hypothesis, we collected personality profiles using
+      the big five factor model of around 200 software development
+      practitioners. Analysis of this data indicates that software
+      testers are significantly higher on the conscientiousness factor
+      than other software development practitioners, while other
+      factors remain broadly consistent.
+    </p>
+  </dd>
+
+  <dt>Szabo: Novice Code Understanding Strategies During a Software Maintenance Assignment</dt>
+  <dd>
+    <p>
+      Existing efforts on teaching software maintenance have focussed
+      on constructing adequate codebases that students with limited
+      knowledge could maintain, with little focus on the learning
+      outcomes of such exercises and of the approaches that students
+      employ while performing maintenance.  An analysis of the code
+      understanding strategies employed by novice students as they
+      perform software maintenance exercises is fundamental for the
+      effective teaching of software maintenance.  In this paper, we
+      analyze the strategies employed by second year students in a
+      maintenance exercise over a large codebase.  We analyze student
+      reflections on their code understanding, maintenance process and
+      the use of tools. We show that students are generally capable of
+      working with large codebases.  Our study also finds that the
+      majority of students follow a systematic approach to code
+      understanding, but that their approach can be significantly
+      improved through the use of tools and a better understanding of
+      reverse engineering approaches.
+    </p>
+  </dd>
+
+  <dt>Falkner, Szabo, Vivian, and Falkner: Evolution of Software Development Strategies</dt>
+  <dd>
+    <p>
+      The development of discipline-specific cognitive and
+      meta-cognitive skills is fundamental to the successful mastery
+      of software development skills and processes.  This development
+      happens over time and is influenced by many factors, however its
+      understanding by teachers is crucial in order to develop
+      activities and materials to transform students from novice to
+      expert software engineers. In this paper, we analyse the
+      evolution of learning strategies of novice, first year students,
+      to expert, final year students.  We analyse reflections on
+      software development processes from students in an introductory
+      software development course, and compare them to those of final
+      year students, in a distributed systems development course.  Our
+      study shows that computer science - specific strategies evolve
+      as expected, with the majority of final year students including
+      design before coding in their software development process, but
+      that several areas still require scaffolding activities to
+      assist in learning development.
+    </p>
+  </dd>
+
+  <dt>Czerwonka, Greiler, and Tilford: <a href="http://research.microsoft.com/pubs/242201/PID3556473.pdf">Code Reviews Do Not Find BugsHow the Current Code Review Best Practice Slows Us Down</a></dt>
+  <dd>
+    <p>
+      Because of its many uses and benefits, code reviews are a
+      standard part of the modern software engineering workflow.
+      Since they require involvement of people, code reviewing is
+      often the longest part of the code integration activities. Using
+      experience gained at Microsoft and with support of data, we
+      posit (1) that code reviews often do not find functionality
+      issues that should block a code submission; (2) that effective
+      code reviews should be performed by people with specific set of
+      skills; and (3)that the social aspect of code reviews cannot be
+      ignored. We find that we need to be more sophisticated with our
+      guidelines for the code review workflow.  We show how our
+      findings from code reviewing practice influence our code review
+      tools at Microsoft. Finally,we assert that, due to its costs,
+      code reviewing practice is a topic deserving to be better
+      understood, systematized and applied to software engineering
+      workflow with more precision than the best practice currently
+      prescribes.
+    </p>
+  </dd>
+
+  <dt>Zhou, Lou, Zhang, Lin, Lin, and Qin: An Empirical Study on Quality Issues of Production Big Data Platform</dt>
+  <dd>
+    <p>
+      Big Data computing platform has evolved to be a multi-tenant
+      service. The service quality matters because system failure or
+      performance slowdown could adversely affect business and user
+      experience. To date, there is few study in literature on service
+      quality issues of production Big Data computing platform.  In
+      this paper, we present an empirical study on the service quality
+      issues of Microsoft ProductA, which is a company-wide
+      multi-tenant Big Data computing platform, serving thousands of
+      customers from hundreds of teams. ProductA has a well-defined
+      escalation process (i.e., incident management process), which
+      helps customers report service quality issues on 24/7 basis.
+      This paper investigates the common symptom, causes and
+      mitigation of service quality issues in Big Data platform.  We
+      conduct a comprehensive empirical study on 210 real service
+      quality issues of ProductA. Our major findings include (1) 21.0%
+      of escalations are caused by hardware faults; (2) 36.2% are
+      caused by system side defects; (3) 37.2% are due to customer
+      side faults.  We also studied the general diagnosis process and
+      the commonly adopted mitigation solutions. Our study results
+      provide valuable guidance on improving existing development and
+      maintenance practice of production Big Data platform, and
+      motivate tool support.
+    </p>
+  </dd>
+
+  <dt>Hermans and Murphy-Hill: <a href="http://people.engr.ncsu.edu/ermurph3/papers/icse-seip-15.pdf">Enron's Spreadsheets and Related Emails: A Dataset and Analysis</a></dt>
+  <dd>
+    <p>
+      Spreadsheets are used extensively in business processes around
+      the world and as such, are a topic of research interest. Over
+      the past few years, many spreadsheet studies have been performed
+      on the EUSES spreadsheet corpus. While this corpus has served
+      the spreadsheet community well, the spreadsheets it contains are
+      mainly gathered with search engines and might therefore not
+      represent spreadsheets used in companies.  This paper presents
+      an analysis of a new dataset, extracted from the Enron email
+      archive, containing over 15,000 spreadsheets used within the
+      Enron Corporation.  In addition to the spreadsheets, we also
+      present an analysis of the associated emails, where we look into
+      spreadsheet-specific email behavior.
+    </p>
+    <p>
+      Our analysis shows that 1) 24% of Enron spreadsheets with at
+      least one formula contain an Excel error, 2) there is little
+      diversity in the functions used in spreadsheets: 76% of
+      spreadsheets in the presented corpus use the same 15 functions
+      and, 3) the spreadsheets are substantially more smelly than the
+      EUSES corpus, especially in terms of long calculation
+      chains. Regarding the emails, we observe that spreadsheets 1)
+      are a frequent topic of email conversation with 10% of emails
+      either referring to or sending spreadsheets and 2) the emails
+      are frequently discussing errors in and updates to spreadsheets.
+    </p>
+    <p>
+      <em>
+	Note: while some people are already citing this as "proof"
+	that spreadsheets are bad, the more interesting question is
+	whether they are <strong>worse</strong>: is the error rate of
+	(for example) R programs written by people with the same
+	formal training in data analysis skills higher, lower, or the
+	same?  As far as I know, that study has yet to be done...
+      </em>
+    </p>
+  </dd>
+
+  <dt>Nanz and Furia: <a href="http://arxiv.org/pdf/1409.0252.pdf">A Comparative Study of Programming Languages in Rosetta Code</a></dt>
+  <dd>
+    <p>
+      Sometimes debates on programming languages are more religious
+      than scientific. Questions about which language is more succinct
+      or efficient, or makes developers more productive are discussed
+      with fervor, and their answers are too often based on anecdotes
+      and unsubstantiated beliefs. In this study, we use the largely
+      untapped research potential of Rosetta Code, a code repository
+      of solutions to common programming tasks in various languages,
+      which offers a large data set for analysis. Our study is based
+      on 7,087 solution programs corresponding to 745 tasks in 8
+      widely used languages representing the major programming
+      paradigms (procedural: C and Go; object-oriented: C# and Java;
+      functional: F# and Haskell; scripting: Python and Ruby). Our
+      statistical analysis reveals, most notably, that: functional and
+      scripting languages are more concise than procedural and object-
+      oriented languages; C is hard to beat when it comes to raw speed
+      on large inputs, but performance differences over inputs of
+      moderate size are less pronounced and allow even interpreted
+      languages to be competitive; compiled strongly-typed languages,
+      where more defects can be caught at compile time, are less prone
+      to runtime failures than interpreted or weakly-typed languages.
+      We discuss implications of these results for developers,
+      language designers, and educators.
+    </p>
+  </dd>
+
+  <dt>Casalnuovo, Devanbu, Oliveira, Filkov, and Ray: <a href="https://www.utdallas.edu/~lxz144130/cs6301-readings/oracle-casalnuovo-icse15.pdf">Assert Use in GitHub Projects</a></dt>
+  <dd>
+    <p>
+      Asserts have long been a strongly recommended (if
+      non-functional) adjunct to programs. They certainly don't add
+      any user-evident feature value; and it can take quite some skill
+      and effort to devise and add useful asserts. However, they are
+      believed to add considerable value to the developer. Certainly,
+      they can help with automated verification; but even in the
+      absence of that, claimed advantages include improved
+      understandability, maintainability, easier fault localization
+      and diagnosis, all eventually leading to better software
+      quality. We focus on this latter claim, and use a large dataset
+      of asserts in C and C++ programs to explore the connection
+      between asserts and defect occurrence.  Our data suggests a
+      connection: functions with asserts do have significantly fewer
+      defects. This indicates that asserts do play an important role
+      in software quality; we therefore explored further the factors
+      that play a role in assertion placement: specifically, process
+      factors (such as developer experience and ownership) and product
+      factors , particularly interprocedural factors, exploring how
+      the placement of assertions in functions are influenced by local
+      and global network properties of the callgraph. Finally, we also
+      conduct a differential analysis of assertion use across
+      different application domains.
+    </p>
+  </dd>
+
+  <dt>Salman, Misirli, and Juristo: Are Students Representatives of Professionals in Software Engineering Experiments?</dt>
+  <dd>
+    <p>
+      Most of the experiments in software engineering employ students
+      as subjects.  This raises concerns about the realism of the
+      results acquired through students and adaptability of the
+      results to software industry.  <em>Aim:</em> We compare students
+      and professionals to understand how well students represent
+      professionals as experimental subjects in SE
+      research. <em>Method:</em> The comparison was made in the
+      context of two test-driven development experiments conducted
+      with students in an academic setting and with professionals in a
+      software organization. We measured the code quality of several
+      tasks implemented by both subject groups and checked whether
+      students and professionals perform similarly in terms of code
+      quality metrics.  <em>Results:</em> Except for minor
+      differences, neither of the subject groups is better than the
+      other. Professionals produce larger, yet less complex, methods
+      when they use their traditional development approach, whereas
+      both subject groups perform similarly when they apply a new
+      approach for the first time.  <em>Conclusion:</em> Given a
+      carefully scoped experiment on a development approach that is
+      new to both students and professionals, similar performances are
+      observed.  Further investigation is necessary to analyze the
+      effects of subject demographics and level of experience on the
+      results of SE experiments.
+    </p>
+  </dd>
+
+  <dt>Tufano, Palomba, Bavota, Oliveto, Di Penta, De Lucia, and Poshyvanyk: <a href="http://www.cs.wm.edu/~denys/pubs/ICSE%2715-BadSmells-CRC.pdf">When and Why Your Code Starts to Smell Bad</a></dt>
+  <dd>
+    <p>
+      In past and recent years, the issues related to managing
+      technical debt received significant attention by researchers
+      from both industry and academia. There are several factors that
+      contribute to technical debt. One of these is represented by
+      code bad smells, i.e., symptoms of poor design and
+      implementation choices.  While the repercussions of smells on
+      code quality have been empirically assessed, there is still only
+      anecdotal evidence on when and why bad smells are introduced.
+      To fill this gap, we conducted a large empirical study over the
+      change history of 200 open source projects from different
+      software ecosystems and investigated when bad smells are
+      introduced by developers, and the circumstances and reasons
+      behind their introduction.  Our study required the development
+      of a strategy to identify smell-introducing commits, the mining
+      of over 0.5M commits, and the manual analysis of 9,164 of them
+      (i.e., those identified as smell-introducing).  Our findings
+      mostly contradict common wisdom stating that smells are being
+      introduced during evolutionary tasks.  In the light of our
+      results, we also call for the need to develop a new generation
+      of recommendation systems aimed at properly planning smell
+      refactoring activities.
+    </p>
+  </dd>
+
+  <dt>Smith, Bird, and Zimmermann: <a href="http://thomas-zimmermann.com/publications/files/smith-icse-2015.pdf">Build It Yourself! Homegrown Tools in a Large Software Company</a></dt>
+  <dd>
+    <p>
+      Developers sometimes take the initiative to build tools to solve
+      problems they face. What motivates developers to build these
+      tools? What is the value for a company? Are the tools built
+      useful for anyone besides their creator? We conducted a
+      qualitative study of toolbuilding, adoption, and impact within
+      Microsoft. This paper presents our findings on the extrinsic and
+      intrinsic factors linked to toolbuilding, the value of building
+      tools, and the factors associated with tool spread. We find that
+      the majority of developers build tools. While most tools never
+      spread beyond their creator's team, most have more than one
+      user, and many have more than one collaborator.  Organizational
+      cultures that are receptive towards toolbuilding produce more
+      tools, and more collaboration on tools. When nurtured and
+      spread, homegrown tools have the potential to create significant
+      impact on organizations.
+    </p>
+  </dd>
+
+  <dt>Gousios, Zaidman, Storey, and van Deursen: <a href="http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2014-013.pdf">Work Practices and Challenges in Pull-Based Development: The Integrator's Perspective</a></dt>
+  <dd>
+    <p>
+      In the pull-based development model, the integrator has the
+      crucial role of managing and integrating contributions.  This
+      work focuses on the role of the integrator and investigates
+      working habits and challenges alike.  We set up an exploratory
+      qualitative study involving a large-scale survey of 749
+      integrators, to which we add quantitative data from the
+      integrator's project.  Our results provide insights into the
+      factors they consider in their decision making process to accept
+      or reject a contribution.  Our key findings are that integrators
+      struggle to maintain the quality of their projects and have
+      difficulties with prioritizing contributions that are to be
+      merged.  Our insights have implications for practitioners who
+      wish to use or improve their pull-based development process, as
+      well as for researchers striving to understand the theoretical
+      implications of the pull-based model in software development.
+    </p>
+  </dd>
+</dl>
