@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-26", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$4c7585acd5c3848aa20dacde6f2dd396001f5d9ae181f5a97ef88ab5e694f05d", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$4c7585acd5c3848aa20dacde6f2dd396001f5d9ae181f5a97ef88ab5e694f05d", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/richie-halford.adam.json"
+ }
+}
