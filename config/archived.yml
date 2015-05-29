@@ -5563,3 +5563,22 @@
   url: http://lgatto.github.io/2015-05-14-Stellenbosch/
   user: lgatto
   venue: Stellenbosch University
+- address: Bizzell Library HCLC Classroom
+  contact: jduckles@ou.edu
+  country: United-States
+  enddate: 2015-05-20
+  etherpad: https://etherpad.mozilla.org/2015-05-19-ou
+  eventbrite: 16144220799
+  helper: [Mark Laufersweiler, Mark Stacy]
+  humandate: May 19-20, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jonah Duckles, Logan Cox, Jeremiah Lant, John Corless]
+  language: English
+  latlng: 35.208275, -97.445848
+  layout: workshop
+  root: .
+  slug: 2015-05-19-ou
+  startdate: 2015-05-19
+  url: http://oulibraries.github.io/2015-05-19-ou/
+  user: oulibraries
+  venue: University of Oklahoma Libraries
