@@ -4,76 +4,94 @@ root: ../../..
 author: John D. Corless
 title: "Workshop at OU Libraries"
 date: 2015-06-01
-time: "12:00:00"
+time: "14:00:00"
 category: ["Workshops"]
 ---
 <!-- start excerpt -->
-
 <p>During 19-20 May 2015, I taught a Software Carpentry workshop at the University of Oklahoma (OU) at their fantastic Bizzell Memorial Libary with Jonah Duckles, Logan Cox, and Jeremiah Lant. Jonah and I taught in one room, and Logan and Jeremiah in the other (about 30 students in each room). Tuesday morning was the Shell with Jonah, Tuesday PM and Wednesday AM was Python with me (except the command line section which Jonah covered), and Wednesday PM was git with Jonah. This was my first time teaching the workshop so I decided to write up my observations and student feedback.</p>
-
 <!-- end excerpt -->
-
-<h1 id="student-feedback">Student Feedback</h1>
+<p><strong>Student Feedback</strong></p>
 <p>I captured the green and red sticky note feedback after the first three half-day sessions. I processed all the comments by grouping them into major categories to summarize the feedback (an imperfect process but useful I think). Below I show the summarized feedback items, and to capture each item's significance I also give the percentage of all comments for that half-day session that raised this point.</p>
-<p>It is interesting that both &quot;too fast&quot; and &quot;too slow&quot; are common which speaks to the challenges of matching the instruction to the student experience level. I also like the feedback of using visuals more mixed in with live coding and including tougher optional challenges for more advanced students.</p>
-<h2 id="task-automation-in-the-shell">Task Automation in the Shell</h2>
-<p>Green Note (17 comments)</p>
-<ul>
-<li>I like the topics covered (35%)</li>
-<li>I like the teaching (65%)</li>
-</ul>
-<p>Red Note (24 comments)</p>
-<ul>
-<li>Need more details/too fast (67%)</li>
-<li>Too slow (21%)</li>
-<li>Misc comments/issues (12%)</li>
-</ul>
-<h2 id="introduction-to-python-part-1">Introduction to Python, Part 1</h2>
-<p>Green (6 comments)</p>
-<ul>
-<li>Generally things went ok (100%)</li>
-</ul>
-<p>Bad (7 comments)</p>
-<ul>
-<li>Too fast (43%)</li>
-<li>Other issues/suggestions (57%)</li>
-</ul>
-<h2 id="introduction-to-python-part-2">Introduction to Python, Part 2</h2>
-<p>Green (12 comments)</p>
-<ul>
-<li>Good material (58%)</li>
-<li>Good instruction (42%)</li>
-</ul>
-<p>Bad (18 comments)</p>
-<ul>
-<li>Too slow, make challenges for advanced students (17%)</li>
-<li>Make things more clear (50%)</li>
-<li>Too fast, need more time on topics (33%)</li>
-</ul>
-<h1 id="issues-i-identified">Issues I Identified</h1>
+<p>It is interesting that both "too fast" and "too slow" are common which speaks to the challenges of matching the instruction to the student experience level. I also like the feedback of using visuals more mixed in with live coding and including tougher optional challenges for more advanced students.</p>
+<p><strong>Task Automation in the Shell</strong></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Green Note (17 comments)</p>
+      <ul>
+	<li>I like the topics covered (35%)</li>
+	<li>I like the teaching (65%)</li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <p>Red Note (24 comments)</p>
+      <ul>
+	<li>Need more details/too fast (67%)</li>
+	<li>Too slow (21%)</li>
+	<li>Misc comments/issues (12%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<p><strong>Introduction to Python, Part 1</strong></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Green (6 comments)</p>
+      <ul>
+	<li>Generally things went ok (100%)</li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <p>Bad (7 comments)</p>
+      <ul>
+	<li>Too fast (43%)</li>
+	<li>Other issues/suggestions (57%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<p><strong>Introduction to Python, Part 2</strong></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Green (12 comments)</p>
+      <ul>
+	<li>Good material (58%)</li>
+	<li>Good instruction (42%)</li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <p>Bad (18 comments)</p>
+      <ul>
+	<li>Too slow, make challenges for advanced students (17%)</li>
+	<li>Make things more clear (50%)</li>
+	<li>Too fast, need more time on topics (33%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<p><strong>Issues I Identified</strong></p>
 <p>During the course of my instruction, a couple of issues came up.</p>
 <ol>
   <li>Before using the <code>inline</code> plotting in the IPython notebook, I created a separate plot window to demonstrate that functionality. This did not work for several students on Macs, apparently due to lack of X window installation. </li>
   <li>In the <code>glob.glob('*.csv')</code>, the results for one student included at least one <code>small-*.csv</code> file which would then run and not plot because it did not have enough data (index out of range error resulted). So probably should be <code>glob.glob('inf*.csv')</code>. </li>
   <li>Git install problems on Macs due to Xcode.</li>
 </ol>
-
-<h1 id="planned-improvements">Planned Improvements</h1>
+<p><strong>Planned Improvements</strong></p>
 <p>After this first teaching experience, there are several things I want to do differently.</p>
 <ul>
-<li>Do a better job of interspersing visuals with live coding</li>
-<li>Present optional challenges for more advanced students</li>
-<li>Consider using a tablet for teaching notes</li>
+  <li>Do a better job of interspersing visuals with live coding</li>
+  <li>Present optional challenges for more advanced students</li>
+  <li>Consider using a tablet for teaching notes</li>
 </ul>
-<h1 id="highlights">Highlights</h1>
-<ol style="list-style-type: decimal">
-<li>Learning from a great group of experienced instructors</li>
-<li>Meeting and helping some friendly OU students</li>
-<li>Surviving a legitimate Oklahoma weather event</li>
+<p><strong>Highlights</strong></p>
+<ol>
+  <li>Learning from a great group of experienced instructors</li>
+  <li>Meeting and helping some friendly OU students</li>
+  <li>Surviving a legitimate Oklahoma weather event</li>
+</ol>
  <figure>
-  <img src="./flood.jpg" alt="Weather Event" width="300" height="472">
+  <img src="./flood.jpg" alt="Weather Event" width="300" height="472" />
   <figcaption>Trying to escape flooded streets in Norman (photo: Jeremiah).</figcaption>
 </figure> 
-
-<img />
-</ol>
