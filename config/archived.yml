@@ -5582,3 +5582,101 @@
   url: http://oulibraries.github.io/2015-05-19-ou/
   user: oulibraries
   venue: University of Oklahoma Libraries
+- address: Computer Lab (Room 313/314), McCoy Building, University of Melbourne
+  contact: irving.damien@gmail.com
+  country: Australia
+  enddate: 2015-05-26
+  etherpad: https://etherpad.mozilla.org/2015-05-25-unimelb
+  eventbrite: 15679681349
+  helper: [Mirko Velic, Louis Moresi, Dan Sandiford, Gareth Kennedy]
+  humandate: May 25-26, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Damien Irving]
+  language: en
+  latlng: -37.792910,144.961174
+  layout: workshop
+  root: .
+  slug: 2015-05-25-unimelb
+  startdate: 2015-05-25
+  url: http://resbaz.github.io/2015-05-25-unimelb/
+  user: resbaz
+  venue: University of Melbourne
+- address: Rooms N-2200 & N-2300, 1709 New York Avenue, NW Washington, DC 20551
+  contact: ian.org AT the google mail
+  country: United-States
+  enddate: 2015-05-28
+  etherpad: null
+  helper: null
+  humandate: May 27-28, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ian Munoz, Justin Ely, Heather Gunning, Erik Bray]
+  language: en
+  latlng: 38.896947, -77.040454
+  layout: workshop
+  root: .
+  slug: 2015-05-27-FRB
+  startdate: 2015-05-27
+  url: http://ianamunoz.github.io/2015-05-27-FRB/
+  user: ianamunoz
+  venue: Federal Reserve Board
+- address: Vernon Collins Theatre, Level 1, Royal Children's Hospital, Flemington
+    Road, Parkville, Victoria (go up the stairs near the RCH information desk)
+  contact: melbourne@combine.org.au
+  country: Australia
+  enddate: 2015-05-29
+  etherpad: https://etherpad.mozilla.org/2015-05-27-SWC-MCRI
+  eventbrite: null
+  helper: [Nadia Davidson, Jovana Maksimovic, Katrina Bell, Belinda Phipson, Simon
+      Sadedin, Ira Cooke, Peter Georgeson, Samantha Dawson, Michael McLellan, Nick
+      Evans, Chris Guest]
+  humandate: May 27-29, 2015
+  humantime: 9:00 am - 5:00 pm, 1:30 pm - 5:30 pm, 1:30 pm - 5:30 pm
+  instructor: [Harriet Dashnow, Scott Ritchie, Clare Sloggett, Juan Nunez-Iglesias,
+    Andrew Lonsdale]
+  language: en
+  latlng: -37.793932,144.948978
+  layout: workshop
+  root: .
+  slug: 2015-05-27-SWC-MCRI
+  startdate: 2015-05-27
+  url: http://combine-australia.github.io/2015-05-27-SWC-MCRI/
+  user: combine-australia
+  venue: Murdoch Childrens Research Institute
+- address: Stillwater, OK
+  contact: dana.brunson@okstate.edu
+  country: United-States
+  enddate: 2015-05-28
+  etherpad: http://etherpad.mozilla.org/2015-05-27-osu
+  eventbrite: 16302447058
+  helper: [Chris Wood, Jason Patton, Shanaka Paranahewage, Tyler Davis, Dana Brunson]
+  humandate: May 27-28, 2015
+  humantime: 9:00 am - 4:30pm
+  instructor: [Jonah Duckles, David Dotson, Kate Hertweck, Thomas Guignard]
+  language: en
+  latlng: 36.121119,-97.069699
+  layout: workshop
+  root: .
+  slug: 2015-05-27-osu
+  startdate: 2015-05-27
+  url: http://ouinformatics.github.io/2015-05-27-osu/
+  user: ouinformatics
+  venue: Oklahoma State University - 514 MSCS (aka Math Sciences)
+- address: Laboratório de Matemática e Desenho (LAMADE) no bloco PC, sala PC12.
+  contact: raniere@ime.unicamp.br
+  country: Brazil
+  enddate: 2015-05-30
+  etherpad: null
+  eventbrite: null
+  helper: [Fernando Mayer]
+  humandate: Jun 30, 2015
+  humantime: 9:00am - 5:00pm
+  instructor: [Abel Siqueira, Raniere Silva]
+  language: pt
+  latlng: -25.450937,-49.231519
+  layout: workshop
+  root: .
+  slug: 2015-05-30-ufpr
+  startdate: 2015-05-30
+  url: http://r-gaia-cs.github.io/2015-05-30-ufpr/
+  user: r-gaia-cs
+  venue: Universidade Federal do Paraná
