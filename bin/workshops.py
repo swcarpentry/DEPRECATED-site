@@ -154,9 +154,8 @@ def adjust(info, url):
         if field not in info:
             fail('Field {0} missing from info for URL {1}', field, url)
         key = info[field]
-        if key not in ADJUSTMENTS[field]:
-            fail('Value {0} for field {1} not in adjustments for url {2}', key, field, url)
-        info[field] = ADJUSTMENTS[field][key]
+        if key in ADJUSTMENTS[field]:
+            info[field] = ADJUSTMENTS[field][key]
 
 def extract_info_from_url(url):
     '''Extract username and project name from GitHub URL.'''
