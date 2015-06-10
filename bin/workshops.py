@@ -25,6 +25,38 @@ LATLNG_RE = re.compile(r'\s*[+-]?\d+(\.\d*)?,\s*[+-]?\d+(\.\d*)?\s*')
 
 ARCHIVE_WINDOW = 3
 
+ADJUSTMENTS = {
+    'country' : {
+        'Australia': 'au',
+        'Brazil': 'br',
+        'Canada': 'ca',
+        'China': 'cn',
+        'Cyprus': 'cy',
+        'Denmark': 'dk',
+        'Finland': 'fi',
+        'France': 'fr',
+        'Germany': 'de',
+        'Ghana': 'gh',
+        'Italy': 'it',
+        'Jordan': 'jo',
+        'Korea': 'kr',
+        'Lebanon': 'lb',
+        'Netherlands': 'nl',
+        'New-Zealand': 'nz',
+        'Norway': 'no',
+        'Poland': 'pl',
+        'Saudi-Arabia': 'sa',
+        'South-Africa': 'za',
+        'South-Korea': 'kr',
+        'Spain': 'es',
+        'Sweden': 'se',
+        'Switzerland': 'ch',
+        'Thailand': 'th',
+        'United-Kingdom': 'gb',
+        'United-States': 'us'
+    }
+}
+
 def _cleanup_handler(record, key, value):
     if ((type(value) == str) and LATLNG_RE.match(value)):
         return value
@@ -91,6 +123,7 @@ def process(all_urls, verbose):
     faulty = []
     for url in all_urls:
         info = fetch(url)
+        adjust(info, url)
         info['user'], info['slug'] = extract_info_from_url(url)
         info['url'] = GITHUB_IO_TEMPLATE.format(info['user'], info['slug'])
         if check_info(url, info):
@@ -114,6 +147,16 @@ def fetch(url):
         fail('Malformed YAML header in {0}', url)
     info = yaml.load(pieces[1])
     return info
+
+def adjust(info, url):
+    '''Perform in-place adjustments to info.'''
+    for field in ADJUSTMENTS:
+        if field not in info:
+            fail('Field {0} missing from info for URL {1}', field, url)
+        key = info[field]
+        if key not in ADJUSTMENTS[field]:
+            fail('Value {0} for field {1} not in adjustments for url {2}', key, field, url)
+        info[field] = ADJUSTMENTS[field][key]
 
 def extract_info_from_url(url):
     '''Extract username and project name from GitHub URL.'''
