@@ -26,6 +26,7 @@ LATLNG_RE = re.compile(r'\s*[+-]?\d+(\.\d*)?,\s*[+-]?\d+(\.\d*)?\s*')
 ARCHIVE_WINDOW = 3
 
 ADJUSTMENTS = {
+    # Turn hyphenated country names into ISO codes for past workshops.
     'country' : {
         'Australia': 'au',
         'Brazil': 'br',
