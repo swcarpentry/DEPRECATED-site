@@ -1,0 +1,107 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Why We Can't Have Nice Things"
+date: 2015-06-11
+time: "13:00:00"
+category: ["Opinion"]
+---
+<!-- start excerpt -->
+<p>
+  <em>A lot of my stories aren't true, but this is a true story...</em>
+</p>
+<p>
+  In the beginning, there were tables:
+  rows upon rows,
+  with columns separated by commas or tabs or something more exotic.
+  They were elegant but limited,
+  so programmers said,
+  "Let there be XML!"
+  And lo,
+  there came a great wailing and gnashing of teeth,
+  for who among us can truly comprehend external (parsed) general entity declarations
+  and the encoding thereof?
+</p>
+<!-- end excerpt -->
+<p>
+  But there came to programmers a new hope called <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>,
+  and JSON said,
+  "Look, folks, why don't you just write data the way you write data structures in programs?"
+  And programmers looked upon JSON,
+  with its lists of numbers and strings and name/value pairs,
+  and said,
+  "Cool!  But what about comments?  And do I really have to quote all those strings?"
+  And so programmers turned to <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>,
+  which permits the commenting of data,
+  and the unquoting of strings,
+  and much else that is good and welcome to those who believe that
+  if you couldn't have done it in a line-editor in 1970,
+  you shouldn't be doing it today.
+</p>
+<p>
+  But a darkness lurked within the heart of YAML,
+  for in striving to make life easy for its users,
+  it had left a slippery puddle of grease before the very gates of Hell.
+  In place of JSON's parentheses and quotes:
+</p>
+<pre>
+{"instructors": ["Canada", "Denmark", "France"], "workshops": ["Brazil", "Norway", "Poland"]}
+</pre>
+<p>
+  YAML, ever gracious, allowed programmers to write:
+</p>
+<pre>
+instructors:
+- Canada
+- Denmark
+- France
+workshops:
+- Brazil
+- Norway
+- Poland
+</pre>
+<p>
+  And programmers looked upon it and said it was good,
+  for who truly likes typing the brace that is curly?
+  But then one programmer said,
+  "Cool!  Although we really should use ISO-3166 country codes instead of countries' names, because standards and internationalization."
+  And upon saying that,
+  he re-wrote the data as:
+</p>
+<pre>
+instructors:
+- ca
+- de
+- fr
+workshops:
+- br
+- no
+- pl
+</pre>
+<p>
+<p>
+  But this engendered great puzzlement,
+  because this data structure was used to select flag icons to display upon a map,
+  and among those flags were all the countries save Norway.
+  And after much scratching of heads and googling of terms,
+  it was discovered that <strong><em>YAML interprets the unquoted word 'no' as meaning 'false'</em></strong>.
+  Upon discovering which,
+  the programmer blasphemed mightily and at great length,
+  repeating also,
+  "Seriously?  Seriously??"
+</p>
+<p>
+  For inasmuch as it may be convenient for some to allow plain English synonyms for truth and falsity,
+  each such accommodation is a trap from which the unwary will emerge wearied and cynical,
+  if they emerge at all.
+  And all programmers know this,
+  having had their own spirits widdled upon by the inconsistencies of others
+  as a senile old poodle does widdle upon its owner's leg,
+  mistaking it (or not) for a fire hydrant.
+  All programmers know this,
+  but persist in committing these same sins themselves.
+</p>
+<p>
+  And this is why we cannot have nice things...
+</p>
