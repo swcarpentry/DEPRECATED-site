@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-06-12", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$14a087fad9c006864332f01199b2e60fb4d6115ff94d2ce43b64863eb06ee3f5", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$14a087fad9c006864332f01199b2e60fb4d6115ff94d2ce43b64863eb06ee3f5", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/sharan.malvika.json"
+ }
+}
