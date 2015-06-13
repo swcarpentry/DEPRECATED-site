@@ -1,4 +1,4 @@
-- country: ca
+- country: "ca"
   enddate: 2011-11-08
   humandate: Nov 7-8, 2011
   instructor: [Jonathan Dursi, Tommy Guy, Katy Huff, Dominique Vuvan]
@@ -10,7 +10,7 @@
   url: http://swcarpentry.github.io/2011-11-07-toronto/
   user: swcarpentry
   venue: University of Toronto
-- country: us
+- country: "us"
   enddate: 2012-01-19
   humandate: Jan 18-19, 2012
   instructor: [Greg Wilson]
@@ -22,7 +22,7 @@
   url: http://swcarpentry.github.io/2012-01-18-stsci/
   user: swcarpentry
   venue: Space Telescope Science Institute
-- country: it
+- country: "it"
   enddate: 2012-03-02
   humandate: Feb 20 - March 2, 2012
   instructor: [Stephen Crouch, Tommy Guy, Katy Huff]
@@ -36,7 +36,7 @@
   venue: International Centre for Theoretical Physics
 - address: Bahen Centre for Information Technology, 40 St. George Street, Toronto,
     ON
-  country: ca
+  country: "ca"
   enddate: 2012-02-24
   humandate: February 23-24, 2012
   instructor: [Matt Davis, Jonathan Dursi, Mike Fletcher, Greg Wilson]
@@ -48,7 +48,7 @@
   url: http://swcarpentry.github.io/2012-02-23-toronto/
   user: swcarpentry
   venue: University of Toronto
-- country: us
+- country: "us"
   enddate: 2012-03-08
   humandate: March 7-8, 2012
   humantime: 9:00 am - 5:00 pm
@@ -61,7 +61,7 @@
   url: http://swcarpentry.github.io/2012-03-07-indiana/
   user: swcarpentry
   venue: Indiana University
-- country: us
+- country: "us"
   enddate: 2012-03-27
   humandate: March 26-27, 2012
   humantime: 9:00 am - 5:00 pm
@@ -76,7 +76,7 @@
   venue: Monterey Bay Aquarium Research Institute
 - address: Conference Room 238, Oakland Scientific Facility (OSF), 415 20th Street
     ("Thomas L Berkley Way") at Franklin Street, Oakland, CA
-  country: us
+  country: "us"
   enddate: 2012-03-29
   humandate: March 28-29, 2012
   instructor: [Michelle Levesque, Greg Wilson]
@@ -88,7 +88,7 @@
   url: http://swcarpentry.github.io/2012-03-28-nersc/
   user: swcarpentry
   venue: NERSC
-- country: us
+- country: "us"
   enddate: 2012-04-03
   humandate: April 2-3, 2012
   humantime: 9:00 am - 5:00 pm
@@ -103,7 +103,7 @@
   venue: University of Chicago
 - address: Room 314, Biology and Natural Resources Building, Utah State University,
     5305 Old Main Hill, Logan, UT
-  country: us
+  country: "us"
   enddate: 2012-04-15
   humandate: April 14-15, 2012
   humantime: 9:00 am - 4:30 pm
@@ -116,7 +116,7 @@
   url: http://swcarpentry.github.io/2012-04-14-utahstate/
   user: swcarpentry
   venue: Utah State University
-- country: gb
+- country: "gb"
   enddate: 2012-05-01
   humandate: April 30 - May 1, 2012
   humantime: 9:00 am - 4:30 pm
@@ -129,7 +129,7 @@
   url: http://swcarpentry.github.io/2012-04-30-ucl/
   user: swcarpentry
   venue: University College London
-- country: us
+- country: "us"
   enddate: 2012-05-08
   humandate: May 7-8, 2012
   instructor: [C. Titus Brown, Greg Wilson]
@@ -142,7 +142,7 @@
   user: swcarpentry
   venue: Michigan State University
 - contact: swc2012@ncl.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2012-05-15
   humandate: May 14-15, 2012
   humantime: 9:00 am - 5:00 pm
@@ -157,7 +157,7 @@
   venue: Newcastle University
 - address: Computing Sciences Centre (CSC) 1-59, University of Alberta, Edmonton,
     AB
-  country: ca
+  country: "ca"
   enddate: 2012-05-17
   humandate: May 16-17, 2012
   instructor: [Rosangela Canino-Koning, Greg Wilson]
@@ -170,7 +170,7 @@
   user: swcarpentry
   venue: University of Alberta
 - address: Room DMP 201, 6245 Agronomy Road
-  country: ca
+  country: "ca"
   enddate: 2012-05-23
   humandate: May 22-23, 2012
   instructor: [Adina Chuang Howe, Greg Wilson]
@@ -183,7 +183,7 @@
   user: swcarpentry
   venue: University of British Columbia
 - address: Room 475, Bloomberg Center for Physics &amp; Astronomy
-  country: us
+  country: "us"
   enddate: 2012-06-19
   humandate: June 18-19, 2012
   humantime: 9:00 am - 4:30 pm
@@ -197,7 +197,7 @@
   user: swcarpentry
   venue: Johns Hopkins University
 - address: Place d'Italie
-  country: fr
+  country: "fr"
   enddate: 2012-06-29
   humandate: June 28-29, 2012
   instructor: [Feth Arezki, Christophe Combelles, Alexandre Gramfort, Konrad Hinsen,
@@ -211,7 +211,7 @@
   user: swcarpentry
   venue: INRIA Paris
 - address: Room 32-141, CSAIL, MIT, 32 Vassar Street, Cambridge, MA
-  country: us
+  country: "us"
   enddate: 2012-07-10
   humandate: July 9-10, 2012
   humantime: 9:00 am - 4:30 pm
@@ -226,7 +226,7 @@
   venue: MIT
 - address: Davis Centre DC 1568, University of Waterloo, 200 University Avenue West,
     Waterloo, ON
-  country: ca
+  country: "ca"
   enddate: 2012-07-13
   eventbrite: 3558725243
   humandate: July 12-13, 2012
@@ -241,7 +241,7 @@
   user: swcarpentry
   venue: University of Waterloo
 - address: Rm 255, Sobey Building, Saint Mary's University, Halifax, Nova Scotia
-  country: ca
+  country: "ca"
   enddate: 2012-07-17
   humandate: July 16-17, 2012
   humantime: 9:00 am - 4:30 pm
@@ -254,7 +254,7 @@
   url: http://swcarpentry.github.io/2012-07-16-halifax/
   user: swcarpentry
   venue: Halifax
-- country: ca
+- country: "ca"
   enddate: 2012-07-20
   humandate: July 19-20, 2012
   humantime: 9:00 am - 4:30 pm
@@ -268,7 +268,7 @@
   user: swcarpentry
   venue: University of Toronto (Scarborough)
 - address: University of York
-  country: gb
+  country: "gb"
   enddate: 2012-09-14
   humandate: Sept 13-14, 2012
   humantime: 9:00 am - 4:30 pm
@@ -282,7 +282,7 @@
   user: swcarpentry
   venue: DAFx Conference
 - address: Room 3213, Kristine Bonnevies hus, Blindernveien 31, University of Oslo
-  country: no
+  country: "no"
   enddate: 2012-09-18
   humandate: Sept 17-18, 2012
   humantime: 9:00 am - 4:30 pm
@@ -295,7 +295,7 @@
   url: http://swcarpentry.github.io/2012-09-17-oslo/
   user: swcarpentry
   venue: University of Oslo
-- country: us
+- country: "us"
   enddate: 2012-09-29
   humandate: Sept 28-29, 2012
   instructor: [Erik Bray, Chang She, Eric Weinstein, Greg Wilson]
@@ -308,7 +308,7 @@
   user: swcarpentry
   venue: Columbia University
 - address: Stewart Center, Room 318
-  country: us
+  country: "us"
   enddate: 2012-10-09
   humandate: Oct 8-9, 2012
   humantime: 9:00 am - 4:30 pm
@@ -322,7 +322,7 @@
   user: swcarpentry
   venue: Purdue University
 - address: Building 50A, Room 5132
-  country: us
+  country: "us"
   enddate: 2012-10-18
   humandate: Oct 17-18, 2012
   humantime: 9:00 am - 4:30 pm
@@ -335,7 +335,7 @@
   url: http://swcarpentry.github.io/2012-10-17-lbl/
   user: swcarpentry
   venue: Lawrence Berkeley National Laboratory
-- country: ca
+- country: "ca"
   enddate: 2012-10-19
   eventbrite: 3869257052
   humandate: Oct 18-19, 2012
@@ -350,7 +350,7 @@
   user: swcarpentry
   venue: University of British Columbia
 - address: Goldman School of Public Policy, Room 150
-  country: us
+  country: "us"
   enddate: 2012-10-21
   eventbrite: 3942004642
   humandate: Oct 20-21, 2012
@@ -364,7 +364,7 @@
   url: http://swcarpentry.github.io/2012-10-20-ucb/
   user: swcarpentry
   venue: University of California Berkeley
-- country: gb
+- country: "gb"
   enddate: 2012-10-23
   humandate: Oct 22-23, 2012
   instructor: [Mike Jackson, Steve McGough]
@@ -377,7 +377,7 @@
   user: swcarpentry
   venue: University of Newcastle
 - address: 383 Hill Annex, Caltech Campus, Pasadena, CA 91125
-  country: us
+  country: "us"
   enddate: 2012-10-24
   humandate: Oct 23-24, 2012
   humantime: 9:00 am - 4:30 pm
@@ -390,7 +390,7 @@
   url: http://swcarpentry.github.io/2012-10-23-caltech/
   user: swcarpentry
   venue: Caltech
-- country: us
+- country: "us"
   enddate: 2012-10-26
   eventbrite: 4647209930
   humandate: Oct 25-26, 2012
@@ -405,7 +405,7 @@
   venue: George Mason University
 - address: New Biochemistry
   contact: philip.fowler@bioch.ox.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2012-10-31
   humandate: Oct 30-31, 2012
   humantime: 9:00 am - 5:00 pm
@@ -419,7 +419,7 @@
   user: swcarpentry
   venue: Oxford University
 - address: Information Technology Building, Room A113
-  country: ca
+  country: "ca"
   enddate: 2012-11-09
   eventbrite: 4522284274
   humandate: Nov 8-9, 2012
@@ -434,7 +434,7 @@
   user: swcarpentry
   venue: McMaster University
 - address: Life Sciences Building
-  country: us
+  country: "us"
   enddate: 2012-11-11
   eventbrite: 4262808174
   humandate: Nov 10-11, 2012
@@ -449,7 +449,7 @@
   user: swcarpentry
   venue: Washington University in St. Louis
 - address: La Jolla, CA
-  country: us
+  country: "us"
   enddate: 2012-11-16
   eventbrite: 3869222950
   humandate: Nov 15-16, 2012
@@ -463,7 +463,7 @@
   url: http://swcarpentry.github.io/2012-11-15-scripps/
   user: swcarpentry
   venue: Scripps Research Institute
-- country: us
+- country: "us"
   enddate: 2012-11-29
   eventbrite: 4224585850
   humandate: Nov 28-29, 2012
@@ -478,7 +478,7 @@
   user: swcarpentry
   venue: University of North Carolina
 - address: Hawaii Institute of Marine Biology
-  country: us
+  country: "us"
   enddate: 2012-12-01
   eventbrite: 4314420548
   humandate: Nov 30 - Dec 1, 2012
@@ -493,7 +493,7 @@
   user: swcarpentry
   venue: University of Hawaii
 - contact: michaelj@epcc.ed.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2012-12-05
   humandate: Dec 4-5, 2012
   humantime: 9:00 am - 4:30 pm
@@ -506,7 +506,7 @@
   url: http://swcarpentry.github.io/2012-12-04-edinburgh/
   user: swcarpentry
   venue: University of Edinburgh
-- country: us
+- country: "us"
   enddate: 2012-12-11
   eventbrite: 3666777430
   humandate: Dec 10-11, 2012
@@ -521,7 +521,7 @@
   user: swcarpentry
   venue: University of Texas (Austin)
 - address: MSL 101
-  country: ca
+  country: "ca"
   enddate: 2013-01-12
   humandate: Jan 11 2013
   humantime: 9:00 am - 4:30 pm
@@ -535,7 +535,7 @@
   user: swcarpentry
   venue: University of British Columbia
 - address: Kent Hall, Room 120, 1020 East 58th Street Chicago, IL 60637
-  country: us
+  country: "us"
   enddate: 2013-01-13
   eventbrite: 4044017766
   humandate: Jan 12-13, 2013
@@ -549,7 +549,7 @@
   url: http://swcarpentry.github.io/2013-01-12-chicago/
   user: swcarpentry
   venue: University of Chicago
-- country: ca
+- country: "ca"
   enddate: 2013-01-13
   eventbrite: 4859419655
   humandate: Jan 12-13, 2013
@@ -564,7 +564,7 @@
   user: swcarpentry
   venue: McGill University
 - address: Engineering 6 Building, Room 4022
-  country: ca
+  country: "ca"
   enddate: 2013-01-13
   eventbrite: 4455642948
   humandate: Jan 12-13, 2013
@@ -579,7 +579,7 @@
   user: swcarpentry
   venue: University of Waterloo
 - address: 1 Maximus-von-Imhof-Forum, 85354 Freising, Germany
-  country: de
+  country: "de"
   enddate: 2013-01-23
   eventbrite: 4602466100
   humandate: Jan 22-23, 2013
@@ -594,7 +594,7 @@
   user: swcarpentry
   venue: Technische Universitat Munchen
 - address: Suite 500, 366 Adelaide St West, Toronto, ON
-  country: ca
+  country: "ca"
   enddate: 2013-01-25
   eventbrite: 5086301264
   humandate: Jan 24-25, 2013
@@ -609,7 +609,7 @@
   user: swcarpentry
   venue: Mozilla Foundation
 - address: 41 Spemannstrasse, 72076 Tuebingen, Germany
-  country: de
+  country: "de"
   enddate: 2013-01-26
   eventbrite: 5014203618
   humandate: Jan 25-25, 2013
@@ -623,7 +623,7 @@
   url: http://swcarpentry.github.io/2013-01-25-tuebingen/
   user: swcarpentry
   venue: Max Planck Institute Tuebingen
-- country: us
+- country: "us"
   enddate: 2013-02-02
   humandate: Jan 30 - Feb 2, 2013
   humantime: 9:00 am - 4:30 pm
@@ -637,7 +637,7 @@
   url: http://swcarpentry.github.io/2013-01-30-columbia/
   user: swcarpentry
   venue: Columbia University
-- country: us
+- country: "us"
   enddate: 2013-02-01
   humandate: Jan 31 - Feb 1, 2013
   humantime: 9:00 am - 4:30 pm
@@ -650,7 +650,7 @@
   url: http://swcarpentry.github.io/2013-01-31-vt/
   user: swcarpentry
   venue: Virginia Tech
-- country: ca
+- country: "ca"
   enddate: 2013-02-06
   eventbrite: 5227315040
   humandate: Feb 5-6, 2013
@@ -665,7 +665,7 @@
   user: swcarpentry
   venue: University of British Columbia
 - address: Room E8A 341, Macquarie University, Sydney
-  country: au
+  country: "au"
   enddate: 2013-02-08
   eventbrite: 4114901782
   humandate: Feb 7-8, 2013
@@ -680,7 +680,7 @@
   user: swcarpentry
   venue: Macquarie University
 - address: Theatre 2 (room 109), Alan Gilbert Building, University of Melbourne
-  country: au
+  country: "au"
   enddate: 2013-02-15
   humandate: Feb 14-15, 2013
   humantime: 9:00 am - 4:30 pm
@@ -693,7 +693,7 @@
   url: http://swcarpentry.github.io/2013-02-14-amos/
   user: swcarpentry
   venue: AMOS Conference (Melbourne)
-- country: us
+- country: "us"
   enddate: 2013-02-26
   eventbrite: 4309568034
   humandate: Feb 25-26, 2013
@@ -708,7 +708,7 @@
   url: http://swcarpentry.github.io/2013-02-25-uwash/
   user: swcarpentry
   venue: University of Washington
-- country: us
+- country: "us"
   enddate: 2013-03-07
   humandate: March 4-5 and March 6-7, 2013
   instructor: [Geoff Oxberry, Greg Wilson]
@@ -720,7 +720,7 @@
   url: http://swcarpentry.github.io/2013-03-04-lbl/
   user: swcarpentry
   venue: Lawrence Berkeley National Laboratory
-- country: us
+- country: "us"
   enddate: 2013-03-08
   humandate: March 7-8, 2013
   humantime: 9:00 am - 4:30 pm
@@ -733,7 +733,7 @@
   url: http://swcarpentry.github.io/2013-03-07-virginia/
   user: swcarpentry
   venue: University of Virginia
-- country: lb
+- country: "lb"
   enddate: 2013-03-21
   humandate: March 20-21, 2013
   humantime: 9:00 am - 4:30 pm
@@ -748,7 +748,7 @@
   venue: American University of Beirut
 - address: Room 314, Biology and Natural Resources Building, Utah State University,
     5305 Old Main Hill, Logan, UT
-  country: us
+  country: "us"
   enddate: 2013-03-24
   eventbrite: 5398228246
   humandate: March 23-24, 2013
@@ -763,7 +763,7 @@
   user: swcarpentry
   venue: Utah State University
 - address: Library Computer Laboratory
-  country: sa
+  country: "sa"
   enddate: 2013-03-25
   eventbrite: 5790053205
   humandate: March 24-25, 2013
@@ -777,7 +777,7 @@
   url: http://swcarpentry.github.io/2013-03-24-kaust/
   user: swcarpentry
   venue: King Abdullah University of Science and Technology
-- country: us
+- country: "us"
   enddate: 2013-04-05
   eventbrite: 5396735782
   humandate: April 4-5, 2013
@@ -792,7 +792,7 @@
   user: swcarpentry
   venue: University of Arizona
 - contact: host-ucl@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-04-08
   humandate: April 4 and 8, 2013
   humantime: 9:00 am - 4:30 pm
@@ -806,7 +806,7 @@
   user: swcarpentry
   venue: University College London
 - address: Room A306, Engineering Building
-  country: za
+  country: "za"
   enddate: 2013-04-09
   eventbrite: 6014414275
   humandate: April 8-9, 2013
@@ -821,7 +821,7 @@
   user: swcarpentry
   venue: Stellenbosch University
 - contact: michaelj@epcc.ed.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2013-04-12
   humandate: April 11, 2013
   humantime: 10:00 - 17:30
@@ -834,7 +834,7 @@
   url: http://swcarpentry.github.io/2013-04-11-egi/
   user: swcarpentry
   venue: EGI Forum, Manchester
-- country: us
+- country: "us"
   enddate: 2013-04-14
   humandate: April 13-14, 2013
   instructor: [Justin Kitzes, Karthik Ram]
@@ -847,7 +847,7 @@
   user: swcarpentry
   venue: University of California Berkeley
 - contact: host-manchester@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-04-19
   eventbrite: 5397207192
   humandate: April 18-19, 2013
@@ -861,7 +861,7 @@
   user: swcarpentry
   venue: University of Manchester
 - address: 46 Rue Barrault, 75013 Paris
-  country: fr
+  country: "fr"
   enddate: 2013-04-21
   eventbrite: 5232959924
   humandate: April 20-21, 2013
@@ -877,7 +877,7 @@
   user: swcarpentry
   venue: Telecom ParisTech
 - address: N111, Pharmacy Hall
-  country: us
+  country: "us"
   enddate: 2013-04-28
   eventbrite: 5919069095
   humandate: April 27-28, 2013
@@ -892,7 +892,7 @@
   user: swcarpentry
   venue: University of Maryland, Baltimore
 - address: Union South "Fifth Quarter" room
-  country: us
+  country: "us"
   enddate: 2013-04-30
   eventbrite: 5915929705
   humandate: April 29-30, 2013
@@ -907,7 +907,7 @@
   user: swcarpentry
   venue: University of Wisconsin - Madison
 - address: Faculty of Sciences, Vrije Universiteit, De Boelelaan 1081, 1081 HV Amsterdam
-  country: nl
+  country: "nl"
   enddate: 2013-05-03
   humandate: May 2-3, 2013
   humantime: 9:00 am - 4:30 pm
@@ -922,7 +922,7 @@
   venue: Vrije Universiteit, Amsterdam
 - address: Christian-Albrechts-Universit&auml;t zu Kiel, Christian-Albrechts-Platz
     4, 24118 Kiel, Germany
-  country: de
+  country: "de"
   enddate: 2013-05-07
   humandate: May 6-7, 2013
   humantime: 9:00 am - 4:30 pm
@@ -937,7 +937,7 @@
   venue: GEOMAR (Kiel)
 - address: Axon/Dendrite Room, Landscape Building, Howard Hughes Medical Institute,
     Janelia Farm Research Campus, 19700 Helix Drive, Ashburn, VA 20147
-  country: us
+  country: "us"
   enddate: 2013-05-07
   humandate: May 6-7, 2013
   humantime: 9:00 am - 4:30 pm
@@ -951,7 +951,7 @@
   user: swcarpentry
   venue: Howard Hughes Medical Institute
 - address: Room B005, Li Ka Shing Center for Learning and Knowledge, Stanford University
-  country: us
+  country: "us"
   enddate: 2013-05-07
   humandate: May 6-7, 2013
   humantime: 9:00 am - 4:30 pm
@@ -964,7 +964,7 @@
   url: http://swcarpentry.github.io/2013-05-06-stanford/
   user: swcarpentry
   venue: Stanford University
-- country: us
+- country: "us"
   enddate: 2013-05-10
   humandate: May 9-10, 2013
   humantime: 9:00 am - 4:30 pm
@@ -978,7 +978,7 @@
   user: swcarpentry
   venue: Lawrence Berkeley National Laboratory
 - address: 366 Adelaide Street West, Suite 500, Toronto, ON
-  country: ca
+  country: "ca"
   enddate: 2013-05-10
   eventbrite: 6181024611
   humandate: May 9-10, 2013
@@ -993,7 +993,7 @@
   user: swcarpentry
   venue: Mozilla Foundation (Toronto)
 - contact: host-oxford-dtc@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-05-10
   eventbrite: 5656292122
   humandate: May 9-10, 2013
@@ -1007,7 +1007,7 @@
   user: swcarpentry
   venue: University of Oxford
 - address: King Lounge (Room 245), Memorial Union
-  country: us
+  country: "us"
   enddate: 2013-05-14
   eventbrite: 5553687228
   humandate: May 13-14, 2013
@@ -1021,7 +1021,7 @@
   url: http://swcarpentry.github.io/2013-05-13-ucdavis/
   user: swcarpentry
   venue: University of California Davis
-- country: us
+- country: "us"
   enddate: 2013-05-17
   eventbrite: 5899249815
   humandate: May 16-17, 2013
@@ -1036,7 +1036,7 @@
   user: swcarpentry
   venue: NESCent
 - address: Krakow, Poland
-  country: pl
+  country: "pl"
   enddate: 2013-05-19
   humandate: May 18-19, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1049,7 +1049,7 @@
   url: http://swcarpentry.github.io/2013-05-18-krakow/
   user: swcarpentry
   venue: Jagiellonian University
-- country: us
+- country: "us"
   enddate: 2013-05-21
   humandate: May 20-21, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1063,7 +1063,7 @@
   user: swcarpentry
   venue: Duke University
 - address: National Center for Atmospheric Research, Boulder, CO
-  country: us
+  country: "us"
   enddate: 2013-05-24
   humandate: May 23-24, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1077,7 +1077,7 @@
   user: swcarpentry
   venue: NCAR
 - address: Skinner 112, UMass Amherst
-  country: us
+  country: "us"
   enddate: 2013-05-24
   humandate: May 23-24, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1091,7 +1091,7 @@
   user: swcarpentry
   venue: University of Massachusetts Amherst
 - address: Biological Sciences Building, Central Wing 410 (CW410), University of Alberta
-  country: ca
+  country: "ca"
   enddate: 2013-05-31
   eventbrite: 5824534339
   humandate: May 30-31, 2013
@@ -1106,7 +1106,7 @@
   user: swcarpentry
   venue: University of Alberta
 - contact: host-soton@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-06-04
   humandate: June 3-4, 2013
   humantime: 9:00 am - 5:00 pm
@@ -1119,7 +1119,7 @@
   url: http://swcarpentry.github.io/2013-06-03-southampton/
   user: swcarpentry
   venue: University of Southampton
-- country: us
+- country: "us"
   enddate: 2013-06-04
   humandate: June 3-4, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1133,7 +1133,7 @@
   user: swcarpentry
   venue: Tufts University
 - address: University of Chicago
-  country: us
+  country: "us"
   enddate: 2013-06-05
   humandate: June 4-5 and June 17-18, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1147,7 +1147,7 @@
   user: swcarpentry
   venue: Data Science for Social Good
 - address: Blusson Hall Room 10011, Simon Fraser University, Burnaby BC.
-  country: ca
+  country: "ca"
   enddate: 2013-06-07
   eventbrite: 6744439801
   humandate: June 6-7, 2013
@@ -1162,7 +1162,7 @@
   user: swcarpentry
   venue: Simon Fraser University
 - address: La Jolla, CA
-  country: us
+  country: "us"
   enddate: 2013-06-11
   humandate: June 10-11, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1175,7 +1175,7 @@
   url: http://swcarpentry.github.io/2013-06-10-salk/
   user: swcarpentry
   venue: Salk Institute
-- country: us
+- country: "us"
   enddate: 2013-06-18
   humandate: June 17-18, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1189,7 +1189,7 @@
   user: swcarpentry
   venue: University of Chicago
 - address: One Cambridge Center, Cambridge, MA 02142
-  country: us
+  country: "us"
   enddate: 2013-06-25
   eventbrite: 6181177067
   humandate: June 24-25, 2013
@@ -1205,7 +1205,7 @@
   url: http://swcarpentry.github.io/2013-06-24-wise/
   user: swcarpentry
   venue: Women in Science and Engineering (Boston)
-- country: us
+- country: "us"
   enddate: 2013-05-26
   humandate: June 25, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1219,7 +1219,7 @@
   user: swcarpentry
   venue: SciPy 2013
 - address: Undercroft Room, University of Canterbury, Christchurch
-  country: nz
+  country: "nz"
   enddate: 2013-07-04
   humandate: July 1-4, 2013
   humantime: 1:00 pm - 5:00 pm
@@ -1233,7 +1233,7 @@
   user: swcarpentry
   venue: eResearch New Zealand
 - address: The Core, Stephenson Research and Technology Center, University of Oklahoma
-  country: us
+  country: "us"
   enddate: 2013-07-02
   humandate: July 1-2, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1247,7 +1247,7 @@
   user: swcarpentry
   venue: University of Oklahoma
 - address: Auditorium 2, Georg Sverdrups hus, Moltke Moes vei 39, Oslo
-  country: no
+  country: "no"
   enddate: 2013-07-04
   eventbrite: 5398444894
   humandate: July 3-4, 2013
@@ -1262,7 +1262,7 @@
   user: swcarpentry
   venue: University of Oslo
 - address: Xiao Hong Shan No.44, Wuhan
-  country: cn
+  country: "cn"
   enddate: 2013-07-09
   humandate: July 8-9, 2013
   humantime: 9:00 am - 5:00 pm
@@ -1275,7 +1275,7 @@
   url: http://swcarpentry.github.io/2013-07-08-wuhan/
   user: swcarpentry
   venue: Wuhan Institute of Virology
-- country: us
+- country: "us"
   enddate: 2013-07-12
   eventbrite: 6106951055
   humandate: July 11-12, 2013
@@ -1290,7 +1290,7 @@
   user: swcarpentry
   venue: Indiana University
 - contact: host-bath@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-07-16
   eventbrite: 6059565323
   humandate: July 15-16, 2013
@@ -1305,7 +1305,7 @@
   user: swcarpentry
   venue: University of Bath
 - address: Sustainable Software for Chemistry and Materials Software Summer School
-  country: us
+  country: "us"
   enddate: 2013-07-16
   humandate: July 15-16, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1319,7 +1319,7 @@
   user: swcarpentry
   venue: Virginia Tech
 - address: Utah State University Engineering Building (ENGR) Room 302
-  country: us
+  country: "us"
   enddate: 2013-07-17
   eventbrite: 6309398581
   humandate: July 16-17, 2013
@@ -1334,7 +1334,7 @@
   user: swcarpentry
   venue: CUAHSI Water Data Center
 - address: 140 DeBartolo Hall
-  country: us
+  country: "us"
   enddate: 2013-07-19
   eventbrite: 7012698169
   humandate: July 18-19, 2013
@@ -1348,7 +1348,7 @@
   url: http://swcarpentry.github.io/2013-07-18-notredame/
   user: swcarpentry
   venue: University of Notre Dame
-- country: us
+- country: "us"
   enddate: 2013-07-19
   humandate: July 18-19, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1362,7 +1362,7 @@
   user: swcarpentry
   venue: University of Washington
 - address: Pittsburgh, PA
-  country: us
+  country: "us"
   enddate: 2013-07-28
   humandate: July 27-28, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1376,7 +1376,7 @@
   user: swcarpentry
   venue: Carnegie Mellon University
 - address: Minneapolis Convention Center
-  country: us
+  country: "us"
   enddate: 2013-08-04
   humandate: Aug 4, 2013
   humantime: 8:00 a.m. - 5:00 p.m.
@@ -1391,7 +1391,7 @@
   venue: Ecological Society of America Annual Meeting
 - address: The Commons, University of Kansas
   contact: ejm@ku.edu
-  country: us
+  country: "us"
   enddate: 2013-08-23
   humandate: Aug 22-23, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1405,7 +1405,7 @@
   user: swcarpentry
   venue: University of Kansas
 - address: Vicksburg, MS
-  country: us
+  country: "us"
   enddate: 2013-08-29
   humandate: Aug 27-29, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1419,7 +1419,7 @@
   user: swcarpentry
   venue: US Army Engineer Research and Development Center
 - address: Wisconsin Institutes for Discovery, 3rd Floor Teaching Lab
-  country: us
+  country: "us"
   enddate: 2013-08-29
   eventbrite: 7317971249
   humandate: Aug 28-29, 2013
@@ -1434,7 +1434,7 @@
   url: http://swcarpentry.github.io/2013-08-28-wisc/
   user: swcarpentry
   venue: University of Wisconsin - Madison
-- country: us
+- country: "us"
   enddate: 2013-09-06
   eventbrite: 7583026035
   humandate: Sept 5-6, 2013
@@ -1449,7 +1449,7 @@
   user: swcarpentry
   venue: University of Iowa
 - contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-09-13
   humandate: Sept 12-13, 2013
   humantime: 9:00 a.m. - 5:00 p.m.
@@ -1462,7 +1462,7 @@
   url: http://swcarpentry.github.io/2013-09-12-bristol/
   user: swcarpentry
   venue: University of Bristol
-- country: ca
+- country: "ca"
   enddate: 2013-09-22
   humandate: Sept 21-22, 2013
   latlng: 43.468889,-80.54
@@ -1474,7 +1474,7 @@
   user: swcarpentry
   venue: University of Waterloo
   instructor: [Gabriel Devenyi, Tommy Guy]
-- country: us
+- country: "us"
   enddate: 2013-09-26
   eventbrite: 7723648641
   humandate: Sept 23-26, 2013
@@ -1489,7 +1489,7 @@
   user: swcarpentry
   venue: Michigan State University
 - address: Ingkarni Wardli, Room 218
-  country: au
+  country: "au"
   enddate: 2013-09-26
   humandate: Sep 24-26, 2013
   humantime: 9:00 - 17:00
@@ -1503,7 +1503,7 @@
   user: swcarpentry
   venue: 'Australian Bioinformatics Network: Adelaide'
 - address: ESB-5108
-  country: ca
+  country: "ca"
   enddate: 2013-09-27
   eventbrite: 7405051709
   humandate: Sept 26-27, 2013
@@ -1517,7 +1517,7 @@
   user: swcarpentry
   venue: University of British Columbia
 - address: Building 60, Monash University Clayton campus
-  country: au
+  country: "au"
   enddate: 2013-10-03
   humandate: Oct 1-3, 2013
   humantime: 9:00 - 17:00
@@ -1531,7 +1531,7 @@
   user: swcarpentry
   venue: 'Australian Bioinformatics Network: Melbourne'
 - address: The Westin Bonaventure Hotel, Los Angeles
-  country: us
+  country: "us"
   enddate: 2013-10-29
   humandate: Oct 29, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1546,7 +1546,7 @@
   venue: Society of Vertebrate Paleontology Annual Meeting
 - address: Aquarium Conference Room, NOAA National Marine Fisheries Service, Woods Hole
   contact: james.maning@noaa.gov
-  country: us
+  country: "us"
   enddate: 2013-11-15
   humandate: Nov 14-15, 2013
   humantime: 9:00 - 16:30
@@ -1561,7 +1561,7 @@
   instructor: [Ross Dickson, Will Trimble]
 - address: 3700 San Martin Drive, Baltimore, MD 21218
   contact: gvwilson@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2013-09-17
   humandate: Sept 16-17, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1577,7 +1577,7 @@
   venue: Space Telescope Science Institute
 - address: BSLC 115, 924 East 57th Street
   contact: jdblischak@uchicago.edu
-  country: us
+  country: "us"
   enddate: 2013-09-20
   humandate: Sept 19-20, 2013
   humantime: 8:30 am - 4:30 pm
@@ -1594,7 +1594,7 @@
 - address: Davidson Continuing Education Conference Center, 3415 S Figueroa St., Los
     Angeles
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2013-09-17
   humandate: Sept 16-17, 2013
   humantime: 8:30 am - 4:30 pm
@@ -1610,7 +1610,7 @@
   venue: University of Southern California
 - address: Centre Fran&ccedilois Jacob, room 28_01_01C
   contact: jdblischak@uchicago.edu
-  country: fr
+  country: "fr"
   enddate: 2013-10-04
   humandate: Oct 03-04, 2013
   humantime: 13:30 - 18:30, 9:00 - 17:30
@@ -1626,7 +1626,7 @@
   venue: Institut Pasteur
 - address: Canberra
   contact: karthik.ram@berkeley.edu
-  country: au
+  country: "au"
   enddate: 2013-10-10
   humandate: October 9-10, 2013
   humantime: 8:30 am - 5 pm
@@ -1642,7 +1642,7 @@
   venue: CSIRO/ANU
 - address: MRMB 1152, 900 S. Ashland, Chicago, IL 60607
   contact: microbe@uic.edu
-  country: us
+  country: "us"
   enddate: 2013-10-18
   humandate: Oct 17-18, 2013
   humantime: 8:30 am - 4:30 pm
@@ -1658,7 +1658,7 @@
   venue: University of Illinois at Chicago
 - address: Phillips Auditorium at the Center for Astrophysics, 60 Garden Street
   contact: harvard@lists.software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2013-08-24
   humandate: August 23-24, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1675,7 +1675,7 @@
 - address: 11th Floor, Greenwich Digital Enterprise Centre, 6 Mitre Passage, London
     SE10 0ER
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-10-25
   eventbrite: 7995483707
   humandate: Oct 24-25, 2013
@@ -1692,7 +1692,7 @@
   venue: Greenwich, England
 - address: NYC
   contact: ely@stsci.edu
-  country: us
+  country: "us"
   enddate: 2013-10-26
   humandate: October 25-26, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1708,7 +1708,7 @@
   venue: Columbia University and CUSP
 - address: Reed Hall, Streatham Drive, Exeter, Devon EX4 4QR
   contact: host-exeter@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-11-15
   humandate: November 14-15, 2013
   humantime: 9:00 am - 5.00 pm
@@ -1724,7 +1724,7 @@
   venue: Exeter University
 - address: Old Arts, Second Floor, Collaborative Learning Space 2 (room 257)
   contact: karenl@unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2013-12-04
   humandate: Nov 25 & 27/Dec 2 & 4, 2013
   humantime: 3:00 pm - 6:00 pm
@@ -1741,7 +1741,7 @@
 - address: Room 3217, James Clark Maxwell Building, Kings Buildings, Mayfield Road,
     Edinburgh, EH9 3JZ
   contact: host-edinburgh@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-12-04
   humandate: Dec 3-4, 2013
   humantime: 9:00 am - 5:00 pm
@@ -1757,7 +1757,7 @@
   venue: The University of Edinburgh
 - address: SESYNC, Annapolis, MD
   contact: mshelley@sesync.org
-  country: us
+  country: "us"
   enddate: 2013-12-06
   humandate: Dec 3-6, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1774,7 +1774,7 @@
   venue: National Socio-Environmental Synthesis Center (SESYNC)
 - address: Room 320, Kelvin Building
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2013-12-13
   humandate: Dec 12-13, 2013
   humantime: 9:00 am - 4:30 pm
@@ -1790,7 +1790,7 @@
   venue: Glasgow University
 - address: College of Life Sciences, University of Dundee, Dundee DD1 5EH
   contact: d.m.a.martin@dundee.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2013-12-16
   humandate: December 16-17, 2013
   humantime: 9:00 am - 5.00 pm
@@ -1806,7 +1806,7 @@
   venue: Dundee University
 - address: Bailey Hall 214-216, 10 Bailey Drive, Fredericton, New Brunswick
   contact: jgustavsen@eos.ubc.ca
-  country: ca
+  country: "ca"
   enddate: 2014-01-07
   humandate: Jan 6-7, 2014
   humantime: 9:00 am - 4:30 pm
@@ -1822,7 +1822,7 @@
   venue: University of New Brunswick
 - address: Wilberforce Road, Cambridge
   contact: r.cam.bootcamp@gmail.com
-  country: gb
+  country: "gb"
   enddate: 2014-01-08
   humandate: Jan 7-8, 2014
   humantime: 9:00 am - 4:30 pm
@@ -1839,7 +1839,7 @@
 - address: ISU Memorial Union (1/8/14 - Oak and South Ballroom, 1/9/14 - Oak and Sun
     Room)
   contact: howead@msu.edu
-  country: us
+  country: "us"
   enddate: 2014-01-09
   humandate: Jan 8-9, 2014
   humantime: 9:00 am - 4:30 pm
@@ -1855,7 +1855,7 @@
   venue: Iowa State University
 - address: 366 Adelaide Street West, Toronto
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-01-14
   humandate: Jan 13-14, 2014
   humantime: 8:45 am - 4:30 pm
@@ -1871,7 +1871,7 @@
   venue: Mozilla Toronto
 - address: Hazard Conference Room, 215 South Ferry Road, Narragansett, RI 02882
   contact: igonzalez@mailaps.org
-  country: us
+  country: "us"
   enddate: 2014-01-14
   humandate: Jan 13-14, 2014
   humantime: 8:00 am - 4:00 pm
@@ -1887,7 +1887,7 @@
   venue: Coastal Institute, University of Rhode Island
 - address: Researcher's Link, Wisconsin Institutes for Discovery
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-01-14
   eventbrite: 9770502837
   humandate: Jan 13-14, 2014
@@ -1906,7 +1906,7 @@
 - address: Room IT407, Information Technology Building, University of Manchester,
     Oxford Road, M13 9PL
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-01-15
   humandate: Jan 14-15, 2014
   humantime: 9:00 am - 5:00 pm
@@ -1922,7 +1922,7 @@
   venue: University of Manchester
 - address: Moffitt 103
   contact: jkitzes@berkeley.edu
-  country: us
+  country: "us"
   enddate: 2014-01-19
   humandate: Jan 18-19, 2014
   humantime: 9:00 am - 5:00 pm
@@ -1938,7 +1938,7 @@
   venue: University of California Berkeley
 - address: '405 Avenue Ogilvy #101, Montreal'
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-01-21
   eventbrite: 9698535581
   humandate: Jan 20-21, 2014
@@ -1955,7 +1955,7 @@
   venue: CRIM (Montreal)
 - address: 3909 Halls Ferry Rd Vicksburg, MS 39180
   contact: aron@ahmadia.net
-  country: us
+  country: "us"
   enddate: 2014-01-22
   humandate: January 21-22, 2014
   humantime: 9:00 am - 4:30 pm
@@ -1971,7 +1971,7 @@
   venue: US Army Engineer Research and Development Center
 - address: Hartley Conference Center, Mitchell Earth Sciences bldg., Stanford, CA
   contact: arokem@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-01-28
   humandate: Jan 27-28, 2014
   humantime: 9:00 am - 4:30 pm
@@ -1987,7 +1987,7 @@
   venue: Stanford University
 - address: Newman Alumni Center (tentative)
   contact: SKhuri@med.miami.edu
-  country: us
+  country: "us"
   enddate: 2014-01-28
   humandate: Jan 27-28, 2014
   humantime: 9:00 am - 5:00 pm
@@ -2005,7 +2005,7 @@
 - address: Alma Mater Room, I Hotel and Conference Center, 1900 South 1st Street,
     Champaign, IL 61820
   contact: davis68@illinois.edu
-  country: us
+  country: "us"
   enddate: 2014-01-31
   humandate: Jan 30-31, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2021,7 +2021,7 @@
   venue: University of Illinois, Computational Science and Engineering
 - address: 15 Vassar Street, 48-316
   contact: aron@ahmadia.net
-  country: us
+  country: "us"
   enddate: 2014-02-01
   humandate: Jan 30 - Feb 1, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2037,7 +2037,7 @@
   venue: Massachusetts Institute of Technology
 - address: 1424 Bren Hall, University of California, Santa Barbara
   contact: jkitzes@berkeley.edu
-  country: us
+  country: "us"
   enddate: 2014-02-01
   humandate: Jan 31-Feb 1, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2053,7 +2053,7 @@
   venue: University of California Santa Barbara
 - address: Norwich Research Park, Norwich
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-02-04
   humandate: Feb 3-4, 2014
   humantime: 9:00 am - 5:00 pm
@@ -2070,7 +2070,7 @@
 - address: Institute for Marine and Antarctic Studies, <a href="http://www.utas.edu.au/commercial-services-development/building-works/current-projects/institute-for-marine-and-antarctic-studies-imas">Castray
     Esplanade, Battery Point</a>
   contact: d.irving@student.unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2014-02-11
   humandate: Feb 10-11, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2086,7 +2086,7 @@
   venue: AMOS conference
 - address: 366 Adelaide Street West, Toronto
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-02-12
   eventbrite: 9459779455
   humandate: Feb 11-12, 2014
@@ -2103,7 +2103,7 @@
   venue: Mozilla Toronto
 - address: 8888 University Drive, Burnaby
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-03-01
   eventbrite: 8883102599
   humandate: Feb 22 and Mar 1, 2014
@@ -2120,7 +2120,7 @@
   venue: Simon Fraser University
 - address: TBD
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-02-16
   humandate: Feb 15-16, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2136,7 +2136,7 @@
   venue: University of Missouri - Kansas City
 - address: High St, Kensington NSW 2052 (Boral Theatre in the AGSM)
   contact: a.letten@unsw.edu.au
-  country: au
+  country: "au"
   enddate: 2014-02-14
   humandate: Feb 13-14, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2153,7 +2153,7 @@
 - address: CB06.06.103 (Bld 6, level 6, Rm 103)<br> 15 Broadway, Ultimo NSW 2007,
     Australia <a href ="http://maps.uts.edu.au/map.cfm">map</a>
   contact: daniel.falster@mq.edu.au
-  country: au
+  country: "au"
   enddate: 2014-02-19
   humandate: Feb 18-19, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2169,7 +2169,7 @@
   venue: University of Technology, Sydney
 - address: Accra - Cape Coast Rd, Biriwa, Central, Biriwa
   contact: admin@software-carpentry.org
-  country: gh
+  country: "gh"
   enddate: 2014-02-20
   humandate: Feb 18-20, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2185,7 +2185,7 @@
   venue: African Institute for Mathematical Sciences
 - address: London
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-02-19
   humandate: Feb 18-19, 2014
   humantime: 10:00 am - 5:00 pm
@@ -2202,7 +2202,7 @@
   venue: University College London
 - address: Madrid
   contact: abostroem@stsci.edu
-  country: es
+  country: "es"
   enddate: 2014-02-24
   humandate: Feb 24-25, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2218,7 +2218,7 @@
   venue: ESAC
 - address: ETH Hoenggerberg, HIT E51, Zurich
   contact: admin@software-carpentry.org
-  country: ch
+  country: "ch"
   enddate: 2014-03-01
   humandate: Feb 28-Mar 1, 2014
   humantime: 9:00 am - 5:30 pm
@@ -2235,7 +2235,7 @@
 - address: Brown Science and Engineering Library Electronic Classroom, Clark Hall
     (Room 133)
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-03-11
   humandate: Mar 10-11 2014
   humantime: 9:00 am - 4:30 pm
@@ -2252,7 +2252,7 @@
 - address: 4 Washington Place, 2nd Floor, Manhattan (for Python) and<br/> 1 MetroTech
     Center, 19th Floor, Brooklyn (for R)
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-03-18
   eventbrite: 10435144799
   humandate: Mar 17-18, 2014
@@ -2273,7 +2273,7 @@
 - address: Kinzie and Tamalpais Rooms, David Brower Center, 2150 Alliston Way, Berkeley
     CA
   contact: davclark@berkeley.edu
-  country: us
+  country: "us"
   enddate: 2014-03-18
   humandate: Mar 17-18, 2014
   humantime: 9:00 am - 5:00 pm
@@ -2291,7 +2291,7 @@
 - address: HUB 145, 4001 Stevens Way NE and OUG 220, 4060 George Washington Ln NE,
     Seattle
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-03-18
   eventbrite: 10299635487
   humandate: Mar 17-18, 2014
@@ -2309,7 +2309,7 @@
   venue: University of Washington
 - address: 100 S. Grant Street, West Lafayette, IN
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-03-18
   humandate: March 17-18, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2326,7 +2326,7 @@
 - address: <a href="http://maps.unimelb.edu.au/parkville/building/104#.Uw0fhPiLelM">Alan
     Gilbert Building</a>
   contact: d.irving@student.unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2014-03-28
   humandate: Mar 18, 21, 26 & 28, 2014
   humantime: 9:00 am - 12:30 pm
@@ -2342,7 +2342,7 @@
   venue: University of Melbourne
 - address: Room 110, Petch Building
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-04-03
   eventbrite: 10138651981
   humandate: Apr 2-3, 2014
@@ -2360,7 +2360,7 @@
 - address: <a href="http://vejviser.sdu.dk/opslag?lid=1082">Room U24</a> on day 1,
     <a href="http://vejviser.sdu.dk/opslag?lid=1799">room U30A</a> on day 2
   contact: admin@software-carpentry.org
-  country: dk
+  country: "dk"
   enddate: 2014-04-04
   humandate: Apr 3-4, 2014
   humantime: 9:00 am - 5:00 pm
@@ -2376,7 +2376,7 @@
   venue: University of Southern Denmark
 - address: 101 David L. Boren Blvd, Norman OK 73019
   contact: jduckles@ou.edu
-  country: us
+  country: "us"
   enddate: 2014-04-05
   helpers: [Mark Stacy, Mark Laufersweiler]
   humandate: April 4-5, 2014
@@ -2392,7 +2392,7 @@
   venue: University of Oklahoma
 - address: 3080 Center Green Drive, Boulder, CO
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-04-10
   humandate: Apr 09-10, 2014
   humantime: 9:00 am - 4:45 pm
@@ -2408,7 +2408,7 @@
   venue: University Corporation for Atmospheric Research
 - address: School of Life Sciences on Gibbet Hill Campus, Coventry
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-04-10
   humandate: Apr 09-10, 2014
   humantime: 9:45 am - 4:00 pm
@@ -2424,7 +2424,7 @@
   venue: GARNet, Warwick University
 - address: Lawrence Berkeley National Laboratory, Berkeley, California
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-04-15
   humandate: Apr 14-15, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2441,7 +2441,7 @@
   venue: Women in Science and Engineering
 - address: Room 523, Palais de Congres, Montreal, Quebec
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-04-15
   eventbrite: 10151376039
   humandate: Apr 14-15, 2014
@@ -2459,7 +2459,7 @@
   venue: Software Skills for Scientists and Engineers
 - address: Palais de Congres, Montreal, Quebec
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-04-15
   eventbrite: 10812972893
   humandate: Apr 14-15, 2014
@@ -2476,7 +2476,7 @@
   venue: Software Skills for Librarians
 - address: Room 525, Palais de Congres, Montreal, Quebec
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   eventbrite: 10151618765
   humandate: Apr 14, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2492,7 +2492,7 @@
   venue: Next-Generation Sequencing
 - address: Room 525, Palais de Congres, Montreal, Quebec
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   eventbrite: 10319320365
   helper: [Denis Haine, John Blischak]
   humandate: Apr 15, 2014
@@ -2509,7 +2509,7 @@
   venue: R for Python Programmers
 - address: Vilvite, Thorm&oslash;hlensgate 51, 5006 Bergen
   contact: david.fredman@uib.no
-  country: no
+  country: "no"
   enddate: 2014-04-24
   humandate: April 23-24, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2525,7 +2525,7 @@
   venue: University of Bergen
 - address: Virginia Science and Technology Campus, Ashburn, VA
   contact: joshua.r.herr@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-04-30
   humandate: Apr 29-30, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2540,7 +2540,7 @@
   user: jrherr
   venue: George Washington University
 - address: Waterfront Campus, European Way, Southampton, Hampshire, SO14 3ZH
-  country: gb
+  country: "gb"
   enddate: 2014-05-09
   humandate: May 08-09, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2557,7 +2557,7 @@
   venue: National Oceanography Centre
 - address: Mills Library L107, 1280 Main St. W. Hamilton, Ontario
   contact: devenyga@mcmaster.ca
-  country: ca
+  country: "ca"
   enddate: 2014-05-06
   eventbrite: 11361824523
   humandate: May 5-6, 2014
@@ -2574,7 +2574,7 @@
   venue: McMaster University Wong e-Classroom
 - address: "Av. Italia, km 8, sala 2106 no pavilhao 2."
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2014-05-13
   eventbrite: 11429715587
   helper: [Marcus Vinicius Freire Guimaraes]
@@ -2592,7 +2592,7 @@
   venue: Universidade Federal do Rio Grande
 - address: One Bungtown Road, Cold Spring Harbor, NY
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-05-13
   humandate: May 12-13, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2608,7 +2608,7 @@
   venue: Cold Spring Harbor Laboratory, Hershey Building, east conference room
 - address: Mozilla, 366 Adelaide Street West, Toronto
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-05-13
   humandate: May 12-13, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2624,7 +2624,7 @@
   venue: Ontario Institute for Cancer Research
 - address: University of British Columbia, Vancouver, BC
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-05-13
   humandate: May 12-13, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2640,7 +2640,7 @@
   venue: bioinformatics.ca
 - address: Karolinska Institutet Science Park, Stockholm
   contact: admin@software-carpentry.org
-  country: se
+  country: "se"
   enddate: 2014-05-20
   humandate: May 19-20, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2657,7 +2657,7 @@
 - address: Room 620, Administrative and Research Center, 3100 Marine St. Boulder,
     CO 80309
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-05-23
   humandate: May 23, 2014
   humantime: 8:00 am - 5:00 pm
@@ -2673,7 +2673,7 @@
   venue: Community Surface Dynamics Modeling System Meeting
 - address: SeaCave in the Eckart Bldg, La Jolla, CA
   contact: ntpierce@ucsd.edu
-  country: us
+  country: "us"
   enddate: 2014-05-30
   humandate: May 29-30, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2690,7 +2690,7 @@
 - address: Faculty of Medicine, Nursing and Health Sciences (Krongold Centre (Building
     5) / Room G19), Wellington Road, Clayton, Victoria 3800
   contact: Matthew.Dimmock@monash.edu
-  country: au
+  country: "au"
   enddate: 2014-06-04
   humandate: Jun 02-04, 2014
   humantime: 1:00 pm - 5:00 pm
@@ -2706,7 +2706,7 @@
   venue: Monash University
 - address: Pisa
   contact: admin@software-carpentry.org
-  country: it
+  country: "it"
   enddate: 2014-06-06
   humandate: Jun 04-06, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2723,7 +2723,7 @@
     \ di Pisa"
 - address: Mann Library, Room B30A<br>237 Mann Drive<br>Ithaca, NY 14853
   contact: mudrak@cornell.edu
-  country: us
+  country: "us"
   enddate: 2014-06-05
   eventbrite: 11562775573
   humandate: Jun 4-5, 2014
@@ -2740,7 +2740,7 @@
   venue: Cornell University
 - address: 20 Konstantinou Kavafi Street, 2121 Aglantzia, Nicosia
   contact: admin@software-carpentry.org
-  country: cy
+  country: "cy"
   enddate: 2014-06-11
   humandate: Jun 10-11, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2757,7 +2757,7 @@
 - address: Albro-Falconer-Manely Science Center, Room 232, 440 Westview Dr. S.W.,
     Atlanta, GA 30354
   contact: hqin@spelman.edu
-  country: us
+  country: "us"
   enddate: 2014-06-11
   humandate: Jun 10-11, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2773,7 +2773,7 @@
   venue: Spelman College
 - address: Amman
   contact: admin@software-carpentry.org
-  country: jo
+  country: "jo"
   enddate: 2014-06-17
   humandate: Jun 16-17, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2789,7 +2789,7 @@
   venue: Ibis Hotel (Open One Meeting Room)
 - address: UCDavis Shields Library
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-06-17
   eventbrite: '11471139487'
   humandate: Jun 16-17, 2014
@@ -2807,7 +2807,7 @@
 - address: 888 Columbia Ave, Claremont, CA 91711; Kravis Center, room LC62 (Freeberg
     Forum)
   contact: psn@kecksci.claremont.edu
-  country: us
+  country: "us"
   enddate: 2014-06-17
   eventbrite: 11558171803
   humandate: Jun 16-17, 2014
@@ -2824,7 +2824,7 @@
   venue: Claremont Colleges
 - address: 366 Adelaide Street West, Toronto, Ontario
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-06-17
   eventbrite: 11526822035
   helper: [Catalina Anghel]
@@ -2842,7 +2842,7 @@
   venue: Mozilla Toronto
 - address: CRTP Classroom, 2nd Floor, Hock Plaza, 2424 Erwin Road
   contact: cliburn.chan@duke.edu
-  country: us
+  country: "us"
   enddate: 2014-06-17
   humandate: Jun 16-17, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2858,7 +2858,7 @@
   venue: Duke University
 - address: Bowers Auditorium, Sage Hall, 205 Prospect, New Haven, CT 06511
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-06-21
   eventbrite: 11719002853
   humandate: June 20-21, 2014
@@ -2877,7 +2877,7 @@
   venue: Yale University
 - address: Delta Bessborough Hotel, 601 Spadina Crescent East, Saskatoon, SK
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-06-24
   humandate: Jun 22-24, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2893,7 +2893,7 @@
   venue: Canadian Applied and Industrial Mathematics Society
 - address: 1230 York Ave, New York, NY 10065
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-06-25
   humandate: June 24-25, 2014
   humantime: 9:00 am - 4:45 pm
@@ -2912,7 +2912,7 @@
 - address: Room 08-146AB, Smilow Center for Translational Research, 3400 Civic Center
     Blvd., Philadelphia
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-06-25
   helper: [Alyssa Batula, Maneesha Sane]
   humandate: Jun 24-25, 2014
@@ -2931,7 +2931,7 @@
     Berkshire
   contact: admin@software-carpentry.org, Kathie Bowden (k.e.bowden@reading.ac.uk),
     <a href="http://www.met.reading.ac.uk/contact.html">Meteorology Dept.</a>
-  country: gb
+  country: "gb"
   enddate: 2014-06-26
   humandate: June 25-26, 2014
   humantime: 9:00 am - 4:30 pm
@@ -2947,7 +2947,7 @@
   venue: University of Reading
 - address: South bend, IN
   contact: joshua.r.herr@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-06-27
   helper: []
   humandate: Jun 26-27, 2014
@@ -2964,7 +2964,7 @@
   venue: University of Notre Dame
 - address: University Park, NG7 2RD, Nottingham
   contact: gavin.thomas@sheffield.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-07-11
   helper: []
   humandate: Jul 10-11, 2014
@@ -2981,7 +2981,7 @@
   venue: The University of Nottingham
 - address: Li Ka Shing Center at Stanford's Medical School, room LK130
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-07-01
   humandate: Jun 30-Jul 1, 2014
   humantime: 9:00 am - 5:00 pm
@@ -2997,7 +2997,7 @@
   venue: Stanford University
 - address: Sobey School of Business, 4th floor, 923 Robie Street, Halifax, NS
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-07-03
   humandate: Jul 2-3, 2014
   humantime: 9:00 am - 4:30 pm
@@ -3013,7 +3013,7 @@
   venue: Saint Mary's University
 - address: Stanley Milner Library, 7 Sir Winston Churchill Square, Edmonton, AB
   contact: macdonellc4@macewan.ca
-  country: ca
+  country: "ca"
   enddate: 2014-07-11
   eventbrite: '11668602103'
   humandate: Jul 10-11, 2014
@@ -3030,7 +3030,7 @@
   venue: Software Skills for Librarians at EPL
 - address: Rm 3200, 40 St. George Street, University of Toronto
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-07-09
   eventbrite: 11725123159
   helper: [Elizabeth Patitsas, Catalina Anghel]
@@ -3048,7 +3048,7 @@
   venue: Women in Science and Engineering (Toronto)
 - address: Hilton Garden Inn conference room, 1 Circle Rd, Stony Brook, NY 11794
   contact: olsonran@msu.edu
-  country: us
+  country: "us"
   enddate: 2014-07-09
   humandate: Jul 08-09, 2014
   humantime: 9:00 am - 4:30 pm
@@ -3064,7 +3064,7 @@
   venue: Stony Brook University
 - address: Frisco, CO, USA
   contact: joshua.r.herr@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-07-11
   helper: []
   humandate: Jul 10-11, 2014
@@ -3081,7 +3081,7 @@
   venue: Federation of Earth Science Information Partners (ESIP) Summer Meeting
 - address: Kenneth C. Rowe Management Building, Room 1014
   contact: diego.barneche@mq.edu.au
-  country: ca
+  country: "ca"
   enddate: 2014-07-15
   helper: [Daniel Morrison]
   humandate: Jul 14-15, 2014
@@ -3098,7 +3098,7 @@
   venue: Dalhousie University
 - address: Mozilla Toronto, 366 Adelaide Street West, Toronto, Ontario
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-07-16
   eventbrite: 11727066973
   helper: [Ruth Collings, Thomas Guignard, Alif Zaman, Orion Buske, Dale Russell]
@@ -3117,7 +3117,7 @@
 - address: Portland Hilton, Broadway I and II rooms, 921 SW 6th Ave, Portland, OR
     97204
   contact: olsonran@msu.edu
-  country: us
+  country: "us"
   enddate: 2014-07-18
   humandate: July 17-18, 2014
   humantime: 9:00 am - 4:30 pm
@@ -3134,7 +3134,7 @@
 - address: North Campus Research Complex (NCRC)<br/>Building 18, South Atrium<br/>2800
     Plymouth Rd.
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-07-20
   humandate: July 19-20, 2014
   humantime: 9:00 am - 5:00 pm
@@ -3151,7 +3151,7 @@
 - address: Computer Teaching Suite (room 252), Whittle Building (building 52), College
     Road, Cranfield, MK43 0AL
   contact: support@archer.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-07-23
   humandate: Jul 21-23, 2014
   humantime: 9:30 am - 5:00 pm
@@ -3167,7 +3167,7 @@
   venue: Cranfield University
 - address: 19700 Helix Drive, Ashburn, VA 20147
   contact: sheldon.mckay@gmail.com
-  country: us
+  country: "us"
   helper: [Anitha Parvatham, Rob Svirskas, Ben Arthur, Christopher Bruns, Don Olbris,
     Greg Pinero, Peter Bukowinski]
   humandate: July 23-24, 2014
@@ -3184,7 +3184,7 @@
   venue: Janelia Farm Research Campus
 - address: Li Ka Shing Center at Stanford's Medical School, room LK120
   contact: amyhodge@stanford.edu
-  country: us
+  country: "us"
   enddate: 2014-07-29
   eventbrite: '12096909181'
   helper: [Christian Battista, Chris Beitel, Louise Giam, Amy Hodge, Jillynne Quinn,
@@ -3203,7 +3203,7 @@
   venue: Stanford University
 - address: Boardroom, St. Leo's College, St. Lucia, Brisbane
   contact: philipp.bayer@uqconnect.edu.au
-  country: au
+  country: "au"
   enddate: 2014-07-31
   humandate: Jul 30-31, 2014
   humantime: 9:00 am - 5:00 pm
@@ -3219,7 +3219,7 @@
   venue: PyCon AU / University of Queensland
 - address: 1261 Duck Road Kitty Hawk, NC 27949-4472
   contact: aron@ahmadia.net
-  country: us
+  country: "us"
   enddate: 2014-08-07
   humandate: August 5-7, 2014
   humantime: 8:00 am - 5:00 pm
@@ -3236,7 +3236,7 @@
 - address1: 567 Wilson Road, BPS Room 1441, East Lansing, MI
   address2: UT Austin, GDC 7.808
   contact: tkteal@msu.edu
-  country: us
+  country: "us"
   enddate: 2014-07-25
   eventbrite1: 11953052903
   eventbrite2: 11953089011
@@ -3260,7 +3260,7 @@
 - address: Farrell Teaching and Learning Center, Holden Auditorium and FLTC 214, Saint
     Louis, MO
   contact: molly.gibson@wustl.edu
-  country: us
+  country: "us"
   enddate: 2014-08-12
   humandate: Aug 11-12, 2014
   humantime: 9:00 am - 4:30 pm
@@ -3276,7 +3276,7 @@
   venue: Washington University School of Medicine
 - address: Room 419 Light Hall 1301 Medical Center Dr Nashville, TN 37232
   contact: scott.s.burns@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-08-13
   humandate: Aug 12-13, 2014
   humantime: 9:00 am - 4:30 pm
@@ -3292,7 +3292,7 @@
   venue: Vanderbilt University
 - address: Li Ka Shing Center room 120, 291 Campus Drive, Stanford, CA 94305
   contact: abostroem@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-08-15
   helper: [Matar Haller, Chris Beitel, Ian Korf, Dani Traphagen]
   humandate: Aug 14-15, 2014
@@ -3310,7 +3310,7 @@
 - address: Auditório Ministro João Alberto Lins de Barros do CBPF – Rua Lauro Muller,
     455 – térreo – Botafogo – Rio de Janeiro – RJ
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2014-08-18
   helper: []
   humandate: Aug 18, 2014
@@ -3327,7 +3327,7 @@
   venue: Universidade Federal do Rio de Janeiro
 - address: <a href="http://maps.unimelb.edu.au/parkville/building/149">Old Arts building</a>
   contact: d.irving@student.unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2014-08-27
   humandate: Aug 18, 25 & 27, 2014
   humantime: 9:00 am - 5:00 pm
@@ -3343,7 +3343,7 @@
   venue: University of Melbourne
 - address: Am Botanischen Garten 7, R.E49 - PC-room, Kiel
   contact: rkiko@geomar.de
-  country: de
+  country: "de"
   enddate: 2014-08-22
   helper: [Pieter Vandromme, Pina Springer]
   humandate: Aug 21-22, 2014
@@ -3360,7 +3360,7 @@
   venue: Christian Albrechts University, Kiel
 - address: LRSM Auditorium, 3231 Walnut Street, Philadelphia, PA 19104
   contact: gvwilson@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-08-22
   helper: []
   humandate: Aug 21-22, 2014
@@ -3378,7 +3378,7 @@
 - address: TTU Media and Communications Building, Room 0152, 15th and Flint, Lubbock,
     TX
   contact: eric.bruning@ttu.edu
-  country: us
+  country: "us"
   enddate: 2014-08-24
   helper: [Eric Bruning, Vanna Sullivan, Tony Reinhart, Aaron Hill]
   humandate: Aug 23-24, 2014
@@ -3396,7 +3396,7 @@
 - address: 3rd Floor Teaching Lab, Wisconsin Institutes for Discovery, 330 N Orchard
     St, Madison, WI
   contact: lmichael@wisc.edu
-  country: us
+  country: "us"
   enddate: 2014-08-26
   eventbrite: '12454047391'
   helper: [Anthony Scopatz]
@@ -3415,7 +3415,7 @@
 - address: Craik-Marshall Building, University of Cambridge, Downing Site, Cambridge,
     CB2 3AR
   contact: cambridge@lists.software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-08-27
   helper: [Jelena Aleksic, David Molnar]
   humandate: Aug 26-27, 2014
@@ -3432,7 +3432,7 @@
   venue: Cambridge University
 - address: Instituto de Informática prédio 43413(67) - Sala 102.
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2014-08-29
   helper: []
   humandate: Aug 28-29, 2014
@@ -3449,7 +3449,7 @@
   venue: Universidade Federal do Rio Grande do Sul (Campus do Vale)
 - address: CCSL-IME/USP, Sala B-7. Rua do Matão, 1010
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2014-09-02
   eventbrite: 12386974775
   helper: []
@@ -3467,7 +3467,7 @@
   venue: Centro de Competência em Software Livre
 - address: CCSL-IME/USP, Sala B-7. Rua do Matão, 1010
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2014-09-05
   eventbrite: 12387143279
   helper: []
@@ -3485,7 +3485,7 @@
   venue: Centro de Competência em Software Livre
 - address: Newark, DE, USA
   contact: joshua.r.herr@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-09-12
   helper: [Erin Crowgey, Reza Hammond, Modupe Adetunji, Liang Sun, Matthew Ralston]
   humandate: Sep 11-12, 2014
@@ -3502,7 +3502,7 @@
   venue: University of Delaware
 - address: Engineering 6 room 4022, 200 University Ave, Waterloo
   contact: nmabukhdeir@uwaterloo.ca
-  country: ca
+  country: "ca"
   enddate: 2014-09-14
   helper: [WatPy, SHARCNET]
   humandate: September 13-14, 2014
@@ -3520,7 +3520,7 @@
 - address: <a href="http://maps.unimelb.edu.au/parkville/building/104#.Uw0fhPiLelM">Theatre
     3, Alan Gilbert Building</a>
   contact: d.irving@student.unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2014-09-25
   humandate: Sep 15, 18, 22 & 25, 2014
   humantime: 1:30 pm - 5:00 pm
@@ -3537,7 +3537,7 @@
 - address: Room 1.51, Royal School of Mines (RSM) Building, South Kensington Campus,
     Imperial College London, London.
   contact: support@archer.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-09-17
   humandate: Sep 16-17, 2014
   humantime: 10:00 am - 5:00 pm
@@ -3554,7 +3554,7 @@
 - address: Day 1 - Biological Scienes Learning Center (BSLC) 109; Day 2 - Gordon Center
     for Integrative Science (GCIS) W301
   contact: jdblischak@uchicago.edu
-  country: us
+  country: "us"
   enddate: 2014-09-19
   helper: [Daniel Rabe, Nick Knoblauch, Suchandra Thapa, Bala Desinghu]
   humandate: Sep 18-19, 2014
@@ -3571,7 +3571,7 @@
   venue: University of Chicago
 - address: 1 Cyclotron Road Berkeley, CA 94720
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-09-23
   helper: [Kyle Barbary, Yigong Zhang]
   humandate: Sep 22-23, 2014
@@ -3589,7 +3589,7 @@
   venue: Lawrence Berkeley Lab
 - address: 20th and C St NW. Washington DC. (Martin Building Dining Room E)
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-09-25
   helper: [Açmae El Yacoubi]
   humandate: Sep 24-25, 2014
@@ -3606,7 +3606,7 @@
   venue: Federal Reserve Board
 - address: Earth, Ocean and Atmospheric Sciences, ESB-5108
   contact: sallen@eos.ubc.ca
-  country: ca
+  country: "ca"
   enddate: 2014-08-26
   helper: [Jordan Aaron, Karina Ramos Musalem, Drew Snauffer, Nancy Soontiens, Kathi
       Unglert, Kang Wang]
@@ -3625,7 +3625,7 @@
   venue: University of British Columbia
 - address: iDigBio at University of Florida, Gainesville, FL
   contact: data-carpentry@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-09-30
   helper: [Dan Stoner, Deborah Paul, Pam Soltis, Derek Masaki, Shari Ellis, Kevin Love, Juliet Pulliam, Tommy Tang, Bernardo Santos, Jonathan Foox]
   humandate: Sep 29-30, 2014
@@ -3642,7 +3642,7 @@
   venue: University of Florida
 - address: Life Sciences C-Wing, Room 180/182
   contact: eric.d.johnson@asu.edu
-  country: us
+  country: "us"
   enddate: 2014-09-28
   eventbrite: '13072962583'
   helper: [To Be Determined]
@@ -3661,7 +3661,7 @@
 - address: Biomedical and Physical Sciences Building 567 Wilson Road Room 1441 East
     Lansing, MI 48824 (Seminar Room)
   contact: jory@msu.edu
-  country: us
+  country: "us"
   enddate: 2014-10-01
   eventbrite: 13109602173
   helper: [Emily Dolson, Josh Nahum, Eric Bruger]
@@ -3679,7 +3679,7 @@
   venue: Michigan State University
 - address: Innovation Center (Room 105), 2719 E. 10th St., Bloomington, IN
   contact: igonzalez@mailaps.org
-  country: us
+  country: "us"
   enddate: 2014-10-07
   helper: [Badi' Abdul-Wahid, Kevin Bohan, Eric Holk, DongInn Kim]
   humandate: Oct 6-7, 2014
@@ -3696,7 +3696,7 @@
   venue: Indiana University
 - address: 102 Rightmire Hall, 1060 Carmack Rd, Columbus, OH 43210
   contact: sheldon.mckay@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-10-07
   helper: [Jeffrey Campbell, Joy-El Talbot, Eric Mukundi, Wilberforce Ouma]
   humandate: Oct 6-7, 2014
@@ -3714,7 +3714,7 @@
 - address: Rooms 368/374, Rotman School of Management, 105 St. George Street, Toronto,
     Ontario
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-10-07
   eventbrite: '13023831631'
   helper: [Catalina Anghel, Samantha Clark, Thomas Guignard, Tom Wright, Lee Zamparo]
@@ -3734,7 +3734,7 @@
   venue: University of Toronto
 - address: Sloane Physics Lab, Room 43, 217 Prospect Street, New Haven, CT 06511
   contact: rbsi.yale@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-10-12
   eventbrite: 13155403165
   helper: [Jieming Chen, Wendell Smith, Tomomi Sunayama, Manuel Mai, Dan Guest]
@@ -3753,7 +3753,7 @@
   venue: Yale University
 - address: HBH 227; 6100 Main St. Houston, TX 77204
   contact: rcsg@rice.edu
-  country: us
+  country: "us"
   enddate: 2014-10-14
   eventbrite: 13095572209
   helper: [Joseph Ghobrial, Erik Engquist]
@@ -3771,7 +3771,7 @@
   venue: Rice University
 - address: Gerstein Library, 9 King's College Circle, Toronto, Ontario
   contact: gvwilson@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2014-10-31
   eventbrite: 13047803331
   helper: [Xu Fei, Luke Johnston, Daiva Nielsen, Sahar Rahmani, Tom Wright]
@@ -3790,7 +3790,7 @@
   venue: University of Toronto
 - address: Law School Seminar Room 444 (upstairs from the Law School Bar)
   contact: diego.barneche@mq.edu.au
-  country: au
+  country: "au"
   enddate: 2014-11-01
   helper: [Sarah McIntyre, Steson Lo]
   hostcontact: alex.holcombe@sydney.edu.au
@@ -3809,7 +3809,7 @@
   venue: University of Sydney
 - address: James L. Allen Center, 2169 Campus Drive, Evanston, IL 60208-2800
   contact: edd@debian.org
-  country: us
+  country: "us"
   enddate: 2014-11-01
   helper: []
   humandate: Oct 31 - Nov 1, 2014
@@ -3827,7 +3827,7 @@
 - address: Faculté de médecine vétérinaire de l'Université de Montréal, St-Hyacinthe,
     QC
   contact: denis.haine@umontreal.ca
-  country: ca
+  country: "ca"
   enddate: 2014-11-07
   helper: []
   humandate: Nov 6-7, 2014
@@ -3844,7 +3844,7 @@
   venue: GREZOSP
 - address: Winterthurerstrasse 190
   contact: admin@software-carpentry.org
-  country: ch
+  country: "ch"
   enddate: 2014-11-07
   helper: [Frank Pennekamp, Peter Fields, Jelena Aleksic]
   humandate: Nov 6-7, 2014
@@ -3862,7 +3862,7 @@
   venue: Institute of Molecular Life Sciences, University of Zurich
 - address: 60 Garden Street, Cambridge, MA 02138
   contact: iglpdc+harvard@gmail.com
-  country: us
+  country: "us"
   enddate: 2014-11-08
   helper: [Christopher Erdmann, Bob Freeman, Jean Roth, Peter Williams]
   humandate: Nov 7-8, 2014
@@ -3881,7 +3881,7 @@
     University
 - address: 29 Grafton Street, Manchester, M13 9WU
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-11-14
   helper: [Andy Brass, Mike Cornell]
   humandate: Nov 10-14, 2014
@@ -3899,7 +3899,7 @@
   venue: The Nowgen Centre, University of Manchester
 - address: EMBL Heidelberg
   contact: admin@software-carpentry.org
-  country: de
+  country: "de"
   enddate: 2014-11-14
   helper: []
   humandate: Nov 12-14, 2014
@@ -3918,7 +3918,7 @@
   venue: European Molecular Biology Laboratory
 - address: Charles Thackrah Building, University of Leeds, Leeds, LS2 9JT
   contact: a.walker@leeds.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-11-26
   helper: [Aaron O'Leary, Peter Willetts, Marlene Mengoni, Jo Leng]
   humandate: Nov 24-26, 2014
@@ -3935,7 +3935,7 @@
   venue: NERC / University of Leeds
 - address: Atlas 1-2 Room, Kilburn Building, Oxford Road, M13 9PL Manchester
   contact: data-carpentry@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-11-28
   eventbrite: 13760815971
   helper: [Ian Dunlop, Aleksandra Nenadic, Christian Brenninkmeijer]
@@ -3953,7 +3953,7 @@
   venue: University of Manchester
 - address: TS 3B and TS 3C, Snape Building, Upper Campus
   contact: admin@software-carpentry.org
-  country: za
+  country: "za"
   enddate: 2014-11-28
   helper: [Dane Kennedy, Hein de Jager, Ashley Rustin, David Matten,
       Armin Deffur, Anelda van der Walt, Warren Jacobus, Chris
@@ -3975,7 +3975,7 @@
 - address: Room 3217, James Clerk Maxwell Building, Peter Guthrie Tait Road, Edinburgh,
     EH9 3FD
   contact: support@archer.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-12-04
   helper: [Emmanouil Farsarakis, Leighton Pritchard, Peter Cock]
   humandate: Dec 3-4, 2014
@@ -3993,7 +3993,7 @@
   venue: The University of Edinburgh
 - address: ul. Kawiory 21, 30-055 Kraków
   contact: admin-uk@software-carpentry.org
-  country: pl
+  country: "pl"
   enddate: 2014-12-07
   eventbrite: 14426226231
   helper: [Barbara Szczygieł, Iwona Grelowska, Patrycja Radaczyńska, Anna Ślimak]
@@ -4012,7 +4012,7 @@
   venue: Women in Science and Engineering
 - address: Theatre 2, Alan Gilbert
   contact: scottcr@unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2014-12-09
   etherpad: https://etherpad.mozilla.org/2014-12-08-combine-r
   helper: [Andrew Lonsdale, Harriet Dashnow, Timothy Rice, Noel Faux, Simon Gladman,
@@ -4030,7 +4030,7 @@
   venue: University of Melbourne
 - address: Room 240, Searle Chemistry Lab, 5735 S. Ellis Ave, Chicago, IL 60637
   contact: balamurugan@uchicago.edu
-  country: us
+  country: "us"
   enddate: 2014-12-17
   helper: [Anna Olson]
   humandate: Dec 15-17, 2014
@@ -4049,7 +4049,7 @@
 - Registration: restricted
   address: SPL Rm. 48, Sloane Physics Laboratory, 217 Prospect St, New Haven, CT
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-12-19
   helper: [Camille Avestruz, Tomomi Sunayama, Nick Sawyer, Jieming Chen, Luis Vargas]
   humandate: Dec. 18-19, 2014
@@ -4066,7 +4066,7 @@
   venue: Yale University
 - address: 3rd floor Training Room, 7 Sir Winston Churchill Square
   contact: vvarga@epl.ca
-  country: ca
+  country: "ca"
   enddate: 2014-12-16
   helper: [Cody Moorhouse, Katie Thompson]
   humandate: Dec 15 & 16 2014
@@ -4087,7 +4087,7 @@
     bairro Córrego Grande). Nos prédios do CCB (MIP), procure o segundo bloco, andar
     térreo, corredor da direita, última sala do corredor
   contact: diego.barneche@mq.edu.au
-  country: br
+  country: "br"
   enddate: 2014-12-12
   etherpad: https://etherpad.mozilla.org/SWC-UFSC
   helper: []
@@ -4104,7 +4104,7 @@
   venue: Universidade Federal de Santa Catarina
 - address: Lab 323, Kelvin Building, G12 8SU
   contact: alistair.grant@ed.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2014-12-12
   helper: [Paul Mullen, Sean Leavey, Gavin Kirby]
   humandate: Dec 11-12, 2014
@@ -4120,7 +4120,7 @@
   venue: University of Glasgow
 - address: 1 Cyclotron Road, Berkeley, CA
   contact: nlucido@lbl.gov
-  country: us
+  country: "us"
   enddate: 2014-12-17
   helper: [Sam Penrose]
   humandate: Dec 16-17, 2014
@@ -4136,7 +4136,7 @@
   venue: Lawrence Berkeley National Lab
 - address: New York City
   contact: gvwilson@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2014-06-07
   helper: [Jared Camins-Esakov, Yu-Ching Shih, Shawn Averkamp, Paul Beaudoin, Mauricio
       Giraldo, Matt Miller, David Riordan]
@@ -4154,7 +4154,7 @@
   venue: New York Public Library
 - address: Foresight Centre, 1 Brownlow Street, Liverpool, L69 3GL
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2014-11-18
   helper: [Bert Overduin, Christiane Hertz-Fowler]
   humandate: Nov 17-18, 2014
@@ -4172,7 +4172,7 @@
   venue: University Of Liverpool
 - address: Room 609, Seattle Convention Center, Seattle WA
   contact: kabostroem@ucdavis.edu
-  country: us
+  country: "us"
   enddate: 2015-01-04
   helper: [Pauline Barmby, Sophie Clayton, Jens von der Linden]
   humandate: Jan 3-4, 2015
@@ -4190,7 +4190,7 @@
   venue: American Astronomical Society 225th Meeting
 - address: Mathematics Building, Room 135, UC Boulder
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2015-01-06
   eventbrite: 14752447969
   humandate: Jan 5-6, 2015
@@ -4209,7 +4209,7 @@
 - address: North Campus Research Complex, Building 10 Room G064 and the South Atrium,
     2800 Plymouth Road, Ann Arbor, MI
   contact: admin@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2015-01-06
   helper: [Alyxandria Schubert, Iris Holmes, Marian Schmidt, Michelle Berry]
   humandate: Jan 5-6, 2015
@@ -4227,7 +4227,7 @@
   venue: Women in Science and Engineering, University of Michigan
 - address: 3100 Marine Street, Boulder, CO 80309
   contact: aron@ahmadia.net
-  country: us
+  country: "us"
   enddate: 2015-01-09
   humandate: Jan 7-9, 2015
   humantime: 9:00 am - 5:00 pm
@@ -4243,7 +4243,7 @@
   venue: Institute of Arctic and Alpine Research (INSTAAR), Room 620
 - address: null
   contact: imunoz@sesync.org
-  country: us
+  country: "us"
   enddate: 2015-01-09
   helper: [Sean Davis]
   humandate: Jan 8-9, 2015
@@ -4261,7 +4261,7 @@
   venue: National Institutes of Health Library
 - address: 1050 Massachusetts Ave., Cambridge,  2nd floor Conference Room
   contact: tjc.swc@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-01-09
   helper: [Matthew Lamberti]
   humandate: Jan 8-9, 2015
@@ -4279,7 +4279,7 @@
   venue: National Bureau of Economic Research
 - address: Avery Hall, room 119
   contact: sheldon.mckay@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-01-09
   etherpad: https://etherpad.mozilla.org/2015-01-08-unl
   helper: [Derek Weitzel, Emelie Harstad, Jingchao Zhang, Adam Caprez, Natasha Pavlovijk,
@@ -4297,7 +4297,7 @@
   venue: University of Nebraska-Lincoln
 - address: ERC 1058, UOIT, 2000 Simcoe St N, Oshawa, ON
   contact: admin@software-carpentry.org
-  country: ca
+  country: "ca"
   enddate: 2015-01-09
   helper: [Jessica Cervi, Kevin Green]
   humandate: Jan 8-9, 2015
@@ -4315,7 +4315,7 @@
   venue: University of Ontario Institute of Technology
 - address: 3, Mokdongjungang-ro 13na-gil, Yangcheon-gu, Seoul, South Korea
   contact: admin@software-carpentry.org
-  country: kr
+  country: "kr"
   enddate: 2015-01-09
   helper: [Jungsu Han]
   humandate: Feb 25-26, 2015
@@ -4333,7 +4333,7 @@
   venue: Korea Radio Promotion Association
 - address: Trottier Building, McGill University, 3630 rue University
   contact: ikozlov@physics.mcgill.ca
-  country: ca
+  country: "ca"
   enddate: 2015-01-11
   helper: [Patricia Campbell]
   humandate: Jan 10-11, 2015
@@ -4353,7 +4353,7 @@
 - address: Sonntag Pavilion, St. Joseph's Hospital. 350 West Thomas Rd, Phoenix, AZ
     85013
   contact: sammankin@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-01-11
   eventbrite: 14945139314
   helper: [To be determined]
@@ -4372,7 +4372,7 @@
   venue: St. Joseph’s Hospital and Medical Center in Phoenix
 - address: Stanley Hall Room 044, 801 National Road West, Richmond, IN 47374
   contact: jeremiahlant@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-01-12
   helper: [Michael Lerner, Charlie Peck, Demian Riccardi]
   humandate: Jan 11-12, 2015
@@ -4390,7 +4390,7 @@
   venue: Earlham College
 - address: Wellcome Trust for Human Genetics, Roosevelt Drive, Oxford, OX3 7BN
   contact: jane.charlesworth@ndm.ox.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2015-01-14
   eventbrite: 14958184332
   helper: [Tom Smith, Mike Morgan, Jane Charlesworth]
@@ -4409,7 +4409,7 @@
   venue: Oxford University
 - address: School of Earth and Environment, University of Leeds, Leeds, LS2 9JT
   contact: a.walker@leeds.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2015-01-16
   helper: [Jo Leng, Grace Cox]
   humandate: Jan 14-16, 2015
@@ -4428,7 +4428,7 @@
 - address: Atmospheric Oceanic and Planetary Physics Department, Dobson Room, Atmospheric
     Physics Building, Sherrington Road, Oxford
   contact: jamesallen0108@gmail.com
-  country: gb
+  country: "gb"
   enddate: 2015-01-15
   helper: [Edward Doddridge, Russell Jones]
   humandate: Jan 14-15, 2015
@@ -4445,7 +4445,7 @@
 - address: WRF Data Science Studio, Physics/Astronomy Tower (6th Floor), University
     of Washington, Seattle, WA
   contact: bmarwick@uw.edu
-  country: us
+  country: "us"
   enddate: 2015-01-16
   eventbrite: 14655221161
   helper: [Esther Le Grezause, Tania Melo]
@@ -4468,7 +4468,7 @@
 - address: Mann Library, Room B30A, 237 Mann Drive, Ithaca, NY
   assistants: [Jay Barry (CSCU), Lynn Johnson (CSCU), Francoise Vermeylen (CSCU)]
   contact: mudrak@cornell.edu
-  country: us
+  country: "us"
   enddate: 2015-01-16
   eventbrite: 14893607180
   humandate: Jan 15-16, 2015
@@ -4487,7 +4487,7 @@
   venue: Cornell University Research Community
 - address: 2119 Hornbake South, College Park, MD
   contact: msmorul@sesync.org
-  country: us
+  country: "us"
   enddate: 2015-01-16
   eventbrite: 14847664765
   helper: [Donal Heidenblad, Andrea Wiggins, Susan Winters]
@@ -4508,7 +4508,7 @@
 - address: Louisiana Cancer Research Center, 1700 Tulane Avenue, First Floor Auditorium,
     New Orleans, LA 70112
   contact: cogrady@tulane.edu
-  country: us
+  country: "us"
   enddate: 2015-01-27
   eventbrite: 14944695988
   helper: [John Caskey, Nick Maggio, Hani Nakhoul, Tina O'Grady, Joon Ro, Travis White]
@@ -4527,7 +4527,7 @@
   venue: Tulane University
 - address: EOSM 105 (6339 Stores Road)
   contact: bill@mozillafoundation.org
-  country: ca
+  country: "ca"
   enddate: 2015-01-30
   etherpad: https://etherpad.mozilla.org/SWC-EOS-UBC-jan2015
   eventbrite: 15222248154
@@ -4546,7 +4546,7 @@
   venue: University of British Columbia
 - address: Biomedical and Physical Sciences Building, East Lansing, Michigan, 48824
   contact: joshua.r.herr@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-01-29
   eventbrite: null
   helper: [TBA]
@@ -4567,7 +4567,7 @@
 - address: Teaching and Visualization Lab, 4th floor, James B Hunt Jr Library, 1070
     Partners Way, Raleigh, NC
   contact: mlfritz@ncsu.edu
-  country: us
+  country: "us"
   enddate: 2015-01-30
   etherpad: https://etherpad.mozilla.org/2015-01-29-ncsu
   eventbrite: 15186513270
@@ -4587,7 +4587,7 @@
 - address: Multi-media Room, Peter Gilgan Centre for Research and Learning, 686 Bay
     Street, Toronto, Ontario, M5G 0A4
   contact: thomas.wright@sickkids.ca
-  country: ca
+  country: "ca"
   enddate: 2015-01-30
   etherpad: https://etherpad.mozilla.org/2015-01-29-sickkids
   eventbrite: '14777984349'
@@ -4605,7 +4605,7 @@
   venue: The Hospital For Sick Children
 - address: NCSA 1030, 1205 W Clark St, Urbana, IL
   contact: training@cse.illinois.edu
-  country: us
+  country: "us"
   enddate: 2015-01-30
   etherpad: https://etherpad.mozilla.org/OR1ObWDaah
   eventbrite: 10121948019
@@ -4623,7 +4623,7 @@
   venue: University of Illinois
 - address: Social Science-256
   contact: jgoodall@albany.edu
-  country: us
+  country: "us"
   enddate: 2015-02-01
   etherpad: http://etherpad.wikimedia.org/p/ualbany
   eventbrite: null
@@ -4642,7 +4642,7 @@
   venue: University at Albany, SUNY
 - address: Room C24 in the Sackville St Building, Sackville Street, Manchester
   contact: admin-uk@software-carpentry.org
-  country: gb
+  country: "gb"
   enddate: 2015-02-04
   humandate: February 03 - 04, 2015
   humantime: 9:00 am - 5:00 pm
@@ -4660,7 +4660,7 @@
 - address: iSchool Faculty of Information, Robarts Library, St. George Campus, University
     of Toronto
   contact: ais.ischool@utoronto.ca
-  country: ca
+  country: "ca"
   enddate: 2015-02-06
   etherpad: https://etherpad.mozilla.org/2015-02-05-toronto
   eventbrite: 15377815460
@@ -4680,7 +4680,7 @@
 - address: 3rd Floor Teaching Lab, Wisconsin Institutes for Discovery, 330 N Orchard
     St, Madison, WI
   contact: lmichael@wisc.edu
-  country: us
+  country: "us"
   enddate: 2015-01-16
   eventbrite: '14908200830'
   helper: [Michelle Craft, Brent Hueth, Christina Koch, Daijiang Li, Andy Pohl, Anthony
@@ -4701,7 +4701,7 @@
 - address: West Electronic Classroom, 53442 Charles Young Rsrch Lbry, Los Angeles,
     CA
   contact: someone@somewhere.org
-  country: us
+  country: "us"
   enddate: 2015-02-15
   etherpad: https://etherpad.mozilla.org/2015-02-14-ucla
   eventbrite: null
@@ -4721,7 +4721,7 @@
   venue: University of California, Los Angeles (UCLA)
 - address: Room 103, Old Metallurgy Building
   contact: isa.kiral@gmail.com
-  country: au
+  country: "au"
   enddate: 2015-02-17
   etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-matlab
   helper: [Bryan Paton, Kerry Halupka, Andrew Boyd, Gregory Bass]
@@ -4738,7 +4738,7 @@
   venue: University of Melbourne
 - address: North Theatre (Room 239), Old Arts Building
   contact: irving.damien@gmail.com
-  country: au
+  country: "au"
   enddate: 2015-02-17
   etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-python
   helper: [Thomas Coudrat, Sam Hames, Michael Imelfort, Robert Johnson, John Rugis,
@@ -4756,7 +4756,7 @@
   venue: University of Melbourne
 - address: Room 202, Old Metallurgy Building
   contact: scottcr@unimelb.edu.au
-  country: au
+  country: "au"
   enddate: 2015-02-17
   etherpad: https://etherpad.mozilla.org/2015-02-16-resbaz-r
   helper: [Areej Alsheikh-Hussain, Noel Faux, Pip Griffin, Andrew Lonsdale, Jack Simpson,
@@ -4775,7 +4775,7 @@
 - address: Manuel Pacheco Integrated Learning Center Room 119, 1500 E University Blvd,
     Tucson, AZ 85719
   contact: naupaka@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-02-22
   eventbrite: 15013479722
   helper: [Blake Joyce, Joshua D. Lioi, John McMullin, Andre Mercer, Uwe Hilgert]
@@ -4794,7 +4794,7 @@
   venue: iPlant Collaborative, University of Arizona
 - address: Donald Bren Hall (DBH) 6011, UC Irvine, Irvine, CA 92697
   contact: msadri@uci.edu
-  country: us
+  country: "us"
   enddate: 2015-02-22
   etherpad: https://etherpad.mozilla.org/2015-02-21-uci
   helper: [Mehdi Sadri, Sepehr Akhavan, Laleh Beni, 'Jihyun Park ', Brian Vegetabile,
@@ -4813,7 +4813,7 @@
   venue: UCI Data Science Initiative
 - address: Auditorium Maximum, ul. Krupnicza 33, Kraków
   contact: klemens.noga@cyfronet.pl, leszek.tarkowski@gmail.com
-  country: pl
+  country: "pl"
   enddate: 2015-02-22
   etherpad: https://etherpad.mozilla.org/2015-02-21-Krakow
   eventbrite: 15742501245
@@ -4832,7 +4832,7 @@
   venue: Jagiellonian University
 - address: University of Canterbury
   contact: angela.armstrong@canterbury.ac.nz
-  country: nz
+  country: "nz"
   enddate: 2015-02-24
   etherpad: https://etherpad.mozilla.org/swc-canterbury
   eventbrite: 15447963274
@@ -4850,7 +4850,7 @@
   venue: NeSI - Canterbury Region Workshop
 - address: Auckland University of Technology
   contact: events@NeSI.org.nz
-  country: nz
+  country: "nz"
   enddate: 2015-02-27
   etherpad: http://etherpad.mozilla.org/2015-02-26-auckland
   eventbrite: 15447838902
@@ -4869,7 +4869,7 @@
   venue: NeSI - Auckland Region Workshop
 - address: Science Library, Moltke Moes Road 35, 0851 Oslo
   contact: karin.lagesen@medisin.uio.no
-  country: no
+  country: "no"
   enddate: 2015-02-27
   etherpad: https://swcarpentry.etherpad.mozilla.org/2015-02-26-Oslo
   helper: [Hugues Fontenelle, Anne Claire Fouilloux, Ibrahim Hujaleh, Arvind YM Sundaram]
@@ -4886,7 +4886,7 @@
   venue: University of Oslo
 - address: Barre Hall room B106, 120 McGinty Ct, Clemson, SC 29634
   contact: galen@clemson.edu
-  country: us
+  country: "us"
   enddate: 2015-03-03
   etherpad: https://etherpad.mozilla.org/M5WGMaRyQt
   eventbrite: null
@@ -4905,7 +4905,7 @@
   venue: Clemson University
 - address: ICTC, 535 W Michigan, Indianapolis, IN 46202
   contact: balamurugan@uchicago.edu
-  country: us
+  country: "us"
   enddate: 2015-03-06
   helper: [Chris Pipes, Elizabeth Prout]
   humandate: Mar 03-06, 2015
@@ -4923,7 +4923,7 @@
   venue: IUPUI
 - address: Multipurpose Room 101, Michael Smith Labs
   contact: nsoontie@eos.ubc.ca
-  country: ca
+  country: "ca"
   enddate: 2015-03-06
   etherpad: https://etherpad.mozilla.org/2015-03-05-ubc
   helper: [Gloria Li, Julia Gustavsen]
@@ -4942,7 +4942,7 @@
   venue: University of British Columbia - Faculty of Science
 - address: 7 World Trade Center, 250 Greenwich Street, 40th floor, New York, NY 10007-2157
   contact: yfortis@nyas.org
-  country: us
+  country: "us"
   enddate: 2015-03-07
   eventbrite: null
   helper: null
@@ -4960,7 +4960,7 @@
   venue: New York Academy of Sciences
 - address: Merrill-Cazier Library - Room 101, 3000 Old Main Hill, Logan, Utah, 84322
   contact: ethan.white@usu.edu
-  country: us
+  country: "us"
   enddate: 2015-03-17
   etherpad: https://etherpad.mozilla.org/usu-march-2007
   eventbrite: 15652074777
@@ -4980,7 +4980,7 @@
   venue: Utah State University
 - address: Espoo, Finland
   contact: data-carpentry@software-carpentry.org
-  country: fi
+  country: "fi"
   enddate: 2015-03-19
   eventbrite: 15497017998
   helper: [Mateusz Kuzak, Philip Lijnzaad, Diana Marek, Damiano Piovesan, Andrea Manconi,
@@ -5000,7 +5000,7 @@
 - address: Science and Engineering Building, Room 607, 850 W. Dickson Street, Fayetteville,
     AR 72701
   contact: jeremiahlant@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-03-20
   etherpad: https://etherpad.mozilla.org/MUGMFF1vUB
   helper: [Auriel Fournier]
@@ -5018,7 +5018,7 @@
   venue: University of Arkansas
 - address: Engineering 6 room 4022, 200 University Ave, Waterloo
   contact: nmabukhdeir@uwaterloo.ca
-  country: ca
+  country: "ca"
   enddate: 2015-03-22
   helper: [WatPy, SHARCNET]
   humandate: March 21-22, 2015
@@ -5036,7 +5036,7 @@
 - address: 260 Longwood Ave, Boston, MA 02115 (Toteson Medical Education Center, room
     130)
   contact: hbctraining@hsph.harvard.edu
-  country: us
+  country: "us"
   enddate: 2015-03-24
   etherpad: https://etherpad.mozilla.org/2015-03-23-hsph
   helper: [Radhika Khetani, Mary Piper]
@@ -5054,7 +5054,7 @@
   venue: Havard School of Public Health
 - address: Bizzell Library HCLC Classroom
   contact: lmc@ou.edu
-  country: us
+  country: "us"
   enddate: 2015-03-25
   etherpad: https://etherpad.mozilla.org/2015-03-24-ou
   eventbrite: 15640161143
@@ -5074,7 +5074,7 @@
 - address: Faculty of Medical Technology, Mahidol University, 999 Phutthamonthon 4
     Rd. Salaya Phutthamonthon District Nakorn Pathom 73170
   contact: likit.pre@mahidol.edu
-  country: th
+  country: "th"
   enddate: 2015-03-27
   helper: [Saw Simeon Brown, Dr.Kakanand Srungboonmee, Dr.Napat Songtawee]
   humandate: Mar 26-27, 2015
@@ -5091,7 +5091,7 @@
   venue: Mahidol University
 - address: Coral Gables, FL
   contact: francois.michonneau@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-03-19
   eventbrite: null
   helper: [Xu Fei]
@@ -5109,7 +5109,7 @@
   venue: University of Miami
 - address: Weill Auditorium (C-200), 1300 York Ave, New York, NY 10065.
   contact: iglpdc+wcmc@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-04-02
   etherpad: https://etherpad.mozilla.org/2015-04-01-wcmc
   helper: [Daina R. Bouquin, Friederike Duendar, Michael LeVine, Luce Skrabanek, Paul
@@ -5128,7 +5128,7 @@
   venue: Weill Cornell Medical College
 - address: Holiday Inn,1350 South Dixie Highway,Coral Gables,FL 33146
   contact: SKhuri@med.miami.edu
-  country: us
+  country: "us"
   enddate: 2015-04-03
   etherpad: https://etherpad.mozilla.org/2015-04-02-umiami
   eventbrite: null
@@ -5147,7 +5147,7 @@
   venue: University of Miami
 - address: Theatrette 3, Alan Gilbert Building, 161 Barry Street, Carlton VIC 3053
   contact: melbourne@combine.org.au
-  country: au
+  country: "au"
   enddate: 2015-04-10
   etherpad: https://etherpad.mozilla.org/SWC-Unimelb-Biosciences
   helper: [Stuart Lee, Lukas Weber, Simon Gladman, Finley Roberts, Clare Sloggett]
@@ -5167,7 +5167,7 @@
 - address: WRF Data Science Studio, Physics/Astronomy Tower (6th Floor), University
     of Washington, Seattle, WA
   contact: bmarwick@uw.edu
-  country: us
+  country: "us"
   enddate: 2015-04-10
   etherpad: null
   eventbrite: 15561681408
@@ -5189,7 +5189,7 @@
   venue: University of Washington - Seattle
 - address: 19 T.W. Alexander Drive, Research Triangle Park, NC 27709-4006
   contact: aron@ahmadia.net
-  country: us
+  country: "us"
   enddate: 2015-03-15
   etherpad: https://etherpad.mozilla.org/2015-04-13-samsi
   humandate: Apr 13-15, 2015
@@ -5207,7 +5207,7 @@
   venue: Statistical and Applied Mathematical Sciences Institute
 - address: 3450 Mitchell Lane Boulder, Colorado 80301
   contact: ddvento@ucar.edu
-  country: us
+  country: "us"
   enddate: 2015-04-17
   etherpad: https://etherpad.mozilla.org/2015-04-15-ncar
   helper: [TBD]
@@ -5226,7 +5226,7 @@
 - address: Imperial College London, ICT Training Room, 204 Central Library Sherfield
     Building, Exhibition Road, South Kensington, London, SW7 2AZ
   contact: support@archer.ac.uk
-  country: gb
+  country: "gb"
   enddate: 2015-04-17
   helper: [Iain Emsley]
   humandate: Apr 16-17, 2015
@@ -5243,7 +5243,7 @@
   venue: Imperial College London
 - address: Charlottesville, Virginia
   contact: lpa2a@virginia.edu
-  country: us
+  country: "us"
   enddate: 2015-04-17
   etherpad: https://etherpad.mozilla.org/2015-04-16-uvalib
   eventbrite: null
@@ -5262,7 +5262,7 @@
   venue: University of Virginia
 - address: 555 Clark B03, Evanston Campus
   contact: edd@debian.org
-  country: us
+  country: "us"
   enddate: 2015-04-18
   etherpad: https://etherpad.mozilla.org/2015-04-17-nw
   eventbrite: 15851126145
@@ -5281,7 +5281,7 @@
   venue: Northwestern University
 - address: 1007 SSMS
   contact: mqwilber@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-04-18
   etherpad: https://swcarpentry.etherpad.mozilla.org/2015-04-17-ucsb
   eventbrite: 16227272208
@@ -5300,7 +5300,7 @@
   venue: University of California, Santa Barbara
 - address: 800 S Cady Mall, Tempe, AZ 85281
   contact: hilgert@email.arizona.edu
-  country: us
+  country: "us"
   enddate: 2015-04-19
   etherpad: https://etherpad.mozilla.org/nbtmp2fn8p
   eventbrite: 16322303449
@@ -5319,7 +5319,7 @@
   venue: Arizona State University WGHL481, 4th floor
 - address: Library Building, 6th Floor Atrium, 702 Planetarium Pl., Arlington, TX
   contact: dcard@uta.edu
-  country: us
+  country: "us"
   enddate: 2015-04-19
   etherpad: https://etherpad.mozilla.org/2015-04-18-UT-Arlington
   eventbrite: 16099736746
@@ -5338,7 +5338,7 @@
   venue: University of Texas at Arlington
 - address: Peter Kiewit Institute (PKI) Room 158 / 1110 S. 67th St., Omaha, NE 68182
   contact: eharstad@unl.edu
-  country: us
+  country: "us"
   enddate: 2015-04-23
   etherpad: https://etherpad.mozilla.org/2015-04-22-UNO
   helper: [Derek Weitzel, Jingchao Zhang, Natasha Pavlovikj, Chris Cox, Mako Furukawa]
@@ -5357,7 +5357,7 @@
 - address: Quality Inn Paradise Creek, SE 1400 Bishop Blvd rooms PC2/PC3, Pullman,
     WA 99163
   contact: null
-  country: us
+  country: "us"
   enddate: 2015-04-28
   etherpad: https://etherpad.mozilla.org/2015-04-27-wsu
   eventbrite: 15876801942
@@ -5376,7 +5376,7 @@
   venue: Washington State University
 - address: 경기도 성남시 분당구 대왕판교로 645번길 12 판교공공지원센터 7층
   contact: i@xwmooc.net
-  country: kr
+  country: "kr"
   enddate: 2015-04-30
   etherpad: https://etherpad.mozilla.org/2015-04-29-pangyo
   eventbrite: 16512562519
@@ -5395,7 +5395,7 @@
   venue: 경기콘텐츠코리아랩 (Content Korea Lab Gyeonggi)
 - address: 8888 University Drive, Burnaby, BC, V5A 1S6
   contact: tiffany.timbers@gmail.com
-  country: ca
+  country: "ca"
   enddate: 2015-05-01
   etherpad: https://etherpad.mozilla.org/2015-04-30-SFU
   eventbrite: 16238071509
@@ -5417,7 +5417,7 @@
 - address: Greenwood Theatre and Richard Newton Rooms, Electrical and Electronic Engineering
     (Building 193)
   contact: isa.kiral@gmail.com
-  country: au
+  country: "au"
   enddate: 2015-05-08
   etherpad: http://etherpad.mozilla.org/2015-05-04-matlab
   eventbrite: 16293048948
@@ -5436,7 +5436,7 @@
   venue: University of Melbourne
 - address: Rooms 50B-4205, 70-191, and 54-130B, LBL
   contact: gvwilson@software-carpentry.org
-  country: us
+  country: "us"
   enddate: 2015-05-07
   etherpad: https://etherpad.mozilla.org/swc-lbl-2015-05
   helper: [Michael Jennings, Krishna Muriki, Allison Ngo]
@@ -5454,7 +5454,7 @@
   venue: Lawrence Berkeley Lab
 - address: AMDC Building (Boardroom 206), Swinburne Hawthorn Campus.
   contact: akarick@swin.edu.au
-  country: au
+  country: "au"
   enddate: 2015-05-05
   etherpad: null
   eventbrite: null
@@ -5473,7 +5473,7 @@
   venue: Swinburne University of Technology
 - address: 140 7th Avenue S, MSL119, St. Petersburg, FL  33701
   contact: sheldon.mckay@gmail.com
-  country: us
+  country: "us"
   enddate: 2015-05-05
   etherpad: https://swcarpentry.etherpad.mozilla.org/2015-05-04-usfcms
   humandate: May 4-5, 2015
@@ -5490,7 +5490,7 @@
   venue: University of South Florida - College of Marine Science, KRC 3120
 - address: Dane Smith Hall, Room 128
   contact: dthanson@unm.edu
-  country: us
+  country: "us"
   enddate: 2015-05-12
   etherpad: https://etherpad.mozilla.org/2015-05-11-unm
   eventbrite: 16561729579
@@ -5509,7 +5509,7 @@
   venue: University of New Mexico
 - address: Room 150, Physics and Astronomy Building, 1151 Richmond St., London Ontario
   contact: pbarmby@uwo.ca
-  country: ca
+  country: "ca"
   enddate: 2015-05-13
   etherpad: https://etherpad.mozilla.org/2015-05-11-westernu
   eventbrite: 16526138124
@@ -5528,7 +5528,7 @@
   venue: Western University
 - address: 72 E Concord St Boston, MA 02118
   contact: dgibson@bu.edu
-  country: us
+  country: "us"
   enddate: 2015-05-13
   etherpad: https://swcarpentry.etherpad.mozilla.org/2015-05-12-BUSM
   eventbrite: 16416350747
@@ -5547,7 +5547,7 @@
   venue: Boston University School of Medicine
 - address: Den Bosch, 37 Victoria Street, Stellenbosch
   contact: anelda@talarify.co.za
-  country: za
+  country: "za"
   enddate: 2015-05-15
   etherpad: https://etherpad.mozilla.org/vPC5h63b7A
   helper: [Raïssa Philibert, Beatrix Coetzee, Rachelle Bester, Maia Lesosky]
@@ -5565,7 +5565,7 @@
   venue: Stellenbosch University
 - address: Bizzell Library HCLC Classroom
   contact: jduckles@ou.edu
-  country: us
+  country: "us"
   enddate: 2015-05-20
   etherpad: https://etherpad.mozilla.org/2015-05-19-ou
   eventbrite: 16144220799
@@ -5584,7 +5584,7 @@
   venue: University of Oklahoma Libraries
 - address: Computer Lab (Room 313/314), McCoy Building, University of Melbourne
   contact: irving.damien@gmail.com
-  country: au
+  country: "au"
   enddate: 2015-05-26
   etherpad: https://etherpad.mozilla.org/2015-05-25-unimelb
   eventbrite: 15679681349
@@ -5603,7 +5603,7 @@
   venue: University of Melbourne
 - address: Rooms N-2200 & N-2300, 1709 New York Avenue, NW Washington, DC 20551
   contact: ian.org AT the google mail
-  country: us
+  country: "us"
   enddate: 2015-05-28
   etherpad: null
   helper: null
@@ -5622,7 +5622,7 @@
 - address: Vernon Collins Theatre, Level 1, Royal Children's Hospital, Flemington
     Road, Parkville, Victoria (go up the stairs near the RCH information desk)
   contact: melbourne@combine.org.au
-  country: au
+  country: "au"
   enddate: 2015-05-29
   etherpad: https://etherpad.mozilla.org/2015-05-27-SWC-MCRI
   eventbrite: null
@@ -5644,7 +5644,7 @@
   venue: Murdoch Childrens Research Institute
 - address: Stillwater, OK
   contact: dana.brunson@okstate.edu
-  country: us
+  country: "us"
   enddate: 2015-05-28
   etherpad: http://etherpad.mozilla.org/2015-05-27-osu
   eventbrite: 16302447058
@@ -5663,7 +5663,7 @@
   venue: Oklahoma State University - 514 MSCS (aka Math Sciences)
 - address: Laboratório de Matemática e Desenho (LAMADE) no bloco PC, sala PC12.
   contact: raniere@ime.unicamp.br
-  country: br
+  country: "br"
   enddate: 2015-05-30
   etherpad: null
   eventbrite: null
