@@ -43,12 +43,16 @@ P_BLOG_EXCERPT = re.compile(r'<!--\s+start\s+excerpt\s+-->\s+(.+)\s+<!--\s+end\s
 def harvest_metadata(filename):
     '''Harvest metadata from a single file.'''
 
-    with open(filename, 'r') as reader:
-        text = reader.read()
-        stuff = text.split('---')[1]
-        meta_dict = yaml.load(stuff)
-        meta_dict['path'] = filename
-        return meta_dict
+    try:
+        with open(filename, 'r') as reader:
+            text = reader.read()
+            stuff = text.split('---')[1]
+            meta_dict = yaml.load(stuff)
+            meta_dict['path'] = filename
+            return meta_dict
+    except Exception as e:
+        print >> sys.stderr, 'Failed to harvest metadata from "{0}": {1}'.format(filename, str(e))
+        raise e
 
 #----------------------------------------
 

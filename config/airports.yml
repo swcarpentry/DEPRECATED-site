@@ -25,7 +25,7 @@
   who:
   - [robinson.rosario, Rosario Robinson]
   - [smith.daniel, Daniel Smith]
-  - [srinath.ashwin, Ashwin Srinath]
+  - [srinath.ashwin, Ashwin Trikuta Srinath]
 - airport: Austin, TX
   latlng: 30.194444,-97.669722
   who:
@@ -65,9 +65,11 @@
   who:
   - [bayer.p, Philipp Bayer]
   - [demichelis.raffaella, Raffaella Demichelis]
+  - [hames.sam, Sam Hames]
   - [martinez.paula, Paula Martinez]
   - [miotto.amanda, Amanda Miotto]
   - [stanton-cook.mitchell, Mitchell Stanton-Cook]
+  - [weaver.belinda, Belinda Weaver]
 - airport: Boston, MA
   latlng: 42.364167,-71.005
   who:
@@ -93,7 +95,8 @@
 - airport: Christchurch
   latlng: -43.489167,172.532222
   who:
-  - [bae.sung, Sung Bae]
+  - [bae.sung, Sung Eun Bae]
+  - [kelly.tom, Tom Kelly]
 - airport: Charlottesville, VA
   latlng: 38.139643,-78.452342
   who:
@@ -120,6 +123,7 @@
   latlng: 55.617778,12.655833
   who:
   - [chisholm.chelsea, Chelsea Chisholm]
+  - [hjelm.johan, Johan Hjelm]
 - airport: Cape Town
   latlng: -33.964722,18.601667
   who:
@@ -164,10 +168,12 @@
   who:
   - [anderson.c, Carlos Anderson]
   - [bauer.dana, Dana Bauer]
+  - [charbonneau.amanda, Amanda Charbonneau]
   - [gates.chris, Chris Gates]
   - [guo.jiarong, Jiarong Guo]
   - [hinchliff.cody, Cody Hinchliff]
   - [irber.luiz, Luiz Irber]
+  - [johnson.ben, Ben Johnson]
   - [sheneman.leigh, Leigh Sheneman]
   - [zhang.qp, Qingpeng Zhang]
 - airport: Dublin
@@ -195,6 +201,7 @@
 - airport: Newark, NJ
   latlng: 40.692222,-74.168611
   who:
+  - [hannah.nicholas, Nicholas Hannah]
   - [jonsson.bf, Bror Fredrik Jonsson]
   - [till.robert, Robert Till]
 - airport: Exeter
@@ -209,6 +216,7 @@
   latlng: 50.026389,8.543056
   who:
   - [coelho.luis, Luis Pedro Coelho]
+  - [forstner.konrad, "Konrad F\xF6rstner"]
   - [lies.philipp, Philipp Lies]
 - airport: Spokane, WA
   latlng: 47.619722,-117.533611
@@ -259,7 +267,6 @@
   - [bahlai.christie, Christie Bahlai]
   - [brown.ct, C. Titus Brown]
   - [canino-koning.r, Rosangela Canino-Koning]
-  - [charbonneau.amanda, Amanda Charbonneau]
   - [crusoe.michael, Michael Crusoe]
   - [enbody.r, Richard Enbody]
   - [garoutte.aaron, Aaron Garoutte]
@@ -306,7 +313,7 @@
   - [macindoe.gary, Gary Macindoe]
   - [maclean.dan, Dan MacLean]
   - [metz.jeremy, Jeremy Metz]
-  - [nielsen.jens, Jens Nielsen]
+  - [nielsen.jens, Jens Hedegaard Nielsen]
   - [perez-suarez.david, David Perez-Suarez]
   - [pfenninger.s, Stefan Pfenninger]
   - [pollard.tom, Tom Pollard]
@@ -361,15 +368,18 @@
   - [coudrat.thomas, Thomas Coudrat]
   - [dashnow.harriet, Harriet Dashnow]
   - [dimmock.matt, Matthew Dimmock]
+  - [doyle.kimberly, Kimberly Doyle]
   - [garcia.julian, Julian Garcia]
   - [griffin.pip, Pip Griffin]
   - [irving.d, Damien Irving]
+  - [mcdonald.daniel, Daniel McDonald]
   - [michnowicz.s, Simon Michnowicz]
   - [paulo.martin, Martin Paulo]
   - [rice.timothy, Timothy Rice]
   - [ritchie.scott, Scott Ritchie]
   - [sloggett.clare, Clare Sloggett]
   - [sumner.mike, Mike Sumner]
+  - [tweedie.fiona, Fiona Tweedie]
   - [walsh.alistair, Alistair Walsh]
 - airport: Manchester, New Hampshire
   latlng: 42.92786,-71.43844
@@ -378,13 +388,16 @@
 - airport: Madison, WI
   latlng: 43.139722,-89.3375
   who:
+  - [broman.karl, Karl Broman]
   - [michael.lauren, Lauren Michael]
   - [scopatz.a, Anthony Scopatz]
+  - [stevens.sarah, Sarah Stevens]
   - [supp.s, Sarah Supp]
   - [wilson.p, Paul Wilson]
 - airport: Minneapolis St Paul, MN
   latlng: 44.880278,-93.216667
   who:
+  - [mansour.tamer, Tamer Mansour]
   - [williams.ryan, Ryan Williams]
 - airport: New Orleans, LA
   latlng: 29.993333,-90.257778
@@ -418,6 +431,7 @@
   - [perez.f, Fernando Perez]
   - [slaybaugh.rachel, Rachel Slaybaugh]
   - [terry.m, Matt Terry]
+  - [winston.donald, Donald Winston]
 - airport: Okinawa Naha
   latlng: 26.195556,127.645833
   who:
@@ -428,6 +442,10 @@
   - [cox.logan, Logan Cox]
   - [duckles.jonah, Jonah Duckles]
   - [shambaugh.brent, Brent Shambaugh]
+- airport: Chicago O'Hare, IL
+  latlng: 41.979444,-87.904444
+  who:
+  - [eddelbuettel.dirk, Dirk Eddelbuettel]
 - airport: Paris Orly
   latlng: 48.725278,2.359444
   who:
@@ -441,6 +459,7 @@
 - airport: Portland, OR
   latlng: 45.588611,-122.5975
   who:
+  - [boyle.amy, Amy Boyle]
   - [chamberlain.s, Scott Chamberlain]
 - airport: Perth
   latlng: -31.940278,115.966944
@@ -499,6 +518,7 @@
   - [king.wt, W. Trevor King]
   - [lin.johnny, Johnny Lin]
   - [mckinley.maria, Maria McKinley]
+  - [sarahan.michael, Michael Sarahan]
   - [tatman.rachael, Rachael Tatman]
   - [vanderplas.jacob, Jacob Vanderplas]
   - [vonderlinden.jens, Jens von der Linden]
@@ -508,11 +528,13 @@
   who:
   - [blakk.lukas, Lukas Blakk]
   - [huff.k, Katy Huff]
+  - [imamoglu.fatma, Fatma Imamoglu]
   - [kitzes.j, Justin Kitzes]
   - [mckellar.j, Jessica McKellar]
   - [morris.b, Ben Morris]
   - [ram.k, Karthik Ram]
   - [rokem.a, Ariel Rokem]
+  - [sampath.ramesh, Ramesh Sampath]
   - [turek.daniel, Daniel Turek]
   - [ushizima.daniela, Daniela Ushizima]
   - [vaidyanathan.ramnath, Ramnath Vaidyanathan]
@@ -564,6 +586,7 @@
   - [barneche.diego, Diego Barneche]
   - [falster.daniel, Daniel Falster]
   - [fitzjohn.rich, Rich FitzJohn]
+  - [held.fabian, Fabian Held]
   - [madin.j, Joshua Madin]
   - [warren.dan, Dan Warren]
 - airport: Syracuse, NY
@@ -617,7 +640,7 @@
   latlng: 45.468056,-73.741389
   who:
   - [corvellec.marianne, Marianne Corvellec]
-  - [devenyi.gabriel, Gabriel Devenyi]
+  - [devenyi.gabriel, Gabriel A. Devenyi]
   - [ghamsari-esfahani.mahtab, Mahtab Ghamsari-Esfahani]
   - [gosset.john, John Gosset]
   - [haine.denis, Denis Haine]
@@ -659,6 +682,7 @@
   - [brown.amy, Amy Brown]
   - [cabunoc.abigail, Abigail Cabunoc]
   - [collins.arliss, Arliss Collins]
+  - [daigle.remi, Remi Daigle]
   - [durant.martin, Martin Durant]
   - [dursi.j, Jonathan Dursi]
   - [fei.xu, Xu Fei]
@@ -675,3 +699,28 @@
   latlng: 54.027972,-132.126291
   who:
   - [hiebert.james, James Hiebert]
+- airport: Phoenix, AZ
+  latlng: 33.434167,-112.008056
+  who:
+  - [schwartz.rachel, Rachel Schwartz]
+- airport: Dunedin
+  latlng: -45.928056,170.198333
+  who:
+  - [black.mik, Mik Black]
+  - [boocock.james, James Boocock]
+- airport: Canberra
+  latlng: -35.308333,149.193889
+  who:
+  - [simpson.jack, Jack Simpson]
+- airport: Salvador de Bahia
+  latlng: -12.910833,-38.330833
+  who:
+  - [fernandes.filipe, Filipe Fernandes]
+- airport: Lincoln, NE
+  latlng: 40.850833,-96.759167
+  who:
+  - [harstad.emelie, Emelie Harstad]
+- airport: Honolulu, HI
+  latlng: 21.315833,-157.926667
+  who:
+  - [belcaid.mahdi, Mahdi Belcaid]

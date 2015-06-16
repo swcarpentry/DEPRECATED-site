@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-26", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$8288ad97c8ed2c605dd6e5f2c495683da347df535baf33bdd710627bdfa1b70d", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$8288ad97c8ed2c605dd6e5f2c495683da347df535baf33bdd710627bdfa1b70d", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/belikov.evgenij.json"
+ }
+}

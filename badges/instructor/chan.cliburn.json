@@ -1,7 +1,7 @@
 {
   "recipient" : "sha256$e2363157299cdc44ac25fdfebdfe768ee7456d59e69a51e5fb43f3bca6a2143a",
   "salt": "software-carpentry",
-  "issued_on" : "2013-12-05",
+  "issuedOn" : "2013-12-05",
   "badge" : {
     "version" : "0.5.0",
     "name" : "Instructor",
