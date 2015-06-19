@@ -5696,3 +5696,161 @@
   url: http://r-gaia-cs.github.io/2015-05-30-ufpr/
   user: r-gaia-cs
   venue: Universidade Federal do Paraná
+- address: 255 Old Horticulture, Michigan State University
+  contact: gvwilson@software-carpentry.org
+  country: us
+  enddate: 2015-05-31
+  etherpad: null
+  eventbrite: null
+  helper: [Devin Higgins]
+  humandate: May 30-31, 2015
+  humantime: 09:00-16:00
+  instructor: [Fiona Tweedie, Greg Wilson]
+  language: en
+  latlng: 42.73226,-84.478175
+  layout: workshop
+  root: .
+  slug: 2015-05-30-hastac-swc
+  startdate: 2015-05-30
+  url: http://swcarpentry.github.io/2015-05-30-hastac-swc/
+  user: swcarpentry
+  venue: HASTAC Conference (Software Carpentry)
+- address: Science Library, Moltke Moes Road 35, 0851 Oslo
+  contact: lex.nederbragt@ibv.uio.no
+  country: 'no'
+  enddate: 2015-06-03
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-06-02-Oslo
+  helper: [Marius Bjoernstad, Anna Claire Fouilloux, Hanna Helgeland, Benjamin Laken,
+    Axel Rosén]
+  humandate: Jun 2-3, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Karin Lagesen, Lex Nederbragt, Arvind Sundaram, Hugues Fontenelle]
+  latlng: 59.94, 10.723
+  layout: workshop
+  root: .
+  slug: 2015-06-02-Oslo
+  startdate: 2015-06-02
+  url: http://lexnederbragt.github.io/2015-06-02-Oslo/
+  user: lexnederbragt
+  venue: University of Oslo
+- C: (<em>Chelsea</em>)
+  K: (<em>Kwasi</em>)
+  R: (<em>Rémi</em>)
+  address: CERN, Route de Meyrin 385, 1217 Meyrin, Switzerland
+  contact: remi.emonet@reverse--com.heeere
+  country: ch
+  enddate: 2015-06-03
+  etherpad: null
+  helper: [Tim Head, Kevin Dungs, Jacco Andreas De Vries, Igor Babuschkin, Conor Fitzpatrick,
+    Alex Pearce]
+  humandate: June 2-3, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Rémi Emonet, Kwasi Kwakwa, Chelsea Chisholm]
+  language: en
+  latlng: 46.233489,6.052651
+  layout: workshop
+  root: .
+  slug: 2015-06-02-cern-lhcb
+  startdate: 2015-06-02
+  url: http://twitwi.github.io/2015-06-02-cern-lhcb/
+  user: twitwi
+  venue: LHCb in CERN, Geneva
+- address: 3rd Floor Teaching Lab, Wisconsin Institutes for Discovery, 330 N Orchard
+    St, Madison, WI
+  contact: lmichael@wisc.edu
+  country: us
+  enddate: 2015-06-04
+  eventbrite: '16737263606'
+  helper: [Myra Marx-Ferree, Jenna Nobles, Andy Pohl, Sarah Stevens]
+  humandate: Jun 3-4, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Karl Broman, Steve Goldstein, Alex Hanna, Christina Koch, Lauren Michael]
+  latlng: 43.074974,-89.406738
+  layout: bootcamp
+  registration: restricted
+  root: .
+  slug: 2015-06-03-wisc
+  startdate: 2015-06-03
+  url: http://uw-madison-aci.github.io/2015-06-03-wisc/
+  user: uw-madison-aci
+  venue: University of Wisconsin-Madison
+- address: 190 Doe Library, University of California, Berkeley
+  contact: katyhuff@gmail.com
+  country: us
+  enddate: 2015-06-05
+  etherpad: https://etherpad.mozilla.org/2015-06-04-berkeley
+  eventbrite: 16941803390
+  helper: [Chris Holdgraf, Kunal Marwaha, Allison Ngo, Thomas Tu, Donny Winston, Qingpeng
+      Zhang]
+  humandate: Jun 4-5, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Katy Huff, Fatma Imamoglu, Thomas Kluyver, Daniel Turek]
+  language: en
+  latlng: 37.872509,-122.259614
+  layout: workshop
+  root: .
+  slug: 2015-06-04-berkeley
+  startdate: 2015-06-04
+  url: http://BIDS.github.io/2015-06-04-berkeley/
+  user: BIDS
+  venue: Berkeley Institute for Data Science (BIDS)
+- address: Rua Sérgio Buarque de Holanda, 800 - Sala CB54 – Cidade Universitária "Zeferino
+    Vaz" – Distr. Barão Geraldo – Campinas – São Paulo – Brasil
+  contact: raniere@ime.unicamp.br
+  country: br
+  enddate: 2015-06-05
+  etherpad: https://etherpad.mozilla.org/2015-06-04-unicamp
+  eventbrite: 17008921141
+  helper: [Felipe Bocca, Raniere Silva, Renato Augusto Corrêa dos Santos, Eric Lopes]
+  humandate: Jun 04-05, 2015
+  humantime: 9:00am - 5:00pm
+  instructor: [Jennifer Shelton, Maneesha Sane, Natalie Robinson]
+  language: en
+  latlng: -22.817387,-47.06843
+  layout: workshop
+  root: .
+  slug: 2015-06-04-unicamp
+  startdate: 2015-06-04
+  url: http://r-gaia-cs.github.io/2015-06-04-unicamp/
+  user: r-gaia-cs
+  venue: University of Campinas
+- address: Alan Gilbert Building (104 Grattan Street) - Room 121
+  contact: kerry.halupka@gmail.com
+  country: au
+  enddate: 2015-06-12
+  etherpad: http://etherpad.mozilla.org/2015-06-08-matlab
+  eventbrite: 16733977778
+  helper: [Philippa Karoly, Daniel Glyn Hurley, Greg Bass, Parvin Zarei, Timothy Esler,
+    Matias Maturana, Ali Almassi]
+  humandate: June 08-12, 2015
+  humantime: 1:00 pm - 5:00 pm
+  instructor: [Kerry Halupka, Isabell Kiral-Kornek]
+  language: en
+  latlng: -37.800483, 144.965807
+  layout: workshop
+  root: .
+  slug: 2015-06-08-matlab
+  startdate: 2015-06-08
+  url: http://resbaz.github.io/2015-06-08-matlab/
+  user: resbaz
+  venue: University of Melbourne
+- address: NCI Shady Grove, 9609 Medical Center Dr, Rockville, MD 20850 Training Room
+    2W908
+  contact: Lisa Federer <lisa.federer@nih.gov>
+  country: us
+  enddate: 2015-06-10
+  etherpad: null
+  eventbrite: null
+  helper: [Dilip Banerjee, Lynn Young]
+  humandate: Jun 9-10, 2015
+  humantime: 8:30 am - 5:00 pm
+  instructor: [Jonathan Guyer, Adina Howe, Fan Yang]
+  language: en
+  latlng: 39.103411,-77.196553
+  layout: workshop
+  root: .
+  slug: 2015-06-09-nih
+  startdate: 2015-06-09
+  url: http://guyer.github.io/2015-06-09-nih/
+  user: guyer
+  venue: National Institutes of Health
