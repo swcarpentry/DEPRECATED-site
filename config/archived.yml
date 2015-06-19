@@ -2704,6 +2704,22 @@
   url: http://badger-d.github.io/2014-06-02-monash/
   user: badger-d
   venue: Monash University
+- address: 101 David L. Boren Blvd, CORE Classroom
+  contact: jduckles@ou.edu
+  country: "us"
+  enddate: 2014-06-03
+  humandate: June 02-03, 2014
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Greg Wilson, Jonah Duckles]
+  latlng: 35.183121,-97.441238
+  layout: bootcamp
+  registration: open
+  root: .
+  slug: 2014-06-02-ou
+  startdate: 2014-06-02
+  url: https://github.com/jduckles/2014-06-02-ou
+  user: jduckles
+  venue: University of Oklahoma
 - address: Pisa
   contact: admin@software-carpentry.org
   country: "it"
