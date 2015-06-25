@@ -12,69 +12,164 @@ nocomments: 1
 </p>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-4">
     <ul>
       <li>
         <p>
-          Our core lessons have been extracted from
-          <a href="{{site.github_url}}/bc">this repository</a>
-          and put into repositories of their own&mdash;please see
-	  <a href="{{page.root}}/lessons.html">the lessons page</a>
-	  for links.
-          We hope to finish this work by the end of January 2015;
-	  issues and pull requests to help us get there would be very welcome.
+	  All of
+	  <strong>our <a href="{{page.root}}/lessons.html">core lessons</a> have outstanding issues</strong>;
+	  fixes are very welcome.
+	  Please note that if you're proposing an addition,
+	  we'd be grateful if you could suggest something to take out to make room.
         </p>
       </li>
       <li>
         <p>
-          You can also help improve
-          the templates for our <a href="{{site.github_url}}/workshop-template">workshop websites</a>
-          and <a href="{{site.github_url}}/lesson-template">new lessons</a>.
-          We would be particularly grateful for help building a validation tool for lessons
-          to help check that everything is in the right format&mdash;please see
-          the <a href="{{site.github_url}}/lesson-template/issues">issues</a>
-          and <a href="{{site.github_url}}/lesson-template/pulls">pull requests</a>
-          for details.
+          You can also help
+	  <strong>improve the templates</strong>
+	  for our <a href="{{site.github_url}}/workshop-template">workshop websites</a>
+          and <a href="{{site.github_url}}/lesson-template">lessons</a>
+	  (see the <a href="{{site.github_url}}/lesson-example">example lesson</a> for documentation).
+	  Both include validation tools to check conformance,
+	  and improvements to those are always useful.
         </p>
       </li>
       <li>
         <p>
-          We have started building
-          <a href="{{site.github_url}}/amy">a web-based tool for managing workshops</a>,
-          which we hope will relieve
-          <a href="{{page.root}}/2014/12/plans-for-2015-workshop-organization.html">our biggest bottleneck</a>.
-          If you can program in Python and are familiar with Django,
-          we would be very grateful for your help.
+          We are building
+          <strong><a href="{{site.github_url}}/amy">a web-based tool for managing workshops</a></strong>.
+	  It's now in daily use,
+	  but there's still a lot to do to make it easier to drive.
         </p>
+      </li>
+      <li>
+	<p>
+	  We'd like to support <strong>translations into other languages</strong>.
+	  Should translation live in the same repository or different ones?
+	  How should we track and synchronize updates between them?
+	  Lots of open source projects have wrestled with this issue before;
+	  what we need is someone with lots of personal experience to guide us.
+	</p>
+      </li>
+      <li>
+	<p>
+	  We'd like toms tools to
+	  <strong>automate the creation of Google Forms surveys and Eventbrite registration pages</strong>.
+	  If you've scripted either in the past,
+	  please give us a shout.
+	</p>
+      </li>
+      <li>
+	<p>
+	  A group of volunteers is working to
+	  <strong>overhaul our <a href="{{page.root}}/workshops/assess/index.html">pre- and post-workshop assessment questionnaires</a></strong>
+	  so that they'll be faster to fill in
+	  and provide more useful information.
+	  If you have a background in survey design,
+	  they could use a hand.
+	</p>
       </li>
     </ul>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-4">
     <ul>
+      <li>
+	<p>
+	  We need someone to take the lead on creating
+	  <strong>a lesson on quality assurance</strong>
+	  for the average scientific coder.
+	  This can <em>not</em> just be about using unit testing frameworks,
+	  or about the basics of imprecise (i.e., floating point) arithmetic,
+	  because <a href="{{page.root}}/blog/2014/10/why-we-dont-teach-testing.html">that's not helpful</a>.
+	  Instead,
+	  we need at least half a dozen examples like <a href="{{page.root}}/blog/2015/04/close-enough-redux.html">Ian Hawke's</a>,
+	  but in different domains.
+	  This is a big job&mdash;it will take many days of writing and revising,
+	  spread out over weeks&mdash;but would immediately help thousands of scientists.
+	</p>
+      </li>
+      <li>
+	<p>
+	  Similarly,
+	  we need someone to lead development of
+	  <strong>a lesson on scientific publishing</strong>
+	  in the 21st Century.
+	  We <a href="https://github.com/swcarpentry/bc/issues/199">discussed this earlier this year</a>;
+	  now we need to turn that into some teachable walkthroughs of particular systems.
+	  (I suspect that this lesson will also include an introduction to Make or something like it,
+	  since one of the goals for a modern publishing pipeline is single-button reproducibility.)
+	  This is also a big job,
+	  but would also help thousands of people.
+	</p>
+      </li>
+      <li>
+	<p>
+	  We'd like to <strong>re-use the multiple choice questions</strong>
+	  that participants in the instructor training course have created
+	  over the past four years.
+	  They're all sitting in the <a href="{{page.github_io_url}}/training-course">training course repository</a>;
+	  pulling the out and submitting them as issues to the appropriate
+	  <a href="{{page.root}}/lessons.html">lesson repositories</a>
+	  could be done in bits and pieces
+	  provided there was some way to avoid double-dipping.
+	</p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-4">
+    <ul>
+      <li>
+	<p>
+	  <strong>Our website needs a complete re-design</strong>.
+	  This isn't a small job,
+	  nor one for a novice:
+	  at a guess,
+	  we need at least a week (probably two)
+	  from a professional web designer.
+	</p>
+      </li>
+      <li>
+	<p>
+	  At a smaller scale,
+	  we need to <strong>clean up the CSS for our lessons</strong>
+	  and simplify our build system.
+	  The former is probably a one-day job for someone who speaks CSS,
+	  and the latter is probably also a one-day job,
+	  but for someone who's familiar with Make and a few other tools.
+	</p>
+      </li>
       <li>
         <p>
           <a href="http://github.com/jiffyclub/ipythonblocks">ipythonblocks</a>
           and
           <a href="http://github.com/synesthesiam/novice">skimage.novice</a>
-          are allowing us adopt a media-first approach to teaching programming in Python.
+          will let us adopt <strong>a media-first approach to teaching programming in Python</strong>.
           Enhancements to either of these are very welcome.
         </p>
       </li>
       <li>
         <p>
-          Several of our team are experimenting with a pure HTML replacement for screencasts
+          Several of our team are experimenting with
+	  <strong>a pure HTML replacement for screencasts</strong>
           called <a href="https://github.com/twitwi/deck.browsercast.js/">Browsercast</a>.
-          We plan to use it in our <a href="{{site.github_url}}/slideshows">slideshows</a>,
+          We are already using it in some of our <a href="{{site.github_url}}/slideshows">slideshows</a>,
           but we think it has much wider application.
         </p>
       </li>
       <li>
         <p>
           A groups of students have built
-          <a href="http://nbdiff.org/">a diff-and-merge tool for the IPython Notebook</a>.
+          <strong><a href="http://nbdiff.org/">a diff-and-merge tool for the Jupyter Notebook</a></strong>.
           Polishing this would help everyone in the IPython community,
           not just us.
         </p>
+      </li>
+      <li>
+	<p>
+	  I will mow your lawn, walk your dog, and wash your dishes
+	  if you'll <strong>improve Jekyll's error messages</strong>
+	  Are line numbers really too much to ask for?
+	</p>
       </li>
     </ul>
   </div>

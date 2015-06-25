@@ -1,0 +1,77 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Research-Based Course Design"
+date: 2015-06-21
+time: "10:00:00"
+category: ["Research", "Lessons"]
+---
+<!-- start excerpt -->
+<p>
+  I've written before about the breadth and depth of
+  <a href="blog/2014/11/you-should-read-juha-sorvas-thesis.html">Juha Sorva's work</a>
+  on computing education.
+  His latest contribution is a paper co-authored with Otto Sepp&auml;l&auml; titled
+  "<a href="http://www.researchgate.net/publication/271214535_Research-based_Design_of_the_First_Weeks_of_CS1">Research-Based Design of the First Weeks of CS1</a>".
+  In it,
+  they tie the specifics of the new intro programming class at Aalto University
+  directly back to CS education research.
+  More specifically (from their abstract):
+</p>
+<!-- end excerpt -->
+<blockquote>
+  <p>
+    On the basis of cognitive load theory,
+    theoretical models of instructional design,
+    and empirical findings from computing education research,
+    we propose three independent but compatible and complementary frameworks that can be used in introductory programming education.
+    <em>Motivate-isolate-practice-integrate</em> is a framework
+    that marries project-driven learning to careful management of cognitive load
+    through the selection of learning activities and the isolation of partial tasks.
+    <em>Head Straight for Objects</em> is an outline of an introduction to programming
+    that emphasizes object-orientation early while mediating the cognitive load intrinsic to object-oriented concepts.
+    Finally, the <em>principle of explicit program dynamics</em> states that
+    the runtime dynamics of programs should be a continuous and explicit theme in introductory programming education.
+    We illustrate the application of the three frameworks in the context of a university course.
+  </p>
+</blockquote>
+<p>
+  There are good ideas on every page,
+  though it will be hard to incorporate many of them into Software Carpentry:
+  Aalto uses several full-length courses to introduce students to programming,
+  where we have (at most) one day.
+  My biggest take-away from this paper,
+  though,
+  is the fluency with which the authors connect current research (science)
+  to their instructional design (engineering).
+</p>
+<p>
+  This paper also prompted a question that I probably should have asked years ago.
+  For years,
+  CS educators have argued over objects first vs. objects later,
+  i.e.,
+  over whether someone's first encounter with programming should be with objects,
+  or whether they should start with procedural programming and be introduced to objects later.
+  Proponents of the first argue that objects are both natural ("the world is made up of objects")
+  and authentic ("real programmers build real programs using objects");
+  advocates of the second point out that
+  "...writing even the smallest meaningful class requires approximately 15 basic concepts:
+  object, class, instantiation, constructor, method declaration, formal parameter, return type,
+  variable, type of variable, value, integer, assignment, method invocation, actual parameter,
+  returning a value"
+  (from Michael Caspersen's thesis, quoted in Sorva &amp; Sepp&auml;l&auml;).
+</p>
+<p>
+  If the audience is scientific programmers,
+  are arrays (or data frames) the equivalent of objects?
+  I've written lessons both ways,
+  i.e.,
+  introduced arrays early (like <a href="{{page.github_io_url}}/python-novice-inflammation">our current Python lesson</a>)
+  or deferred them until learners had seen lists, loops, and functions
+  (our <a href="{{site.site_url}}/v4/python/index.html">older material</a>).
+  I don't have any strong evidence that one is better than another,
+  either pedagogically or motivationally,
+  but (a) at least I've realized that I should be asking,
+  and (b) the work of Sorva and others gives me a framework for thinking about answers.
+</p>

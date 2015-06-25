@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-06-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$ebe83920fc8c760a4cf46cf13455011dbad20f662a7a1f309007c90a5dc9bee2", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$ebe83920fc8c760a4cf46cf13455011dbad20f662a7a1f309007c90a5dc9bee2", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/schmidt.marian.json"
+ }
+}
