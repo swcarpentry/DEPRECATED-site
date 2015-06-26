@@ -5854,3 +5854,146 @@
   url: http://guyer.github.io/2015-06-09-nih/
   user: guyer
   venue: National Institutes of Health
+- {address: 'Craik-Marshall Building, Downing Site, Cambridge', contact: Gabriella
+    Rustici <gr231@cam.ac.uk>, country: gb, enddate: 2015-06-16, etherpad: null, eventbrite: null,
+  helper: null, humandate: 'June 15-16, 2015', humantime: '9:30 am - 17:30 pm', instructor: 'Aaron
+    O''Leary, Myrto Kostadima', language: en, latlng: '52.201965,0.122486,17', layout: workshop,
+  root: ., slug: 2015-06-15-cambridge, startdate: 2015-06-15, url: 'http://aaren.github.io/2015-06-15-cambridge/',
+  user: aaren, venue: 'Bioinformatics, University of Cambridge'}
+- address: Ignacio M. Barriola Center (room 3.4, 3rd. floor), UPV/EHU Ibaeta Campus,
+    San Sebastian - Donostia
+  contact: luis@luispedro.org
+  country: es
+  enddate: 2015-06-16
+  etherpad: https://swc-ss.etherpad.mozilla.org/3
+  eventbrite: null
+  helper: [Iñigo Aldazabal, Alex Savio, Oier Echaniz, Diego Lasa, Garikoitz Aguirregabiria,
+    Ivor Loncaric]
+  humandate: Jun 15-16, 2015
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Luis Pedro Coelho, Jean-Christophe Leyder]
+  language: en
+  latlng: 43.307939,-2.010632
+  layout: workshop
+  root: .
+  slug: 2015-06-15-cfmehu
+  startdate: 2015-06-15
+  url: http://luispedro.github.io/2015-06-15-cfmehu/
+  user: luispedro
+  venue: Materials Physics Center - University of the Basque Country
+- address: 1080 Shennecossett Road, Groton, CT 06340
+  contact: iglpdc+uconn@gmail.com
+  country: us
+  enddate: 2015-06-16
+  etherpad: https://etherpad.mozilla.org/2015-06-15-uconn
+  eventbrite: 16980102945
+  helper: [TBA]
+  humandate: Jun 15-16, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Ivan Gonzalez, David Murray]
+  language: en
+  latlng: 41.321224, -72.061570
+  layout: workshop
+  root: .
+  slug: 2015-06-15-uconn
+  startdate: 2015-06-15
+  url: http://iglpdc.github.io/2015-06-15-uconn/
+  user: iglpdc
+  venue: University of Connecticut<br>Department of Marine Sciences
+- address: Information Technology Engineering Building, room 119
+  contact: ed@engr.uconn.edu
+  country: us
+  enddate: 2015-06-18
+  etherpad: https://etherpad.mozilla.org/2015-06-17-ucstorrs
+  helper: [Dave Christianson, Tingyang Xu, Jingwen Pei, Eugene Kovalev]
+  humandate: June 17-18, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sheldon McKay, Matthew Aiello-Lammes, Jennifer Shelton, Pariksheet
+      Nanda]
+  language: en
+  latlng: 41.806555, -72.252873
+  layout: workshop
+  root: .
+  slug: 2015-06-17-ucstorrs
+  startdate: 2015-06-17
+  url: http://mckays630.github.io/2015-06-17-ucstorrs/
+  user: mckays630
+  venue: University of Connecticut Storrs
+- address: School of Physics and Astronomy, University of St Andrews, North Haugh,
+    St Andrewws, KY16 9SS, Scotland
+  bookinglink: https://www.st-andrews.ac.uk/pdms/?CourseID=5208
+  contact: dave@ninepointeightone.net
+  country: gb
+  enddate: 2015-06-19
+  etherpad: https://standrewsswc2015.etherpad.mozilla.org/1
+  helper: [Alexander Konovalov (University of St Andrews), Ben Stevenson (University
+      of St Andrews), David Miller (University of St Andrews), Michael Torpey (University
+      of St Andrews)]
+  humandate: Jun 18-19, 2015
+  humantime: 9:30 am - 5:00 pm
+  instructor: [Leanne Wake (Northumbria University), Fatima Chami (Durham University)]
+  language: en
+  latlng: 56.340085,-2.807146
+  layout: workshop
+  root: .
+  slug: 2015-06-18-StAndrews
+  startdate: 2015-06-18
+  url: http://lmwake.github.io/2015-06-18-StAndrews/
+  user: lmwake
+  venue: University of St Andrews
+- address: University of Otago
+  contact: events@NeSI.org.nz
+  country: nz
+  enddate: 2015-06-19
+  etherpad: https://etherpad.mozilla.org/2015-06-18-otago
+  eventbrite: 17162333000
+  helper: [Peter Maxwell, Murray Cadzow, Kim Rutherford]
+  humandate: Jun 18-19, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [John Rugis, Mik Black, Tom Kelly, Cameron McLean, James Boocock]
+  language: en
+  latlng: -45.864523, 170.512980
+  layout: workshop
+  root: .
+  slug: 2015-06-18-otago
+  startdate: 2015-06-18
+  url: http://jrugis.github.io/2015-06-18-otago/
+  user: jrugis
+  venue: NeSI - Otago Region Workshop
+- address: LabVis
+  contact: dani.lbnl@gmail.com
+  country: br
+  enddate: 2015-06-20
+  etherpad: null
+  eventbrite: 16989573271
+  helper: [Alexandre "asm"]
+  humandate: Jun 19-20, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Daniela Ushizima, Raniere Silva]
+  language: pt
+  latlng: -3.74576,-38.57431
+  layout: workshop
+  root: .
+  slug: 2015-06-19-labvis
+  startdate: 2015-06-19
+  url: http://r-gaia-cs.github.io/2015-06-19-labvis/
+  user: r-gaia-cs
+  venue: Universidade Federal do Ceará
+- address: Information Technology Center (street address of home location)
+  contact: mahdi@hawaii.edu
+  country: us
+  enddate: 2015-06-21
+  etherpad: https://etherpad.mozilla.org/2015-06-21-UH-SWC
+  helper: ['']
+  humandate: Jun 22-23, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Neem Serra, Mahdi Belcaid, Sean Cleveland, Ron Merrill]
+  language: en
+  latlng: 21.299816,-157.817579
+  layout: workshop
+  root: .
+  slug: 2015-06-21-UH-SWC
+  startdate: 2015-06-21
+  url: http://mahdi-b.github.io/2015-06-21-UH-SWC/
+  user: mahdi-b
+  venue: University of Hawaii at Manoa
