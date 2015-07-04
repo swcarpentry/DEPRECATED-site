@@ -5997,3 +5997,250 @@
   url: http://mahdi-b.github.io/2015-06-21-UH-SWC/
   user: mahdi-b
   venue: University of Hawaii at Manoa
+- address: Blacksburg, Virginia
+  contact: richardtguy84@gmail.com
+  country: us
+  enddate: 2015-06-23
+  etherpad: null
+  helper: []
+  humandate: Jun 22-23, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Tommy Guy, Daniel Chen]
+  language: en
+  latlng: 37.227863,-80.422264
+  layout: workshop
+  root: .
+  slug: 2015-06-21-s2i2
+  startdate: 2015-06-22
+  url: http://guyrt.github.io/2015-06-21-s2i2/
+  user: guyrt
+  venue: Virgina Tech
+- address: Annenberg 105, 330 S Chester Ave, Pasadena CA 91125
+  contact: psn@caltech.edu
+  country: us
+  enddate: 2015-06-23
+  etherpad: https://etherpad.mozilla.org/2015-06-22-caltech
+  eventbrite: '16678907060'
+  helper: [Stella Hoft, Henry Ngo, Ben Rusholme, Paul Nerenberg]
+  humandate: Jun 22-23, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [John Gosset, Jens von der Linden]
+  language: en
+  latlng: 34.139777, -118.123778
+  layout: workshop
+  root: .
+  slug: 2015-06-22-caltech
+  startdate: 2015-06-22
+  url: http://jensv.github.io/2015-06-22-caltech/
+  user: jensv
+  venue: California Institute of Technology
+- address: University Park, PA 16802
+  contact: (bct3@psu.edu)
+  country: us
+  enddate: 2015-06-23
+  etherpad: https://etherpad.mozilla.org/BiWpA8K7cE
+  helper: [Dan Nugent, Chloe Callahan-Flintoft, Greg Snow]
+  humandate: Jun 22-23, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Bradley Taber-Thomas, Emily Davenport]
+  language: en
+  latlng: 40.798044, -77.870632
+  layout: workshop
+  root: .
+  slug: 2015-06-22-psu
+  startdate: 2015-06-22
+  url: http://erdavenport.github.io/2015-06-22-psu/
+  user: erdavenport
+  venue: Pennsylvania State University
+- address: Breezeway Bioinformatics Training Room Bldg 1 Unit 5 Room 1500 600 Main
+    Street Bar Harbor, Maine
+  contact: susan.mcclatchy@jax.org
+  country: us
+  enddate: 2015-06-24
+  etherpad: https://etherpad.mozilla.org/itv4FHBJSi
+  eventbrite: 17102355606
+  helper: [Judy Yau, Larry Jacobs, Xingyao Chen]
+  humandate: Jun 23-24, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Jennifer Shelton, Sue McClatchy, Narayanan Raghupathy]
+  language: en
+  latlng: 44.365543,-68.197112
+  layout: workshop
+  root: .
+  slug: 2015-06-23-jackson
+  startdate: 2015-06-23
+  url: http://smcclatchy.github.io/2015-06-23-jackson/
+  user: smcclatchy
+  venue: The Jackson Laboratory
+- address: Massey University
+  contact: events@nesi.org.nz
+  country: nz
+  enddate: 2015-06-24
+  etherpad: https://etherpad.mozilla.org/swc-massey
+  eventbrite: 17076214417
+  helper: [Hannes Calitz, Matt Wilkins, Wolfgang Hayek]
+  humandate: June 23-24, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Sung Bae, John Rugis, Richard Brown]
+  language: en
+  latlng: -40.383831, 175.619000
+  layout: workshop
+  root: .
+  slug: 2015-06-23-massey
+  startdate: 2015-06-23
+  url: http://sungeunbae.github.io/2015-06-23-massey/
+  user: sungeunbae
+  venue: NeSI - Palmerston North Region Workshop
+- address: Utrecht, Netherlands
+  contact: data-carpentry@software-carpentry.org
+  country: nl
+  enddate: 2015-06-25
+  eventbrite: 16499828431
+  helper: [Mateusz Kuzak, Philip Lijnzaad, Vincenza Colonna, Aleksandra Nenadic, Frederik
+      Coppens, Angel Corpuz, Walid Gharib, Joris Borgdorff, Carlos Martinez Ortiz]
+  humandate: Jun 24-25, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Karthik Ram, Aleksandra Pawlik, Mateusz Kuzak]
+  layout: bootcamp2
+  root: .
+  slug: 2015-06-24-dc-utrecht
+  startdate: 2015-06-24
+  url: http://apawlik.github.io/2015-06-24-dc-utrecht/
+  user: apawlik
+  venue: Utrecht University
+- address: Clough Undergraduate Learning Center, Georgia Institute of Technology
+  contact: lisa.redding@biology.gatech.edu
+  country: us
+  enddate: 2015-06-25
+  etherpad: https://etherpad.mozilla.org/swc-2015-06-24-gatech
+  eventbrite: null
+  helper: ['']
+  humandate: Jun 24-25, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jeremiah Lant, Ashwin Srinath]
+  language: en
+  latlng: 33.774846, -84.396375
+  layout: workshop
+  root: .
+  slug: 2015-06-24-gatech
+  startdate: 2015-06-24
+  url: http://ashwinsrnth.github.io/2015-06-24-gatech/
+  user: ashwinsrnth
+  venue: Georgia Institute of Technology
+- address: West Ballroom, Wilkinson Center, 2130 E 1080 N, Provo, UT 84606
+  contact: gus.hart@gmail.com
+  country: us
+  enddate: 2015-06-26
+  etherpad: https://etherpad.mozilla.org/hIHhkainoY
+  eventbrite: 10121964067
+  helper: [Gus Hart, Andrew Nguyen, Conrad Rosenbrock]
+  humandate: Jun 25-26, 2015
+  humantime: 9:00 am-4:30 pm
+  instructor: [Neal Davis, Daniel Standage]
+  language: en-us
+  latlng: 40.2485794,-111.6473487
+  layout: workshop
+  root: .
+  slug: 2015-06-25-byu
+  startdate: 2015-06-25
+  url: http://uiuc-cse.github.io/2015-06-25-byu/
+  user: uiuc-cse
+  venue: Brigham Young University
+- address: Olin Hall 247, Baltimore, MD 21210
+  contact: gottscott@gmail.com
+  country: us
+  enddate: 2015-06-26
+  etherpad: https://swcarpentry.etherpad.mozilla.org/2015-06-25-jhu
+  eventbrite: 17047026114
+  helper: []
+  humandate: Jun 25-26, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Brian Miles, Daniel Chen]
+  language: en
+  latlng: 39.3280758,-76.6236947
+  layout: workshop
+  root: .
+  slug: 2015-06-25-jhu
+  startdate: 2015-06-25
+  url: http://chendaniely.github.io/2015-06-25-jhu/
+  user: chendaniely
+  venue: Johns Hopkins University
+- address: 107 Pasquerilla/ROTC Center, Notre Dame, IN
+  contact: Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+  country: us
+  enddate: 2015-06-26
+  etherpad: https://etherpad.mozilla.org/2015-06-25-notre-dame
+  helper: [Prateek Mehta, Will Pitchers, Rob Wieck, Steve Bogol, Michael Reece, Michael
+      Joy, Alex Vyushkov]
+  humandate: Jun 25-26, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Zbigniew Jędrzejewski-Szmek, Amanda Charbonneau]
+  language: en
+  latlng: 41.701749, -86.231612
+  layout: workshop
+  root: .
+  slug: 2015-06-25-notre-dame
+  startdate: 2015-06-25
+  url: http://keszybz.github.io/2015-06-25-notre-dame/
+  user: keszybz
+  venue: Notre Dame University
+- address: WRF Data Science Studio, Physics/Astronomy Tower (6th Floor), University
+    of Washington, Seattle, WA
+  contact: bmarwick@uw.edu
+  country: us
+  enddate: 2015-06-26
+  etherpad: null
+  eventbrite: 16897470790
+  helper: [Thomas Sibley, Margaret Hughes, Jason Portenoy]
+  humandate: Jun 25-26 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Sam White, Ariel Rokem, Ana Malagon, Thomas Sibley, Rachael Tatman,
+    Peter Schmiedeskamp]
+  language: en
+  latlng: 47.653371,-122.3118098
+  layout: workshop
+  registration: open
+  root: .
+  slug: 2015-06-25-uw
+  startdate: 2015-06-25
+  url: http://suparee.github.io/2015-06-25-uw/
+  user: suparee
+  venue: University of Washington
+- address: Room MP125A, McLennan Physical Laboratories, 255 Huron St., Toronto
+  contact: admin@software-carpentry.org
+  country: ca
+  enddate: 2015-06-26
+  etherpad: null
+  eventbrite: 17288143302
+  helper: [Catalina Anghel]
+  humandate: June 25-26, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Pauline Barmby, Heather Gibling, Daiva Nielsen]
+  language: en
+  latlng: 43.660889,-79.398807
+  layout: workshop
+  root: .
+  slug: 2015-06-25-wise-toronto
+  startdate: 2015-06-25
+  url: http://swcarpentry.github.io/2015-06-25-wise-toronto/
+  user: swcarpentry
+  venue: Women in Science and Engineering, University of Toronto
+- address: 서울특별시 서대문구 연세로 50 연세대학교 상경대학
+  contact: i@xwmooc.net
+  country: kr
+  enddate: 2015-06-23
+  etherpad: https://etherpad.mozilla.org/2015-06-29-yonsei
+  eventbrite: 16841824350
+  helper: [서덕래, 한채빈, 최홍용]
+  humandate: Jun 29-30, 2015
+  humantime: 9:30 am - 5:30 pm
+  instructor: [이광춘]
+  language: kr
+  latlng: 37.565784,126.93857200000002
+  layout: workshop
+  root: .
+  slug: 2015-06-29-yonsei
+  startdate: 2015-06-29
+  url: http://statkclee.github.io/2015-06-29-yonsei/
+  user: statkclee
+  venue: Yonsei University
