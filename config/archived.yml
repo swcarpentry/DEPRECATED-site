@@ -5854,12 +5854,25 @@
   url: http://guyer.github.io/2015-06-09-nih/
   user: guyer
   venue: National Institutes of Health
-- {address: 'Craik-Marshall Building, Downing Site, Cambridge', contact: Gabriella
-    Rustici <gr231@cam.ac.uk>, country: gb, enddate: 2015-06-16, etherpad: null, eventbrite: null,
-  helper: null, humandate: 'June 15-16, 2015', humantime: '9:30 am - 17:30 pm', instructor: 'Aaron
-    O''Leary, Myrto Kostadima', language: en, latlng: '52.201965,0.122486,17', layout: workshop,
-  root: ., slug: 2015-06-15-cambridge, startdate: 2015-06-15, url: 'http://aaren.github.io/2015-06-15-cambridge/',
-  user: aaren, venue: 'Bioinformatics, University of Cambridge'}
+- address: Craik-Marshall Building, Downing Site, Cambridge
+  contact: gr231@cam.ac.uk
+  country: gb
+  enddate: 2015-06-16
+  etherpad: null
+  eventbrite: null
+  helper: null
+  humandate: Jun 15-16, 2015
+  humantime: 9:30 am - 17:30 pm
+  instructor: ['Aaron O''Leary', 'Myrto Kostadima']
+  language: en
+  latlng: 52.201965,0.122486,17
+  layout: workshop
+  root: .
+  slug: 2015-06-15-cambridge
+  startdate: 2015-06-15
+  url: http://aaren.github.io/2015-06-15-cambridge/
+  user: aaren
+  venue: Bioinformatics, University of Cambridge
 - address: Ignacio M. Barriola Center (room 3.4, 3rd. floor), UPV/EHU Ibaeta Campus,
     San Sebastian - Donostia
   contact: luis@luispedro.org
