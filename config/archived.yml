@@ -3226,7 +3226,7 @@
   instructor: [Damien Irving, Philipp Bayer, Tim McNamara]
   latlng: -27.50142,153.01515
   layout: bootcamp
-  registration: close
+  registration: closed
   root: .
   slug: 2014-07-30-pyconaus
   startdate: 2014-07-30
@@ -3313,7 +3313,7 @@
   helper: [Matar Haller, Chris Beitel, Ian Korf, Dani Traphagen]
   humandate: Aug 14-15, 2014
   humantime: 9:00 am - 5:00 pm
-  instructor: [Azalee Bostroem, Chris Lonnen (Lonnen)]
+  instructor: [Azalee Bostroem, Chris Lonnen]
   latlng: 37.4320382,-122.175779
   layout: bootcamp
   registration: restricted
@@ -4482,15 +4482,14 @@
   user: sophieclayton
   venue: University of Washington
 - address: Mann Library, Room B30A, 237 Mann Drive, Ithaca, NY
-  assistants: [Jay Barry (CSCU), Lynn Johnson (CSCU), Francoise Vermeylen (CSCU)]
+  assistants: [Jay Barry, Lynn Johnson, Francoise Vermeylen]
   contact: mudrak@cornell.edu
   country: "us"
   enddate: 2015-01-16
   eventbrite: 14893607180
   humandate: Jan 15-16, 2015
   humantime: 9:00 am - 5 pm
-  instructor: [Erika Mudrak (CSCU), Jeramia Ory (Kings College), Emily Davenport (Cornell
-      University)]
+  instructor: [Erika Mudrak, Jeramia Ory, Emily Davenport]
   latlng: 42.448938, -76.476148
   layout: bootcamp
   raw: raw.github.com/emudrak/2015-01-15-cornell/gh-pages
@@ -4906,7 +4905,7 @@
   enddate: 2015-03-03
   etherpad: https://etherpad.mozilla.org/M5WGMaRyQt
   eventbrite: null
-  helper: [(we're looking for volunteers - please let us know if you can help!)]
+  helper: []
   humandate: Mar 02-03, 2015
   humantime: 9:00 am - 4:30 pm
   instructor: [Galen Collier, Marcin Ziolkowski, Ashwin Srinath]
@@ -5586,7 +5585,7 @@
   helper: [Raïssa Philibert, Beatrix Coetzee, Rachelle Bester, Maia Lesosky]
   humandate: May 14-15, 2015
   humantime: 9:00 am - 5:00 pm
-  instructor: [Laurent Gatto (remote), David Merand, Anelda van der Walt]
+  instructor: [Laurent Gatto, David Merand, Anelda van der Walt]
   language: en
   latlng: -33.9339861,18.8669428
   layout: workshop
@@ -5975,12 +5974,10 @@
   country: gb
   enddate: 2015-06-19
   etherpad: https://standrewsswc2015.etherpad.mozilla.org/1
-  helper: [Alexander Konovalov (University of St Andrews), Ben Stevenson (University
-      of St Andrews), David Miller (University of St Andrews), Michael Torpey (University
-      of St Andrews)]
+  helper: [Alexander Konovalov, Ben Stevenson, David Miller, Michael Torpey]
   humandate: Jun 18-19, 2015
   humantime: 9:30 am - 5:00 pm
-  instructor: [Leanne Wake (Northumbria University), Fatima Chami (Durham University)]
+  instructor: [Leanne Wake, Fatima Chami]
   language: en
   latlng: 56.340085,-2.807146
   layout: workshop
@@ -6293,3 +6290,272 @@
   url: http://statkclee.github.io/2015-06-29-yonsei/
   user: statkclee
   venue: Yonsei University
+- address: Alan Gilbert Theatre 3
+  contact: scottr@student.unimelb.edu.au
+  country: au
+  enddate: 2015-07-07
+  etherpad: https://etherpad.mozilla.org/2015-06-29-qaeco-unimelb
+  eventbrite: 17451162898
+  helper: [Tulio Campos, Luke Zappia, Matthew Burns]
+  humandate: June 29, 30, and July 6,7, 2015
+  humantime: 1:00 pm - 5:00 pm (June 29, 30, July 6), 9:00 am - 5:00 pm (July 7)
+  instructor: [Scott Ritchie, Jovana Maksimovic, Tim Rice]
+  language: en
+  latlng: -37.800091,144.959021
+  layout: workshop
+  root: .
+  slug: 2015-06-29-qaeco-unimelb
+  startdate: 2015-06-29
+  url: http://resbaz.github.io/2015-06-29-qaeco-unimelb/
+  user: resbaz
+  venue: The University of Melbourne
+- address: E363 Menzies Building, 20 Chancellor's Walk (lvl3 East wing)
+  contact: steve.androulakis@monash.edu
+  country: au
+  enddate: 2015-07-03
+  etherpad: https://etherpad.mozilla.org/2015-07-02-monash
+  eventbrite: 17220880116
+  helper: [Jerico Revote, Stuart Archer, Andrew Pattison, Adele Barugahare, David
+      Powell, Haroon Naeem, Simon  Michnowicz, Grischa Meyer, Jason Rigby]
+  humandate: Jul 2-3, 2015
+  humantime: 10:00 am - 4:30 pm
+  instructor: [Kirill Tsyganov, Steve Androulakis, Roxane Legaie, Paul Harrison]
+  language: en
+  latlng: -37.912270, 145.132756
+  layout: workshop
+  root: .
+  slug: 2015-07-02-monash
+  startdate: 2015-07-02
+  url: http://MonashBioinformaticsPlatform.github.io/2015-07-02-monash/
+  user: MonashBioinformaticsPlatform
+  venue: Monash University, Clayton Campus
+- address: The Boardroom, St. Leo's College College Road, St Lucia QLD 4067
+  contact: b.weaver@uq.edu.au or m.stantoncook@gmail.com
+  country: au
+  enddate: 2015-07-03
+  etherpad: https://etherpad.mozilla.org/BQyDGhXYzz
+  eventbrite: 16646530220
+  helper: [Darya Vanichkina, Nick Coghlan, Shaw Innes, Caleb Hattingh, Heidi Perrett,
+    Tim Dettrick]
+  humandate: Jul 2-3, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Amanda Miotto, Mitchell Stanton-Cook, Areej Alsheikh-Hussain, Sam Hames,
+    Paula Martinez, Belinda Weaver]
+  language: en
+  latlng: -27.501425, 153.014930
+  layout: workshop
+  root: .
+  slug: 2015-07-02-UQ
+  startdate: 2015-07-02
+  url: http://bio-swc-bne.github.io/2015-07-02-UQ/
+  user: bio-swc-bne
+  venue: The University of Queensland
+- address: AT&T Conference Center, 1900 University Avenue, Austin, TX 78705
+  contact: jiffyclub@gmail.com
+  country: us
+  enddate: 2015-07-07
+  etherpad: https://etherpad.mozilla.org/2015-07-06-scipy
+  helper: [Elizabeth Seiver]
+  humandate: July 6-7, 2015
+  humantime: 8:00 am - 5:00 pm
+  instructor: [Azalee Bostroem, Matt Davis, Jess Hamrick, Ted Hart, Katy Huff, Thomas
+      Kluyver, Jens Nielsen, April Wright]
+  language: en
+  latlng: 30.2825315,-97.7401528
+  layout: workshop
+  root: .
+  slug: 2015-07-06-scipy
+  startdate: 2015-07-06
+  url: http://jiffyclub.github.io/2015-07-06-scipy/
+  user: jiffyclub
+  venue: SciPy 2015
+- address: 1041 Valley Hall, UC Davis, Davis CA
+  contact: ctbrown@ucdavis.edu
+  country: us
+  enddate: 2015-07-07
+  etherpad: https://etherpad.mozilla.org/2015-07-06-ucdavis
+  eventbrite: 17480416396
+  helper: [Jian Jin, Evan Eskew, Vince Buffalo, Mike Covington, Spencer Matthews,
+    Sherine Awad, Robert Gysel]
+  humandate: Jul 6-7, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Noam Ross, Easton White, Tracy Teal]
+  language: en
+  latlng: 38.532878,-121.763761
+  layout: workshop
+  root: .
+  slug: 2015-07-06-ucdavis
+  startdate: 2015-07-06
+  url: http://dib-lab.github.io/2015-07-06-ucdavis/
+  user: dib-lab
+  venue: UC Davis
+- address: 1041 Valley Hall, UC Davis, Davis CA
+  contact: ctbrown@ucdavis.edu
+  country: us
+  enddate: 2015-07-07
+  etherpad: https://etherpad.mozilla.org/2015-07-06-ucdavis
+  eventbrite: 17480416396
+  helper: [Jian Jin, Evan Eskew, Vince Buffalo, Mike Covington, Spencer Matthews,
+    Sherine Awad, Robert Gysel]
+  humandate: Jul 6-7, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Noam Ross, Easton White, Tracy Teal]
+  language: en
+  latlng: 38.532878,-121.763761
+  layout: workshop
+  root: .
+  slug: 2015-07-06-ucdavis
+  startdate: 2015-07-06
+  url: http://dib-lab.github.io/2015-07-06-ucdavis/
+  user: dib-lab
+  venue: UC Davis
+- address: West Ballroom, Wilkinson Center, 2130 E 1080 N, Provo, UT 84606
+  contact: gus.hart@gmail.com
+  country: us
+  enddate: 2015-06-26
+  etherpad: https://etherpad.mozilla.org/hIHhkainoY
+  eventbrite: 10121964067
+  helper: [Gus Hart, Andrew Nguyen, Conrad Rosenbrock]
+  humandate: Jun 25-26, 2015
+  humantime: 9:00 am-4:30 pm
+  instructor: [Neal Davis, Daniel Standage]
+  language: en-us
+  latlng: 40.2485794,-111.6473487
+  layout: workshop
+  root: .
+  slug: 2015-06-25-byu
+  startdate: 2015-06-25
+  url: http://uiuc-cse.github.io/2015-06-25-byu/
+  user: uiuc-cse
+  venue: Brigham Young University
+- address: LabVis
+  contact: dani.lbnl@gmail.com
+  country: br
+  enddate: 2015-06-20
+  etherpad: null
+  eventbrite: 16989573271
+  helper: [Alexandre "asm"]
+  humandate: Jun 19-20, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Daniela Ushizima, Raniere Silva]
+  language: pt
+  latlng: -3.74576,-38.57431
+  layout: workshop
+  root: .
+  slug: 2015-06-19-labvis
+  startdate: 2015-06-19
+  url: http://dani-lbnl.github.io/2015-06-19-labvis/
+  user: dani-lbnl
+  venue: Universidade Federal do Ceará
+- address: Cambridge, Massachusetts
+  contact: admin@software-carpentry.org
+  country: us
+  enddate: 2015-06-17
+  etherpad: https://harvardinformatics.etherpad.mozilla.org/HUT3
+  helper: []
+  humandate: June 16-17, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Greg Wilson]
+  language: en
+  latlng: 42.37771,-71.11501
+  layout: workshop
+  root: .
+  slug: 2015-06-16-ttt-aciref
+  startdate: 2015-06-16
+  url: http://swcarpentry.github.io/2015-06-16-ttt-aciref/
+  user: swcarpentry
+  venue: Harvard University
+- address: University of Arizona
+  contact: gvwilson@software-carpentry.org
+  country: us
+  enddate: 2015-06-13
+  helper: []
+  humandate: June 12-13, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Greg Wilson]
+  language: en
+  latlng: 32.248707,-110.987023
+  layout: workshop
+  root: .
+  slug: 2015-06-12-ttt-iplant
+  startdate: 2015-06-12
+  url: http://swcarpentry.github.io/2015-06-12-ttt-iplant/
+  user: swcarpentry
+  venue: iPlant
+- address: Branner Earth Sciences Library, Teaching Corner, Mitchell Earth Sciences
+    Building 2nd Floor
+  helper: [Katie Planey, Maude David, Keyla Badillo, Mari Muraki]
+  contact: amyhodge@stanford.edu
+  country: us
+  enddate: 2015-04-24
+  eventbrite: 16087912379
+  humandate: April 23-24, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Amy Hodge, Tracy Teal]
+  latlng: 37.426423,-122.172659
+  layout: bootcamp
+  raw: raw.github.com/datacarpentry/2015-04-23-stanford/gh-pages
+  registration: open
+  root: .
+  slug: 2015-04-23-stanford
+  startdate: 2015-04-23
+  url: http://datacarpentry.github.io/2015-04-23-stanford/
+  user: datacarpentry
+  venue: Stanford
+- address: City Union (1400 R St.) and Avery Hall (1144 T St.)
+  contact: eharstad@unl.edu
+  country: United States
+  enddate: 2015-03-21
+  etherpad: https://etherpad.mozilla.org/2015-03-20-UNL
+  helper: [Derek Weitzel, David Swanson, Jingchao Zhang, Adam Caprez, Natasha Pavlovikj,
+    William McClung]
+  humandate: March 20-21, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Joshua Ainsley, Emelie Harstad]
+  language: en
+  latlng: 40.817660,-96.700481
+  layout: workshop
+  root: .
+  slug: 2015-03-20-UNL
+  startdate: 2015-03-20
+  url: http://jainsley.github.io/2015-03-20-UNL/
+  user: jainsley
+  venue: University of Nebraska - Lincoln Holland Computing Center
+- address: Indian Statistical Institute
+  helper: [Usashi Chatterjee, Sudipta Biswas, Vikas Bhushan, Arindam Debnath, Anurodh Sinha]
+  contact: admin@datacarpentry.org
+  country: in
+  enddate: 2015-03-13
+  eventbrite: null
+  humandate: March 10-13, 2015
+  humantime: null
+  instructor: [Harriet Dashnow, Clare Sloggett]
+  latlng: 37.426423,-122.172659
+  layout: bootcamp
+  raw: https://github.com/datacarpentry/2015-03-09-ISI-CODATA/tree/gh-pages
+  registration: open
+  root: .
+  slug: 2015-03-09-ISI-CODATA
+  startdate: 2015-03-10
+  url: http://datacarpentry.github.io/2015-03-09-ISI-CODATA/
+  user: datacarpentry
+  venue: ISI CODATA International Training Workshop on Big Data
+- address: Shields Library Instruction Room (2nd floor)
+  helper: [Jenna Lang, Joe Dumit]
+  contact: tkteal@datacarpentry.org
+  country: us
+  enddate: 2015-02-10
+  eventbrite: null
+  humandate: Feb 9-10, 2015
+  humantime: 9:00 am - 5 pm
+  instructor: [Michael Levy, Noam Ross, Tracy Teal, Easton White]
+  latlng: null
+  layout: bootcamp
+  raw: raw.github.com/datacarpentry/2015-02-09-ucdavis/gh-pages
+  registration: open
+  root: .
+  slug: 2015-02-09-ucdavis
+  startdate: 2015-02-09
+  url: http://datacarpentry.github.io/2015-02-09-ucdavis/
+  user: datacarpentry
+  venue: UC Davis
