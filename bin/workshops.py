@@ -38,6 +38,7 @@ ADJUSTMENTS = {
         'France': 'fr',
         'Germany': 'de',
         'Ghana': 'gh',
+        'India': 'in',
         'Italy': 'it',
         'Jordan': 'jo',
         'Korea': 'kr',
@@ -64,6 +65,7 @@ def _cleanup_handler(record, key, value):
     else:
         print >> sys.stderr, 'Bad field in "{0}" for key "{1}": "{2}"'.format(record, key, value)
         return None
+
 CLEANUP = {
     'latlng' : _cleanup_handler
 }

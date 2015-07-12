@@ -4956,6 +4956,23 @@
   url: http://nsoontie.github.io/2015-03-05-ubc/
   user: nsoontie
   venue: University of British Columbia - Faculty of Science
+- address: MR5, Room 3005
+  contact: br5n@virginia.edu
+  country: "us"
+  enddate: 2015-04-16
+  helper: [Stephen Turner, Bart Ragon]
+  humandate: April 15-16, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jessica Bonnie, Zhuo Fu, Alex Koeppel]
+  language: en
+  latlng: 38.033553,-78.507977
+  layout: workshop
+  root: .
+  slug: 2015-03-05-uvasom
+  startdate: 2015-04-15
+  url: https://github.com/realviacauchy/2015-03-05-uvasom
+  user: realviacauchy
+  venue: University of Virginia
 - address: 7 World Trade Center, 250 Greenwich Street, 40th floor, New York, NY 10007-2157
   contact: yfortis@nyas.org
   country: "us"
@@ -5715,6 +5732,25 @@
   url: http://swcarpentry.github.io/2015-05-30-hastac-swc/
   user: swcarpentry
   venue: HASTAC Conference (Software Carpentry)
+- address: 255 Old Horticulture, Michigan State University
+  contact: gvwilson@software-carpentry.org
+  country: us
+  enddate: 2015-05-31
+  etherpad: null
+  eventbrite: null
+  helper: []
+  humandate: May 30-31, 2015
+  humantime: 09:00-16:00
+  instructor: [Sean Pue, Cameron Macdonell, Tracy Teal]
+  language: en
+  latlng: 42.73226,-84.478175
+  layout: workshop
+  root: .
+  slug: 2015-05-30-HASTAC
+  startdate: 2015-05-30
+  url: http://datacarpentry.github.io/2015-05-30-HASTAC
+  user: datacarpentry
+  venue: HASTAC Conference (Data Carpentry)
 - address: Science Library, Moltke Moes Road 35, 0851 Oslo
   contact: lex.nederbragt@ibv.uio.no
   country: 'no'
