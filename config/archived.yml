@@ -6389,45 +6389,6 @@
   url: http://dib-lab.github.io/2015-07-06-ucdavis/
   user: dib-lab
   venue: UC Davis
-- address: 1041 Valley Hall, UC Davis, Davis CA
-  contact: ctbrown@ucdavis.edu
-  country: us
-  enddate: 2015-07-07
-  etherpad: https://etherpad.mozilla.org/2015-07-06-ucdavis
-  eventbrite: 17480416396
-  helper: [Jian Jin, Evan Eskew, Vince Buffalo, Mike Covington, Spencer Matthews,
-    Sherine Awad, Robert Gysel]
-  humandate: Jul 6-7, 2015
-  humantime: 9:00 am - 4:30 pm
-  instructor: [Noam Ross, Easton White, Tracy Teal]
-  language: en
-  latlng: 38.532878,-121.763761
-  layout: workshop
-  root: .
-  slug: 2015-07-06-ucdavis
-  startdate: 2015-07-06
-  url: http://dib-lab.github.io/2015-07-06-ucdavis/
-  user: dib-lab
-  venue: UC Davis
-- address: West Ballroom, Wilkinson Center, 2130 E 1080 N, Provo, UT 84606
-  contact: gus.hart@gmail.com
-  country: us
-  enddate: 2015-06-26
-  etherpad: https://etherpad.mozilla.org/hIHhkainoY
-  eventbrite: 10121964067
-  helper: [Gus Hart, Andrew Nguyen, Conrad Rosenbrock]
-  humandate: Jun 25-26, 2015
-  humantime: 9:00 am-4:30 pm
-  instructor: [Neal Davis, Daniel Standage]
-  language: en-us
-  latlng: 40.2485794,-111.6473487
-  layout: workshop
-  root: .
-  slug: 2015-06-25-byu
-  startdate: 2015-06-25
-  url: http://uiuc-cse.github.io/2015-06-25-byu/
-  user: uiuc-cse
-  venue: Brigham Young University
 - address: LabVis
   contact: dani.lbnl@gmail.com
   country: br
