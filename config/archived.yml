@@ -2952,7 +2952,7 @@
   humandate: June 25-26, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Christina Koch, Devasena Inupakutika]
-  latlng: 51.4419,0.9456
+  latlng: 51.4419,-0.9456
   layout: bootcamp
   registration: restricted
   root: .
@@ -4176,7 +4176,7 @@
   humandate: Nov 17-18, 2014
   humantime: 9:45 am - 4:00 pm
   instructor: [Kwasi Kwakwa, Marios Isaakidis]
-  latlng: 53.4087914,2.9723748
+  latlng: 53.4087914,-2.9723748
   layout: workshop
   lessons: [Python, Git, Bash]
   registration: restricted
