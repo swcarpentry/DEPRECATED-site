@@ -38,7 +38,7 @@
     ON
   country: "ca"
   enddate: 2012-02-24
-  humandate: February 23-24, 2012
+  humandate: Feb 23-24, 2012
   instructor: [Matt Davis, Jonathan Dursi, Mike Fletcher, Greg Wilson]
   latlng: 43.661476,-79.395189
   layout: bootcamp
@@ -1628,7 +1628,7 @@
   contact: karthik.ram@berkeley.edu
   country: "au"
   enddate: 2013-10-10
-  humandate: October 9-10, 2013
+  humandate: Oct 9-10, 2013
   humantime: 8:30 am - 5 pm
   instructor: [Karthik Ram]
   latlng: -35.27770,149.11853
@@ -1660,7 +1660,7 @@
   contact: harvard@lists.software-carpentry.org
   country: "us"
   enddate: 2013-08-24
-  humandate: August 23-24, 2013
+  humandate: Aug 23-24, 2013
   humantime: 9:00 am - 4:30 pm
   instructor: [Erik Bray, Jessica McKellar, R. David Murray, Mike Selik]
   latlng: 42.381705,-71.127904
@@ -1694,7 +1694,7 @@
   contact: ely@stsci.edu
   country: "us"
   enddate: 2013-10-26
-  humandate: October 25-26, 2013
+  humandate: Oct 25-26, 2013
   humantime: 9:00 am - 4:30 pm
   instructor: [Justin Ely, David Koop, Ivan Gonzalez, David Warde-Farley]
   latlng: 40.8080777,-73.9635678
@@ -1710,7 +1710,7 @@
   contact: host-exeter@software-carpentry.org
   country: "gb"
   enddate: 2013-11-15
-  humandate: November 14-15, 2013
+  humandate: Nov 14-15, 2013
   humantime: 9:00 am - 5.00 pm
   instructor: [David Martin, Christopher Woods]
   latlng: 50.735788,-3.535033
@@ -1792,7 +1792,7 @@
   contact: d.m.a.martin@dundee.ac.uk
   country: "gb"
   enddate: 2013-12-16
-  humandate: December 16-17, 2013
+  humandate: Dec 16-17, 2013
   humantime: 9:00 am - 5.00 pm
   instructor: [David Martin, Martin Jones]
   latlng: 56.464,-2.97
@@ -1957,7 +1957,7 @@
   contact: aron@ahmadia.net
   country: "us"
   enddate: 2014-01-22
-  humandate: January 21-22, 2014
+  humandate: Jan 21-22, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Aron Ahmadia, Randal Olson]
   latlng: 32.301199,-90.871617
@@ -3237,7 +3237,7 @@
   contact: aron@ahmadia.net
   country: "us"
   enddate: 2014-08-07
-  humandate: August 5-7, 2014
+  humandate: Aug 5-7, 2014
   humantime: 8:00 am - 5:00 pm
   instructor: [Aron Ahmadia, Chris Kees]
   latlng: 36.192977, -75.761568
@@ -3521,7 +3521,7 @@
   country: "ca"
   enddate: 2014-09-14
   helper: [WatPy, SHARCNET]
-  humandate: September 13-14, 2014
+  humandate: Sept 13-14, 2014
   humantime: 9:00 am - 4:30 pm
   instructor: [Nasser M Abukhdeir, Pawel Pomorski, Albert O'Connor]
   latlng: 43.473269, -80.538639
@@ -4659,7 +4659,7 @@
   contact: admin-uk@software-carpentry.org
   country: "gb"
   enddate: 2015-02-04
-  humandate: February 03 - 04, 2015
+  humandate: Feb 3-4, 2015
   humantime: 9:00 am - 5:00 pm
   instructor: [Kate Lee, Mario Antonioletti, Aleksandra Pawlik]
   latlng: 53.4773,-2.2374
@@ -6520,3 +6520,215 @@
   url: http://datacarpentry.github.io/2015-02-09-ucdavis/
   user: datacarpentry
   venue: UC Davis
+- address: Gordon House 106 29 Gordon Square, London, WC1H 0PP
+  contact: rc-softdev@ucl.ac.uk
+  country: gb
+  enddate: 2014-11-06
+  helper: [Ross Mounce, Tom Pollard, Miguel Bernabeu Llinares, Mladen Georgiev]
+  humandate: Nov 05-06, 2014
+  humantime: 10:00 am - 5:00 pm
+  instructor: [Mayeul d'Avezac, Jens Hedegaard Nielsen, Gary Macindoe, Derek Groen]
+  latlng: 51.525004,-0.132013
+  layout: workshop
+  lessons: [Python, SQL, Git]
+  registration: restricted
+  root: .
+  slug: 2014-11-05-UCL
+  startdate: 2014-11-05
+  url: http://ucl.github.io/2014-11-05-UCL/
+  user: ucl
+  venue: UCL
+- address: B07, 1-19 Torrington Place
+  contact: rc-softdev@ucl.ac.uk
+  country: gb
+  enddate: 2015-02-26
+  helper: [Mladen Georgiev, Luana Totea]
+  humandate: Feb 25-26, 2015
+  humantime: 10:00 am - 5:00 pm
+  instructor: James Hetherington, Mayeul D’Avezac, Tom Pollard, Jens Nielsen and Ben
+    Waugh
+  language: en
+  latlng: 51.5218691,-0.134323
+  layout: workshop
+  root: .
+  slug: '2015-02-25'
+  startdate: 2015-02-25
+  url: http://ucl.github.io/2015-02-25/
+  user: ucl
+  venue: UCL Torrington Place B07
+- address: Cruciform B115A Cluster, University College London
+  contact: s.shi@ucl.ac.uk
+  country: gb
+  enddate: 2015-06-19
+  etherpad: null
+  eventbrite: null
+  helper: [Raquel Algre, Sinan Shi, Luana Totea, Altaf Ali]
+  humandate: Jun 18-19, 2015
+  humantime: 10:00 am - 05:00 pm
+  instructor: [Thomas Couch, Raquel Alegre, Ben Waugh, David Wright]
+  language: en
+  latlng: 51.524559,-0.13404
+  layout: workshop
+  root: .
+  slug: 2015-06-18-ucl-swcarpentry
+  startdate: 2015-06-18
+  url: http://ucl.github.io/2015-06-18-ucl-swcarpentry/
+  user: ucl
+  venue: UCL Software Carpentry Workshop
+- address: 251 LeConte Hall, University of California, Berkeley
+  contact: marwahaha@berkeley.edu
+  country: us
+  enddate: 2015-07-10
+  etherpad: https://etherpad.mozilla.org/2015-07-09-berkeley
+  eventbrite: '17553874110'
+  helper: [Liza Tremsina, William Tokumaru, Akshay Ramachandran, Anders Lewis, Joseph
+      Lee, Anastasia Bizyaeva, Ivan Aguilar]
+  humandate: Jul 9-10, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Kunal Marwaha, Donghyun Lee, Max Gerlock, Harry Bachrach]
+  language: en
+  latlng: 37.872568,-122.257225
+  layout: workshop
+  root: .
+  slug: 2015-07-09-berkeley
+  startdate: 2015-07-09
+  url: http://marwahaha.github.io/2015-07-09-berkeley/
+  user: marwahaha
+  venue: UC Berkeley
+- <!--helper: (list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"])-->
+  address: 1950 Marine Drive, West Vancouver, B.C., V7V 1J8
+  contact: lbrockington@westvanlibrary.ca
+  country: ca
+  enddate: 2015-07-10
+  etherpad: null
+  eventbrite: null
+  humandate: July 9-10, 2015
+  humantime: 9:00 am - 4:00 pm
+  instructor: [Cam Macdonell, Vicky Varga]
+  language: en
+  latlng: 49.328984,-123.165847
+  layout: workshop
+  root: .
+  slug: 2015-07-09-vpl
+  startdate: 2015-07-09
+  url: http://cmacdonell.github.io/2015-07-09-vpl/
+  user: cmacdonell
+  venue: West Vancouver Memorial Library, Welsh Hall
+- address: Planning Studio, Rooms 314 & 315, Level 3, Steele Building
+  contact: irving.damien@gmail.com
+  country: au
+  enddate: 2015-07-14
+  etherpad: https://etherpad.mozilla.org/2015-07-13-amos
+  helper: [Scott Wales, Holger Wolff]
+  humandate: Jul 13-14, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Damien Irving, Rob Johnson]
+  latlng: -27.497257,153.014473
+  layout: workshop
+  root: .
+  slug: 2015-07-13-amos
+  startdate: 2015-07-13
+  url: http://damienirving.github.io/2015-07-13-amos/
+  user: damienirving
+  venue: University of Queensland
+- address: Collaborative learning space 3, Old Arts, University of Melbourne
+  contact: isa.kiral@gmail.com
+  country: au
+  enddate: 2015-07-17
+  etherpad: https://etherpad.mozilla.org/2015-07-13-python
+  eventbrite: 17521394964
+  helper: [Soroor Hediyeh Zadeh, Zaki Akhmad, Aliza Wajih, Andrea Bedini, Kerry Halupka,
+    Lachlan Musicman]
+  humandate: Jul 13-15, Jul 17 2015
+  humantime: 1:00 pm - 5:00 pm
+  instructor: [Isabell Kiral-Kornek, Rob Kerr, Alistair Walsh]
+  language: en
+  latlng: -37.797738,144.960107
+  layout: workshop
+  root: .
+  slug: 2015-07-13-unimelb
+  startdate: 2015-07-13
+  url: http://resbaz.github.io/2015-07-13-unimelb/
+  user: resbaz
+  venue: University of Melbourne
+- address: Clockhouse Place, Bedfont Road, Feltham, Middlesex TW14 8HD
+  contact: m.stillwell@imperial.ac.uk
+  country: gb
+  enddate: 2015-07-17
+  etherpad: https://etherpad.mozilla.org/2015-07-15-feltham
+  eventbrite: 16510725023
+  helper: [Jose Gabriel de F. Coutinho]
+  humandate: Jul 15-17, 2015
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Mark Stillwell, Guillaume Pierre, Peter Sanders, Christoph Kleineweber,
+    Diego Scardaci, Enol Fernandez, Gergely Sipos, Alistair Grant]
+  language: en
+  latlng: 51.449025,-0.445043
+  layout: workshop
+  root: .
+  slug: 2015-07-15-feltham
+  startdate: 2015-07-15
+  url: http://harnesscloud.github.io/2015-07-15-feltham/
+  user: harnesscloud
+  venue: SAP Headquarters near London Heathrow
+- address: Nebraska Union (City Campus) - Regency Suite / 1400 R Street, Lincoln,
+    NE 68588
+  contact: eharstad@unl.edu
+  country: us
+  enddate: 2015-07-16
+  etherpad: https://etherpad.mozilla.org/2015-07-15
+  helper: [Jingchao Zhang, Derek Weitzel, Adam Caprez, William McClung, 'Carl Lundstedt,
+      David Swanson']
+  humandate: Jul 15-16, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Emelie Harstad, Ashu Guru]
+  language: en
+  latlng: 40.817890, -96.700042
+  layout: workshop
+  registration: http://marketplace.unl.edu/default/software-carpentry-workshop-july-15-16.html
+  root: .
+  slug: 2015-07-15-UNL
+  startdate: 2015-07-15
+  url: http://eharstad.github.io/2015-07-15-UNL/
+  user: eharstad
+  venue: University of Nebraska - Lincoln
+- address: Training Room 3B and 3C, Snape Bldg, Upper Campus, Ring Rd, Rondebosch,
+    Cape Town, 7701
+  contact: eresearch@uct.ac.za
+  country: za
+  enddate: 2015-07-17
+  etherpad: https://etherpad.mozilla.org/6S9w1Lqu1P
+  eventbrite: null
+  helper: [Anke Wiese, Philip Marais, Chris Trisos, Glenn Moncrieff, Jock Currie]
+  humandate: Jul 16-17, 2015
+  humantime: 09:00 - 17:00
+  instructor: [Peter van Heusden, Adrianna Pińska, Matthew Aiello-Lammens, Maia Lesosky,
+    Jasper Slingsby]
+  language: en
+  latlng: -33.958639, 18.459697
+  layout: workshop
+  root: .
+  slug: 2015-07-16-UCT
+  startdate: 2015-07-16
+  url: http://mlammens.github.io/2015-07-16-UCT/
+  user: mlammens
+  venue: University of Cape Town
+- address: 555 University Avenue, Toronto, Ontario
+  contact: thomas.wright@sickkids.ca
+  country: ca
+  enddate: 2015-07-17
+  etherpad: TBA
+  eventbrite: 17102491011
+  helper: [Tomas Mawyin, Greg Wilson, Tyson Whitehead]
+  humandate: July 16-17, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Tom Wright, Jeremy Gray, Luke Johnston]
+  language: en
+  latlng: 43.6569468,-79.3884353
+  layout: workshop
+  root: .
+  slug: 2015-07-16-sickkids
+  startdate: 2015-07-16
+  url: http://tomwright01.github.io/2015-07-16-sickkids/
+  user: tomwright01
+  venue: Hospital For Sick Children
