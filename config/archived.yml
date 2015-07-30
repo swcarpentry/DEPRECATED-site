@@ -6537,7 +6537,7 @@
   startdate: 2014-11-05
   url: http://ucl.github.io/2014-11-05-UCL/
   user: ucl
-  venue: UCL
+  venue: University College London
 - address: B07, 1-19 Torrington Place
   contact: rc-softdev@ucl.ac.uk
   country: gb
@@ -6555,7 +6555,7 @@
   startdate: 2015-02-25
   url: http://ucl.github.io/2015-02-25/
   user: ucl
-  venue: UCL Torrington Place B07
+  venue: University College London
 - address: Cruciform B115A Cluster, University College London
   contact: s.shi@ucl.ac.uk
   country: gb
@@ -6574,7 +6574,7 @@
   startdate: 2015-06-18
   url: http://ucl.github.io/2015-06-18-ucl-swcarpentry/
   user: ucl
-  venue: UCL Software Carpentry Workshop
+  venue: University College London
 - address: 251 LeConte Hall, University of California, Berkeley
   contact: marwahaha@berkeley.edu
   country: us
