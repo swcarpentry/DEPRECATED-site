@@ -6732,3 +6732,20 @@
   url: http://tomwright01.github.io/2015-07-16-sickkids/
   user: tomwright01
   venue: Hospital For Sick Children
+- address: 100 Bureau Dr., Gaithersburg, MD
+  contact: guyer@nist.gov
+  country: us
+  enddate: 2015-07-24
+  helper: [Chandler Becker, Marcus Mendenhall, Lynn Young]
+  humandate: July 23-24, 2015
+  humantime: 8:30 am - 5:00 pm
+  instructor: [Jonathan Guyer, Dilip Banerjee, Joshua Ryan Smith]
+  language: en
+  latlng: 39.132284,-77.216446
+  layout: workshop
+  root: .
+  slug: 2015-07-23-nist
+  startdate: 2015-07-23
+  url: http://usnistgov.github.io/usnistgov/2015-07-23-nist/
+  user: usnistgov
+  venue: National Institute of Standards and Technology
