@@ -10,6 +10,8 @@
   - [mclean.cameron, Cameron McLean]
   - [mcnamara.tim, Tim McNamara]
   - [rugis.john, John Rugis]
+  - [geldenhuis.andre, Andre Geldenhuis]
+  - [hayek.wolfgang, Wolfgang Hayek]
 - airport: Stockholm
   latlng: 59.651944,17.918611
   who:
@@ -63,7 +65,7 @@
   who:
   - [alsheikh-hussain.areej, Areej Alsheikh-Hussain]
   - [hames.sam, Sam Hames]
-  - [martinez.paula, Paula Martinez]
+  - [martinez.paula, Paula Andrea Martinez]
   - [miotto.amanda, Amanda Miotto]
   - [stanton-cook.mitchell, Mitchell Stanton-Cook]
   - [weaver.belinda, Belinda Weaver]
@@ -185,7 +187,7 @@
   - [johnson.ben, Ben Johnson]
   - [schmidt.marian, Marian Schmidt]
   - [sheneman.leigh, Leigh Sheneman]
-  - [smith.by, Byron Smith]
+  - [smith.byron, Byron Smith]
 - airport: Dublin
   latlng: 53.421111,-6.27
   who:
@@ -277,6 +279,7 @@
   - [lach.paulina, Paulina Lach]
   - [noga.klemens, Klemens Noga]
   - [tarkowski.leszek, Leszek Tarkowski]
+  - [zaczek.katarzyna, Katarzyna Zaczek]
 - airport: Lansing, MI
   latlng: 42.778611,-84.587222
   who:
@@ -400,6 +403,7 @@
   - [tweedie.fiona, Fiona Tweedie]
   - [walsh.alistair, Alistair Walsh]
   - [winton.jared, Jared Winton]
+  - [androulakis.steve, Steve Androulakis]
 - airport: Manchester, New Hampshire
   latlng: 42.92786,-71.43844
   who:
@@ -444,7 +448,7 @@
   - [bostroem.a, Azalee Bostroem]
   - [cholia.s, Shreyas Cholia]
   - [davis.m, Matt Davis]
-  - [hamrick.jessica, Jessica Hanrivk]
+  - [hamrick.jessica, Jessica Hamrick]
   - [holdgraf.c, Chris Holdgraf]
   - [ivanov.p, Paul Ivanov]
   - [marwaha.kunal, Kunal Marwaha]
@@ -452,6 +456,8 @@
   - [perez.f, Fernando Perez]
   - [terry.m, Matt Terry]
   - [winston.donald, Donny Winston]
+  - [gerlock.max, Max Gerlock]
+  - [bachrach.harry, Harry Bachrach]
 - airport: Oklahoma City
   latlng: 35.393056,-97.600556
   who:
@@ -566,7 +572,8 @@
   - [turek.daniel, Daniel Turek]
   - [ushizima.daniela, Daniela Ushizima]
   - [vaidyanathan.ramnath, Ramnath Vaidyanathan]
-  - [zhang.qp, QINGPENG ZHANG]
+  - [zhang.qp, Qingpeng Zhang]
+  - [laurance.megan, Megan Laurance]
 - airport: Singapore
   latlng: 1.355556,103.987222
   who:
@@ -651,6 +658,7 @@
   who:
   - [macdonell.cam, Cam Macdonell]
   - [varga.vicky, Vicky Varga]
+  - [simpson.john, John Simpson]
 - airport: Halifax
   latlng: 44.880833,-63.508611
   who:
@@ -788,15 +796,12 @@
   latlng: 39.902401,-84.2193985
   who:
   - [devlin.catherine, Catherine Devlin]
-- airport: Gainesville, TX
-  latlng: 33.651389,-97.196944
-  who:
-  - [white.e, Ethan White]
 - airport: Gainesville, FL
   latlng: 29.69,-82.271667
   who:
   - [collins.matthew, Matthew Collins]
   - [michonneau.francois, francois michonneau]
+  - [white.e, Ethan White]
 - airport: Sao Paulo Guarulhos
   latlng: -23.435556,-46.473056
   who:
@@ -805,7 +810,7 @@
   latlng: 34.8956985,-82.2189026
   who:
   - [srinath.ashwin, Ashwin Trikuta Srinath]
-  - [carbajales.patricia.2, Patricia Carbajales-Dale]
+  - [carbajales.patricia, Patricia Carbajales-Dale]
 - airport: Roanoke Blacksburg, VA
   latlng: 37.3255005,-79.9754028
   who:
