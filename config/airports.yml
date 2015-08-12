@@ -68,6 +68,7 @@
   - [martinez.paula, Paula Andrea Martinez]
   - [miotto.amanda, Amanda Miotto]
   - [stanton-cook.mitchell, Mitchell Stanton-Cook]
+  - [vanichkina.darya, Darya Vanichkina]
   - [weaver.belinda, Belinda Weaver]
 - airport: Boston, MA
   latlng: 42.364167,-71.005
@@ -84,6 +85,7 @@
   - [riley.janet, Janet Riley]
   - [selik.m, Michael Selik]
   - [shattow.genevieve, Genevieve Shattow]
+  - [freedman.adam, Adam Freedman]
   - [karger.amir, Amir Karger]
   - [marder.andrew, Andrew Marder]
   - [zahn.ista, Ista Zahn]
@@ -113,6 +115,7 @@
   - [fu.zhuo, zhuo fu]
   - [koeppel.alexander, Alex Koeppel]
   - [lake.sherry, Sherry Lake]
+  - [soderberg.courtney, Courtney Soderberg]
   - [turner.s, Stephen Turner]
 - airport: Charleston, SC
   latlng: 32.898611,-80.040278
@@ -146,6 +149,7 @@
   - [munoz.ian, Ian Munoz]
   - [smith.j, Joshua Smith]
   - [smorul.mike, Mike Smorul]
+  - [dale.ryan, Ryan Dale]
 - airport: Denver, CO
   latlng: 39.858333,-104.666944
   who:
@@ -181,6 +185,7 @@
   - [berry.michelle, Michelle Berry]
   - [charbonneau.amanda, Amanda Charbonneau]
   - [duffy.meghan, Meghan Duffy]
+  - [endsley.arthur, Arthur Endsley]
   - [gates.chris, Chris Gates]
   - [guo.jiarong, Jiarong Guo]
   - [irber.luiz, Luiz Irber]
@@ -188,6 +193,7 @@
   - [schmidt.marian, Marian Schmidt]
   - [sheneman.leigh, Leigh Sheneman]
   - [smith.byron, Byron Smith]
+  - [whitefield.shawn, Shawn Whitefield]
 - airport: Dublin
   latlng: 53.421111,-6.27
   who:
@@ -226,6 +232,7 @@
   latlng: 35.13778,-111.67167
   who:
   - [caporaso.greg, Greg Caporaso]
+  - [speer.donald, Donald Speer]
   - [perry.adam, Adam Perry]
 - airport: Frankfurt
   latlng: 50.026389,8.543056
@@ -317,6 +324,10 @@
   - [langmore.i, Ian Langmore]
   - [lightman.matthew, Matthew Lightman]
   - [pell.j, Jason Pell]
+- airport: London Gatwick
+  latlng: 51.148056,-0.190278
+  who:
+  - [kwakwa.k, Kwasi Kwakwa]
 - airport: London Heathrow
   latlng: 51.4775,-0.461389
   who:
@@ -361,6 +372,7 @@
   - [nenadic.aleksandra, Aleksandra Nenadic]
   - [pawlik.a, Aleksandra Pawlik]
   - [sufi.s, Shoaib Sufi]
+  - [james.sebastian, Seb James]
 - airport: Kansas City, KS
   latlng: 39.2975,-94.713889
   who:
@@ -422,6 +434,7 @@
   latlng: 44.880278,-93.216667
   who:
   - [mansour.tamer, Tamer Mansour]
+  - [mokhtarzadeh.hamid, Hamid Mokhtarzadeh]
   - [williams.ryan, Ryan Williams]
 - airport: New Orleans, LA
   latlng: 29.993333,-90.257778
@@ -564,6 +577,7 @@
   - [huff.k, Katy Huff]
   - [imamoglu.fatma, Fatma Imamoglu]
   - [kitzes.j, Justin Kitzes]
+  - [lonnen.chris, Chris Lonnen]
   - [mckellar.j, Jessica McKellar]
   - [morris.b, Ben Morris]
   - [ram.k, Karthik Ram]
@@ -648,6 +662,7 @@
   who:
   - [srinivasan.karthik, Karthik  Srinivasan]
   - [strootman.jonathan, Jonathan Strootman]
+  - [von-bieberstein.philipp, Philipp Von Bieberstein]
   - [zimmerman.naupaka, Naupaka Zimmerman]
 - airport: Knoxville, TN
   latlng: 35.81,-84.0
@@ -673,6 +688,7 @@
   latlng: 46.788333,-71.3975
   who:
   - [lafleur.olivier, Olivier Lafleur]
+  - [boissonneault.maxime, Maxime Boissonneault]
 - airport: Montreal
   latlng: 45.468056,-73.741389
   who:
@@ -715,7 +731,6 @@
 - airport: Toronto
   latlng: 43.677222,-79.630556
   who:
-  - [anghel.catalina, Catalina Anghel]
   - [aruliah.d, Dhavide Aruliah]
   - [bekolay.trevor, Trevor Bekolay]
   - [brown.amy, Amy Brown]
@@ -745,6 +760,7 @@
   who:
   - [dotson.david, David Dotson]
   - [schwartz.rachel, Rachel Schwartz]
+  - [shiffer.arron, Arron Shiffer]
   - [chase.john, John Chase]
 - airport: Dunedin
   latlng: -45.928056,170.198333
@@ -800,7 +816,7 @@
   latlng: 29.69,-82.271667
   who:
   - [collins.matthew, Matthew Collins]
-  - [michonneau.francois, francois michonneau]
+  - [michonneau.francois, "Fran\xE7ois Michonneau"]
   - [white.e, Ethan White]
 - airport: Sao Paulo Guarulhos
   latlng: -23.435556,-46.473056
@@ -826,4 +842,9 @@
 - airport: Billy Bishop Toronto
   latlng: 43.6274986,-79.3962021
   who:
+  - [anghel.catalina, Catalina Anghel]
   - [cabunoc.abigail, Abigail Cabunoc Mayes]
+- airport: Winnipeg, MB
+  latlng: 49.9099998,-97.2398987
+  who:
+  - [pourreza.hossein, Hossein Pourreza]
