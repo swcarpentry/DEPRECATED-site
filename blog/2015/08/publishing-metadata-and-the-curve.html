@@ -73,10 +73,9 @@ Version 5.3, May 2015, 10.5281/zenodo.23544.</pre>
   In fact,
   it appears that <em>none</em> of the standard BibTeX entries will do exactly what we want:
   <code>@misc</code> doesn't allow <code>editor</code> as a field,
-  while <code>@incollection</code> requires a book title and author,
-  and won't render information the way we want
-  (because each lesson would be in the same "collection",
-  but with different editors).
+  while if we use <code>@incollection</code> (which requires a book title and author)
+  we'll wind up with a "collection" that has the same author but different editors for each entry
+  (which is the reverse of normal practice).
 </p>
 <p>
   After a bit of external inspection, Elizabeth believes that:
