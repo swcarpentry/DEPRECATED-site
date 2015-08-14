@@ -60,8 +60,7 @@ SRC_CONFIG = $(wildcard $(CONFIG_DIR)/*.yml)
 
 # All files generated for the build process.
 GENERATED = \
-	./_dashboard_cache.yml \
-	./_workshop_cache.yml
+	./_dashboard_cache.yml
 
 # Destination directories for manually-copied files.
 DST_DIRS = $(OUT)/css $(OUT)/img $(OUT)/js
@@ -144,10 +143,6 @@ authors :
 ## badge-dates  : list dates of all instructor badges.
 badge-dates :
 	@python3 bin/list-badge-dates.py badges/instructor/*.json
-
-## badge-dates  : list dates of all instructor badges.
-badge-dates :
-	@python bin/list-badge-dates.py badges/instructor/*.json
 
 ## categories   : list all blog category names.
 categories :
