@@ -6389,25 +6389,6 @@
   url: http://dib-lab.github.io/2015-07-06-ucdavis/
   user: dib-lab
   venue: UC Davis
-- address: LabVis
-  contact: dani.lbnl@gmail.com
-  country: br
-  enddate: 2015-06-20
-  etherpad: null
-  eventbrite: 16989573271
-  helper: [Alexandre "asm"]
-  humandate: Jun 19-20, 2015
-  humantime: 9:00 am - 5:00 pm
-  instructor: [Daniela Ushizima, Raniere Silva]
-  language: pt
-  latlng: -3.74576,-38.57431
-  layout: workshop
-  root: .
-  slug: 2015-06-19-labvis
-  startdate: 2015-06-19
-  url: http://dani-lbnl.github.io/2015-06-19-labvis/
-  user: dani-lbnl
-  venue: Universidade Federal do Ceará
 - address: Cambridge, Massachusetts
   contact: admin@software-carpentry.org
   country: us
@@ -6746,6 +6727,6 @@
   root: .
   slug: 2015-07-23-nist
   startdate: 2015-07-23
-  url: http://usnistgov.github.io/usnistgov/2015-07-23-nist/
+  url: http://usnistgov.github.io/2015-07-23-nist
   user: usnistgov
   venue: National Institute of Standards and Technology
