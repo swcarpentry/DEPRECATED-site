@@ -6730,3 +6730,210 @@
   url: http://usnistgov.github.io/2015-07-23-nist
   user: usnistgov
   venue: National Institute of Standards and Technology
+- address: Pod B (next door to ARRC Building), 26 Dick Perry Avenue, Kensington WA
+    6151
+  contact: a.rohl@curtin.edu.au
+  country: au
+  enddate: 2015-07-21
+  etherpad: https://etherpad.mozilla.org/perthsw
+  eventbrite: 16858811158
+  helper: [Paolo Raiteri, Bernhard Reischl, Marco De La Pierre, Brian Skjerven, Chris
+      Bording, Rachael Lappan]
+  humandate: Jul 20-21, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Andrew Rohl, Raffaella Demichelis]
+  language: en
+  latlng: -31.99445,115.885636
+  layout: workshop
+  root: .
+  slug: 2015-07-20-perth
+  startdate: 2015-07-20
+  url: http://arohl.github.io/2015-07-20-perth/
+  user: arohl
+  venue: Curtin University
+- address: Jefferson 356, 17 Oxford Street
+  contact: robert_freeman@harvard.edu
+  country: us
+  enddate: 2015-07-23
+  etherpad: https://harvardinformatics.etherpad.mozilla.org/2
+  eventbrite: null
+  helper: [Adam Freedman, Aaron Kitzmiller, George Marnellos, Allison Shultz]
+  humandate: Jul 22-23, 2015
+  humantime: 9:00 - 4:30 pm
+  instructor: [Plamen Krastev, Tim Sackton, Bob Freeman]
+  language: en
+  latlng: 42.3772499,-71.1175291
+  layout: workshop
+  root: .
+  slug: 2015-07-22_SWC-R
+  startdate: 2015-07-22
+  url: http://fasrc.github.io/2015-07-22_SWC-R/
+  user: fasrc
+  venue: Harvard University FAS Research Computing
+- address: Branner Earth Sciences Library, Teaching Corner, Stanford, CA
+  contact: amyhodge@stanford.edu
+  country: us
+  enddate: 2015-07-24
+  etherpad: https://etherpad.mozilla.org/DgRdeDNVVV
+  helper: [Rose Robinson, Diego Ramallo, Alexandra Fetisova, Kunal Marwaha]
+  humandate: Jul 23-24, 2015
+  humantime: Thursday 8:30 am - 5:00 pm, Friday 9:00 am - 5:00 pm
+  instructor: [Jennifer M Shelton, Byron J Smith]
+  language: en
+  latlng: 37.4264208,-122.1726586
+  layout: workshop
+  root: .
+  slug: 2015-07-23-stanford
+  startdate: 2015-07-23
+  url: http://i5k-kinbre-script-share.github.io/2015-07-23-stanford/
+  user: i5k-kinbre-script-share
+  venue: Stanford University
+- address: 2350 Health Sciences Mall, room LSC-3
+  contact: mills.wj@gmail.com
+  country: ca
+  enddate: 2015-07-26
+  eventbrite: 17474291075
+  helper: [Erica Acton, Amy Lee, Alathea Letaw, Troy McDiarmid, Quintin Muncaster]
+  humandate: July 24-26, 2015
+  instructor: [Remi Daigle, Melissa Guzman, Daisie Huang, Andrew MacDonald, Tiffany
+      Timbers]
+  language: en
+  latlng: 49.26236,-123.24494
+  layout: workshop
+  root: .
+  slug: 2015-07-24-LSIUBC
+  startdate: 2015-07-24
+  url: http://billmills.github.io/2015-07-24-LSIUBC/
+  user: billmills
+  venue: Life Sciences Institute, UBC
+- K: (<em>Kevin</em>)
+  R: (<em>Rémi</em>)
+  address: CERN, Route de Meyrin 385, 1217 Meyrin, Switzerland
+  contact: remi.emonet@reverse--com.heeere
+  country: ch
+  enddate: 2015-07-27
+  etherpad: https://etherpad.mozilla.org/XSM9GSDOHD
+  helper: [Maria Priisalu]
+  humandate: July 27-30, 2015
+  humantime: 2:00 pm - 5:00 pm
+  instructor: [Rémi Emonet, Kevin Dungs]
+  language: en
+  latlng: 46.233489,6.052651
+  layout: workshop
+  root: .
+  slug: 2015-07-27-cern-webfest
+  startdate: 2015-07-27
+  url: http://twitwi.github.io/2015-07-27-cern-webfest/
+  user: twitwi
+  venue: Webfest in CERN, Citizen Cyberscience Centre, Geneva
+- address: Praja Hotel, Renon, Denpasar, Bali
+  contact: eric.d.crandall@gmail.com
+  country: id
+  enddate: 2015-08-04
+  etherpad: https://etherpad.mozilla.org/2015-08-03-IBRC-Indonesia
+  helper: [John Deck, Katja Lehmann, Cynthia Riginos, Patricia Cockett]
+  humandate: Aug 3-4, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Areej Alsheikh-Hussain, Eric Crandall]
+  language: en
+  latlng: -8.671308,115.239431
+  layout: workshop
+  root: .
+  slug: 2015-08-03-IBRC-Indonesia
+  startdate: 2015-08-03
+  url: http://dipnet.github.io/2015-08-03-IBRC-Indonesia/
+  user: dipnet
+  venue: Indonesia Biodiversity Research Center, Bali
+- address: ISTB4, Arizona State University, Tempe, AZ 85281
+  contact: abhijithrajan@asu.edu
+  country: us
+  enddate: 2015-08-05
+  etherpad: https://etherpad.mozilla.org/LqL3VHHWxy
+  eventbrite: null
+  helper: [Piyanat (Boom) Kittiwisit, Alyssa Rhoden, Kim Ward-Duong]
+  humandate: Aug 4-5, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [David Dotson, Victor Cordero, Blake Joyce, Cameron Mercer, Abhijith
+      Rajan]
+  language: en
+  latlng: 33.418024,-111.928437
+  layout: workshop
+  root: .
+  slug: 2015-08-04-asu_sese
+  startdate: 2015-08-04
+  url: http://dotsdl.github.io/2015-08-04-asu_sese/
+  user: dotsdl
+  venue: School of Earth and Space Exploration, ASU
+- address: Room EB.G.02 UWS Parramatta (South) Campus
+  contact: luc@intersect.org.au
+  country: au
+  enddate: 2015-08-06
+  etherpad: null
+  eventbrite: 17630560481
+  helper: [Peter Bugeia, Andrew Leahy, Jared Berghold]
+  humandate: August 5-6, 2015
+  humantime: 9:00am - 5:00pm
+  instructor: [Luc Small]
+  language: en
+  latlng: -33.8102728,151.0244383
+  layout: workshop
+  root: .
+  slug: 2015-08-05-UWS
+  startdate: 2015-08-05
+  url: http://intersectaustralia.github.io/2015-08-05-UWS/
+  user: intersectaustralia
+  venue: UWS Parramatta
+- address: Gemmill Library in the Mathematics Building, CU Boulder campus
+  contact: andrew.m.johnson@colorado.edu
+  country: us
+  enddate: 2015-08-07
+  etherpad: https://etherpad.mozilla.org/2015-08-06-cuboulder
+  helper: [Shelley Knuth, Prasanth Prahladan]
+  humandate: Aug 6-7, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Mariela Perignon, Thomas Guignard]
+  language: en
+  latlng: 40.00796,-105.264317
+  layout: workshop
+  root: .
+  slug: 2015-08-06-cuboulder
+  startdate: 2015-08-06
+  url: http://mperignon.github.io/2015-08-06-cuboulder/
+  user: mperignon
+  venue: CU Boulder Libraries
+- address: 160 Plant Biotech Building, 2505 EJ Chapman Dr., Knoxville, TN, 37996
+  contact: agbioinformatics@gmail.com
+  country: us
+  enddate: 2015-08-11
+  eventbrite: 17718782355
+  helper: [Ming Chen, David Foutch, Nathan Henry, Thomas Lane]
+  humandate: Aug 10-11, 2015
+  humantime: 9:00 am - 4:45 pm
+  instructor: [Meg Staton, Nichole Bennett, Robert Flight]
+  language: en
+  latlng: 35.947474,-83.940567
+  layout: workshop
+  root: .
+  slug: 2015-08-10-UTKnoxville
+  startdate: 2015-08-10
+  url: http://mestato.github.io/2015-08-10-UTKnoxville/
+  user: mestato
+  venue: UT Knoxville
+- address: Biology Annex, Room 102
+  contact: holtz@nmsu.edu
+  country: us
+  enddate: 2015-08-14
+  etherpad: https://etherpad.mozilla.org/2015-08-13-nmsu
+  helper: [Kenza Arraki, Jon Holtzman, Meredith Rawls]
+  humandate: Aug 13-14, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Jonathan Gross, Rayna Harris]
+  language: en
+  latlng: 32.280372,-106.751339
+  layout: workshop
+  root: .
+  slug: 2015-08-13-nmsu
+  startdate: 2015-08-13
+  url: http://jarthurgross.github.io/2015-08-13-nmsu/
+  user: jarthurgross
+  venue: New Mexico State University
