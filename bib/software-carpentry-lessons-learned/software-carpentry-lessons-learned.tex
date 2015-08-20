@@ -2,20 +2,21 @@
 \usepackage{f1000_styles}
 \usepackage{hyperref}
 \usepackage{enumitem}
+
+\newcommand{\fixme}[1]{\bf{FIXME: {#1}}}
+
 \begin{document}
 
-% clarify we/I/the author
-
-\title{Software Carpentry: lessons learned}
+\title{Software Carpentry: Lessons Learned}
 \author[1]{Greg Wilson}
-\affil[1]{Mozilla Science Lab / gvwilson@software-carpentry.org}
+\affil[1]{Software Carpentry Foundation / gvwilson@software-carpentry.org}
 
 \maketitle
 \thispagestyle{fancy}
 
 \begin{abstract}
 
-Over the last 15 years, Software Carpentry has evolved from a week-long
+Over the last 17 years, Software Carpentry has evolved from a week-long
 training course at the US National Laboratories into a worldwide
 volunteer effort to raise standards in scientific computing. This
 article explains what we have learned along the way, the challenges we
@@ -59,13 +60,15 @@ result, they routinely spend hours doing things that could be done in
 minutes, or don't do things at all because they don't know where to
 start \cite{hannay2009,prabhu2011}.
 
-This is where Software Carpentry comes in. We ran 91 workshops for
-over 3500 scientists in 2013. In them, more than 100 volunteer
-instructors helped attendees learn about program design, task
-automation, version control, testing, and other unglamorous but
-time-tested skills \cite{wilson2013}. Two independent assessments in
-2012 showed that attendees are actually learning, and applying at least
-some of what we taught \cite{aranda2012}:
+This is where Software Carpentry comes in. We ran over 400 workshops
+for over 12,000 scientists between January 2013 and July 2015. In
+them, over 400 volunteer instructors helped attendees learn about
+program design, task automation, version control, testing, and other
+unglamorous but time-tested skills \cite{wilson2013}. Two independent
+assessments in 2012 \cite{aranda2012,libarkin2012} and two more in
+subsequent years \cite{schossau2014,simperler2015} showed that
+attendees are actually learning, and applying at least some of what we
+taught:
 
 \begin{quote}
 The program increases participants' computational understanding, as
@@ -83,7 +86,7 @@ hard to apply what we teach to their own work, and several of our
 experiments, most notably our attempts to teach online, have been
 failures.
 
-\section*{From red to green}
+\section*{From Red to Green}
 
 Some historical context will help explain where and why we have
 succeeded and failed.
@@ -123,7 +126,7 @@ were learned:
   science.
 \end{enumerate}
 
-\subsection*{Versions 2 and 3: Another red light}
+\subsection*{Versions 2 and 3: Another Red Light}
 
 The Software Carpentry course materials were updated and released in
 2004-05 under a Creative Commons license thanks to support from the
@@ -186,7 +189,7 @@ important, and who is likely senior to those faculty advocating the
 change.
 
 \begin{quote}
-\textbf{It adds up}
+\textbf{It Adds Up}
 
 Saying, ``We'll just add a little computing to every other course,'' is
 a cheat: five minutes per hour equals four entire courses in a four-year
@@ -200,7 +203,7 @@ three years of graduate school. At that point, students have time (at
 least, more time than they'll have once they're faculty) and real
 problems of their own that they want to solve.
 
-\subsection*{Version 4: orange light}
+\subsection*{Version 4: Orange Light}
 
 The author rebooted Software Carpentry in May 2010 with support from
 Indiana University, Michigan State University, Microsoft, MITACS, Queen
@@ -253,7 +256,7 @@ scalable, sustainable model. One instructor simply can't reach enough
 people, and cobbling together funding from half a dozen different
 sources every twelve to eighteen months is a high-risk approach.
 
-\subsection*{Version 5: green light}
+\subsection*{Version 5: Green Light}
 
 Software Carpentry restarted once again in January 2012 with a new
 grant from the Sloan Foundation, and backing from the Mozilla
@@ -266,18 +269,24 @@ Shortening the workshops made it possible for more people to attend,
 and increased the proportion of the material they retained. It also
 forced us to think much harder about what skills scientists really
 needed. Out went object-oriented programming, XML, Make, GUI
-construction, design patterns, and software development
-lifecycles. Instead, we focused on a handful of tools (discussed in
-the next section) that let us introduce higher-level concepts without
-learners really noticing.
+construction, design patterns, and software development lifecycles.
+Instead, we focused on a small set of tools (discussed in the next
+section) that let us introduce higher-level concepts without learners
+really noticing.
 
 Reaching more people also allowed us to recruit more instructors from
 workshop participants, which was essential for scaling. Switching to a
-``host site covers costs'' model was equally important: funding is
-still needed for the coordinator positions (the author and two
-part-time administrative assistants at Mozilla, and part of one staff
-member's time at the Software Sustainability Institute in the UK), but
-our other costs now take care of themselves.
+``host site covers costs'' model was equally important: funding was
+still needed for the coordinator positions (the project lead and at
+least one administrative assistant, and a day or two a week from staff
+at the Software Sustainability Institute in the UK), but our other
+costs now take care of themselves.
+
+\subsection*{Version 6: A True Community Project}
+
+\fixme{describe the changes in the last 12 months}
+
+\subsection*{Results}
 
 Our two-day workshops have been an unqualified success. Both the number
 of workshops, and the number of people attending, have grown steadily:
@@ -285,13 +294,19 @@ of workshops, and the number of people attending, have grown steadily:
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{workshops.pdf}
-\caption{\label{f:workshops}Cumulative number of workshops}
+\caption{\label{f:workshops}Cumulative Number of Workshops \fixme{update}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{\label{f:enrolment}Cumulative enrolment}
+\caption{\label{f:enrolment}Cumulative Enrolment \fixme{update}}
+\end{figure}
+
+\begin{figure}
+\centering
+% \includegraphics[width=0.4\textwidth]{enrolment.pdf}
+\caption{\label{f:instructors}Cumulative Number of Instructors \fixme{update}}
 \end{figure}
 
 More importantly, feedback from participants is strongly
