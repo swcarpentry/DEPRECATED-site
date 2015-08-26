@@ -16,11 +16,11 @@
 
 \begin{abstract}
 
-Over the last 17 years, Software Carpentry has evolved from a week-long
-training course at the US National Laboratories into a worldwide
-volunteer effort to raise standards in scientific computing. This
-article explains what we have learned along the way, the challenges we
-now face, and our plans for the future.
+Since its start in 1998, Software Carpentry has evolved from a
+week-long training course at the US national laboratories into a
+worldwide volunteer effort to improve researchers' computing
+skills. This paper explains what we have learned along the way, the
+challenges we now face, and our plans for the future.
 
 \end{abstract}
 \clearpage
@@ -46,7 +46,7 @@ practices have undoubtedly made software developers more productive
 since 1987, the speed-up is percentages rather than orders of magnitude.
 Setting aside the minority who do high-performance computing (HPC), the
 time it takes the ``desktop majority'' of scientists to produce a new
-computational result is increasingly dominated by how long it takes to
+computational result is frequently dominated by how long it takes to
 write, test, debug, install, and maintain software.
 
 The problem is that most scientists are never taught how to do this. While
@@ -61,14 +61,13 @@ minutes, or don't do things at all because they don't know where to
 start \cite{hannay2009,prabhu2011}.
 
 This is where Software Carpentry comes in. We ran over 400 workshops
-for over 12,000 scientists between January 2013 and July 2015. In
+for over 12,000 researchers between January 2013 and July 2015. In
 them, over 400 volunteer instructors helped attendees learn about
 program design, task automation, version control, testing, and other
 unglamorous but time-tested skills \cite{wilson2013}. Two independent
-assessments in 2012 \cite{aranda2012,libarkin2012} and two more in
-subsequent years \cite{schossau2014,simperler2015} showed that
-attendees are actually learning, and applying at least some of what we
-taught:
+assessments in 2012 \cite{aranda2012,libarkin2012} and two others more
+recently \cite{schossau2014,simperler2015} have shown that this
+training is sticking and helping:
 
 \begin{quote}
 The program increases participants' computational understanding, as
@@ -81,22 +80,18 @@ Software Carpentry (85\% learned what they hoped to learn; 95\% would
 recommend the workshop to others).
 \end{quote}
 
-Despite these generally positive results, many researchers still find it
-hard to apply what we teach to their own work, and several of our
-experiments, most notably our attempts to teach online, have been
-failures.
-
 \section*{From Red to Green}
 
-Some historical context will help explain where and why we have
-succeeded and failed.
+Like many projects, it has taken us years to become an overnight
+success, and we have made many mistakes along the way.  These are best
+understood historically.
 
 \subsection*{Version 1: Red light}
 
 In 1995-96, the author organized a series of articles in \emph{IEEE
 Computational Science \& Engineering} titled, ``What Should Computer
 Scientists Teach to Physical Scientists and Engineers?'' \cite{wilson1996}.
-The articles grew out of the frustration he had working with scientists
+These grew out of the frustration he had working with scientists
 who wanted to run before they could walk, i.e., to parallelize complex
 programs that were not broken down into self-contained functions, that
 did not have any automated tests, and that were not under version control
@@ -113,23 +108,22 @@ were learned:
 \begin{enumerate}
 \item
   Intensive week-long courses are easy to schedule (particularly if
-  instructors are travelling) but by the last two days, attendees'
+  instructors have to travel) but by the last two days, attendees'
   brains are full and learning drops off significantly.
 \item
-  Textbook software engineering is not the right thing to teach most
-  scientists. In particular, careful documentation of requirements and
-  lots of up-front design are not appropriate for people who (almost by
+  Textbook software engineering is not useful to most scientists. In
+  particular, careful documentation of requirements and lots of
+  up-front design are not appropriate for people who (almost by
   definition) do not yet know what they are trying to do. Agile
-  development methods, which rose to prominence during this period, are
-  a less bad fit to researchers' needs, but even they are not well
-  suited to the ``solo grad student'' model of working so common in
-  science.
+  development methods, which rose to prominence during this period,
+  are a less bad fit to researchers' needs, but even they are not well
+  suited to the commonplace ``solo grad student'' model of working.
 \end{enumerate}
 
 \subsection*{Versions 2 and 3: Another Red Light}
 
 The Software Carpentry course materials were updated and released in
-2004-05 under a Creative Commons license thanks to support from the
+2004-05 under a Creative Commons license with support from the
 Python Software Foundation \cite{wilson2006b}. They were used twice in
 a conventional term-long graduate course at the University of Toronto
 aimed at a mix of students from Computer Science and the physical and
@@ -139,48 +133,47 @@ The materials attracted 1000-2000 unique visitors a month, with
 occasional spikes correlated to courses and mentions in other
 sites. But while grad students (and the occasional faculty member)
 found the course at Toronto useful, it never found an institutional
-home.  Most Computer Science faculty believe this basic material is
-too easy to deserve a graduate credit (even though a significant
+home.  Most Computer Science faculty believe that this basic material
+is too easy to deserve a graduate credit (even though a significant
 minority of their students, particularly those coming from non-CS
-backgrounds, have no more experience of practical software development
-than the average physicist). However, other departments believe that
-courses like this ought to be offered by Computer Science, in the same
-way that Mathematics and Statistics departments routinely offer
-service courses.  In the absence of an institutional mechanism to
-offer credit courses at some inter-departmental level, this course,
-like many other interdisciplinary courses, fell between two stools.
+backgrounds, have no better software development skills than the
+average physicist). Meanwhile, other departments believe that courses
+like this ought to be offered by Computer Science, in the same way
+that Mathematics and Statistics departments routinely offer service
+courses.  In the absence of an institutional mechanism to offer credit
+courses at some inter-departmental level, this course, like many other
+interdisciplinary initiatives, fell between two stools.
 
 \begin{quote}
 \textbf{It works too well to be interesting}
 
 We have also found that what we teach simply isn't interesting to most
 computer scientists. They are interested in doing research to advance
-our understanding of the science of computing; things like command-line
-history, tab completion, and ``select * from table'' have been around
-too long, and work too well, to be publishable any longer. As long as
-universities reward research first, and supply teaching last, it is
-simply not in most computer scientists own best interests to offer this
-kind of course.
+our understanding of the science of computing; things like
+command-line history, tab completion, and ``select * from table'' have
+been around too long, and work too well, to be publishable. As long as
+universities reward research first, and teaching last, it is simply
+not in most computer scientists own best interests to offer courses
+like this.
 \end{quote}
 
 Secondly, despite repeated invitations, other people did not
-contribute updates or new material beyond an occasional bug report.
-Piecemeal improvement may be normal in open source development, but
-Wikipedia aside, it is still rare in other fields. In particular,
-people often use one another's slide decks as starting points for
-their own courses, but rarely offer their changes back to the original
-author in order to improve them. This is partly because educators'
-preferred file formats (Word, PowerPoint, and PDF) can't be handled
-gracefully by existing version control systems, but more importantly,
-there simply isn't a ``culture of contribution'' in education for
-projects like Software Carpentry to build on.
+contribute new material beyond an occasional bug report.  Piecemeal
+improvement may be normal in open source development, but Wikipedia
+aside, it is still rare in other fields. In particular, people often
+use one another's slide decks as starting points for their own
+courses, but rarely offer their changes back to the original author in
+order to improve them. This is partly because educators' preferred
+file formats (Word, PowerPoint, and PDF) can't be handled gracefully
+by existing version control systems, but more importantly, there
+simply isn't a ``culture of contribution'' in higher education.
 
-The most important lesson learned in this period was that while many
-faculty in science, engineering, and medicine agree that their
-students should learn more about computing, they \emph{won't} agree on
-what to take out of the current curriculum to make room for it. A
-typical undergraduate science degree in the US or Canada has roughly
-1800 hours of class and laboratory time; anyone who wants to add more
+The most important lesson, though, was that while many faculty in
+science, engineering, and medicine agree that their students should
+learn more about computing, they \emph{won't} agree on what to take
+out of the current curriculum to make room for it. A typical
+undergraduate science degree in the US or Canada has roughly 1800
+hours of class and laboratory time; anyone who wants to add more
 programming, statistics, writing, or anything else must either
 lengthen the program (which is financially and institutionally
 infeasible) or take something out. However, everything in the program
@@ -198,31 +191,29 @@ down to the high school level is also a non-starter, since that
 curriculum is also full.
 \end{quote}
 
-The sweet spot for this kind of training is therefore the first two or
-three years of graduate school. At that point, students have time (at
-least, more time than they'll have once they're faculty) and real
-problems of their own that they want to solve.
+The sweet spot for this kind of training is therefore the first years
+of graduate school. At that point, students have time (at least, more
+time than they'll have once they're faculty) and real problems of
+their own that they want to solve.
 
 \subsection*{Version 4: Orange Light}
 
 The author rebooted Software Carpentry in May 2010 with support from
-Indiana University, Michigan State University, Microsoft, MITACS, Queen
-Mary University of London, Scimatic, SciNet, SHARCNet, and the UK Met
-Office. More than 120 short video lessons were recorded during the
-subsequent 12 months, and six more week-long classes were run for the
-backers. We also offered an online class three times (a MOOC \emph{avant
-la lettre}).
+several partners (see Table~\ref{t:launch-partners}). More than 120
+short video lessons were recorded during the subsequent 12 months, and
+six more week-long classes were run for the backers. We also offered
+an online class three times (a MOOC \emph{avant la lettre}).
 
 This was our most successful version to date, in part because the
 scientific landscape itself had changed. Open access publishing, crowd
-sourcing, and dozens of other innovations had convinced scientists
-that knowing how to program was now as important to doing science as
-knowing how to do statistics. Despite this, though, most still
-regarded it as a tax they had to pay in order to get their science
-done. Those of us who teach programming may find it interesting in its
-own right, but as one course participant said, ``If I wanted to be a
-programmer instead of a chemist, I would have chosen computer science
-as my major instead of chemistry.''
+sourcing, the data deluge in the life sciences, and growing concern
+about reproducible research had convinced scientists that knowing how
+to program was now as important as knowing how to do statistics.
+Despite this, though, most still (rightly) viewed it as a tax they had
+to pay in order to get their science done. Those of us who teach
+programming may find it interesting in its own right, but as one
+course participant said, ``If I wanted to be a programmer instead of a
+chemist, I would have chosen computer science as my major.''
 
 Despite this round's overall success, there were several
 disappointments:
@@ -247,73 +238,117 @@ disappointments:
   who started with us completed the course, and the majority were
   people who already knew most of the material. Both figures are in
   line with completion rates and learner demographics for other MOOCs
-  \cite{jordan2013}, but are no less disappointing because of that.
+  \cite{jordan2013}, but that does not make them less disappointing.
 
 \end{enumerate}
 
 The biggest take-away from this round was the need come up with a
-scalable, sustainable model. One instructor simply can't reach enough
-people, and cobbling together funding from half a dozen different
-sources every twelve to eighteen months is a high-risk approach.
+scalable, sustainable model for delivering training. One instructor
+simply can't reach enough people, and cobbling together funding from
+half a dozen different sources every twelve to eighteen months is a
+high-risk approach.
 
 \subsection*{Version 5: Green Light}
 
-Software Carpentry restarted once again in January 2012 with a new
-grant from the Sloan Foundation, and backing from the Mozilla
-Foundation. This time, the model was two-day intensive workshops like
-those pioneered by The Hacker Within, a grassroots group of grad
-students helping grad students at the University of Wisconsin -
-Madison.
+Software Carpentry restarted once again in January 2012 with a grant
+from the Sloan Foundation via the Mozilla Foundation.  This time, the
+model was two-day intensive workshops like those pioneered by The
+Hacker Within, a grassroots group of grad students helping grad
+students at the University of Wisconsin - Madison.
 
 Shortening the workshops made it possible for more people to attend,
-and increased the proportion of the material they retained. It also
-forced us to think much harder about what skills scientists really
-needed. Out went object-oriented programming, XML, Make, GUI
+and increased the proportion of the material they could absorb. It
+also forced us to think much harder about what skills scientists
+really needed. Out went object-oriented programming, XML, Make, GUI
 construction, design patterns, and software development lifecycles.
 Instead, we focused on a small set of tools (discussed in the next
 section) that let us introduce higher-level concepts without learners
-really noticing.
+really noticing (also discussed below).
 
-Reaching more people also allowed us to recruit more instructors from
-workshop participants, which was essential for scaling. Switching to a
-``host site covers costs'' model was equally important: funding was
-still needed for the coordinator positions (the project lead and at
-least one administrative assistant, and a day or two a week from staff
-at the Software Sustainability Institute in the UK), but our other
-costs now take care of themselves.
+Reaching more people also allowed us to recruit new instructors from
+workshop participants, which in turn allowed us to scale. Switching to
+a ``host site covers costs'' model was equally important: funding was
+still needed for 1.5 core staff to lead the project and match
+instructors to workshops, but everything else funded itself.
+
+\begin{quote}
+\textbf{Learning to Teach}
+
+\fixme{Most people are as interested in better teaching practices as they are in computing.}
+
+\end{quote}
 
 \subsection*{Version 6: A True Community Project}
 
-\fixme{describe the changes in the last 12 months}
+In July 2014, the author left his position with Mozilla to set up an
+independent non-profit to manage the project.  The newly-formed
+Software Carpentry Foundation (SCF) held its first elections in
+January 2015, where the volunteers selected seven of their own number
+to sit on a Steering Committee charged with overseeing the project's
+operations.  Since then, the SCF has formed partnerships with a
+growing number of institutions that wish to support its mission
+(see Table~\ref{t:current-partners}).
+
+While the SCF is only nine months old, we have already (re-)learned
+many things.  The most important are:
+
+\begin{enumerate}
+
+\item
+  Keeping a large organization going requires different skills, and a
+  different mindset, than growing something from nothing.
+
+\item
+  Most people will dip in and out, so frameworks and procedures must
+  be simple and stable.
+
+\item
+  Everyone has different needs (balance between standard offerings and
+  actually helping).
+
+\item
+  Bikeshedding is a constant temptation (cite
+  http://mcfunley.com/choose-boring-technology).
+
+\end{enumerate}
+
+\subsection*{Data Carpentry}
+
+\fixme{Talk about DC's foundation and growth, and its relationship to
+  Software Carpentry.}
 
 \subsection*{Results}
 
-Our two-day workshops have been an unqualified success. Both the number
+Our workshops have been an unqualified success. Both the number
 of workshops, and the number of people attending, have grown steadily:
 
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{workshops.pdf}
-\caption{\label{f:workshops}Cumulative Number of Workshops \fixme{update}}
+\caption{Cumulative Number of Workshops \fixme{update}}
+\label{f:workshops}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{\label{f:enrolment}Cumulative Enrolment \fixme{update}}
+\caption{Cumulative Enrolment \fixme{update}}
+\label{f:enrolment}
 \end{figure}
 
 \begin{figure}
 \centering
 % \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{\label{f:instructors}Cumulative Number of Instructors \fixme{update}}
+\caption{Cumulative Number of Instructors \fixme{update}}
+\label{f:instructors}
 \end{figure}
 
-More importantly, feedback from participants is strongly
-positive. While there are continuing problems with software set-up and
-the speed of instruction (discussed below), 80-90\% of attendees
-typically report that they were glad they attended and would recommend
-the workshops to colleagues.
+What's more, we have become a global organization
+(Table~\ref{t:by-country}).  And most importantly, feedback from
+participants is strongly positive.  While there are always problems
+with software set-up and the speed of instruction (discussed below),
+80-90\% of attendees typically report that they were glad they
+attended and would recommend the workshops to colleagues.
 
 \section*{What we do}
 
@@ -787,52 +822,15 @@ hear from you: please mail us at admin@software-carpentry.org.
 
 \subsection*{Competing Interests}
 
-The author is an employee of the Mozilla Foundation. Over the years,
-Software Carpentry has received support from:
-
-\begin{itemize}
-\item
-  The Sloan Foundation
-\item
-  Microsoft
-\item
-  NumFOCUS
-\item
-  Continuum Analytics
-\item
-  Enthought
-\item
-  The Python Software Foundation
-\item
-  Indiana University
-\item
-  Michigan State University
-\item
-  MITACS
-\item
-  The Mozilla Foundation
-\item
-  Queen Mary University London
-\item
-  Scimatic Inc.
-\item
-  SciNET
-\item
-  SHARCNET
-\item
-  The UK Met Office
-\item
-  The MathWorks
-\item
-  Los Alamos National Laboratory
-\item
-  Lawrence Berkeley National Laboratory
-\end{itemize}
+The author is an employee of the Software Carpentry Foundation. Over
+the years, Software Carpentry has received support from the
+organizations listed in Tables~\ref{t:launch-partners}
+and~\ref{t:current-partners}, and from The Mathworks, Enthought Inc.,
+Continuum Analytics, the Sloan Foundation, and the Mozilla Foundation.
 
 \subsection*{Grant Information}
 
-Software Carpentry is currently supported by a grant from the Sloan
-Foundation.
+Software Carpentry is not currently supported by grants.
 
 \subsection*{Acknowledgements}
 
@@ -881,6 +879,71 @@ following for their comments, corrections, and inspiration:
 \item
   Ethan White (Utah State University)
 \end{itemize}
+
+\subsection*{Tables}
+
+\begin{table*}
+\begin{tabular}{lll}
+Indiana University & Michigan State University & Microsoft \\
+MITACS & Queen Mary University of London & Scimatic \\
+SciNet & SHARCNet & UK Met Office
+\end{tabular}
+\caption{Launch Partners (2010)}
+\label{t:launch-partners}
+\end{table*}
+
+\begin{table*}
+\begin{tabular}{lll}
+Berkeley Institute for Data Science & Compute Canada & ELIXIR~UK \\
+GitHub & Insight Data Science & iPlant \\
+Lawrence Berkeley National Laboratory & Michigan State University & Netherlands eScience Center \\
+New Zealand eScience Infrastructure & RStudio & Software Sustainability Institute \\
+University College London & UCAR & University of California Davis \\
+University of Florida & University of Leeds & University of Melbourne \\
+University of Michigan & University of Oklahoma & University of Washington
+\end{tabular}
+\caption{Current Partners}
+\label{t:current-partners}
+\end{table*}
+
+\begin{table*}
+\begin{tabular}{lrr}
+Country & Workshops & Instructors \\
+United States & 216 & 232 \\
+Canada & 59 & 52 \\
+United Kingdom & 43 & 50 \\
+Australia & 33 & 41 \\
+Brazil & 9 & 2 \\
+South Africa & 6 & 1 \\
+New Zealand & 5 & 8 \\
+Norway & 5 & 3 \\
+Germany & 5 & 9 \\
+South Korea & 4 & 1 \\
+France & 3 & 3 \\
+Poland & 3 & 5 \\
+Switzerland & 3 & 0 \\
+Italy & 2 & 1 \\
+Netherlands & 2 & 0 \\
+Spain & 2 & 3 \\
+China & 1 & 1 \\
+Cyprus & 1 & \\
+Denmark & 1 & 2 \\
+Finland & 1 & \\
+Ghana & 1 & 0 \\
+Indonesia & 1 & 0 \\
+Jordan & 1 & 0 \\
+Lebanon & 1 & 0 \\
+Saudi Arabia & 1 & 0 \\
+Sweden & 1 & 2 \\
+Thailand & 1 & 2 \\
+India & 0 & 1 \\
+\end{tabular}
+
+Note: not all instructors' locations are reported.
+
+\caption{Workshops and Instructors by Country}
+\label{t:by-country}
+\end{table*}
 
 \nocite{*}
 {\small\bibliographystyle{unsrt}
