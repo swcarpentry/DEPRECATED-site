@@ -4958,17 +4958,17 @@
 - address: MR5, Room 3005
   contact: br5n@virginia.edu
   country: "us"
-  enddate: 2015-04-16
+  enddate: 2015-04-17
   helper: [Stephen Turner, Bart Ragon]
-  humandate: April 15-16, 2015
+  humandate: April 16-17, 2015
   humantime: 9:00 am - 4:30 pm
   instructor: [Jessica Bonnie, Zhuo Fu, Alex Koeppel]
   language: en
   latlng: 38.033553,-78.507977
   layout: workshop
   root: .
-  slug: 2015-03-05-uvasom
-  startdate: 2015-04-15
+  slug: 2015-04-16-uvasom
+  startdate: 2015-04-16
   url: https://github.com/realviacauchy/2015-03-05-uvasom
   user: realviacauchy
   venue: University of Virginia
@@ -6028,7 +6028,7 @@
 - address: Information Technology Center (street address of home location)
   contact: mahdi@hawaii.edu
   country: us
-  enddate: 2015-06-21
+  enddate: 2015-06-23
   etherpad: https://etherpad.mozilla.org/2015-06-21-UH-SWC
   helper: ['']
   humandate: Jun 22-23, 2015
@@ -6038,8 +6038,8 @@
   latlng: 21.299816,-157.817579
   layout: workshop
   root: .
-  slug: 2015-06-21-UH-SWC
-  startdate: 2015-06-21
+  slug: 2015-06-22-hawaii
+  startdate: 2015-06-22
   url: http://mahdi-b.github.io/2015-06-21-UH-SWC/
   user: mahdi-b
   venue: University of Hawaii at Manoa
@@ -6056,7 +6056,7 @@
   latlng: 37.227863,-80.422264
   layout: workshop
   root: .
-  slug: 2015-06-21-s2i2
+  slug: 2015-06-22-vt
   startdate: 2015-06-22
   url: http://guyrt.github.io/2015-06-21-s2i2/
   user: guyrt
@@ -6225,7 +6225,7 @@
   latlng: 41.701749, -86.231612
   layout: workshop
   root: .
-  slug: 2015-06-25-notre-dame
+  slug: 2015-06-25-nd
   startdate: 2015-06-25
   url: http://keszybz.github.io/2015-06-25-notre-dame/
   user: keszybz
@@ -6458,7 +6458,7 @@
   latlng: 40.817660,-96.700481
   layout: workshop
   root: .
-  slug: 2015-03-20-UNL
+  slug: 2015-03-20-unl
   startdate: 2015-03-20
   url: http://jainsley.github.io/2015-03-20-UNL/
   user: jainsley
@@ -6551,7 +6551,7 @@
   latlng: 51.524559,-0.13404
   layout: workshop
   root: .
-  slug: 2015-06-18-ucl-swcarpentry
+  slug: 2015-06-18-ucl
   startdate: 2015-06-18
   url: http://ucl.github.io/2015-06-18-ucl-swcarpentry/
   user: ucl
@@ -6765,7 +6765,7 @@
   latlng: 42.3772499,-71.1175291
   layout: workshop
   root: .
-  slug: 2015-07-22_SWC-R
+  slug: 2015-07-22-harvard
   startdate: 2015-07-22
   url: http://fasrc.github.io/2015-07-22_SWC-R/
   user: fasrc
@@ -6839,7 +6839,7 @@
   latlng: -8.671308,115.239431
   layout: workshop
   root: .
-  slug: 2015-08-03-IBRC-Indonesia
+  slug: 2015-08-03-IBRC
   startdate: 2015-08-03
   url: http://dipnet.github.io/2015-08-03-IBRC-Indonesia/
   user: dipnet
@@ -6859,7 +6859,7 @@
   latlng: 33.418024,-111.928437
   layout: workshop
   root: .
-  slug: 2015-08-04-asu_sese
+  slug: 2015-08-04-asu
   startdate: 2015-08-04
   url: http://dotsdl.github.io/2015-08-04-asu_sese/
   user: dotsdl
@@ -6896,7 +6896,7 @@
   latlng: 40.00796,-105.264317
   layout: workshop
   root: .
-  slug: 2015-08-06-cuboulder
+  slug: 2015-08-06-colorado
   startdate: 2015-08-06
   url: http://mperignon.github.io/2015-08-06-cuboulder/
   user: mperignon
@@ -6914,7 +6914,7 @@
   latlng: 35.947474,-83.940567
   layout: workshop
   root: .
-  slug: 2015-08-10-UTKnoxville
+  slug: 2015-08-10-utk
   startdate: 2015-08-10
   url: http://mestato.github.io/2015-08-10-UTKnoxville/
   user: mestato
@@ -6951,7 +6951,7 @@
   latlng: 38.532815,-121.763681
   layout: workshop
   root: .
-  slug: 2015-08-16-ucdavis-wise
+  slug: 2015-08-17-ucdavis-wise
   startdate: 2015-08-17
   url: http://camillescott.github.io/2015-08-16-ucdavis-wise/
   user: camillescott
@@ -7007,31 +7007,11 @@
   latlng: 42.056459,-87.675267
   layout: workshop
   root: .
-  slug: 2015-08-21-nw
+  slug: 2015-08-21-northwestern
   startdate: 2015-08-21
   url: http://eddelbuettel.github.io/2015-08-21-nw/
   user: eddelbuettel
   venue: Northwestern University
-- address: Richard Newton Rooms, Level 5, Building 193 (Monday, Tuesday and Wednesday),
-    Room 803, Doug McDonnell Building (Friday).
-  contact: kerry.halupka@gmail.com
-  country: au
-  enddate: 2015-08-28
-  etherpad: https://etherpad.mozilla.org/2015-08-24-matlab
-  eventbrite: 17843201496
-  helper: [Himani Jayawardane, Elizabeth Bowman, Daniel Hurley]
-  humandate: August 24-28, 2015
-  humantime: 1:00 pm - 5:00 pm
-  instructor: [Kerry Halupka, Isabell Kiral-Kornek, Gregory Bass, Philippa Karoly]
-  language: en
-  latlng: -37.800483, 144.965807
-  layout: workshop
-  root: .
-  slug: 2015-08-24-matlab
-  startdate: 2015-08-24
-  url: http://resbaz.github.io/2015-08-24-matlab/
-  user: resbaz
-  venue: University of Melbourne
 - address: Zuckerman Research Center Room 105, Memorial Sloan Kettering Hospital<br>417
     East 68th St. New York, NY 10065<br>
   assistant: []
