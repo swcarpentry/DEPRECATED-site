@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 '''Get workshop URLs from _config.yml.'''
+
 import sys
 import yaml
 

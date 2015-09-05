@@ -148,7 +148,11 @@ def fetch(url):
     pieces = response.text.split('---')
     if len(pieces) < 2:
         fail('Malformed YAML header in {0}', url)
-    info = yaml.load(pieces[1])
+    try:
+        info = yaml.load(pieces[1])
+    except Exception as e:
+        fail('Unable to parse YAML for {0}: {1}'.format(url, str(e)))
+        raise e
     return info
 
 def adjust(info, url):
