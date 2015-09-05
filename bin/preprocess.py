@@ -69,13 +69,14 @@ def main():
     # on everything else if it's not available.
     config['dashboard'] = load_cached_info(os.curdir, DASHBOARD_CACHE, 'dashboard cache')
 
-    # FIXME: should get countries (flags) for workshops and instructors from AMY.
-    config['flags'] = load_info(options.config_dir, FLAGS_YML)
-
     # Fetch information from AMY.
     config['badges'] = fetch_info(options.amy_url, BADGES_URL)
     config['airports'] = fetch_info(options.amy_url, AIRPORTS_URL)
     config['workshops'] = fetch_info(options.amy_url, WORKSHOPS_URL)
+
+    # FIXME: should get countries (flags) for workshops and instructors from AMY.
+    config['flags'] = load_info(options.config_dir, FLAGS_YML)
+    config['flags']['workshops'] = sorted({w['country'] for w in config['workshops']})
 
     # Select workshops that will be displayed on the home page (soonest first).
     workshops_upcoming = [w for w in config['workshops'] if w['start'] >= config['today']]
