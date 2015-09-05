@@ -80,25 +80,6 @@ def fetch_info(base_url, url):
         content = f.read()
     return yaml.load(content.decode('utf-8'))
 
-
-def fetch_workshops_info(base_url, url):
-    """Download a file with workshops data and save it.
-
-    Mark workshops 'safe for production' (ie. having specific set of fields
-    non-blank)."""
-    content = fetch_info(base_url, url)
-    for E in content:
-        # Some events are considered "published" by AMY even though some of
-        # their fields are empty.  This function checks if events are published
-        # in the sense that they can be used in this site.
-        if (E['start'] and E['end'] and E['slug'] and E['venue']
-                and E['address'] and E['country'] and E['latitude']
-                and E['longitude'] and E['url'] and E['humandate']):
-            E['_published'] = True
-        else:
-            E['_published'] = False
-    return content
-
 #----------------------------------------
 
 class ContentEncodedRSS2(RSS2):

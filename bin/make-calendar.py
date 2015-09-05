@@ -56,9 +56,8 @@ class ICalendarWriter(object):
             'PRODID:-//Software Carpentry/Workshops//NONSGML v1.0//EN',
         ]
         for bc in config['workshops']:
-            if bc['_published']:
-                lines.extend(self.workshop(config['site'],
-                                           config['timestamp'], bc))
+            lines.extend(self.workshop(config['site'],
+                                       config['timestamp'], bc))
         lines.extend(['END:VCALENDAR', ''])
         content = '\r\n'.join(lines)
         # From RFC 5545, section 3.1.4 (Character Set):
@@ -69,7 +68,7 @@ class ICalendarWriter(object):
     def workshop(self, site, timestamp, info):
         uid = '{0}@{1}'.format(info['slug'],
                                urlparse(site).netloc or 'software-carpentry.org')
-        if 'end' in info:
+        if ('end' in info) and info['end']:
             end = info['end']
         else:  # one day workshop?
             end = info['start']

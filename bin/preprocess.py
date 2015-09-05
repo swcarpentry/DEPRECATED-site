@@ -23,7 +23,7 @@ from util import CONFIG_YML, \
                  DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \
                  harvest_metadata, \
-                 load_info, fetch_info, fetch_workshops_info
+                 load_info, fetch_info
 
 # Translate two-digit month identifiers into short names.
 MONTHS = {
@@ -53,22 +53,10 @@ def main():
     # Get the standard stuff.
     options, args = parse_args()
 
-    # Check that cached workshop information and cached dashboard
-    # information are available, and report an error if they're not.
-    cached_dashboard_info = load_cached_info(os.curdir, DASHBOARD_CACHE, 'dashboard cache')
-    # # Do this early to avoid wasting time; store in local variable
-    # # until other workshop info is loaded and available for merging.
-    # cached_workshop_info = load_cached_info(os.curdir, WORKSHOP_CACHE, 'workshop cache')
-
     # Load other information.
     config = load_info(options.config_dir, STANDARD_YML)
 
-    # fetch badges, airports and workshops from AMY
-    config['badges'] = fetch_info(options.amy_url, BADGES_URL)
-    config['airports'] = fetch_info(options.amy_url, AIRPORTS_URL)
-    config['workshops'] = fetch_workshops_info(options.amy_url, WORKSHOPS_URL)
-
-    config['flags'] = load_info(options.config_dir, FLAGS_YML)
+    # Insert standing values into configuration.
     config.update({
         'month_names'     : MONTHS,
         'months'          : sorted(MONTHS.keys()),
@@ -77,15 +65,29 @@ def main():
         'today'           : options.today
     })
 
-    # People and projects.
-    config['people'] = list(map(lambda x: os.path.relpath(x, '_includes'),
-                           sorted(glob.glob('_includes/people/*.html'))))
-    config['projects'] = list(map(lambda x: os.path.relpath(x, '_includes'),
-                             sorted(glob.glob('_includes/projects/*.html'))))
+    # Load cached dashboard info.  Do this early to avoid wasting time
+    # on everything else if it's not available.
+    config['dashboard'] = load_cached_info(os.curdir, DASHBOARD_CACHE, 'dashboard cache')
 
-    # Cache the window size.
-    recent_length = config['recent_length']
-    upcoming_length = config['upcoming_length']
+    # FIXME: should get countries (flags) for workshops and instructors from AMY.
+    config['flags'] = load_info(options.config_dir, FLAGS_YML)
+
+    # Fetch information from AMY.
+    config['badges'] = fetch_info(options.amy_url, BADGES_URL)
+    config['airports'] = fetch_info(options.amy_url, AIRPORTS_URL)
+    config['workshops'] = fetch_info(options.amy_url, WORKSHOPS_URL)
+
+    # Select workshops that will be displayed on the home page (soonest first).
+    workshops_upcoming = [w for w in config['workshops'] if w['start'] >= config['today']]
+    workshops_upcoming.reverse()
+    config['workshops_upcoming'] = workshops_upcoming
+    config['workshops_upcoming_short'] = workshops_upcoming[ :config['upcoming_length'] ]
+
+    # Load people and projects.
+    config['people'] = list(map(lambda x: os.path.relpath(x, '_includes'),
+                                sorted(glob.glob('_includes/people/*.html'))))
+    config['projects'] = list(map(lambda x: os.path.relpath(x, '_includes'),
+                                  sorted(glob.glob('_includes/projects/*.html'))))
 
     # Get information from blog entries.
     config['blog'] = harvest_blog(config)
@@ -94,7 +96,7 @@ def main():
     check_blog_sanity(config['blog'])
 
     # Select those that'll be displayed on the home page, the index page, etc.
-    config['blog_recent'] = config['blog'][-recent_length:]
+    config['blog_recent'] = config['blog'][ -config['recent_length']: ]
     config['blog_recent'].reverse()
 
     # Create _includes/recent_blog_posts.html for inclusion in blog index page.
@@ -113,28 +115,6 @@ def main():
     # Construct list of favorite blog posts.
     config['blog_favorites'] = [p for p in config['blog'] if p['favorite']]
     config['blog_favorites'].reverse()
-
-    # # Ensure that information about workshops is in the right order.
-    # decorated = [(x['slug'], x) for x in cached_workshop_info]
-    # decorated.sort(key=lambda item: item[0])
-    # cached_workshop_info = [d[1] for d in decorated]
-    # config['workshops'] = cached_workshop_info
-
-    # Cached dashboard info is already in the right order.
-    config['dashboard'] = cached_dashboard_info
-
-    # Select those that'll be displayed on the home page.  Use a loop instead of
-    # a list comprehension to get better error reporting.
-    upcoming = []
-    for bc in config['workshops']:
-        try:
-            if (bc['start'] >= config['today'] and bc['_published']):
-                upcoming.append(bc)
-        except TypeError:
-            print('Unable to process start date "{0}"'.format(bc['start']),
-                  file=sys.stderr)
-    config['workshops_upcoming'] = upcoming[:upcoming_length]
-    config['workshops_num_upcoming'] = len(upcoming)
 
     # Save.
     with open(CONFIG_YML, 'w') as writer:
