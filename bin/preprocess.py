@@ -73,10 +73,14 @@ def main():
     config['airports'] = fetch_info(options.amy_url, AIRPORTS_URL)
     config['workshops'] = fetch_info(options.amy_url, WORKSHOPS_URL)
 
-    # Coalesce national flags.
+    # Lower-case and coalesce national flags.
+    for a in config['airports']:
+        a['country'] = a['country'].lower()
+    for w in config['workshops']:
+        w['country'] = w['country'].lower()
     config['flags'] = {
-        'workshops': sorted({w['country'].lower() for w in config['workshops'] if w['country']}),
-        'instructors': sorted({a['country'].lower() for a in config['airports'] if a['country']})
+        'workshops': sorted({w['country'] for w in config['workshops'] if w['country']}),
+        'airports': sorted({a['country'] for a in config['airports'] if a['country']})
     }
 
     # Select workshops that will be displayed on the home page (soonest first).
