@@ -75,8 +75,8 @@ def main():
 
     # Coalesce national flags.
     config['flags'] = {
-        'workshops': sorted({w['country'] for w in config['workshops'] if w['country']}),
-        'instructors': sorted({a['country'] for a in config['airports'] if a['country']})
+        'workshops': sorted({w['country'].lower() for w in config['workshops'] if w['country']}),
+        'instructors': sorted({a['country'].lower() for a in config['airports'] if a['country']})
     }
 
     # Select workshops that will be displayed on the home page (soonest first).
