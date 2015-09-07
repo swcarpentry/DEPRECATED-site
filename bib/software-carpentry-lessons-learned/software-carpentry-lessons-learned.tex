@@ -220,6 +220,15 @@ disappointments:
   (see \fixme{below}).
 
 \item
+  Creating videos is significantly more work than creating slides.
+  Editing or modifying them is harder still: while a typo in a slide
+  can be fixed by opening PowerPoint, making the change, saving, and
+  re-exporting the PDF, inserting new slides into a video and updating
+  the soundtrack seems to take at least half an hour regardless of how
+  small the change is.  This makes maintaining a video-based course
+  prohibitively expensive.
+
+\item
   Most importantly, the MOOC format didn't work: only 5-10\% of those
   who started with us completed the course, and the majority were
   people who already knew most of the material. Both figures are in
@@ -524,48 +533,64 @@ desktop while flipping back and forth to another.
 
 \subsection*{Open everything}
 
-Our grant proposals, mailing lists, feedback from workshops, and
-everything else that isn't personally sensitive are out in the open
-(see \cite{swcsite} for links).  While we cannot prove it, we believe
-that the fact that people can see us actively succeeding, failing, and
-learning earns us some credibility and respect.
+Our grant proposals, mailing lists, and everything else that isn't
+personally sensitive are out in the open (see \cite{swcsite} for
+links).  We believe that letting people see us succeed, fail, and
+learn encourages them to be more involved in our community, and
+inspires them to be open as well.
 
 \subsection*{Open lessons}
 
 This is an important special case of the previous point. Anyone who
-wants to use our lessons can take what we have, make changes, and offer
-those back by sending us a pull request on GitHub. As mentioned earlier,
-this workflow is still foreign to most educators, but it is allowing us
-to scale and adapt more quickly and more cheaply than the centralized
+wants to use our lessons can take what we have, make changes, and
+offer those back by sending us a pull request on GitHub. As discussed
+below, this workflow is foreign to most educators, but allows us to
+scale and adapt more quickly and more cheaply than the centralized
 approaches being taken by many high-profile online education ventures.
 
 For example, we recently ``published'' our core lessons through
 \href{https://zenodo.org/}{Zenodo}.  The number of contributors per
 lesson is shown in Table~\ref{t:authors-per-lesson}.  The distribution
-of contributions has the usual long-tail distribution, and while these
-figures include a bit of double counting (since contributions to
-templates show up in all lessons that use those templates), but the
-fact remains that all of our lesson materials have had more
-contributors than most massive ``open'' online courses, and are
-stronger for it.
+of contributions has the usual long-tail distribution, but the fact
+remains that our lessons have had more contributors than many
+``massive'' and ``open'' online courses.
+
+\begin{quote}
+\textbf{Why is this weird?}
+
+Large-scale ad hoc collaboration is the norm in open source software
+development, but Wikipedia aside, it is still rare in other fields. In
+teaching, for example, people often use one another's slide decks as
+starting points for their own courses, but rarely offer their changes
+back to the original author in order to improve them. This is partly
+because educators' preferred file formats (Word, PowerPoint, and PDF)
+aren't handled gracefully by existing version control systems.  A
+deeper cause, though, is that there isn't a culture of contribution,
+particularly in higher education.
+
+The question is, why not?  Many teachers are technically literate
+enough to (for example) edit wiki pages; they have strong social and
+professional ties, and are trying to solve the same problems.
+
+\fixme{finish explaining}
+\end{quote}
 
 \subsection*{Use what we teach}
 
 We also make a point of eating our own cooking, e.g., we use GitHub
-for our web site and to plan workshops. Again, this buys us
-credibility, and gives instructors a chance to do some hands-on
-practice with the things they're going to teach.  Up until a year ago,
-the (considerable) downside to this was that it could be difficult for
-newcomers to contribute material.  We have simplified our templates
-and build procedures considerably to fix this (with results discussed
-above), and will be making more changes early in 2016 to incorporate
-further insights.
+for our web site and to plan workshops. Again, this makes us more
+credible, and gives instructors hands-on practice with the things
+they're going to teach.  Up until a year ago, the (considerable)
+downside to this was that it could be difficult for newcomers to
+contribute material.  We have simplified our templates and build
+procedures considerably to fix this, and will be making more changes
+early in 2016 to incorporate further insights.
 
-One problem still to be addressed is the bikeshedding discussed
-earlier.  Many contributors would rather spend days tweaking the build
-process for lessons rather than an hour coming up with some new
-self-test exercises for those same lessons, both because they are on
-more familiar ground when debating programming issues, and because the
+One problem we haven't solved is the bikeshedding mentioned earlier.
+Many contributors would rather spend days tweaking the build process
+for lessons rather than an hour coming up with some new self-test
+exercises for those same lessons, both because they are on more
+familiar ground when debating programming issues, and because the
 feedback loop is much tighter.  One of our goals for the coming year
 is to push the bulk of discussion toward teaching practices and lesson
 content.
@@ -578,9 +603,12 @@ teach on all three major platforms (Linux, Mac OS X, and Windows),
 even though it would be simpler to require learners to use just
 one. We have experimented with virtual machines on learners' computers
 to reduce installation problems, but those introduce problems of their
-own: older or smaller machines simply aren't fast enough.  We have
+own: older or smaller machines simply aren't fast enough.  (We have
 also tried using virtual machines (VMs) in the cloud, but this makes
-us dependent on university-quality WiFi.
+us dependent on university-quality Wi-Fi.)
+
+The real problem with using virtual machines, though, is
+\fixme{explain native install}.
 
 \subsection*{Collaborative note-taking}
 
@@ -592,25 +620,19 @@ almost always mentioned positively in post-workshop feedback, and
 several workshop participants have started using it in their own
 teaching.
 
-We are still trying to come up with an equally good way to share
-larger files dynamically as the lessons progress.  Version control
-does \emph{not} work, both because our learners are new to it (and
-therefore likely to make mistakes that affect classmates) and because
-classroom WiFi frequently can't handle a flurry of multi-megabyte
-downloads.
-
 \subsection*{Sticky notes and minute cards}
 
 Giving each learner two sticky notes of different colors allows
 instructors to do quick true/false questions as they're teaching. It
 also allows real-time feedback during hands-on work: learners can put
 a green sticky note on their laptop when they have something
-completed, or a red one when they need help. We also use them as
-minute cards: before each break, learners take a minute to write one
-thing they've learned on the green sticky note, and one thing they
-found confusing (or too fast or too slow) on the red. It only takes a
-couple of minutes to collate these, and allows the instructors to
-adjust to learners' interests and speed.
+completed, or a red one when they need help.
+
+We also use them as minute cards: before each break, learners take a
+minute to write one thing they've learned on the green sticky note,
+and one thing they found confusing (or too fast or too slow) on the
+red. It only takes a couple of minutes to collate these, and allows
+the instructors to adjust to learners' interests and speed.
 
 \subsection*{Pair programming}
 
@@ -648,11 +670,12 @@ the web.
 
 This training course introduces participants to the basics of
 educational psychology, instructional design, and how these things
-apply to teaching programming. It is necessarily very shallow, but
-most participants find the material interesting as well as useful.  As
-noted earlier, introducing grad students and faculty to evidence-based
-teaching practices may turn out to be Software Carpentry's greatest
-contribution.
+apply to teaching programming
+\cite{guzdial2010,guzdial2013,hazzan2011,porter2013,sorva2012}. It is
+necessarily very shallow, but most participants find the material
+interesting as well as useful.  Introducing grad students and faculty
+to evidence-based teaching practices may turn out to be Software
+Carpentry's greatest contribution.
 
 \subsection*{Why teach?}
 
@@ -761,60 +784,42 @@ incomprehensible to some, and lacking for others.
 \begin{quote}
 \textbf{Edit this}
 
-And while it may seem like a trivial thing, editing text is always
-harder than we expect. We don't want to encourage people to use naive
-editors like Notepad, and the two most popular legacy editors on Unix
-(Vi and Emacs) are both usability nightmares. We now recommend a
-handful of GUI editors, but it remains a stumbling block.
+It may seem like a trivial thing, but editing text is always harder
+than we expect. We don't want to encourage people to use naive editors
+like Notepad, and the two most popular legacy editors on Unix (Vi and
+Emacs) are both usability nightmares. We now recommend a handful of
+GUI editors, but it remains a stumbling block.
 \end{quote}
-
-\subsection*{What vs.~how}
-
-Fourth on our list is the tension between teaching the ``what'' and the
-``how'' of programming. When we teach a scripting language like Python,
-we have to spend time up front on syntax, which leaves us only limited
-time for the development practices that we really want to focus on, but
-which are hard to grasp in the abstract. By comparison, version control
-and databases are straightforward: what you see is what you do is what
-you get.
 
 \subsection*{Testing}
 
-Speaking of development practices, we no longer include software
-testing in our core curriculum, despite believing that it's extremely
-important.  The reason is that while the mechanics of unit testing
-with an xUnit-style framework are straightforward, and it's easy to
-come up with representative test cases for things like reformatting
-data files, we don't know what to teach scientists about testing their
-particular applications.  Once we've covered floating-point roundoff
-and the need to use ``almost equal'' instead of ``exactly equal'', our
-learners quite reasonably ask, ``What should I use as a tolerance for
-my computation?'' for which nobody has a good answer.  An attempt in
-2014-15 to collect shareable examples was unfruitful, but we hope to
-take another run at this in 2016.
+We no longer include software testing in our core curriculum, despite
+believing that it's extremely important.  The reason is that while the
+mechanics of unit testing with an xUnit-style framework are
+straightforward, and it's easy to come up with representative test
+cases for things like reformatting data files, we don't know what to
+teach scientists about testing their particular applications.  Once
+we've covered floating-point roundoff and the need to use ``almost
+equal'' instead of ``exactly equal'', our learners quite reasonably
+ask, ``What should I use as a tolerance for my computation?'' for
+which nobody has a good answer.  An attempt in 2014--15 to collect
+shareable examples was unfruitful, but we hope to take another run at
+this in 2016.
 
 \subsection*{Watching vs.~doing}
 
-Finally, we try to make our teaching as interactive as possible, but
-we still don't give learners hands-on exercises as frequently as we
-should.  We also don't give them as diverse a range of exercises as we
-should, and those that we do give are often at the wrong level. This
-is partly due to a lack of time, but disorganization is also a factor.
+We try to make our teaching as interactive as possible, but we still
+don't give learners hands-on exercises as frequently as we should.  We
+also don't give them as diverse a range of exercises as we should.
+This is simply due to a lack of time: two eight-hour days are as much
+as learners' brains can handle, but not nearly enough to give them all
+the practice they need.
 
 There is also a constant tension between having students do realistic
 exercises drawn from actual scientific workflows, and giving them tasks
 that are small and decoupled, so that failures are less likely and don't
 have knock-on effects when they occur. This is exacerbated by the
-diversity of learners in the typical workshop, though we hope that will
-diminish as we organize and recruit along disciplinary lines instead of
-geographically.
-
-Computing education researchers have learned a lot in the past two
-decades about why people find it hard to learn how to program, and how
-to teach them more effectively
-\cite{guzdial2010,guzdial2013,hazzan2011,porter2013,sorva2012}.  We
-do our best to cover these ideas in our instructor training program,
-but are less good about actually applying them in our workshops.
+diversity of learners in the typical workshop.
 
 \subsection*{Less of a Problem}
 
@@ -951,23 +956,3 @@ SQL & 41
 \end{table*}
 
 \end{document}
-
-%------------------------------------------------------------
-
-Piecemeal improvement may be normal in open source development, but
-Wikipedia aside, it is still rare in other fields. In particular,
-people often use one another's slide decks as starting points for
-their own courses, but rarely offer their changes back to the original
-author in order to improve them. This is partly because educators'
-preferred file formats (Word, PowerPoint, and PDF) can't be handled
-gracefully by existing version control systems, but more importantly,
-there simply isn't a ``culture of contribution'' in higher education.
-
-%------------------------------------------------------------
-
-not least because creating videos is significantly more challenging
-than creating slides. Editing or modifying them is harder still: while
-a typo in a slide can be fixed by opening PowerPoint, making the
-change, saving, and re-exporting the PDF, inserting new slides into a
-video and updating the soundtrack seems to take at least half an hour
-regardless of how small the change is.
