@@ -62,7 +62,7 @@ def process(cnx):
             except Exception as e:
                 print('failed with', i.number, i.title, i.html_url, i.updated_at, file=sys.stderr)
             dashboard['num_issues'] += 1
-        record['issues'].sort(lambda x, y: - cmp(x['updated'], y['updated']))
+        record['issues'].sort(key=lambda x: x['updated'])
     return dashboard
 
 def main():

@@ -18,7 +18,6 @@ from util import CONFIG_YML, \
                  BADGES_YML, \
                  BADGES_URL, AIRPORTS_URL, WORKSHOPS_URL, \
                  WORKSHOPS_YML, \
-                 FLAGS_YML, \
                  WORKSHOP_CACHE, \
                  DASHBOARD_CACHE, \
                  P_BLOG_EXCERPT, \
@@ -74,9 +73,11 @@ def main():
     config['airports'] = fetch_info(options.amy_url, AIRPORTS_URL)
     config['workshops'] = fetch_info(options.amy_url, WORKSHOPS_URL)
 
-    # FIXME: should get countries (flags) for workshops and instructors from AMY.
-    config['flags'] = load_info(options.config_dir, FLAGS_YML)
-    config['flags']['workshops'] = sorted({w['country'] for w in config['workshops']})
+    # Coalesce national flags.
+    config['flags'] = {
+        'workshops': sorted({w['country'] for w in config['workshops'] if w['country']}),
+        'instructors': sorted({a['country'] for a in config['airports'] if a['country']})
+    }
 
     # Select workshops that will be displayed on the home page (soonest first).
     workshops_upcoming = [w for w in config['workshops'] if w['start'] >= config['today']]

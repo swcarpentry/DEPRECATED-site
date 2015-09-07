@@ -31,9 +31,6 @@ BADGES_URL = 'v1/export/badges.yaml'
 AIRPORTS_URL = 'v1/export/instructors.yaml'
 WORKSHOPS_URL = 'v1/events/published.yaml'
 
-# File containing names of countries for flags.
-FLAGS_YML = 'flags.yml'
-
 # File containing cached information about workshops.
 WORKSHOP_CACHE = '_workshop_cache.yml'
 
