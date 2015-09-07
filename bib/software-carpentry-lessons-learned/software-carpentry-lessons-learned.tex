@@ -43,22 +43,22 @@ A million-fold speed-up is impressive, but hardware and algorithms are
 only two sides of the iron triangle of programming. The third is
 programming itself, and while improvements to languages, tools, and
 practices have undoubtedly made software developers more productive
-since 1987, the speed-up is percentages rather than orders of magnitude.
-Setting aside the minority who do high-performance computing (HPC), the
-time it takes the ``desktop majority'' of scientists to produce a new
-computational result is frequently dominated by how long it takes to
-write, test, debug, install, and maintain software.
+since 1987, the speed-up is percentages rather than orders of
+magnitude.  Setting aside the minority who do high-performance
+computing (HPC), the time it takes the ``desktop majority'' of
+scientists to produce a new result is frequently dominated by how long
+it takes to write, test, debug, install, and maintain software.
 
-The problem is that most scientists are never taught how to do this. While
-their undergraduate programs may include a generic introduction to
-programming or a statistics or numerical methods course (in which
-they are often expected to pick up programming on their own), they are
-almost never told that version control exists, and rarely if ever shown
-how to design a maintainable program in a systematic way, or how to turn
-the last twenty commands they typed into a re-usable script. As a
-result, they routinely spend hours doing things that could be done in
-minutes, or don't do things at all because they don't know where to
-start \cite{hannay2009,prabhu2011}.
+The problem is that most scientists are never taught how to do
+this. Their undergraduate programs may include a generic introduction
+to programming or a statistics or numerical methods course (in which
+they are often expected to pick up programming on their own), but they
+are almost never told that version control exists, and rarely if ever
+shown how to structure a maintainable program, or how to turn the last
+twenty commands they typed into a re-usable script. As a result, they
+routinely spend hours doing things that could be done in minutes, or
+don't do things at all because they don't know where to start
+\cite{hannay2009,prabhu2011}.
 
 This is where Software Carpentry comes in. We ran over 400 workshops
 for over 12,000 researchers between January 2013 and July 2015. In
@@ -67,7 +67,7 @@ program design, task automation, version control, testing, and other
 unglamorous but time-tested skills \cite{wilson2013}. Two independent
 assessments in 2012 \cite{aranda2012,libarkin2012} and two others more
 recently \cite{schossau2014,simperler2015} have shown that this
-training is sticking and helping:
+training is helping:
 
 \begin{quote}
 The program increases participants' computational understanding, as
@@ -99,25 +99,28 @@ did not have any automated tests, and that were not under version control
 
 In response, John Reynders (then director of the Advanced Computing
 Laboratory at Los Alamos National Laboratory) invited the author and
-Brent Gorda (now at Intel) to teach a week-long course on these topics
-to LANL staff. The course ran for the first time in July 1998, and was
-repeated nine times over the next four years. It eventually wound down
-as the principals moved on to other projects, but two valuable lessons
-were learned:
+Brent Gorda (now at Intel) to teach a week-long course to LANL staff.
+This course ran for the first time in July 1998, and was repeated nine
+times over the next four years. It eventually wound down as Gorda and
+the author moved on to other projects, but two valuable lessons were
+learned:
 
 \begin{enumerate}
+
 \item
   Intensive week-long courses are easy to schedule (particularly if
   instructors have to travel) but by the last two days, attendees'
   brains are full and learning drops off significantly.
+
 \item
   Textbook software engineering is not useful to most scientists. In
   particular, careful documentation of requirements and lots of
   up-front design are not appropriate for people who (almost by
-  definition) do not yet know what they are trying to do. Agile
-  development methods, which rose to prominence during this period,
+  definition) do not know what the right answer is yet. Agile
+  development methods (which rose to prominence during this period)
   are a less bad fit to researchers' needs, but even they are not well
-  suited to the commonplace ``solo grad student'' model of working.
+  suited to the common ``solo grad student'' model of working.
+
 \end{enumerate}
 
 \subsection*{Versions 2 and 3: Another Red Light}
@@ -129,51 +132,41 @@ a conventional term-long graduate course at the University of Toronto
 aimed at a mix of students from Computer Science and the physical and
 life sciences.
 
-The materials attracted 1000-2000 unique visitors a month, with
-occasional spikes correlated to courses and mentions in other
-sites. But while grad students (and the occasional faculty member)
-found the course at Toronto useful, it never found an institutional
-home.  Most Computer Science faculty believe that this basic material
-is too easy to deserve a graduate credit (even though a significant
-minority of their students, particularly those coming from non-CS
-backgrounds, have no better software development skills than the
-average physicist). Meanwhile, other departments believe that courses
-like this ought to be offered by Computer Science, in the same way
-that Mathematics and Statistics departments routinely offer service
+The materials attracted 1000-2000 unique visitors a month.  But while
+graduate students (and the occasional faculty member) found the course
+at Toronto useful, it never found an institutional home.  Most
+Computer Science faculty believe that this basic material is too easy
+to deserve a graduate credit (even though a significant minority of
+their students, particularly those coming from non-CS backgrounds,
+have no better software development skills than the average
+physicist). Meanwhile, other departments believe that courses like
+this ought to be offered by Computer Science, in the same way that
+Mathematics and Statistics departments routinely offer service
 courses.  In the absence of an institutional mechanism to offer credit
 courses at some inter-departmental level, this course, like many other
 interdisciplinary initiatives, fell between two stools.
 
 \begin{quote}
-\textbf{It works too well to be interesting}
+\textbf{It works too well to be worth teaching}
 
-We have also found that what we teach simply isn't interesting to most
-computer scientists. They are interested in doing research to advance
-our understanding of the science of computing; things like
-command-line history, tab completion, and ``select * from table'' have
-been around too long, and work too well, to be publishable. As long as
+Most computer scientists want to do research to advance our
+understanding of the science of computing; things like command-line
+history, tab completion, and ``select * from table'' have been around
+too long, and work too well, to be interesting. As long as
 universities reward research first, and teaching last, it is simply
-not in most computer scientists own best interests to offer courses
-like this.
+not in most computer scientists' interests to offer courses like this.
 \end{quote}
 
 Secondly, despite repeated invitations, other people did not
-contribute new material beyond an occasional bug report.  Piecemeal
-improvement may be normal in open source development, but Wikipedia
-aside, it is still rare in other fields. In particular, people often
-use one another's slide decks as starting points for their own
-courses, but rarely offer their changes back to the original author in
-order to improve them. This is partly because educators' preferred
-file formats (Word, PowerPoint, and PDF) can't be handled gracefully
-by existing version control systems, but more importantly, there
-simply isn't a ``culture of contribution'' in higher education.
+contribute new material beyond an occasional bug report (a point which
+we will return to \fixme{later}).
 
 The most important lesson, though, was that while many faculty in
 science, engineering, and medicine agree that their students should
 learn more about computing, they \emph{won't} agree on what to take
 out of the current curriculum to make room for it. A typical
-undergraduate science degree in the US or Canada has roughly 1800
-hours of class and laboratory time; anyone who wants to add more
+undergraduate science degree in the US or Canada comprises roughly
+1800 hours of class and laboratory time. Anyone who wants to add more
 programming, statistics, writing, or anything else must either
 lengthen the program (which is financially and institutionally
 infeasible) or take something out. However, everything in the program
@@ -182,7 +175,7 @@ important, and who is likely senior to those faculty advocating the
 change.
 
 \begin{quote}
-\textbf{It Adds Up}
+\textbf{It adds up}
 
 Saying, ``We'll just add a little computing to every other course,'' is
 a cheat: five minutes per hour equals four entire courses in a four-year
@@ -192,28 +185,26 @@ curriculum is also full.
 \end{quote}
 
 The sweet spot for this kind of training is therefore the first years
-of graduate school. At that point, students have time (at least, more
-time than they'll have once they're faculty) and real problems of
-their own that they want to solve.
+of graduate school. At that point, students have time to learn (at
+least, more time than they'll have once they're faculty) and real
+problems of their own that they want to solve.
 
 \subsection*{Version 4: Orange Light}
 
 The author rebooted Software Carpentry in May 2010 with support from
 several partners (see Table~\ref{t:launch-partners}). More than 120
 short video lessons were recorded during the subsequent 12 months, and
-six more week-long classes were run for the backers. We also offered
-an online class three times (a MOOC \emph{avant la lettre}).
+six week-long classes were run for the backers. We also offered an
+online class three times (a MOOC \emph{avant la lettre}).
 
 This was our most successful version to date, in part because the
 scientific landscape itself had changed. Open access publishing, crowd
 sourcing, the data deluge in the life sciences, and growing concern
-about reproducible research had convinced scientists that knowing how
-to program was now as important as knowing how to do statistics.
-Despite this, though, most still (rightly) viewed it as a tax they had
-to pay in order to get their science done. Those of us who teach
-programming may find it interesting in its own right, but as one
-course participant said, ``If I wanted to be a programmer instead of a
-chemist, I would have chosen computer science as my major.''
+about reproducible research had convinced a growing number of
+scientists that knowing how to program was now as important as knowing
+how to do statistics.  Even most of them, though, still (rightly)
+regarded it as a tax they had to pay in order to get their science
+done.
 
 Despite this round's overall success, there were several
 disappointments:
@@ -225,13 +216,8 @@ disappointments:
   than enlightening.
 
 \item
-  And once again, only a handful of other people contributed material,
-  not least because creating videos is significantly more challenging
-  than creating slides. Editing or modifying them is harder still:
-  while a typo in a slide can be fixed by opening PowerPoint, making
-  the change, saving, and re-exporting the PDF, inserting new slides
-  into a video and updating the soundtrack seems to take at least half
-  an hour regardless of how small the change is.
+  And once again, only a handful of other people contributed material
+  (see \fixme{below}).
 
 \item
   Most importantly, the MOOC format didn't work: only 5-10\% of those
@@ -245,58 +231,57 @@ disappointments:
 The biggest take-away from this round was the need come up with a
 scalable, sustainable model for delivering training. One instructor
 simply can't reach enough people, and cobbling together funding from
-half a dozen different sources every twelve to eighteen months is a
-high-risk approach.
+half a dozen different sources every twelve to eighteen months is
+risky as well as wearying.
 
 \subsection*{Version 5: Green Light}
 
-Software Carpentry restarted once again in January 2012 with a grant
-from the Sloan Foundation via the Mozilla Foundation.  This time, the
-model was two-day intensive workshops like those pioneered by The
-Hacker Within, a grassroots group of grad students helping grad
-students at the University of Wisconsin - Madison.
+Software Carpentry rebooted again in January 2012 with a grant from
+the Sloan Foundation to the Mozilla Foundation.  This time, the model
+was two-day intensive workshops like those pioneered by The Hacker
+Within, a grassroots group of grad students helping grad students at
+the University of Wisconsin - Madison.
 
 Shortening the workshops made it possible for more people to attend,
 and increased the proportion of the material they could absorb. It
 also forced us to think much harder about what skills scientists
-really needed. Out went object-oriented programming, XML, Make, GUI
-construction, design patterns, and software development lifecycles.
-Instead, we focused on a small set of tools (discussed in the next
-section) that let us introduce higher-level concepts without learners
+really needed. Out went object-oriented programming, XML, Make, and
+other topics.  Instead, we focused on a small set of tools (discussed
+below) that let us introduce higher-level concepts without learners
 really noticing (also discussed below).
 
-Reaching more people also allowed us to recruit new instructors from
+Reaching more people allowed us to recruit new instructors from
 workshop participants, which in turn allowed us to scale. Switching to
 a ``host site covers costs'' model was equally important: funding was
 still needed for 1.5 core staff to lead the project and match
 instructors to workshops, but everything else funded itself.
 
 \begin{quote}
-\textbf{Learning to Teach}
+\textbf{Learning to teach}
 
 One of our most important discoveries during this period was that many
 people are as interested in learning about better teaching practices
 as they are in learning about computing.  The instructor training
 program that we started in August 2012 has attracted hundreds of
 participants, and at the time of writing there are over 400 more on
-the waiting list.  For many, it is the only place they can learn about
-modern research in education and evidence-based teaching practices.
-In the long run, introducing graduate students (and faculty) to the
-ideas so ably summarized in \cite{hlw2010} may be Software Carpentry's
-greatest contribution.
+the waiting list.  This introduction to modern research in education
+and evidence-based teaching practices \cite{hlw2010} doesn't just
+improve our teaching: it also helps give the instructors a sense of
+community and purpose.
 
 \end{quote}
 
 \subsection*{Version 6: A True Community Project}
 
-In July 2014, the author left his position with Mozilla to set up an
-independent non-profit to manage the project.  The newly-formed
-Software Carpentry Foundation (SCF) held its first elections in
-January 2015, in which its volunteer members selected seven of their
-own number as a Steering Committee charged with overseeing the
-project's operations.  Since then, the SCF has formed partnerships
-with a growing number of institutions that wish to support its mission
-(see Table~\ref{t:current-partners}).
+In July 2014, the author ended his relationship with Mozilla and set
+up the Software Carpentry Foundation, an independent non-profit
+foundation under the auspices of NumFOCUS.  The SCF held its first
+elections in January 2015, in which instructors who had taught over
+the past two years selected seven of their own number as a Steering
+Committee to oversee the project's operations.  Since then, the SCF
+has formed partnerships with a growing number of institutions (see
+Table~\ref{t:current-partners}), run an ever-increasing number of
+workshops, and much more.
 
 While the SCF is only nine months old, we have already learned many
 things.  The most important are:
@@ -304,29 +289,21 @@ things.  The most important are:
 \begin{enumerate}
 
 \item
-  Keeping a large organization going requires different skills, and a
-  different outlook, than growing one: decisions will \emph{and
-  should} be made more slowly (both because more people need to be
-  involved and because the impact of those decisions will be greater)
-  and much more time must be put into communication, both between
-  decision makers and between them and the volunteer community.
-
-\item
-  The first few people to join a volunteer organization are probably
+  The first few people to join a volunteer organization are usually
   keener than those who join later.  As numbers grow, therefore, the
-  time invested per person will decrease, and structures must be
+  time contributed per person will decrease, and structures must be
   designed with this in mind.  In particular, by the time there 400
   people are on the books, most will be dipping in and out of
   conversations rather than taking part on a daily or weekly basis, so
   frameworks and procedures must become simple and stable.
 
 \item
-  Every partner organization has different needs, and is able to do
-  different things\footnote{We have learned much more than we ever
-  wanted to about accounting rules at various universities\ldots}.
-  Formulating ``standard'' partnership agreements is essential, but
-  these should be viewed as a starting point for negotiation, rather
-  than as ``take it or leave it'' propositions.
+  Every partner organization has different needs and
+  constraints\footnote{We have learned much more than we ever wanted
+    to about accounting rules at various universities\ldots}.
+  ``Standard'' partnership agreements is essential therefore have to
+  be treated as starting points for negotiation, rather than as ``take
+  it or leave it'' propositions.
 
 \item
   ``Bikeshedding'' is the practice of arguing over minor, marginal
@@ -335,29 +312,30 @@ things.  The most important are:
   programming, and would rather spend a week arguing about how to
   convert Markdown to PDF than an hour discussing whether to introduce
   functions before lists or vice versa.  Squelching these technical
-  discussions is a bad strategy, since (a) it has a chilling and (b)
-  we actually \emph{do} need to convert Markdown to PDF sometimes, but
-  letting them go unchecked alienates people who aren't as technically
-  sophisticated, aren't as interested in technical details, or would
-  rather talk about things that really matter.
+  discussions is harmful because it has a chilling effect on
+  conversation overall (and because we actually \emph{do} need to
+  convert Markdown to PDF sometimes).  Letting them go unchecked,
+  though, alienates people who would rather talk about teaching, or
+  simply don't have enough time to go down technical rabbit holes.
 
 \end{enumerate}
 
 \subsection*{Data Carpentry}
 
-The biggest development in recent times, though, has been the
-foundation of a sibling organization called Data Carpentry in April
-2014.  Where Software Carpentry's mission is to help scientists who
-are programming badly to program better, Data Carpentry's focus is, as
-its name implies, to help them manage and analyze their data.  Led by
+The biggest recent development, though, has been the foundation of a
+sibling organization called Data Carpentry in April 2014.  Where
+Software Carpentry's mission is to help scientists who are programming
+badly to program better, Data Carpentry's focus is, as its name
+implies, to help them manage and analyze their data.  Led by
 Dr.\ Tracy Teal, Data Carpentry was recently awarded \$700,000 by the
-Moore Foundation in recognition of both the value of what it is doing
-and the success it has already had.
+Moore Foundation, and is expected to grow rapidly over the coming two
+years.
 
 \subsection*{Results}
 
-Our workshops have been an unqualified success. Both the number
-of workshops, and the number of people attending, have grown steadily:
+As we discuss below, we do not know how to measure the impact of our
+workshops.  However, both their number, and the number of people
+attending, have grown steadily:
 
 \begin{figure}
 \centering
@@ -380,12 +358,12 @@ of workshops, and the number of people attending, have grown steadily:
 \label{f:instructors}
 \end{figure}
 
-What's more, we have become a global organization
-(Table~\ref{t:by-country}).  And most importantly, feedback from
-participants is strongly positive.  While there are always problems
-with software set-up and the speed of instruction (discussed below),
-80-90\% of attendees typically report that they were glad they
-attended and would recommend the workshops to colleagues.
+We are now a truly global organization (Table~\ref{t:by-country}).
+And most importantly, feedback from participants is strongly positive.
+While there are always problems with software set-up and the speed of
+instruction (discussed below), 80-90\% of attendees typically report
+that they were glad they attended and would recommend the workshops to
+colleagues.
 
 \section*{What we do}
 
@@ -419,39 +397,33 @@ So what does a typical workshop look like?
   information this way.
 \end{itemize}
 
-As the comments on the bullets above suggest, our real aim isn't to
-teach any other specific tool: it's to teach \emph{computational
-competence}. We can't do this in the abstract: people won't show up
-for a hand-waving talk, and even if they do, they won't understand. If
-we show them how to solve a specific problem with a specific tool,
-though, we can then lead into a larger discussion of how scientists
-ought to develop, use, and curate software.
+As the descriptions above suggest, our real aim isn't to teach any
+specific tool: it's to teach \emph{computational competence}. We can't
+do this in the abstract: people won't show up for a hand-waving talk
+about general principles because they won't believe those principles
+will help them meet next Thursday's deadline.  Even if they do, they
+won't understand, because big ideas need to be grounded in specific
+examples to be comprehensible. If we show them how to solve a specific
+problem with a specific tool, we can then lead into a larger
+discussion of how scientists ought to develop, use, and curate
+software.
 
-We also try to show people how the pieces fit together, e.g., how to
-write a Python script whose output can be piped to SQLite, all under
-the control of a shell script that's in a Git repository. Doing this
-gives us a chance to reinforce ideas, and also increases the odds of
-them being able to apply what they've learned once the workshop is
-over.
-
-Of course, there are a lot of local variations around the template
-outlined above. Some instructors use the command-line Python
-interpreter, while others prefer the
-\href{https://jupyter.org/}{Jupyter Notebook}.  Still others teach R
-or MATLAB instead of Python, usually because they are more appropriate
-to the audience's needs.  A handful of workshops also cover tools such
-as LaTeX, or domain-specific topics such as audio file processing, and
-we hope to develop more specialized lessons in future.
+There are a lot of local variations around the template shown above.
+For example, some instructors use the command-line Python interpreter,
+while others prefer the \href{https://jupyter.org/}{Jupyter Notebook}.
+Still others teach R or MATLAB instead, while a handful of workshops
+also cover tools such as LaTeX, or domain-specific topics such as
+audio file processing, depending on the needs of the audience and the
+expertise of the instructor.
 
 We aim for no more than 40 people per room at a workshop, so that
 every learner can receive personal attention when needed.  Where
-possible, we now run two or more rooms side by side, and use a
-pre-assessment questionnaire as a sorting hat to stream learners by
-prior experience, which simplifies teaching and improves their
-experience.  We do \emph{not} shuffle people from one room to another
-between the first and second day: with the best inter-instructor
-coordination in the world, doing so would still result in duplication,
-missed topics, and jokes that make no sense.
+possible, we run two or more rooms side by side, and use a
+pre-assessment questionnaire to stream learners by prior experience,
+which simplifies teaching and improves their experience.  We do
+\emph{not} shuffle people from one room to another between the first
+and second day: with the best inter-instructor coordination in the
+world, doing so would result in lost context.
 
 Our workshops are sometimes free, but most now charge a small
 registration fee (typically \$20-40), primarily because it reduces the
@@ -472,21 +444,23 @@ rate as the lesser evil\footnote{We have also experimented with
 
 Our material \cite{swcsite,swcgithub} is all covered by the Creative
 Commons Attribution license, so anyone who wants to use it for
-corporate training can do so without explicit permission from us. We
+commercial training can do so without explicit permission from us. We
 encourage this: if graduate students can help pay their bills by
-sharing what they know, in the way that many programmers earn part or
-all of their living from working on open source software, our
-community will only be stronger.
+sharing what they know, in the way that many programmers earn their
+living by working on open source software, our community will only be
+stronger.
 
 What \emph{does} require permission is use of our name and logo, both
-of which are trademarked. We are happy to give such permission if we
-have certified the instructor and have a chance to double-check the
-content, but we do want a chance to check: we have had instances of
-people calling something ``Software Carpentry'' when it had nothing to
-do with what we usually teach. We've worked hard to create material
-that actually helps scientists, and to build some name recognition
-around it, and we'd like to make sure our name continues to mean
-something.
+of which are trademarked.  Such permission is granted automatically if
+at least one instructor is certified, the workshop covers three core
+topics (the shell, version control, and a programming langauge), and
+the organizers send us summary information (the dates, the location,
+and the number of attendees).  We put these rules in place because of
+people calling something ``Software Carpentry'' when they had nothing
+to do with what we usually teach. We have worked hard to create
+material that actually helps scientists, and to build some name
+recognition around it, and we would like to make sure our name
+continues to mean something.
 \end{quote}
 
 \begin{quote}
@@ -512,8 +486,8 @@ their own, or members of the local open source community; where
 possible, we aim to have at least one helper for every eight learners.
 
 We find workshops go a lot better if people come in groups (e.g., 4-5
-people from one lab) or have other pre-existing ties (e.g., the same
-disciplinary background). They are less inhibited about asking
+people from one lab) or have other pre-existing ties (e.g., are
+working in the same field). They are less inhibited about asking
 questions, and can support each other (morally and technically) when
 the time comes to put what they've learned into practice after the
 workshop is over. Group sign-ups also yield much higher turnout from
@@ -524,17 +498,29 @@ supportive environment.
 \section*{Small things add up}
 
 As in chess, success in teaching often comes from the accumulation of
-seemingly small advantages. Here are a few of the less significant
-things we do that we believe have contributed to our success.
+seemingly small advantages. Here are a few of the things we do that we
+believe have contributed to our success.
 
 \subsection*{Live coding}
 
-We use live coding rather than slides: it's more convincing, it enables
-instructors to be more responsive to ``what if?'' questions, and it
-facilitates lateral knowledge transfer (i.e., people learn more than we
-realized we were teaching them by watching us work). This does put more
-of a burden on instructors than a pre-packaged slide deck, but most find
-it more fun.
+We teach via live coding rather than using slides: it's more
+convincing, it enables instructors to be more responsive to ``what
+if?'' questions, and it facilitates lateral knowledge transfer (i.e.,
+people learn more than we realized we were teaching by watching how
+instructors do things).  It takes a bit of practice for instructors to
+get used to thinking aloud while coding in front of an audience, but
+most report that it is then no more difficult to do than talking off a
+deck of slides.
+
+\begin{quote}
+\textbf{One device good, two devices better}
+
+Many instructors now use two devices when teaching: a laptop plugged
+into the projector for learners to see, and a tablet beside it on
+which they can view their notes and the Etherpad session (discussed
+below).  This seems to be more reliable than displaying one virtual
+desktop while flipping back and forth to another.
+\end{quote}
 
 \subsection*{Open everything}
 
@@ -965,3 +951,23 @@ SQL & 41
 \end{table*}
 
 \end{document}
+
+%------------------------------------------------------------
+
+Piecemeal improvement may be normal in open source development, but
+Wikipedia aside, it is still rare in other fields. In particular,
+people often use one another's slide decks as starting points for
+their own courses, but rarely offer their changes back to the original
+author in order to improve them. This is partly because educators'
+preferred file formats (Word, PowerPoint, and PDF) can't be handled
+gracefully by existing version control systems, but more importantly,
+there simply isn't a ``culture of contribution'' in higher education.
+
+%------------------------------------------------------------
+
+not least because creating videos is significantly more challenging
+than creating slides. Editing or modifying them is harder still: while
+a typo in a slide can be fixed by opening PowerPoint, making the
+change, saving, and re-exporting the PDF, inserting new slides into a
+video and updating the soundtrack seems to take at least half an hour
+regardless of how small the change is.
