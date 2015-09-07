@@ -4958,17 +4958,17 @@
 - address: MR5, Room 3005
   contact: br5n@virginia.edu
   country: "us"
-  enddate: 2015-04-16
+  enddate: 2015-04-17
   helper: [Stephen Turner, Bart Ragon]
-  humandate: April 15-16, 2015
+  humandate: April 16-17, 2015
   humantime: 9:00 am - 4:30 pm
   instructor: [Jessica Bonnie, Zhuo Fu, Alex Koeppel]
   language: en
   latlng: 38.033553,-78.507977
   layout: workshop
   root: .
-  slug: 2015-03-05-uvasom
-  startdate: 2015-04-15
+  slug: 2015-04-16-uvasom
+  startdate: 2015-04-16
   url: https://github.com/realviacauchy/2015-03-05-uvasom
   user: realviacauchy
   venue: University of Virginia
@@ -6028,7 +6028,7 @@
 - address: Information Technology Center (street address of home location)
   contact: mahdi@hawaii.edu
   country: us
-  enddate: 2015-06-21
+  enddate: 2015-06-23
   etherpad: https://etherpad.mozilla.org/2015-06-21-UH-SWC
   helper: ['']
   humandate: Jun 22-23, 2015
@@ -6038,8 +6038,8 @@
   latlng: 21.299816,-157.817579
   layout: workshop
   root: .
-  slug: 2015-06-21-UH-SWC
-  startdate: 2015-06-21
+  slug: 2015-06-22-hawaii
+  startdate: 2015-06-22
   url: http://mahdi-b.github.io/2015-06-21-UH-SWC/
   user: mahdi-b
   venue: University of Hawaii at Manoa
@@ -6056,7 +6056,7 @@
   latlng: 37.227863,-80.422264
   layout: workshop
   root: .
-  slug: 2015-06-21-s2i2
+  slug: 2015-06-22-vt
   startdate: 2015-06-22
   url: http://guyrt.github.io/2015-06-21-s2i2/
   user: guyrt
@@ -6225,7 +6225,7 @@
   latlng: 41.701749, -86.231612
   layout: workshop
   root: .
-  slug: 2015-06-25-notre-dame
+  slug: 2015-06-25-nd
   startdate: 2015-06-25
   url: http://keszybz.github.io/2015-06-25-notre-dame/
   user: keszybz
@@ -6458,7 +6458,7 @@
   latlng: 40.817660,-96.700481
   layout: workshop
   root: .
-  slug: 2015-03-20-UNL
+  slug: 2015-03-20-unl
   startdate: 2015-03-20
   url: http://jainsley.github.io/2015-03-20-UNL/
   user: jainsley
@@ -6532,7 +6532,7 @@
   latlng: 51.5218691,-0.134323
   layout: workshop
   root: .
-  slug: '2015-02-25'
+  slug: 2015-02-25-ucl
   startdate: 2015-02-25
   url: http://ucl.github.io/2015-02-25/
   user: ucl
@@ -6551,7 +6551,7 @@
   latlng: 51.524559,-0.13404
   layout: workshop
   root: .
-  slug: 2015-06-18-ucl-swcarpentry
+  slug: 2015-06-18-ucl
   startdate: 2015-06-18
   url: http://ucl.github.io/2015-06-18-ucl-swcarpentry/
   user: ucl
@@ -6765,7 +6765,7 @@
   latlng: 42.3772499,-71.1175291
   layout: workshop
   root: .
-  slug: 2015-07-22_SWC-R
+  slug: 2015-07-22-harvard
   startdate: 2015-07-22
   url: http://fasrc.github.io/2015-07-22_SWC-R/
   user: fasrc
@@ -6839,7 +6839,7 @@
   latlng: -8.671308,115.239431
   layout: workshop
   root: .
-  slug: 2015-08-03-IBRC-Indonesia
+  slug: 2015-08-03-IBRC
   startdate: 2015-08-03
   url: http://dipnet.github.io/2015-08-03-IBRC-Indonesia/
   user: dipnet
@@ -6859,7 +6859,7 @@
   latlng: 33.418024,-111.928437
   layout: workshop
   root: .
-  slug: 2015-08-04-asu_sese
+  slug: 2015-08-04-asu
   startdate: 2015-08-04
   url: http://dotsdl.github.io/2015-08-04-asu_sese/
   user: dotsdl
@@ -6896,7 +6896,7 @@
   latlng: 40.00796,-105.264317
   layout: workshop
   root: .
-  slug: 2015-08-06-cuboulder
+  slug: 2015-08-06-colorado
   startdate: 2015-08-06
   url: http://mperignon.github.io/2015-08-06-cuboulder/
   user: mperignon
@@ -6914,7 +6914,7 @@
   latlng: 35.947474,-83.940567
   layout: workshop
   root: .
-  slug: 2015-08-10-UTKnoxville
+  slug: 2015-08-10-utk
   startdate: 2015-08-10
   url: http://mestato.github.io/2015-08-10-UTKnoxville/
   user: mestato
@@ -6937,3 +6937,213 @@
   url: http://jarthurgross.github.io/2015-08-13-nmsu/
   user: jarthurgross
   venue: New Mexico State University
+- address: 1043 & 2030 Gladys Valley Hall
+  contact: sherine.awad@gmail.com
+  country: us
+  enddate: 2015-08-18
+  etherpad: https://etherpad.mozilla.org/2015-08-16-ucdavis-wise-2030
+  eventbrite: 17736809274
+  helper: [Christina Gao, Sherine Awad]
+  humandate: Aug 17-18, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Azelee Bostroem, Camille Scott, Dani Ushizima, Fatma Imamoglu]
+  language: en
+  latlng: 38.532815,-121.763681
+  layout: workshop
+  root: .
+  slug: 2015-08-17-ucdavis-wise
+  startdate: 2015-08-17
+  url: http://camillescott.github.io/2015-08-16-ucdavis-wise/
+  user: camillescott
+  venue: University of California, Davis
+- address: 대전 유성구 대학로 291
+  contact: i@xwmooc.net
+  country: kr
+  enddate: 2015-08-21
+  etherpad: https://etherpad.mozilla.org/2015-08-20-daejeon
+  eventbrite: 17950925702
+  helper: [이호성, 김선명]
+  humandate: Aug 20-21, 2015
+  humantime: 9:30 am - 5:30 pm
+  instructor: [이광춘]
+  language: kr
+  latlng: 36.368229,127.366771
+  layout: workshop
+  root: .
+  slug: 2015-08-20-daejeon
+  startdate: 2015-08-20
+  url: http://statkclee.github.io/2015-08-20-daejeon/
+  user: statkclee
+  venue: 나노종합기술원 대전창조경제혁신센터
+- address: Featheringill Hall, 400 24th Avenue South, 134 Auditorium, Nashville, TN
+    37212
+  contact: chris.fonnesbeck@vanderbilt.edu
+  country: us
+  enddate: 2015-08-21
+  eventbrite: 17620127275
+  humandate: Aug 20-21, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Scott Burns, Daniel Fabbri, Christopher Fonnesbeck, Will French]
+  language: en
+  latlng: 36.144703, -86.802655
+  layout: workshop
+  root: .
+  slug: 2015-08-20-vanderbilt
+  startdate: 2015-08-20
+  url: http://vu-bc.github.io/2015-08-20-vanderbilt/
+  user: vu-bc
+  venue: Vanderbilt University
+- address: Technological Institute, M152, McCormick, Evanston Campus
+  contact: milhans@northwestern.edu
+  country: us
+  enddate: 2015-08-22
+  etherpad: https://etherpad.mozilla.org/IDuE3axE5C
+  eventbrite: 17485720260
+  helper: [Kejia Hu, Pradeep Sivakumar, David McDonald, Firas Wehbe]
+  humandate: Aug 21-22, 2015
+  humantime: 9:00 am - 5:00 pm
+  instructor: [Jackie Milhans, Dirk Eddelbuettel, Bob McDonald]
+  language: en
+  latlng: 42.056459,-87.675267
+  layout: workshop
+  root: .
+  slug: 2015-08-21-northwestern
+  startdate: 2015-08-21
+  url: http://eddelbuettel.github.io/2015-08-21-nw/
+  user: eddelbuettel
+  venue: Northwestern University
+- address: Zuckerman Research Center Room 105, Memorial Sloan Kettering Hospital<br>417
+    East 68th St. New York, NY 10065<br>
+  assistant: []
+  contact: tkteal@datacarpentry.org
+  country: us
+  enddate: 2015-08-25
+  eventbrite: null
+  host: [Tom Magaldi]
+  humandate: August 24-25, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Jason Pell, Jennifer Shelton, Jared Camins-Esakov]
+  latlng: +40.7650792, -73.9565137
+  layout: bootcamp
+  raw: raw.github.com/datacarpentry/2015-08-24-Sloan-Kettering/gh-pages
+  registration: open
+  root: .
+  slug: 2015-08-24-Sloan-Kettering
+  startdate: 2015-08-24
+  url: http://datacarpentry.github.io/2015-08-24-Sloan-Kettering/
+  user: datacarpentry
+  venue: Sloan-Kettering
+- address: 'Wallenberg Hall: Building 160-124'
+  contact: dsmith@auburn.edu
+  country: us
+  enddate: 2015-08-25
+  etherpad: https://etherpad.mozilla.org/2015-08-24-stanford
+  eventbrite: null
+  helper: [Niru Maheswaranathan, Paul Nuyujukian, Ben Naecker, Lane McIntosh]
+  humandate: Aug 24-25, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Daniel Smith, Michelle Berry]
+  language: en
+  latlng: 37.428526, -122.168993
+  layout: workshop
+  root: .
+  slug: 2015-08-24-stanford
+  startdate: 2015-08-24
+  url: http://dgasmith.github.io/2015-08-24-stanford/
+  user: dgasmith
+  venue: Stanford University
+- address: Victoria University of Wellington (VUW)
+  contact: events@nesi.org.nz
+  country: nz
+  enddate: 2015-08-25
+  etherpad: https://etherpad.mozilla.org/swc-vuw
+  eventbrite: 17855488246
+  helper: [Matt Plummer, Roman Klapaukh, Al Abenoja, Walter Langelaar, Birgit Bachler]
+  humandate: August 24-25, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Sung Bae, Tim McNamara, Andre Geldenhuis, Wolfgang Hayek]
+  language: en
+  latlng: -41.290528, 174.767917
+  layout: workshop
+  root: .
+  slug: 2015-08-24-vuw
+  startdate: 2015-08-24
+  url: http://sungeunbae.github.io/2015-08-24-vuw/
+  user: sungeunbae
+  venue: NeSI - Wellington Region Workshop
+- address: School of Earth and Environment, University of Leeds, Leeds, LS2 9JT
+  contact: J.E.Mound@leeds.ac.uk
+  country: gb
+  enddate: 2015-08-28
+  etherpad: https://etherpad.mozilla.org/2015-08-26-leeds
+  eventbrite: 17320118942
+  helper: [Jon Mound, Grace Cox, Steven Boeing, Pablo Gonzalez]
+  humandate: Aug 26-28, 2015
+  humantime: 9:00 am - 5:30 pm
+  instructor: [Martin Callaghan, Andrew Walker, Aaron O'Leary]
+  language: en
+  latlng: 53.8057,-1.5557
+  layout: workshop
+  root: .
+  slug: 2015-08-26-leeds
+  startdate: 2015-08-26
+  url: http://andreww.github.io/2015-08-26-leeds/
+  user: andreww
+  venue: NERC / University of Leeds
+- address: University Library Instruction Center in the Shapiro Library
+  contact: samarti@umich.edu
+  country: us
+  enddate: 2015-08-27
+  etherpad: https://etherpad.mozilla.org/2015-08-26-umswc
+  eventbrite: null
+  helper: [Ginger Allington, Shweta Ramdas, Arthur Endsley]
+  humandate: Aug 26-27, 2015
+  humantime: 9:00 am - 4:30 pm
+  instructor: [Amanda Charbonneau, Chris Gates]
+  language: en
+  latlng: 42.2758197,-83.7376672
+  layout: workshop
+  root: .
+  slug: 2015-08-26-umswc
+  startdate: 2015-08-26
+  url: http://umswc.github.io/2015-08-26-umswc/
+  user: umswc
+  venue: University of Michigan
+- address: 3rd Floor Teaching Lab, Discovery Building, 330 North Orchard St. Madison,
+    WI
+  contact: lmichael@wisc.edu
+  country: us
+  enddate: 2015-08-27
+  etherpad: null
+  eventbrite: 18121511930
+  helper: null
+  humandate: August 26-27, 2015
+  humantime: 8:30 am - 4:30 pm
+  instructor: [Christina Koch, Matthew Gidden, Lauren Michael]
+  language: en
+  latlng: 43.0729124,-89.4080793
+  layout: workshop
+  root: .
+  slug: 2015-08-26-uw-madison
+  startdate: 2015-08-26
+  url: http://uw-madison-aci.github.io/2015-08-26-uw-madison/
+  user: uw-madison-aci
+  venue: UW Madison
+- address: Av. Ademar de Barros , 500 , Ondina , 40170-110 , Salvador
+  contact: ocefpaf@gmail.com
+  country: br
+  enddate: 2015-08-26
+  etherpad: https://etherpad.mozilla.org/ep/pad/create?padId=2015-08-24-UFBA
+  helper: [Juliana Leonel]
+  humandate: Ago 31-Set 01, 2015
+  humantime: 13:00 - 17:00 pm
+  instructor: [Filipe Fernandes]
+  language: pt
+  latlng: -13.001854, -38.508954
+  layout: workshop
+  root: .
+  slug: 2015-08-31-UFBA
+  startdate: 2015-08-24
+  url: http://ocefpaf.github.io/2015-08-31-UFBA/
+  user: ocefpaf
+  venue: Universidade Federal da Bahia, Salvador
