@@ -51,7 +51,7 @@ SWC.maps = (function() {
       var markers = [];
       // Go over all the upcoming camps and create pins in the map
       {% for W in site.workshops %}
-        {% if W.start >= site.today and W._published %}
+        {% if W.start >= site.today and W.latitude and W.longitude %}
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng({{W.latitude}}, {{W.longitude}}),
             map: map,
@@ -60,6 +60,8 @@ SWC.maps = (function() {
             visible: false  // marker not shown directly, just clustered
           });
           markers.push(marker)
+        {% else %}
+          // not including {{W.path}}/{{W.venue}}/{{W.humandate}} in upcoming map
         {% endif %}
       {% endfor %}
       var mcOptions = {
@@ -82,16 +84,18 @@ SWC.maps = (function() {
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
       var markers = [];
       // Go over all the previous camps and create pins in the map
-      {% for workshop in site.workshops reversed %}
-        {% if workshop.latlng and workshop.startdate < site.today %}
+      {% for W in site.workshops reversed %}
+        {% if W.start < site.today and W.latitude and W.longitude %}
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng({{workshop.latlng}}),
+            position: new google.maps.LatLng({{W.latitude}}, {{W.longitude}}),
             map: map,
-            title: "<h5><a href=\"{% if workshop.url %}{{workshop.url}}{% else %}{{page.root}}/{{workshop.path}}{% endif %}\">{{workshop.venue}}</a></h5>" +
-            "<h6><a href=\"{{page.root}}/{{workshop.path}}\">{{workshop.humandate}}</a></h6>",
+            title: "<h5><a href=\"{% if W.url %}{{W.url}}{% else %}{{page.root}}/{{W.path}}{% endif %}\">{{W.venue}}</a></h5>" +
+            "<h6><a href=\"{{page.root}}/{{W.path}}\">{{W.humandate}}</a></h6>",
             visible: false  // marker not shown directly, just clustered
           });
           markers.push(marker); // For clustering
+        {% else %}
+          // not including {{W.path}}/{{W.venue}}/{{W.humandate}} in previous map
         {% endif %}
       {% endfor %}
 
