@@ -25,7 +25,7 @@ challenges we now face, and our plans for the future.
 \end{abstract}
 \clearpage
 
-\section*{Introduction}
+\section{Introduction}
 
 In January 2012, John Cook posted this to his widely-read blog
 \cite{cook2012}:
@@ -80,13 +80,13 @@ Software Carpentry (85\% learned what they hoped to learn; 95\% would
 recommend the workshop to others).
 \end{quote}
 
-\section*{From Red to Green}
+\section{From Red to Green}
 
 Like many projects, it has taken us years to become an overnight
 success, and we have made many mistakes along the way.  These are best
 understood historically.
 
-\subsection*{Version 1: Red light}
+\subsection{Version 1: Red light}
 
 In 1995-96, the author organized a series of articles in \emph{IEEE
 Computational Science \& Engineering} titled, ``What Should Computer
@@ -123,7 +123,7 @@ learned:
 
 \end{enumerate}
 
-\subsection*{Versions 2 and 3: Another Red Light}
+\subsection{Versions 2 and 3: Another Red Light}
 
 The Software Carpentry course materials were updated and released in
 2004-05 under a Creative Commons license with support from the
@@ -159,7 +159,7 @@ not in most computer scientists' interests to offer courses like this.
 
 Secondly, despite repeated invitations, other people did not
 contribute new material beyond an occasional bug report (a point which
-we will return to \fixme{later}).
+we will return to in Section~\ref{s:lesson-collab}).
 
 The most important lesson, though, was that while many faculty in
 science, engineering, and medicine agree that their students should
@@ -189,7 +189,7 @@ of graduate school. At that point, students have time to learn (at
 least, more time than they'll have once they're faculty) and real
 problems of their own that they want to solve.
 
-\subsection*{Version 4: Orange Light}
+\subsection{Version 4: Orange Light}
 
 The author rebooted Software Carpentry in May 2010 with support from
 several partners (see Table~\ref{t:launch-partners}). More than 120
@@ -217,7 +217,7 @@ disappointments:
 
 \item
   And once again, only a handful of other people contributed material
-  (see \fixme{below}).
+  (see Section~\ref{s:lesson-collab}).
 
 \item
   Creating videos is significantly more work than creating slides.
@@ -243,7 +243,7 @@ simply can't reach enough people, and cobbling together funding from
 half a dozen different sources every twelve to eighteen months is
 risky as well as wearying.
 
-\subsection*{Version 5: Green Light}
+\subsection{Version 5: Green Light}
 
 Software Carpentry rebooted again in January 2012 with a grant from
 the Sloan Foundation to the Mozilla Foundation.  This time, the model
@@ -255,9 +255,9 @@ Shortening the workshops made it possible for more people to attend,
 and increased the proportion of the material they could absorb. It
 also forced us to think much harder about what skills scientists
 really needed. Out went object-oriented programming, XML, Make, and
-other topics.  Instead, we focused on a small set of tools (discussed
-below) that let us introduce higher-level concepts without learners
-really noticing (also discussed below).
+other topics.  Instead, we focused on a small set of tools that let us
+introduce higher-level concepts without learners really noticing
+(Section~\ref{s:curriculum}).
 
 Reaching more people allowed us to recruit new instructors from
 workshop participants, which in turn allowed us to scale. Switching to
@@ -270,17 +270,12 @@ instructors to workshops, but everything else funded itself.
 
 One of our most important discoveries during this period was that many
 people are as interested in learning about better teaching practices
-as they are in learning about computing.  The instructor training
-program that we started in August 2012 has attracted hundreds of
-participants, and at the time of writing there are over 400 more on
-the waiting list.  This introduction to modern research in education
-and evidence-based teaching practices \cite{hlw2010} doesn't just
-improve our teaching: it also helps give the instructors a sense of
-community and purpose.
+as they are in learning about computing.  We discuss this in detail in
+Section~\ref{s:instructor-training}.
 
 \end{quote}
 
-\subsection*{Version 6: A True Community Project}
+\subsection{Version 6: A True Community Project}
 
 In July 2014, the author ended his relationship with Mozilla and set
 up the Software Carpentry Foundation, an independent non-profit
@@ -318,18 +313,16 @@ things.  The most important are:
   ``Bikeshedding'' is the practice of arguing over minor, marginal
   issues while more serious ones are overlooked.  It is a constant
   danger in an organization whose more vocal members actually enjoy
-  programming, and would rather spend a week arguing about how to
-  convert Markdown to PDF than an hour discussing whether to introduce
-  functions before lists or vice versa.  Squelching these technical
-  discussions is harmful because it has a chilling effect on
-  conversation overall (and because we actually \emph{do} need to
-  convert Markdown to PDF sometimes).  Letting them go unchecked,
-  though, alienates people who would rather talk about teaching, or
-  simply don't have enough time to go down technical rabbit holes.
+  programming.  Squelching such technical discussions has a chilling
+  effect on conversation overall, but letting them go unchecked,
+  alienates people who would rather talk about teaching, or simply
+  don't have enough time to go down technical rabbit holes.  We
+  discuss an example in Sections~\ref{s:lesson-templates}
+  and~\ref{s:editors}.
 
 \end{enumerate}
 
-\subsection*{Data Carpentry}
+\subsection{Data Carpentry}
 
 The biggest recent development, though, has been the foundation of a
 sibling organization called Data Carpentry in April 2014.  Where
@@ -340,11 +333,11 @@ Dr.\ Tracy Teal, Data Carpentry was recently awarded \$700,000 by the
 Moore Foundation, and is expected to grow rapidly over the coming two
 years.
 
-\subsection*{Results}
+\subsection{Results}
 
-As we discuss below, we do not know how to measure the impact of our
-workshops.  However, both their number, and the number of people
-attending, have grown steadily:
+As we discuss in Section~\ref{s:assessment}, we do not know how to
+measure the impact of our workshops.  However, both their number, and
+the number of people attending, have grown steadily:
 
 \begin{figure}
 \centering
@@ -370,11 +363,11 @@ attending, have grown steadily:
 We are now a truly global organization (Table~\ref{t:by-country}).
 And most importantly, feedback from participants is strongly positive.
 While there are always problems with software set-up and the speed of
-instruction (discussed below), 80-90\% of attendees typically report
-that they were glad they attended and would recommend the workshops to
-colleagues.
+instruction (Section~\ref{s:instruction-pace}), 80-90\% of attendees
+typically report that they were glad they attended and would recommend
+the workshops to colleagues.
 
-\section*{What we do}
+\section{What we do}\label{s:curriculum}
 
 So what does a typical workshop look like?
 
@@ -417,7 +410,7 @@ problem with a specific tool, we can then lead into a larger
 discussion of how scientists ought to develop, use, and curate
 software.
 
-There are a lot of local variations around the template shown above.
+There are a lot of local variations around the curriculum shown above.
 For example, some instructors use the command-line Python interpreter,
 while others prefer the \href{https://jupyter.org/}{Jupyter Notebook}.
 Still others teach R or MATLAB instead, while a handful of workshops
@@ -504,13 +497,13 @@ groups that are otherwise often under-represented, such as women and
 minority students, since they know in advance that they will be in a
 supportive environment.
 
-\section*{Small things add up}
+\section{Small things add up}
 
 As in chess, success in teaching often comes from the accumulation of
 seemingly small advantages. Here are a few of the things we do that we
 believe have contributed to our success.
 
-\subsection*{Live coding}
+\subsection{Live coding}
 
 We teach via live coding rather than using slides: it's more
 convincing, it enables instructors to be more responsive to ``what
@@ -526,12 +519,13 @@ deck of slides.
 
 Many instructors now use two devices when teaching: a laptop plugged
 into the projector for learners to see, and a tablet beside it on
-which they can view their notes and the Etherpad session (discussed
-below).  This seems to be more reliable than displaying one virtual
-desktop while flipping back and forth to another.
+which they can view their notes and the Etherpad session
+(Section~\ref{s:etherpad}).  This seems to be more reliable than
+displaying one virtual desktop while flipping back and forth to
+another.
 \end{quote}
 
-\subsection*{Open everything}
+\subsection{Open everything}
 
 Our grant proposals, mailing lists, and everything else that isn't
 personally sensitive are out in the open (see \cite{swcsite} for
@@ -539,14 +533,15 @@ links).  We believe that letting people see us succeed, fail, and
 learn encourages them to be more involved in our community, and
 inspires them to be open as well.
 
-\subsection*{Open lessons}
+\subsection{Open lessons}
 
 This is an important special case of the previous point. Anyone who
 wants to use our lessons can take what we have, make changes, and
 offer those back by sending us a pull request on GitHub. As discussed
-below, this workflow is foreign to most educators, but allows us to
-scale and adapt more quickly and more cheaply than the centralized
-approaches being taken by many high-profile online education ventures.
+in Section~\ref{s:lesson-collab}, this workflow is foreign to most
+educators, but allows us to scale and adapt more quickly and more
+cheaply than the centralized approaches being taken by many
+high-profile online education ventures.
 
 For example, we recently ``published'' our core lessons through
 \href{https://zenodo.org/}{Zenodo}.  The number of contributors per
@@ -555,27 +550,7 @@ of contributions has the usual long-tail distribution, but the fact
 remains that our lessons have had more contributors than many
 ``massive'' and ``open'' online courses.
 
-\begin{quote}
-\textbf{Why is this weird?}
-
-Large-scale ad hoc collaboration is the norm in open source software
-development, but Wikipedia aside, it is still rare in other fields. In
-teaching, for example, people often use one another's slide decks as
-starting points for their own courses, but rarely offer their changes
-back to the original author in order to improve them. This is partly
-because educators' preferred file formats (Word, PowerPoint, and PDF)
-aren't handled gracefully by existing version control systems.  A
-deeper cause, though, is that there isn't a culture of contribution,
-particularly in higher education.
-
-The question is, why not?  Many teachers are technically literate
-enough to (for example) edit wiki pages; they have strong social and
-professional ties, and are trying to solve the same problems.
-
-\fixme{finish explaining}
-\end{quote}
-
-\subsection*{Use what we teach}
+\subsection{Use what we teach}
 
 We also make a point of eating our own cooking, e.g., we use GitHub
 for our web site and to plan workshops. Again, this makes us more
@@ -595,22 +570,27 @@ feedback loop is much tighter.  One of our goals for the coming year
 is to push the bulk of discussion toward teaching practices and lesson
 content.
 
-\subsection*{Meet the learners on their own ground}
+\subsection{Meet the learners on their own ground}
 
 Learners tell us that it is important to them to leave the workshop
-with their own working environment set up. We therefore continue to
-teach on all three major platforms (Linux, Mac OS X, and Windows),
-even though it would be simpler to require learners to use just
-one. We have experimented with virtual machines on learners' computers
-to reduce installation problems, but those introduce problems of their
-own: older or smaller machines simply aren't fast enough.  (We have
-also tried using virtual machines (VMs) in the cloud, but this makes
-us dependent on university-quality Wi-Fi.)
+with their own machine set up to do real work.  We therefore continue
+to teach on all three major platforms (Linux, Mac OS X, and Windows),
+even though it would be simpler to require learners to use just one
+(Section~\ref{s:installation}).
 
-The real problem with using virtual machines, though, is
-\fixme{explain native install}.
+We have experimented with virtual machines (VMs) on learners'
+computers to reduce installation problems, but those introduce
+problems of their own: older or smaller machines simply aren't fast
+enough, and learners often struggle to switch back and forth between
+two different sets of keyboard shortcuts for things like copying and
+pasting.
 
-\subsection*{Collaborative note-taking}
+Some instructors VMs in the cloud.  This is an authentic way of
+working in fields like bioinformatics, where even simple datasets may
+not fit on laptops, but it does make us dependent on
+university-quality Wi-Fi.
+
+\subsection{Collaborative note-taking}\label{s:etherpad}
 
 We often use \href{http://etherpad.org}{Etherpad} for collaborative
 note-taking and to share snippets of code and small data files with
@@ -620,7 +600,7 @@ almost always mentioned positively in post-workshop feedback, and
 several workshop participants have started using it in their own
 teaching.
 
-\subsection*{Sticky notes and minute cards}
+\subsection{Sticky notes and minute cards}
 
 Giving each learner two sticky notes of different colors allows
 instructors to do quick true/false questions as they're teaching. It
@@ -634,7 +614,7 @@ and one thing they found confusing (or too fast or too slow) on the
 red. It only takes a couple of minutes to collate these, and allows
 the instructors to adjust to learners' interests and speed.
 
-\subsection*{Pair programming}
+\subsection{Pair programming}
 
 Pairing is a good practice in real life, and an even better way to
 teach: partners can not only help each other out during the practical,
@@ -644,7 +624,7 @@ facilitate this, we strongly prefer flat (dinner-style) seating to
 banked (theater-style) seating; this also makes it easier for helpers
 to reach learners who need assistance.
 
-\subsection*{Diversity}
+\subsection{Diversity}
 
 On June 24-25, 2013, we ran our first workshop for women in science,
 engineering, and medicine. This event attracted 120 learners, 9
@@ -657,16 +637,21 @@ overwhelmed by the uniformly positive response from participants, many
 of whom say that they would probably not have attended a mixed-gender
 event because of previous bad experiences with tech meetups.
 
-\section*{Instructor training}
+\section{Instructor training}\label{s:instructor-training}
 
-We run a training course for would-be instructors to teach them how to
-teach, and as mentioned above, this has proven extremely popular.  In
-its original form, it took 2-4 hours/week of participants' time for
-12-14 weeks (depending on scheduling interruptions); more recently, we
-have run it both as a live two-day event, and as a two-day online
-event, in which participants are together in groups of half a dozen or
-more at one, two, or three sites, while the instructor takes part over
-the web.
+The instructor training program that we started in August 2012 has
+attracted hundreds of participants, and at the time of writing there
+are over 400 more on the waiting list.  This introduction to modern
+research in education and evidence-based teaching practices
+\cite{hlw2010} doesn't just improve our teaching: it also helps give
+the instructors a sense of community and purpose.
+
+In its original form, training took 2-4 hours/week of participants'
+time for 12-14 weeks (depending on scheduling interruptions); more
+recently, we have run it both as a live two-day event, and as a
+two-day online event, in which participants are together in groups of
+half a dozen or more at one, two, or three sites, while the instructor
+takes part over the web.
 
 This training course introduces participants to the basics of
 educational psychology, instructional design, and how these things
@@ -677,7 +662,7 @@ interesting as well as useful.  Introducing grad students and faculty
 to evidence-based teaching practices may turn out to be Software
 Carpentry's greatest contribution.
 
-\subsection*{Why teach?}
+\subsection{Why teach?}
 
 But why do people volunteer as instructors?
 
@@ -720,22 +705,74 @@ But why do people volunteer as instructors?
 
 \end{description}
 
-\section*{TODO}
+\section{Collaborative Lesson Development}\label{s:lesson-collab}
+
+Large-scale ad hoc collaboration is the norm in open source software
+development and the creation of encyclopedia articles, but is still
+rare in other fields. In particular, teachers often use one another's
+slide decks as starting points for their own courses, but rarely offer
+their changes back to the original author in order to improve
+them. This is only partly because educators' preferred file formats
+(Word, PowerPoint, and PDF) aren't handled gracefully by existing
+version control systems.  A deeper cause is that there isn't a culture
+of contribution, particularly in higher education.
+
+The question is, why not?  Reasons advanced include:
+
+\begin{description}
+
+\item[\emph{Lack of technical skill.}] But (a) many teachers edit
+  Wikipedia, and (b) a large number of those who teach programming
+  certainly \emph{do} have the technical skills.
+
+\item[\emph{Lack of institutional rewards.}] But if this was a real
+  barrier, open source software and Wikipedia wouldn't exist.
+
+\item[\emph{It just hasn't happened yet.}] This argument might have
+  been tenable a decade ago, but is less credible with every passing
+  year.
+
+\end{description}
+
+Our current hypothesis is that teaching is \emph{enacted knowledge}.
+To make a musical analogy, the lesson plan, slides, and assignments
+are only the score; what matters most is how it's performed.  If this
+is correct, then collaborative lesson development will only succeed if
+it is done as part of what the Japanese call \emph{jugyokenkyu}
+(lesson study): the systematic observation and discussion of lessons
+by fellow teachers.
+
+In aid of this, we now run a bi-weekly debriefing session for
+instructors who have recently taught workshops, in which they can
+discuss what they actually did, how it worked, how the lessons they
+actually delivered differed from our templates, what problems arose,
+and so on.  We are also planning to revise instructor training to
+require trainees to watch \emph{and reflect on} videos of experienced
+instructors delivering our lessons.  We hope that making this ``the
+new normal'' will encourage even more collaboration on the content and
+delivery of our lessons.
+
+\section{Example: lesson templates}\label{s:lesson-templates}
+
+\fixme{talk about evolution of lesson templates and bikeshedding}
+
+\section{TODO}
 
 We've learned a lot, and we're doing a much better job of reaching and
 teaching people than we did three years ago, but there are still many
 things we need to improve.
 
-\subsection*{Long-term assessment}
+\subsection{Long-term assessment}\label{s:assessment}
 
 Our biggest challenge is figuring out whether we are actually helping
 scientists get more science done.  We believe we are, and
-\cite{aranda2012,libarkin2012,schossau2014,simperler2015} all seem to
-confirm this, but we have not yet done the long-term follow-up needed
-to prove this. This is partly because of a lack of resources, but it
-is also a genuinely hard problem: no one knows how to measure the
-productivity of programmers, or the productivity of scientists, and
-putting the two together doesn't make the unknowns cancel out.
+\cite{aranda2012,libarkin2012,schossau2014,simperler2015} seem to
+confirm this, but we have not yet done the large-scale long-term
+follow-up needed to prove this. This is partly because of a lack of
+resources, but it is also a genuinely hard problem: no one knows how
+to measure the productivity of programmers, or the productivity of
+scientists, and putting the two together doesn't make the unknowns
+cancel out.
 
 \begin{quote}
 \textbf{Meeting our own standards}
@@ -752,7 +789,7 @@ would obviously be able to make better decisions if we had more
 quantitative data to base them on.
 \end{quote}
 
-\subsection*{Too slow \emph{and} too fast}
+\subsection{Too slow \emph{and} too fast}\label{s:instruction-pace}
 
 Our second biggest challenge is the diversity of our learners'
 backgrounds and skill levels. No matter what we teach, and how fast or
@@ -762,11 +799,10 @@ good chance that a different 20\% will be bored.
 The obvious solution is to split people by level, but if we ask them
 how much they know about particular things, they regularly under- or
 over-estimate their knowledge.  We have therefore developed a short
-pre-assessment questionnaire (listed in the appendix) that asks them
-whether they could accomplish specific tasks.  While far from perfect,
-it seems to work well enough for our purposes.
+pre-assessment questionnaire that asks them how easily they could
+do a small number of specific tasks. \fixme{critique the pre-assessment}
 
-\subsection*{``Is it supposed to hurt this much?''}
+\subsection{``Is it supposed to hurt this much?''}\label{s:installation}
 
 Third, getting software installed is often harder than using it. This
 is a hard enough problem for experienced users, but almost by
@@ -781,17 +817,27 @@ not proven effective: some learners won't read it (despite repeated
 prompting), and no matter how detailed it is, it will be
 incomprehensible to some, and lacking for others.
 
-\begin{quote}
-\textbf{Edit this}
+\subsection{Editors}\label{s:editors}
 
-It may seem like a trivial thing, but editing text is always harder
-than we expect. We don't want to encourage people to use naive editors
-like Notepad, and the two most popular legacy editors on Unix (Vi and
-Emacs) are both usability nightmares. We now recommend a handful of
-GUI editors, but it remains a stumbling block.
-\end{quote}
+Editing text should be a minor problem, but if you're standing in
+class telling three sets of users, "Now open Notepad++ if you're on
+Windows, or Kate if you're on Linux, or TextMate if you're on a Mac,
+or whatever you want to use if you're more advanced", and then
+demonstrate with whichever you have on your laptop (which looks
+different from what half of your learners are sitting in front of),
+you wll cause mass confusion.
 
-\subsection*{Testing}
+We therefore still recommend using \href{Nano}{fixme} as an editor in
+class, even though none of our instructors use it for real work.
+Arguments over this are another example of the bikeshedding discussed
+in Section~\ref{s:lesson-templates}: many people who are passionate
+about programming are also passionate (some might say ``zealous'')
+about text editors.  Left unchecked, they will debate the relative
+merits of various editors \emph{ad nauseum} in preference to
+discussing teaching objectives, not least because they feel more sure
+of their ground.
+
+\subsection{Testing}
 
 We no longer include software testing in our core curriculum, despite
 believing that it's extremely important.  The reason is that while the
@@ -806,7 +852,7 @@ which nobody has a good answer.  An attempt in 2014--15 to collect
 shareable examples was unfruitful, but we hope to take another run at
 this in 2016.
 
-\subsection*{Watching vs.~doing}
+\subsection{Watching vs.~doing}
 
 We try to make our teaching as interactive as possible, but we still
 don't give learners hands-on exercises as frequently as we should.  We
@@ -821,7 +867,7 @@ that are small and decoupled, so that failures are less likely and don't
 have knock-on effects when they occur. This is exacerbated by the
 diversity of learners in the typical workshop.
 
-\subsection*{Less of a Problem}
+\subsection{Less of a Problem}
 
 One issue which is less of a problem than it used to be is financial
 sustainability. The ``host site covers costs'' model scales naturally
@@ -831,7 +877,7 @@ more workshops when and as needed.  While we do not wish to tempt
 fate, the Software Carpentry Foundation does seem to be headed toward
 financial stability.
 
-\section*{Conclusions}
+\section{Conclusions}
 
 To paraphrase William Gibson, the future is already here: it's just
 that the skills needed to implement it aren't evenly distributed. A
@@ -850,7 +896,7 @@ today, but to allow them to be part of the changes that are transforming
 science in front of our eyes. If you would like to help, we'd like to
 hear from you: please mail us at admin@software-carpentry.org.
 
-\subsection*{Competing Interests}
+\subsection{Competing Interests}
 
 The author is an employee of the Software Carpentry Foundation. Over
 the years, Software Carpentry has received support from the
@@ -858,11 +904,11 @@ organizations listed in Tables~\ref{t:launch-partners}
 and~\ref{t:current-partners}, and from The Mathworks, Enthought Inc.,
 Continuum Analytics, the Sloan Foundation, and the Mozilla Foundation.
 
-\subsection*{Grant Information}
+\subsection{Grant Information}
 
 Software Carpentry is not currently supported by grants.
 
-\subsection*{Acknowledgements}
+\subsection{Acknowledgements}
 
 The author wishes to thank Brent Gorda, who helped create Software
 Carpentry sixteen years ago; the hundreds of people who have helped
@@ -874,7 +920,7 @@ done in less time, with less pain.
 {\small\bibliographystyle{unsrt}
 \bibliography{software-carpentry-lessons-learned}}
 
-\section*{Tables}
+\section{Tables}
 
 \begin{table*}
 \centering
