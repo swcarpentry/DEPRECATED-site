@@ -1,0 +1,360 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Thinking About Teaching"
+date: 2015-09-25
+time: "02:00:00"
+category: ["Teaching"]
+---
+<!-- start excerpt -->
+<p>
+  A little over a year ago,
+  we blogged about <a href="{{page.root}}/blog/2014/09/building-better-teachers.html">jugyokenkyu</a>,
+  or "lesson study",
+  a bucket of practices that Japanese teachers use to hone their craft,
+  from observing each other at work
+  to discussing the lesson afterward
+  to studying curriculum materials with colleagues.
+  Getting the Software Carpentry Foundation up and running almost immediately pushed that aside,
+  but now that the SCF is up and running,
+  it's time to return to the subject.
+  Discussion of <a href="how-teaching-knowledge-is-transferred.html">how teaching practices are transferred</a>
+  is part of that;
+  so are two other developments this week.
+</p>
+<!-- end excerpt -->
+<p>
+  First, Victor Eijkhout has been thinking about
+  <a href="https://bitbucket.org/VictorEijkhout/parallel-computing-book/downloads/eijkhout-teachmpi.pdf">how to teach MPI</a>.
+  In particular,
+  he has been thinking about how the order in which concepts are usually introduced can mislead or confuse,
+  and about a different order that leads more naturally to proficient use.
+  We're not going to include MPI in Software Carpentry any time soon (if ever),
+  but I hope that the next major revision of our lessons will include this kind of design rationale.
+</p>
+<p>
+  Second,
+  <a href="{{page.root}}/pages/team.html#bostroem.a">Azalee Bostroem</a> surveyed people who have taught our current Python lesson
+  to find out what they're actually doing and how it has been going.
+  <a href="python-lesson-survey-results.pdf">The results</a> are fascinating&mdash;here
+  are some of the key findings, and my comments:
+</p>
+<dl>
+  <dt>
+    60% of our lessons are being taught to novices.
+  </dt>
+  <dd>
+    <p>
+      The term "novice" is a bit ambiguous here:
+      it can mean either "someone who has never programmed before"
+      or "someone who hasn't programmed <em>in Python</em>".
+      When we re-design this lesson,
+      we could well wind up creating different versions for these audiences,
+      since someone who's learning Python as a second language will be able to move faster and farther
+      than someone who is new to ideas like "variable", "list", and "function".
+    </p>
+  </dd>
+  <dt>
+    Roughly half of the respondents don't like the way we jump right
+    into an example.
+  </dt>
+  <dd>
+    <p>
+      The intention was to get to an authentic task as quickly as possible,
+      and "load CSV, create plot" is something every scientist does.
+      I still think it works for people who are learning Python as a second language,
+      but if that's only 1/3 of our workshops,
+      it's not surprising that it often doesn't work.
+    </p>
+  </dd>
+  <dt>
+    Only 1/3 of respondents got through the whole Python lesson.
+  </dt>
+  <dd>
+    <p>
+      Which means we need to cut material&mdash;even if we say,
+      "It's OK to go as far as you can,"
+      instructors will often feel that they've let their audience down
+      if they don't get through it all.
+    </p>
+  </dd>
+  <dt>
+    Over 80% of the respondents are teaching our materials with little
+    or no modification, but 22% are using an older version.
+  </dt>
+  <dd>
+    <p>
+      Based on a handful of conversations,
+      I think people use older material because
+      (a) they stick to whatever lesson they first taught,
+      and/or (b) they don't like the NumPy-early approach of the current lesson.
+      I don't know what we can do about (a),
+      but our "Python as a first language" lesson
+      should start with simpler tasks.
+    </p>
+  </dd>
+  <dt>
+    The defensive programming section which is skipped by over 85% of
+    the people who answered the survey, so we should move this
+    material elsewhere.
+  </dt>
+  <dd>
+    <p>
+      I (reluctantly) agree,
+      at least for people who are learning programming for the first time.
+      As with <a href="{{page.root}}/blog/2014/10/why-we-dont-teach-testing.html">testing</a>,
+      there's no point putting scarce classroom or maintenance time into something that doesn't stick.
+    </p>
+  </dd>
+  <dt>
+    82% of the people answering the survey are teaching out of the
+    Jupyter Notebook.
+  </dt>
+  <dd>
+    <p>
+      I was surprised by that, but I now wonder if it explains why it
+      takes so long to get through material with novices, who are
+      facing the double cognitive load of a new programming language
+      <em>and</em> a new kind of editing interface.  I teach the
+      old-fashioned way (scripts run from the command line) to avoid
+      this extra load, but clearly it's time for me to change.
+    </p>
+  </dd>
+</dl>
+<p>
+  Stepping back,
+  the second-greatest benefit of teaching in the large is that
+  we can pool our experiences.
+  (The greatest is having someone who can genuinely sympathize when something has gone wrong...)
+  It would take even our most active instructors several years to learn this much about our lessons;
+  comparing notes helps us all improve faster.
+</p>
+<hr/>
+<p>
+  As further data,
+  here are comments from this year's instructor debriefing sessions
+  related to teaching Python.
+</p>
+<dl>
+  <dt>
+    <a href="{{page.root}}/blog/2015/01/instructor-debriefing-2015-01-27.html">2015-01-27</a>
+  </dt>
+  <dd>
+    <p>Tried to make the Python materials a bit more bespoke to be
+    relevant to our attendees. For example, I did a session on
+    creating maps using Basemap and plotting data onto them. For one
+    session, I used a very short set of slides to introduce session
+    objectives and to summarize.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/02/instructor-debriefing-2015-02-10.html">2015-02-10</a>
+  </dt>
+  <dd>
+    <p>A couple of points were made about teaching with the IPython
+    Notebook. First, it doesn't show as much history on screen at one
+    time as (for example) the Bash shell, so it's harder for learners
+    to follow what's going on. Second, Neal Davis said that he found
+    it much better to start with an empty notebook and grow it cell by
+    cell rather than opening up one that already had code in it and
+    replaying it.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/02/instructor-debriefing-2015-02-24.html">2015-02-24</a>
+  </dt>
+  <dd>
+    <p>The instructor started with the &quot;inflammation&quot;
+    material, then used his own examples to place more emphasis on
+    &quot;for&quot; loops and &quot;if&quot; statements (e.g. nested
+    for loops). At the end, the participants were given the challenge
+    of printing prime numbers in the [2,100] range to the screen. Two
+    participants commented that the example was too
+    &quot;mathematical&quot;. The participants enjoyed the
+    instructors' funny anecdotes. From quick feedback, almost equal
+    number found the pace &quot;too fast&quot; as did &quot;too
+    slow&quot;, which not all the unusual for workshops with a mix of
+    novice and advanced participants.</p>
+    <p>Basic Python (data type, variable, list, file stream) was
+    taught using more introductory lessons rather than the standard
+    software carpentry materials. The audience are mostly biologists
+    with no experience in Python or Git. 4/15 had some experience with
+    the Unix shell. The instructors tried to make the materials as
+    introductory as possible. They felt that the Python materials on
+    the Software Carpentry GitHub repo were not basic enough for the
+    audience and that some introduction to basic Python data types was
+    necessary.</p>
+    <p>Things worked well overall. They spent some time explaining the
+    difference between shell (Bash), Python in the shell, and IPython
+    Notebook, as some participants were confused about these concepts
+    before. Both Python in the shell and IPython Notebook were used
+    during the Python lessons. Hand-on exercises for participants
+    worked really well. When students were not interactive, the TAs
+    helped out by posing questions to the instructors. Some
+    participants expressed that there was not enough discussion prior
+    to the hands-on exercises and that they had no idea how to
+    start. Jirong mentioned that more exercise collections in the repo
+    would be nice.</p>
+  <dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/03/instructor-debriefing-2015-03-10.html">2015-03-10</a>
+  </dt>
+  <dd>
+    <p>Users wanted some clear direction on post-workshop python
+    learning materials (forums, websites, etc.).</p>
+    <p>The Python notebooks were a mixed bag: users appreciated a
+    demonstration of some scripting in an IDE (used Spyder). Also need
+    to clear run cells in the IPython Notebooks before teaching;
+    probably best to commit the notebooks to the workshop repo in a
+    cleared state.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/04/instructor-debriefing-2015-04-14.html">2015-04-14</a>
+  </dt>
+  <dd>
+    <p><em>Teaching R and Python together:</em> University of
+    Melbourne ambitiously covered Unix, Git, SQL, Python and R over a
+    three day workshop. Although they reported some learning fatigue
+    near the end, the lesson pacing was appropriate and they received
+    largely positive feedback. R and RStudio were taught first,
+    followed by Python and a short introduction to Jupyter Notebook,
+    which allowed instructors to highlight parallels between the
+    scripting language and their respective interfaces.</p>
+    <p><em>Crafting material to particular audiences:</em> Several
+    instructors noted difficulty in meeting the particular skill
+    levels of their students. In one case, the R material seemed too
+    advanced, so instructors substituted modified Data Carpentry
+    material. On the other hand, challenge questions for
+    shell/Git/Python appeared too easy for students in other
+    workshops. Several lessons were not completed because of time
+    constraints; cutting lesson material to fit the workshop is a
+    continuing problem for instructors. However, multiple instructors
+    noted the usefulness of domain-specific datasets, and the
+    University of Oklahoma group supplemented their lessons on Unix,
+    Python, and Git with specific discussions of library data
+    (MARC).</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/05/instructor-debriefing-2015-05-12.html">2015-05-12</a>
+  </dt>
+  <dd>
+    <p>The only relevant comment about Python is that using IPython
+    Notebook with Git is still challenging.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/06/instructor-debriefing-2015-06-09.html">2015-06-09</a>
+  </dt>
+  <dd>
+    <p>For difficulties, both Git and Python instructors found
+    themselves wishing for more challenge questions. Specifically for
+    Python, it was the longing for more multiple choice
+    questions. These are especially useful tools to quickly probe your
+    teaching and students learning, and gives you a chance to uncover
+    any misconceptions that arose during a lesson. Thus, if anyone has
+    any spare time and has Git or Python expertise - please help us
+    out by creating some new challenge material for these lessons
+    (especially of the multiple choice format) and submit them as a
+    pull request.</p>
+    <p>Instructors from Oklahoma State University synced their iPython
+    notebook to a Dropbox share translated
+    by <a href="http://nbviewer.ipython.org">nbviewer</a>. They found
+    that this really worked well for students who fell behind and
+    needed to see code that was no longer on the instructors screen to
+    catch-up, as well as for those students who wanted to review what
+    had been covered. If Python is taught across two days, the
+    instructor can also clean up the notebook before the start of the
+    second day so all students can start at the same place with
+    working code.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/06/instructor-debriefing-2015-06-24.html">2015-06-24</a>
+  </dt>
+  <dd>
+    <p>While instructors can almost always expect a few installation
+    problems at a given workshop, some instructors noted particular
+    problems with Python. In particular, students with a previous
+    installation of Python may not have installed Anaconda, either
+    because they did not know it was necessary, or did not want to
+    &quot;lose&quot; their previous installation. Instructors can help
+    by informing students of the necessity of particular
+    installations, and how to switch between versions. University of
+    Basque Country actually hosted a short installations session the
+    day before the workshop to help students with such issues.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/08/instructor-debriefing-2015-08-04.html">2015-08-04</a>
+  </dt>
+  <dd>
+    <p>The UC Berkeley workshop had 26 participants split evenly
+    between life and physical sciences. The workshop covered shell,
+    Python and Git. The python sections were done for version 3, based
+    on <a href="https://bids.github.io/2015-06-04-berkeley/">Katy
+    Huff's June 4 workshop</a>. The testing section on the second day
+    felt rushed.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/08/instructor-debriefing-2015-08-07.html">2015-08-07</a>
+  </dt>
+  <dd>
+    <p>In particular, we talked about the benefits of slowly
+    introducing concepts in Python and R compared to jumping right
+    into advanced topics and explaining mechanisms as the lessons
+    progressed. For example,
+    the <a href="https://github.com/swcarpentry/r-novice-gapminder">R
+    gapminder lesson</a> can start with impressive, powerful packages
+    like dplyr and tidyR to motivate students. However, this can be
+    confusing to students new to programming, and will require
+    backtracking later in the lesson to explain more basic
+    concepts. This problem is can sometimes be alleviated by
+    appropriately contextualizing the point of the lesson (i.e.,
+    automation of work, rather than learning how every algorithm
+    works). Conversations about these issues are ongoing on GitHub and
+    in various listservs (see
+    the <a href="https://github.com/swcarpentry/python-novice-inflammation/issues/127">novice
+    Python lesson</a> for an example).</p>
+    <p>Figuring out how to trim down copious lesson materials to fit
+    the alloted time for a class continues to be problematic,
+    especially for the Python and R materials (but see below). We
+    recommend that experienced instructors partnered with new
+    instructors for upcoming workshops share their thoughts about how
+    to cut out sections of lessons. New instructors can also contact
+    the mentoring subcommittee for assistance in selecting
+    material.</p>
+    <p>While having too much material for a topic included in the
+    lessons can be a burden on instructors, the advantage is being
+    able to more carefully cater the lesson to the
+    audience. Instructors from SciPy, for example, included
+    introductions to the packages NumPy, SciPy, Pandas, and
+    matplotlib, because students were likely to encounter these later
+    in the conference. More information about these lessons were
+    written up in
+    a <a href="{{page.root}}/blog/2015/07/scipy-2015.html">previous
+    blog post</a>.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/08/instructor-debriefing-2015-08-18.html">2015-08-18</a>
+  </dt>
+  <dd>
+    <p>We are also still seeking an effective method for helping
+    students stay on track during the Python lessons, as commands
+    entered move up and off the demo screen with graphical and text
+    output in iPython notebooks.</p>
+  </dd>
+  <dt>
+    <a href="{{page.root}}/blog/2015/09/instructor-debriefing-2015-09-08.html">2015-09-08</a>
+  </dt>
+  <dd>
+    <p>Enhancing workshops with domain-specific examples</p>
+    <p>The helpers also provided
+    a <a href="http://wiki.scipy.org/NumPy_for_Matlab_Users">&quot;NumPy
+    for Matlab Users&quot; resource</a> to help make the Matlab to
+    Python transition a little bit easier.</p>
+    <p>Byron Smith reorganized the flow of the Python lesson but kept
+    many of the same details from the lessons for
+    the <a href="http://bsmith89.github.io/2015-08-27-unh">UNH
+    workshop</a>. Additionally, one learner suggested splitting up the
+    monolithic Jupyter Notebook into smaller pieces, which would clean
+    up the namespace and gave learners a more manageable set of
+    &quot;notes&quot;. There have been many discussions on the Python
+    lessons lately, including these blogs.</p>
+  </dd>
+</dl>
