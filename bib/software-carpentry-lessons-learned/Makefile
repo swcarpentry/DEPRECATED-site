@@ -4,7 +4,7 @@ CONVERT=pandoc
 all : ${SCLL}.html ${SCLL}.pdf
 
 ${SCLL}.html : ${SCLL}.tex
-	${CONVERT} < $< > $@
+	${CONVERT} --ascii -o $@ $<
 
 ${SCLL}.pdf : ${SCLL}.tex ${SCLL}.bib
 	pdflatex ${SCLL}

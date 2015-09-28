@@ -3,8 +3,6 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 
-\newcommand{\fixme}[1]{\bf{FIXME: {#1}}}
-
 \begin{document}
 
 \title{Software Carpentry: Lessons Learned}
@@ -275,15 +273,15 @@ Section~\ref{s:instructor-training}.
 
 \end{quote}
 
-\subsection{Version 6: A True Community Project}
+\subsection{Version 6: A True Community Project}\label{s:community}
 
-In July 2014, the author ended his relationship with Mozilla and set
-up the Software Carpentry Foundation, an independent non-profit
-foundation under the auspices of NumFOCUS.  The SCF held its first
-elections in January 2015, in which instructors who had taught over
-the past two years selected seven of their own number as a Steering
-Committee to oversee the project's operations.  Since then, the SCF
-has formed partnerships with a growing number of institutions (see
+In July 2014, the author left Mozilla and set up the Software
+Carpentry Foundation, an independent non-profit foundation under the
+auspices of NumFOCUS.  The SCF held its first elections in January
+2015, in which instructors who had taught over the past two years
+selected seven of their own number as a Steering Committee to oversee
+the project's operations.  Since then, the SCF has formed partnerships
+with a growing number of institutions (see
 Table~\ref{t:current-partners}), run an ever-increasing number of
 workshops, and much more.
 
@@ -342,21 +340,21 @@ the number of people attending, have grown steadily:
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{workshops.pdf}
-\caption{Cumulative Number of Workshops \fixme{update}}
+\caption{Cumulative Number of Workshops (FIXME: update)}
 \label{f:workshops}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{Cumulative Enrolment \fixme{update}}
+\caption{Cumulative Enrolment (FIXME: update)}
 \label{f:enrolment}
 \end{figure}
 
 \begin{figure}
 \centering
 % \includegraphics[width=0.4\textwidth]{enrolment.pdf}
-\caption{Cumulative Number of Instructors \fixme{update}}
+\caption{Cumulative Number of Instructors (FIXME: update)}
 \label{f:instructors}
 \end{figure}
 
@@ -754,7 +752,104 @@ delivery of our lessons.
 
 \section{Example: lesson templates}\label{s:lesson-templates}
 
-\fixme{talk about evolution of lesson templates and bikeshedding}
+Section~\ref{s:community} mentioned that we have spent more time
+wrangling over technical details (``bikeshedding'') than we should
+have, at the expense of discussing pedagogy and lesson content.  The
+prime example of this is probably the way we format our lessons: we
+have invested hundreds of hours in debating and implementing various
+options.  Over the years, we have tried the following:
+
+\begin{itemize}
+
+\item[\emph{HTML.}]  People (rightly) complained about editing HTML
+  tags was annoying, and about maintaining forward/backward links and
+  glossary entries by hand.
+
+\item[\emph{XML with a custom translation tool.}]  This had all the
+  disadvantages of HTML, with extra overhead of maintaining the
+  XML-to-HTML translation tool.
+
+\item[\emph{A wiki.}] The tool used didn't handle concurrent edits
+  gracefully, and didn't provide any mechanism for pre-publication
+  review.  We could live without the former if the latter worked, but
+  the wiki tools available at the time also didn't provide a way to
+  indicate the semantics of specific regions, e.g., to signal that
+  this part of the lesson was the objectives, while that was an
+  exercise.
+
+\item[\emph{Jupyter Notebooks in a Git repository.}]  This was
+  unsatisfactory for (at least) three reasons:
+
+  \begin{enumerate}
+
+  \item Putting everything in one repository made that repository
+    uncomfortably large to clone.
+
+  \item If people subscribed to notifications for the repository, they
+    were inundated with notices about changes to lessons they didn't
+    care about.
+
+  \item While it's possible for experienced users to diff and merge
+    Jupyter Notebooks, it is intimidating and error-prone for
+    newcomers (particularly in the face of embedded
+    images).\footnote{The irony of telling people not to use
+      ``binary'' formats like Microsoft Word for documents because
+      they don't play nicely with version control, and then using a
+      format that is almost as awkward, did not escape our
+      users{\ldots}}
+
+  \end{enumerate}
+
+\item[\emph{Markdown and HTML in a single GitHub repository with a
+    custom build.}]
+  Markdown files in the \texttt{gh-pages} branch of a GitHub repository
+  will be automatically translated into HTML using a tool called
+  Jekyll, and those HTML pages will then be published as a website.
+  This is great---except that Jekyll can't translate Jupyter
+  Notebooks or R Markdown files, so we have to pre-process those and
+  commit the results to the repository.  We decided that if we're
+  doing that, we might as well go the whole way, i.e., generate the
+  HTML ourselves and commit that to the \texttt{gh-pages} branch rather
+  than run Jekyll on the server at all.
+
+  Another problem is that Markdown supports a very impoverished subset
+  of HTML.  In particular, there is no way to create \texttt{div}
+  elements to represent things like callout boxes, exercises, lesson
+  goals, and so on.  We have resorted to using blockquotes for all of
+  these, with some post-processing and CSS tricks to get the
+  appearance we want.
+
+\end{itemize}
+
+Our next step (which we plan to implement in December 2015) is to take
+advantage of some of the extra features of one of the dialects of
+Markdown that Jekyll supports to solve the styling problem, so that we
+can store only the Markdown files in the GitHub repository, rather
+than the generated HTML.  This will simplify things for newcomers, but
+we will still need custom build steps to handle Jupyter Notebooks, R
+Markdown, and other file formats, and the intermediate files produced
+by those build steps will still need to be kept in the repository.
+
+Stepping back, what we have learned from wrangling formats is:
+
+\begin{enumerate}
+
+\item[\emph{There are no good answers.}]  Every currently-available
+  option for publishing moderately complex material (such as lessons
+  and scientific papers) is broken in some way.
+
+\item[\emph{Fixing things is often a mistake.}]  Or rather, fixing
+  things \emph{frequently} is: as one of our instructors pointed out
+  in the summer of 2015, every time he had taught a workshop in the
+  previous three years, the process for setting up, formatting
+  lessons, and so on had changed.  We are now committed to updating
+  our templates and processes no more than once a year.
+
+\item[\emph{The best templates and platforms in the world won't make
+    writing lessons easy.}]  The best we can hope to achieve is to
+  make it less hard.
+
+\end{enumerate}
 
 \section{TODO}
 
@@ -799,8 +894,17 @@ good chance that a different 20\% will be bored.
 The obvious solution is to split people by level, but if we ask them
 how much they know about particular things, they regularly under- or
 over-estimate their knowledge.  We have therefore developed a short
-pre-assessment questionnaire that asks them how easily they could
-do a small number of specific tasks. \fixme{critique the pre-assessment}
+pre-assessment questionnaire that asks them how easily they could do a
+small number of specific tasks.  It is useful, in that it gives
+instructors some idea of who they're going to be helping, but we have
+done nothing to validate the questions themselves, i.e., to ensure
+that respondents are interpreting them the same way that we are, or
+that their categorization of respondents corresponds in any meaningful
+way to actual proficiency.  As mentioned in Section~\ref{s:assessment},
+we have been trying for several years to find the support needed to do
+rigorous assessment of this and other aspects of our program, but if
+funders are reluctant to invest in training, they are doubly reluctant
+to invest in measuring its effects.
 
 \subsection{``Is it supposed to hurt this much?''}\label{s:installation}
 
@@ -827,15 +931,23 @@ demonstrate with whichever you have on your laptop (which looks
 different from what half of your learners are sitting in front of),
 you wll cause mass confusion.
 
-We therefore still recommend using \href{Nano}{fixme} as an editor in
-class, even though none of our instructors use it for real work.
-Arguments over this are another example of the bikeshedding discussed
-in Section~\ref{s:lesson-templates}: many people who are passionate
-about programming are also passionate (some might say ``zealous'')
-about text editors.  Left unchecked, they will debate the relative
-merits of various editors \emph{ad nauseum} in preference to
-discussing teaching objectives, not least because they feel more sure
-of their ground.
+We therefore still use \href{Nano}{http://www.nano-editor.org/} as an
+editor in class, even though none of our instructors use it for real
+work.  Arguments over this are another example of the bikeshedding
+discussed in Section~\ref{s:lesson-templates}: many people who are
+passionate about programming are also passionate (some might say
+``zealous'') about their favorite editor, and will argue about the
+relative merits of various choices at length.
+
+The choice of editor is also an example of \emph{expert blind spot}.
+People who know a subject well often have trouble re-imagining it
+through novice eyes, and hence under-estimate how difficult ``simple''
+tasks actually are for newcomers.  For example, every reasonably
+experienced user of the shell knows that an editor can run inside a
+terminal window, so that a single fixture on the screen can play
+multiple roles.  This is \emph{not} obvious to newcomers, who are
+frequently confused when instructors move back and forth between an
+editor and a regular shell prompt in a single window.
 
 \subsection{Testing}
 
@@ -852,7 +964,7 @@ which nobody has a good answer.  An attempt in 2014--15 to collect
 shareable examples was unfruitful, but we hope to take another run at
 this in 2016.
 
-\subsection{Watching vs.~doing}
+\subsection{Watching vs.\ doing}
 
 We try to make our teaching as interactive as possible, but we still
 don't give learners hands-on exercises as frequently as we should.  We
