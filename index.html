@@ -31,18 +31,6 @@ nocomments: 1
     <section id="home-options" class="content text-center">
       <div class="container">
 
-	    <div align="center">
-	      <p style="font-size: 120%">
-		<strong>
-		  We are searching for a new Executive Director.
-		  <br/>
-		  Please see
-		  <a href="{{page.root}}/blog/2015/07/new-executive-director-search.html">the job description</a>
-		  or read <a href="{{page.root}}/blog/2015/07/our-next-big-step.html">this post</a> for more information.
-		</strong>
-	      </p>
-	    </div>
-
         <div class="row">
           <div class="col-sm-4">
             <h4>Who We Are</h4>
@@ -136,7 +124,7 @@ nocomments: 1
 
             <h4><a href="{{page.root}}/workshops/index.html#future">Upcoming Workshops</a></h4>
             <table class="table table-hover">
-              {% for workshop in site.workshops_upcoming %}
+              {% for workshop in site.workshops_upcoming_short %}
               <tr>
                 <td>
                   <img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" alt="{{workshop.country}}" />

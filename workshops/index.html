@@ -69,14 +69,12 @@ nocomments: 1
 <div id="future">
   <h2>Future Workshops</h2>
   <table class="table table-striped workshops">
-    {% for workshop in site.workshops %}
-      {% if workshop.startdate >= site.today %}
-        <tr>
-          <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{workshop.country}}.png" title="{{workshop.country | replace: '-', ' '}}" alt="{{workshop.country | replace: '-', ' '}}" /></td>
-          <td class="link"><a href="{{workshop.url}}">{{workshop.venue}}</a></td>
-          <td class="date">{{workshop.humandate}}</td>
-        </tr>
-      {% endif %}
+    {% for w in site.workshops_upcoming %}
+    <tr>
+      <td><img src="{{page.root}}/img/flags/{{site.flag_size}}/{{w.country}}.png" title="{{w.country | replace: '-', ' '}}" alt="{{w.country | replace: '-', ' '}}" /></td>
+      <td class="link"><a href="{{w.url}}">{{w.venue}}</a></td>
+      <td class="date">{{w.humandate}}</td>
+    </tr>
     {% endfor %}
   </table>
 
