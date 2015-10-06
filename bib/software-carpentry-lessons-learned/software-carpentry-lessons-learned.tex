@@ -64,8 +64,9 @@ them, over 400 volunteer instructors helped attendees learn about
 program design, task automation, version control, testing, and other
 unglamorous but time-tested skills \cite{wilson2013}. Two independent
 assessments in 2012 \cite{aranda2012,libarkin2012} and two others more
-recently \cite{schossau2014,simperler2015} have shown that this
-training is helping:
+recently \cite{schossau2014,simperler2015} have indicated that this
+training is helping (though as we discuss in
+Section~\ref{s:assessment}, these results are still preliminary):
 
 \begin{quote}
 The program increases participants' computational understanding, as
@@ -142,7 +143,7 @@ this ought to be offered by Computer Science, in the same way that
 Mathematics and Statistics departments routinely offer service
 courses.  In the absence of an institutional mechanism to offer credit
 courses at some inter-departmental level, this course, like many other
-interdisciplinary initiatives, fell between two stools.
+interdisciplinary initiatives, was left without a home.
 
 \begin{quote}
 \textbf{It works too well to be worth teaching}
@@ -235,7 +236,7 @@ disappointments:
 
 \end{enumerate}
 
-The biggest take-away from this round was the need come up with a
+The biggest take-away from this round was the need to come up with a
 scalable, sustainable model for delivering training. One instructor
 simply can't reach enough people, and cobbling together funding from
 half a dozen different sources every twelve to eighteen months is
@@ -303,7 +304,7 @@ things.  The most important are:
   Every partner organization has different needs and
   constraints\footnote{We have learned much more than we ever wanted
     to about accounting rules at various universities\ldots}.
-  ``Standard'' partnership agreements is essential therefore have to
+  ``Standard'' partnership agreements therefore have to
   be treated as starting points for negotiation, rather than as ``take
   it or leave it'' propositions.
 
@@ -312,7 +313,7 @@ things.  The most important are:
   issues while more serious ones are overlooked.  It is a constant
   danger in an organization whose more vocal members actually enjoy
   programming.  Squelching such technical discussions has a chilling
-  effect on conversation overall, but letting them go unchecked,
+  effect on conversation overall, but letting them go unchecked
   alienates people who would rather talk about teaching, or simply
   don't have enough time to go down technical rabbit holes.  We
   discuss an example in Sections~\ref{s:lesson-templates}
@@ -339,21 +340,21 @@ the number of people attending, have grown steadily:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth]{workshops.pdf}
+%\includegraphics[width=0.4\textwidth]{workshops.pdf}
 \caption{Cumulative Number of Workshops (FIXME: update)}
 \label{f:workshops}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth]{enrolment.pdf}
+%\includegraphics[width=0.4\textwidth]{enrolment.pdf}
 \caption{Cumulative Enrolment (FIXME: update)}
 \label{f:enrolment}
 \end{figure}
 
 \begin{figure}
 \centering
-% \includegraphics[width=0.4\textwidth]{enrolment.pdf}
+% \includegraphics[width=0.4\textwidth]{instructors.pdf}
 \caption{Cumulative Number of Instructors (FIXME: update)}
 \label{f:instructors}
 \end{figure}
@@ -481,9 +482,10 @@ There is no fee in this case, but we do ask for a donation (we suggest
 As well as instructors, we rely on local helpers to wander the room
 and answer questions during practical sessions. These helpers may be
 alumni of previous workshops who are interested in becoming
-instructors, grad students who have picked up some or all of this on
-their own, or members of the local open source community; where
-possible, we aim to have at least one helper for every eight learners.
+instructors, grad students who have picked up some or all of our core
+skills on their own, or members of the local open source community;
+where possible, we aim to have at least one helper for every eight
+learners.
 
 We find workshops go a lot better if people come in groups (e.g., 4-5
 people from one lab) or have other pre-existing ties (e.g., are
@@ -583,7 +585,7 @@ enough, and learners often struggle to switch back and forth between
 two different sets of keyboard shortcuts for things like copying and
 pasting.
 
-Some instructors VMs in the cloud.  This is an authentic way of
+Some instructors use VMs in the cloud.  This is an authentic way of
 working in fields like bioinformatics, where even simple datasets may
 not fit on laptops, but it does make us dependent on
 university-quality Wi-Fi.
@@ -676,11 +678,11 @@ But why do people volunteer as instructors?
   The more those colleagues know, the more interesting those requests
   are.
 
-\item \emph{To build a reputation.}  Showing up to run a workshop is
-  a great way for people to introduce themselves to colleagues, and to
-  make contact with potential collaborators. This is probably the most
-  important reason from Software Carpentry's point of view, since it's
-  what makes our model sustainable.
+\item \emph{To network.}  Showing up to run a workshop is a great way
+  for people to introduce themselves to colleagues and make contact
+  with potential collaborators. This is probably the most important
+  reason from Software Carpentry's point of view, since it's what
+  makes our model sustainable.
 
 \item \emph{To practice teaching.}  This is also important to people
   contemplating academic careers.
@@ -726,13 +728,19 @@ The question is, why not?  Reasons advanced include:
 \item \emph{Lack of institutional rewards.} But if this was a real
   barrier, open source software and Wikipedia wouldn't exist.
 
+\item \emph{Episodic interaction.} If someone is teaching a full or
+  half-year course, they may only revisit the material every six
+  months to a year, and the context in which it's taught may well be
+  different.
+
 \item \emph{It just hasn't happened yet.} This argument might have
   been tenable a decade ago, but is less credible with every passing
   year.
 
 \end{itemize}
 
-Our current hypothesis is that teaching is \emph{enacted knowledge}.
+Our current hypothesis is that teaching is \emph{enacted knowledge}
+\cite{fincher2007,fincher2012}.
 To make a musical analogy, the lesson plan, slides, and assignments
 are only the score; what matters most is how it's performed.  If this
 is correct, then collaborative lesson development will only succeed if
@@ -745,7 +753,7 @@ instructors who have recently taught workshops, in which they can
 discuss what they actually did, how it worked, how the lessons they
 actually delivered differed from our templates, what problems arose,
 and so on.  We are also planning to revise instructor training to
-require trainees to watch \emph{and reflect on} videos of experienced
+require trainees to watch and reflect on videos of experienced
 instructors delivering our lessons.  We hope that making this ``the
 new normal'' will encourage even more collaboration on the content and
 delivery of our lessons.
@@ -860,14 +868,13 @@ things we need to improve.
 \subsection{Long-term assessment}\label{s:assessment}
 
 Our biggest challenge is figuring out whether we are actually helping
-scientists get more science done.  We believe we are, and
-\cite{aranda2012,libarkin2012,schossau2014,simperler2015} seem to
-confirm this, but we have not yet done the large-scale long-term
-follow-up needed to prove this. This is partly because of a lack of
-resources, but it is also a genuinely hard problem: no one knows how
-to measure the productivity of programmers, or the productivity of
-scientists, and putting the two together doesn't make the unknowns
-cancel out.
+scientists get more science done, and if so, how, and how much.
+\cite{aranda2012,libarkin2012,schossau2014,simperler2015} seem to show
+that we are, but we have not yet done a large-scale, long-term
+follow-up. This is partly because of a lack of resources, but it is
+also a genuinely hard problem: no one knows how to measure the
+productivity of programmers, or the productivity of scientists, and
+putting the two together doesn't make the unknowns cancel out.
 
 \begin{quote}
 \textbf{Meeting our own standards}
@@ -1034,19 +1041,17 @@ done in less time, with less pain.
 
 \section{Tables}
 
-\begin{table*}
-\centering
+\begin{table}
 \begin{tabular}{lll}
 Indiana University & Michigan State University & Microsoft \\
 MITACS & Queen Mary University of London & Scimatic \\
 SciNet & SHARCNet & UK Met Office
 \end{tabular}
-\caption{Launch Partners (2010)}
+\caption{Launch Partners (May 2010)}
 \label{t:launch-partners}
-\end{table*}
+\end{table}
 
-\begin{table*}
-\centering
+\begin{table}
 \begin{tabular}{lll}
 Berkeley Institute for Data Science & Compute Canada & ELIXIR~UK \\
 GitHub & Insight Data Science & iPlant \\
@@ -1056,14 +1061,13 @@ University College London & UCAR & University of California Davis \\
 University of Florida & University of Leeds & University of Melbourne \\
 University of Michigan & University of Oklahoma & University of Washington
 \end{tabular}
-\caption{Current Partners}
+\caption{Current Partners (October 2015)}
 \label{t:current-partners}
-\end{table*}
+\end{table}
 
-\begin{table*}
-\centering
+\begin{table}
 \begin{tabular}{lrr}
-Country & Workshops & Instructors \\
+\textbf{Country} & \textbf{Workshops} & \textbf{Instructors} \\
 United States & 216 & 232 \\
 Canada & 59 & 52 \\
 United Kingdom & 43 & 50 \\
@@ -1093,14 +1097,13 @@ Sweden & 1 & 2 \\
 Thailand & 1 & 2 \\
 India & 0 & 1 \\
 \end{tabular}
-\caption{Workshops and Instructors by Country}
+\caption{Workshops and Instructors by Country (October 2015)}
 \label{t:by-country}
-\end{table*}
+\end{table}
 
-\begin{table*}
-\centering
+\begin{table}
 \begin{tabular}{ll}
-Topic & Contributors \\
+\textbf{Topic} & \textbf{Contributors} \\
 Git & 55 \\
 Mercurial & 25 \\
 MATLAB & 28 \\
@@ -1111,6 +1114,6 @@ SQL & 41
 \end{tabular}
 \caption{Contributors per Lesson, 2014-15}
 \label{t:authors-per-lesson}
-\end{table*}
+\end{table}
 
 \end{document}
