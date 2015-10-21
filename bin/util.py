@@ -78,7 +78,8 @@ def fetch_info(base_url, url):
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 
     address = base_url + url
-    with urllib.request.urlopen(address, context=ssl_context) as f:
+#    with urllib.request.urlopen(address, context=ssl_context) as f:
+    with urllib.request.urlopen(address) as f:
         content = f.read()
     return yaml.load(content.decode('utf-8'))
 
