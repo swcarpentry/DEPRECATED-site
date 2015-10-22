@@ -16,18 +16,20 @@ findings in a workshop in London
 had been mentioned here before</a>).  I have been reviewing code for
 years, however I have not realised that I was doing so till GitHub
 made it easy. Reading code from others feels the same as proofreading
-a Spanish text, where you have to pay attention to the orthography,
+a Spanish text (or any other text), where you have to pay attention to the orthography,
 the grammar and whether it says what it's meant to say (or it does what
 it's meant to do).
   </p>
 <!-- end excerpt -->
 
-Since I started my PhD I've organised <emph>programming clubs</emph> in the
+<p>
+  Since I started my PhD I've organised <emph>programming clubs</emph> in the
 institutes where I've been as a way of sharing knowledge between the
 colleagues. But in these last 10 years I've just done a "code
 review" session twice.  The first one involved external people (from industry)
 reading scientific code, whereas the second time (last week) were done
 between the researchers.
+</p>
 
 <p>
   The first session was as a test run for a project that a friend and
@@ -78,6 +80,7 @@ pairs... and to "make matters worse" I then asked the IDL teams to
 review a code in Python and vice versa. At first they were a bit lost on the language
 but it worked great to highlight things that were not documented properly or style.
 Like why the 14th element in this Python line
+</p>
 
 <pre>
 pos_x = float(tstep.split()[14])
@@ -88,6 +91,7 @@ or why the 39th of this other in IDL
 <pre>
 int_upper = interpol(  radius_tot, density_pure_model[*,39], density_upper )
 </pre>
+
 <p>
 We also found factors added or subtracted to variables which the
 authors didn't remember why was done, or easily identified
@@ -102,6 +106,7 @@ itself.  All of them really enjoyed the session -or so they told me-
 and learnt not just to review but also realised how hard is sometimes
 for our future-self to understand what we wrote.
 </p>
+
 <p>
   In summary I don't think I can add much more to what is in Marian and
 Greg's paper but to emphasise the need to do such activity in our
@@ -109,6 +114,7 @@ research groups, to raise its importance as when we review papers as
 these codes are the key for science progress.
 </p>
 
+<p>
 I think it's worth mention different justifications I've heard during
 the years to don't share code like:
 <ul>
@@ -118,9 +124,12 @@ the years to don't share code like:
  to use they will publish wrong things without understanding it.;
  <li> I want people to contact me to run it, so I can be in their publications.;
 </ul>
+</p>
 
+<p>
 I believe that if more researchers get used to review code, many of
 these comments will disappear (maybe not the last one; though people
 may not believe them). What do you think? How can we increase such
 awareness? what things have you tried out? which excuses have you
 found and how you "fight them back"?
+</p>
