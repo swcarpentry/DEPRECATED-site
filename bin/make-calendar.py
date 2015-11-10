@@ -55,6 +55,7 @@ class ICalendarWriter(object):
             'VERSION:2.0',
             'PRODID:-//Software Carpentry/Workshops//NONSGML v1.0//EN',
         ]
+        config['timestamp'] = datetime.datetime.strptime(config['timestamp'], "%Y-%m-%dT%H:%M:%SZ")
         for bc in config['workshops']:
             lines.extend(self.workshop(config['site'],
                                        config['timestamp'], bc))
@@ -76,18 +77,18 @@ class ICalendarWriter(object):
         lines = [
             u'BEGIN:VEVENT',
             u'UID:{0}'.format(uid),
-            u'DTSTAMP:{0}'.format(timestamp),
-            u'DTSTART;VALUE=DATE:{:%Y-%m-%d}'.format(info['start']),
-            u'DTEND;VALUE=DATE:{:%Y-%m-%d}'.format(end),
+            u'DTSTAMP:{:%Y%m%dT%H%M%SZ}'.format(timestamp),
+            u'DTSTART;VALUE=DATE:{:%Y%m%d}'.format(info['start']),
+            u'DTEND;VALUE=DATE:{:%Y%m%d}'.format(end),
             u'SUMMARY:{0}'.format(self.escape(info['venue'])),
-            u'DESCRIPTION;ALTREP="{0}":{0}'.format(info['url']),
-            u'URL:{0}'.format(info['url']),
+            u'DESCRIPTION;ALTREP="{0}":{0}'.format(self.escape(info['url'].strip())),
+            u'URL:{0}'.format(self.escape(info['url'].strip())),
             u'LOCATION:{0}'.format(self.escape(info['venue'])),
         ]
         if info.get('latitude') and info.get('longitude'):
             latlng = '{0},{1}'.format(info['latitude'], info['longitude'])
             latlng = re.sub(r'\s+', '', latlng).replace(',', ';')
-            lines.append('uGEO:{0}'.format(latlng))
+            lines.append(u'GEO:{0}'.format(latlng))
         lines.append(u'END:VEVENT')
         return lines
 
