@@ -88,7 +88,7 @@ class ICalendarWriter(object):
         if info.get('latitude') and info.get('longitude'):
             latlng = '{0},{1}'.format(info['latitude'], info['longitude'])
             latlng = re.sub(r'\s+', '', latlng).replace(',', ';')
-            lines.append('GEO:{0}'.format(latlng))
+            lines.append(u'GEO:{0}'.format(latlng))
         lines.append(u'END:VEVENT')
         return lines
 
