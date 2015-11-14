@@ -3,50 +3,102 @@ layout: blog
 root: ../../..
 author: Matt Davis
 title: "Python Lesson Rewrite"
-date: 2015-11-11
+date: 2015-11-14
 time: "11:30:00"
 category: ["Lessons", "Python"]
 ---
 <!-- start excerpt -->
-<p>
-  Recent
-  <a href="http://software-carpentry.org/blog/2015/09/thinking-about-teaching.html">
-    analysis
-  </a>
-  and
-  <a href="http://software-carpentry.org/blog/2015/10/python-debriefing-summary.html">
-    introspection
-  </a>
-  regarding Software Carpentry's Python lesson has led us to conclude that
-  the lesson would benefit from a complete rewrite.
-  The subcommittee on lesson development met twice to plan much about the
-  new lessons (yes, that's plural).
-  This post will describe our plans for the new lessons.
-</p>
-<p>
-  We're going to write two new Python lessons, one intended for students who
-  are completely new to programming (the "novice" lesson),
-  and another for students with some programming experience (the "intermediate" lesson).
-  <a href="http://www.datacarpentry.org/">Data Carpentry</a> also targets
-  new programmers so we'll be developing the new novice lesson in collaboration
-  with DC, and both DC and SWC will use the lesson.
-  We decided to use <a href="http://www.gapminder.org/">Gapminder</a> data
-  for both the novice and intermediate lessons in order to have a
-  consistent experience and approachable, meaningful data
-  (and because some lessons are already using it).
-</p>
+<section>
+  <p>
+    Recent
+    <a href="http://software-carpentry.org/blog/2015/09/thinking-about-teaching.html">
+      analysis
+    </a>
+    and
+    <a href="http://software-carpentry.org/blog/2015/10/python-debriefing-summary.html">
+      introspection
+    </a>
+    regarding Software Carpentry's Python lesson has led us to conclude that
+    the lesson would benefit from a complete rewrite.
+    The subcommittee on lesson development
+    <a href="http://pad.software-carpentry.org/python-lesson-planning-2015-10-14">met twice</a>
+    to plan much about the new lessons (yes, that's plural).
+    This post will describe our plans for the new lessons.
+  </p>
+  <p>
+    We're going to write two new Python lessons, one intended for students who
+    are completely new to programming (the "novice" lesson),
+    and another for students with some programming experience (the "intermediate" lesson).
+    <a href="http://www.datacarpentry.org/">Data Carpentry</a> also targets
+    new programmers so we'll be developing the new novice lesson in collaboration
+    with DC, and both DC and SWC will use the lesson.
+    We decided to use <a href="http://www.gapminder.org/">Gapminder</a> data
+    for both the novice and intermediate lessons in order to have a
+    consistent experience and approachable, meaningful data
+    (and because some lessons are already using it).
+  </p>
+</section>
 <!-- end excerpt -->
-<h2>Novice Lesson</h2>
-<p>
-  The overarching goal of the novice lesson is to convince students to adopt
-  programming in their everyday work flow.
-  To do that we want to both teach practical data tools
-  and demonstrate the power of writing code (instead of using Excel).
-  Our lesson will include using <a href="http://pandas.pydata.org/">Pandas</a>
-  to work with data and using Python's
-  <a href="https://docs.python.org/3/tutorial/controlflow.html">control flow features</a>
-  to really make the computer work.
-</p>
-<p>
-  Greg Wilson will be leading the development of the new lesson.
-</p>
+<section>
+  <h2>Novice Lesson</h2>
+  <p>
+    The overarching goal of the novice lesson is to convince students to adopt
+    programming in their everyday work flow.
+    To do that we want to both teach practical data tools
+    and demonstrate the power of writing code (instead of using Excel).
+    Our lesson will include using <a href="http://pandas.pydata.org/">Pandas</a>
+    to work with data and using Python's
+    <a href="https://docs.python.org/3/tutorial/controlflow.html">control flow features</a>
+    to really make the computer work.
+  </p>
+  <p>
+    Greg Wilson will be leading the development of the new novice lesson.
+    He'll be looking for help writing, editing, and reviewing the lesson,
+    so keep an eye out for future announcements about that.
+  </p>
+</section>
+<section>
+  <h2>Intermediate Lesson</h2>
+  <p>
+    The goal of the intermediate lesson is to get students thinking about
+    programming itself:
+    What are effective ways for organizing code?
+    What does it mean to refactor and abstract code?
+    Along the way we'll teach much of the same Python syntax and data
+    tooling from the novice lesson, but we want students to leave applying
+    a more critical mind to the structure of their code and having a vocabulary
+    for talking about code.
+  </p>
+  <p>
+    <a href="http://software-carpentry.org/pages/team.html#huang.daisie">Daisie Huang</a>
+    will be leading the development of the intermediate Python lesson and
+    has already started a discussion in the new
+    <a href="https://github.com/swcarpentry/python-intermediate">python-intermediate</a> repo.
+    Your input would be welcome there (look at the
+    <a href="https://github.com/swcarpentry/python-intermediate/issues">issues</a>).
+  </p>
+</section>
+<section>
+  <h2>A Third Lesson?</h2>
+  <p>
+    In our discussion of the Python lessons we identified some additional
+    topics that we think students could benefit from.
+    These won't fit into either the novice or intermediate novice lessons,
+    but maybe a third lesson could pick up some of these:
+
+    <ul>
+      <li>
+        Using external packages
+        <ul>
+          <li>The idea that you can search for packages that already do your thing</li>
+          <li>Learning how to read documentation</li>
+        </ul>
+      </li>
+      <li>Writing importable, documented modules</li>
+      <li>Doing code review</li>
+      <li>Making CLI scripts</li>
+    </ul>
+
+    If you're interested in working on any of that, please let us know!
+  </p>
+</section>
