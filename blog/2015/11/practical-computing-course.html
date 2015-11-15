@@ -1,0 +1,147 @@
+---
+layout: blog
+root: ../../..
+author: Steve Haddock
+title: "A Practical Computing Course"
+date: 2015-11-15
+time: "12:00:00"
+category: ["Assessment"]
+---
+<!-- start excerpt -->
+<p>
+  While it was not a SWC course,
+  this summer Casey Dunn and I taught a 12-day
+  <em><a href="http://www.amazon.com/Practical-Computing-Biologists-Steven-Haddock/dp/0878933913/">Practical Computing</a></em>
+  summer class at Friday Harbor Labs.
+  It was a great group of students&mdash;mostly somewhat beginner level&mdash;and
+  we covered regular expressions, the shell, Python, R + ggplot, Git, graphics,
+  and bit of electronics.
+  The centerpiece (which the students <em>really</em> got into)
+  was a personal project that was applicable to their own interests
+  and which they solved with some combination of the tools we covered.
+  Many of the students went from zero experience
+  to having a script that actually gave them insight
+  into the real-life research back home.
+</p>
+<!-- end excerpt -->
+<p>
+  The part that might be most relevant to Software Carpentry
+  is that we just sent out a two-month-later follow-up survey
+  to figure out what stuck and what didn't.
+  I collated the responses,
+  which I have summarized at
+  <a href="http://practicalcomputing.org/fhl-feedback-2015">http://practicalcomputing.org/fhl-feedback-2015</a>.
+</p>
+<p>
+  I found the results really gratifying.
+  Given two weeks of their full attention
+  makes a big difference in how effectively you can introduce and reinforce the lessons,
+  and overcome mental blocks (dictionaries, for some!).
+  There was also a lot of peer-teaching going on after the seven or so hours
+  of planned lectures and exercises.
+  Students would work into the night on their projects
+  and teach and learn from their classmates.
+</p>
+<p>
+  We told them at the beginning to start thinking about
+  a project that might be relevant to their work,
+  and that would benefit from automation.
+  Then after a week of the class,
+  when they had passing familiarity with the tool set,
+  we had them discuss in class what they were thinking of trying.
+  It ranged from using curl to scrape images from a museum web page for the plants they studied,
+  to a teaching tool for simulating DNA replication
+  and transcription, importing, and plotting data in R.
+  There were a lot of variations on "search for a motif in a set of DNA sequences", etc.
+</p>
+<p>
+  There was a lot of consultation with instructors and other students.
+  We had them each create a Git repo on BitBucket
+  so we could review their code and create issues or make comments.
+  (There are
+  <a href="https://github.com/blog/2055-teachers-manage-your-courses-with-classroom-for-github">better ways to manage this</a>
+  that have since come to our attention.)
+</p>
+<p>
+  On the last day they each gave a presentation or demo of the state of their project,
+  whether totally finished or not,
+  and it was amazing!
+  Projects included:
+</p>
+<ul>
+  <li>
+    <p>
+      A student who had previous Perl experience but not Python
+      created a pipeline for searching for toxin genes within a transcriptome.
+      This required generating queries from a large toxins database
+      and then searching for each of these queries in a large transcriptome database.
+      He is going to continue working on it and publish this tool.
+    </p>
+  </li>
+  <li>
+    <p>
+      Create an R Markdown file with embedded ggplots for distribution
+      data of lobster populations.
+    </p>
+  </li>
+  <li>
+    <p>
+      Scrape a botanical museum web page,
+      and within a table of holdings,
+      find names and barcode numbers for all images of mangoes,
+      then download all the raw images and save the files with the name of
+      the species as the file name.
+    </p>
+  </li>
+  <li>
+    <p>
+      Write an R script to find annotations in a video database
+      where the depth and time are within a certain interval,
+      flag them as potential duplicates,
+      and export the decimated data set.
+    </p>
+  </li>
+  <li>
+    <p>
+      Collate records from two different databases
+      (presented as delimited text files)
+      and find the corresponding entries between the two.
+    </p>
+  </li>
+  <li>
+    <p>
+      Using a sliding window,
+      calculate a weighted similarity score for two animo acid sequences
+      and generate a colorized HTML file showing the location of various kinds of matches.
+    </p>
+  </li>
+</ul>
+<p>
+  During the class we spent a lot of time coming up with canned exercises and debugging tests
+  to drive home certain points,
+  but they were really motivated by this chance to make something personally useful right away.
+  This worked because we had them for 12 days;
+  it would be harder to achieve in two or three.
+</p>
+<p>
+  The best anecdote about the impact it could have was from a
+  professor who studies genes that bind to the end of microtubules as
+  they grow during cellular processes. There is a particular motif
+  which characterizes this family of proteins and it has the
+  characters something like S, (L or V), T, (L or T). Their lab also
+  had another suite of proteins which they thought might be involved
+  in this process of microtubule elongation, but were planning all
+  kinds of complicated tests, including transgenic mice, to determine
+  whether it really was in this family. With a simple Python script,
+  she was able to search for the regex S[LV]T[LT] among these suspect
+  sequences, and lo and behold, out popped a couple of matches. She
+  had never programmed before, and was extremely excited about these
+  real-world results.
+</p>
+<p>
+  As for demographics,
+  the class had 8 women and 6 men.
+  10 were on Macs and 4 on Windows
+  (one of whom worked remotely on a Unix server,
+  and one of whom bought a Mac when they got home after the course.)
+</p>
