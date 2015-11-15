@@ -3,7 +3,7 @@ layout: blog
 root: ../../..
 author: Matt Davis
 title: "Python Lesson Rewrite"
-date: 2015-11-14
+date: 2015-11-15
 time: "11:30:00"
 category: ["Lessons", "Python"]
 ---
@@ -11,11 +11,11 @@ category: ["Lessons", "Python"]
 <section>
   <p>
     Recent
-    <a href="http://software-carpentry.org/blog/2015/09/thinking-about-teaching.html">
+    <a href="{{page.root}}/blog/2015/09/thinking-about-teaching.html">
       analysis
     </a>
     and
-    <a href="http://software-carpentry.org/blog/2015/10/python-debriefing-summary.html">
+    <a href="{{page.root}}/blog/2015/10/python-debriefing-summary.html">
       introspection
     </a>
     regarding Software Carpentry's Python lesson has led us to conclude that
@@ -28,14 +28,18 @@ category: ["Lessons", "Python"]
   <p>
     We're going to write two new Python lessons, one intended for students who
     are completely new to programming (the "novice" lesson),
-    and another for students with some programming experience (the "intermediate" lesson).
+    and another for students with some programming experience
+    in any language (the "intermediate" lesson).
     <a href="http://www.datacarpentry.org/">Data Carpentry</a> also targets
     new programmers so we'll be developing the new novice lesson in collaboration
     with DC, and both DC and SWC will use the lesson.
     We decided to use <a href="http://www.gapminder.org/">Gapminder</a> data
     for both the novice and intermediate lessons in order to have a
     consistent experience and approachable, meaningful data
-    (and because some lessons are already using it).
+    (and because
+    <a href="{{site.github_url}}/r-novice-gapminder">some</a>
+    <a href="https://github.com/tracykteal/gapminder-spreadsheet">lessons</a>
+    are already using it).
   </p>
 </section>
 <!-- end excerpt -->
@@ -70,12 +74,12 @@ category: ["Lessons", "Python"]
     for talking about code.
   </p>
   <p>
-    <a href="http://software-carpentry.org/pages/team.html#huang.daisie">Daisie Huang</a>
+    <a href="{{page.root}}/pages/team.html#huang.daisie">Daisie Huang</a>
     will be leading the development of the intermediate Python lesson and
     has already started a discussion in the new
-    <a href="https://github.com/swcarpentry/python-intermediate">python-intermediate</a> repo.
+    <a href="{{site.github_url}}/python-intermediate">python-intermediate</a> repo.
     Your input would be welcome there (look at the
-    <a href="https://github.com/swcarpentry/python-intermediate/issues">issues</a>).
+    <a href="{{site.github_url}}/python-intermediate/issues">issues</a>).
   </p>
 </section>
 <section>
