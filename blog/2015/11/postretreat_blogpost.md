@@ -9,9 +9,10 @@ and asking questions at the global broadcast sessions. In addition to bringing t
 community together, the Retreat also has generated additional resources surrounding many 
 topics of interest to Software and Data Carpentry instructors and helpers; the global 
 broadcast sessions are archived on YouTube (pending session leaders leaving them up) and 
-can be watched at any time. The links to these videos are archived on the retreat website: 
-http://swcarpentry.github.io/instructor-retreat-2015/ Notable other moments from retreat 
-as captured via twitter can be accessed here:  https://twitter.com/search?q=%23swdcretreat&src=typd
+can be watched at any time. The links to these videos are archived on the 
+<a href="http://swcarpentry.github.io/instructor-retreat-2015/">Retreat website</a>. 
+Notable other moments from retreat as captured via twitter can be accessed 
+<a href="https://twitter.com/search?q=%23swdcretreat&src=typd">here</a>.
 
 ### Who attended?
 Surveys to collect feedback from ~ 50 participants indicated that 64% of participants were 
