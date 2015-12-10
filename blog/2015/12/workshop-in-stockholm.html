@@ -1,0 +1,180 @@
+---
+layout: blog
+root: ../../..
+author: "Roman Valls"
+title: "Software and Data Carpentry Workshop in Stockholm"
+date: 2015-12-09
+time: "19:00:00"
+category: ["Workshops"]
+---
+<!-- start excerpt -->
+<p>On April 14,
+three Software Carpentry Instructors from Stockholm,
+<a href="http://bast.fr/">Radovan Bast</a>,
+<a href="https://se.linkedin.com/in/olavvahtras">Olav Vahtras</a>
+and myself
+got an email from Greg Wilson:</p>
+
+<blockquote>
+Subject: Any interest in putting together a workshop for Stockholm this summer?
+</blockquote>
+<!-- end excerpt -->
+
+<p>After getting the green light from <a href="http://www.gla.ac.uk/researchinstitutes/cancersciences/ics/facilities/wwcrc/">my current employer</a>,
+it did not take long to add <a href="https://about.me/oxanas">Oxana Sachenkova</a> to the team
+and start <a href="{{page.root}}/workshops/operations.html">planning the logistics</a>,
+lessons,
+and official PhD-level university credits
+and to raise some money to support the event.</p>
+
+<p>Since we recently received our instructor training and had some experience with
+<a href="https://github.com/pythonkurs">a past scientific Python workshop</a>
+and <a href="http://merenlin.com/2014/06/software-carpentry-scilifelab/">a previous edition of Software Carpentry</a>,
+we decided to go for a two day workshop:</p>
+
+<ul>
+  <li>One day with python fundamentals <a href="http://blogs.nopcode.org/brainstorm/2013/03/04/automated-python-education-via-unit-testing-and-travis-ci/">with a best practices twist</a>.</li>
+  <li>The second day with a more biological data analysis focus.</li>
+</ul>
+
+<p>That is how the idea to do <a href="http://pythonkurs.github.io/2015-11-30-swc_data/">Carpentry with Software and Data</a>
+came into fruition by the end of November 2015.
+After innumerable emails, talks, and commits the event was on the forge.
+Also the national Swedish bioinformatics communities <a href="https://www.bils.se/">BILS</a>
+and <a href="https://www.scilifelab.se/facilities/wabi/">WABI</a> supported us.
+We would like to thank both of the organisations for their financial support.</p>
+
+<h2 id="day-1-software-carpentry">Day 1: Software Carpentry</h2>
+
+<p>For day one, Olav had some interactive Python console sessions showing
+basic Python data structures and control mechanisms.
+Following up,
+Radovan prepared some excellent <a href="https://github.com/bast/python-tdd-exercises/">TDD lessons</a>
+inspired by three sources:</p>
+
+<ol>
+  <li>
+    <p>The <a href="https://github.com/brainstorm/python_koans">Python Koans</a>.</p>
+  </li>
+  <li>
+    <p>Some ideas borrowed from <a href="https://github.com/biopython/biopython/tree/master/Tests">BioPython's comprehensive testsuite</a>.</p>
+  </li>
+  <li>
+    <p>A late addition from an upcoming <a href="https://bids.github.io/2016-01-14-berkeley/testing/09-tdd.html">SWC TDD lesson</a>,
+released just a few days before our workshop.</p>
+  </li>
+</ol>
+
+<p>Teaching basic Git, GitHub, TravisCI
+and <a href="http://coveralls.io">Coveralls</a> in such a short time
+was challenging for the instructors but had a very good reception from the students side.</p>
+
+<p>While <a href="http://ivory.idyll.org/blog/2014-what-version-of-python-for-science.html">the infamous installation problem</a> is still an issue,
+students managed to follow through the lessons;
+their typical Python installation issues were mostly solved by
+a proper installation of <a href="http://conda.pydata.org/miniconda.html">Miniconda</a>.</p>
+
+<p><a href="http://pythonkurs.github.io/2015-11-30-swc_data/setup/index.html">The SWC installation tests</a>
+mostly distracted students since packages not being used in the workshop where flagged as uninstalled/failed (i.e., EasyMercurial).
+In general I perceived that <em>students were getting overwhelmed by too much information from SWC default guides</em>
+and stopped following up and reading the instructions early.
+<em>We need more TL;DR's</em> in Software and Data Carpentry,
+perhaps starting with the <a href="https://github.com/swcarpentry/workshop-template">workshop template</a>.</p>
+
+<h2 id="day-2-biodata-jupyter-notebooks-pandas-and-machine-learning">Day 2: BioData, Jupyter Notebooks, Pandas and Machine Learning</h2>
+
+<p>The morning was dedicated to briefing students on the Pandas dataframe
+with Ethan White's <a href="http://www.datacarpentry.org/python-ecology/">python-ecology dataset</a>.
+Due to time constraints the merging and concatenation of dataframes was not covered
+but was pointed out in the lesson.
+After that,
+the students ha enough knowledge to followup on Oxana's <a href="https://plot.ly/ipython-notebooks/bioinformatics/">Gene Expression dataset</a>,
+for which there are <a href="https://github.com/pythonkurs/2015-11-30-swc_data/blob/gh-pages/bio-visualization-lab.ipynb">exercises</a>
+for those students willing to earn Swedish university credits.
+After some glitches with Python 2 vs Python 3 Jupyter notebooks,
+students got to know how to analyze data from the <a href="http://fantom.gsc.riken.jp/5/">FANTOM5 consortium</a>.</p>
+
+<p>After getting some expression heatmaps and good insight from Oxana,
+<a href="http://kachkach.com/">Ahmed KachKach</a>,
+currently interning at Spotify AB machine learning division,
+delighted the audience with a detailed analysis of
+<a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">a toy dataset on breast cancer</a>
+by using
+<a href="https://github.com/halflings/bio-data-workshop/blob/master/notebook.ipynb">an extremely well documented introduction to machine learning notebook</a>.
+In order to explain PCA graphically to students,
+Ahmed used an excellent <a href="http://setosa.io/ev/">web visualization</a>
+to illustrate how variable decomposition/projection works in PCA.</p>
+
+<p>Right after that machine learning introduction,
+I showed how one can enact <a href="https://github.com/brainstorm/scikit-allel-tests">reproducible (and interactive!) notebooks</a>
+via the mybinder.org service by
+<a href="http://app.mybinder.org/2222694185/notebooks/scikit-allel-small-data.ipynb">exploring a small scikit-allel dataset</a>.
+More visualization techniques were shown via my current explorations of <a href="http://hiveplot.net">HivePlots</a>
+as an alternative way of <a href="https://github.com/brainstorm/cancer-hiveplots">visualizing structural genomic variations in cancer samples</a>.
+I also had a talk prepared about
+<a href="https://bcbio-nextgen.readthedocs.org/en/latest/contents/teaching.html">structural variations processed with bcbio</a>,
+but in the interest of time,
+I saved it for another event :)</p>
+
+<p>Last but not least, Mikael Huss went through
+<a href="https://github.com/hussius/gene-expression-prediction/blob/master/predict_gene_expression.ipynb">a fantastic notebook</a>
+showing some gene expression prediction techniques
+and clever feature engineering from his <a href="https://wabi-wiki.scilifelab.se/dashboard.action">current efforts at WABI</a>.</p>
+
+<h2 id="thoughts-and-comments">Thoughts and Comments</h2>
+
+<p>A surprising early realization of this workshop is how high demand those courses could be:
+only a few minutes after announcing the event,
+<a href="http://x90.es/carpentry+">we got around 40 individuals interested</a> and signed up.
+The retention changed over time due to cancellations,
+but we managed to **run the workshop with 35+ participants.
+Regarding attendance,
+thanks to link shorteners on our announcement emails and twitter we could track the “funnel” of students
+that showed interest all the way down to those that were commited to actually show up and complete the courses.</p>
+
+<p>In our post-assessment polls we got an average rating of 8 over 10 on “General satisfaction with the workshop”.
+Here are some selected comments:</p>
+
+<blockquote>
+  <p>I learned a lot of things these two days and the workshop really made me more motivated to use pandas next day in the office. :D</p>
+</blockquote>
+
+<blockquote>
+  <p>Overall it was a very nicely arranged and well prepared workshop.
+My only suggestion would be to simplify a bit the exercises for day 2 (perhaps by introducing some intermediary steps between two problems).
+Thanks for arranging such a nice workshop.</p>
+</blockquote>
+
+<blockquote>
+  <p>great event, I'll recommend it further, should be on regular (annual?) basis.</p>
+</blockquote>
+
+<p>And also some things to look after in the future:</p>
+
+<blockquote>
+  <p>I enjoyed particularly the first day,
+particularly the list of challenges/exercises that looked quite overwhelming at first but turned out to be manageable.
+Also very much appreciated: collection of ideas and questions on etherpad, post-its to request help.
+It would have been even better with little stricter time management.</p>
+</blockquote>
+
+<blockquote>
+  <p>My Python knowledge was not high enough to follow.
+exercise.py was nice to learn Python,
+but didn't help to learn testing process (I was stuck with the exercises).
+Other exercise had too difficult instructions.
+The python introduction was at a very basic level but the tasks were at intermediate or above level.
+This needs adjustment.</p>
+</blockquote>
+
+<p>And again, not putting too much material in one day, no matter how exciting it sounds at first while preparing the lessons:</p>
+
+<blockquote>
+  <p>The first day was great (11/10).
+Intro to Python was too basic for me,
+but I understand it was necessary for some participants of the workshop.
+Intro to Git, test-driven development etc. was very well performed and I learned a lot.
+Second day was pretty good (7/10), but too hurried.
+I feel that there were too many things squeezed into the schedule.
+The visualization lab had a good premise, but also suffered from too little time.</p>
+</blockquote>
