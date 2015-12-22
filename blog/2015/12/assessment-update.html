@@ -1,0 +1,258 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style media="all">/************** BASE CSS **************/
+html, body { margin: 0; padding: 0; }
+body { margin: 0 auto 2rem; padding: 0 2.5rem; max-width: 600px; font-family: Helvetica Neue; font-size: 9.0pt; font-weight: 400; }
+
+h1 { margin-bottom: 0.6rem; font-size: 2rem; }
+h2 { margin: 1.5rem 0 1rem; font-size: 1.5rem; }
+h3 { margin: 1.3rem 0 1rem; font-size: 1.2rem; }
+h4, h5, h6 { font-size: 1rem; }
+
+hr { margin: 2em 0; border: none; height: 3px; }
+
+img { max-width: 100%; }
+p { padding-top: 0.3rem; line-height: 1.5rem; font-size: 0.9rem; }
+
+.img-sandbox-error { padding: 20px 10px; border: solid 1px #ddd; }
+    .img-sandbox-error h2 { margin: 0; text-align: center; font-size: 16px; }
+    .img-sandbox-error p { margin: 0; padding-top: 15px; text-align: center; font-size: 12px; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+    thead th { text-align: left; }
+        thead th[align="center"] { text-align: center; }
+        thead th[align="right"] { text-align: right; }
+    tr { margin: 0; padding: 0; }
+    th, td { margin: 0; padding: .75rem; }
+
+ul, ol { margin: 0; padding: 0 0 0 3rem; }
+  ul ul, ol ol { padding: 0.5rem 0 0.5rem 2rem; }
+ul { list-style-type: disc; }
+  li { padding: 0.15rem 0; font-size: 0.9rem; line-height: 1.4rem; }
+    .checkitem { position: relative; list-style: none; }
+    li p:first-child { margin: 0; padding: 0; }
+
+.checkitem input[type=checkbox] { -webkit-appearance: button; position: absolute; top: 4epx; left: -22px; width: 0.8rem; height: 0.8rem; border: solid 1px #000; border-radius: 2px; }
+
+code { padding: 0 3px; }
+pre { padding-top: 0.3rem; }
+pre code { display: block; padding: 7px; overflow: auto; line-height: 1.4rem; }
+
+blockquote { margin: 1rem 0 1rem 2rem; padding: 0 1rem; }
+    blockquote p { margin: 0; padding-bottom: 1rem; }
+    blockquote p:last-child { padding-bottom: 0.3rem; }
+
+.footnotes { font-size: .9rem; }
+sup a { padding-left: 1px; }
+    .footnotes a, sup a { text-decoration: none; }
+
+.erato-range, .erato-range a { display: inline; margin: 0 !important; padding: 0 !important; width: 0; height: 0; }
+
+/* -----------------------------------------------------------------------------
+   github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+----------------------------------------------------------------------------- */
+
+.hljs {
+  display: block; padding: 0.5rem;
+  color: #333;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-javadoc {
+  color: #998;
+  font-style: italic
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.javascript .hljs-title,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #099;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.tex .hljs-formula {
+  color: #d14
+}
+
+.hljs-title,
+.hljs-id,
+.coffeescript .hljs-params,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold
+}
+
+.javascript .hljs-title,
+.lisp .hljs-title,
+.clojure .hljs-title,
+.hljs-subst {
+  font-weight: normal
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rules .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body {
+  color: #008080
+}
+
+.hljs-regexp {
+  color: #009926
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073
+}
+
+.hljs-built_in,
+.lisp .hljs-title,
+.clojure .hljs-built_in {
+  color: #0086b3
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold
+}
+
+.hljs-deletion {
+  background: #fdd
+}
+
+.hljs-addition {
+  background: #dfd
+}
+
+.diff .hljs-change {
+  background: #0086b3
+}
+
+.hljs-chunk {
+  color: #aaa
+}
+
+/************** ERATO LIGHT CSS **************/
+body { color: #333; }
+
+hr { background: #eee; }
+a { color: #0060ff; }
+    a:hover { color: #0843a3; }
+
+thead th { background: #f8f8f8; }
+th, td { border: solid 1px #eee; }
+
+.checkitem input[type=checkbox] { border: solid 1px #ddd; background-color: #fff; }
+    .checkitem input[type=checkbox]:checked { background-color: #eee; }
+
+code { background: #f5f5f4; }
+blockquote { border-left: solid 6px #eee; }
+
+.footnotes { color: #999; }</style><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script></head><body><h1>Assessment update - 2015</h1>
+
+<p>About a year ago, I hoped to help answer the question ‘Is our students learning’? We are now a bit closer to an answer, and I wanted to update the community about what we have accomplished this year. First, I want to thank and acknowledge the <a href="http://software-carpentry.org/blog/2015/03/scf-subcommittees.html">assessment subcommittee</a> + Blake Joyce, who helped to define tasks, possibilities, and provided significant feedback. Especially here I wanted to thank Daniel Chen, Jeramia Ory, and Rayna Harris who put in a lot of hours moving things along. </p>
+
+<h3>Where are we today and why</h3>
+
+<div class="erato-range"><a data-range="614,698" name="614,698"></a></div><p>Currently, we have three surveys, all of which you can preview at the links below:</p>
+
+<div class="erato-range"><a data-range="698,1479" name="698,1479"></a></div><ul>
+<li><strong><a href="https://www.surveymonkey.com/create/survey/preview?r=true&amp;sm=16wnNYRoEi2P3fwKZMLuYLvbImRjqbWn7MjeBqePiD54hm1Qqmnn2nJjrLhl1_2FBZ3DLZSM01zZnC7tJS5NyYHw_3D_3D">Pre-workshop Survey</a></strong>: Basic information about learner capabilities and attitudes<br></li>
+<li><strong><a href="https://www.surveymonkey.com/create/survey/preview?r=true&amp;sm=ySIDD9XyFd7AhG8X2dg4nRnnOvmbA5XNoExtfTkaua2YJZPkE5CfZRPCjTZwwxDK61_2Fv53FnwF7Oj2WcYPYSoA_3D_3D">Post-workshop Survey</a></strong>: Feedback on the perceived effectiveness of the workshop,learner motivation, and confidence <br></li>
+<li><strong><a href="https://www.surveymonkey.com/create/survey/preview?r=true&amp;sm=H57qUiV6Bgv06Szlepvw8b4t0eqmlsA3FnOb6kChQ4Idxqt4R_2BFg1Y8mHGZadYGMS1JqOnyn8RMfJqbrpL_2BRBg_3D_3D">Long-term Survey</a></strong>: Determine impacts and outcomes for learners after attending a workshop<br></li>
+</ul>
+
+<div class="erato-range"><a data-range="1479,1947" name="1479,1947"></a></div><p>As it turns out, there aren&#39;t widely accepted and standardized ways to evaluate workshops like these. We apply evidence-based teaching techniques designed for the classroom, but resemble science museums that try to teach within a very short exposures. Our teaching materials might have been done as an online or self-paced course, but we use socially driven in-person workshops. Given these complexities, here are are some of the questions that drove these surveys:</p>
+
+<div class="erato-range"><a data-range="1947,2425" name="1947,2425"></a></div><ul>
+<li>Do we create a learning environment that is welcoming and inclusive?<br></li>
+<li>Can we generate feedback for our instructors that will help them improve?<br></li>
+<li>What do learners think they know before/after our workshops?<br></li>
+<li>Are we lowering anxieties and barriers to learning the topics we teach; are we motivating learners?<br></li>
+<li>What positive outcomes do learners attribute to their <em>Software Carpentry</em> experience?<br></li>
+<li>Who are our learners, and are we setting and meeting goals for diversity?<br></li>
+</ul>
+
+<div class="erato-range"><a data-range="2425,2729" name="2425,2729"></a></div><p>We <em>think</em> these are reasonable questions given our context and constraints. We know that a two-day workshops are not going to change learners into experts, but we do think we can set a lot of learners down the path to competency within the best practices of software use in their respective sciences. </p>
+
+<div class="erato-range"><a data-range="2729,2764" name="2729,2764"></a></div><h3>What instructors need to know</h3>
+
+<div class="erato-range"><a data-range="2764,3143" name="2764,3143"></a></div><p><strong>The most important task for instructors is to remind (and provide time for) learners to complete the surveys</strong>. These surveys will not only help <em>Software Carpentry</em> do a better job in general, but will generate feedback that help you to improve personally. I like emphasize to the learners that these data are important to us, and we really need them to contribute to this. </p>
+
+<div class="erato-range"><a data-range="3143,3165" name="3143,3165"></a></div><h4>Survey Workflow</h4>
+
+<div class="erato-range"><a data-range="3165,3183" name="3165,3183"></a></div><p><strong>Survey Setup</strong></p>
+
+<div class="erato-range"><a data-range="3183,3793" name="3183,3793"></a></div><ol>
+<li>Links to the survey are part of the workshop template. These should automatically be a part of your agenda.  When your agenda becomes public to your learners, you can remind them to take the pre-survey. <br></li>
+<li>During the survey, learners will select your workshop from a list (&#39;which workshop are you attending&#39; Q3 on pre-survey, Q2 on post-survey). Check this question to see your workshop is listed. If not, check with admin@software-carpentry.org. Adding workshop sites is a <em>manual</em> step for us, and if something was overlooked, there will be an option for the learner to just type in the workshop name. <br></li>
+</ol>
+
+<div class="erato-range"><a data-range="3793,3821" name="3793,3821"></a></div><p><strong>Administering surveys</strong></p>
+
+<div class="erato-range"><a data-range="3821,4448" name="3821,4448"></a></div><ol>
+<li>In any reminders or communications to learners before the workshop, please remind learners to take the pre-survey. <br></li>
+<li>Remind learners to take the pre-survey if they haven&#39;t done so before you begin day one. <br></li>
+<li>On day two, leave extra time for learners to take the post-survey. The best way to ensure a high-completion rate is to ask your learners to complete this survey <strong>before they leave</strong> the workshop. Please allow time for this, and for learners that must leave, remind them that they can still complete this at home. <br></li>
+<li>The admin will send the long-term follow up survey to learners after the workshop by email. <br></li>
+</ol>
+
+<div class="erato-range"><a data-range="4448,4476" name="4448,4476"></a></div><p><strong>Viewing survey results</strong></p>
+
+<div class="erato-range"><a data-range="4476,4706" name="4476,4706"></a></div><ol>
+<li>The <em>Software Carpentry</em> administrator will generate a URL for you that will enable you to view survey responses to both the pre and post workshop surveys. These will also be visible to the mentors at the workshop debriefs.  <br></li>
+</ol>
+
+<div class="erato-range"><a data-range="4706,4708" name="4706,4708"></a></div><div class="erato-range"><a data-range="4708,5052" name="4708,5052"></a></div><p>Like everything <em>Software Carpentry</em>, this effort is open to and benefits from your feedback. Since we are using Survey Monkey the usual methods of making pull requests aren&#39;t possible. There may be a better way to make changes, but for now suggestions should be sent to the <a href="mailto:assessment@lists.software-carpentry.org">assessment list</a>. </p>
+
+<div class="erato-range"><a data-range="5052,5075" name="5052,5075"></a></div><h3>What do we do next</h3>
+
+<div class="erato-range"><a data-range="5075,5448" name="5075,5448"></a></div><p>As good a start as this is, we still have lots more we want to do. First, thanks to <em>Data Carpentry</em> we will be getting some professional assessment help from a dedicated evaluator. At the very least, we think our efforts so far will create a great starting point for improved assessments. There are still many questions that we will need more effort to get at including:</p>
+
+<div class="erato-range"><a data-range="5448,5907" name="5448,5907"></a></div><ul>
+<li>What is the best way to get live feedback during our teaching?<br></li>
+<li>Can we get a more quantitative understanding of what skills our learners have and if they are improved by our workshops?<br></li>
+<li>What misconceptions do our learners have and how do we address them?<br></li>
+<li>How can we get more fine-grained feedback on individual lessons?<br></li>
+<li>How can all of this be integrated with AMY to make it easier for our instructors and organization to react to collected feedback?<br></li>
+</ul>
+
+<div class="erato-range"><a data-range="5907,6260" name="5907,6260"></a></div><p>We have some ideas on this that will have to wait for another blog post. As we get more data, we will want to regularly report on what we have been learning, and over the past month we have already collected more than 200 responses. For now though, please let us know both about your opinions on what we have done so far, and what should come next. </p>
+<script>hljs.initHighlightingOnLoad();</script></body></html>
