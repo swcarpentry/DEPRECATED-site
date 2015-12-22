@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-02-28", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$72f098062da85872ec0f0992e753955069e3f82470b23163daaba0fe6edf4818", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$72f098062da85872ec0f0992e753955069e3f82470b23163daaba0fe6edf4818", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/remenyi.tom.json"
+ }
+}

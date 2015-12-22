@@ -22,14 +22,14 @@ Setting Up
 Rebuilding the web site locally to check changes requires:
 
 *   [Jekyll](http://jekyllrb.com/), used to compile templated HTML pages
-*   [Python](http://python.org/), used for pre- and post-processing
+*   [Python 3](http://python.org/), used for pre- and post-processing
 
 We use Jekyll because it's what [GitHub](http://github.com/) uses;
 we use Python because most of our volunteers speak it.
 The Python packages we depend on can be installed using:
 
 ~~~
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ~~~
 
 We try to use the same MarkDown interpreters as GitHub does for consistency.
@@ -61,6 +61,14 @@ The commands used to rebuild the website are stored in `Makefile`.
     You can then open `_site/index.html`
     and other pages in `_site`
     to see what your changes will look like.
+
+
+**Note: You must have Jekyll 2.5 or later.** If you have an older version
+installed, you can update it with:
+
+~~~
+gem update
+~~~
 
 Note: Disqus comments will *not* load properly,
 since you'll be on your machine rather than our server.
@@ -98,7 +106,7 @@ If you'd like to submit your post as a pull request, then:
         to mark a paragraph or two at the start
         as the excerpt to show in feed readers.
     *   If you need to refer to our email address, it is `{{page.contact}}`.
-    *   If you need to another post, or something else on the site, use `{{page.root}}/path/to/file`.
+    *   If you need to refer to another post, or something else on the site, use `{{page.root}}/path/to/file`.
 
 5.  Please add any images your blog post needs to the same blog/YYYY/MM directory as the post itself.
     Please use lower-case names without special characters for image files.
@@ -116,17 +124,11 @@ If you'd like to submit your post as a pull request, then:
 Adding a Workshop
 -----------------
 
-If you have set up a GitHub website for a repository,
-and would like it listed on our website,
-all you need to do is add one line to the file `config/workshop_urls.yml`
-and send us a pull request
-(or if you'd rather, just [mail Greg](mailto:gvwilson@software-carpentry.org)
-and he'll add it for you).
-Please add the URL of the GitHub repository,
-*not* the website itself,
-i.e.,
-add `https://github.com/someone/yyyy-mm-dd-site`
-rather than `http://someone.github.io/yyyy-mm-dd`.
+Email the workshop's URL to [the administrators](mailto:admin@software-carpentry.org)
+so that they can add it to our database.
+The workshop will then show up on the main website the next time it is rebuilt(which typically happens hourly).
+
+
 
 For More Advanced Users
 -----------------------
@@ -174,14 +176,13 @@ Software Carpentry uses [Open Badges](http://openbadges.org/) to recognize peopl
 To create badges, you must install [PyPNG](http://pythonhosted.org/pypng/index.html) module:
 
 ~~~
-$ pip install pypng
+$ pip3 install pypng
 ~~~
 
 Use `bin/badge-create.py` to create a new badge, e.g.:
 
 ~~~
-$ python bin/badge-create.py username email instructor
+$ python3 bin/badge-create.py username email instructor
 ~~~
 
-The badges scripts in `bin` should be compatible with Python2 and Python3.
 To bake the badge we use `bin/badgebakery.py` which was provided by the Open Badge Team.

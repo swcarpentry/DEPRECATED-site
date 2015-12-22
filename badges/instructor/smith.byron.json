@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-06-12", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$678ec65c1cc47b3eeb3ebc02f34be90bd456f523626004b75873b6e06046cf68", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$678ec65c1cc47b3eeb3ebc02f34be90bd456f523626004b75873b6e06046cf68", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/smith.byron.json"
+ }
+}

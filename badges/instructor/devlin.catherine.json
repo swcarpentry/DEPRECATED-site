@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-26", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$250187c1b8dd2917c82c6dae6018077196a21dcb1c8e480ee4b5cf5b1186a476", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$250187c1b8dd2917c82c6dae6018077196a21dcb1c8e480ee4b5cf5b1186a476", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/devlin.catherine.json"
+ }
+}

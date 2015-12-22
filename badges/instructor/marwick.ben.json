@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-06-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$c7622f0aa7f5bc7d67ee4b2faa0b444929e384713df66d0eb37a1b7f6e8c33fe", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$c7622f0aa7f5bc7d67ee4b2faa0b444929e384713df66d0eb37a1b7f6e8c33fe", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/marwick.ben.json"
+ }
+}

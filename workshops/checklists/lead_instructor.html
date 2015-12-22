@@ -29,13 +29,23 @@ title: Workshop Checklist &mdash; Lead Instructor
   <ul>
     <li>
       Create the
-      <a href="{{site.github_url}}/bc">GitHub repository</a>
-      that will host the workshop's web pages.
-      <a href="https://vimeo.com/87241285">This video</a> shows how to do it as of early 2014.
+      <a href="{{site.github_url}}/workshop-template">GitHub repository</a>
+      that will host the workshop's web pages, following
+      <a href="{{site.github_url}}/workshop-template/#creating-a-repository">these instructions</a>.
+      <ul>
+	<li>
+	  Note: if your institution will not allow you to do this,
+	  please send the information that would have been in the GitHub Pages site
+	  to the administrators
+	  so that they can add it to our database manually.
+	</li>
+      </ul>
     </li>
     <li>
-      <strong>Send the workshop's URL to the administrators</strong>
-      so that they can add it to the main web site.
+      <strong>Email the workshop's URL to <a href="{{site.contact}}">the administrators</a></strong>
+      so that they can add it to our database.
+      The workshop will then show up on the main website the next time it is rebuilt
+      (which typically happens hourly).
     </li>
     <li>
       Talk to the workshop host about the workshop audience
@@ -69,6 +79,17 @@ title: Workshop Checklist &mdash; Lead Instructor
     </li>
     <li>
       Create an Etherpad for the workshop.
+      <ul>
+        <li>
+          If you want the Etherpad to have a custom URL (e.g.
+          http://etherpad.mozilla.org/2015-07-01-esu) simply direct your web
+          browser to that address and the Etherpad will automatically be
+          created.
+        </li>
+	<li>
+	  Remind students that they do not need an account to edit the Etherpad.
+	</li>
+      </ul>
     </li>
     <li>
       If you're local to the workshop site,
@@ -78,6 +99,12 @@ title: Workshop Checklist &mdash; Lead Instructor
       Consult with the host on whether any learners, instructors, or helpers have identified
       accessibility needs that need advance preparation
       (see the <a href="{{page.root}}/workshops/checklists/accessibility.html">accessibility checklist</a>).
+    </li>
+    <li>
+      Make sure that the installation testing scripts included in the workshop website
+      have been updated to check only the software that the workshop is actually using.
+      (More specifically, edit the list in <code>setup/swc-installation-test-2.py</code>
+      so that it doesn't warn people about things they don't need.)
     </li>
     <li>
       Consult the
@@ -100,8 +127,13 @@ title: Workshop Checklist &mdash; Lead Instructor
   <h4>A Week Before</h4>
   <ul>
     <li>
-      <strong>Send a reminder email to attendees about installing software,</strong>
-      and offer to help people who are having problems.
+      <strong>Send a reminder email to attendees.</strong>
+      This should remind them to go through the software installation instructions on the workshop's home page,
+      offer to help people who are having problems,
+      and ask them to run the installation checking script.
+      It should also remind them of the workshop's location
+      (and if it is running in two or more rooms,
+      tell them which one to go to).
       A <a href="#email">template email message</a> is included in this checklist.
     </li>
     <li>
@@ -112,6 +144,9 @@ title: Workshop Checklist &mdash; Lead Instructor
     <li>
       Make sure all the instructors have posted their materials
       on the workshop web site.
+    </li>
+    <li>
+      Make sure the workshop helpers are listed on the workshop's web page.
     </li>
     <li>
       If possible, introduce yourself to the helpers;
@@ -129,7 +164,7 @@ title: Workshop Checklist &mdash; Lead Instructor
   <h4>First-Day Welcome</h4>
   <ul>
     <li>
-      Remind everyone of the <a href="{{page.root}}/conduct.html">code of conduct</a>.
+      Remind everyone of the <a href="{{page.root}}/conduct.html">Code of Conduct</a>.
     </li>
     <li>
       Make sure all learners are set up correctly and have sticky notes.
@@ -201,7 +236,7 @@ title: Workshop Checklist &mdash; Lead Instructor
   <h4>After</h4>
   <ul>
     <li>
-      Debrief with Greg.
+      Take part in a debriefing session.
     </li>
     <li>
       Fill in the
@@ -218,12 +253,8 @@ title: Workshop Checklist &mdash; Lead Instructor
     Hi,
   </p>
   <p>
-    Thank you again for registering for the upcoming workshop at XXX.
-    We're looking forward to having you with us the next few days.
-    This email includes important logistical information and setup instructions
-    as well as more information about Software Carpentry.
-  </p>
-  <p>
+    Thank you again for registering for the upcoming workshop at [LOCATION] -
+    we're looking forward to working with you.
     Over the course of the workshop, you'll learn some tools and skills to help accelerate your research.
     Our hope is that this will save you time
     and help you better organize and document your research.
@@ -233,15 +264,18 @@ title: Workshop Checklist &mdash; Lead Instructor
   </p>
   <p>
     Before the workshop,
-    please follow the setup instructions at [URL] to make sure your computer is ready on day one.
-    These should be straightforward, but if you hit any snags, we're happy to help -
+    please follow the setup instructions at [URL] to make sure your computer has what you'll need for day one,
+    and run the checking scripts at [URL] to make sure everything is in place.
+    If you hit any snags, or don't understand what the instructions are asking for, we're happy to help -
     please send questions to your instructors at [EMAIL],
     or drop by the workshop a bit earlier so that we can troubleshoot then.
   </p>
   <p>
-    <strong>Meet the Instructors</strong>
+    <strong>At the Workshop</strong>
   </p>
   <p>
+    The workshop is being held in [FULL ADDRESS WITH DIRECTIONS AND LINK TO MAP].
+    [REMEMBER TO TELL PEOPLE WHERE TO GO IF THERE ARE MULTIPLE ROOMS.]
     Your instructors are:
   </p>
   <ul>

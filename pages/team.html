@@ -12,34 +12,16 @@ nocomments: 1
 
 <body onload="SWC.maps.instructors()">
 
-<div class="row-fluid" style="text-align:center; padding-bottom:15px">
-  <img src="{{page.root}}/img/flags/32/Australia.png" alt="Australia" />
-  <img src="{{page.root}}/img/flags/32/Brazil.png" alt="Brazil" />
-  <img src="{{page.root}}/img/flags/32/Canada.png" alt="Canada" />
-  <img src="{{page.root}}/img/flags/32/China.png" alt="China" />
-  <img src="{{page.root}}/img/flags/32/France.png" alt="France" />
-  <img src="{{page.root}}/img/flags/32/Germany.png" alt="Germany" />
-  <img src="{{page.root}}/img/flags/32/India.png" alt="India" />
-  <img src="{{page.root}}/img/flags/32/Ireland.png" alt="Ireland" />
-  <img src="{{page.root}}/img/flags/32/Israel.png" alt="Israel" />
-  <img src="{{page.root}}/img/flags/32/Italy.png" alt="Italy" />
-  <img src="{{page.root}}/img/flags/32/Japan.png" alt="Japan" />
-  <img src="{{page.root}}/img/flags/32/New-Zealand.png" alt="New Zealand" />
-  <img src="{{page.root}}/img/flags/32/Norway.png" alt="Norway" />
-  <img src="{{page.root}}/img/flags/32/Poland.png" alt="Poland" />
-  <img src="{{page.root}}/img/flags/32/Singapore.png" alt="Singapore" />
-  <img src="{{page.root}}/img/flags/32/South-Africa.png" alt="South Africa" />
-  <img src="{{page.root}}/img/flags/32/Spain.png" alt="Spain" />
-  <img src="{{page.root}}/img/flags/32/Thailand.png" alt="Thailand" />
-  <img src="{{page.root}}/img/flags/32/United-Kingdom.png" alt="United Kingdom" />
-  <img src="{{page.root}}/img/flags/32/United-States.png" alt="United States" />
+<div class="row" style="text-align:center; padding-bottom:15px">
+  {% for flag in site.flags.airports %}
+    <img src="{{page.root}}/img/flags/32/{{flag}}.png" alt="{{flag|replace:'-',' '}}" />
+  {% endfor %}
 </div>
 
-<div class="row-fluid">
+<div class="row">
 {% for person in site.people %}
-  <div class="span6" style="padding-bottom:15px">{% include {{person}} %}</div>
+  <div class="col-sm-6" style="padding-bottom:15px">{% include {{person}} %}</div>
 {% cycle '', '</div>' %}
-{% cycle '', '<div class="row-fluid">' %}	
+{% cycle '', '<div class="row">' %}
 {% endfor %}
 </div>
-	

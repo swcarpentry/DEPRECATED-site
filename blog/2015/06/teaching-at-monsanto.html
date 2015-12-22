@@ -1,0 +1,133 @@
+---
+layout: blog
+root: ../../..
+author: "Will Trimble and Asela Wijeratne"
+title: "Teaching at Monsanto"
+date: 2015-06-07
+time: "08:00:00"
+category: ["Teaching", "Monsanto"]
+---
+<!-- start excerpt -->
+<p>
+  As we <a href="{{page.root}}/blog/2015/04/workshops-for-companies.html">discussed</a>
+  <a href="{{page.root}}/blog/2015/04/steering-committee-has-landed.html">in April</a>,
+  the Steering Committee decided to run a small number of workshops for companies this year
+  in order to see how our material would work for them,
+  and whether they'd be willing to pay a higher administration fee
+  that we could then use to underwrite workshops for people
+  who might not otherwise be able to host one.
+  The first of these workshops was held at Monsanto,
+  and seems to have gone well:
+  experience reports from two of the instructors are included below,
+  and we hope to repeat the experiment for other companies in the coming months.
+  (If you know a firm that would like our help,
+  please do introduce us.)
+</p>
+<!-- end excerpt -->
+<p><em>Will Trimble writes:</em></p>
+
+<p>
+  In the Python room, we had about 18 learners the first day, slightly fewer the second day, and between 5-10 participating by Webex.
+  This was the most advanced audience I've seen;
+  they were bored by the two-letter shell commands, and could have probably gone through find, for, and grep in a quarter day. 
+</p>
+<p>
+  We covered the shell with the standard lessons, and Python with the inflammation dataset;
+  on day 2 we did Git in pairs,
+  and since they quickly finished resolving conflicts locally and pushing to their neighbor's repository
+  we did a central repository fork-and-pull request (11 forks, 7 pull requests) in the remaining time.
+</p>
+<p>
+  On day 2 we worked through building a simple Python command line script,
+  and checked it in every time it changed.
+  The end of the second day we went through the first of the Python-mosquitoes (Pandas) notes
+  and the matplotlib+basemaps notebook by Nikolay Koldunov.
+  We <em>didn't</em> get good coverage of either testing or data structures
+  (dicts in particular, which might be unfamiliar to R and Fortran users)
+  and did not attempt SQL.
+</p>
+<p>
+  When polled, the audience was glad for the instruction,
+  though there were some technical issues:
+</p>
+<ol>
+  <li>
+    <p>
+      There were widespread reports that <em>neither</em> <code>more</code> nor <code>less</code> was working for some reason under Git Bash,
+      and <code>cat</code> has been written out of the lesson for simplicity reasons. 
+    </p>
+  </li>
+  <li>
+    <p>
+      To run the fancy graphics notebook we tried to run conda,
+      and hit a snag where Git Bash + conda did not work for most users without first disabling SSH for conda.
+      To do this,
+      make a file called ".condarc" in C:\Users\(your-user-id) containing:
+    </p>
+<pre>
+# Disable ssl verification. The default is True.
+ssl_verify: False
+</pre>
+    <p>
+      then <code>conda install basemaps</code> should work.
+    </p>
+  </li>
+</ol>
+<p><em>Asela Wijeratne writes:</em></p>
+<p>
+  From the feedback we got, I believe that overall, we did well.
+  I think the Git, SQL and shell lessons went fairly well and Xu did an excellent job teaching SQL  with a very short notice.
+  For the R lessons, we covered some of the basics (like data types, data structures and subsetting etc),
+  creating function in R,
+  and the intro to ggplot.   
+</p>
+<p>
+  However, for R lessons, we could have done better (partly, because this is my first time teaching it).
+  In addition, it appeared (from the discussion we had with the participants and also from the pre-workshop survey),
+  most participants were well versed in R.
+  So I expected that I could just introduced some of basics and then moved to more advance topics like creating functions and control of flow.
+  Once I started to teach,
+  I realized that most people needed a refresher on R basics and eventually,
+  I didn't have time to do all the topics and examples that I was planning to cover.
+  In the end, R lessons should have been two sessions.
+</p>
+<p>
+  In addition,
+  as Xu pointed out,
+  perhaps there should be a different way to assess the knowledge of the participant
+  (for e.g., instead of asking whether they know R, we could ask them to complete a task without external resources). 
+</p>
+<p>
+  The second problem, which might be specific to companies and government institutes,
+  is that there are certain restrictions where we can post data;
+  for example,
+  I posted the data on Google drive and I was told that the participants could not access it.
+  In addition,
+  we should explicitly mention that which version of R and RStudio we are planning to use
+  (this may apply for others software as well).
+  Some attendees were using older versions of R and it was not easy to switch as they needed to get permission to do so.
+</p>
+<p><em>Xu Fei writes:</em></p>
+<p>
+   The R session was overall challenging but smooth.
+   Our pre-workshop questions didn't capture the background level of participants (more specifically on the Shell and R) very well this time.
+   I think it made teaching such a diverse audience challenging but I think Asela managed it pretty well.
+   Also,
+   like Asela mentioned,
+   the installation note for R may need an update,
+   as I've seen enough cases where installation of a specific library of R failed due to version issues.
+</p>
+<p>
+  The Git lesson did not go as smoothly as in the other room.
+  The good thing was that people were asking a lot of good questions (and from WebEx).
+  But I got caught in the headless state (consequence of being too creative?)
+  and created a bit of confusion when I was trying to resolve a conflict.
+  We did not have time for all the participants to resolve a conflict,
+  and we certainly did not cover pull requests.
+</p>
+<p>
+  SQL was pretty standard and I had time to cover all the topics,
+  even with an additional session on how to use SQLite in R.
+  I think it was a good way to end the whole workshop as it made people connect with what they just learned in the morning.
+  Again, our audience didn't have much experience with Git and SQL and it made it a bit easier to control the flow.
+</p>

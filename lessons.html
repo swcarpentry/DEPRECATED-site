@@ -3,9 +3,10 @@ layout: base
 root: .
 title: Lessons
 ---
-<div class="row-fluid">
-  <div class="span2"></div>
-  <div class="span8" align="center">
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8" align="center">
     <p>
       All of our lessons are freely available under
       the <a href="{{page.root}}/license.html#cc-by">Creative Commons - Attribution License</a>.
@@ -17,247 +18,288 @@ title: Lessons
       (e.g., provide a link back to this website).
     </p>
   </div>
-  <div class="span2"></div>
+  <div class="col-sm-2"></div>
 </div>
-<div class="row-fluid">
-  <div class="span6">
-    <h2>Version 5.2</h2>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h2 id="v5.3">Version 5.3</h2>
     <p>
-      This material is what we currently use in workshops.
-      <br/>
-      <a href="{{site.github_url}}/bc">View source on GitHub</a>
+      This is what we currently teach,
+      broken out into one lesson per repository.
+      You can check the status of each lesson on
+      <a href="{{page.root}}/pages/dashboard.html">our dashboard</a>,
+      or view the <a href="http://scf.rgaiacs.com/nightly/">nightly build</a>.
     </p>
     <table class="table table-striped">
       <tr>
-	<td><a href="v5/intro.html">Introduction</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/shell/index.html">The Unix Shell</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/git/index.html">Version Control with Git</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/python/index.html">Programming with Python</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/r/index.html">Programming with R</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/sql/index.html">Using Databases and SQL</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/extras/index.html">A Few Extras</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/novice/teaching/index.html">Instructor's Guide</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/setup.html">Setup Instructions</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/bib.html">Recommended Reading</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/gloss.html">Glossary</a></td>
-      </tr>
-      <tr>
-	<td><a href="v5/team.html">Our Team</a></td>
-      </tr>
-    </table>
-  </div>
-  <div class="span6">
-    <h2>Version 5.3 (beta)</h2>
-    <p>
-      This is the same material as Version 5.2,
-      but broken into separate per-lesson repositories.
-    </p>
-    <table class="table table-striped">
-      <tr>
-	<td>The Unix shell</td>
+	<td>The Unix Shell</td>
 	<td><a href="{{site.github_url}}/shell-novice">repo</a></td>
 	<td><a href="{{site.github_io_url}}/shell-novice">site</a></td>
+	<td><a href="{{site.github_io_url}}/shell-novice/reference.html">reference</a></td>
       </tr>
       <tr>
 	<td>Version Control with Git</td>
 	<td><a href="{{site.github_url}}/git-novice">repo</a></td>
 	<td><a href="{{site.github_io_url}}/git-novice">site</a></td>
+	<td><a href="{{site.github_io_url}}/git-novice/reference.html">reference</a></td>
       </tr>
       <tr>
 	<td>Version Control with Mercurial</td>
 	<td><a href="{{site.github_url}}/hg-novice">repo</a></td>
 	<td><a href="{{site.github_io_url}}/hg-novice">site</a></td>
+	<td><a href="{{site.github_io_url}}/hg-novice/reference.html">reference</a></td>
       </tr>
       <tr>
 	<td>Using Databases and SQL</td>
 	<td><a href="{{site.github_url}}/sql-novice-survey">repo</a></td>
 	<td><a href="{{site.github_io_url}}/sql-novice-survey">site</a></td>
+	<td><a href="{{site.github_io_url}}/sql-novice-survey/reference.html">reference</a></td>
       </tr>
       <tr>
-	<td>Programming with Python</td>
+	<td>Programming with Python <a href="#python27">*</a></td>
 	<td><a href="{{site.github_url}}/python-novice-inflammation">repo</a></td>
 	<td><a href="{{site.github_io_url}}/python-novice-inflammation">site</a></td>
+	<td><a href="{{site.github_io_url}}/python-novice-inflammation/reference.html">reference</a></td>
       </tr>
       <tr>
 	<td>Programming with R</td>
 	<td><a href="{{site.github_url}}/r-novice-inflammation">repo</a></td>
 	<td><a href="{{site.github_io_url}}/r-novice-inflammation">site</a></td>
+	<td><a href="{{site.github_io_url}}/r-novice-inflammation/reference.html">reference</a></td>
+      </tr>
+      <tr>
+	<td>R for Reproducible Scientific Analysis</td>
+	<td><a href="{{site.github_url}}/r-novice-gapminder">repo</a></td>
+	<td><a href="{{site.github_io_url}}/r-novice-gapminder">site</a></td>
+	<td><a href="{{site.github_io_url}}/r-novice-gapminder/reference.html">reference</a></td>
       </tr>
       <tr>
 	<td>Programming with MATLAB</td>
 	<td><a href="{{site.github_url}}/matlab-novice-inflammation">repo</a></td>
 	<td><a href="{{site.github_io_url}}/matlab-novice-inflammation">site</a></td>
+	<td><a href="{{site.github_io_url}}/matlab-novice-inflammation/reference.html">reference</a></td>
       </tr>
       <tr>
-	<td>Capstone: From Excel to a Database</td>
-	<td><a href="{{site.github_url}}/capstone-novice-spreadsheet-biblio">repo</a></td>
-	<td><a href="{{site.github_io_url}}/capstone-novice-spreadsheet-biblio">site</a></td>
+	<td>Automation and Make</td>
+	<td><a href="{{site.github_url}}/make-novice">repo</a></td>
+	<td><a href="{{site.github_io_url}}/make-novice">site</a></td>
+	<td><a href="{{site.github_io_url}}/make-novice/reference.html">reference</a></td>
       </tr>
+      <tr>
+	<td>Instructor Training</td>
+	<td><a href="{{site.github_url}}/instructor-training">repo</a></td>
+	<td><a href="{{site.github_io_url}}/instructor-training">site</a></td>
+	<td><a href="{{site.github_io_url}}/instructor-training/reference.html">reference</a></td>
+  </tr>
     </table>
+    <p id="python27">
+      * Now using Python 3.
+      The older lesson using Python 2.7 is available in
+      <a href="{{site.github_url}}/python-novice-inflammation-2.7">this repository</a>
+      and <a href="{{site.github_io_url}}/python-novice-inflammation-2.7">this website</a>.
+    </p>
+  </div>
+
+  <div class="col-sm-6">
+    <h2 id="capstones">Contributed</h2>
     <p>
-      You can check the current status of each project on
-      <a href="{{page.root}}/pages/dashboard.html">our dashboard</a>.
-      We're also working on some presentations
-      (which will eventually become <a href="http://third-bit.com/browsercast/">browsercasts</a>):
+      These lessons have been contributed by community members.
     </p>
     <table class="table table-striped">
       <tr>
-	<td><a href="http://swcarpentry.github.io/slideshows/introducing-software-carpentry/index.html">Introducing Software Carpentry</a></td>
+	<td>Testing and Continuous Integration with Python</td>
+	<td><a href="https://github.com/katyhuff/python-testing">repo</a></td>
+	<td><a href="http://katyhuff.github.io/python-testing">site</a></td>
       </tr>
       <tr>
-	<td><a href="http://swcarpentry.github.io/slideshows/lessons-learned/index.html">Software Carpentry: Lessons Learned</a></td>
+	<td>From Excel to a Database</td>
+	<td><a href="{{site.github_url}}/capstone-novice-spreadsheet-biblio">repo</a></td>
+	<td><a href="{{site.github_io_url}}/capstone-novice-spreadsheet-biblio">site</a></td>
       </tr>
       <tr>
-	<td><a href="http://swcarpentry.github.io/slideshows/creating-website/index.html">Creating a Workshop Website</a></td>
+        <td>Data Management in the Ocean, Weather and Climate Sciences</td>
+        <td><a href="http://github.com/DamienIrving/capstone-oceanography">repo</a></td>
+        <td><a href="http://damienirving.github.io/capstone-oceanography">site</a></td>
       </tr>
       <tr>
-	<td><a href="http://swcarpentry.github.io/slideshows/creating-lesson/index.html">Creating a Lesson</a></td>
+        <td>Controlling a Quadcopter With Your Mind</td>
+        <td><a href="{{site.github_url}}/matlab-novice-capstone-biomed">repo</a></td>
+        <td><a href="{{site.github_io_url}}/matlab-novice-capstone-biomed">site</a></td>
+      </tr>
+      <tr>
+        <td>Visualizing Your Data on the Web Using D3</td>
+        <td><a href="https://github.com/isakiko/D3-visualising-data/">repo</a></td>
+        <td><a href="http://isakiko.github.io/D3-visualising-data/">site</a></td>
+      </tr>
+      <tr>
+        <td>Working With Data on the Web</td>
+        <td><a href="{{site.github_url}}/web-data-python">repo</a></td>
+        <td><a href="{{site.github_io_url}}/web-data-python">site</a></td>
       </tr>
     </table>
   </div>
+
 </div>
 
-<h2 id="maintainers">Maintainers</h2>
-<p>
-  The topic maintainers listed below are responsible for
-  keeping issues and pull requests moving by reviewing,
-  managing discussion,
-  etc.,
-  and are also responsible for deciding what is and isn't included in our lessons.
-</p>
-<table class="table table-striped">
-  <tr>
-    <td>Git</td>
-    <td><a href="{{page.root}}/pages/team.html#davis.m">Matt Davis</a> and <a href="{{page.root}}/pages/team.html#hamrick.jessica">Jessica Hamrick</a></td>
-  </tr>
-  <tr>
-    <td>MATLAB</td>
-    <td><a href="{{page.root}}/pages/team.html#kiral-kornek.isabell">Isabell Kiral-Kornek</a> and <a href="{{page.root}}/pages/team.html#srinath.ashwin">Ashwin Srinath </a></td>
-  </tr>
-  <tr>
-    <td>Mercurial</td>
-    <td><a href="{{page.root}}/pages/team.html#latornell.d">Doug Latornell</a></td>
-  </tr>
-  <tr>
-    <td>Python</td>
-    <td><a href="{{page.root}}/pages/team.html#bekolay.trevor">Trevor Bekolay</a> and <a href="{{page.root}}/pages/team.html#bostroem.a">Azalee Bostroem</a></td>
-  </tr>
-  <tr>
-    <td>R</td>
-    <td><a href="{{page.root}}/pages/team.html#blischak.j">John Blischak</a> and <a href="{{page.root}}/pages/team.html#haine.denis">Denis Haine</a></td>
-  </tr>
-  <tr>
-    <td>SQL</td>
-    <td><a href="{{page.root}}/pages/team.html#cabunoc.abigail">Abigail Cabunoc</a> and <a href="{{page.root}}/pages/team.html#mckay.sheldon">Sheldon McKay</a></td>
-  </tr>
-  <tr>
-    <td>Unix shell</td>
-    <td><a href="{{page.root}}/pages/team.html#devenyi.gabriel">Gabriel Devenyi</a> and <a href="{{page.root}}/pages/team.html#koch.christina">Christina Koch</a></td>
-  </tr>
-  <tr>
-    <td>setup instructions</td>
-    <td><a href="{{page.root}}/pages/team.html#michonneau.francois">Fran&ccedil;ois Michonneau</a></td>
-  </tr>
-  <tr>
-    <td>tools</td>
-    <td><a href="{{page.root}}/pages/team.html#boughton.andrew">Andy Boughton</a>, <a href="{{page.root}}/pages/team.html#emonet.remi">R&eacute;mi Emonet</a>, and <a href="{{page.root}}/pages/team.html#silva.raniere">Raniere Silva</a></td>
-  </tr>
-  <tr>
-    <td>deck.js slides</td>
-    <td><a href="{{page.root}}/pages/team.html#emonet.remi">R&eacute;mi Emonet</a></td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-sm-6">
+    <h2 id="maintainers">Maintainers</h2>
+    <p>
+      These volunteers keep issues and pull requests moving,
+      and decide what is and isn't included in particular lessons.
+    </p>
+    <table class="table table-striped">
+      <tr>
+	<td>Git</td>
+	<td><a href="{{page.root}}/pages/team.html#gonzalez.ivan">Ivan Gonzalez</a> and <a href="{{page.root}}/pages/team.html#huang.daisie">Daisie Huang</a></td>
+      </tr>
+      <tr>
+	<td>MATLAB</td>
+	<td><a href="{{page.root}}/pages/team.html#kiral-kornek.isabell">Isabell Kiral-Kornek</a> and <a href="{{page.root}}/pages/team.html#srinath.ashwin">Ashwin Srinath </a></td>
+      </tr>
+      <tr>
+	<td>Mercurial</td>
+	<td><a href="{{page.root}}/pages/team.html#latornell.d">Doug Latornell</a></td>
+      </tr>
+      <tr>
+	<td>Python</td>
+	<td><a href="{{page.root}}/pages/team.html#bekolay.trevor">Trevor Bekolay</a> and <a href="{{page.root}}/pages/team.html#bostroem.a">Azalee Bostroem</a></td>
+      </tr>
+      <tr>
+	<td>R</td>
+	<td><a href="{{page.root}}/pages/team.html#blischak.j">John Blischak</a> and <a href="{{page.root}}/pages/team.html#haine.denis">Denis Haine</a></td>
+      </tr>
+      <tr>
+	<td>SQL</td>
+	<td><a href="{{page.root}}/pages/team.html#cabunoc.abigail">Abigail Cabunoc</a> and <a href="{{page.root}}/pages/team.html#mckay.sheldon">Sheldon McKay</a></td>
+      </tr>
+      <tr>
+	<td>Unix Shell</td>
+	<td><a href="{{page.root}}/pages/team.html#devenyi.gabriel">Gabriel Devenyi</a> and <a href="{{page.root}}/pages/team.html#koch.christina">Christina Koch</a></td>
+      </tr>
+      <tr>
+	<td>Automation and Make</td>
+	<td><a href="{{page.root}}/pages/team.html#jackson.m">Mike Jackson</a></td>
+      </tr>
+      <tr>
+	<td>Instructor Training</td>
+	<td><a href="{{page.root}}/pages/team.html#wilson.g">Greg Wilson</a></td>
+      </tr>
+      <tr>
+	<td>setup instructions</td>
+	<td><a href="{{page.root}}/pages/team.html#michonneau.francois">Fran&ccedil;ois Michonneau</a></td>
+      </tr>
+      <tr>
+	<td>tools</td>
+	<td><a href="{{page.root}}/pages/team.html#boughton.andrew">Andy Boughton</a>, <a href="{{page.root}}/pages/team.html#emonet.remi">R&eacute;mi Emonet</a>, and <a href="{{page.root}}/pages/team.html#silva.raniere">Raniere Silva</a></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-6">
+    <h2 id="slideshows">Slideshows</h2>
+    <p>
+      We are developing some presentations to explain who we are and what we do.
+      Some of these are animated with <a href="http://third-bit.com/browsercast/">Browsercast</a>,
+      and all are available in <a href="{{site.github_url}}/slideshows/">this repository</a>.
+    </p>
+    <table class="table table-striped">
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/introducing-software-carpentry/index.html">Introducing Software Carpentry</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/hosting-workshop/index.html">Hosting a Workshop</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/best-practices/index.html">Best Practices in Scientific Computing</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/lessons-learned/index.html">Software Carpentry: Lessons Learned</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/teaching-tips/index.html">Teaching Tips</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/creating-website/index.html">Creating a Workshop Website</a></td>
+      </tr>
+      <tr>
+	<td><a href="{{site.github_io_url}}/slideshows/creating-lesson/index.html">Creating a Lesson</a></td>
+      </tr>
+    </table>
+  </div>
 
-<h2>Version 4</h2>
+</div>
+
+<h2 id="v4">Version 4</h2>
 <p>
   This material was created in 2010-11,
   and is now in maintenance mode.
   <br/>
   <a href="{{site.github_url}}/v4">View source on GitHub</a>
 </p>
-<div class="row-fluid">
-  <div class="span6">
+<div class="row">
+  <div class="col-sm-6">
     <table class="table table-striped">
       <tr>
-	<td><a href="v4/vc/index.html">Using Subversion</a></td>
+	<td><a href="{{site.github_io_url}}/v4/vc/index.html">Using Subversion</a></td>
       </tr>
       <tr>
-	<td><a href="v4/shell/index.html">The Unix Shell</a></td>
+	<td><a href="{{site.github_io_url}}/v4/shell/index.html">The Unix Shell</a></td>
       </tr>
       <tr>
-	<td><a href="v4/python/index.html">Programming in Python</a></td>
+	<td><a href="{{site.github_io_url}}/v4/python/index.html">Programming in Python</a></td>
       </tr>
       <tr>
-	<td><a href="v4/test/index.html">Testing</a></td>
+	<td><a href="{{site.github_io_url}}/v4/test/index.html">Testing</a></td>
       </tr>
       <tr>
-	<td><a href="v4/setdict/index.html">Sets and Dictionaries</a></td>
+	<td><a href="{{site.github_io_url}}/v4/setdict/index.html">Sets and Dictionaries</a></td>
       </tr>
       <tr>
-	<td><a href="v4/regexp/index.html">Regular Expressions</a></td>
+	<td><a href="{{site.github_io_url}}/v4/regexp/index.html">Regular Expressions</a></td>
       </tr>
       <tr>
-	<td><a href="v4/databases/index.html">Databases</a></td>
+	<td><a href="{{site.github_io_url}}/v4/databases/index.html">Databases</a></td>
       </tr>
       <tr>
-	<td><a href="v4/access/index.html">Using Access</a></td>
+	<td><a href="{{site.github_io_url}}/v4/access/index.html">Using Access</a></td>
       </tr>
       <tr>
-	<td><a href="v4/data/index.html">Data Management</a></td>
+	<td><a href="{{site.github_io_url}}/v4/data/index.html">Data Management</a></td>
       </tr>
       <tr>
-	<td><a href="v4/oop/index.html">Object-Oriented Programming</a></td>
+	<td><a href="{{site.github_io_url}}/v4/oop/index.html">Object-Oriented Programming</a></td>
       </tr>
     </table>
   </div>
-  <div class="span6">
+  <div class="col-sm-6">
     <table class="table table-striped">
       <tr>
-	<td><a href="v4/invperc/index.html">Program Design</a></td>
+	<td><a href="{{site.github_io_url}}/v4/invperc/index.html">Program Design</a></td>
       </tr>
       <tr>
-	<td><a href="v4/make/index.html">Make</a></td>
+	<td><a href="{{site.github_io_url}}/v4/make/index.html">Make</a></td>
       </tr>
       <tr>
-	<td><a href="v4/sysprog/index.html">Systems Programming</a></td>
+	<td><a href="{{site.github_io_url}}/v4/sysprog/index.html">Systems Programming</a></td>
       </tr>
       <tr>
-	<td><a href="v4/spreadsheets/index.html">Spreadsheets</a></td>
+	<td><a href="{{site.github_io_url}}/v4/spreadsheets/index.html">Spreadsheets</a></td>
       </tr>
       <tr>
-	<td><a href="v4/matrix/index.html">Matrix Programming with NumPy</a></td>
+	<td><a href="{{site.github_io_url}}/v4/matrix/index.html">Matrix Programming with NumPy</a></td>
       </tr>
       <tr>
-	<td><a href="v4/matlab/index.html">MATLAB</a></td>
+	<td><a href="{{site.github_io_url}}/v4/matlab/index.html">MATLAB</a></td>
       </tr>
       <tr>
-	<td><a href="v4/media/index.html">Multimedia Programming</a></td>
+	<td><a href="{{site.github_io_url}}/v4/media/index.html">Multimedia Programming</a></td>
       </tr>
       <tr>
-	<td><a href="v4/softeng/index.html">Software Engineering</a></td>
+	<td><a href="{{site.github_io_url}}/v4/softeng/index.html">Software Engineering</a></td>
       </tr>
       <tr>
-	<td><a href="v4/essays/index.html">Essays</a></td>
+	<td><a href="{{site.github_io_url}}/v4/essays/index.html">Essays</a></td>
       </tr>
     </table>
   </div>

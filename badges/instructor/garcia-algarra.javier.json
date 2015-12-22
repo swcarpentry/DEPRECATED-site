@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-14", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$f3842bd0b898f4666efe4770285845cd979ec735eebbdc7012387d7c8f80a78c", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$f3842bd0b898f4666efe4770285845cd979ec735eebbdc7012387d7c8f80a78c", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/garcia-algarra.javier.json"
+ }
+}

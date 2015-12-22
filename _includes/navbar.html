@@ -1,43 +1,54 @@
-<span id="github-ribbon"><a href="{{site.github_url}}/bc">Fork me on GitHub</a></span>
 
-<div class="navbar transparent navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a href="{{page.root}}/index.html" id="nav-logo" class="pull-left"></a>
-      <div class="nav-collapse collapse pull-right span12">
-        <ul class="nav pull-right">
-          <li id="nav-workshops">
-            <a href="{{page.root}}/workshops/index.html">Workshops</a>
-          </li>
-          <li id="nav-lessons">
-            <a href="{{page.root}}/lessons.html">Lessons</a>
-          </li>
-          <li id="nav-blog">
-            <a href="{{page.root}}/blog/index.html">Blog</a>
-          </li>
-          <li id="nav-scf">
-            <a href="{{page.root}}/scf/index.html">Foundation</a>
-          </li>
-          <li id="nav-join">
-            <a href="{{page.root}}/pages/join.html">Join</a>
-          </li>
-          <li id="nav-faq">
-            <a href="{{page.root}}/faq.html">FAQ</a>
-          </li>
-          <li id="nav-about">
-            <a href="{{page.root}}/pages/index.html">More...</a>
-          </li>
-          <form class="navbar-search" method="get" action="http://www.google.com/search">
-            <input type="hidden" name="sitesearch" value="{{site.site}}" />
-            <input name="q" type="text" class="search-query" placeholder="Search" />
-          </form>
-        </ul>
+<nav class="navbar navbar-default navbar-static-top" id="swc-navbar">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="{{page.root}}/index.html" class="navbar-brand">
+	    <img alt="Software Carpentry logo" src="{{page.root}}/img/software-carpentry-banner.png">
+	  </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+	    <li id="nav-scf">
+	      <a href="{{page.root}}/scf/index.html">Foundation</a>
+	    </li>
+	    <li id="nav-scf">
+	      <a href="{{page.root}}/scf/supporters.html">Supporters</a>
+	    </li>
+	    <li id="nav-workshops">
+	      <a href="{{page.root}}/workshops/index.html">Workshops</a>
+	    </li>
+	    <li id="nav-lessons">
+	      <a href="{{page.root}}/lessons.html">Lessons</a>
+	    </li>
+	    <li id="nav-blog">
+	      <a href="{{page.root}}/blog/index.html">Blog</a>
+	    </li>
+	    <li id="nav-join">
+	      <a href="{{page.root}}/pages/join.html">Join</a>
+	    </li>
+	    <li id="nav-faq">
+	      <a href="{{page.root}}/faq.html">FAQ</a>
+	    </li>
+	    <li id="nav-faq">
+	      <a href="mailto:{{site.contact}}">Contact</a>
+	    </li>
+	    <li id="nav-about">
+	      <a href="{{page.root}}/pages/index.html">More...</a>
+	    </li>
+	    <form class="navbar-form navbar-right" role="search" method="get" action="http://www.google.com/search">
+	      <div class="form-group">
+		<input type="hidden" name="sitesearch" value="{{site.site}}" />
+		<input name="q" type="text" class="form-control"  placeholder="Search" id="swc-navbar-search" />
+	      </div>
+	    </form>
+	  </ul>
+	</div> <!--/.nav-collapse -->
       </div>
-    </div>
-  </div>
-</div>
+</nav>

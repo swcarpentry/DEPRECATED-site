@@ -1,0 +1,31 @@
+---
+layout: blog
+root: ../../..
+author: Kate Hertweck and Rayna Harris
+title: "2015 Post-Workshop Instructor Debriefing, Round 8"
+date: 2015-05-08
+time: "11:20:00"
+category: ["Debriefing"]
+---
+<!-- start excerpt -->
+<p>
+The mentorship team met last week for a discussion with instructors who recently taught, including workshops at the National Center for Atmospheric Research (NCAR) and University of Texas at Arlington (the latter of which was taught by both authors of this post). Three important issues emerged during our discussion: recording the instructor's shell code, using example scripts to model increasing complexity in coding, and preparing instructors/helpers with answers to challenges.
+</p>
+<!-- end excerpt -->
+<b>Recording the instructor's shell code:</b>
+<p>
+A common problem with students new to coding is keeping up with the the instructor's live coding. To overcome this, we suggest following an awesome tip from the <a href="http://lists.software-carpentry.org/pipermail/discuss_lists.software-carpentry.org/2014-July/001902.html">Software Carpentry discussion list last year</a>using the following script:</p>
+<pre>
+export PROMPT_COMMAND="history 1 >> ~/Dropbox/history.txt"
+</pre>
+<p>
+This script sends all commands entered in the instructor's shell to a text file. In this example, the text file is a URL to a shared file in Dropbox that students can access and refresh to see the latest commands entered. Multiple students and helpers said they appreciated having this record for reference. We recommend adding this script to the instructor's .bashrc or .bash_profile to ensure continuity throughout the entire lesson (but remember to remove it when you're done teaching!).
+</p>
+<b>Preparing instructors/helpers with answers to challenge questions:</b>
+<p>
+While most instructors are familiar with the challenge questions (multiple choice questions, short answer prompts, etc) listed in the canonical lesson materials, sometimes instructors introduce their own questions or more complicated challenge exercises to the class. Our debriefing participants indicated that the instructor for each lesson should give other instructors/helpers possible solutions to the challanges a few days before the workshop. This will better equip our helpers and co-Insturctors with the tools to assist students and solve problems.
+</p>
+<b>Using example scripts to model increasing complexity in coding:</b>
+<p>
+The UT Arlington workshop deviated from the traditional lesson materials by incorporating a workflow using portions of the <a href="http://www.gapminder.org/data/">Gapminder dataset</a>. In the Unix lesson on Day 1, students are taught basic scripting commands, and they build a script from scratch to modify some of the Gapminder files. However, on day 2, part of this restructured series of lessons leads students through the use of <a href="https://github.com/naupaka/2015-04-18-UT-Arlington/tree/gh-pages/workshop/02_Sunday/01_Sunday_am/code">three pre-constructed shell scripts </a>to prepare, clean, and combine data for later analysis in R. This modification creates a substantial departure from the pedagogy of the original lessons, as the canonical materials lead students through scripting by starting with a blank text editor. We found that offering students pre-constructed scripts offered a few advantages. First, the scripts included only commands that we covered already (i.e., mv, cp) or that were intuitive and easy to explain (i.e., echo), which reinforced the material we covered already. Second, we could model for students how to combine bits of code together to conduct complicated but reproducible tasks. Finally, using these scripts in a workflow replicates the programming process for many scientists, since most of us use and modify code written by other people to perform our own particular tasks. We believe that teaching students both 1) how to write scripts from scratch and 2) how to read  and modify exisiting scripts will provide trainees with a robust and toolkit for their data-driven research careers.
+</p>

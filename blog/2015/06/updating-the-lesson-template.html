@@ -1,0 +1,50 @@
+---
+layout: blog
+root: ../../..
+author: Greg Wilson
+title: "Updating the Lesson Template"
+date: 2015-06-07
+time: "07:00:00"
+category: ["Lessons", "Tooling"]
+---
+<!-- start excerpt -->
+<p>
+  A couple of weeks ago,
+  we asked our lesson maintainers what changes they would like to see in our lesson template
+  based on their experiences getting Version 5.3 ready for publication.
+  <a href="https://github.com/swcarpentry/lesson-template/issues/242">Their comments</a>
+  are summarized below;
+  it's an ambitious list,
+  but I think we can do most or all of this between now and September.
+  If there are other things you think we should change in the way we structure lessons
+  (rather than in particular lessons themselves),
+  please add comments,
+  and if you'd like to dive into one of these,
+  please checkout <a href="https://github.com/swcarpentry/lesson-template/issues">the current lesson-template issues</a>
+  and create a pull request against the <a href="https://github.com/swcarpentry/lesson-template">lesson-template repository</a>.
+</p>
+<!-- end excerpt -->
+<ol>
+<li><p>Remove the <code>Legend</code> section: nobody's sure what to do with it, and the warmup for the running example in each lesson goes better in <code>index.md</code>.</p></li>
+<li><p>Allow level-2 sub-headings within topic files (but discourage their use, since anything long enough to need sub-headings should be broken into smaller pieces).</p></li>
+<li><p>Add a callout-style for &quot;common mistakes&quot; or &quot;warnings&quot; (similar to those used in O'Reilly books and elsewhere)</p></li>
+<li><p>Add next/previous links between topics and other files.</p></li>
+<li><p>Generate a single-page PDF of the whole lesson.</p></li>
+<li><p>Add translation guidelines and support.</p></li>
+<li><p>Add a page showing what all available styles look like.</p></li>
+<li><p>Add more pointers to the FAQ so that lesson maintainers know where to accumulate wisdom.</p></li>
+<li><p>Use Inconsolata instead of Courier New for code.</p></li>
+<li><p>Add something to code blocks to say what language they're in. (We use styles to control rendering, but nothing appears in the final HTML to say, &quot;Hey, I'm a Bash script...&quot;)</p></li>
+<li><p>Add more checks for broken links to validator (do these on the generated HTML, not the Markdown).</p></li>
+<li><p>Validator should show snippets and line numbers to give context for errors.</p></li>
+<li><p>Add <code>make update</code> to update from template, and have it produce a change log.</p></li>
+<li><p>Add a &quot;how to cite me&quot; section to each lesson's <code>index.md</code> and a CITATION file to each lesson's repo.</p></li>
+<li><p>Add the current maintainers' contact info to the CONTRIBUTING.md.</p></li>
+<li><p>Add a section to CONTRIBUTING.md summarizing discussion to date of what <em>not</em> to change in the lesson (so that old arguments aren't rehashed).</p></li>
+<li><p>Move the motivation slides to the <code>slideshows</code> repo, but keep the content (in prose form) at the start of <code>instructors.md</code> to show new instructors how to motivate a lesson.</p></li>
+<li><p>Have a tool to generate a single-page deck.js slideshow with one image per slide so that instructors can easily show them off when live coding.</p></li>
+<li><p>Add a link to a &quot;how to get started on your own&quot; section (like <a href="http://chendaniely.github.io/blog/2015/05/05/getting-started-with-data-science/">Daniel Chen's post</a>) on the main Software Carpentry website (probably <a href="http://software-carpentry.org/lessons.html">the lessons page</a>).</p></li>
+<li><p>Add solutions to all challenges.</p></li>
+<li><p>Add documentation to <code>lesson-example</code> explaining how to create a downloadable ZIP of data files required for a particular lesson and where to archive it (so that we all do it in the same way).</p></li>
+<li><p>Add links to each lesson's reference guide to the main web site (again, probably <a href="http://software-carpentry.org/lessons.html">the lessons page</a>), and make sure those print nicely.</p></li>
+</ol>

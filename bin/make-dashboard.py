@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''Create YAML for dashboard page by querying GitHub repositories.'''
 
@@ -7,16 +7,18 @@ import yaml
 from util import DASHBOARD_CACHE
 
 CONTROLS = (
-    ('swcarpentry/shell-novice', 'Introduction to the Unix shell'),
-    ('swcarpentry/git-novice', 'Introduction to Git'),
-    ('swcarpentry/hg-novice', 'Introduction to Mercurial'),
-    ('swcarpentry/sql-novice-survey', 'Introduction to SQL'),
-    ('swcarpentry/python-novice-inflammation', 'Python for non-programmers'),
-    ('swcarpentry/r-novice-inflammation', 'R for non-programmers'),
-    ('swcarpentry/matlab-novice-inflammation', 'MATLAB for non-programmers'),
-    ('swcarpentry/slideshows', 'Software Carpentry presentations'),
+    ('swcarpentry/shell-novice', 'Unix Shell'),
+    ('swcarpentry/git-novice', 'Git'),
+    ('swcarpentry/hg-novice', 'Mercurial'),
+    ('swcarpentry/sql-novice-survey', 'SQL'),
+    ('swcarpentry/python-novice-inflammation', 'Python'),
+    ('swcarpentry/r-novice-inflammation', 'R'),
+    ('swcarpentry/matlab-novice-inflammation', 'MATLAB'),
+    ('swcarpentry/make-novice', 'Make'),
     ('swcarpentry/capstone-novice-spreadsheet-biblio', 'From Excel to a database via Python'),
-    ('swcarpentry/instructor-training', 'What instructors need to know'),
+    ('DamienIrving/capstone-oceanography', 'Data Management in the Ocean, Weather and Climate Sciences'),
+    ('swcarpentry/matlab-novice-capstone-biomed', 'Controlling a Quadcopter With Your Mind'),
+    ('swcarpentry/web-data-python', 'Working With Data on the Web'),
     ('swcarpentry/amy', 'Workshop administration tool'),
     ('swcarpentry/site', 'Software Carpentry website'),
 )
@@ -29,6 +31,7 @@ def get_connection(token_file):
             token = reader.read().strip()
         cnx = Github(token)
     except:
+        print('Unable to connect using {0} (or missing github library)'.format(token_file), file=sys.stderr)
         cnx = None
     return cnx
 
@@ -43,7 +46,7 @@ def process(cnx):
         'num_issues' : 0
     }
     for (ident, description) in CONTROLS:
-        print '+', ident
+        print('+', ident)
         dashboard['num_repos'] += 1
         r = cnx.get_repo(ident)
         record = {'ident' : ident,
@@ -57,10 +60,10 @@ def process(cnx):
                                          'title' : str(i.title),
                                          'url' : str(i.html_url),
                                          'updated' : i.updated_at.strftime('%Y-%m-%d')})
-            except Exception, e:
-                print >> sys.stderr, 'failed with', i.number, i.title, i.html_url, i.updated_at
+            except Exception as e:
+                print('failed with', i.number, i.title, i.html_url, i.updated_at, file=sys.stderr)
             dashboard['num_issues'] += 1
-        record['issues'].sort(lambda x, y: - cmp(x['updated'], y['updated']))
+        record['issues'].sort(key=lambda x: x['updated'])
     return dashboard
 
 def main():

@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-05-05", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$acc9f5fe2a90b8db35fcd651c07b2f102ab44f182c8a2fd67dd617e587e2aabd", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$acc9f5fe2a90b8db35fcd651c07b2f102ab44f182c8a2fd67dd617e587e2aabd", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/blakewood.becca.json"
+ }
+}

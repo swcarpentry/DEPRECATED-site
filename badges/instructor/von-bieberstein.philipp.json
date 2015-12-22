@@ -1,0 +1,16 @@
+{
+ "badge": "http://software-carpentry.org/badges/class/instructor.json", 
+ "image": "http://software-carpentry.org/img/badges/instructor.png", 
+ "issuedOn": "2015-06-23", 
+ "recipient": {
+  "hashed": true, 
+  "identity": "sha256$28aacca84cd7d9af47adb9cd1e2d6e9db1565eb6571300efd5c700ad6f50fda1", 
+  "salt": "software-carpentry", 
+  "type": "email"
+ }, 
+ "uid": "sha256$28aacca84cd7d9af47adb9cd1e2d6e9db1565eb6571300efd5c700ad6f50fda1", 
+ "verify": {
+  "type": "hosted", 
+  "url": "http://software-carpentry.org/badges/instructor/von-bieberstein.philipp.json"
+ }
+}

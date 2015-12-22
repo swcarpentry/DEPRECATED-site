@@ -1,0 +1,91 @@
+---
+layout: blog
+root: ../../..
+author: Piotr Banaszkiewicz
+title: "AMY Version 0.6"
+date: 2015-07-18
+time: "16:00:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>Yesterday was the release day for <a href="{{site.github_url}}/amy/milestones/v0.6">AMY v0.6.</a>.
+Here's what's new and what's changed in this release.</p>
+<!-- end excerpt -->
+<h3>In-between releases</h3>
+<p>I was forced to add some hotfixes in <a href="{{site.github_url}}/amy/tree/v0.5.1">v0.5.1</a> and <a href="{{site.github_url}}/amy/tree/v0.5.2">v0.5.2</a>.
+v0.5.1 included a fix for the name of one of our lessons (was 'dc/spreadsheet', but it should be 'dc/spreadsheets').
+v0.5.2 included a fix for the <a href="https://twitter.com/gvwilson/status/620708679529168896">round-off error</a> that was crashing AMY.
+If you're more interested in the story,
+read <a href="{{site.github_url}}/amy/commit/837be7a8afaf0f957ffc2a61201c9d8544b2dea7">this commit message</a>.
+</p>
+<h3>New features</h3>
+<dl class="docutils">
+<dt>Deletion of tasks</dt>
+<dd>Tasks can now be deleted from their details page.</dd>
+<dt>Eventbrite link</dt>
+<dd>Event details page will show link to the Eventbrite's event page instead of sole key ID.</dd>
+<dt>Quick link for new airport page</dt>
+<dd>Accessible from "+" dropdown menu.</dd>
+<dt>Auto-fill end-date on event form</dt>
+<dd>Setting a start-date for an event will set-up an end-date (+1 day)
+automatically (most of our workshops lasts for 2 days). The auto-fill won't
+happen if user put something into end-date field.</dd>
+<dt>2-column layout on person-details page</dt>
+<dd>First column contains awards and tasks, while the second column contains
+knowledge domains and lessons person can teach.</dd>
+<dt>Facelifted Find Instructors page</dt>
+<dd>Full-width layout, filters in sidebar, no setting of "wanted" instructors.
+Using <code>GET</code> for filters application instead of <code>POST</code> as previously.</dd>
+<dt>Ability to add tasks for person from their edit page</dt>
+<dd>Now admins can not only assign awards to specific persons from their edit
+page, but also tasks.</dd>
+<dt>Tabs on person edit page</dt>
+<dd>Because of using 3 forms and 2 listings on the person edit page, the split
+was necessary. The first tab contains original person edit form, the
+second tab contains awards and award-form, the third one contains tasks and task-form.</dd>
+<dt>Facelifted bulk-upload</dt>
+<dd>Another switch to full-width layout.  Confirmation page for bulk-upload will now show what happens with specific entries ("will be created" or
+"it's already in the database" kind of thing).</dd>
+<dt>Lessons sorted by default</dt>
+<dd>Lessons will appear in alphabetical order in Find Instructors filter and
+also in "lessons" column on that same page.</dd>
+<dt>Importing event from <span class="caps">URL</span></dt>
+<dd>Admins can pre-fill event create form with data from workshop page.</dd>
+<dt>Improved "failed to delete" page</dt>
+<dd>Thanks to one small discovery, a big and ugly chunk of code was replaced
+with almost a one-liner.</dd>
+</dl>
+<h3>Fixes</h3>
+<dl class="docutils">
+<dt>Display of tasks</dt>
+<dd>Tasks now show links to events and persons.</dd>
+<dt>Eventbrite event ID name change</dt>
+<dd>Previously it was 'reg key', now it's clearer.</dd>
+<dt>Better fields in airport form</dt>
+<dd>"Airport name" instead of "Fullname", "IATA code" with link in the help text instead of "Iata".</dd>
+<dt>Better list of tasks on person-details page</dt>
+<dd>These tasks now contain links to related events and clearly indicate roles
+a person has.</dd>
+<dt>Searching for "firstname lastname"</dt>
+<dd>Searching for "Piotr Banaszkiewicz" now works!</dd>
+<dt>Enforced uniqueness for event slugs</dt>
+<dd>Having two events with the same slug resulted in a crash, so we decided to
+enforce uniqueness for event slugs.  This not only prevents the bug from
+hunting us, but also prevents admins from adding events with slugs that
+are already in the database.</dd>
+<dt>Awards will prevent events from deletion</dt>
+<dd>If there are some awards that point to specific event, that event will not
+be deleted.</dd>
+</dl>
+<h3>Plans for v0.7</h3>
+<p>There are two things that I want to work on for v0.7 release.</p>
+<ol>
+<li>I want to add <code>develop</code> branch and set it as the main branch for the repo.</li>
+<li>I want to fix <a href="{{site.github_url}}/amy/issues/5#issuecomment-122214844">host/site/organizer</a> representation in the database.</li>
+</ol>
+<p>The rationale for the first is that I had to make two minor releases to v0.5 when
+we already had features for v0.6 merged to the <code>master</code>.  If we had only kept
+stable releases in the <code>master</code> (<a href="http://nvie.com/posts/a-successful-git-branching-model/">git-flow</a>), I'd not have that problem.</p>
+<p>
+  <em>This is a cross-post from <a href="http://piotr.banaszkiewicz.org/blog/2015/07/17/amy-update-4/">Piotr's blog</a>.</em>
+</p>

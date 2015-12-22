@@ -1,0 +1,88 @@
+---
+layout: blog
+root: ../../..
+author: Piotr Banaszkiewicz
+title: "Amy Version 0.4"
+date: 2015-06-19
+time: "15:30:00"
+category: ["Tooling"]
+---
+<!-- start excerpt -->
+<p>Today's the deadline for <a href="{{site.github_url}}/amy/milestones/v0.4">AMY v0.4</a>.
+It contains a bunch of usability fixes, so all our admins should be happy :-)</p>
+<!-- end excerpt -->
+<h3>New features</h3>
+<dl>
+<dt>Filtering!</dt>
+<dd>I couldn't get <a href="http://datatables.net/">DataTables</a> to work properly with our backend, but
+thankfully I found out about <a href="http://django-filter.readthedocs.org/">django-filter</a>.  It's basically what
+<a href="http://datatables.net/">DataTables</a> is, but works without JavaScript (which in case of our huge
+data sets is a good thing).  A wide, fluid view was adapted for pages with
+listings (so that we can put filters in the sidebar).  I must admit that
+I like it.</dd>
+<dt>"New" name</dt>
+<dd>As you might have noticed, we're switching from "Amy" to "AMY", to not
+confuse people with software.</dd>
+<dt>Reports</dt>
+<dd>Thanks to Greg's work, we now are able to simply report which events are
+missing attendance figures, as well as display how many workshops, learners
+or instructors we have over time.</dd>
+<dt>Success/error messages</dt>
+<dd>Each successful form save, or each erroneous action will result in
+adequate message displayed on top of the page.</dd>
+<dt>Horizontal layout of Find Instructors page</dt>
+<dd>You won't have to scroll half of the page to get the results, because now
+the skills take way less vertical space than before.</dd>
+<dt>Search improvements</dt>
+<dd>You can now search through airports, and search for events by their site name. Also, events ordering was changed: soonest show first.</dd>
+<dt>Deleting objects</dt>
+<dd>It's possible to delete almost any object we have in the database.</dd>
+<dt>Improvements to bulk-upload</dt>
+<dd>Greg made the person-bulk-upload useful! And Giacomo used it recently.</dd>
+<dt>Pagination on airports list</dt>
+<dd>Clicking through our stored airports is now possible.</dd>
+<dt>Fixes to workshop selection for the debrief</dt>
+<dd>Only events that started and ended in the specific period are going to show up.</dd>
+<dt>View/edit icons in object listings</dt>
+<dd>Two icons now make it possible for admins to view object details or go
+right ahead to editing it.</dd>
+<dt>Event fields ordering</dt>
+<dd>We reorganized fields on the event detail/edit page. Now the slug is on top.</dd>
+<dt>Line wrapping for fields with notes</dt>
+<dd>Some notes had very long lines, but thanks to CSS3 goodness we can now break-up the words inside <code>&lt;pre&gt;</code> tag.</dd>
+<dt>Username visible</dt>
+<dd>Person details page displays the person's username.</dd>
+<dt>Link to event's repository and it's website</dt>
+<dd>If either is provided, we display the other link too. For example, the
+admin submits only the link to the repository. We parse it and display the
+link to the event's website (because it's way easier to fact-check the
+website than the repo).</dd>
+</dl>
+<p>We have also moved servers!  After continuing problems with support levels from A Small Orange,
+we're now using Rackspace VPS and have a very clean deployment, plus we're SSL-only.</p>
+<h3>You're gonna miss it</h3>
+<dl>
+<dt>Event "published"</dt>
+<dd>Greg simplified the logic for marking events as published.  So now
+"published" field is gone!</dd>
+<dt>Breadcrumbs</dt>
+<dd>We decided to drop the breadcrumbs.  They proved to not be as useful as
+I hoped.</dd>
+<dt>DataTables</dt>
+<dd>Our listings were pretty big (for example if you wanted to load all
+persons at once, you'd be waiting for about 10-20s for the site to come
+up), so to maximize usability we'd have to turn <a href="http://datatables.net/">DataTables</a> into
+"server-side processing" mode.  Basically, we'd have to do all filtering
+and sorting on our end, and that would mean no benefit for us.  So instead
+we switched to <a href="http://django-filter.readthedocs.org/">django-filter</a>.</dd>
+<dt>Django Admin</dt>
+<dd>We were not using it at all.</dd>
+</dl>
+<h3>What Did Not Land</h3>
+<p>I'm trying to figure out a way to automate Eventbrite for admins, but from what
+I can tell it's going to be impossible unless Eventbrite changes the way it's
+working.  So I'm holding off with creating Eventbrite events, at least for now.</p>
+<h3>Features for v0.5</h3>
+<p>From Greg's <a href="{{site.github_url}}/amy/issues/374">ticket</a> we can
+gather that most important feature for <a href="{{site.github_url}}/amy/milestones/v0.5">v0.5</a> is completing user's preferred
+lessons and knowledge domains.</p>
