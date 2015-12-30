@@ -1,11 +1,15 @@
 Software Carpentry Web Site
 ===========================
 
+**THIS REPOSITORY IS NO LONGER IN USE.**
+
+**We have moved our website to [https://github.com/swcarpentry/website](https://github.com/swcarpentry/website).
+Please submit new material there.**
+
+----------------------------------------
+
 This repository holds the source for
-the [Software Carpentry](http://software-carpentry.org) web site.
-Lessons are not stored in this repository:
-please see [the lessons page](http://software-carpentry.org/lessons.html)
-for links to their repositories.
+the old version of the [Software Carpentry](http://software-carpentry.org) web site.
 
 Contributing
 ------------
@@ -127,8 +131,6 @@ Adding a Workshop
 Email the workshop's URL to [the administrators](mailto:admin@software-carpentry.org)
 so that they can add it to our database.
 The workshop will then show up on the main website the next time it is rebuilt(which typically happens hourly).
-
-
 
 For More Advanced Users
 -----------------------
